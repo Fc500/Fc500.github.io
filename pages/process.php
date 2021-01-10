@@ -7,16 +7,16 @@
     switch($function) {
     
     	 case('getState'):
-        	 if(file_exists('chat.txt')){
-               $lines = file('chat.txt');
+        	 if(file_exists('../pages/chat.txt')){
+               $lines = file('../pages/chat.txt');
         	 }
              $log['state'] = count($lines); 
         	 break;	
     	
     	 case('update'):
         	$state = $_POST['state'];
-        	if(file_exists('chat.txt')){
-        	   $lines = file('chat.txt');
+        	if(file_exists('../pages/chat.txt')){
+        	   $lines = file('../pages/chat.txt');
         	 }
         	 $count =  count($lines);
         	 if($state == $count){
