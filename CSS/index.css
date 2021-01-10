@@ -11,6 +11,14 @@
   margin-right: auto;
   width: 75%;
   }
+
+.beginner {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  /* width: 200px; */
+  height: 150px; 
+  box-shadow:20px 20px 50px grey;  
   
   
 body {
