@@ -5,7 +5,7 @@
  
         <title>Tuts+ Chat Application</title>
         <meta name="description" content="Tuts+ Chat Application" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../CSS/style.css" />
     </head>
     <body>
         <div id="wrapper">
