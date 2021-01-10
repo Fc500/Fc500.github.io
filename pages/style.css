@@ -1,5 +1,5 @@
 *                               { margin: 0; padding: 0; }
-body                            { font: 12px "Lucida Grande", Sans-Serif; background: url(images/bg.png); }
+body                            { font: 12px "Lucida Grande", Sans-Serif; background: url(../pages/bg.png); }
 h2                              { color: #fa9f00; font: 30px Helvetica, Sans-Serif; margin: 0 0 10px 0; }
 #page-wrap                      { width: 500px; margin: 30px auto; position: relative; }
 
