@@ -29,9 +29,14 @@
 }
   
   
-body {
-    font-family: 'Armata';
-  
+h2 {
+    font-family: 'Armata';  
+}
+
+p {
+font-family: 'pusabregular', Arial, sans-serif;
+font-weight:normal;
+font-style:normal;
 }
 
 
