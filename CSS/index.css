@@ -24,16 +24,14 @@
   
 body {
     font-family: 'Armata';
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  
 }
 
 
 html { 
-  background: url(../assets/Background2.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(red, yellow); no-repeat center center fixed; 
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
