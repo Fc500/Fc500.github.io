@@ -18,17 +18,10 @@ body {
 }
 
 
-.bg { 
-  /* The image used */
-  background-image: url("../assets/Pastel.JPG");
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+html { 
+  background: url(../assets/Pastel.JPG) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
-\
-
