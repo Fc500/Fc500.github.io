@@ -1,7 +1,15 @@
 .title {
-text-align: center;
-width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 )
+  
+.subtitle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
   
 body {
     font-family: 'Armata';font-size: 22px;
