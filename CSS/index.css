@@ -2,3 +2,7 @@
 text-align: center;
 width: 500px;
 )
+  
+body {
+    font-family: 'Armata';font-size: 22px;
+}
