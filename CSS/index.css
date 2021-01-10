@@ -15,4 +15,6 @@
   
 body {
     font-family: 'Armata';
+  background-image: url("../assets/Pastel.PNG");
+  background-repeat: no-repeat;
 }
