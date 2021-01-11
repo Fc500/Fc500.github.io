@@ -55,5 +55,9 @@ html {
 
 .half {
   width: 50%;
-  height: 25%;
+}
+
+.halfImage {
+  width: 50%
+  height: 50%
 }
