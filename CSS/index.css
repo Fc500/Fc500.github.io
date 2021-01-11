@@ -51,6 +51,9 @@ html {
 
 .main {
   text-align: center;
+}
+
+.box {
   border-radius: 25px;
   background: rgba(187, 255, 153, 0.3);
   padding: 20px; 
