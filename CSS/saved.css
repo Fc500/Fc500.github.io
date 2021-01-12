@@ -14,7 +14,8 @@ div.box {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 25%;
+  height: 25%
   position: relative;
   top: 30px;
   z-index: 1;
