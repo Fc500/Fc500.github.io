@@ -33,7 +33,7 @@ html {
 
 .column {
   float: left;
-  width: 20%;
+  width: 33.33%;
   padding: 20px;
   display: block;
   margin-left: auto;
@@ -44,7 +44,7 @@ html {
 .row::after {
   content: "";
   clear: both;
-  display: block;
+  display: table;
   margin-left: auto;
   margin-right: auto;
 }
