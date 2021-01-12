@@ -58,7 +58,11 @@ html {
   background: rgba(187, 255, 153, 0.3);
   padding: 20px; 
   box-shadow:10px 10px 50px rgba(0, 0, 0, 0.4); 
-  width: 50%
+  width: 75%
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .half {
