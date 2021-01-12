@@ -1,3 +1,12 @@
+html { 
+    background-image: linear-gradient(#0065FD, #002E73);
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .middle {
   display: block;
   margin-left: auto;
