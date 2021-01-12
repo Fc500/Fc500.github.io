@@ -44,7 +44,7 @@ html {
 .row::after {
   content: "";
   clear: both;
-  display: table;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
