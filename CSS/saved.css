@@ -11,10 +11,10 @@ div.box {
 
 
 .saved {
-  display: block;
+  /* display: block; */ 
   margin-left: auto;
   margin-right: auto;
-  width: 85%;
+  width: 25%;
   height: 25%
   position: relative;
   top: 300px;
