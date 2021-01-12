@@ -25,10 +25,16 @@ html {
   box-sizing: border-box;
 }
 
+.main {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .column {
   float: left;
-  width: 33.33%;
-  padding: 5px;
+  width: 20%;
+  padding: 20px;
 }
 
 /* Clearfix (clear floats) */
