@@ -35,6 +35,9 @@ html {
   float: left;
   width: 20%;
   padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Clearfix (clear floats) */
@@ -42,4 +45,6 @@ html {
   content: "";
   clear: both;
   display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
