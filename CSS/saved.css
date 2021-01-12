@@ -1,0 +1,10 @@
+div.box {
+  background-color: #a1582d;
+  width: 800px;
+  border: 15px solid #a1582d;
+  padding: 50px;
+  margin: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
