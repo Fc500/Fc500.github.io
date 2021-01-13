@@ -11,7 +11,7 @@ div.box {
 
 
 .saved {
-  /* display: block; */ 
+  display: block;
   margin-left: auto;
   margin-right: auto;
   width: 25%;
