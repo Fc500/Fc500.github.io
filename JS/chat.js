@@ -58,3 +58,10 @@ document.getElementById("chat-form").addEventListener("submit", function(event) 
 		message_element.value = "";
 	}
 }, false);
+
+function MessageAdd(message) {
+	var chat_messages = document.getElementById("chat-messages");
+
+	chat_messages.insertAdjacentHTML("beforeend", message);
+	chat_messages.scrollTop = chat_messages.scrollHeight;
+}
