@@ -38,3 +38,23 @@ function Username() {
 }
 
 Username();
+
+document.getElementById("chat-form").addEventListener("submit", function(event) {
+	event.preventDefault();
+
+	var message_element = document.getElementsByTagName("input")[0];
+	var message = message_element.value;
+
+	if (message.toString().length) {
+		var username = localStorage.getItem("username");
+		
+		var data = {
+			type: "message",
+			username: username,
+			message: message
+		};
+
+		websocket.send(JSON.stringify(data));
+		message_element.value = "";
+	}
+}, false);
