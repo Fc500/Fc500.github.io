@@ -27,7 +27,7 @@
   </br>
   </br>
     <div class="bigbox">
-      <input type="image" id="myBtn" src="../assets/Chat.PNG" alt="Submit">
+      <input type="image" id="myBtn" src="../assets/Chat.PNG" alt="Submit" onclick=">
       <!-- Trigger/Open The Modal -->
 
 <!-- The Modal -->
@@ -47,6 +47,17 @@
 <h4>Also, I found the JS file so I might play around with that, but donate to the guys who made this though!</h4>
 <p>Copyright 2021, FcStudios Productions</b></a></p>
 <script>
+
+//Shows the chat
+function showChat() {
+  var x = document.getElementById("openChat");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+  
 // Get the modal
 var modal = document.getElementById("myModal");
 
