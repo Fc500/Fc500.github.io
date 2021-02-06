@@ -43,7 +43,7 @@ body {
 
 html { 
   background-color: blue; /* For browsers that do not support gradients */
-  background-image: linear-gradient(lightblue, darkblue); no-repeat center center fixed; 
+  background-image: linear-gradient(blue, darkblue); no-repeat center center fixed; 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
