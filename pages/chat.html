@@ -27,7 +27,7 @@
   </br>
   </br>
     <div class="bigbox">
-      <input type="image" id="openChat" src="../assets/Info.PNG" alt="Submit" onclick="showChat()">
+      <input type="image" id="openChat" src="../assets/Info.PNG" alt="Info" onclick="showChat()">
 <!-- The Modal -->
 <div id="myModal" class="modal">
       <span class="close">&times;</span>
@@ -48,12 +48,12 @@
 
 //Shows the chat
 function showChat() {
-  modal.style.display = "block";
+  modal.style.display = "none";
   var x = document.getElementById("chat");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
+  if (x.style.display === "none") {
     x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
 }
   
