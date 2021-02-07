@@ -1,0 +1,87 @@
+.title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+  
+.subtitle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  }
+
+.beginner {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  /* width: 200px; */
+  width: 90%;
+  height: 150px; 
+  box-shadow:20px 20px 50px grey;  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+  
+  
+body {
+    font-family: 'Armata'; 
+    color:white;
+}
+
+
+html { 
+  background-color: blue; /* For browsers that do not support gradients */
+  background-image: linear-gradient(blue, darkblue); no-repeat center center fixed; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  text-align: center;
+}
+
+.box {
+  border-radius: 25px;
+  background: rgba(153, 218, 255, 0.3);
+  padding: 20px; 
+  box-shadow:10px 10px 50px rgba(0, 0, 0, 0.4); 
+  width: 50%
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bigbox {
+  border-radius: 25px;
+  background: rgba(153, 218, 255, 0.3);
+  padding: 20px; 
+  box-shadow:10px 10px 50px rgba(0, 0, 0, 0.4); 
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.half {
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.halfImage {
+  width: 20%;
+}
