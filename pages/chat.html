@@ -42,7 +42,7 @@
 
         <iframe src="https://minnit.chat/GeometryChat?embed&&nickname=Unknown" style="border:none;width:90%;height:500px;" allowTransparency="true"></iframe>
 </div>
-    <div id="chat2">
+    <div id="chat2" hidden>
         <iframe src="https://minnit.chat/GDChatOffTopic?embed&&nickname=" style="border:none;width:90%;height:500px;" allowTransparency="true"></iframe>
     </div>
 </div>
@@ -59,7 +59,7 @@
 //Shows the chat
 function myFunction() {
   var x = document.getElementById('chat');
-  var y = document.getElementById('chat');
+  var y = document.getElementById('chat2');
   if (x.style.visibility === 'hidden') {
     x.style.visibility = 'visible';
     y.style.visibility = 'hidden';
