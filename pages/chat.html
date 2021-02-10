@@ -59,7 +59,7 @@
   var x = document.getElementById('chat');
   var y = document.getElementById('chat2');
 y.style.visibility = 'hidden';
-    y.style.bottom // "0px"
+    y.style.bottom; // "0px"
   
 //Shows the chat
 function myFunction() {
@@ -67,9 +67,13 @@ function myFunction() {
   if (x.style.visibility === 'hidden') {
     x.style.visibility = 'visible';
     y.style.visibility = 'hidden';
+    y.style.top = '100px';
+    x.style.bottom = '100px';
   } else {
     x.style.visibility = 'hidden';
    y.style.visibility = 'visible';
+    y.style.bottom = '100px';
+    x.style.top = '100px';
   }
 }
 
