@@ -56,11 +56,14 @@
 </br>
 <p>Copyright 2021, FcStudios Productions</b></a></p>
 <script>
-y.style.visibility = 'hidden';
-//Shows the chat
-function myFunction() {
   var x = document.getElementById('chat');
   var y = document.getElementById('chat2');
+y.style.visibility = 'hidden';
+    y.style.bottom // "0px"
+  
+//Shows the chat
+function myFunction() {
+  
   if (x.style.visibility === 'hidden') {
     x.style.visibility = 'visible';
     y.style.visibility = 'hidden';
@@ -69,7 +72,7 @@ function myFunction() {
    y.style.visibility = 'visible';
   }
 }
-  
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
