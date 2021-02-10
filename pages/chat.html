@@ -37,6 +37,7 @@
 </div>
       </br>
       </br>
+<button onclick="myFunction()">Button of truth</button>
       <div id="chat">
 <iframe src="https://minnit.chat/GeometryChat?embed&&nickname=Unknown" style="border:none;width:90%;height:500px;" allowTransparency="true"></iframe>
     </div>
@@ -55,13 +56,12 @@
 <script>
 
 //Shows the chat
-function showChat() {
-  modal.style.display = "none";
-  var x = document.getElementById("chat");
-  if (x.style.display === "none") {
-    x.style.display = "block";
+function myFunction() {
+  var x = document.getElementById('chat');
+  if (x.style.visibility === 'hidden') {
+    x.style.visibility = 'visible';
   } else {
-    x.style.display = "none";
+    x.style.visibility = 'hidden';
   }
 }
   
