@@ -59,10 +59,13 @@
 //Shows the chat
 function myFunction() {
   var x = document.getElementById('chat');
+  var y = document.getElementById('chat');
   if (x.style.visibility === 'hidden') {
     x.style.visibility = 'visible';
+    y.style.visibility = 'hidden';
   } else {
     x.style.visibility = 'hidden';
+   y.style.visibility = 'visible';
   }
 }
   
