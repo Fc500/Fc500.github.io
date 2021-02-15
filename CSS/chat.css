@@ -129,3 +129,7 @@ html {
   text-decoration: none;
   cursor: pointer;
 }
+
+.vc {
+  margin: auto;
+}
