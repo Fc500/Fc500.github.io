@@ -1,0 +1,50 @@
+html { 
+    background-image: linear-gradient(#0065FD, #002E73);
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.middle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.subtitle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column {
+  float: left;
+  width: 33%;
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
