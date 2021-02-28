@@ -56,10 +56,10 @@ body {
 div.scroll { 
                 margin:4px, 4px; 
                 padding:10px; 
-                background-color: brown; 
                 overflow-x: hidden; 
                 overflow-y: auto; 
                 text-align:justify; 
                 margin: auto;
-                width: 50%;    
+                width: 50%;   
+                background-color: #a1582d;
 }
