@@ -48,3 +48,7 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+
+body {
+    font-family: 'Assistant';font-size: 22px;
+}
