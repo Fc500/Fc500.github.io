@@ -54,8 +54,8 @@ body {
 }
 
 div.scroll { 
-                margin:10%, 10%; 
-                padding:30%; 
+                margin: 4px, 4px; 
+                padding:10%; 
                 width: 75%; 
                 height: 60%; 
                 overflow-x: hidden; 
