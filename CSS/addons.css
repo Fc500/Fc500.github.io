@@ -55,11 +55,11 @@ body {
 
 div.scroll { 
                 margin:4px, 4px; 
-                padding:10px; 
+                padding:4px; 
+                width: 700px; 
+                height: 150px; 
                 overflow-x: hidden; 
                 overflow-y: auto; 
                 text-align:justify; 
-                margin: auto;
-                width: 50%;   
                 background-color: #a1582d;
 }
