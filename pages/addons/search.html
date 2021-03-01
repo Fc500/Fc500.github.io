@@ -38,13 +38,19 @@
 /* #myTable tr.header, #myTable tr:hover {
   background-color: #f1f1f1;
 } */
+
+.addon {
+  background-color: lightgrey;
+/*  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px; */
+}
 </style>
 </head>
 <body>
   <script src="../../JS/addons.js"></script>
 <h1 style="color: white;">Search Addons!</h1>
-  <p>Test</p>
-  
   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for addons..." title="Type in a name">
   <div class="scroll">
  <table id="myTable" style="color: white;">
@@ -53,7 +59,7 @@
     <th style="width:40%;">Addons</th>
   </tr>
   <tr>
-    <td>GD Dark mode</td>
+    <td class="addon">GD Dark mode!</td>
     <td>Texture Pack</td>
   </tr>
   <tr>
