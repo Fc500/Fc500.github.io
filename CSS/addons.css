@@ -1,5 +1,6 @@
 html { 
-    background-image: linear-gradient(#0065FD, #002E73);
+   /* background-image: linear-gradient(#0065FD, #002E73); */
+    background-image: linear-gradient(#0065FD, #000000);
     height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
@@ -65,11 +66,11 @@ div.scroll {
 }
 
 @font-face {
-font-family: "CustomFont";
-src: url("CustomFont.eot");
-src: url("CustomFont.woff") format("woff"),
-url("CustomFont.otf") format("opentype"),
-url("CustomFont.svg#filename") format("svg");
+font-family: "Pusab";
+src: url("../assets/pusab___-webfont.eot");
+src: url(../assets/pusab___-webfont.woff") format("woff"),
+url("../assets/pusab___-webfont.ttf") format("opentype"),
+url("../assets/pusab___-webfont.svg") format("svg");
 }
 
  
