@@ -8,6 +8,12 @@ html {
     background-attachment: fixed;
 }
 
+h1 {
+font-family: 'pusabregular', Arial, sans-serif;
+font-weight:normal;
+font-style:normal;
+}
+
 .middle {
   display: block;
   margin-left: auto;
