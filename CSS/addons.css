@@ -92,3 +92,9 @@ div.scroll {
     font-style: normal;
 
 }
+
+.back {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
