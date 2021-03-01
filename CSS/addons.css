@@ -8,7 +8,7 @@ html {
     background-attachment: fixed;
 }
 
-body {
+h1 {
 font-family: 'pusabregular', Arial, sans-serif;
 font-weight:normal;
 font-style:normal;
@@ -69,6 +69,9 @@ div.scroll {
                 overflow-y: auto; 
                 text-align:justify; 
                 background-color: #a1582d;
+   font-family: 'pusabregular', Arial, sans-serif;
+font-weight:normal;
+font-style:normal;
 }
 
 @font-face {
