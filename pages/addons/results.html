@@ -17,6 +17,18 @@ color: white;
                   }
     </style>
   </head>
+  <script>
+    var customTitle = sessionStorage.getItem("title");
+
+function setTitle() {
+  document.getElementById("head").innerHTML = customTitle;
+}
+
+var x = document.getElementById("get").innerHTML;
+function myFunction() {
+  document.getElementById("testy").innerHTML = x;
+}
+  </script>
   <script src="../../JS/results.js"></script>
   <body onload="setTitle()">
     <div class="items pusab">
