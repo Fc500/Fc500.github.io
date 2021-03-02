@@ -20,3 +20,7 @@ function myFunction() {
 function myFunctionTwo() {
   document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
 }
+
+function pageOne() {
+ sessionStorage.setItem("title", document.getElementById("optionA").innerHTML);
+}
