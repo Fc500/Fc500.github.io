@@ -24,3 +24,11 @@ function myFunctionTwo() {
 function pageOne() {
  sessionStorage.setItem("title", document.getElementById("optionA").innerHTML);
 }
+
+function pageTwo() {
+ sessionStorage.setItem("title", document.getElementById("optionB").innerHTML);
+}
+
+function pageThree() {
+ sessionStorage.setItem("title", document.getElementById("optionC").innerHTML);
+}
