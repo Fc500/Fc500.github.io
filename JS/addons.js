@@ -35,4 +35,5 @@ function pageTwo() {
 
 function pageThree() {
  sessionStorage.setItem("title", document.getElementById("optionC").innerHTML);
+ sessionStorage.setItem("link", "https://tinyurl.com/tx6b3dhv");
 }
