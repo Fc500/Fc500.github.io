@@ -37,3 +37,8 @@ function pageThree() {
  sessionStorage.setItem("title", document.getElementById("optionC").innerHTML);
  sessionStorage.setItem("link", "https://tinyurl.com/tx6b3dhv");
 }
+
+function pageFour() {
+ sessionStorage.setItem("title", document.getElementById("optionD").innerHTML);
+ sessionStorage.setItem("link", "https://tinyurl.com/h7xcbuhj");
+}
