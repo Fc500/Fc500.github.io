@@ -17,6 +17,8 @@ function myFunction() {
   }
 }
 
+
+
 function myFunctionTwo() {
   document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
 }
@@ -27,6 +29,7 @@ function pageOne() {
 
 function pageTwo() {
  sessionStorage.setItem("title", document.getElementById("optionB").innerHTML);
+ sessionStorage.setItem("title", "https://tinyurl.com/7wk4f2eb");
 }
 
 function pageThree() {
