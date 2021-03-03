@@ -24,6 +24,7 @@ color: white;
 function setPage() {
   document.getElementById("head").innerHTML = customTitle;
   document.getElementById("download").src = customLink;
+  document.getElementById("download").setAttribute("href", customLink);
 }
 
     //setAttribute("href", "www.google.com")
@@ -38,7 +39,7 @@ function setPage() {
     <p>Download pack</p>
       </br>
     </br>
-  <a href="https://fc500.github.io/pages/addons/search.html" id="download"><h3>Download Addon!</h3></a>
+  <a id="download" href="https://fc500.github.io/pages/addons/search.html"><h3>Download Addon!</h3></a>
       
     </div>
     
