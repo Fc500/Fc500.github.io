@@ -25,6 +25,7 @@ function myFunctionTwo() {
 
 function pageOne() {
  sessionStorage.setItem("title", document.getElementById("optionA").innerHTML);
+  sessionStorage.setItem("link", "https://tinyurl.com/2mvaue63");
 }
 
 function pageTwo() {
