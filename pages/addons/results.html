@@ -21,7 +21,7 @@ color: white;
     var customTitle = sessionStorage.getItem("title");
     var customLink = sessionStorage.getItem("link");
 
-function setTitle() {
+function setPage() {
   document.getElementById("head").innerHTML = customTitle;
   document.getElementById("download").src = custonLink;
 }
@@ -29,7 +29,7 @@ function setTitle() {
   </script>
   <script src="../../JS/results.js"></script>
   <script src="../../JS/results.js"></script>
-  <body onload="setTitle()">
+  <body onload="setPage()">
     <div class="items pusab">
     <h1 id="head">{[NA]}</h1>
     <h3>downloads: 0</h3>
