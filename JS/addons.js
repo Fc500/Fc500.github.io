@@ -42,3 +42,10 @@ function pageFour() {
  sessionStorage.setItem("title", document.getElementById("optionD").innerHTML);
  sessionStorage.setItem("link", "https://tinyurl.com/h7xcbuhj");
 }
+
+
+
+function pageFive() {
+ sessionStorage.setItem("title", document.getElementById("optionE").innerHTML);
+ sessionStorage.setItem("link", "https://tinyurl.com/5ddmwcn9");
+}
