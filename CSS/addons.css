@@ -105,3 +105,51 @@ div.scroll {
     left: 1%;
     width: 4%;
 }
+
+
+/* Modal Content */
+.modal-content2 {
+  background-color: #555555;
+  margin: auto;
+  padding: 5%; 
+  border: 3px solid #b8b7ba;
+  width: 80%;
+  color: white;
+  border-radius: 10px;
+}
+
+/* The Close Button */
+.close2 {
+  color: #aaaaaa;
+  width: 40px;
+  position: absolute;
+  top: 13.75%;
+  left: 2%;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.weekly {
+background: #3a3a3a;
+padding: 2%;
+border: 2px solid #919191;
+border-radius: 5px;
+}
+.centerInfo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.centerCrown {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
