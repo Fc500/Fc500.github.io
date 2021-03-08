@@ -28,30 +28,24 @@ color: white;
         width: 10%;
       }
           .outer-wrapper{
-8
-        display: inline-block; 
-9
+        display: inline-block;
         margin: 20px;
-10
     }
-11
+      
     .frame{  
-12
-        width: 250px;
-13
-        height: 200px;
-14
-        border: 1px solid black;
-15
+      /*  width: 250px;
+        height: 200px; */
+ 
         vertical-align: middle;
       text-align: center;
         display: table-cell;
     }    
-    img{
-        max-width: 100%;
-        max-height: 100%;
+    .img{
+        max-width: 10%;
+        max-height: 10%;
         display: block;
       margin: 0 auto;
+      right: 0%;
     }
       
     </style>
@@ -70,17 +64,18 @@ function setPage() {
   <script src="../../JS/results.js"></script>
   <script src="../../JS/results.js"></script>
   <body onload="setPage()">
+    
     <!-- Alignment of undersized image -->
     <div class="outer-wrapper">
         <div class="frame">
-            <img src="/examples/images/club.jpg" alt="Club Card">
+            <img class="img" src="../../assets/info.PNG" alt="Club Card">
         </div>
     </div>
     <br>
     <!-- Alignment of vertically oversized image -->
     <div class="outer-wrapper">
         <div class="frame">
-            <img src="/examples/images/kites.jpg" alt="Flying Kites">
+            <img class="img" src="../../assets/comments.PNG" alt="Flying Kites">
         </div>
     </div>
     <br>
@@ -88,7 +83,9 @@ function setPage() {
 
     <div class="outer-wrapper">
         <div class="frame">
-            <img src="/examples/images/sky.jpg" alt="Cloudy Sky">
+            <img class="img" src="../../assets/trophies.PNG" alt="Cloudy Sky">
+          
+          
     <a href="https://fc500.github.io/pages/addons/search.html"><img src="../../assets/back.PNG" class="back"></a>
     <div class="items pusab">
     <h1 id="head">{[NA]}</h1>
