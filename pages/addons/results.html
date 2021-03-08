@@ -40,15 +40,19 @@ color: white;
       text-align: center;
         display: table-cell;
     }    
-    .img{
-        max-width: 25%;
-        max-height: 25%;
-        display: block;
-      margin: 0 auto;
-      right: 0%;
-      position: absolute;
-      top: 50%;
-    }
+      
+      .frame {
+    height: 25px;      /* equals max image height */
+    line-height: 25px;
+    width: 160px;
+    
+    text-align: center; margin: 1em 0;
+}
+img {
+    vertical-align: middle;
+    max-height: 25px;
+    max-width: 160px;
+}
       
     </style>
   </head>
@@ -83,27 +87,15 @@ function setPage() {
     </div>
 
     
-    <!-- Alignment of undersized image -->
-    <div class="outer-wrapper">
-        <div class="frame">
-            <img class="img" src="../../assets/info.PNG" alt="Club Card">
-        </div>
-    </div>
-    <br>
-    <!-- Alignment of vertically oversized image -->
-    <div class="outer-wrapper">
-        <div class="frame">
-            <img class="img" src="../../assets/comments.PNG" alt="Flying Kites">
-        </div>
-    </div>
-    <br>
-  <!-- Alignment of horizontally oversized image -->
-
-    <div class="outer-wrapper">
-        <div class="frame">
-            <img class="img" src="../../assets/trophies.PNG" alt="Cloudy Sky">
-      </div>
-    </div>
+<div class="frame">
+   <img src="http://jsfiddle.net/img/logo.png" height=250 />
+</div>
+<div class="frame">
+   <img src="http://jsfiddle.net/img/logo.png" height=250 />
+</div>
+<div class="frame">
+   <img src="http://jsfiddle.net/img/logo.png" height=250 />
+</div>
           
           
       
