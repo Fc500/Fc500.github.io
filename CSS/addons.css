@@ -170,7 +170,8 @@ border-radius: 5px;
 
 .description {
 background: #00327d;
-padding: 2%;
-border-radius: 5px;
-width: 75%;
+padding: 4%;
+border-radius: 25px;
+width: 50%;
+margin: auto;
 }
