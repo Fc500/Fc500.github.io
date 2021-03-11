@@ -135,10 +135,10 @@ div.scroll {
 /* The Close Button */
 .close2 {
   color: #aaaaaa;
-  width: 40px;
+  width: 60px;
   position: absolute;
   top: 80px;
-  left: 60px;
+  left: 70px;
 }
 
 .close2:hover,
