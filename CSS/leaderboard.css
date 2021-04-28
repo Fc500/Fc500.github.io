@@ -20,3 +20,11 @@ font-weight:normal;
 font-style:normal;
 }
 
+.middle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+
