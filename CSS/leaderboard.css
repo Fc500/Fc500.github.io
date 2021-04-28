@@ -6,3 +6,17 @@ html {
     background-size: cover;
     background-attachment: fixed;
 }
+
+
+h1 {
+font-family: 'pusabregular', Arial, sans-serif;
+font-weight:normal;
+font-style:normal;
+}
+
+.pusab {
+    font-family: 'pusabregular', Arial, sans-serif;
+font-weight:normal;
+font-style:normal;
+}
+
