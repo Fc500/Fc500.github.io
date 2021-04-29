@@ -67,8 +67,8 @@ tr:nth-child(even) {
 <p>List below</p>
 
 <!-- Rankings -->
-<a id="leaderboard"> <h1>Leaderboards!</h1></a>
-    <table class="pusab">
+<a id="leaderboard"> <h1 class="middle">Leaderboards!</h1></a>
+    <table class="pusab middle">
   <tr>
     <th>Rank</th>
     <th>Player</th>
@@ -103,7 +103,7 @@ tr:nth-child(even) {
 </br>
 </br>
     <!-- The Points system -->
-    <button class="button pusab" onclick="ShowAndHide()">Click to show the points system!</button>
+    <button class="button pusab middle" onclick="ShowAndHidePoints()">Click to show the points system!</button>
 
     <div id="pointsSystem" hidden> 
       <h2>Points system</h2>
@@ -144,14 +144,39 @@ tr:nth-child(even) {
 </div>
   </br>
     </br>
+<button class="button pusab middle" onclick="ShowAndHideChangelog()">Click to show the website changelog :)</button>
+  <div class="changelog">
+    <h2>Update 1.0.0</h2>
+    <ul>
+      <li>Start of the new leaderboards!</li>
+      <li>Made the webpage</li>
+      <li>Created basic ranking system</li>
+      <li>Made placeholder leaderboard</li>
+    </ul>
+    <h2>Update 1.0.1</h2>
+    <ul>
+      <li>Points system is now hidden by default</li>
+      <li>Added button to toggle the visibility of the Points System</li>
+      <li>Replace placeholder leaderboard with submitted responses</li>
+      <li>Added changelog :)</li>
+    </ul>
+</div>
   <h6>Copyright 2021 by FcStudios Inc. All rights reserved.</h6>
 <script>
-function ShowAndHide() {
+function ShowAndHidePoints() {
     var x = document.getElementById('pointsSystem');
     if (x.style.display == 'none') {
         x.style.display = 'block';
     } else {
         x.style.display = 'none';
+    }
+}
+  function ShowAndHideChangelog() {
+    var y = document.getElementById('changelog');
+    if (y.style.display == 'none') {
+        y.style.display = 'block';
+    } else {
+        y.style.display = 'none';
     }
 }
 </script>
