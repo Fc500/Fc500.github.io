@@ -34,7 +34,7 @@ tr:nth-child(even) {
 }
 </style>
   </head>
-  <body>
+  <body onload="Disclaimer();">
     <!-- Title info -->
       <img class="title, middle" src="../assets/leaderboard_title2.PNG">
       <img class="title, middle" style="width: 50%" src="../assets/leaderboard_subtitle.PNG">
@@ -163,6 +163,11 @@ tr:nth-child(even) {
 </div>
   <h6>Copyright 2021 by FcStudios Inc. All rights reserved.</h6>
 <script>
+  
+  function Disclaimer() { 
+    window.alert("I am an alert box!");
+  }
+  
 function ShowAndHidePoints() {
     var x = document.getElementById('pointsSystem');
     if (x.style.display == 'none') {
