@@ -54,4 +54,23 @@ font-style:normal;
     border-radius: 5px;
 }
 
+.button2 {
+  background-color: #ffffff;
+  border: 1px solid #b5b5b5;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 2px 2px;
+  cursor: pointer;
+    color: white;
+    text-shadow: -1px 1px 2px #000,
+                  1px 1px 2px #000,
+                  1px -1px 0 #000,
+                  -1px -1px 0 #000;
+     font-family: 'pusabregular', Arial, sans-serif;
+font-weight:normal;
+font-style:normal;
+}
+
 
