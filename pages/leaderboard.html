@@ -253,9 +253,11 @@ tr:nth-child(even) {
  window.onload = function Disclaimer() { 
    localStorage.setItem("disclaimer", "");
    a = localStorage.getItem("disclaimer");
-   if (a != "true") {
+   if (a !== "true") {
        window.alert("DISCLAIMER\nThis page is still a work in progress :)");
        localStorage.setItem("disclaimer", "true");
+   } else {
+     window.alert("DISCLAIMER\hi :)");
    }
   }
   
