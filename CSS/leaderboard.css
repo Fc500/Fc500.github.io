@@ -73,6 +73,13 @@ font-weight:normal;
 font-style:normal;
 }
 
+
+.account {
+    position: absolute;
+    left: 1%;
+    width: 4%;
+}
+
 /* MODAL */
 
 
