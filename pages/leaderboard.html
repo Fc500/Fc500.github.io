@@ -50,7 +50,7 @@ tr:nth-child(even) {
       <img class="title, middle" style="width: 50%" src="../assets/leaderboard_subtitle.PNG">
       <img class="title, middle" style="width: 75%" src="../assets/leaderboards_description.PNG">
     <h2>ACCOUNT MAKING TESTING IN PROGRESS!</h2> 
-    <h3>This may cause the website to become unstable from time to time :/</p>
+    <h3>This may cause the website to become unstable from time to time :/</h3>
     <!-- The Leaderboard -->
     
     <!-- Method for changing the Leaderboard -->
@@ -252,8 +252,7 @@ tr:nth-child(even) {
   
  
  window.onload = function Disclaimer() { 
-   localStorage.setItem("disclaimer", "");
-   a = localStorage.getItem("disclaimer");
+   var a = localStorage.setItem("disclaimer", "");
    if (a !== "true") {
        window.alert("DISCLAIMER\nThis page is still a work in progress :)");
        localStorage.setItem("disclaimer", "true");
