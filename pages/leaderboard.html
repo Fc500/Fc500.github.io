@@ -47,6 +47,7 @@ tr:nth-child(even) {
     <script src=".../JS/leaderboard.js"></script>
     <script>
  window.onload = function Disclaimer() { 
+    window.alert("DISCLAIMER\nThis page is stills :)");
      if (localStorage.getItem("disclaimer") === "true") {
        
        localStorage.setItem("disclaimer", "true");
@@ -90,6 +91,19 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     
+        function getInfo() {
+    var usernameInfo = document.login.uname.value;
+    var passwordInfo = document.login.psw.value;
+    localStorage.setItem("username", usernameInfo);
+    localStorage.setItem("password", passwordInfo);
+    choosePlayer();
+  }
+        function loginCheck() {
+    if (localStorage.getItem("loggedin") === "true") {
+        document.getElementById("p2").innerHTML = "Hello Fc500!";
+        window.alert("Welcome back Fc500! :)");
+    }
+  }
     </script>
     <!-- Title info -->
       <img src="../assets/account.PNG" class="account" id="id03" onclick="document.getElementById('id01').style.display='block'">
