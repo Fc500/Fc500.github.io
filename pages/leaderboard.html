@@ -252,14 +252,14 @@ tr:nth-child(even) {
   
  
  window.onload = function Disclaimer() { 
-   var a = localStorage.setItem("disclaimer", "");
-   if (a !== "true") {
-       window.alert("DISCLAIMER\nThis page is still a work in progress :)");
+   if (localStorage.getItem("disclaimer") === "true") {
+       
        localStorage.setItem("disclaimer", "true");
    } else {
-     window.alert("DISCLAIMER\hi :)");
+     window.alert("DISCLAIMER\nThis page is still a work in progress :)");
+     localStorage.setItem("disclaimer", "true");
    }
-  }
+  }  
   
 function ShowAndHidePoints() {
     var x = document.getElementById('pointsSystem');
