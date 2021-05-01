@@ -270,12 +270,13 @@ tr:nth-child(even) {
    window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
     if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
-       testing ();
+       testing();
    } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
-     testing ();
+     testing();
    }
+ }
      
       function ShowAndHidePoints() {
     var x = document.getElementById('pointsSystem');
