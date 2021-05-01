@@ -319,14 +319,14 @@ window.onclick = function(event) {
     if (localStorage.getItem("username") === "Fc500") {
      document.getElementById("p2").innerHTML = "Hello Fc500!";
      window.alert("Login Sucessful! Welcome Fc500!");
-      localStorage.setItem("loggedin", "true");
+     localStorage.setItem("loggedin", "true");
     }
   }
   
   function loginCheck() {
-    if (localStorage.getItem("username") === "Fc500") {
+    if (localStorage.getItem("loggedin") === "true") {
         document.getElementById("p2").innerHTML = "Hello Fc500!";
-        window.alert("Welcome back Fc500!");
+        window.alert("Welcome back Fc500! :)");
     }
   }
 </script>
