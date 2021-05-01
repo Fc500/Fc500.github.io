@@ -88,10 +88,15 @@ window.onclick = function(event) {
     var passwordInfo = document.login.psw.value;
     localStorage.setItem("username", usernameInfo);
     localStorage.setItem("password", passwordInfo);
-    choosePlayer();
+    display();
   } 
       
-  
+  function display() {
+  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')
+  message = "<ul><li><b>USERNAME: </b>" + document.login.uname.value;
+  message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
+  DispWin.document.write(message);
+}
     </script>
     <!-- Title info -->
       <img src="../assets/account.PNG" class="account" id="id03" onclick="document.getElementById('id01').style.display='block'">
