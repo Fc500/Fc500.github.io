@@ -46,8 +46,8 @@ tr:nth-child(even) {
   <body>
     <!-- Title info -->
       <img src="../assets/account.PNG" class="account" onclick="document.getElementById('id01').style.display='block'">
-    <p id="identification">e</p>
-      <img class="title, middle" src="../assets/leaderboard_title2.PNG">
+    <p id="identification" class="login">e</p>
+      <img class="title, middle" src="../assets/leaderboard_title2.PNG" style="position: absolute">
       <img class="title, middle" style="width: 50%" src="../assets/leaderboard_subtitle.PNG">
       <img class="title, middle" style="width: 75%" src="../assets/leaderboards_description.PNG">
     <h2>ACCOUNT MAKING TESTING IN PROGRESS!</h2> 
@@ -267,6 +267,7 @@ tr:nth-child(even) {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
    }
+   loginCheck();
   }  
   
 function ShowAndHidePoints() {
@@ -319,6 +320,12 @@ window.onclick = function(event) {
      document.getElementById("identification").innerHTML = "Hello Fc500!";
      window.alert("Login Sucessful! Welcome Fc500!");
       localStorage.setItem("loggedin", "true");
+    }
+  }
+  
+  function loginCheck() {
+    if (localStorage.getItem("loggedin") === "true") {
+        document.getElementbyId("identification").innherHTML = "Hello Fc500!";
     }
   }
 </script>
