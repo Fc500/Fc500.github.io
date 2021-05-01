@@ -12,6 +12,10 @@
    accountSwitching(); */
    alert("please work...");
   }  
+
+onload = function Disclaimer() { 
+ alert("aAAAAA");
+}
   
   
 function lastHope() {
