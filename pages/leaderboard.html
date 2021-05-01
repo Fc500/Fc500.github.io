@@ -357,7 +357,11 @@ window.onclick = function(event) {
   function choosePlayer() {
     if (localStorage.getItem("username") === "Fc500") {
      document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
-     window.alert("Login Sucessful! Welcome Fc500!");
+     window.alert("Login Sucessful! Welcome" + localStorage.getItem("username");
+     localStorage.setItem("loggedin", "true");
+    } else if (localStorage.getItem("username") === "ItzNisha") {
+     document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
+     window.alert("Login Sucessful! Welcome" + localStorage.getItem("username");
      localStorage.setItem("loggedin", "true");
     }
   }
@@ -374,6 +378,7 @@ window.onclick = function(event) {
     localStorage.removeItem("password");
     localStorage.removeItem("disclaimer");
     localStorage.removeItem("loggedin");
+    location.reload();
   }
 </script>
   </body>
