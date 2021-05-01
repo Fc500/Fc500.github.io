@@ -272,6 +272,7 @@ tr:nth-child(even) {
    accountSwitching(); 
    setInfo();
    testing ();
+   
      if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
        testing ();
@@ -281,11 +282,12 @@ tr:nth-child(even) {
      testing ();
    }
    
-   if (localStorage.getItem("loggedin") {
+   
+   if (localStorage.getItem("loggedin") === "true") {
       if (confirm("Do you want to load your data?") == true) {
             document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
         } else {
-            document.getElementById("p2").innerHTML = "Hello Unknown!");
+            document.getElementById("p2").innerHTML = "Hello Guest425i54i5!");
         }
       
      }
