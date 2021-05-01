@@ -267,16 +267,15 @@ tr:nth-child(even) {
     <script>
  window.onload = function Disclaimer() { 
    window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
-     if (localStorage.getItem("disclaimer") === "true") {
-       
+   loginCheck();
+   accountSwitching(); 
+   setInfo();
+     if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
    } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
    }
-   loginCheck();
-   accountSwitching(); 
-   setInfo();
   }  
       function ShowAndHidePoints() {
     var x = document.getElementById('pointsSystem');
@@ -309,7 +308,6 @@ window.onclick = function(event) {
     localStorage.setItem("username", usernameInfo);
     localStorage.setItem("password", passwordInfo);
     display();
-    setInfo();
   } 
       
   function display() {
