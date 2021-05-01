@@ -255,7 +255,13 @@ tr:nth-child(even) {
     </div>
   </form>
 </div>
-
+<div id="id02" class="modal">
+  <span class="modal-content animate">
+  <h2>Account</h2>
+  <p>Account Info here:</p>
+  </span>
+</div>
+  
 <script>
   
  
@@ -268,6 +274,7 @@ tr:nth-child(even) {
      localStorage.setItem("disclaimer", "true");
    }
    loginCheck();
+   accountSwitching();
   }  
   
 function ShowAndHidePoints() {
@@ -288,7 +295,15 @@ function ShowAndHidePoints() {
 }
   
   // Get the modal
-var modal = document.getElementById('id01');
+  function accountSwitching() {
+    if (localStorage.getItem("loggedin") === "true") {
+        var modal = document.getElementById('id02');
+      window.alert("Test I");
+    } else {
+        var modal = document.getElementById('id01');
+      window.alert("Test II");
+    }
+  }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
