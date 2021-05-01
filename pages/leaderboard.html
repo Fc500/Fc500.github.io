@@ -221,7 +221,7 @@ tr:nth-child(even) {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" action="/action_page.php" method="post" name="login">
     <div class="imgcontainer">
       <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
       <img src="https://pbs.twimg.com/profile_images/1273212021262159872/oQq2Q5UH_400x400.jpg" alt="Avatar" class="avatar"> 
@@ -234,7 +234,7 @@ tr:nth-child(even) {
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
+      <button type="submit" onclick="display()">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -286,6 +286,14 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+  
+  function display() {
+  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')
+  message = "<ul><li><b>NAME: </b>" + document.form1.yourname.value;
+  message += "<li><b>ADDRESS: </b>" + document.form1.address.value;
+  message += "<li><b>PHONE: </b>" + document.form1.phone.value + "</ul>";
+  DispWin.document.write(message);
 }
 </script>
   </body>
