@@ -1,4 +1,32 @@
-   function ShowAndHideChangelog() {
+ /* var modal = ""; */
+ 
+ window.onload = function Disclaimer() { 
+   /*if (localStorage.getItem("disclaimer") === "true") {
+       
+       localStorage.setItem("disclaimer", "true");
+   } else {
+     window.alert("DISCLAIMER\nThis page is still a work in progress :)");
+     localStorage.setItem("disclaimer", "true");
+   }
+   loginCheck();
+   accountSwitching(); */
+   alert("please work...");
+  }  
+  
+  
+function lastHope() {
+  alert("help me");
+}
+function ShowAndHidePoints() {
+    var x = document.getElementById('pointsSystem');
+    if (x.style.display == 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}   
+
+function ShowAndHideChangelog() {
     var y = document.getElementById('changelog');
     if (y.style.display == 'none') {
         y.style.display = 'block';
