@@ -82,7 +82,14 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-      
+   function choosePlayer() {
+     if (localStorage.getItem("username") == "Fc500") {
+     document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
+     window.alert("Login Sucessful! Welcome" + localStorage.getItem("username");
+     localStorage.setItem("loggedin", "true");
+    } 
+  }
+     
       function getInfo() {
     var usernameInfo = document.login.uname.value;
     var passwordInfo = document.login.psw.value;
@@ -90,14 +97,7 @@ window.onclick = function(event) {
     localStorage.setItem("password", passwordInfo);
     choosePlayer();
   } 
-      function choosePlayer() {
-     if (localStorage.getItem("username") === "Fc500") {
-     document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
-     window.alert("Login Sucessful! Welcome" + localStorage.getItem("username");
-     localStorage.setItem("loggedin", "true");
-    } 
-  }
-  
+      
   
     </script>
     <!-- Title info -->
@@ -129,7 +129,7 @@ window.onclick = function(event) {
       <li>Fc500</li>
       <li>R3alityy</li>
       <li>Imanoob</li>
-      <li>QwertZer</li>
+      <li>QwertZer (Happy now lol)</li>
     </ul>
     </br>
   </br>
