@@ -280,6 +280,15 @@ tr:nth-child(even) {
      localStorage.setItem("disclaimer", "true");
      testing ();
    }
+   
+   if (localStorage.getItem("loggedin") {
+      if (confirm("Do you want to load your data?") == true) {
+            document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
+        } else {
+            document.getElementById("p2").innerHTML = "Hello Unknown!");
+        }
+      
+     }
   }  
       function ShowAndHidePoints() {
     var x = document.getElementById('pointsSystem');
