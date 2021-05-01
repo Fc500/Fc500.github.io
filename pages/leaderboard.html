@@ -318,6 +318,7 @@ window.onclick = function(event) {
     if (localStorage.getItem("username") === "Fc500") {
      document.getElementById("identification").innerHTML = "Hello Fc500!";
      window.alert("Login Sucessful! Welcome Fc500!");
+      localStorage.setItem("loggedin", "true");
     }
   }
 </script>
