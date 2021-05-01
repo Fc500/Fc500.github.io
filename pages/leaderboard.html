@@ -82,13 +82,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-   function choosePlayer() {
-     if (localStorage.getItem("username") == "Fc500") {
-     document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
-     window.alert("Login Sucessful! Welcome" + localStorage.getItem("username");
-     localStorage.setItem("loggedin", "true");
-    } 
-  }
      
       function getInfo() {
     var usernameInfo = document.login.uname.value;
@@ -122,7 +115,7 @@ window.onclick = function(event) {
     
     <!-- Leaderboard Description -->
     
-    <p>This list is a fun non-official rankings of the people on the GDFandom! To go straight to the Leaderboard, click <a href="#leaderboard">here</a>.</p>
+    <p>This list is a fun non-official rankings of the people on the GDFandom and Fan Wiki! To go straight to the Leaderboard, click <a href="#leaderboard">here</a>.</p>
     <a href="https://forms.gle/2PFHL3mFPxjtsUXQ8"><h3>To submit a record, click here!</h3></a>
     <h4>List Moderators</h4>
     <ul>
