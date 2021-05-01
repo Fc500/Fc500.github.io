@@ -89,6 +89,7 @@ window.onclick = function(event) {
     localStorage.setItem("username", usernameInfo);
     localStorage.setItem("password", passwordInfo);
     display();
+    setInfo();
   } 
       
   function display() {
@@ -97,10 +98,14 @@ window.onclick = function(event) {
   message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
   DispWin.document.write(message);
 }
+      
+  function setInfo() {
+    document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
+  }
     </script>
     <!-- Title info -->
       <img src="../assets/account.PNG" class="account" id="id03" onclick="document.getElementById('id01').style.display='block'">
-    <p id="p2" class="login">e</p>
+    <p id="p2" class="login">Hello Unknown!</p>
       <img class="title, middle" src="../assets/leaderboard_title2.PNG" style="width: 80%">
       <img class="title, middle" style="width: 45%" src="../assets/leaderboard_subtitle.PNG">
       <img class="title, middle" style="width: 65%" src="../assets/leaderboards_description.PNG">
