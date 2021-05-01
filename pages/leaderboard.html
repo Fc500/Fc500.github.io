@@ -45,67 +45,7 @@ tr:nth-child(even) {
   </head>
   <body>
     <script src=".../JS/leaderboard.js"></script>
-    <script>
- window.onload = function Disclaimer() { 
-   window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
-     if (localStorage.getItem("disclaimer") === "true") {
-       
-       localStorage.setItem("disclaimer", "true");
-   } else {
-     window.alert("DISCLAIMER\nThis page is still a work in progress :)");
-     localStorage.setItem("disclaimer", "true");
-   }
-   loginCheck();
-   accountSwitching(); 
-   setInfo();
-  }  
-      function ShowAndHidePoints() {
-    var x = document.getElementById('pointsSystem');
-    if (x.style.display == 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}   
-
-function ShowAndHideChangelog() {
-    var y = document.getElementById('changelog');
-    if (y.style.display == 'none') {
-        y.style.display = 'block';
-    } else {
-        y.style.display = 'none';
-    }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-     
-      function getInfo() {
-    var usernameInfo = document.login.uname.value;
-    var passwordInfo = document.login.psw.value;
-    localStorage.setItem("username", usernameInfo);
-    localStorage.setItem("password", passwordInfo);
-    display();
-    setInfo();
-  } 
-      
-  function display() {
-  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')
-  message = "<ul><li><b>USERNAME: </b>" + document.login.uname.value;
-  message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
-  DispWin.document.write(message);
-}
-      
-  function setInfo() {
-    document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
-    window.alert("USERNAME: " + localStorage.getItem("username"));
-  }
-    </script>
-    <!-- Title info -->
+      <!-- Title info -->
       <img src="../assets/account.PNG" class="account" id="id03" onclick="document.getElementById('id01').style.display='block'">
     <p id="p2" class="login">Hello Unknown!</p>
       <img class="title, middle" src="../assets/leaderboard_title2.PNG" style="width: 80%">
@@ -324,7 +264,66 @@ window.onclick = function(event) {
     </div>
   </form>
 </div>
+    <script>
+ window.onload = function Disclaimer() { 
+   window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
+     if (localStorage.getItem("disclaimer") === "true") {
+       
+       localStorage.setItem("disclaimer", "true");
+   } else {
+     window.alert("DISCLAIMER\nThis page is still a work in progress :)");
+     localStorage.setItem("disclaimer", "true");
+   }
+   loginCheck();
+   accountSwitching(); 
+   setInfo();
+  }  
+      function ShowAndHidePoints() {
+    var x = document.getElementById('pointsSystem');
+    if (x.style.display == 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}   
 
+function ShowAndHideChangelog() {
+    var y = document.getElementById('changelog');
+    if (y.style.display == 'none') {
+        y.style.display = 'block';
+    } else {
+        y.style.display = 'none';
+    }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+     
+      function getInfo() {
+    var usernameInfo = document.login.uname.value;
+    var passwordInfo = document.login.psw.value;
+    localStorage.setItem("username", usernameInfo);
+    localStorage.setItem("password", passwordInfo);
+    display();
+    setInfo();
+  } 
+      
+  function display() {
+  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')
+  message = "<ul><li><b>USERNAME: </b>" + document.login.uname.value;
+  message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
+  DispWin.document.write(message);
+}
+      
+  function setInfo() {
+    document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
+    window.alert("USERNAME: " + localStorage.getItem("username"));
+  }
+    </script>
 
 
 <p>window.onload = function Disclaimer() { 
