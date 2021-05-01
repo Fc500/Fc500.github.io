@@ -80,14 +80,8 @@ function ShowAndHideChangelog() {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    
-        function getInfo() {
-    var usernameInfo = document.login.uname.value;
-    var passwordInfo = document.login.psw.value;
-    localStorage.setItem("username", usernameInfo);
-    localStorage.setItem("password", passwordInfo);
-    choosePlayer();
-  }
+    }
+}
     </script>
     <!-- Title info -->
       <img src="../assets/account.PNG" class="account" id="id03" onclick="document.getElementById('id01').style.display='block'">
