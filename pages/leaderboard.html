@@ -268,12 +268,7 @@ tr:nth-child(even) {
     <script>
  window.onload = function Disclaimer() { 
    window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
-   loginCheck();
-   accountSwitching(); 
-   setInfo();
-   testing ();
-   
-     if (localStorage.getItem("disclaimer") === "true") {   
+    if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
        testing ();
    } else {
@@ -281,17 +276,7 @@ tr:nth-child(even) {
      localStorage.setItem("disclaimer", "true");
      testing ();
    }
-   
-   
-   if (localStorage.getItem("loggedin") === "true") {
-      if (confirm("Do you want to load your data?") == true) {
-            document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
-        } else {
-            document.getElementById("p2").innerHTML = "Hello Guest425i54i5!");
-        }
-      
-     }
-  }  
+     
       function ShowAndHidePoints() {
     var x = document.getElementById('pointsSystem');
     if (x.style.display == 'none') {
@@ -333,25 +318,6 @@ window.onclick = function(event) {
   DispWin.document.write(message);
 }
       
-  function setInfo() {
-    document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
-    window.alert("USERNAME: " + localStorage.getItem("username"));
-  }
-      
-     function accountSwitching() {
-    if (localStorage.getItem("loggedin") === "true") {
-        modal = document.getElementById('id02');
-        document.getElementById("id03").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
-        window.alert("Test I\nYou are logged in! Welcome " + localStorage.getItem("username"));
-    } else {
-       modal = document.getElementById('id01');
-        window.alert("Test II\nYou are not logged in!");
-    }
-  }
-      
-        function testing() {
-          document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
-        }
     </script>
 
 
