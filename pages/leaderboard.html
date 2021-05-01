@@ -258,7 +258,7 @@ tr:nth-child(even) {
 
 
 <div id="id02" class="modal">
-<form class="modal-content animate">
+<span class="modal-content animate">
     <div class="imgcontainer">
       <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
       <img src="https://static.wikia.nocookie.net/9e5587f1-46cb-44c0-ba98-31c645b23641" alt="Avatar" class="avatar"> 
@@ -282,7 +282,7 @@ tr:nth-child(even) {
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button> 
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
-  </form>
+  </span>
 </div>
   
 <script>
@@ -322,7 +322,7 @@ function ShowAndHidePoints() {
     if (localStorage.getItem("loggedin") === "true") {
         modal = document.getElementById('id02');
         document.getElementById("id03").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
-        window.alert("Test I\nYou are logged in!");
+        window.alert("Test I\nYou are logged in! Welcome" + localStorage.getItem("username"));
     } else {
        modal = document.getElementById('id01');
         window.alert("Test II\nYou are not logged in!");
