@@ -271,11 +271,14 @@ tr:nth-child(even) {
    loginCheck();
    accountSwitching(); 
    setInfo();
+   testing ();
      if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
+       testing ();
    } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
+     testing ();
    }
   }  
       function ShowAndHidePoints() {
