@@ -69,6 +69,7 @@ tr:nth-child(even) {
     
     <p>This list is a fun non-official rankings of the people on the GDFandom and Fan Wiki! To go straight to the Leaderboard, click <a href="#leaderboard">here</a>.</p>
     <a href="https://forms.gle/2PFHL3mFPxjtsUXQ8"><h3>To submit a record, click here!</h3></a>
+    <button onclick="testing()">Add Account Info</button>   
     <h4>List Moderators</h4>
     <ul>
       <li>Fc500</li>
@@ -333,7 +334,9 @@ window.onclick = function(event) {
     }
   }
       
-        
+        function testing() {
+          document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
+        }
     </script>
 
 
