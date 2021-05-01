@@ -298,10 +298,11 @@ function ShowAndHidePoints() {
   function accountSwitching() {
     if (localStorage.getItem("loggedin") === "true") {
         var modal = document.getElementById('id02');
-      window.alert("Test I");
+        document.getElementById("myAnchor").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
+        window.alert("Test I\nYou are logged in!");
     } else {
         var modal = document.getElementById('id01');
-      window.alert("Test II");
+        window.alert("Test II\nYou are NOT logged in!");
     }
   }
 
