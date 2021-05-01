@@ -188,7 +188,7 @@ tr:nth-child(even) {
     <td>List Demon</td>
     <td>Starts at 7, +0.1 for every one up (eg. 150 = 7, 149 = 7.1, etc.)</td>
   </tr>
-    </table>
+</table>
 </div>
   </br>
     </br>
@@ -265,10 +265,10 @@ tr:nth-child(even) {
 </div>
 
 
-<div id="id02" class="modal">
+<!-- <div id="id02" class="modal">
 <div class="modal-content animate">
     <div class="imgcontainer">
-      <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> 
       <img src="https://static.wikia.nocookie.net/9e5587f1-46cb-44c0-ba98-31c645b23641" alt="Avatar" class="avatar"> 
     </div>
 
@@ -277,16 +277,16 @@ tr:nth-child(even) {
   <button onclick="resetData()">Would you like to reset your data?</button>
     </div>
 
-        <!-- <div class="container" style="background-color:#f1f1f1"> -->
+        <div class="container" style="background-color:#f1f1f1"> 
     <div class="container">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button> 
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
   </div>
-</div>
+</div> -->
   
 <script>
-  var modal = "";
+ /* var modal = ""; */
  
  window.onload = function Disclaimer() { 
    if (localStorage.getItem("disclaimer") === "true") {
@@ -348,9 +348,6 @@ window.onclick = function(event) {
     var passwordInfo = document.login.psw.value;
     localStorage.setItem("username", usernameInfo);
     localStorage.setItem("password", passwordInfo);
-    
-    /* localStorage.setItem("username2", document.login.uname.value);
-    localStorage.setItem("password2", document.login.psw.value); */
     choosePlayer();
   }
   
@@ -369,13 +366,6 @@ window.onclick = function(event) {
     }
   }
   
-  /* function resetData() {
-    localStorage.removeItem("username");
-    localStorage.removeItem("password");
-    localStorage.removeItem("disclaimer");
-    localStorage.removeItem("loggedin");
-    location.reload(); 
-  } */
-</script>
+    </script>
   </body>
 </html>
