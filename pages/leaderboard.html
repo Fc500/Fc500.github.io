@@ -308,15 +308,19 @@ window.onclick = function(event) {
     var passwordInfo = document.login.psw.value;
     localStorage.setItem("username", usernameInfo);
     localStorage.setItem("password", passwordInfo);
-    window.alert("Almost there!");
+    
+    /* localStorage.setItem("username2", document.login.uname.value);
+    localStorage.setItem("password2", document.login.psw.value); */
     choosePlayer();
   }
   
   function choosePlayer() {
     if (localStorage.getItem("username") === "Fc500") {
      document.getElementById("identification").innerHTML = "Hello Fc500!";
-     window.alert("Login Sucessful!");
-    }
+     window.alert("Login Sucessful! Welcome Fc500!");
+    } else {
+      window.alert("Login Failed!);
+     }
   }
 </script>
   </body>
