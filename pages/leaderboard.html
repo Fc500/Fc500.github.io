@@ -91,7 +91,6 @@ window.onclick = function(event) {
     localStorage.setItem("password", passwordInfo);
     display();
     setInfo();
-    window.alert("USERNAME: " + localStorage.getItem("username"));
   } 
       
   function display() {
@@ -103,6 +102,7 @@ window.onclick = function(event) {
       
   function setInfo() {
     document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
+    window.alert("USERNAME: " + localStorage.getItem("username"));
   }
     </script>
     <!-- Title info -->
