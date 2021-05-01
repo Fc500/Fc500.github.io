@@ -301,6 +301,13 @@ window.onclick = function(event) {
   message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
   DispWin.document.write(message);
 }
+  
+  functions getInfo() {
+    var usernameInfo = document.login.uname.value;
+    var passwordInfo = document.login.psw.value;
+    localStorage.setItem("username", usernameInfo);
+    localStorage.setItem("password", passwordInfo);
+  }
 </script>
   </body>
 </html>
