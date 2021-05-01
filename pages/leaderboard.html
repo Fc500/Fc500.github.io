@@ -321,6 +321,17 @@ window.onclick = function(event) {
     document.getElementById("p2").innerHTML = "Hello " + localStorage.getItem("username");
     window.alert("USERNAME: " + localStorage.getItem("username"));
   }
+      
+     function accountSwitching() {
+    if (localStorage.getItem("loggedin") === "true") {
+        modal = document.getElementById('id02');
+        document.getElementById("id03").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
+        window.alert("Test I\nYou are logged in! Welcome " + localStorage.getItem("username"));
+    } else {
+       modal = document.getElementById('id01');
+        window.alert("Test II\nYou are not logged in!");
+    }
+  }
     </script>
 
 
