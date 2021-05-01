@@ -46,6 +46,7 @@ tr:nth-child(even) {
   <body>
     <!-- Title info -->
       <img src="../assets/account.PNG" class="account" onclick="document.getElementById('id01').style.display='block'">
+    <h5 id="identification">Hi Unknown!</h5>
       <img class="title, middle" src="../assets/leaderboard_title2.PNG">
       <img class="title, middle" style="width: 50%" src="../assets/leaderboard_subtitle.PNG">
       <img class="title, middle" style="width: 75%" src="../assets/leaderboards_description.PNG">
@@ -241,7 +242,7 @@ tr:nth-child(even) {
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit" onclick="display()">Login</button>
+      <button type="submit" onclick="getInfo()">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -302,11 +303,20 @@ window.onclick = function(event) {
   DispWin.document.write(message);
 }
   
-  functions getInfo() {
+  function getInfo() {
     var usernameInfo = document.login.uname.value;
     var passwordInfo = document.login.psw.value;
     localStorage.setItem("username", usernameInfo);
     localStorage.setItem("password", passwordInfo);
+    window.alert("Almost there!");
+    choosePlayer();
+  }
+  
+  function choosePlayer() {
+    if (localStorage.getItem("username") === "Fc500") {
+     document.getElementById("identification").innerHTML = "Hello Fc500!";
+     window.alert("Login Sucessful!");
+    }
   }
 </script>
   </body>
