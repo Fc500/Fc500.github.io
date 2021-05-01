@@ -212,6 +212,12 @@ tr:nth-child(even) {
       <li>Rankings are now up to 7 people</li>
       <li>Added the link to the Submission Form</li>
     </ul>
+    <h2>Update 1.0.3</h2>
+    <ul>
+      <li>The "DISCLAIMER" notice now disappers after the firs time visiting</li>
+      <li>Started working on the account system</li>
+      <li>Rankings are now up to 10 people</li>
+    </ul>
 </div>
 </br>
 </br>
@@ -290,9 +296,8 @@ window.onclick = function(event) {
   
   function display() {
   DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')
-  message = "<ul><li><b>NAME: </b>" + document.form1.yourname.value;
-  message += "<li><b>ADDRESS: </b>" + document.form1.address.value;
-  message += "<li><b>PHONE: </b>" + document.form1.phone.value + "</ul>";
+  message = "<ul><li><b>USERNAME: </b>" + document.login.uname.value;
+  message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
   DispWin.document.write(message);
 }
 </script>
