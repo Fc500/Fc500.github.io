@@ -45,7 +45,7 @@ tr:nth-child(even) {
   </head>
   <body>
     <!-- Title info -->
-      <img src="../assets/account.PNG" class="account" onclick="document.getElementById('id01').style.display='block'">
+      <img src="../assets/account.PNG" class="account" id="id03" onclick="document.getElementById('id01').style.display='block'">
     <p id="p2" class="login">e</p>
       <img class="title, middle" src="../assets/leaderboard_title2.PNG" style="width: 80%">
       <img class="title, middle" style="width: 45%" src="../assets/leaderboard_subtitle.PNG">
@@ -255,15 +255,38 @@ tr:nth-child(even) {
     </div>
   </form>
 </div>
+
+
 <div id="id02" class="modal">
-  <span class="modal-content animate">
-  <h2>Account</h2>
-  <p>Account Info here:</p>
-  </span>
+<form class="modal-content animate">
+    <div class="imgcontainer">
+      <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+      <img src="https://static.wikia.nocookie.net/9e5587f1-46cb-44c0-ba98-31c645b23641" alt="Avatar" class="avatar"> 
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username Data</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password Data</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit" onclick="getInfo()">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+        <!-- <div class="container" style="background-color:#f1f1f1"> -->
+    <div class="container">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button> 
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
 </div>
   
 <script>
-  
+  var modal = "";
  
  window.onload = function Disclaimer() { 
    if (localStorage.getItem("disclaimer") === "true") {
@@ -297,12 +320,12 @@ function ShowAndHidePoints() {
   // Get the modal
   function accountSwitching() {
     if (localStorage.getItem("loggedin") === "true") {
-        var modal = document.getElementById('id02');
-        document.getElementById("myAnchor").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
+        modal = document.getElementById('id02');
+        document.getElementById("id03").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
         window.alert("Test I\nYou are logged in!");
     } else {
-        var modal = document.getElementById('id01');
-        window.alert("Test II\nYou are NOT logged in!");
+       modal = document.getElementById('id01');
+        window.alert("Test II\nYou are not logged in!");
     }
   }
 
