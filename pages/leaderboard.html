@@ -324,9 +324,9 @@ window.onclick = function(event) {
   }
   
   function loginCheck() {
-    if (localStorage.getItem("loggedin") === "true") {
-        document.getElementbyId("p2").innherHTML = "Hello Fc500!";
-      window.alert("Welcome back Fc500!");
+    if (localStorage.getItem("username") === "Fc500") {
+        document.getElementById("p2").innerHTML = "Hello Fc500!";
+        window.alert("Welcome back Fc500!");
     }
   }
 </script>
