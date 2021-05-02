@@ -78,16 +78,17 @@ font-style:normal;
     position: absolute;
     left: 1%;
     width: 4%;
+    top: 0%;
 }
 .login {
     position: absolute;
     left: 1%;
-    top: 8%;
+    top: 10%;
 }
 .loginDesc {
     position: absolute;
     left: 1%;
-    top: 10%;
+    top: 12%;
 }
 /* MODAL */
 
