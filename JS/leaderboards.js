@@ -1,3 +1,5 @@
+
+
 window.onload = function Disclaimer() { 
    window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
     if (localStorage.getItem("disclaimer") === "true") {   
@@ -50,4 +52,9 @@ window.onclick = function(event) {
   message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
   DispWin.document.write(message);
 }
-    
+
+  function testing() {
+     document.getElementById('p2').innerHTML = localStorage.setItem("username");
+     window.alert("trying to log in...");
+  }
+   
