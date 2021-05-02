@@ -3,7 +3,9 @@ var modal = "";
 window.onload = function Disclaimer() {
   disclaimer(); 
   setUserInfo();
-  setModal();
+  if (localStorage.getItem("loggedin") != "true") {
+    setModal();
+  }
  }
 
 // The Dislcaimer
