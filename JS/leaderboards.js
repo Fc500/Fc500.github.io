@@ -3,6 +3,7 @@ var modal = "";
 window.onload = function Disclaimer() {
   disclaimer(); 
   setUserInfo();
+  setModal();
  }
 
 // The Dislcaimer
@@ -16,6 +17,7 @@ function disclaimer() {
    }  
 }
 
+// Getting user info
 function setUserInfo() {
   if (localStorage.getItem("username") != "") {
   document.getElementById("p2").innerHTML = localStorage.getItem("username");
@@ -24,6 +26,10 @@ function setUserInfo() {
   }
 }
 
+// By default sets the modal to be displayed to 01
+function setModal() {
+  modal = document.getElementById('id01');
+}
       function showAndHidePoints() {
     var x = document.getElementById('pointsSystem');
     if (x.style.display == 'none') {
