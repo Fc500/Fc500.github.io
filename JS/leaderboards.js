@@ -1,7 +1,6 @@
 
 
 window.onload = function Disclaimer() {
-  setUserInfo();
   disclaimer(); 
  }
 
