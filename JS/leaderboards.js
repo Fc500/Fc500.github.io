@@ -18,7 +18,7 @@ function disclaimer() {
 }
 
 function setUserInfo() {
-  document.getElementById("p2").innerHTML = "Paragraph changed!" + localStorage.getItem("username");
+  document.getElementById("p2").innerHTML = localStorage.getItem("username");
 }
 
       function showAndHidePoints() {
