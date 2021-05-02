@@ -7,6 +7,7 @@ window.onload = function Disclaimer() {
     setModal();
   } else {
     setUserPosition();
+    alert("Welcome back!");
   }
  }
 
