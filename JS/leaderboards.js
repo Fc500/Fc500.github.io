@@ -10,7 +10,6 @@ window.onload = function Disclaimer() {
 function disclaimer() {
   if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
-       window.alert("Would you like to load your data?");  
   } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
