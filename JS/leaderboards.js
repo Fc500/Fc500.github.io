@@ -5,6 +5,8 @@ window.onload = function Disclaimer() {
   setUserInfo();
   if (localStorage.getItem("loggedin") != "true") {
     setModal();
+  } else {
+    setUserPosition();
   }
  }
 
@@ -25,6 +27,7 @@ function setUserInfo() {
   document.getElementById("p2").innerHTML = localStorage.getItem("username");
   modal = document.getElementById('id02');
   document.getElementById("id03").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
+  document.getElementById("id04").innerHTML = "Hello " + localStorage.getItem("username") + "!";
   }
 }
 
@@ -81,4 +84,12 @@ function resetUserInfo() {
   modal = document.getElementById('id01');
   document.getElementById("id03").setAttribute("onclick", "document.getElementById('id01').style.display='block'");
   location.reload();
+}
+
+function setUserPosition() {
+  if (localStorage.getItem("username") == "Giginess") {
+    document.getElementById("Giginess").style.color = "gold";
+  } else if (localStorage.getItem("username") == "Deetusy3letus" {
+    document.getElementById("Deetusy3letus").style.color = "gold";
+  }
 }
