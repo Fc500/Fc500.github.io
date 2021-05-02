@@ -1,9 +1,9 @@
 
 
 window.onload = function Disclaimer() { 
-   window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
     if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
+       window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
        testing();
    } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
