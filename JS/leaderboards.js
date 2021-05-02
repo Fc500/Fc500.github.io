@@ -71,5 +71,5 @@ function resetUserInfo() {
   localStorage.removeItem("loggedin");
   modal = document.getElementById('id01');
   document.getElementById("id03").setAttribute("onclick", "document.getElementById('id01').style.display='block'");
-  document.location.reload();
+  location.reload();
 }
