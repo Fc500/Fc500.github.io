@@ -29,6 +29,7 @@ function setUserInfo() {
 // By default sets the modal to be displayed to 01
 function setModal() {
   modal = document.getElementById('id01');
+  document.getElementById("id03").setAttribute("onclick", "document.getElementById('id01').style.display='block'");
 }
       function showAndHidePoints() {
     var x = document.getElementById('pointsSystem');
