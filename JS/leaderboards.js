@@ -3,12 +3,10 @@
 window.onload = function Disclaimer() { 
     if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
-       window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
-       setTimeout(function(){ document.getElementById('p2').innerHTML = "ho:"); }, 6000);
+       window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");  
    } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
-     setTimeout(function(){ document.getElementById('p2').innerHTML = "ho:"); }, 6000);
    }
    
  }
