@@ -6,7 +6,6 @@ window.onload = function Disclaimer() {
   setUserPosition();
   if (localStorage.getItem("loggedin") != "true") {
     setModal();
-  } else {
   }
  }
 
