@@ -1,16 +1,19 @@
 
 
 window.onload = function Disclaimer() { 
-    if (localStorage.getItem("disclaimer") === "true") {   
+  Disclaimer(); 
+ }
+
+function Dislclaimer() {
+  if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
        window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");  
-   } else {
+  } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
    }
-   
- }
-     
+}
+
       function ShowAndHidePoints() {
     var x = document.getElementById('pointsSystem');
     if (x.style.display == 'none') {
