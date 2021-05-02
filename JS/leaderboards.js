@@ -4,14 +4,13 @@ window.onload = function Disclaimer() {
     if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
        window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");
-       testing();
+       setTimeout(function(){ document.getElementById('p2').innerHTML = "ho:"); }, 6000);
    } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
      testing();
    }
    
-    setTimeout(function(){ alert("Hello"); }, 3000);
  }
      
       function ShowAndHidePoints() {
