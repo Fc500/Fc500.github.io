@@ -1,6 +1,7 @@
 
 
-window.onload = function Disclaimer() { 
+window.onload = function Disclaimer() {
+  setUserInfo();
   disclaimer(); 
  }
 
@@ -9,12 +10,11 @@ window.onload = function Disclaimer() {
 function dislclaimer() {
   if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
-       window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");  
+       window.alert("Would you like to load your data?");  
   } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
-   }
-  setUserInfo();
+   }  
 }
 
 function setUserInfo() {
