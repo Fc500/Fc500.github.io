@@ -1,13 +1,13 @@
 
 
 window.onload = function Disclaimer() { 
-  Disclaimer(); 
+  disclaimer(); 
   setUserInfo();
  }
 
 // The Dislcaimer
 
-function Dislclaimer() {
+function dislclaimer() {
   if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
        window.alert("DISCLAIMER\nTesting in progress, the site may be extremely unstable!");  
@@ -21,7 +21,7 @@ function setUserInfo() {
   document.getElementById("p2").innerHTML = "Paragraph changed!" + localStorage.getItem("username");
 }
 
-      function ShowAndHidePoints() {
+      function showAndHidePoints() {
     var x = document.getElementById('pointsSystem');
     if (x.style.display == 'none') {
         x.style.display = 'block';
@@ -30,7 +30,7 @@ function setUserInfo() {
     }
 }   
 
-function ShowAndHideChangelog() {
+function showAndHideChangelog() {
     var y = document.getElementById('changelog');
     if (y.style.display == 'none') {
         y.style.display = 'block';
