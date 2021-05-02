@@ -2,7 +2,10 @@
 
 window.onload = function Disclaimer() { 
   Disclaimer(); 
+  setUserInfo();
  }
+
+// The Dislcaimer
 
 function Dislclaimer() {
   if (localStorage.getItem("disclaimer") === "true") {   
@@ -12,6 +15,10 @@ function Dislclaimer() {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
    }
+}
+
+function setUserInfo() {
+  document.getElementById("p2").innerHTML = "Paragraph changed!" + localStorage.getItem("username");
 }
 
       function ShowAndHidePoints() {
