@@ -51,9 +51,3 @@ window.onclick = function(event) {
   message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
   DispWin.document.write(message);
 }
-
-  function testing() {
-     document.getElementById('p2').innerHTML = localStorage.setItem("username");
-     window.alert("trying to log in...");
-  }
-   
