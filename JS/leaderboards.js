@@ -2,11 +2,12 @@
 
 window.onload = function Disclaimer() {
   disclaimer(); 
+  setUserInfo();
  }
 
 // The Dislcaimer
 
-function dislclaimer() {
+function disclaimer() {
   if (localStorage.getItem("disclaimer") === "true") {   
        localStorage.setItem("disclaimer", "true");
        window.alert("Would you like to load your data?");  
