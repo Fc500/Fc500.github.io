@@ -64,3 +64,9 @@ window.onclick = function(event) {
   message += "<li><b>PASSWORD: </b>" + document.login.psw.value + "</ul>";
   DispWin.document.write(message);
 }
+
+function resetUserInfo() {
+  localStorage.removeItem("username");
+  localStorage.removeItem("password");
+  localStorage.removeItem("loggedin");
+}
