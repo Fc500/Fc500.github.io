@@ -3,11 +3,10 @@ var modal = "";
 window.onload = function Disclaimer() {
   disclaimer(); 
   setUserInfo();
+  setUserPosition();
   if (localStorage.getItem("loggedin") != "true") {
     setModal();
-    setUserPosition();
   } else {
-    setUserPosition();
   }
  }
 
