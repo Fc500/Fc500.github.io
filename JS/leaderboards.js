@@ -8,7 +8,7 @@ window.onload = function Disclaimer() {
    } else {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
-     testing();
+     setTimeout(function(){ document.getElementById('p2').innerHTML = "ho:"); }, 6000);
    }
    
  }
