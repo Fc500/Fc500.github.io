@@ -10,6 +10,8 @@ window.onload = function Disclaimer() {
      localStorage.setItem("disclaimer", "true");
      testing();
    }
+   
+    setTimeout(function(){ alert("Hello"); }, 3000);
  }
      
       function ShowAndHidePoints() {
