@@ -2,7 +2,6 @@
 
 window.onload = function Disclaimer() { 
   disclaimer(); 
-  setUserInfo();
  }
 
 // The Dislcaimer
@@ -15,6 +14,7 @@ function dislclaimer() {
      window.alert("DISCLAIMER\nThis page is still a work in progress :)");
      localStorage.setItem("disclaimer", "true");
    }
+  setUserInfo();
 }
 
 function setUserInfo() {
