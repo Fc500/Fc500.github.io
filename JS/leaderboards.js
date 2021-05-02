@@ -1,4 +1,4 @@
-
+var modal = "";
 
 window.onload = function Disclaimer() {
   disclaimer(); 
@@ -17,7 +17,11 @@ function disclaimer() {
 }
 
 function setUserInfo() {
+  if (localStorage.getItem("username") != "") {
   document.getElementById("p2").innerHTML = localStorage.getItem("username");
+  modal = document.getElementById('id02');
+  document.getElementById("id03").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
+  }
 }
 
       function showAndHidePoints() {
