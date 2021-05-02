@@ -3,7 +3,6 @@ var modal = "";
 window.onload = function Disclaimer() {
   disclaimer(); 
   setUserInfo();
-  setUserPosition();
   if (localStorage.getItem("loggedin") != "true") {
     setModal();
   }
@@ -85,10 +84,3 @@ function resetUserInfo() {
   location.reload();
 }
 
-function setUserPosition() {
-  if (localStorage.getItem("username") == "Giginess") {
-    document.getElementById("Giginess").style.color = "gold";
-  } else if (localStorage.getItem("username") == "Deetusy3letus" {
-    document.getElementById("Deetusy3letus").style.color = "gold";
-  }
-}
