@@ -36,10 +36,10 @@ function setModal() {
 }
       
 function showAndHideListOne() {
-  var optionOne = document.getElementById('list1');
-  if (list.style.display == 'none') {
-    list.style.display = 'block';
-    x.style.display = 'none';
+  var optionOne = document.getElementById('listOne');
+  if (optionOne.style.display == 'none') {
+    optionOne.style.display = 'block';
+    optionTwo.style.display = 'none';
     y.style.display = 'none';
   } else {
     list.style.display = 'none';
@@ -48,9 +48,9 @@ function showAndHideListOne() {
 
 function showAndHidePoints() {
     var optionTwo = document.getElementById('pointsSystem');
-    if (x.style.display == 'none') {
-        x.style.display = 'block';
-        list.style.display = 'none';
+    if (optionTwo.style.display == 'none') {
+        optionTwo.style.display = 'block';
+        optionOne.style.display = 'none';
         y.style.display = 'none';
     } else {
         x.style.display = 'none';
@@ -61,8 +61,8 @@ function showAndHideChangelog() {
     var y = document.getElementById('changelog');
     if (y.style.display == 'none') {
         y.style.display = 'block';
-       list.style.display = 'none';
-       x.style.display = 'none';
+       optionOne.style.display = 'none';
+       optionTwo.style.display = 'none';
     } else {
         y.style.display = 'none';
     }
