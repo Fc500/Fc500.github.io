@@ -3,7 +3,8 @@
     <title>Help me</title>
   </head>
   <body>
-	  <h1>Hope this works </br>Mark IV</h1>
+	  <h1>Hope this works</h1>
+	  <h3>Version: Mark V | Test: Images Part IV</h3>
     <button onclick="testy();">Help</button>
 	  <button onclick="saveFile();">Save Image</button>
 	<button onclick="changeStuff();">Change stuff</button>
@@ -29,14 +30,14 @@
     	   image.src = URL.createObjectURL(event.target.files[0]);
 };
 var image = document.getElementById('output');
- var file = document.getElementById("output").files[0] 
+var file = document.getElementById("output").files[0]; 
 function saveFile() {
-  document.getElementById("change").innerHTML = "New text!" + speech;
+  document.getElementById("change").innerHTML = "New text! " + files;
 }
 
-var numbers = true
+var numbers = true;
 function changeStuff() {
-  document.getElementById("p1").innerHTML = "New text!" + numbers;
+  document.getElementById("p1").innerHTML = "New text! " + numbere;
 }
 
 		    
