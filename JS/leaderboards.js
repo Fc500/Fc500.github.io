@@ -34,7 +34,17 @@ function setModal() {
   modal = document.getElementById('id01');
   document.getElementById("id03").setAttribute("onclick", "document.getElementById('id01').style.display='block'");
 }
-      function showAndHidePoints() {
+      
+function showAndHidePoints() {
+  var list1 = document.getElementById('list1');
+  if (x.style.display == 'none') {
+    x.style.display = 'block'
+  } else {
+    x.style.display = 'none';
+  }
+}
+
+function showAndHidePoints() {
     var x = document.getElementById('pointsSystem');
     if (x.style.display == 'none') {
         x.style.display = 'block';
