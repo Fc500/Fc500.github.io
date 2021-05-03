@@ -3,9 +3,10 @@
     <title>Help me</title>
   </head>
   <body>
-	  <h1>Hope this works </br>Mark II</h1>
+	  <h1>Hope this works </br>Mark III</h1>
     <button onclick="testy();">Help</button>
 	  <button onclick="saveFile();">Save Image</button>
+	<button onclick="changeStuff();">Change stuff</button>
     <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
 <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
 <p><img id="output" width="200" /></p>
@@ -25,15 +26,20 @@
       
       var loadFile = function(event) {
 	    var image = document.getElementById('output');
-    	image.src = URL.createObjectURL(event.target.files[0]);
+    	   image.src = URL.createObjectURL(event.target.files[0]);
 	   var speech = "324243";
 	   var file = document.getElementById("output").files[0]
       };
    
 function saveFile() {
-	document.getElementById("change").innerHTML = "hi" + speech;
-	document.getElementById("p1").innerHTML = "New text!";
+         document.getElementById("p1").innerHTML = "New text!";
 }
+
+var numbers = true
+function changeStuff() {
+document.getElementById("p1").innerHTML = "New text!" + numbers;
+}
+
 		    
     </script>
   </body>
