@@ -36,18 +36,22 @@ function setModal() {
 }
       
 function showAndHideListOne() {
-  var list1 = document.getElementById('list1');
-  if (x.style.display == 'none') {
-    x.style.display = 'block'
-  } else {
+  var optionOne = document.getElementById('list1');
+  if (list.style.display == 'none') {
+    list.style.display = 'block';
     x.style.display = 'none';
+    y.style.display = 'none';
+  } else {
+    list.style.display = 'none';
   }
 }
 
 function showAndHidePoints() {
-    var x = document.getElementById('pointsSystem');
+    var optionTwo = document.getElementById('pointsSystem');
     if (x.style.display == 'none') {
         x.style.display = 'block';
+        list.style.display = 'none';
+        y.style.display = 'none';
     } else {
         x.style.display = 'none';
     }
@@ -57,6 +61,8 @@ function showAndHideChangelog() {
     var y = document.getElementById('changelog');
     if (y.style.display == 'none') {
         y.style.display = 'block';
+       list.style.display = 'none';
+       x.style.display = 'none';
     } else {
         y.style.display = 'none';
     }
