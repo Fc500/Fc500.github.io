@@ -35,37 +35,31 @@ function setModal() {
   document.getElementById("id03").setAttribute("onclick", "document.getElementById('id01').style.display='block'");
 }
       
-function showAndHideListOne() {
-  var optionOne = document.getElementById('listOne');
-  if (optionOne.style.display == 'none') {
-    optionOne.style.display = 'block';
-    optionTwo.style.display = 'none';
-    y.style.display = 'none';
+function showAndHideLists() {
+  var lists = document.getElementById("listOne");
+  if (lists.style.display === "none") {
+    lists.style.display = "block";
   } else {
-    list.style.display = 'none';
+    lists.style.display = "none";
   }
 }
 
 function showAndHidePoints() {
-    var optionTwo = document.getElementById('pointsSystem');
-    if (optionTwo.style.display == 'none') {
-        optionTwo.style.display = 'block';
-        optionOne.style.display = 'none';
-        y.style.display = 'none';
-    } else {
-        x.style.display = 'none';
-    }
-}   
+    var points = document.getElementById("pointsSystem");
+  if (points.style.display === "none") {
+    points.style.display = "block";
+  } else {
+    points.style.display = "none";
+  }
+}
 
 function showAndHideChangelog() {
-    var y = document.getElementById('changelog');
-    if (y.style.display == 'none') {
-        y.style.display = 'block';
-       optionOne.style.display = 'none';
-       optionTwo.style.display = 'none';
-    } else {
-        y.style.display = 'none';
-    }
+   var change = document.getElementById("changelog");
+  if (change.style.display === "none") {
+    change.style.display = "block";
+  } else {
+    change.style.display = "none";
+  }
 }
 
 // When the user clicks anywhere outside of the modal, close it
