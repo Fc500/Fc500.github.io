@@ -5,13 +5,14 @@
   <body>
     <h1>Hope this works e11</h1>
     <button onclick="testy();">Help</button>
-	  <button onclick="saveFile()">Save Image</button>
+	  <button onclick="saveFile();">Save Image</button>
     <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
 <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
 <p><img id="output" width="200" /></p>
 	  <img id="image2"/>
 	  
 	  <p id="change">Hi</p>
+	  <p id="p1">Zubub kill me</p>
 
     <script>
       window.onload = function testing() {
@@ -31,6 +32,7 @@
    
 function saveFile() {
 	document.getElementById("change").innerHTML = "hi";
+	document.getElementById("p1").innerHTML = "New text!";
 }
 		    
     </script>
