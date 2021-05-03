@@ -35,7 +35,7 @@ function setModal() {
   document.getElementById("id03").setAttribute("onclick", "document.getElementById('id01').style.display='block'");
 }
       
-function showAndHidePoints() {
+function showAndHideListOne() {
   var list1 = document.getElementById('list1');
   if (x.style.display == 'none') {
     x.style.display = 'block'
