@@ -3,7 +3,7 @@
     <title>Help me</title>
   </head>
   <body>
-	  <h1>Hope this works </br>Mark III</h1>
+	  <h1>Hope this works </br>Mark IV</h1>
     <button onclick="testy();">Help</button>
 	  <button onclick="saveFile();">Save Image</button>
 	<button onclick="changeStuff();">Change stuff</button>
@@ -23,21 +23,20 @@
       function testy() {
         window.alert("I wanna die");
       }
-      
+  var speech = "324243";    
       var loadFile = function(event) {
 	    var image = document.getElementById('output');
     	   image.src = URL.createObjectURL(event.target.files[0]);
-	   var speech = "324243";
-	   var file = document.getElementById("output").files[0]
-      };
-   
+};
+var image = document.getElementById('output');
+ var file = document.getElementById("output").files[0] 
 function saveFile() {
-         document.getElementById("p1").innerHTML = "New text!";
+  document.getElementById("change").innerHTML = "New text!" + speech;
 }
 
 var numbers = true
 function changeStuff() {
-document.getElementById("p1").innerHTML = "New text!" + numbers;
+  document.getElementById("p1").innerHTML = "New text!" + numbers;
 }
 
 		    
