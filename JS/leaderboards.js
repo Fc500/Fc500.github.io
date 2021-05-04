@@ -8,8 +8,8 @@ window.onload = function Disclaimer() {
   }
  }
 
-if(localStorage.getItem("username") != "") {
-    window.alert("Welcome back" + localStorage.getItem("username") + "!");
+if(localStorage.getItem("username") != null) {
+    window.alert("Welcome back " + localStorage.getItem("username") + "!");
     if(localStorage.getItem("username") == "Giginess") {
       document.getElementById("Giginess").style.color = "gold";
      } else if (localStorage.getItem("username") == "Deetusy3letus") {
