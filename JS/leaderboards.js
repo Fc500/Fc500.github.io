@@ -1,13 +1,15 @@
 var modal = "";
 
-window.onload = function Disclaimer() {
+window.onload = function starting() {
   disclaimer(); 
   setUserInfo();
+  setUsernamePosition();
   if (localStorage.getItem("loggedin") != "true") {
     setModal();
   }
  }
 
+function setUsernamePosition() {
 if(localStorage.getItem("username") != null) {
     window.alert("Welcome back " + localStorage.getItem("username") + "!");
     if(localStorage.getItem("username") == "Giginess") {
@@ -20,6 +22,7 @@ if(localStorage.getItem("username") != null) {
       document.getElementById("R3alityy").style.color = "gold";
      }
     }
+}
 
 // The Dislcaimer
 
@@ -52,6 +55,7 @@ function setModal() {
 function showAndHideLists() {
   var lists = document.getElementById("listOne");
   if (lists.style.display === "none") {
+    setUsernamePosition();
     lists.style.display = "block";
     document.getElementById("pointsSystem").style.display = "none";
     document.getElementById("changelog").style.display = "none";
