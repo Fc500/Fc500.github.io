@@ -8,6 +8,19 @@ window.onload = function Disclaimer() {
   }
  }
 
+if(localStorage.getItem("username") != "") {
+    window.alert("hi");
+    if(localStorage.getItem("username") == "Giginess") {
+      document.getElementById("Giginess").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Deetusy3letus") {
+      document.getElementById("Deetusy3letus").style.color = "gold";
+     } else if (localStorage.getItem("username") == "ItzNisha") {
+      document.getElementById("ItzNisha").style.color = "gold";
+     } else if (localStorage.getItem("username") == "R3alityy") {
+      document.getElementById("R3alityy").style.color = "gold";
+     }
+    }
+
 // The Dislcaimer
 
 function disclaimer() {
