@@ -1,7 +1,4 @@
 var modal = "";
-var lists = document.getElementById("listOne");
-var points = document.getElementById("pointsSystem");
-var change = document.getElementById("changelog");
 
 window.onload = function Disclaimer() {
   disclaimer(); 
@@ -40,24 +37,31 @@ function setModal() {
  
 
 function showAndHideLists() {
+  var lists = document.getElementById("listOne");
+  var points = document.getElementById("pointsSystem");
+  var change = document.getElementById("changelog");
   if (lists.style.display === "none") {
     lists.style.display = "block";
-    points.style.display = "none";
   } else {
     lists.style.display = "none";
   }
 }
 
 function showAndHidePoints() {
+  var lists = document.getElementById("listOne");
+  var points = document.getElementById("pointsSystem");
+  var change = document.getElementById("changelog");
   if (points.style.display === "none") {
     points.style.display = "block";
-    lists.style.display = "none";
   } else {
     points.style.display = "none";
   }
 }
 
 function showAndHideChangelog() {
+  var lists = document.getElementById("listOne");
+  var points = document.getElementById("pointsSystem");
+  var change = document.getElementById("changelog");
   if (change.style.display === "none") {
     change.style.display = "block";
   } else {
