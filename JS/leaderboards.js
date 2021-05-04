@@ -1,4 +1,7 @@
 var modal = "";
+var lists = document.getElementById("listOne");
+var points = document.getElementById("pointsSystem");
+var change = document.getElementById("changelog");
 
 window.onload = function Disclaimer() {
   disclaimer(); 
@@ -34,27 +37,27 @@ function setModal() {
   modal = document.getElementById('id01');
   document.getElementById("id03").setAttribute("onclick", "document.getElementById('id01').style.display='block'");
 }
-      
+ 
+
 function showAndHideLists() {
-  var lists = document.getElementById("listOne");
   if (lists.style.display === "none") {
     lists.style.display = "block";
+    points.style.display = "none";
   } else {
     lists.style.display = "none";
   }
 }
 
 function showAndHidePoints() {
-    var points = document.getElementById("pointsSystem");
   if (points.style.display === "none") {
     points.style.display = "block";
+    lists.style.display = "none";
   } else {
     points.style.display = "none";
   }
 }
 
 function showAndHideChangelog() {
-   var change = document.getElementById("changelog");
   if (change.style.display === "none") {
     change.style.display = "block";
   } else {
