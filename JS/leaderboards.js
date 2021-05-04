@@ -38,8 +38,6 @@ function setModal() {
 
 function showAndHideLists() {
   var lists = document.getElementById("listOne");
-  var points = document.getElementById("pointsSystem");
-  var change = document.getElementById("changelog");
   if (lists.style.display === "none") {
     lists.style.display = "block";
   } else {
@@ -48,9 +46,7 @@ function showAndHideLists() {
 }
 
 function showAndHidePoints() {
-  var lists = document.getElementById("listOne");
   var points = document.getElementById("pointsSystem");
-  var change = document.getElementById("changelog");
   if (points.style.display === "none") {
     points.style.display = "block";
   } else {
@@ -59,8 +55,6 @@ function showAndHidePoints() {
 }
 
 function showAndHideChangelog() {
-  var lists = document.getElementById("listOne");
-  var points = document.getElementById("pointsSystem");
   var change = document.getElementById("changelog");
   if (change.style.display === "none") {
     change.style.display = "block";
