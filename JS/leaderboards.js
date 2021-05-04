@@ -40,6 +40,8 @@ function showAndHideLists() {
   var lists = document.getElementById("listOne");
   if (lists.style.display === "none") {
     lists.style.display = "block";
+    document.getElementById("pointsSystem").style.display = "none";
+    document.getElementById("changelog").style.display = "none";
   } else {
     lists.style.display = "none";
   }
@@ -49,6 +51,8 @@ function showAndHidePoints() {
   var points = document.getElementById("pointsSystem");
   if (points.style.display === "none") {
     points.style.display = "block";
+    document.getElementById("listOne").style.display = "none";
+    document.getElementById("changelog").style.display = "none";
   } else {
     points.style.display = "none";
   }
@@ -58,6 +62,8 @@ function showAndHideChangelog() {
   var change = document.getElementById("changelog");
   if (change.style.display === "none") {
     change.style.display = "block";
+    document.getElementById("listOne").style.display = "none";
+    document.getElementById("pointsSystem").style.display = "none";
   } else {
     change.style.display = "none";
   }
