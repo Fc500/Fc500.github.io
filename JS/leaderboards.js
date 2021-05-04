@@ -20,6 +20,24 @@ if(localStorage.getItem("username") != null) {
       document.getElementById("ItzNisha").style.color = "gold";
      } else if (localStorage.getItem("username") == "R3alityy") {
       document.getElementById("R3alityy").style.color = "gold";
+     } else if (localStorage.getItem("username") == "QwertZer") {
+      document.getElementById("QwertZer").style.color = "gold";
+     } else if (localStorage.getItem("username") == "MarkTheHeroic") {
+      document.getElementById("MarkTheHeroic").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Mohdaman") {
+      document.getElementById("Mohdaman").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Sheepshadow") {
+      document.getElementById("Sheepshadow").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Fc500") {
+      document.getElementById("Fc500").style.color = "gold";
+     } else if (localStorage.getItem("username") == "AddisonJudah") {
+      document.getElementById("AddisonJudah").style.color = "gold";
+     } else if (localStorage.getItem("username") == "zSilveryz") {
+      document.getElementById("zSilveryz").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Dar1nGD") {
+      document.getElementById("Dar1nGD").style.color = "gold";
+     } else if (localStorage.getItem("username") == "CrSb") {
+      document.getElementById("CrSb").style.color = "gold";
      }
     }
 }
