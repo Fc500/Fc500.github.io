@@ -390,10 +390,19 @@ color: white;
 
     <div class="container">
       <h1 id="id04">Hello User!</h1>
-      <span class="material-icons" style="font-size: 60px; color: grey">check</span><a href="https://forms.gle/2PFHL3mFPxjtsUXQ8"><h3>Submit a record!</h3></a>
-      <span class="material-icons" style="font-size: 60px; color: grey">settings</span> <h2>Settings</h2>
+      <table>
+        <tr>
+          <td><span class="material-icons" style="font-size: 60px; color: grey">check</span><a href="https://forms.gle/2PFHL3mFPxjtsUXQ8">Submit a record!</a></td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td><span class="material-icons" style="font-size: 60px; color: grey">settings</span></td> 
+          <td><h2>Settings</h2></td>
+        </tr>
+      </table>
       <form class="shadow">
-      <button type="submit" class="pusab shadow" onclick="resetUserInfo()">Reset your data?</button>
+      <button type="submit" class="russo shadow" onclick="resetUserInfo()">Logout?</button>
       </form>
     </div>
 
@@ -401,7 +410,7 @@ color: white;
     <div class="container">
       
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button> 
-      <span class="psw pusab shadow">Forgot <a href="#">password?</a></span>
+      <span class="psw russo shadow">Forgot <a href="#">password?</a></span>
     </div>
   </div>
 </div>
