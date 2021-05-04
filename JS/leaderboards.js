@@ -55,7 +55,6 @@ function setModal() {
 function showAndHideLists() {
   var lists = document.getElementById("listOne");
   if (lists.style.display === "none") {
-    setUsernamePosition();
     lists.style.display = "block";
     document.getElementById("pointsSystem").style.display = "none";
     document.getElementById("changelog").style.display = "none";
