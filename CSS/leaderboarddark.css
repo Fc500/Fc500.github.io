@@ -1,6 +1,7 @@
 html { 
     /* background-image: linear-gradient(#ffffff, #e6e6e6); */
     background-color: black; 
+    color: white;
     height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
@@ -10,6 +11,7 @@ html {
 
 body {
     background-color: black;
+    color: white;
 }
 h1 {
 /* font-family: 'pusabregular', Arial, sans-serif; */
