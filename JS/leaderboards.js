@@ -9,6 +9,21 @@ window.onload = function starting() {
   }
  }
 
+document.addEventListener('DOMContentLoaded', function () {
+var checkbox = document.getElementById("check");
+
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      // do this
+      window.alert('Checked');
+    } else {
+      // do that
+      window.alert('Not checked');
+    }
+  });
+});
+
+
 function setUsernamePosition() {
 if(localStorage.getItem("username") != null) {
     window.alert("Welcome back " + localStorage.getItem("username") + "!");
