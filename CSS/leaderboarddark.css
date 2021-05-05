@@ -13,6 +13,10 @@ body {
     background-color: black;
     color: white;
 }
+
+.white {
+    color: white;
+}
 h1 {
 /* font-family: 'pusabregular', Arial, sans-serif; */
 font-weight:normal;
