@@ -8,6 +8,9 @@ html {
     background-attachment: fixed;
 }
 
+body {
+    background-color: black;
+}
 h1 {
 /* font-family: 'pusabregular', Arial, sans-serif; */
 font-weight:normal;
