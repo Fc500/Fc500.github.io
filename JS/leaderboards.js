@@ -16,9 +16,11 @@ var checkbox = document.getElementById("check");
     if (checkbox.checked) {
       // do this
       window.alert('Checked');
+      toggleTheme();
     } else {
       // do that
       window.alert('Not checked');
+      toggleTheme();
     }
   });
 });
