@@ -23,3 +23,19 @@
 .animate{
     animation: jump 300ms linear;
 }
+
+#block{
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: relative;
+    top: 130px; //game height - character height - block height (200 - 50 - 20)
+    left: 480px; //game width - block width (500 - 20)
+    animation: block 1s infinite linear;
+}
+
+@keyframes block{
+    0%{left: 500px} 
+    100%{left: -20px}
+}
+
