@@ -162,6 +162,7 @@ function toggleTheme() {
             // to change the css sheet.
             if (theme.getAttribute('href') == '../CSS/leaderboard.css') {
                 theme.setAttribute('href', '../CSS/leaderboarddark.css');
+                window.alert("changed, I hope");
             } else {
                 theme.setAttribute('href', '../CSS/leaderboard.css');
             }
