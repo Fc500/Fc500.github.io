@@ -161,7 +161,7 @@ function toggleTheme() {
             // Change the value of href attribute 
             // to change the css sheet.
             if (theme.getAttribute('href') == '../CSS/leaderboard.css') {
-                theme.setAttribute('href', '../CSS/leaderboardDarkMode.css');
+                theme.setAttribute('href', '../CSS/leaderboarddark.css');
             } else {
                 theme.setAttribute('href', '../CSS/leaderboard.css');
             }
