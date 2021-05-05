@@ -368,7 +368,9 @@ input:checked + .slider:before {
 }
 
 .grey {
-    color: lightgrey;
+    color: red;
 }
 
-
+.lightgrey {
+    color: blue;
+}
