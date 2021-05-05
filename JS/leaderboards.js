@@ -15,11 +15,11 @@ var checkbox = document.getElementById("check");
   checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
       // do this
-      window.alert('Checked');
+      window.alert('Checked lol');
       toggleTheme();
     } else {
       // do that
-      window.alert('Not checked');
+      window.alert('Not checked lol');
       toggleTheme();
     }
   });
