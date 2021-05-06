@@ -215,8 +215,6 @@ tr:nth-child(even) {
  tr:nth-child(odd) {
   background-color: #ffffff;
  }
-  background-color: #dddddd;
-}
       li:nth-child(even) {
   background-color: #ffffff;
 }
@@ -261,22 +259,22 @@ li:nth-child(odd) {
   margin-right: auto;
 }
 }
-/* .noOutline {
+.noOutline {
   color: rgba(0, 0, 0, 0);
     text-shadow: -1px 1px 2px #000,
                   1px 1px 2px #000,
+1px -1px 0 #000,
+-1px -1px 0 #000; }
+.invisibleTable {
+  background-color: rgba(0, 0, 0, 0);
+}
      .modDesc {
 border: 1px solid #000000;
 text-align: center;
 background-color: #000000;
 margin-left: auto;
 margin-right: auto;
-}
-1px -1px 0 #000,
--1px -1px 0 #000; */
-.invisibleTable {
-  background-color: rgba(0, 0, 0, 0);
-}
+} 
 .settingTable {
   background-color: #190000;
   border: 1px solid #190000;
