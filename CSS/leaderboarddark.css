@@ -205,7 +205,7 @@ font-style:normal;
   width: 100%;
 }
 td, th {
-  border: 1px solid #000000;
+  border: 1px solid #ffffff;
   text-align: left;
   padding: 8px;
 }
@@ -218,6 +218,9 @@ tr:nth-child(even) {
       li:nth-child(even) {
   background-color: #ffffff;
 }
+
+
+
 li {
         border: 1px solid #b5b5b5
       }
