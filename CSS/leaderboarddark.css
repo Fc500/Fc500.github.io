@@ -13,7 +13,7 @@ html {
     color: white;
 }
 
-.dmt {
+#dmt {
     background-color: black;
 }
 h1 {
@@ -272,10 +272,10 @@ color: white;
 }
 
 .headingDesc {
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   text-align: center;
   padding: 8px;
-  background-color: #ffffff;
+  background-color: #000000;
 }
  .headingList { 
   display: block;
@@ -295,9 +295,9 @@ color: white;
 }
       
       .modDesc {
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #000000;
   margin-left: auto;
   margin-right: auto;
 }
