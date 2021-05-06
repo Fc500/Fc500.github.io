@@ -12,6 +12,10 @@ html {
 .white {
     color: white;
 }
+
+.darkModeTable {
+    background-color: black;
+}
 h1 {
 /* font-family: 'pusabregular', Arial, sans-serif; */
 font-weight:normal;
@@ -234,7 +238,6 @@ td, th {
   border: 1px solid #b5b5b5;
   text-align: left;
   padding: 8px;
-  background-color: black;
 }
 
 tr:nth-child(even) {
