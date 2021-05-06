@@ -179,12 +179,12 @@ span.psw {
   width: 80%; /* Could be more or less, depending on screen size */
   color: white;
 }
-
+/*
 .close:hover,
 .close:focus {
   color: red;
   cursor: pointer;
-}
+} */
 
 /* Add Zoom Animation */
 .animate {
@@ -307,8 +307,8 @@ color: white;
     text-shadow: -1px 1px 2px #000,
                   1px 1px 2px #000,
                   1px -1px 0 #000,
-                  -1px -1px 0 #000; */
-      }
+                  -1px -1px 0 #000; 
+      } */
       
 .invisibleTable {
   background-color: rgba(0, 0, 0, 0);
@@ -319,7 +319,7 @@ color: white;
   border: 1px solid #190000;
   color: white;
       }
-
+/*
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -329,7 +329,7 @@ color: white;
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
-}
+} */
 
 .slider:before {
   position: absolute;
