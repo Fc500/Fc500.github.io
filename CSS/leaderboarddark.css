@@ -347,3 +347,7 @@ input:checked + .slider:before {
 font-size: 60px;
 color: lightgrey;
 }
+     
+     .black {
+     color: black;
+     }
