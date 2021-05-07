@@ -1,3 +1,4 @@
+var theme = document.getElementsByTagName('link')[0];
 var modal = "";
 
 window.onload = function starting() {
@@ -25,6 +26,13 @@ var checkbox = document.getElementById("check");
   });
 });
 
+function checkTheme() {
+  if (localStorage.getItem('theme') == "../CSS/leaderboarddark.css") {
+    theme.setAttribute('href', '../CSS/leaderboarddark.css');
+  } else if (localStorage.getItem('theme') == "../CSS/leaderboard.css") {
+    theme.setAttribute('href', '../CSS/leaderboard.css');
+  }
+}
 
 function setUsernamePosition() {
 if(localStorage.getItem("username") != null) {
@@ -156,15 +164,18 @@ function toggleTheme() {
             // Obtains an array of all <link>
             // elements.
             // Select your element using indexing.
-            var theme = document.getElementsByTagName('link')[0];
+            
   
             // Change the value of href attribute 
             // to change the css sheet.
             if (theme.getAttribute('href') == '../CSS/leaderboard.css') {
                 theme.setAttribute('href', '../CSS/leaderboarddark.css');
-                window.alert("changed, I hope");
+                localStorage.setItem('theme', '../CSS/leaderboarddark.css');
+                window.reload;
             } else {
                 theme.setAttribute('href', '../CSS/leaderboard.css');
+                localStorage.setItem('theme', '../CSS/leaderboard.css');
+                window.reload;
             }
         }
 
