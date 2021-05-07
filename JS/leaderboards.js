@@ -28,9 +28,9 @@ var checkbox = document.getElementById("check");
 
 function checkTheme() {
   if (localStorage.getItem('theme') == "../CSS/leaderboard.css") {
-    theme.setAttribute('href', '../CSS/leaderboarddark.css');
+    document.getElementById('theme').setAttribute('href', '../CSS/leaderboarddark.css');
   } else if (localStorage.getItem('theme') == "../CSS/leaderboarddark.css") {
-    theme.setAttribute('href', '../CSS/leaderboard.css');
+    document.getElementById('theme').setAttribute('href', '../CSS/leaderboard.css');
   }
 }
 
