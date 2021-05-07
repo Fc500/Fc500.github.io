@@ -27,9 +27,9 @@ var checkbox = document.getElementById("check");
 });
 
 function checkTheme() {
-  if (localStorage.getItem('theme') == "../CSS/leaderboarddark.css") {
+  if (localStorage.getItem('theme') == "../CSS/leaderboard.css") {
     theme.setAttribute('href', '../CSS/leaderboarddark.css');
-  } else if (localStorage.getItem('theme') == "../CSS/leaderboard.css") {
+  } else if (localStorage.getItem('theme') == "../CSS/leaderboarddark.css") {
     theme.setAttribute('href', '../CSS/leaderboard.css');
   }
 }
@@ -171,11 +171,11 @@ function toggleTheme() {
             if (theme.getAttribute('href') == '../CSS/leaderboard.css') {
                 theme.setAttribute('href', '../CSS/leaderboarddark.css');
                 localStorage.setItem('theme', '../CSS/leaderboarddark.css');
-                window.reload;
+                document.location.reload();
             } else {
                 theme.setAttribute('href', '../CSS/leaderboard.css');
                 localStorage.setItem('theme', '../CSS/leaderboard.css');
-                window.reload;
+                document.location.reload();
             }
         }
 
