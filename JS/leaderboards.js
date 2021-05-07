@@ -179,3 +179,17 @@ function toggleTheme() {
             }
         }
 
+function toggleThemeTwo() {
+            // Obtains an array of all <link>
+            // elements.
+            // Select your element using indexing.
+            var themeTwo = document.getElementsByTagName('link')[0];
+  
+            // Change the value of href attribute 
+            // to change the css sheet.
+            if (themeTwo.getAttribute('href') == '../CSS/leaderboard.css') {
+                themeTwo.setAttribute('href', '../CSS/leaderboarddark.css');
+            } else {
+                themeTwo.setAttribute('href', '../CSS/leaderboard.css');
+            }
+        }
