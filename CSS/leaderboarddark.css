@@ -13,6 +13,20 @@ h1 {
 font-weight:normal;
 font-style:normal;
 }
+
+.grey {
+    color: lightgrey;
+}
+.emoji {
+font-size: 60px;
+color: lightgrey;
+}
+     
+.black {
+  color: black;
+}
+
+
 .pusab {
     font-family: 'pusabregular', Arial, sans-serif;
 font-weight:normal;
@@ -339,15 +353,4 @@ input:checked + .slider:before {
 }
 .slider.round:before {
   border-radius: 50%;
-}
-.grey {
-    color: lightgrey;
-}
-.emoji {
-font-size: 60px;
-color: lightgrey;
-}
-     
-.black {
-  color: black;
 }
