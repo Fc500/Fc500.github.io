@@ -173,8 +173,7 @@ and centered */
   width: 80%; /* Could be more or less, depending on screen size */
   color: white;
 }
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
 color: red;
   cursor: pointer;
 }
@@ -192,14 +191,13 @@ color: red;
   to {transform: scale(1)}
 }
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+/* @media screen and (max-width: 300px) { */
   span.psw {
      display: block;
      float: none;
   }
 .cancelbtn {
      width: 100%;
-  }
 }
       body {
 color: white;
@@ -215,7 +213,9 @@ font-style:normal;
                   }
 .russo {
   font-family: 'Russo One';font-size: 22px;
-} table {
+} 
+
+table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -288,7 +288,8 @@ li:nth-child(odd) {
     text-shadow: -1px 1px 2px #000,
                   1px 1px 2px #000,
 1px -1px 0 #000,
--1px -1px 0 #000; } 
+-1px -1px 0 #000;
+     } 
 .invisibleTable {
   background-color: rgba(0, 0, 0, 0);
 }
