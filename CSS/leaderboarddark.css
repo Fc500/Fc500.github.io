@@ -240,17 +240,17 @@ color: white;
   width: 100%;
 }
 .headingDesc {
-  border: 1px solid #0000ff;
-  text-align: center;
-  padding: 8px;
-  background-color: #0000ff;
-}
-
-.bodyDesc {
   border: 1px solid #000000;
   text-align: center;
   padding: 8px;
   background-color: #000000;
+}
+
+.bodyDesc {
+  border: 1px solid #0000ff;
+  text-align: center;
+  padding: 8px;
+  background-color: #0000ff;
 }
 
  .headingList {
