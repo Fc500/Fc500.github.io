@@ -27,9 +27,13 @@ var checkbox = document.getElementById("check");
   }
 }
                         
-function changeTable() {
-  document.getElementsByClassName("ct")[c].style.color = "red";
-  }                           
+function testingThree() {
+  var c;
+  for (c = 0; c < 6; c++) {
+    document.getElementsByClassName("a")[c].style.backgroundColor = "black";
+    document.getElementsByClassName("a")[c].style.color = "white";
+  }
+}                   
 
 function checkTheme() {
   if (localStorage.getItem('theme') == "../CSS/leaderboard.css") {
