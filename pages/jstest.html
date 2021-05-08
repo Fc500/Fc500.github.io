@@ -5,7 +5,7 @@
   </head>
   <body>
 	  <h1>Hope this works</h1>
-	  <h3>Version: Mark XI | Test: Refresh Part III</h3>
+	  <h3>Version: Mark XII | Test: Switching Tables Part I</h3>
     <button onclick="testy();">Help</button>
 	  <button onclick="saveFile();">Save Image</button>
 	<button onclick="changeStuff();">Change stuff</button>
@@ -19,6 +19,13 @@
 	  
 	  <h3 style="color: lightgrey;">HAHAHHAHAHAHHA</h3>
 	  <button onclick="reload()">ee</button>
+	  <p class="a">Hi!</p>
+<p class="a">If you're reading this</p>
+<p class="a">This is yet another attempt</p>
+<p class="a">To get Dark Mode working</p>
+<p class="a">Losing hope tbh</p>
+<p class="a">But I will not give up!</p>
+	  <button onclick="testingThree()">SwitchingTables</button>
 
     <script>
       window.onload = function testing() {
@@ -48,7 +55,13 @@ function changeStuff() {
 function reload() {
 	document.location.reload()
 	    }
-
+function testingThree() {
+  var c;
+  for (c = 0; c < 6; c++) {
+    document.getElementsByClassName("a")[c].style.backgroundColor = "black";
+    document.getElementsByClassName("a")[c].style.color = "white";
+  }
+}
 		    
     </script>
   </body>
