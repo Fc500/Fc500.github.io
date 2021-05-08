@@ -1,4 +1,4 @@
-var theme = document.getElementsByTagName('link')[0];
+
 var modal = "";
 
 window.onload = function starting() {
@@ -153,7 +153,7 @@ function resetUserInfo() {
   location.reload();
 }
 
-function toggleTheme() {
+/* function toggleTheme() {
             // Obtains an array of all <link>
             // elements.
             // Select your element using indexing.
@@ -172,7 +172,7 @@ function toggleTheme() {
             }
         }
 
-function toggleThemeTwo() {
+ function toggleThemeTwo() {
             // Obtains an array of all <link>
             // elements.
             // Select your element using indexing.
@@ -186,3 +186,4 @@ function toggleThemeTwo() {
                 themeTwo.setAttribute('href', '../CSS/leaderboard.css');
             }
         }
+*/
