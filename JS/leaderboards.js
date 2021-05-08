@@ -28,7 +28,7 @@ var checkbox = document.getElementById("check");
 }
                         
 function changeTable() {
-  document.getElementsByClassName("a")[c].style.color = "red";
+  document.getElementsByClassName("ct")[c].style.color = "red";
   }                           
 
 function checkTheme() {
