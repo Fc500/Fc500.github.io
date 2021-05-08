@@ -1,5 +1,6 @@
 var theme = document.getElementsByTagName('link')[0];
 var modal = "";
+var c = 0;
 
 window.onload = function starting() {
   disclaimer(); 
@@ -23,8 +24,12 @@ var checkbox = document.getElementById("check");
       window.alert('Not checked lol');
       toggleTheme();
     }
-  });
-});
+  }
+}
+                        
+function changeTable() {
+  document.getElementsByClassName("a")[c].style.color = "red";
+  }                           
 
 function checkTheme() {
   if (localStorage.getItem('theme') == "../CSS/leaderboard.css") {
