@@ -76,7 +76,6 @@
     Click below button to switch between 
     light and dark themes.<br />
     <button onclick="toggleThemeTwo()">Switch</button>
-  <button onclick="testingThree()">Toggle to change the table color (i hope)</button>
       
 </div>
 <!-- Rankings -->
@@ -334,5 +333,12 @@
     </div>
   </div>
 </div>
+<script>
+  var c;
+  for (c = 0; c < 6; c++) {
+    document.getElementsByClassName("a")[c].style.backgroundColor = "black";
+    document.getElementsByClassName("a")[c].style.color = "white";
+  }
+</script>
 </body>
 </html>
