@@ -9,11 +9,6 @@ window.onload = function starting() {
     setModal();
   }
  }
-var c;
-  for (c = 0; c < 6; c++) {
-    document.getElementsByClassName("a")[c].style.backgroundColor = "black";
-    document.getElementsByClassName("a")[c].style.color = "white";
-  }
 
 document.addEventListener('DOMContentLoaded', function () {
 var checkbox = document.getElementById("check");
