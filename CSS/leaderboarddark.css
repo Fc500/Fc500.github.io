@@ -51,6 +51,10 @@ color: lightgrey;
 .white {
     color: white;
 }
+
+.dt {
+    background-color: black;
+}
 .pusab {
     font-family: 'pusabregular', Arial, sans-serif;
 font-weight:normal;
