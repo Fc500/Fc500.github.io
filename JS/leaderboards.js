@@ -1,6 +1,5 @@
 var theme = document.getElementsByTagName('link')[0];
 var modal = "";
-var c = 0;
 
 window.onload = function starting() {
   disclaimer(); 
