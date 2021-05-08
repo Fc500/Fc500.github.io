@@ -24,6 +24,7 @@ var checkbox = document.getElementById("check");
       toggleTheme();
     }
   }
+}
 
                                          
 
