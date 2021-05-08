@@ -10,7 +10,7 @@ window.onload = function starting() {
   }
  }
 
-document.addEventListener('DOMContentLoaded', function () {
+/* document.addEventListener('DOMContentLoaded', function () {
 var checkbox = document.getElementById("check");
 
   checkbox.addEventListener('change', function () {
@@ -24,7 +24,7 @@ var checkbox = document.getElementById("check");
       toggleTheme();
     }
   }
-}
+} */
 
                                          
 function setUsernamePosition() {
