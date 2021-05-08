@@ -27,15 +27,6 @@ var checkbox = document.getElementById("check");
 }
 
                                          
-
-function checkTheme() {
-  if (localStorage.getItem('theme') == "../CSS/leaderboard.css") {
-    document.getElementById('theme').setAttribute('href', '../CSS/leaderboarddark.css');
-  } else if (localStorage.getItem('theme') == "../CSS/leaderboarddark.css") {
-    document.getElementById('theme').setAttribute('href', '../CSS/leaderboard.css');
-  }
-}
-
 function setUsernamePosition() {
 if(localStorage.getItem("username") != null) {
     window.alert("Welcome back " + localStorage.getItem("username") + "!");
