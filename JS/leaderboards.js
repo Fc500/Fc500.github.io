@@ -170,7 +170,7 @@ function resetUserInfo() {
                 localStorage.setItem('theme', '../CSS/leaderboard.css');
                 document.location.reload();
             }
-        }
+        } */
 
  function toggleThemeTwo() {
             // Obtains an array of all <link>
@@ -186,4 +186,4 @@ function resetUserInfo() {
                 themeTwo.setAttribute('href', '../CSS/leaderboard.css');
             }
         }
-*/
+
