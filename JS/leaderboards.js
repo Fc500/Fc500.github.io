@@ -10,6 +10,20 @@ window.onload = function starting() {
   }
  }
 
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('input[type="checkbox"]');
+
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      // do this
+      window.alert('Checked');
+    } else {
+      // do that
+      window.alert('Not checked');
+    }
+  });
+});
+
 /* document.addEventListener('DOMContentLoaded', function () {
 var checkbox = document.getElementById("check");
 
