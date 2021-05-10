@@ -17,6 +17,7 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 25%;
 }
 button:hover {
   opacity: 0.8;
