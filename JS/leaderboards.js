@@ -130,7 +130,7 @@ function showAndHideListTwo() {
     listTwo.style.display = "none";
   }
 }
-​
+
 
 function showAndHidePoints() {
   var points = document.getElementById("pointsSystem");
