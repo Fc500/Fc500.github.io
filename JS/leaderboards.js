@@ -121,6 +121,17 @@ function showAndHideListOne() {
   }
 }
 
+function showAndHideListTwo() {
+  var listTwo = document.getElementById("listTwo");
+  if (listTwo.style.display === "none") {
+    listTwo.style.display = "block";
+    document.getElementById("listOne").style.display = "none";
+  } else {
+    listTwo.style.display = "none";
+  }
+}
+​
+
 function showAndHidePoints() {
   var points = document.getElementById("pointsSystem");
   if (points.style.display === "none") {
