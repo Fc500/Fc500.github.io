@@ -84,7 +84,7 @@ function disclaimer() {
 
 // Getting user info
 function setUserInfo() {
-  if (localStorage.getItem("username") != "") {
+  if (localStorage.getItem("username") != null) {
   document.getElementById("p2").innerHTML = localStorage.getItem("username");
   modal = document.getElementById('id02');
   document.getElementById("id03").setAttribute("onclick", "document.getElementById('id02').style.display='block'");
