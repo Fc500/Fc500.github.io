@@ -100,13 +100,24 @@ function setModal() {
  
 
 function showAndHideLists() {
-  var lists = document.getElementById("listOne");
+  var lists = document.getElementById("listMaster");
   if (lists.style.display === "none") {
     lists.style.display = "block";
     document.getElementById("pointsSystem").style.display = "none";
     document.getElementById("changelog").style.display = "none";
   } else {
     lists.style.display = "none";
+  }
+}
+
+function showAndHideListOne() {
+  var listOne = document.getElementById("listOne");
+  if (listOne.style.display === "none") {
+    listOne.style.display = "block";
+    document.getElementById("pointsSystem").style.display = "none";
+    document.getElementById("changelog").style.display = "none";
+  } else {
+    listOne.style.display = "none";
   }
 }
 
