@@ -118,6 +118,7 @@ function showAndHideListOne() {
     document.getElementById("changelog").style.display = "none";
   } else {
     listOne.style.display = "none";
+    document.getElementById("listTwo").style.display = "block";
   }
 }
 
@@ -128,6 +129,7 @@ function showAndHideListTwo() {
     document.getElementById("listOne").style.display = "none";
   } else {
     listTwo.style.display = "none";
+    document.getElementById("listOne").style.display = "block";
   }
 }
 
