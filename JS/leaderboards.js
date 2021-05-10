@@ -114,11 +114,9 @@ function showAndHideListOne() {
   var listOne = document.getElementById("listOne");
   if (listOne.style.display === "none") {
     listOne.style.display = "block";
-    document.getElementById("pointsSystem").style.display = "none";
-    document.getElementById("changelog").style.display = "none";
+    document.getElementById("listTwo").style.display = "none";
   } else {
     listOne.style.display = "none";
-    document.getElementById("listTwo").style.display = "block";
   }
 }
 
@@ -129,7 +127,6 @@ function showAndHideListTwo() {
     document.getElementById("listOne").style.display = "none";
   } else {
     listTwo.style.display = "none";
-    document.getElementById("listOne").style.display = "block";
   }
 }
 
