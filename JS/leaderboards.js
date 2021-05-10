@@ -11,7 +11,7 @@ window.onload = function starting() {
  }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelector('input[type="checkbox"]');
+  var checkbox = document.getElementById('check');
 
   checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
