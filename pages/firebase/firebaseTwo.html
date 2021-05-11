@@ -43,6 +43,13 @@
     }
   }
 } */
+  
+// Anyone to read a public image if the file is less than 100kB
+// Anyone can upload a public file ending in '.txt'
+match /public/{imageId} {
+  allow read: if resource.size < 100 * 1024;
+  allow write: if imageId.matches(".*\\.img");
+}
 </script>
   </body>
 </html>
