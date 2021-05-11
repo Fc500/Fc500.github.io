@@ -51,6 +51,28 @@ match /public/{imageId} {
   allow read: if resource.size < 100 * 1024;
   allow write: if imageId.matches(".*\\.img");
 }
+  
+  // Points to the root reference
+var storageRef = firebase.storage().ref();
+
+// Points to 'images'
+var imagesRef = storageRef.child('images');
+
+// Points to 'images/space.jpg'
+// Note that you can use variables to create child values
+var fileName = 'space.jpg';
+var spaceRef = imagesRef.child(fileName);
+
+// File path is 'images/space.jpg'
+var path = spaceRef.fullPath;
+
+// File name is 'space.jpg'
+var name = spaceRef.name;
+
+// Points to 'images'
+var imagesRef = spaceRef.parent;
+create-reference.js
+
 </script>
   </body>
 </html>
