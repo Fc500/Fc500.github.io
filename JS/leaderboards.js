@@ -185,6 +185,19 @@ function resetUserInfo() {
   location.reload();
 }
 
+var coll = document.getElementsByClassName("collapsible");
+var a;
+for (a = 0; a < coll.length; a++) {
+  coll[a].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+}); }
+
 /* function toggleTheme() {
             // Obtains an array of all <link>
             // elements.
