@@ -46,7 +46,7 @@ function setUsernamePosition() {
 }
 
 function setPosLeaderboardOne() {
-    window.alert("Welcome back " + localStorage.getItem("username") + "!");
+    window.alert("Welcome back " + localStorage.getItem("username") + "!" + "Please load aa");
     if(localStorage.getItem("username") == "Giginess") {
       document.getElementById("Giginess").style.color = "gold";
      } else if (localStorage.getItem("username") == "Deetusy3letus") {
