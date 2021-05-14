@@ -141,7 +141,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #ffff00;
+  background-color: #0000ff;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -150,8 +150,10 @@ button {
   width: 50%;
   border-radius: 25px;
   font-family: 'Russo One';font-size: 22px;
-font-weight:normal;
-font-style:normal;
+  font-weight:normal;
+  font-style:normal;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button:hover {
