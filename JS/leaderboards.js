@@ -73,6 +73,7 @@ function setPosLeaderboardOne() {
       document.getElementById("Dar1nGD").style.color = "gold";
      } else if (localStorage.getItem("username") == "CrSb") {
       document.getElementById("CrSb").style.backgroundColor = "gold";
+      document.getElementById("CrSb").style.color = "white";
      }
 }
 
