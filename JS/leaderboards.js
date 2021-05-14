@@ -39,7 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                          
 function setUsernamePosition() {
-if(localStorage.getItem("username") != null) {
+  if(localStorage.getItem("username") != null) {
+    setPosLeaderboardOne();
+    setPosLeaderboardTwo();
+  }
+}
+
+function setPosLeaderboardOne() {
     window.alert("Welcome back " + localStorage.getItem("username") + "!");
     if(localStorage.getItem("username") == "Giginess") {
       document.getElementById("Giginess").style.color = "gold";
@@ -68,7 +74,36 @@ if(localStorage.getItem("username") != null) {
      } else if (localStorage.getItem("username") == "CrSb") {
       document.getElementById("CrSb").style.color = "gold";
      }
-    }
+}
+
+function setPosLeaderboardTwo() {
+if(localStorage.getItem("username") == "Giginess") {
+      document.getElementById("Giginess2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Deetusy3letus") {
+      document.getElementById("Deetusy3letus2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "ItzNisha") {
+      document.getElementById("ItzNisha2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "R3alityy") {
+      document.getElementById("R3alityy2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "QwertZer") {
+      document.getElementById("QwertZer2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "MarkTheHeroic") {
+      document.getElementById("MarkTheHeroic2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Mohdaman") {
+      document.getElementById("Mohdaman2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Sheepshadow") {
+      document.getElementById("Sheepshadow2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Fc500") {
+      document.getElementById("Fc5002").style.color = "gold";
+     } else if (localStorage.getItem("username") == "AddisonJudah") {
+      document.getElementById("AddisonJudah2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "zSilveryz") {
+      document.getElementById("zSilveryz2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "Dar1nGD") {
+      document.getElementById("Dar1nGD2").style.color = "gold";
+     } else if (localStorage.getItem("username") == "CrSb") {
+      document.getElementById("CrSb2").style.color = "gold";
+     }
 }
 
 // The Dislcaimer
