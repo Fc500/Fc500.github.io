@@ -46,7 +46,7 @@ function setUsernamePosition() {
 }
 
 function setPosLeaderboardOne() {
-    window.alert("Welcome back " + localStorage.getItem("username") + "!" + "Please load aa");
+    window.alert("Welcome back " + localStorage.getItem("username") + "!");
     if(localStorage.getItem("username") == "Giginess") {
       document.getElementById("Giginess").style.color = "gold";
      } else if (localStorage.getItem("username") == "Deetusy3letus") {
@@ -59,10 +59,13 @@ function setPosLeaderboardOne() {
       document.getElementById("QwertZer").style.color = "gold";
      } else if (localStorage.getItem("username") == "MarkTheHeroic") {
       document.getElementById("MarkTheHeroic").style.color = "gold";
+      document.getElementById("MarkTheHeroic").style.backgroundColor = "gold";
      } else if (localStorage.getItem("username") == "Mohdaman") {
       document.getElementById("Mohdaman").style.color = "gold";
+      document.getElementById("Mohdaman").style.backgroundColor = "gold";
      } else if (localStorage.getItem("username") == "Sheepshadow") {
       document.getElementById("Sheepshadow").style.color = "gold";
+      document.getElementById("Sheepshadow").style.backgroundColor = "gold";
      } else if (localStorage.getItem("username") == "Fc500") {
       document.getElementById("Fc500").style.backgroundColor = "gold";
       document.getElementById("Fc500").style.color = "white";
