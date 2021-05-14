@@ -65,16 +65,16 @@ function setPosLeaderboardOne() {
       document.getElementById("Sheepshadow").style.color = "gold";
      } else if (localStorage.getItem("username") == "Fc500") {
       document.getElementById("Fc500").style.color = "gold";
-      document.getElementById("CrSb").style.color = "white";
+      document.getElementById("Fc500").style.color = "white";
      } else if (localStorage.getItem("username") == "AddisonJudah") {
       document.getElementById("AddisonJudah").style.color = "gold";
-      document.getElementById("CrSb").style.color = "white";
+      document.getElementById("AddisonJudah").style.color = "white";
      } else if (localStorage.getItem("username") == "zSilveryz") {
       document.getElementById("zSilveryz").style.color = "gold";
-      document.getElementById("CrSb").style.color = "white";
+      document.getElementById("zSilveryz").style.color = "white";
      } else if (localStorage.getItem("username") == "Dar1nGD") {
       document.getElementById("Dar1nGD").style.color = "gold";
-      document.getElementById("CrSb").style.color = "white";
+      document.getElementById("Dar1nGD").style.color = "white";
      } else if (localStorage.getItem("username") == "CrSb") {
       document.getElementById("CrSb").style.backgroundColor = "gold";
       document.getElementById("CrSb").style.color = "white";
