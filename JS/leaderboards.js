@@ -228,6 +228,29 @@ function resetUserInfo() {
   location.reload();
 }
 
+// Get the modal
+var credits = document.getElementById("creditsScene");
+// Get the button that opens the modal
+var openCredits = document.getElementById("creditsBtn");
+// Get the <span> element that closes the modal
+var close = document.getElementsByClassName("close4")[0];
+// When the user clicks the button, open the modal
+openCredits.onclick = function() {
+  credits.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+close.onclick = function() {
+  credits.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == credits) {
+    credits.style.display = "none";
+  }
+}
+
+
+
 var coll = document.getElementsByClassName("collapsible");
 var a;
 for (a = 0; a < coll.length; a++) {
