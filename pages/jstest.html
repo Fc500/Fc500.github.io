@@ -5,7 +5,7 @@
   </head>
   <body>
 	  <h1>Hope this works</h1>
-	  <h3>Version: Mark XII | Test: Switching Tables Part I</h3>
+	  <h3>Version: Mark XIII | Test: Audio Part I</h3>
     <button onclick="testy();">Help</button>
 	  <button onclick="saveFile();">Save Image</button>
 	<button onclick="changeStuff();">Change stuff</button>
@@ -26,7 +26,12 @@
 <p class="a">Losing hope tbh</p>
 <p class="a">But I will not give up!</p>
 	  <button onclick="testingThree()">SwitchingTables</button>
+	  <button onclick="playAudio()" type="button">Play Audio</button>
 
+	  
+<audio id="myAudio">
+<source src="Alan Silvestri - Main on End (From Avengers EndgameAudio Only).mp3" type="audio.mpeg"	
+</audio>
     <script>
       window.onload = function testing() {
         window.alert("Help Me lamo");
@@ -62,7 +67,15 @@ function testingThree() {
     document.getElementsByClassName("a")[c].style.color = "white";
   }
 }
-		    
+var g = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  g.play(); 
+} 
+
+function pauseAudio() { 
+  g.pause(); 
+} 		    
     </script>
   </body>
 </html>
