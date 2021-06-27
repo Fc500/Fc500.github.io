@@ -1,0 +1,77 @@
+.header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.left {
+left: 80%;
+position: absolute;
+top: 15%;
+}
+
+
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20%;
+  left: 10px;
+  background: #2e2e2e;
+  overflow-x: hidden;
+  padding: 2px 0px 0px 8px;
+  border-radius: 15px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 145px; /* Same width as the sidebar + left position in px */
+  margin-right: 5px;
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 1px 8px;
+  background-color: #1c1c1c;
+  border-radius: 15px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.material-icons {
+
+  font-size: 50px;
+}
+
+td, th {
+  border: 10px solid rgba(0, 0, 0, 0);
+  text-align: left;
+  padding: 5px;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+  border: 25px solid rgba(0, 0, 0, 0);
+  text-align: left;
+  padding: 5px;
+}
+
