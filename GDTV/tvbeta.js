@@ -7,7 +7,7 @@ shows.style.display = "none";
 catagories.style.display = "none";
 people.style.display = "none";
 
-window.alert("Hi! Welcome to GDTV Beta! Enjoy the website :) \nGG Wildpoint on Beating Poltergeist!");
+window.alert("Hi! Welcome to GDTV Beta! Enjoy the website :)");
 
 function showHome() {
     if (home.style.display === "none") {
