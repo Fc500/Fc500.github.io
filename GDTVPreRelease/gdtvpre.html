@@ -1,0 +1,285 @@
+<html>
+    <head>
+        <title>Welcome to GDTV!</title>
+
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="gdtvpre.css" rel='stylesheet'>
+
+        <!-- Styling for the different fonts-->
+        <style>
+              html {
+                background-color: black;
+            }
+            body {
+                font-family: 'Actor';font-size: 22px;
+                color: white;
+            }
+
+            .audiowide {
+                font-family: 'Audiowide';font-size: 22px;
+                color: #d4d4d4;
+            }
+
+            .aldrich {
+                font-family: 'Aldrich';font-size: 22px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+
+        <img src="gdtv3.png" class="center" style="width: 75%" id="title">
+        <img src="prelease.png" class="left" style="width: 40%">
+        </br>
+        </br>
+        </br>
+
+
+        <!-- Sidenav -->
+        <div class="sidenav">
+            <table style="padding-left: 5px;">
+                <tr>
+                    <th onclick="showHome()"><span class="material-icons" style="font-size: 30px;">home</span></th>
+                    <th onclick="showHome()" style="padding-top: 20px;"><h2>Home</h2></th>
+                </tr>
+                <tr>
+                    <th onclick="showShows()"><span class="material-icons"  style="font-size: 30px;">slideshow</span></th>
+                    <th onclick="showShows()" style="padding-top: 20px;"><h2>Shows</h2></th>
+                </tr>
+
+                <tr>
+                    <th onclick="showCatagories()"><span class="material-icons"  style="font-size: 30px;">list_alt</span></th>
+                    <th onclick="showCatagories()" style="padding-top: 20px;"><h2>Catagories</h2></th>
+                </tr>
+
+                <tr>
+                    <th onclick="showChannels()"><span class="material-icons"  style="font-size: 30px;">groups</span></th>
+                    <th onclick="showChannels()" style="padding-top: 20px;"><h2>Channels</h2></th>
+                </tr>
+                
+                <tr>
+                    <th onclick="showSearch()"><span class="material-icons"  style="font-size: 30px;">search</span></th>
+                    <th onclick="showSearch()" style="padding-top: 20px;"><h2>Search</h2></th>
+                </tr>
+
+                <tr>
+                    <th><span class="material-icons"  style="font-size: 30px;">feed</span></th>
+                    <th style="padding-top: 20px;"><h2>News</h2></th>
+                </tr>
+
+                <tr id="creditsBtn">
+                    <th><span class="material-icons"  style="font-size: 30px;">engineering</span></th>
+                    <th style="padding-top: 20px;"><h2>Credits</h2></th>
+                </tr>
+
+                <tr>
+                    <th onclick="showSettings()"><span class="material-icons"  style="font-size: 30px;">construction</span></th>
+                    <th onclick="showSettings()" style="padding-top: 20px;"><h2>Settings</h2></th>
+                </tr>
+
+            </table>
+        </div>
+        <!-- Home Screen -->
+          <div class="main" style="background-color: #1c1c1c; border-radius: 25px;" id="Home">
+            <h1 style="text-align: center;">HOME</h1>
+            <div class="audiowide" style="text-align: center;">
+                <h2>Welcome to GDTV Pre-Release!</h2>
+                <h3>The website has been coming along well, and we're pleased about all of the support from you guys :)</h3>
+                <h4>We're continuing to work on more features, and are accepting feedback from you guys! We're glad about all the suggestions we've gotten, and we're taking them to heart to make GDTV a great product for everyone!</h4>
+                <h5>DISCLAIMER </br> Even though we're improving, this place is still very prone to bugs, so it might crash from time to time :)</h5>
+            </div>
+            <h6>As stated before, we do not own any content on this website, all videos belong to their respective owners, don't sue us please.</h6>
+            <h2 style="text-align: center;">FOR YOU</h2>
+            <p>A work-in-progress :)</p>
+          </div>  
+
+
+
+
+          <!-- Shows -->
+
+          <div class="main" style="background-color: #1c1c1c; border-radius: 25px;" id="Shows" hidden>
+
+            <h2 style="color: goldenrod;">The Walking Cube [GDTV Original]</h2>
+            <div class="scrollmenu">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CFZ8BF3BWN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <h2>GD Legends</h2>
+            <div class="scrollmenu">
+              <iframe src="https://www.youtube-nocookie.com/embed/-Pl8cHENkDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/tKNIlmXtJT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/dQqNNSuKCQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/TQY4VNumbt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <h2>Creator Battles (Highlights)</h2>
+            <div class="scrollmenu">
+              <iframe src="https://www.youtube-nocookie.com/embed/8mCTT5hTXXE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/Y0Rx3yHaHps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/DdiWSK4Ac5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/S-5pyDS_BK0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/NO2GNcUVxYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <h2>Level Racing (Highlights)</h2>
+            <div class="scrollmenu">
+              <iframe src="https://www.youtube-nocookie.com/embed/gii6XayxZgY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/gNgpr3S8P-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/pCq_MkpHtJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/EmIjP5WPhFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <h2>Level History</h2>
+            <div class="scrollmenu">
+              <iframe src="https://www.youtube-nocookie.com/embed/Zpr27iCxqeo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/x6a3hMeqUvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/9Q3jdV_9jyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/lV6dD7egDAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+
+
+
+
+        <!-- Channels -->
+
+        <div class="main" style="background-color: #1c1c1c; border-radius: 25px;" id="Channels" hidden>
+            <h1>Featured Channels</h1>
+            <div style="background-color: #0f0f0f; border-radius: 25px;">
+            <img src="Viprin.jpg">
+            <img src="omegafalcon.jpg">
+            <img src="norkbork.jpg">
+            <img src="rafer300.jpg">
+            </div>
+            <br>
+            <h1>Unfeatured Channels</h1>
+            <div style="background-color: #0f0f0f; border-radius: 25px;">
+            <img src="fc500.jpg">
+            <img src="dynaxiast.jpg" width="108">
+            <img src="brwinpa.jpg" width="108">
+            <img src="wildpoint.jpg" width="108">
+            </div>
+        </div>
+
+          <!-- Catagories -->
+
+        <div class="main" style="background-color: #1c1c1c; border-radius: 25px;" id="Catagories" hidden>
+            <h2 style="text-align: center;">Tutorials</h2>
+            <div class="scrollmenu">
+            <iframe id="video1" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video2" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video3" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video4" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <h2 style="text-align: center;">Music Videos</h2>
+            <div class="scrollmenu">
+            <iframe id="video5" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video6" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video7" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <h2 style="text-align: center;">Documentaries</h2>
+            <div class="scrollmenu">
+                <iframe id="video8" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video9" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video10" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video11" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video12" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video13" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video14" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video15" class="iframe2" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        <!-- Search -->
+
+        <div class="main" style="background-color: #1c1c1c; border-radius: 25px;" id="Search" hidden>
+            <h1>Not Finished</h1>
+             <br>
+            <!-- input tag -->
+            <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search for shows">
+            <br>
+            <br>
+            <!-- ordered list -->
+            <table id="list">
+                <tr>
+                    <th><iframe class="iframe3" src="https://www.youtube-nocookie.com/embed/Zpr27iCxqeo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+                    <th class="animals"><br><br><h1>Level History | Kenos by Bianox & More</h1></th>
+                </tr>
+                <tr>
+                    <td><iframe class="iframe3" src="https://www.youtube-nocookie.com/embed/x6a3hMeqUvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                    <td class="animals"><br><br><h1>placeholder</h1></td>
+                </tr>
+
+            </table>
+        </div>
+
+        <!-- Settings -->
+
+        <div class="main" style="background-color: #1c1c1c; border-radius: 25px;" id="Settings" hidden>
+        <h2 style="text-align: center;">SETTINGS</h2>
+        <div class="Aldrich" style="text-align: center;">
+            <h3>See what random numbers were generated!</h3>
+            <p>The Title image:</p>
+            <p id = 'demo'></p>
+            <p>The Video order in the Catagories tab:</p>
+            <p id = 'demo1'></p>
+            <p>See the Video order in the Documentaries subcatagory [DEBUG]</p>
+            <p id="demo2"></p>
+        </div>
+        <h5>Subscribe to Fc500 on YouTube!</h5>
+        </div>
+
+
+        <!-- MODALS -->
+
+        <!-- CREDITS -->
+        <!-- The Modal -->
+        <div id="creditsScene" class="modal" style="text-align: center;">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-body">
+            <span class="close">&times;</span>
+                <marquee behavior="scroll" direction="up" style="height:200px;">
+                    <h1 style="text-align: center;">CREDITS</h1>
+                    <br>
+                    <h3>Lead Programmer</h3>
+                    <p style="text-align: right;">Fc500</p>
+                    <br>
+                    <h3>Website Design</h3>
+                    <p style="text-align: right;">Fc500</p>   
+                    <br>
+                    <h3>Modal Design</h3>
+                    <p style="text-align: right;">W3schools<br>Quakit</p>
+                    <h2>Dedications</h2>
+                    <p style="text-align: right;">Giginess<br>Noobig<br>Brwinpa<br>Neutopials Garbage</p>
+                    <br>
+                    <br>
+                    <p style="text-align: center">And you!</p>
+                    <br>
+                    <br>
+                    <br>
+                    <h5>Join the <a href="https://discord.gg/GB2jaVZU">Discord!</a></h5>
+                    <br>
+                </marquee>
+                </div>
+            </div>
+        </div>
+
+          <script src="gdtvpre.js"></script>
+          <script src="gdtvrandom.js"></script>
+
+
+    </body>
+</html>
+
+
+
+<!-- https://www.w3schools.com/code/tryit.asp?filename=GSMO2TXG3TEO -->
