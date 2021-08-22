@@ -51,7 +51,7 @@ remove_function[generator].onclick = function() {
 // Switching between sections
 
 function toggleVisibility(classa, classb) {
-  var x = document.getElementsByClassName("myDIV");
+  var x = document.getElementsByClassName("main");
   if (x[classa].style.display === "none") {
     x[classa].style.display = "block";
     x[classb].style.display = "none"; 
