@@ -24,6 +24,13 @@ body {
   <button class="barlow">Channels</button>
 </div>
 
+<!-- HOW TO USE THE GENERATOR
+
+- First parameter is the section of the array
+- Second is the subsection
+- Third is where to generate it
+- Fourth is the button to change after the first click    (if you don't want the code to run over and over when it's clicked) -->
+    
 <div class="main">
   <h2>Sidebar</h2>
   <p>This sidebar is of full height (100%) and always shown.</p>
@@ -33,6 +40,30 @@ body {
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
 </div>
-   
+
+<div class="main">
+    <button onclick="generateVideos(0, 0, 0, 0)" class="generator">Click me!</button>
+
+<button onclick="generateVideos(0, 1, 1, 1)" class="generator">Click me too!</button>
+
+<button onclick="generateVideos(1, 0, 2, 2)" class="generator">Click me three!</button>
+
+<div class="sections scroll">
+<p>
+The new block will appear below this paragraph.
+</p>
+
+</div>
+
+<div class="sections scroll">
+<p>This should be the second set of videos</p>
+</div>
+
+<div class="sections scroll">
+<p>This should be the third set of videos
+</div>
+</div>
+    
+<script src="../JS/GDTV.js"></script>    
 </body>
 </html> 
