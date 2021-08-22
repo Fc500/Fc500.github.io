@@ -35,3 +35,18 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+
+
+div.scroll { 
+                margin: 4px, 4px; 
+                padding: 4px; 
+                width: 300px; 
+                overflow: auto; 
+                white-space: nowrap; 
+            } 
+
+iframe {
+border-radius: 25px;
+}
+
