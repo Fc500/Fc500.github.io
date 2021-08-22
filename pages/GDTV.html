@@ -18,8 +18,8 @@ body {
 <body>
 
 <div class="sidenav">
-  <button class="barlow">About</button>
-  <button class="barlow">Shows</button>
+  <button class="barlow" onclick="toggleVisibility(0, 1)">About</button>
+  <button class="barlow" onclick="toggleVisibility(1, 0)">Shows</button>
   <button class="barlow">Catagories</button>
   <button class="barlow">Channels</button>
 </div>
@@ -41,7 +41,7 @@ body {
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
 </div>
 
-<div class="main">
+<div class="main" hidden>
     <button onclick="generateVideos(0, 0, 0, 0)" class="generator">Click me!</button>
 
 <button onclick="generateVideos(0, 1, 1, 1)" class="generator">Click me too!</button>
