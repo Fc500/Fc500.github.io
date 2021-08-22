@@ -44,3 +44,19 @@ remove_function[generator].onclick = function() {
 	window.alert("Section " + generator + " has been generated.");
 	}
 }
+
+
+
+
+// Switching between sections
+
+function toggleVisibility(classa, classb) {
+  var x = document.getElementsByClassName("myDIV");
+  if (x[classa].style.display === "none") {
+    x[classa].style.display = "block";
+    x[classb].style.display = "none"; 
+  } else {
+    x[classa].style.display = "none";
+    x[classb].style.display = "block";
+  }
+}
