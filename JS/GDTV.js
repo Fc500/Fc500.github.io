@@ -69,7 +69,8 @@ for (var i = 0; i < arrayLength; i++) {
   x[c1].style.display = "none";	  
   }
 }
-*/
+
 function setBackgroundColor(color) {
 document.body.style.backgroundColor = color;
 }
+*/
