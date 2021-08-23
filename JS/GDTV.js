@@ -1,7 +1,9 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.18 is working!");
+	window.alert("version 0.19 is working!");
 	generateVideos(0, 0, 0, 0);
+	generateVideos(0, 1, 1, 1) 
+	generateVideos(1, 0, 2, 2)
 }
 
 var video_container = document.getElementsByClassName('sections' );
