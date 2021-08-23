@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.13 is working!");
+	window.alert("version 0.14 is working!");
 	generateVideos(0, 0, 0, 0);
 }
 
@@ -59,12 +59,14 @@ remove_function[generator].onclick = function() {
 
 // Switching between sections
 
-function toggleVisibility(classa, classb) {
+function toggleVisibility(classa, classb, classe) {
   var x = document.getElementsByClassName("main");
   if (x[classa].style.display === "none") {
     x[classa].style.display = "block";
     x[classb].style.display = "none"; 
+    x[classc].style.display = "none"; 
   } else {
   x[classa].style.display = "none";
+	  
   }
 }
