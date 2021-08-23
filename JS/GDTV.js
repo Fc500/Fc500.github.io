@@ -1,5 +1,7 @@
 // Update
-window.alert("version 0.02 is working!");
+window.onload = function starting() {
+	window.alert("version 0.02 is working!");
+}
 
 var video_container = document.getElementsByClassName('sections' );
 var add_videos;
