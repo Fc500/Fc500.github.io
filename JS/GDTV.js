@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.04 is working!");
+	window.alert("version 0.05 is working!");
 }
 
 var video_container = document.getElementsByClassName('sections' );
@@ -50,11 +50,6 @@ remove_function[generator].onclick = function() {
 	}
 }
 
-remove_function[0].onclick = function() {
-	generateVideos(0, 0, 0, 0) 
-	generateVideos(0, 1, 1, 1) 
-	generateVideos(1, 0, 2, 2)
-};
 
 
 // Switching between sections
