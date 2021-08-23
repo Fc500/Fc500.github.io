@@ -69,3 +69,7 @@ function toggleVisibility(c1, c2, c3) {
   x[c1].style.display = "none";	  
   }
 }
+
+function setBackgroundColor(color) {
+document.body.style.backgroundColor = color;
+}
