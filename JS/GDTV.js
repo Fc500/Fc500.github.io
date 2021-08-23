@@ -51,8 +51,8 @@ for (var i = 0; i < arrayLength; i++) {
 
     video_container[section].appendChild(add_videos);
         }
-remove_function[generator].onclick = function() {
-	window.alert("Section " + generator + " has been generated.");
+/* remove_function[generator].onclick = function() {
+	window.alert("Section " + generator + " has been generated."); */
 	}
 }
 
