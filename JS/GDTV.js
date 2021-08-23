@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.08 is working!");
+	window.alert("version 0.09 is working!");
 }
 
 var video_container = document.getElementsByClassName('sections' );
@@ -31,6 +31,8 @@ videos[1][0] = new Array ("https://www.youtube-nocookie.com/embed/sEs3SBbNgiU", 
  
 var remove_function = document.getElementsByClassName("generator");
 
+var barlow = document.getElementsByClassName("barlow");
+
 
 
 
@@ -53,11 +55,11 @@ remove_function[generator].onclick = function() {
 	}
 }
 
-remove_function[0].onclick = function() {
+barlow[0].onclick = function() {
 	toggleVisibility(0, 1);
 };
 
-remove_function[1].onclick = function() {
+barlow[1].onclick = function() {
 	toggleVisibility(1, 0);
 	generateVideos(0, 0, 0, 0);
 	generateVideos(0, 1, 1, 1); 
