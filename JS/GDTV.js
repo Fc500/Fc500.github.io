@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.10 is working!");
+	window.alert("version 0.11 is working!");
 }
 
 var video_container = document.getElementsByClassName('sections' );
@@ -61,8 +61,8 @@ barlow[0].onclick = function() {
 
 barlow[1].onclick = function() {
 	toggleVisibility(1, 0);
-	/* generateVideos(0, 0, 0, 0);
-	generateVideos(0, 1, 1, 1); 
+	generateVideos(0, 0, 0, 0);
+	/* generateVideos(0, 1, 1, 1); 
 	generateVideos(1, 0, 2, 2); */
 };
 
