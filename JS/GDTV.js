@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.02 is working!");
+	window.alert("version 0.03 is working!");
 }
 
 var video_container = document.getElementsByClassName('sections' );
@@ -60,5 +60,7 @@ function toggleVisibility(classa, classb) {
   if (x[classa].style.display === "none") {
     x[classa].style.display = "block";
     x[classb].style.display = "none"; 
+  } else {
+  x[classa].style.display = "none";
   }
 }
