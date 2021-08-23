@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.15 is working!");
+	window.alert("version 0.16 is working!");
 	generateVideos(0, 0, 0, 0);
 }
 
@@ -59,14 +59,13 @@ for (var i = 0; i < arrayLength; i++) {
 
 // Switching between sections
 
-function toggleVisibility(classa, classb, classe) {
+function toggleVisibility(c1, c2, c3) {
   var x = document.getElementsByClassName("main");
-  if (x[classa].style.display === "none") {
-    x[classa].style.display = "block";
-    x[classb].style.display = "none"; 
-    x[classc].style.display = "none"; 
+  if (x[c1].style.display === "none") {
+    x[c2].style.display = "block";
+    x[c3].style.display = "none"; 
   } else {
-  x[classa].style.display = "none";
+  x[c1].style.display = "none";
 	  
   }
 }
