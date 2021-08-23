@@ -57,6 +57,5 @@ function toggleVisibility(classa, classb) {
     x[classb].style.display = "none"; 
   } else {
     x[classa].style.display = "none";
-    x[classb].style.display = "block";
   }
 }
