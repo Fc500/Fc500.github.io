@@ -1,5 +1,5 @@
 // Update
-window.alert("version 0.1 is working!");
+window.alert("version 0.02 is working!");
 
 var video_container = document.getElementsByClassName('sections' );
 var add_videos;
@@ -58,7 +58,5 @@ function toggleVisibility(classa, classb) {
   if (x[classa].style.display === "none") {
     x[classa].style.display = "block";
     x[classb].style.display = "none"; 
-  } else {
-    x[classa].style.display = "none";
   }
 }
