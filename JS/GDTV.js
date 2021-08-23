@@ -1,3 +1,6 @@
+// Update
+window.alert("version 0.1 is working!");
+
 var video_container = document.getElementsByClassName('sections' );
 var add_videos;
 
