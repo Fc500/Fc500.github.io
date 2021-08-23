@@ -63,10 +63,9 @@ function toggleVisibility(c1, c2, c3) {
   var x = document.getElementsByClassName("main");
   if (x[c1].style.display == "none") {
     x[c1].style.display = "block";
-    x[c2].style.display = "block";
+    x[c2].style.display = "none";
     x[c3].style.display = "none"; 
   } else {
-  x[c1].style.display = "none";
-	  
+  x[c1].style.display = "none";	  
   }
 }
