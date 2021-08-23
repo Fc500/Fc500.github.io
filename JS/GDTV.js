@@ -59,7 +59,7 @@ for (var i = 0; i < arrayLength; i++) {
 
 // Switching between sections
 
-function toggleVisibility(c1, c2, c3) {
+/* function toggleVisibility(c1, c2, c3) {
   var x = document.getElementsByClassName("main");
   if (x[c1].style.display == "none") {
     x[c1].style.display = "block";
@@ -69,7 +69,7 @@ function toggleVisibility(c1, c2, c3) {
   x[c1].style.display = "none";	  
   }
 }
-
+*/
 function setBackgroundColor(color) {
 document.body.style.backgroundColor = color;
 }
