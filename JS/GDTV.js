@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.06 is working!");
+	window.alert("version 0.07 is working!");
 }
 
 var video_container = document.getElementsByClassName('sections' );
@@ -31,6 +31,9 @@ videos[1][0] = new Array ("https://www.youtube-nocookie.com/embed/sEs3SBbNgiU", 
  
 var remove_function = document.getElementsByClassName("generator");
 
+
+
+
 function generateVideos(array, arrsection, section, generator) {
 
 var arrayLength = videos[array][arrsection].length;
@@ -51,6 +54,11 @@ remove_function[generator].onclick = function() {
 }
 
 
+remove_function[0].onclick = function() {
+	generateVideos(0, 0, 0, 0)
+	generateVideos(0, 1, 1, 1); 
+	generateVideos(1, 0, 2, 2);
+};
 
 // Switching between sections
 
