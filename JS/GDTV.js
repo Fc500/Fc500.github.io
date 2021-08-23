@@ -55,15 +55,12 @@ remove_function[generator].onclick = function() {
 	}
 }
 
-barlow[0].onclick = function() {
-	toggleVisibility(0, 1);
-};
 
-barlow[1].onclick = function() {
+function generateSectionOne() {
 	toggleVisibility(1, 0);
 	generateVideos(0, 0, 0, 0);
-	/* generateVideos(0, 1, 1, 1); 
-	generateVideos(1, 0, 2, 2); */
+	generateVideos(0, 1, 1, 1); 
+	generateVideos(1, 0, 2, 2);
 };
 
 // Switching between sections
