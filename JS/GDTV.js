@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.14 is working!");
+	window.alert("version 0.15 is working!");
 	generateVideos(0, 0, 0, 0);
 }
 
