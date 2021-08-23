@@ -52,14 +52,14 @@ for (var i = 0; i < arrayLength; i++) {
     video_container[section].appendChild(add_videos);
         }
 /* remove_function[generator].onclick = function() {
-	window.alert("Section " + generator + " has been generated."); */
-	}
+	window.alert("Section " + generator + " has been generated."); 
+	} */
 }
 
 
 // Switching between sections
 
-/* function toggleVisibility(c1, c2, c3) {
+ function toggleVisibility(c1, c2, c3) {
   var x = document.getElementsByClassName("main");
   if (x[c1].style.display == "none") {
     x[c1].style.display = "block";
@@ -73,4 +73,4 @@ for (var i = 0; i < arrayLength; i++) {
 function setBackgroundColor(color) {
 document.body.style.backgroundColor = color;
 }
-*/
+
