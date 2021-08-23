@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.11 is working!");
+	window.alert("version 0.12 is working!");
 }
 
 var video_container = document.getElementsByClassName('sections' );
