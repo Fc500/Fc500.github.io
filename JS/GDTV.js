@@ -33,7 +33,7 @@ videos[0][1] = new Array ("https://www.youtube-nocookie.com/embed/8mCTT5hTXXE", 
 videos[1] = new Array ();
 
 // Video Section 2 Subesection
-videos[1][0] = new Array ("https://www.youtube-nocookie.com/embed/sEs3SBbNgiU", "https://www.youtube-nocookie.com/embed/sEs3SBbNgiU");
+videos[1][0] = new Array ("https://www.youtube-nocookie.com/embed/gii6XayxZgY", "https://www.youtube-nocookie.com/embed/gNgpr3S8P-k", "https://www.youtube-nocookie.com/embed/pCq_MkpHtJI", "https://www.youtube-nocookie.com/embed/EmIjP5WPhFk");
  
 var remove_function = document.getElementsByClassName("generator");
 
