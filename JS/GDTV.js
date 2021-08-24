@@ -16,14 +16,14 @@ var add_videos;
 
 const videos = new Array ();
 
-// Video Section 1
+// Shows
 
 videos[0] = new Array ();
 
-// Video Subsection 1 
-videos[0][0] = new Array ("https://www.youtube-nocookie.com/embed/35CD99iRgZM", "https://www.youtube-nocookie.com/embed/35CD99iRgZM");
+// GD Legends
+videos[0][0] = new Array ("https://www.youtube-nocookie.com/embed/-Pl8cHENkDE", "https://www.youtube-nocookie.com/embed/tKNIlmXtJT0", "https://www.youtube-nocookie.com/embed/dQqNNSuKCQk", "https://www.youtube-nocookie.com/embed/TQY4VNumbt8");
 
-// Video Subsection 2
+// Creator Battles
 videos[0][1] = new Array ("https://www.youtube-nocookie.com/embed/yOAGawn3XO4", "https://www.youtube-nocookie.com/embed/yOAGawn3XO4");
 
 // Video Section 2
@@ -45,8 +45,9 @@ var arrayLength = videos[array][arrsection].length;
 
 for (var i = 0; i < arrayLength; i++) {
     add_videos = document.createElement('iframe');
-    add_videos.height = 300
-    add_videos.width = 250
+    add_videos.height = 400
+    add_videos.width = 350
+    add_videos.frameborder = 0;
     add_videos.src = videos[array][arrsection][i];
     
     //Do something
