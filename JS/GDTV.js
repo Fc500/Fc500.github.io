@@ -4,7 +4,7 @@ window.onload = function starting() {
 	generateVideos(0, 0, 0, 0);
 	generateVideos(0, 1, 1, 1); 
 	generateVideos(1, 0, 2, 2);
-  if (localStorage.getItem("theme") != "") {
+  if (localStorage.getItem("theme") != null) {
     checkTheme();
   }
 }
