@@ -72,8 +72,14 @@ for (var i = 0; i < arrayLength; i++) {
   }
 }
 
-function setBackgroundColor(color, txtcolor) {
-document.body.style.backgroundColor = color;
-document.body.style.color = txtcolor;
-}
+function setBackgroundColor(color, txtcolor, navcolor, navtxt) {
+	document.body.style.backgroundColor = color;
+	document.body.style.color = txtcolor;
+	var sidenav = document.getElementsByClassName("sidenav");
+	sidenav[0].style.backgroundColor = navcolor;
+	var sidenavtxt = document.getElementsByClassName("generator");
 
+	for (let i = 0; i < 4; i++) {
+		sidenavtxt[i].style.color = navtxt
+	}
+}
