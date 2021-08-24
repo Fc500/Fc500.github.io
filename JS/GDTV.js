@@ -1,9 +1,12 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.34 is working!");
+	window.alert("version 0.35 is working!");
 	generateVideos(0, 0, 0, 0);
-	generateVideos(0, 1, 1, 1) 
-	generateVideos(1, 0, 2, 2)
+	generateVideos(0, 1, 1, 1); 
+	generateVideos(1, 0, 2, 2);
+  if (localStorage.getItem("theme") != "") {
+    checkTheme();
+  }
 }
 
 var video_container = document.getElementsByClassName('sections' );
@@ -82,4 +85,22 @@ document.body.style.backgroundColor = color;
 document.body.style.color = txtcolor;
 var sidenav = document.getElementsByClassName("sidenav");
 sidenav[0].style.backgroundColor = navcolor;
+}
+
+function setDefaultTheme(theme) {
+  localStorage.setItem("theme", theme);
+}
+
+function checkTheme() {
+  let theme = localStorage.getItem("theme");
+  if (theme == 'light') {
+    setBackgroundColor('#f5f3f0', 'black', '#1f1e1e');
+  } else if (theme == 'dark') {
+    setBackgroundColor('black', '#d9d9d9', '#1d1d1f');
+  } else if (theme == 'blue') {
+    setBackgroundColor('#0f0029', '#e8dbff', '#242442');
+  } else {
+    setBackgroundColor('#33354a', 'white', 'black');
+  }
+  window.alert("Theme set to " + theme + "!");
 }
