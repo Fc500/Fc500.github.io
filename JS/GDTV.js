@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.32 is working!");
+	window.alert("version 0.33 is working!");
 	generateVideos(0, 0, 0, 0);
 	generateVideos(0, 1, 1, 1) 
 	generateVideos(1, 0, 2, 2)
@@ -24,7 +24,7 @@ videos[0] = new Array ();
 videos[0][0] = new Array ("https://www.youtube-nocookie.com/embed/-Pl8cHENkDE", "https://www.youtube-nocookie.com/embed/tKNIlmXtJT0", "https://www.youtube-nocookie.com/embed/dQqNNSuKCQk", "https://www.youtube-nocookie.com/embed/TQY4VNumbt8");
 
 // Creator Battles
-videos[0][1] = new Array ("https://www.youtube-nocookie.com/embed/yOAGawn3XO4", "https://www.youtube-nocookie.com/embed/yOAGawn3XO4");
+videos[0][1] = new Array ("https://www.youtube-nocookie.com/embed/8mCTT5hTXXE", "https://www.youtube-nocookie.com/embed/Y0Rx3yHaHps", "https://www.youtube-nocookie.com/embed/DdiWSK4Ac5I", "https://www.youtube-nocookie.com/embed/S-5pyDS_BK0", "https://www.youtube-nocookie.com/embed/NO2GNcUVxYk");
 
 // Video Section 2
 videos[1] = new Array ();
