@@ -1,9 +1,9 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.41 is working!");
-	generateVideos(0, 0, 0, 0);
-	generateVideos(0, 1, 1, 1); 
-	generateVideos(1, 0, 2, 2);
+	window.alert("version 0.42 is working!");
+	generateVideos(0, 0, 0);
+	generateVideos(0, 1, 1); 
+	generateVideos(0, 2, 2);
   if (localStorage.getItem("theme") != null) {
     checkTheme();
   }
@@ -29,11 +29,14 @@ videos[0][0] = new Array ("https://www.youtube-nocookie.com/embed/-Pl8cHENkDE", 
 // Creator Battles
 videos[0][1] = new Array ("https://www.youtube-nocookie.com/embed/8mCTT5hTXXE", "https://www.youtube-nocookie.com/embed/Y0Rx3yHaHps", "https://www.youtube-nocookie.com/embed/DdiWSK4Ac5I", "https://www.youtube-nocookie.com/embed/S-5pyDS_BK0", "https://www.youtube-nocookie.com/embed/NO2GNcUVxYk");
 
+// Level Racing
+videos[0][2] = new Array ("https://www.youtube-nocookie.com/embed/gii6XayxZgY", "https://www.youtube-nocookie.com/embed/gNgpr3S8P-k", "https://www.youtube-nocookie.com/embed/pCq_MkpHtJI", "https://www.youtube-nocookie.com/embed/EmIjP5WPhFk");
+
 // Video Section 2
 videos[1] = new Array ();
 
 // Video Section 2 Subesection
-videos[1][0] = new Array ("https://www.youtube-nocookie.com/embed/gii6XayxZgY", "https://www.youtube-nocookie.com/embed/gNgpr3S8P-k", "https://www.youtube-nocookie.com/embed/pCq_MkpHtJI", "https://www.youtube-nocookie.com/embed/EmIjP5WPhFk");
+videos[1][0] = new Array ();
  
 var remove_function = document.getElementsByClassName("generator");
 
@@ -42,7 +45,7 @@ var barlow = document.getElementsByClassName("barlow");
 
 
 
-function generateVideos(array, arrsection, section, generator) {
+function generateVideos(array, arrsection, section) {
 
 var arrayLength = videos[array][arrsection].length;
 
