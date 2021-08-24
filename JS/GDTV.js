@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.25 is working!");
+	window.alert("version 0.26 is working!");
 	generateVideos(0, 0, 0, 0);
 	generateVideos(0, 1, 1, 1) 
 	generateVideos(1, 0, 2, 2)
@@ -68,7 +68,7 @@ for (var i = 0; i < arrayLength; i++) {
     x[c2].style.display = "none";
     x[c3].style.display = "none"; 
   } else {
-  x[c1].style.display = "none";	  
+    x[c1].style.display = "none";	  
   }
 }
 
