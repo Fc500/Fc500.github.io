@@ -1,6 +1,6 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.28 is working!");
+	window.alert("version 0.29 is working!");
 	generateVideos(0, 0, 0, 0);
 	generateVideos(0, 1, 1, 1) 
 	generateVideos(1, 0, 2, 2)
@@ -72,14 +72,9 @@ for (var i = 0; i < arrayLength; i++) {
   }
 }
 
-function setBackgroundColor(color, txtcolor, navcolor, navtxt) {
-	document.body.style.backgroundColor = color;
-	document.body.style.color = txtcolor;
-	var sidenav = document.getElementsByClassName("sidenav");
-	sidenav[0].style.backgroundColor = navcolor;
-	var sidenavtxt = document.getElementsByClassName("generator");
-
-	for (let i = 0; i < 4; i++) {
-		sidenavtxt[i].style.color = navtxt
-	}
+function setBackgroundColor(color, txtcolor, navcolor) {
+document.body.style.backgroundColor = color;
+document.body.style.color = txtcolor;
+var sidenav = document.getElementsByClassName("sidenav");
+sidenav[0].style.backgroundColor = navcolor;
 }
