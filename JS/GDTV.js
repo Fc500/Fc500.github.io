@@ -62,12 +62,16 @@ for (var i = 0; i < arrayLength; i++) {
 
 // Switching between sections
 
- function toggleVisibility(c1, c2, c3) {
+ function toggleVisibility(c1, c2, c3, c4, c5, c6) {
   var x = document.getElementsByClassName("main");
   if (x[c1].style.display == "none") {
     x[c1].style.display = "block";
     x[c2].style.display = "none";
     x[c3].style.display = "none"; 
+    x[c4].style.display = "none"; 
+    x[c5].style.display = "none"; 
+    x[c6].style.display = "none"; 
+	  
   } else {
     x[c1].style.display = "none";	  
   }
