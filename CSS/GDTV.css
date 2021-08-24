@@ -1,7 +1,7 @@
 
 .sidenav {
   height: 100%;
-  /* width: 160px; */
+  width: 160px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -41,7 +41,7 @@
 div.scroll { 
                 margin: 4px, 4px; 
                 padding: 4px; 
-                width: 300px; 
+               /* width: 300px; */
                 overflow: auto; 
                 white-space: nowrap; 
             } 
