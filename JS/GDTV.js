@@ -37,17 +37,17 @@ videos[1] = new Array ();
 
 // Video Section 2 Subesection
 videos[1][0] = new Array ();
- 
-var remove_function = document.getElementsByClassName("generator");
 
-var barlow = document.getElementsByClassName("barlow");
+let remove_function = document.getElementsByClassName("generator");
+
+let barlow = document.getElementsByClassName("barlow");
 
 
 
 
 function generateVideos(array, arrsection, section) {
 
-var arrayLength = videos[array][arrsection].length;
+let arrayLength = videos[array][arrsection].length;
 
 for (var i = 0; i < arrayLength; i++) {
     add_videos = document.createElement('iframe');
@@ -86,7 +86,7 @@ for (var i = 0; i < arrayLength; i++) {
 function setBackgroundColor(color, txtcolor, navcolor, theme) {
 document.body.style.backgroundColor = color;
 document.body.style.color = txtcolor;
-var sidenav = document.getElementsByClassName("sidenav");
+let sidenav = document.getElementsByClassName("sidenav");
 sidenav[0].style.backgroundColor = navcolor;
 setDefaultTheme(theme);
 }
