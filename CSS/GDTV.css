@@ -104,5 +104,6 @@ a:hover, a:active {
   border-style: solid;
   border-width: 4px;
   border-color: #ebebeb;
-  background-color: white;
+  background-color: #ebebeb;
+  border-radius: 25px;
 }
