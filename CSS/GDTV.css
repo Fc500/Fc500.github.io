@@ -105,4 +105,6 @@ a:hover, a:active {
   border-width: 4px;
   border-color: #ebebeb;
   background-color: white;
+  margin: 4px 2px;
+  padding: 16px 32px;
 }
