@@ -1,9 +1,9 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.42 is working!");
-	generateVideos(0, 0, 0);
-	generateVideos(0, 1, 1); 
-	generateVideos(0, 2, 2);
+	window.alert("version 0.43 is working!");
+	generateVideos(0, 1, 1);
+	generateVideos(0, 2, 2); 
+	generateVideos(0, 3, 3);
   if (localStorage.getItem("theme") != null) {
     checkTheme();
   }
@@ -23,14 +23,17 @@ const videos = new Array ();
 
 videos[0] = new Array ();
 
+// GD Theories
+videos[0][0] = new Array ("https://www.youtube-nocookie.com/embed/L9P125yu2E4", "https://www.youtube-nocookie.com/embed/H2bSorPQYO8");
+
 // GD Legends
-videos[0][0] = new Array ("https://www.youtube-nocookie.com/embed/-Pl8cHENkDE", "https://www.youtube-nocookie.com/embed/tKNIlmXtJT0", "https://www.youtube-nocookie.com/embed/dQqNNSuKCQk", "https://www.youtube-nocookie.com/embed/TQY4VNumbt8");
+videos[0][1] = new Array ("https://www.youtube-nocookie.com/embed/-Pl8cHENkDE", "https://www.youtube-nocookie.com/embed/tKNIlmXtJT0", "https://www.youtube-nocookie.com/embed/dQqNNSuKCQk", "https://www.youtube-nocookie.com/embed/TQY4VNumbt8");
 
 // Creator Battles
-videos[0][1] = new Array ("https://www.youtube-nocookie.com/embed/8mCTT5hTXXE", "https://www.youtube-nocookie.com/embed/Y0Rx3yHaHps", "https://www.youtube-nocookie.com/embed/DdiWSK4Ac5I", "https://www.youtube-nocookie.com/embed/S-5pyDS_BK0", "https://www.youtube-nocookie.com/embed/NO2GNcUVxYk");
+videos[0][2] = new Array ("https://www.youtube-nocookie.com/embed/8mCTT5hTXXE", "https://www.youtube-nocookie.com/embed/Y0Rx3yHaHps", "https://www.youtube-nocookie.com/embed/DdiWSK4Ac5I", "https://www.youtube-nocookie.com/embed/S-5pyDS_BK0", "https://www.youtube-nocookie.com/embed/NO2GNcUVxYk");
 
 // Level Racing
-videos[0][2] = new Array ("https://www.youtube-nocookie.com/embed/gii6XayxZgY", "https://www.youtube-nocookie.com/embed/gNgpr3S8P-k", "https://www.youtube-nocookie.com/embed/pCq_MkpHtJI", "https://www.youtube-nocookie.com/embed/EmIjP5WPhFk");
+videos[0][3] = new Array ("https://www.youtube-nocookie.com/embed/gii6XayxZgY", "https://www.youtube-nocookie.com/embed/gNgpr3S8P-k", "https://www.youtube-nocookie.com/embed/pCq_MkpHtJI", "https://www.youtube-nocookie.com/embed/EmIjP5WPhFk");
 
 // Video Section 2
 videos[1] = new Array ();
