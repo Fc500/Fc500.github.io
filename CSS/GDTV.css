@@ -99,3 +99,9 @@ a:hover, a:active {
   background-color: black;
   color: white;
 }
+
+.border {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #171759;
+}
