@@ -1,6 +1,7 @@
 // Update
 window.onload = function starting() {
-	window.alert("version 0.43 is working!");
+	window.alert("version 0.44 is working!");
+	generateVideos(0, 0, 0);
 	generateVideos(0, 1, 1);
 	generateVideos(0, 2, 2); 
 	generateVideos(0, 3, 3);
