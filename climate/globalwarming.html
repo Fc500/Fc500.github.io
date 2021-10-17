@@ -20,7 +20,7 @@
     <details>
       <summary>Economy</summary>
       <p>Money <span id="money">100000</span></p>
-      <input type="submit" value="Buy 100 Windmills" onclick="money(1)">
+      <input type="submit" value="Buy 100 Windmills" onclick="setMoney(1)">
     </details>
    <details>
      <summary>Statistics</summary>
@@ -42,7 +42,7 @@
         
       }
       
-      function money(type) {
+      function setMoney(type) {
       
         if (type == 1) {
           if (money > 100) {
@@ -53,7 +53,7 @@
         
       }
       
-      function setTimes(e) {
+      function setTimes() {
         time += 1;
         tempature += tempIncrease;
         tempRounded = tempature.toFixed(3);
