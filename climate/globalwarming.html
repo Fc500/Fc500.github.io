@@ -25,19 +25,20 @@
     </details>
     
     <script>
+      
+      let time = 1;
       function getValues() {
         let years = document.getElementById("yearsdata").value;
         
       }
       
       function doSomething() {
-    alert('This pops up every 5 seconds and is annoying!');
-        let time = document.getElementById("time");
+        alert('This pops up every 3 seconds and is annoying!');
         time += 1;
-        document.getElementbyId("time").innerHTML = time;
+        document.getElementById("time").innerHTML = time;
     }
 
-    setInterval(doSomething, 5000); // Time in milliseconds
+    setInterval(doSomething, 3000); // Time in milliseconds
     </script>
   </body>
 </html>
