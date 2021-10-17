@@ -12,8 +12,11 @@
       <h2>Global Warming Simulator</h2>
       <h5>v0.01</h5>
     </header>
+    <details>
+      <summary>Information</summary>
+      <p>Year: <span id="time">2021</span></p>
    <details>
-     <summary>Information</summary>
+     <summary>Statistics</summary>
        <section>
           <br>
           <input name="yearsdata" id="yearsdata" value="0" type="number">
@@ -29,6 +32,9 @@
       
       function doSomething() {
     alert('This pops up every 5 seconds and is annoying!');
+        let time = document.getElementById("time");
+        time += 1;
+        document.getElementbyId("time").innerHTML = time;
     }
 
     setInterval(doSomething, 5000); // Time in milliseconds
