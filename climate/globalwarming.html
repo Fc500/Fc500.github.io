@@ -15,6 +15,7 @@
     <details>
       <summary>Information</summary>
       <p>Year: <span id="time">2021</span></p>
+      <p>Tempature: <span id="temp">56</span></p>
    <details>
      <summary>Statistics</summary>
        <section>
@@ -27,6 +28,7 @@
     <script>
       
       let time = 1;
+      let tempIncrease = 57;
       function getValues() {
         let years = document.getElementById("yearsdata").value;
         
@@ -35,7 +37,9 @@
       function doSomething() {
         alert('This pops up every 3 seconds and is annoying!');
         time += 1;
+        tempIncrease += 0.017;
         document.getElementById("time").innerHTML = time;
+        document.getElementById("temp").innerHTML = tempIncrease;
     }
 
     setInterval(doSomething, 3000); // Time in milliseconds
