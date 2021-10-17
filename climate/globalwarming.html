@@ -35,7 +35,7 @@
         
       }
       
-      function doSomething() {
+      function setTimes() {
         time += 1;
         tempIncrease += 0.032;
         tempRounded = tempIncrease.toFixed(3);
@@ -43,7 +43,7 @@
         document.getElementById("temp").innerHTML = tempRounded;
     }
 
-    setInterval(doSomething, 2000); // Time in milliseconds
+    setInterval(setTimes, 1000); // Time in milliseconds
     </script>
   </body>
 </html>
