@@ -16,6 +16,7 @@
       <summary>Information</summary>
       <p>Year: <span id="time">2021</span></p>
       <p>Tempature: <span id="temp">56</span></p>
+    </details>
    <details>
      <summary>Statistics</summary>
        <section>
@@ -35,7 +36,6 @@
       }
       
       function doSomething() {
-        alert('This pops up every 3 seconds and is annoying!');
         time += 1;
         tempIncrease += 0.017;
         document.getElementById("time").innerHTML = time;
