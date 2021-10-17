@@ -17,7 +17,7 @@
        <section>
           <br>
           <input name="yearsdata" id="yearsdata" value="0" type="number">
-          <input type="submit" value="ee" onclick="getValues()">
+          <input type="submit" value="Submit" onclick="getValues()">
       </section>
     </details>
     
@@ -26,6 +26,12 @@
         let years = document.getElementById("yearsdata").value;
         
       }
+      
+      function doSomething() {
+    alert('This pops up every 5 seconds and is annoying!');
+    }
+
+    setInterval(doSomething, 5000); // Time in milliseconds
     </script>
   </body>
 </html>
