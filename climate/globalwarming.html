@@ -20,6 +20,7 @@
     <details>
       <summary>Economy</summary>
       <p>Money <span id="money">100000</span></p>
+      <input type="sumbit" value="Buy 100 Windmills" onclick="money(1)"
     </details>
    <details>
      <summary>Statistics</summary>
@@ -35,15 +36,27 @@
       let time = 2021;
       let tempature = 57;
       let tempIncrease = 0.032;
+      let money = 100000;
       function getValues() {
         let years = document.getElementById("yearsdata").value;
+        
+      }
+      
+      function money(type) {
+      
+        if (type == 1) {
+          if (money > 100) {
+            money -= 100;
+            tempIncrease -= 0.032;
+          }
+        }
         
       }
       
       function setTimes() {
         time += 1;
         tempature += tempIncrease;
-        tempRounded = tempIncrease.toFixed(3);
+        tempRounded = tempature.toFixed(3);
         document.getElementById("time").innerHTML = time;
         document.getElementById("temp").innerHTML = tempRounded;
     }
@@ -53,7 +66,7 @@
     function raiseTempature() {
     tempIncrease *= 2;
     }
-    setInterval(raiseTempature, 5000);
+    setInterval(raiseTempature, 10000);
     </script>
   </body>
 </html>
