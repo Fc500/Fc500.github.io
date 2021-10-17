@@ -17,6 +17,10 @@
       <p>Year: <span id="time">2021</span></p>
       <p>Global Tempature: <span id="temp">57</span></p>
     </details>
+    <details>
+      <summary>Economy</summary>
+      <p>Money <span id="money">100000</span></p>
+    </details>
    <details>
      <summary>Statistics</summary>
        <section>
@@ -29,7 +33,8 @@
     <script>
       
       let time = 2021;
-      let tempIncrease = 57;
+      let tempature = 57;
+      let tempIncrease = 0.032;
       function getValues() {
         let years = document.getElementById("yearsdata").value;
         
@@ -37,13 +42,18 @@
       
       function setTimes() {
         time += 1;
-        tempIncrease += 0.032;
+        tempature += tempIncrease;
         tempRounded = tempIncrease.toFixed(3);
         document.getElementById("time").innerHTML = time;
         document.getElementById("temp").innerHTML = tempRounded;
     }
 
     setInterval(setTimes, 1000); // Time in milliseconds
+      
+    function raiseTempature() {
+    tempIncrease *= 2;
+    }
+    setInterval(raiseTempature, 5000);
     </script>
   </body>
 </html>
