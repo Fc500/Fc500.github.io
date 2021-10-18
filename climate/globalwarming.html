@@ -67,13 +67,24 @@
         document.getElementById("time").innerHTML = time;
         document.getElementById("temp").innerHTML = tempRounded;
     }
-
-    setInterval(setTimes, 1000); // Time in milliseconds
+      
       
     function raiseTempature() {
-    tempIncrease *= 2;
+      tempIncrease *= 2;
     }
+
+    function addMoney() {
+      money += 100;
+    }
+      
+      
+    //Set timers
+      
+    setInterval(setTimes, 1000); // Time in milliseconds
+    // One Year ^^^
+      
     setInterval(raiseTempature, 10000);
+    // Ten Years ^^^
     </script>
   </body>
 </html>
