@@ -20,7 +20,7 @@
     <details>
       <summary>Economy</summary>
       <p>Money: <span id="money">100000</span></p>
-      <input type="submit" value="Buy 100 Windmills" onclick="setMoney(1)">
+      <input type="submit" value="Buy 100 Windmills" onclick="buyMoney()">
     </details>
    <details>
      <summary>Statistics</summary>
@@ -41,16 +41,12 @@
         
       }
       
-      function setMoney(type) {
+      function buyMoney() {
       
         let money = document.getElementById("money").value;
-        if (type == 1) {
-          if (money > 100) {
-            money -= 100;
-            tempIncrease /= 2;
-            document.getElementById("money").innerHTML = money;
-          }
-        }
+        money -= 100;
+        tempIncrease /= 2;
+        document.getElementById("money").innerHTML = money;
         
       }
       
