@@ -18,7 +18,9 @@
       <summary>Information</summary>
       <p>Year: <span id="time">2021</span></p>
       <p>Global Tempature: <span id="temp">57</span></p>
+      <p>Earth Habitability: <span id="habit">64</span>%</p>
     </details>
+    
     <details open>
       <summary>Economy</summary>
       <p>Money: <span id="money">NAN</span></p>
@@ -36,10 +38,22 @@
     
     <script>
       
+      /* VARIABLES */
+      
+      //Basic Statistics
       let time = 2021;
       let tempature = 57;
       let tempIncrease = 0.032;
-      let money = 1000;
+      let money = 5000000;
+      let habitability = 64;
+      
+      //Prices
+      
+      let windmillPrice = 2400000;
+      
+      //Production Value
+      
+      let windmillProduction = 87000
       
       window.onload = function loading() {
       document.getElementById("money").innerHTML = money;
@@ -53,9 +67,9 @@
       
       function buyMoney() {
       
-        money -= 750;
-        tempIncrease *= 0.1;
-        document.getElementById("money").innerHTML = money;
+        money -= windmillPrice; // Subtracts the cost of a windmill
+        tempIncrease *= 0.1; // Decreases the tempature
+        document.getElementById("money").innerHTML = money; // Resets the money value
         
       }
       
@@ -74,7 +88,7 @@
     }
 
     function addMoney() {
-      money += 100;
+      money += windmillProduction;
     }
       
       
