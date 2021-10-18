@@ -47,11 +47,12 @@
         if (type == 1) {
           if (money > 100) {
             money -= 100;
-            tempIncrease -= 0.0032;
+            tempIncrease /= 2;
           }
         }
         
       }
+      
       
       function setTimes() {
         time += 1;
