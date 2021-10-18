@@ -10,7 +10,7 @@
   <body>
     <header class="center">
       <h2>Global Warming Simulator</h2>
-      <h5>v0.01</h5>
+      <h5>v0.02</h5>
     </header>
     <details>
       <summary>Information</summary>
@@ -19,7 +19,7 @@
     </details>
     <details>
       <summary>Economy</summary>
-      <p>Money <span id="money">100000</span></p>
+      <p>Money: <span id="money">100000</span></p>
       <input type="submit" value="Buy 100 Windmills" onclick="setMoney(1)">
     </details>
    <details>
@@ -47,7 +47,7 @@
         if (type == 1) {
           if (money > 100) {
             money -= 100;
-            tempIncrease -= 0.032;
+            tempIncrease -= 0.0032;
           }
         }
         
