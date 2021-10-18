@@ -5,12 +5,20 @@
       .center {
         text-align:center;
       }
+      
+      .news {
+background-color: black;
+border-radius: 25px;
+color: white;
+padding: 2px;
+padding-left: 10px;
+}
     </style>
   </head>
   <body>
     <header class="center">
       <h2>Global Warming Simulator</h2>
-      <h5>v0.04</h5>
+      <h5>v0.05</h5>
     </header>
     
     
@@ -34,6 +42,10 @@
           <input name="yearsdata" id="yearsdata" value="0" type="number">
           <input type="submit" value="Submit" onclick="getValues()">
       </section>
+    </details>
+
+    <details id="newsArea" open>
+	    <summary>News</summary>
     </details>
     
     <script>
@@ -90,7 +102,45 @@
     function addMoney() {
       money += windmillProduction;
     }
+    
       
+      
+    let news = "not new";
+
+function setNews() {
+let newsRandomizer = Math.floor((Math.random() * 4) + 1);
+
+if (newsRandomizer == 1) {
+	news = "Earth is warming at an astonishing rate! ";
+} else if (newsRandomizer == 2) {
+	news = "Global leader is doing all he can to stop this crisis! ";
+} else if (newsRandomizer == 3) {
+	news = "Studies show that Earth may be inhabitable by 2150!";
+} else {
+	news = "Critics are like sharks in the water! "
+}
+
+let newsBox = document.createElement("p");
+newsBox.className = "news";
+
+const newsInfo = document.createTextNode(news);
+
+newsBox.appendChild(newsInfo);
+
+const newsPiece = document.getElementById("newsArea");
+newsPiece.appendChild(newsBox);
+
+}
+      
+      function removeNews() {
+let firstNews = document.getElementsByClassName("news")[0];
+
+let parent = document.getElementById("newsArea");
+parent.removeChild(firstNews);
+
+} 
+setInterval(setNews, 2000);
+setInterval(removeNews, 3000);
       
     //Set timers
       
