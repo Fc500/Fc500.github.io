@@ -36,7 +36,6 @@
       let time = 2021;
       let tempature = 57;
       let tempIncrease = 0.032;
-      let money = 100000;
       function getValues() {
         let years = document.getElementById("yearsdata").value;
         
@@ -44,10 +43,12 @@
       
       function setMoney(type) {
       
+        let money = document.getElementById("money").value;
         if (type == 1) {
           if (money > 100) {
             money -= 100;
             tempIncrease /= 2;
+            document.getElementById("money").innerHTML = money;
           }
         }
         
