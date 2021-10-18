@@ -18,7 +18,7 @@ padding-left: 10px;
   <body>
     <header class="center">
       <h2>Global Warming Simulator</h2>
-      <h5>v0.05</h5>
+      <h5>v0.07</h5>
     </header>
     
     
@@ -44,8 +44,8 @@ padding-left: 10px;
       </section>
     </details>
 
-    <details id="newsArea" open>
-	    <summary>News</summary>
+    <details open>
+	    <summary id="newsArea" >News</summary>
 	    <p>NAN</p>
     </details>
     
@@ -142,6 +142,8 @@ parent.removeChild(firstNews);
 } 
 setInterval(setNews, 2000);
 setInterval(removeNews, 3000);
+	    
+	    
       
     //Set timers
       
