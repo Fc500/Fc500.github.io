@@ -20,7 +20,8 @@
     <details>
       <summary>Economy</summary>
       <p>Money: <span id="money">NAN</span></p>
-      <input type="submit" value="Buy 100 Windmills" onclick="buyMoney()">
+      <label for="windmill_buy">Cost:10000</label>
+      <input name="windmill_buy"type="submit" value="Buy 100 Windmills" onclick="buyMoney()">
     </details>
    <details>
      <summary>Statistics</summary>
@@ -41,6 +42,8 @@
       window.onload = function loading() {
       document.getElementById("money").innerHTML = money;
       }
+      
+      
       function getValues() {
         let years = document.getElementById("yearsdata").value;
         
@@ -48,7 +51,7 @@
       
       function buyMoney() {
       
-        money -= 100;
+        money -= 10000;
         tempIncrease *= 0.9;
         document.getElementById("money").innerHTML = money;
         
