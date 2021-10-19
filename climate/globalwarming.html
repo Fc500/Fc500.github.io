@@ -112,6 +112,7 @@ padding-left: 10px;
     function raiseTempature() {
       tempIncrease *= 2;
       habitability -= 1;
+      habit.getElementById("habit").innerHTML = habitability;
       setSustainability();
     }
 
