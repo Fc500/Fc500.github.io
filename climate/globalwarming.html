@@ -134,14 +134,14 @@ newsPiece.appendChild(newsBox);
 }
       
       function removeNews() {
-let firstNews = document.getElementsByClassName("news")[1];
+let firstNews = document.getElementsByClassName("news")[0];
 
 let parent = document.getElementById("newsArea");
 parent.removeChild(firstNews);
 
 } 
 setInterval(setNews, 2000);
-setInterval(removeNews, 3000);
+setInterval(removeNews, 2000);
 	    
 	    
       
