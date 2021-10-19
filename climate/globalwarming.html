@@ -60,6 +60,8 @@ padding-left: 10px;
       let tempIncrease = 0.032;
       let money = 5000000;
       let habitability = 64;
+      let news = "not new";
+      let newsInBox = 0;
       
       //Prices
       
@@ -110,33 +112,7 @@ padding-left: 10px;
     }
     
       
-      
-    let news = "not new";
-	let newsInBox = 0;
-
-function setNews() {
-
-let newsRandomizer = Math.floor((Math.random() * 4) + 1);
-
-randomizeNews();
-	
-if (newsInBox < 3) {
-let newsBox = document.createElement("p");
-newsBox.className = "news";
-
-const newsInfo = document.createTextNode(news);
-
-newsBox.appendChild(newsInfo);
-
-const newsPiece = document.getElementById("newsArea");
-newsPiece.appendChild(newsBox);
-} else {
-    let lastNews = document.getElementsByClassName("news")[1];
-    lastNews.innerHTML = news;
-  }
-}
-	    
-function randomizeNews() {
+ function randomizeNews() {
 if (newsRandomizer == 1) {
 	news = "Earth is warming at an astonishing rate! ";
 } else if (newsRandomizer == 2) {
@@ -146,9 +122,34 @@ if (newsRandomizer == 1) {
 } else {
 	news = "Critics are like sharks in the water! "
   }
-news++;
+newsInBox += 1;
 }
 	
+	    
+
+function setNews() {
+
+  let newsRandomizer = Math.floor((Math.random() * 4) + 1);
+
+  randomizeNews();
+	
+  if (newsInBox < 30) {
+    let newsBox = document.createElement("p");
+    newsBox.className = "news";
+
+    const newsInfo = document.createTextNode(news);
+
+    newsBox.appendChild(newsInfo);
+
+    const newsPiece = document.getElementById("newsArea");
+    newsPiece.appendChild(newsBox);
+  } else {
+    let lastNews = document.getElementsByClassName("news")[0];
+    lastNews.innerHTML = news;
+  }
+}
+	    
+
    /*   
       function removeNews() {
 let firstNews = document.getElementsByClassName("news")[0];
