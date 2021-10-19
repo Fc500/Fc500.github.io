@@ -19,6 +19,7 @@ padding-left: 10px;
     <header class="center">
       <h2>Global Warming Simulator</h2>
       <h5>v0.1.4</h5>
+	    <h6>Snapshot 21M10W3a</h6>
       <h5>ALPHA!</h5>
     </header>
     
@@ -47,7 +48,7 @@ padding-left: 10px;
 
     <details open>
 	    <summary>News</summary>
-	    <span id="newsArea" >NAN</span>
+	    <span id="newsArea" >N/F</span>
     </details>
     
     <details open>
@@ -55,7 +56,8 @@ padding-left: 10px;
 	    <p>ALPHA 0.1.4</p>
 	    <ul>
 		    <li>Changed update numbering system</li>
-		    <li>Tried fixing stuff</li>
+		    <li>Tried fixing the habitability system</li>
+		    <li>Disabled news for the time due to bugs</li>
 	    </ul>
 	  </details>
     <script>
@@ -112,27 +114,25 @@ padding-left: 10px;
     function raiseTempature() {
       tempIncrease *= 2;
       habitability -= 1;
-      habit.getElementById("habit").innerHTML = habitability;
-      setSustainability();
+      document.getElementById("habit").innerHTML = habitability;
+      if (habitability < 60) {
+        document.getElementById("habit_text").innerHTML = "UNCONFORTABLE";
+      } else if (habitability < 30) {
+        document.getElementById("habit_text").innerHTML = "SEVERE";
+      } else if (habitability < 20) {
+        document.getElementById("habit_text").innerHTML = "CRITICAL";
+      } else if (habitability < 5) {
+        document.getElementById("habit_text").innerHTML = "UNSUSTAINABLE";
+      } else if (habitability = 0) {
+        document.getElementById("habit_text").innerHTML = "GAME OVER";
+      }
     }
 
     function addMoney() {
       money += windmillProduction;
     }
 	    
-    function setSustainability() {
-    if (habitability < 60) {
-      document.getElementById("habit_text").innerHTML = "UNCONFORTABLE";
-      } else if (habitability < 30) {
-      document.getElementById("habit_text").innerHTML = "SEVERE";
-      } else if (habitability < 20) {
-      document.getElementById("habit_text").innerHTML = "CRITICAL";
-      } else if (habitability < 5) {
-      document.getElementById("habit_text").innerHTML = "UNSUSTAINABLE";
-      } else if (habitability = 0) {
-      document.getElementById("habit_text").innerHTML = "GAME OVER";
-      }
-    }
+  
     
       
  
