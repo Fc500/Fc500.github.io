@@ -109,20 +109,15 @@ padding-left: 10px;
       
       
     let news = "not new";
+	let newsInBox = 0;
 
 function setNews() {
+
 let newsRandomizer = Math.floor((Math.random() * 4) + 1);
 
-if (newsRandomizer == 1) {
-	news = "Earth is warming at an astonishing rate! ";
-} else if (newsRandomizer == 2) {
-	news = "Global leader is doing all he can to stop this crisis! ";
-} else if (newsRandomizer == 3) {
-	news = "Studies show that Earth may be inhabitable by 2150!";
-} else {
-	news = "Critics are like sharks in the water! "
-}
-
+randomizeNews();
+	
+if (newsInBox < 3) {
 let newsBox = document.createElement("p");
 newsBox.className = "news";
 
@@ -132,18 +127,36 @@ newsBox.appendChild(newsInfo);
 
 const newsPiece = document.getElementById("newsArea");
 newsPiece.appendChild(newsBox);
-
+} else {
+    let lastNews = document.getElementsByClassName("news")[1];
+    lastNews.innerHTML = news;
+  }
 }
-      
+	    
+function randomizeNews() {
+if (newsRandomizer == 1) {
+	news = "Earth is warming at an astonishing rate! ";
+} else if (newsRandomizer == 2) {
+	news = "Global leader is doing all he can to stop this crisis! ";
+} else if (newsRandomizer == 3) {
+	news = "Studies show that Earth may be inhabitable by 2150!";
+} else {
+	news = "Critics are like sharks in the water! "
+  }
+news++;
+}
+	
+   /*   
       function removeNews() {
 let firstNews = document.getElementsByClassName("news")[0];
 
 let parent = document.getElementById("newsArea");
 parent.removeChild(firstNews);
-
 } 
-setInterval(setNews, 2000);
 setInterval(removeNews, 3000);
+*/
+setInterval(setNews, 2000);
+
 	    
 	    
       
