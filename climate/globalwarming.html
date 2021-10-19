@@ -18,7 +18,7 @@ padding-left: 10px;
   <body>
     <header class="center">
       <h2>Global Warming Simulator</h2>
-      <h5>v0.08</h5>
+      <h5>v0.09</h5>
     </header>
     
     
@@ -80,9 +80,11 @@ padding-left: 10px;
       
       function buyMoney() {
       
-        money -= windmillPrice; // Subtracts the cost of a windmill
-        tempIncrease *= 0.1; // Decreases the tempature
-        document.getElementById("money").innerHTML = money; // Resets the money value
+	if (money > windmillPrice) {
+        	money -= windmillPrice; // Subtracts the cost of a windmill
+        	tempIncrease *= 0.1; // Decreases the tempature
+        	document.getElementById("money").innerHTML = money; // Resets the money value
+	} //IF statement that checks 
         
       }
       
