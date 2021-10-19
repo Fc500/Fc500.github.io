@@ -18,7 +18,7 @@ padding-left: 10px;
   <body>
     <header class="center">
       <h2>Global Warming Simulator</h2>
-      <h5>v0.13</h5>
+      <h5>v0.1.4</h5>
       <h5>ALPHA!</h5>
     </header>
     
@@ -50,6 +50,14 @@ padding-left: 10px;
 	    <span id="newsArea" >NAN</span>
     </details>
     
+    <details open>
+	    <summary>Changelog</summary>
+	    <p>ALPHA 0.1.4</p>
+	    <ul>
+		    <li>Changed update numbering system</li>
+		    <li>Tried fixing stuff</li>
+	    </ul>
+	  </details>
     <script>
       
       /* VARIABLES */
@@ -104,7 +112,6 @@ padding-left: 10px;
     function raiseTempature() {
       tempIncrease *= 2;
       habitability -= 1;
-      document.getElementById("habit").innerHTML = habitability;
       setSustainability();
     }
 
