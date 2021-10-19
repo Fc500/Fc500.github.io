@@ -45,8 +45,8 @@ padding-left: 10px;
     </details>
 
     <details open>
-	    <summary id="newsArea" >News</summary>
-	    <p>NAN</p>
+	    <summary>News</summary>
+	    <span id="newsArea" >NAN</span>
     </details>
     
     <script>
@@ -134,7 +134,7 @@ newsPiece.appendChild(newsBox);
 }
       
       function removeNews() {
-let firstNews = document.getElementsByClassName("news")[0];
+let firstNews = document.getElementsByClassName("news")[1];
 
 let parent = document.getElementById("newsArea");
 parent.removeChild(firstNews);
