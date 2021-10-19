@@ -121,13 +121,13 @@ padding-left: 10px;
       tempIncrease *= 1.1;
       habitability -= 1;
       document.getElementById("habit").innerHTML = habitability;
-       if (habitability < 60) {
+       if (habitability < 60 && habitability > 30) {
         document.getElementById("habit_text").innerHTML = "UNCONFORTABLE";
-      } else if (habitability < 30) {
+      } else if (habitability < 30 && habitability > 20) {
         document.getElementById("habit_text").innerHTML = "SEVERE";
-      } else if (habitability < 20) {
+      } else if (habitability < 20 && habitability > 10) {
         document.getElementById("habit_text").innerHTML = "CRITICAL";
-      } else if (habitability < 5) {
+      } else if (habitability < 5 && habitability > 1) {
         document.getElementById("habit_text").innerHTML = "UNSUSTAINABLE";
       } else if (habitability < 1) {
         document.getElementById("habit_text").innerHTML = "GAME OVER";
