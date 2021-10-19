@@ -18,7 +18,7 @@ padding-left: 10px;
   <body>
     <header class="center">
       <h2>Global Warming Simulator</h2>
-      <h5>v0.12</h5>
+      <h5>v0.13</h5>
       <h5>ALPHA!</h5>
     </header>
     
@@ -105,69 +105,29 @@ padding-left: 10px;
       tempIncrease *= 2;
       habitability -= 1;
       document.getElementById("habit").innerHTML = habitability;
-	    
-      if (habitability < 60) {
-      document.getElementById("habit_text").innerHTML = "UNCONFORTABLE";
-      }
+      setSustainability();
     }
 
     function addMoney() {
       money += windmillProduction;
     }
+	    
+    function setSustainability() {
+    if (habitability < 60) {
+      document.getElementById("habit_text").innerHTML = "UNCONFORTABLE";
+      } else if (habitability < 30) {
+      document.getElementById("habit_text").innerHTML = "SEVERE";
+      } else if (habitability < 20) {
+      document.getElementById("habit_text").innerHTML = "CRITICAL";
+      } else if (habitability < 5) {
+      document.getElementById("habit_text").innerHTML = "UNSUSTAINABLE";
+      } else if (habitability = 0) {
+      document.getElementById("habit_text").innerHTML = "GAME OVER";
+      }
+    }
     
       
- function randomizeNews() {
-if (newsRandomizer == 1) {
-	news = "Earth is warming at an astonishing rate! ";
-} else if (newsRandomizer == 2) {
-	news = "Global leader is doing all he can to stop this crisis! ";
-} else if (newsRandomizer == 3) {
-	news = "Studies show that Earth may be inhabitable by 2150!";
-} else {
-	news = "Critics are like sharks in the water! "
-  }
-newsInBox += 1;
-}
-	
-	    
-
-function setNews() {
-
-  let newsRandomizer = Math.floor((Math.random() * 4) + 1);
-
-  randomizeNews();
-	
-  if (newsInBox < 30) {
-    let newsBox = document.createElement("p");
-    newsBox.className = "news";
-
-    const newsInfo = document.createTextNode(news);
-
-    newsBox.appendChild(newsInfo);
-
-    const newsPiece = document.getElementById("newsArea");
-    newsPiece.appendChild(newsBox);
-  } else {
-    let lastNews = document.getElementsByClassName("news")[0];
-    lastNews.innerHTML = news;
-  }
-}
-	    
-
-   /*   
-      function removeNews() {
-let firstNews = document.getElementsByClassName("news")[0];
-
-let parent = document.getElementById("newsArea");
-parent.removeChild(firstNews);
-} 
-setInterval(removeNews, 3000);
-*/
-setInterval(setNews, 2000);
-
-	    
-	    
-      
+ 
     //Set timers
       
     setInterval(setTimes, 1000); // Time in milliseconds
