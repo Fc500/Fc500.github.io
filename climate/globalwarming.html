@@ -19,7 +19,7 @@ padding-left: 10px;
     <header class="center">
       <h2>Global Warming Simulator</h2>
       <h5>v0.1.4</h5>
-	    <h6>Snapshot 21M10W3c</h6>
+	    <h6>Snapshot 21M10W3d</h6>
       <h5>ALPHA!</h5>
     </header>
     
@@ -62,6 +62,8 @@ padding-left: 10px;
 	    <p>SNAPSHOT 21M10W3</p>
 	    <ul>
 		    <li>Disabled Habitability feature to see if a certain part is working</li>
+		    <li>Started adding habitability back</li>
+		    <li>Nerfed the rate of climate change doubling so the Earth wouldn't hit 800º in around 3 mins</li>
 	    </ul>
 	  </details>
     <script>
@@ -116,7 +118,7 @@ padding-left: 10px;
       
       
     function raiseTempature() {
-      tempIncrease *= 2;
+      tempIncrease *= 1.1;
       habitability -= 1;
       document.getElementById("habit").innerHTML = habitability;
        if (habitability < 60) {
