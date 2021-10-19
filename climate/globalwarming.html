@@ -18,7 +18,7 @@ padding-left: 10px;
   <body>
     <header class="center">
       <h2>Global Warming Simulator</h2>
-      <h5>v0.11</h5>
+      <h5>v0.12</h5>
       <h5>ALPHA!</h5>
     </header>
     
@@ -27,7 +27,7 @@ padding-left: 10px;
       <summary>Information</summary>
       <p>Year: <span id="time">2021</span></p>
       <p>Global Tempature: <span id="temp">57</span></p>
-      <p>Earth Habitability: <span id="habit">64</span>%</p>
+	    <p>Earth Habitability: <span id="habit">64</span>% | <span id="habit_text">NORMAL </span></p>
     </details>
     
     <details open>
@@ -105,6 +105,10 @@ padding-left: 10px;
       tempIncrease *= 2;
       habitability -= 1;
       document.getElementById("habit").innerHTML = habitability;
+	    
+      if (habitability < 60) {
+      document.getElementById("habit_text").innerHTML = "UNCONFORTABLE";
+      }
     }
 
     function addMoney() {
