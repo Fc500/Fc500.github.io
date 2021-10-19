@@ -19,7 +19,7 @@ padding-left: 10px;
     <header class="center">
       <h2>Global Warming Simulator</h2>
       <h5>v0.1.4</h5>
-	    <h6>Snapshot 21M10W3e</h6>
+	    <h6>Snapshot 21M10W3f</h6>
       <h5>ALPHA!</h5>
     </header>
     
@@ -125,13 +125,13 @@ padding-left: 10px;
         document.getElementById("habit_text").innerHTML = "UNCONFORTABLE";
       } else if (habitability < 30) {
         document.getElementById("habit_text").innerHTML = "SEVERE";
-      } /* else if (habitability < 20) {
+      } else if (habitability < 20) {
         document.getElementById("habit_text").innerHTML = "CRITICAL";
       } else if (habitability < 5) {
         document.getElementById("habit_text").innerHTML = "UNSUSTAINABLE";
-      } else if (habitability = 0) {
+      } else if (habitability < 1) {
         document.getElementById("habit_text").innerHTML = "GAME OVER";
-      } */
+      } 
     }
 
     function addMoney() {
