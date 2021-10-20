@@ -12,39 +12,63 @@ border-radius: 25px;
 color: white;
 padding: 2px;
 padding-left: 10px;
+	    }
+table {
+  width: 100%;
+  border: 3px solid white;
+  
+}
+.main {
+  background-color:blue;
+  color: white;
+  border-radius: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
     </style>
   </head>
   <body>
     <header class="center">
       <h2>Global Warming Simulator</h2>
-      <h5>v0.1.4</h5>
-	    <h6>Snapshot 21M10W3j</h6>
+      <h5>v0.1.5</h5>
+	  <!--  <h6>Snapshot 21M10W3j</h6> -->
       <h5>ALPHA!</h5>
     </header>
     
-    
-    <details open>
-      <summary>Information</summary>
-      <p>Year: <span id="time">2021</span></p>
-      <p>Global Tempature: <span id="temp">57</span></p>
-	    <p>Earth Habitability: <span id="habit">64</span>% | <span id="habit_text">NORMAL </span></p>
-    </details>
-    
-    <details open>
-      <summary>Economy</summary>
-      <p>Money: <span id="money">NAN</span></p>
-      <label for="windmill_buy">Cost:750</label>
-      <input name="windmill_buy"type="submit" value="Buy 100 Windmills" onclick="buyMoney()">
-    </details>
-   <details open>
-     <summary>Statistics</summary>
-       <section>
-          <br>
-          <input name="yearsdata" id="yearsdata" value="0" type="number">
-          <input type="submit" value="Submit" onclick="getValues()">
+    <div class="main">
+<table>
+  <tr>
+    <td>
+      <details open>
+        <summary>Information</summary>
+        <p>Year: <span id="time">2021</span></p>
+        <p>Global Tempature: <span id="temp">57</span></p>
+	<p>Earth Habitability: <span id="habit">64</span>% | <span id="habit_text">NORMAL </span></p>
+      </details>  
+    </td>       
+    <td>
+      <details open>
+        <summary>Economy</summary>
+        <p>Money: <span id="money">NAN</span></p>
+        <label for="windmill_buy">Cost:750</label>
+        <input name="windmill_buy"type="submit" value="Buy 100 Windmills" onclick="buyMoney()">
+      </details>
+    </td>      
+    <td>
+      <details open>
+        <summary>Statistics</summary>
+        <section>
+        <br>
+        <input name="yearsdata" id="yearsdata" value="0" type="number">
+        <input type="submit" value="Submit" onclick="getValues()">
       </section>
     </details>
+    </td>
+</tr>  
+</table>
+</div> 
 
     <details open>
 	    <summary>News</summary>
@@ -64,6 +88,12 @@ padding-left: 10px;
 		    <li>Disabled Habitability feature to see if a certain part is working</li>
 		    <li>Started adding habitability back</li>
 		    <li>Nerfed the rate of climate change doubling so the Earth wouldn't hit 800º in around 3 mins</li>
+	    </ul>
+	    <p>ALPHA 0.1.5</p>
+	    <ul>
+		    <li>Revamped the CSS of the webpage.</li>
+		    <li>Worked on getting the economy working.</li>
+		    <li>Fixed the table.</li>
 	    </ul>
 	  </details>
     <script>
@@ -141,7 +171,7 @@ padding-left: 10px;
     }
 
     function addMoney() {
-      if (windmills != 0) {
+      if (windmills > 1) {
         money += windmillProduction;
         document.getElementById("money").innerHTML = money;
       }
