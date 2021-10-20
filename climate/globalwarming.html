@@ -47,7 +47,33 @@ table {
   padding-left: 25px;
   padding-right: 25px;
 }
+	    
+/* Colors for habitability & popularity */
+	    .normal {
+	    color: green;
+	    background-color: white;
+	    border-radius: 25px;
+	    }
+	    
+	    .mild {
+	    color: orange;
+	    background-color: white;
+	    border-radius: 25px;
+	    }
+	    
+	    .severe {
+	    color: red;
+	    background-color: white;
+	    border-radius: 25px;
+	    }
+	    
+	    .death {
+	    color: black;
+	    background-color: white;
+	    border-radius: 25px;
+	    }
     </style>
+	  
   </head>
 	
 	
@@ -57,7 +83,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.7</h5>
-	  <h6>Snapshot 21M10W3n</h6>
+	  <h6>Snapshot 21M10W3o</h6>
       <h5>ALPHA!</h5>
     </header>
     
@@ -79,6 +105,8 @@ table {
         <label for="windmill_buy">Buy 1 Windmill</label>
 	<input type="submit" value="$2,000,000 USD" name="windmill_buy" onclick="buyWindmill()" class="abel" id="windmillCost">
 	      <p>Windmills: <span id="windmillsOwned">0</span></p>
+	      </br>
+	    <p>Money per year: $ <span id="mpy">0</span></p>
       </details>
     </td>      
     <td>
@@ -120,6 +148,13 @@ table {
 		    <li>Revamped the CSS of the webpage.</li>
 		    <li>Worked on getting the economy working.</li>
 		    <li>Fixed the table.</li>
+	    </ul>
+	    <p>ALPHA 0.1.7</p>
+	    <ul>
+		    <li>Made some minor tweaks to the CSS of the webpage.</li>
+		    <li>Windmills now lower global tempature</li>
+		    <li>Fixed the habitability feature</li>
+		    <li>Working on displaying the Money Per Year</li>
 	    </ul>
 	  </details>
     <script>
@@ -167,6 +202,7 @@ table {
         	document.getElementById("money").innerHTML = "$ " + money.toFixed(2); // Resets the money value
 		document.getElementById("windmillsOwned").innerHTML = windmills;
 		document.getElementById("windmillCost").value = "$ " + windmillPrice.toFixed(2);
+		document.getElementById("mpy").innerHTML = windmills * windmillPrice;
 	} //IF statement that checks 
         
       }
@@ -188,14 +224,18 @@ document.getElementById("habit").innerHTML = habitability;
 let habitLevel = document.getElementById("habit_text");
        if (habitability < 60 && habitability > 30) {
         habitLevel.innerHTML = "UNCONFORTABLE";
+	habitLevel.classList.add("normal");
       } else if (habitability < 30 && habitability > 20) {
         document.getElementById("habit_text").innerHTML = "SEVERE";
+	habitLevel.classList.add("mild");
       } else if (habitability < 20 && habitability > 10) {
         habitLevel.innerHTML = "CRITICAL";
+	habitLevel.classList.add("severe");
       } else if (habitability < 5 && habitability > 1) {
         habitLevel.innerHTML = "UNSUSTAINABLE";
       } else if (habitability < 1) {
         habitLevel.innerHTML = "GAME OVER";
+	habitLevel.classList.add("death");
       } 
 }
     function raiseTempature() {
