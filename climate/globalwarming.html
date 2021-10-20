@@ -12,12 +12,10 @@
         text-align:center;
       }
       
-      .news {
-background-color: black;
-border-radius: 25px;
-color: white;
-padding: 2px;
-padding-left: 10px;
+	    button {
+	    background-color: white;
+	    text-color: #2d1030;
+	    border-radius: 25px;
 	    }
 table {
   width: 100%;
@@ -177,7 +175,7 @@ table {
     }
 
     function addMoney() {
-      if (windmills > 1) {
+      if (windmills > 0) {
         money += windmillProduction;
         document.getElementById("money").innerHTML = money;
       }
