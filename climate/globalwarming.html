@@ -34,10 +34,11 @@ input[type=button], input[type=submit], input[type=reset] {
 table {
   width: 100%;
   border: 3px solid white;
+  border-radius: 15px;
   
 }
 .main {
-  background-color:#3745bf;
+  background-color: #2f069e;
   color: white;
   border-radius: 25px;
   padding-top: 25px;
@@ -55,7 +56,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.7</h5>
-	  <h6>Snapshot 21M10W3l</h6>
+	  <h6>Snapshot 21M10W3m</h6>
       <h5>ALPHA!</h5>
     </header>
     
@@ -95,7 +96,7 @@ table {
 
     <details open>
 	    <summary>News</summary>
-	    <span id="newsArea" >N/F</span>
+	    <span id="newsArea">N/F</span>
     </details>
     
     <details open>
@@ -197,7 +198,14 @@ let habitLevel = document.getElementById("habit_text");
 }
     function raiseTempature() {
       tempIncrease *= 1.1;
-      habitability -= 1;
+      if (tempIncrease <= 0.75) {
+      habitability -= 1;      
+      }
+      else if (tempIncrease <= 0.5) {
+      habitability -= 0.5;
+      } else if (tempIncrease <= 0.25 {
+      habitability -= 0.25;
+      }
       checkHabit();
     }
 
