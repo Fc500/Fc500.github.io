@@ -50,6 +50,13 @@ table {
 	    
 /* Colors for habitability & popularity */
 	    .normal {
+	    color: blue;
+	    background-color: white;
+	    border-radius: 5px;
+            font-weight: bold;
+	    padding: 5px;
+	    }
+	    .normal {
 	    color: green;
 	    background-color: white;
 	    border-radius: 5px;
@@ -244,7 +251,9 @@ let habitLevel = document.getElementById("habit_text");
       } else if (habitability < 1) {
         habitLevel.innerHTML = "GAME OVER";
 	habitLevel.classList.add("death");
-      } 
+      } else {
+        habitLevel.classList.add("good");
+      }
 }
     function raiseTempature() {
       tempIncrease *= 1.1;
