@@ -12,7 +12,7 @@
         text-align:center;
       }
       
-	    button {
+	    .button {
 	    background-color: white;
 	    text-color: #2d1030;
 	    border-radius: 25px;
@@ -57,7 +57,7 @@ table {
         <summary>Economy</summary>
         <p>Money: <span id="money">NAN</span></p>
         <label for="windmill_buy">Cost:750</label>
-        <input name="windmill_buy"type="submit" value="Buy 100 Windmills" onclick="buyMoney()">
+        <input name="windmill_buy"type="submit" value="Buy 100 Windmills" onclick="buyMoney()" class="button">
       </details>
     </td>      
     <td>
@@ -65,8 +65,8 @@ table {
         <summary>Statistics</summary>
         <section>
         <br>
-        <input name="yearsdata" id="yearsdata" value="0" type="number">
-        <input type="submit" value="Submit" onclick="getValues()">
+        <input name="yearsdata" id="yearsdata" value="0" type="number" class="button">
+        <input type="submit" value="Submit" onclick="getValues()" class="button">
       </section>
     </details>
     </td>
