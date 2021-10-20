@@ -256,6 +256,7 @@ let habitLevel = document.getElementById("habit_text");
       }
 }
     function raiseTempature() {
+      let habitLevel = documentGetElementById("habit").value;
       tempIncrease *= 1.3;
       if (tempIncrease <= 0.75) {
       habitability -= 1;      
@@ -284,7 +285,7 @@ let habitLevel = document.getElementById("habit_text");
     setInterval(setTimes, 1000); // Time in milliseconds
     // One Year ^^^
       
-    setInterval(raiseTempature, 6000);
+    setInterval(raiseTempature, 3000);
     // Six Years ^^^
     </script>
   </body>
