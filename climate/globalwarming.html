@@ -19,7 +19,7 @@ padding-left: 10px;
     <header class="center">
       <h2>Global Warming Simulator</h2>
       <h5>v0.1.4</h5>
-	    <h6>Snapshot 21M10W3i</h6>
+	    <h6>Snapshot 21M10W3j</h6>
       <h5>ALPHA!</h5>
     </header>
     
@@ -87,6 +87,10 @@ padding-left: 10px;
       
       let windmillProduction = 87000
       
+      //Items
+      
+      let windmills = 0;
+      
       window.onload = function loading() {
       document.getElementById("money").innerHTML = money;
       }
@@ -103,6 +107,7 @@ padding-left: 10px;
         	money -= windmillPrice; // Subtracts the cost of a windmill
         	tempIncrease *= 0.1; // Decreases the tempature
         	document.getElementById("money").innerHTML = money; // Resets the money value
+		windmills++;
 	} //IF statement that checks 
         
       }
@@ -136,8 +141,10 @@ padding-left: 10px;
     }
 
     function addMoney() {
-      money += windmillProduction;
-      document.getElementById("money").innerHTML = money;
+      if (windmills != 0) {
+        money += windmillProduction;
+        document.getElementById("money").innerHTML = money;
+      }
     }
 	    
   
