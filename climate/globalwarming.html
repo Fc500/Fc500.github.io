@@ -204,7 +204,7 @@ let habitLevel = document.getElementById("habit_text");
     function addMoney() {
       if (windmills > 0) {
         money += windmillProduction;
-        document.getElementById("money").innerHTML = money;
+        document.getElementById("money").innerHTML = "$ " + money.toFixed(2);
       }
     }
 	    
