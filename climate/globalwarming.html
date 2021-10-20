@@ -70,8 +70,9 @@ table {
       <details open>
         <summary>Economy</summary>
         <p>Money: <span id="money">NAN</span></p>
-        <label for="windmill_buy">Cost: $2,000,000 USD</label>
-	<input type="submit" value="Buy 1 windmill" name="windmill_buy" onclick="buyMoney()" class="abel">
+        <label for="windmill_buy">Buy 1 Windmill</label>
+	<input type="submit" value="$2,000,000 USD" name="windmill_buy" onclick="buyWindmill()" class="abel" id="windmillCost">
+	      <p>Windmills: <span id="windmillsOwned">0</span></p>
       </details>
     </td>      
     <td>
@@ -95,7 +96,7 @@ table {
     
     <details open>
 	    <summary>Changelog</summary>
-	    <p>ALPHA 0.1.4</p>
+	    <p>ALPHA 0.1.5</p>
 	    <ul>
 		    <li>Changed update numbering system</li>
 		    <li>Tried fixing the habitability system</li>
@@ -149,13 +150,15 @@ table {
         
       }
       
-      function buyMoney() {
+      function buyWindmill() {
       
 	if (money > windmillPrice) {
         	money -= windmillPrice; // Subtracts the cost of a windmill
         	tempIncrease *= 0.1; // Decreases the tempature
+		windmillPrice += 1.1;
         	document.getElementById("money").innerHTML = money; // Resets the money value
-		windmills++;
+		document.getElementById("windmillsOwned").innerHTML = windmills;
+		document.getElementById("windmillCost").innerHTML = windmillPrice;
 	} //IF statement that checks 
         
       }
