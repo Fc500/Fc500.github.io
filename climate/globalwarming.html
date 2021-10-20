@@ -97,8 +97,8 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.1.7</h5>
-	  <h6>Snapshot 21M10W3p</h6>
+      <h5>v0.1.8</h5>
+	 <!-- <h6>Snapshot 21M10W3p</h6> -->
       <h5>ALPHA!</h5>
     </header>
     
@@ -110,7 +110,7 @@ table {
         <summary>Information</summary>
         <p>Year: <span id="time">2021</span></p>
         <p>Global Tempature: <span id="temp">57</span>ºF</p>
-	<p>Earth Habitability: <span id="habit">64</span>% | <span id="habit_text">NORMAL </span></p>
+	<p>Earth Habitability: <span id="habit_overall" class="good"><span id="habit">64</span>% | <span id="habit_text">NORMAL </span></span></p>
 	<p>Tempature increase (year): <span id="temp_inc">0.032</span></p>
       </details>  
     </td>       
@@ -119,19 +119,23 @@ table {
         <summary>Economy</summary>
         <p>Money: <span id="money">NAN</span></p>
         <label for="windmill_buy">Buy 1 Windmill</label>
-	<input type="submit" value="$2,000,000 USD" name="windmill_buy" onclick="buyWindmill()" class="abel" id="windmillCost">
+	<input type="submit" value="$2,400,000 USD" name="windmill_buy" onclick="buyWindmill()" class="abel" id="windmillCost">
 	      <p>Windmills: <span id="windmillsOwned">0</span></p>
 	      </br>
+        <label for="hydro_buy>">Buy 1 Windmill</label>
+	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyHydro()" class="abel" id="hydroCost">
+	      <p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
 	    <p>Money per year: $ <span id="mpy">0</span></p>
       </details>
     </td>      
     <td>
       <details open>
-        <summary>Statistics</summary>
+        <summary>Game Info</summary>
         <section>
         <br>
-        <input name="yearsdata" id="yearsdata" value="0" type="number">
-		<input type="submit" value="Submit" onclick="getValues()" class="abel">
+        <p>A simple game about trying to stop climate change! Currently, it does NOT use
+	   actual facts as it's still in early beta :) <br>
+	   For my Enviromental Science final project</p>
       </section>
     </details>
     </td>
@@ -172,6 +176,15 @@ table {
 		    <li>Fixed the habitability feature</li>
 		    <li>Working on displaying the Money Per Year</li>
 	    </ul>
+	    <p>ALPHA 0.1.8</p>
+	    <ul>
+		    <li>Continued working on CSS styling.</li>
+		    <li>Added a feature where you can see the rate of change per year.</li>
+		    <li>Removed STATISTICS button due to no real use for it.</li>
+		    <li>Added a colorful display to the Earth Habitability meter.</li>
+		    <li>Nerfed tempature increase yet again.</li>
+		    <li>Added HYDROELECTRIC GENERATORS (I hope)</li>
+	    </ul>
 	  </details>
     <script>
       
@@ -189,14 +202,16 @@ table {
       //Prices
       
       let windmillPrice = 2400000;
-      
+      let hydroPrice = 24000000;
       //Production Value
       
-      let windmillProduction = 87000
+      let windmillProduction = 87000;
+      let hydroProduction = 870000;
       
       //Items
       
       let windmills = 0;
+      let hydros = 0;
       
       window.onload = function loading() {
       document.getElementById("money").innerHTML = "$ " + money;
@@ -208,6 +223,21 @@ table {
         
       }
       
+      function buyHydro() {
+      
+	if (money > hydroPrice) {
+        	money -= hydroPrice; // Subtracts the cost of a hydro
+        	tempIncrease *= 0.2; // Decreases the tempature
+		hydroPrice += 1.1;
+		hydros++;
+        	document.getElementById("money").innerHTML = "$ " + money.toFixed(2); // Resets the money value
+		document.getElementById("hydrosOwned").innerHTML = hydros;
+		document.getElementById("hydroCost").value = "$ " + hydroPrice.toFixed(2);
+		document.getElementById("mpy").innerHTML += hydros * hydroPrice;
+	} //IF statement that checks 
+        
+      }	
+	    
       function buyWindmill() {
       
 	if (money > windmillPrice) {
@@ -238,26 +268,27 @@ table {
 function checkHabit() {
 document.getElementById("habit").innerHTML = habitability;
 let habitLevel = document.getElementById("habit_text");
+let habitOverall = document.getElementById("habit_overall");
        if (habitability < 60 && habitability > 30) {
         habitLevel.innerHTML = "UNCONFORTABLE";
-	habitLevel.classList.add("normal");
+	habitOverall.classList.add("normal");
       } else if (habitability < 30 && habitability > 20) {
         document.getElementById("habit_text").innerHTML = "SEVERE";
-	habitLevel.classList.add("mild");
+	habitOverall.classList.add("mild");
       } else if (habitability < 20 && habitability > 10) {
         habitLevel.innerHTML = "CRITICAL";
-	habitLevel.classList.add("severe");
+	habitOverall.classList.add("severe");
       } else if (habitability < 5 && habitability > 1) {
-        habitLevel.innerHTML = "UNSUSTAINABLE";
+        habitOverall.innerHTML = "UNSUSTAINABLE";
       } else if (habitability < 1) {
         habitLevel.innerHTML = "GAME OVER";
-	habitLevel.classList.add("death");
+	habitOverall.classList.add("death");
       } else {
-        habitLevel.classList.add("good");
+        habitOverall.classList.add("good");
       }
 }
     function raiseTempature() {
-      tempIncrease *= 1.3;
+      tempIncrease *= 1.2;
       if (tempIncrease > 0.75) {
       habitability -= 1.5;      
       }
@@ -269,7 +300,7 @@ let habitLevel = document.getElementById("habit_text");
       habitability -= 5;
       }
       checkHabit();
-      document.getElementById("temp_inc").innerHTML = tempIncrease;
+      document.getElementById("temp_inc").innerHTML = tempIncrease.toFixed(2);
     }
 
     function addMoney() {
