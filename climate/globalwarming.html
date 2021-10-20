@@ -297,7 +297,7 @@ let habitOverall = document.getElementById("habit_overall");
       } else if (tempIncrease > 0.25 && tempIncrease < 0.5) {
       habitability -= 0.5;
       } else {
-      habitability -= 5;
+      habitability -= 1;
       }
       checkHabit();
       document.getElementById("temp_inc").innerHTML = tempIncrease.toFixed(2);
