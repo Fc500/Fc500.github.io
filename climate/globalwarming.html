@@ -12,11 +12,15 @@
         text-align:center;
       }
       
-	    .button {
-	    background-color: white;
-	    text-color: #2d1030;
-	    border-radius: 25px;
-	    }
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 	    
 	    input[type=text] {
   background-color: ##2d1030;
@@ -62,7 +66,7 @@ table {
         <summary>Economy</summary>
         <p>Money: <span id="money">NAN</span></p>
         <label for="windmill_buy">Cost:750</label>
-	      <button name="windmill_buy" onclick="buyMoney()" class="button">Buy 1 Windmill</button>
+	<input type="submit" value="Buy 1 windmill" name="windmill_buy" onclick="buyMoney()" class="button">
       </details>
     </td>      
     <td>
@@ -71,7 +75,7 @@ table {
         <section>
         <br>
         <input name="yearsdata" id="yearsdata" value="0" type="number" class="button">
-		<button onclick="getValues()" class="button">Submit</button>
+		<input type="submit" value="submit" onclick="getValues()" class="button">
       </section>
     </details>
     </td>
