@@ -122,6 +122,7 @@ table {
 	<input type="submit" value="$2,400,000 USD" name="windmill_buy" onclick="buyWindmill()" class="abel" id="windmillCost">
 	      <p>Windmills: <span id="windmillsOwned">0</span></p>
 	      </br>
+	    
         <label for="hydro_buy>">Buy 1 Windmill</label>
 	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyItem(windmillPrice, windmills, 'windmillsOwned', 'windmillCost')" class="abel" id="hydroCost">
 	      <p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
@@ -230,7 +231,7 @@ table {
         	money -= itemPrice; // Subtracts the cost of a hydro
         	tempIncrease *= 0.2; // Decreases the tempature
 		itemPrice += 1.1;
-		items += 1;
+		items++;
 		window.alert(items);
         	document.getElementById("money").innerHTML = "$ " + money.toFixed(2); // Resets the money value
 		document.getElementById(itemOwned).innerHTML = item;
