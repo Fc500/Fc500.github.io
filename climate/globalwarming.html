@@ -98,7 +98,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.8</h5>
-	 <h6>Snapshot 21M10W3r</h6>
+	 <h6>Snapshot 21M10W3s</h6>
       <h5>ALPHA!</h5>
     </header>
     
@@ -226,6 +226,7 @@ table {
       function buyItem(itemPrice, item, itemOwned, itemCost) {
       
 	if (money > itemPrice) {
+		
         	money -= itemPrice; // Subtracts the cost of a hydro
         	tempIncrease *= 0.2; // Decreases the tempature
 		itemPrice += 1.1;
@@ -233,7 +234,7 @@ table {
         	document.getElementById("money").innerHTML = "$ " + money.toFixed(2); // Resets the money value
 		document.getElementById(itemOwned).innerHTML = item;
 		document.getElementById(itemCost).value = "$ " + itemPrice.toFixed(2);
-		document.getElementById("mpy").innerHTML += item * itemPrice;
+		document.getElementById("mpy").innerHTML = item * itemPrice;
 	} //IF statement that checks 
         
       }	
