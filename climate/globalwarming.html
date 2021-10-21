@@ -98,7 +98,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.8</h5>
-	 <h6>Snapshot 21M10W3q</h6>
+	 <h6>Snapshot 21M10W3r</h6>
       <h5>ALPHA!</h5>
     </header>
     
@@ -123,7 +123,7 @@ table {
 	      <p>Windmills: <span id="windmillsOwned">0</span></p>
 	      </br>
         <label for="hydro_buy>">Buy 1 Windmill</label>
-	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyHydro()" class="abel" id="hydroCost">
+	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyItem(windmillPrice, windmills, 'windmillsOwned', 'windmillCost')" class="abel" id="hydroCost">
 	      <p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
 	    <p>Money per year: $ <span id="mpy">0</span></p>
       </details>
@@ -223,17 +223,17 @@ table {
         
       }
       
-      function buyHydro() {
+      function buyItem(itemPrice, item, itemOwned, itemCost) {
       
-	if (money > hydroPrice) {
-        	money -= hydroPrice; // Subtracts the cost of a hydro
+	if (money > itemPrice) {
+        	money -= itemPrice; // Subtracts the cost of a hydro
         	tempIncrease *= 0.2; // Decreases the tempature
-		hydroPrice += 1.1;
-		hydros++;
+		itemPrice += 1.1;
+		item++;
         	document.getElementById("money").innerHTML = "$ " + money.toFixed(2); // Resets the money value
-		document.getElementById("hydrosOwned").innerHTML = hydros;
-		document.getElementById("hydroCost").value = "$ " + hydroPrice.toFixed(2);
-		document.getElementById("mpy").innerHTML += hydros * hydroPrice;
+		document.getElementById(itemOwned).innerHTML = item;
+		document.getElementById(itemCost).value = "$ " + itemPrice.toFixed(2);
+		document.getElementById("mpy").innerHTML += item * itemPrice;
 	} //IF statement that checks 
         
       }	
