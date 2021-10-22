@@ -98,7 +98,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.9</h5>
-	<!-- <h6>Snapshot 21M10W3t</h6> -->
+	<h6>Snapshot 21M10W3t</h6> 
       <h5>ALPHA!</h5>
     </header>
     
@@ -225,18 +225,6 @@ table {
       }
       
       
-	    
-      
-      
-      function setTimes() {
-        time += 1;
-        tempature += tempIncrease;
-        tempRounded = tempature.toFixed(3);
-        document.getElementById("time").innerHTML = time;
-        document.getElementById("temp").innerHTML = tempRounded;
-	addMoney();
-    }
-      
  function buyItem(item, itemCost) {
       
       if (money > itemCost) {
@@ -250,7 +238,6 @@ table {
       document.getElementById("windmillCost").value = "$ " + windmillPrice.toFixed(2);
       
       } else if (item == 'hydros') {
-      window.alert('ee');
       hydros += 1;
       money -= hydroPrice;
       hydroPrice *= 1.1;
@@ -259,7 +246,7 @@ table {
       }
       document.getElementById('money').innerHTML = "$ " + money;
       }
-      }    
+      }
 
 function checkHabit() {
 document.getElementById("habit").innerHTML = habitability;
@@ -311,6 +298,14 @@ let habitOverall = document.getElementById("habit_overall");
       
       document.getElementById("money").innerHTML = "$ " + money.toFixed(2);
     }
+	    
+	    function setTimes() {
+        time += 1;
+        tempature += tempIncrease;
+        tempRounded = tempature.toFixed(3);
+        document.getElementById("temp").innerHTML = tempRounded;
+	addMoney();
+	    }
 	    
   
     
