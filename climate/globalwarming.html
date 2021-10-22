@@ -129,18 +129,18 @@ table {
 	    <p>Money per year: $ <span id="mpy">0</span></p>
       </details>
     </td>      
-    <td>
-      <details open>
-        <summary>Game Info</summary>
-        <section>
+</tr>  
+<tr>
+  <td>
+    <details open>
+      <summary>Game Info</summary>
         <br>
         <p>A simple game about trying to stop climate change! <br>Currently, it does NOT use
 	   actual facts as it's still <br> in early beta :) |
-	   For my Enviromental Science final project</p>
-      </section>
+	   For my Enviromental Science final project</p>    
     </details>
-    </td>
-</tr>  
+  </td>
+</tr>
 </table>
 </div> 
 	  </br>
@@ -304,6 +304,7 @@ let habitOverall = document.getElementById("habit_overall");
         tempature += tempIncrease;
         tempRounded = tempature.toFixed(3);
         document.getElementById("temp").innerHTML = tempRounded;
+	document.getElementById("time").innerHTML = time;
 	addMoney();
 	    }
 	    
