@@ -186,6 +186,14 @@ table {
 		    <li>Nerfed tempature increase yet again.</li>
 		    <li>Added HYDROELECTRIC GENERATORS (I hope)</li>
 	    </ul>
+	    
+	    	    <p>ALPHA 0.1.9</p>
+	    <ul>
+		    <li>Hydroelectric Generators now are working!</li>
+		    <li>Added a new function that allows for infinite buildings without repeated code.</li>
+		    <li>Removed buildings ability to reduce tempature (bug).</li>
+		    <li>Moved "DESC" tab to the bottom of the table</li>
+	    </ul>
 	  </details>
     <script>
       
@@ -317,7 +325,15 @@ let habitOverall = document.getElementById("habit_overall");
 	    
   
     
-      
+function numFormatter(num) {
+    if(num > 999 && num < 1000000){
+        window.alert( (num/1000).toFixed(1) + 'K'); // convert to K for number from > 1000 < 1 million 
+    }else if(num > 1000000){
+        return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
+    }else if(num < 900){
+        return num; // if value < 1000, nothing to do
+    }
+}
  
     //Set timers
       
