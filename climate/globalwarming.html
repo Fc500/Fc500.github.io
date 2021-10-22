@@ -98,7 +98,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.9</h5>
-	<h6>Snapshot 21M10W3v</h6> 
+	<h6>Snapshot 21M10W3w</h6> 
       <h5>ALPHA!</h5>
     </header>
     
@@ -192,7 +192,7 @@ table {
 		    <li>Hydroelectric Generators now are working!</li>
 		    <li>Added a new function that allows for infinite buildings without repeated code.</li>
 		    <li>Removed buildings ability to reduce tempature (bug).</li>
-		    <li>Moved "DESC" tab to the bottom of the table</li>
+		    <li>Moved "DESC" tab to the bottom of the table.</li>
 	    </ul>
 	  </details>
     <script>
@@ -325,16 +325,7 @@ let habitOverall = document.getElementById("habit_overall");
 	    
   //Credit for the numFormatter code goes to some dude on StackOverflow, thx :)
     
-function numFormatter(num) {
-    if(num > 999 && num < 1000000){
-        window.alert( (num/1000).toFixed(1) + 'K'); // convert to K for number from > 1000 < 1 million 
-    }else if (num > 1000000){
-        return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
-    }else if(num < 900){
-        return num; // if value < 1000, nothing to do
-    }
-}
- 
+
     //Set timers
       
     setInterval(setTimes, 1000); // Time in milliseconds
