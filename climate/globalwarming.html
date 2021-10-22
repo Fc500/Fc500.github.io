@@ -217,6 +217,7 @@ table {
 	    
       //HTML Elements
       let moneyHTML = document.getElementById("money");
+      let habitability = document.getElementById("habit").innerHTML;
       
       window.onload = function loading() {
       moneyHTML.innerHTML = "$ " + money;
@@ -256,7 +257,6 @@ table {
 
 	    
 function checkHabit() {
-document.getElementById("habit").innerHTML = habitability;
 let habitLevel = document.getElementById("habit_text");
 let habitOverall = document.getElementById("habit_overall");
        if (habitability < 60 && habitability > 30) {
@@ -270,7 +270,7 @@ let habitOverall = document.getElementById("habit_overall");
 	habitOverall.classList.add("severe");
       } else if (habitability < 5 && habitability > 1) {
         habitOverall.innerHTML = "UNSUSTAINABLE";
-      } else if (habitability < 1) {
+      } else if (habitability == 0) {
         habitLevel.innerHTML = "GAME OVER";
 	habitOverall.classList.add("death");
       } else {
