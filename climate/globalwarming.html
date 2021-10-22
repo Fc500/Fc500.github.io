@@ -249,8 +249,8 @@ table {
      document.getElementById("hydroCost").value = "$ " + hydroPrice.toFixed(2);
       }
       moneyHTML.innerHTML = "$ " + money.toFixed(2);
-      moneyPerYear = windmills * windmillsProduction + hydros * hydroProduction;
-      document.getElementById("mpy").innerHTML = "$ " + moneyPerYear.toFixed(2);
+      moneyPerYear += windmills * windmillProduction + hydros * hydroProduction;
+      document.getElementById("mpy").innerHTML = moneyPerYear;
       }
       }
 
@@ -303,7 +303,7 @@ let habitOverall = document.getElementById("habit_overall");
         
       }
       
-      document.getElementById("money").innerHTML = "$ " + money.toFixed(2);
+      moneyHTML.innerHTML = "$ " + money.toFixed(2);
     }
 	    
 	    function setTimes() {
