@@ -97,9 +97,9 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.1.9</h5>
-	<h6>Snapshot 21M10W3zz</h6> 
-      <h5>ALPHA!</h5>
+      <h5>v0.2.0</h5>
+	<!--<h6>Snapshot 21M10W3zz</h6> -->
+      <h5>BETA!</h5>
     </header>
     
     <div class="main">
@@ -186,6 +186,20 @@ table {
 		    <li>Added a colorful display to the Earth Habitability meter.</li>
 		    <li>Nerfed tempature increase yet again.</li>
 		    <li>Added HYDROELECTRIC GENERATORS.</li>
+	    </ul>
+	    <p>ALPHA 0.1.9</p>
+	    <ul>
+		    <li>Added a function to allow easier adding of buildings.</li>
+		    <li>Tried to implement a better numbering system.</li>
+		    <li>Broke all of the JS on the webpage :/</li>
+	    </ul>
+	    <p>SNAPSHOT 21M10W3a - 21M10W3zz</p>
+	    <ul>
+		    <li>Nightmare fuel week, spent entirely on fixing the JS of the webpage.</li>
+		    <li>I removed almost all of the JS then slowley added it back in.</li>
+		    <li>Turns out it was a variable name all along, I wanted to throw something.</li>
+		    <li>Added back Habitaibilty after it being removed due to the faulty variable..</li>
+		    <li>Added better money system.</li>
 	    </ul>
 	  </details>
    <script>
@@ -276,15 +290,16 @@ let habitOverall = document.getElementById("habit_overall");
 	habitOverall.classList.add("severe");
       } else if (habitLevelNum < 5 && habitLevelNum > 1) {
         habitOverall.innerHTML = "UNSUSTAINABLE";
-      } else if (habitLevelNum < 1) {
+      } else if (habitLevelNum < 1 && habitLevelNum > -10) {
         window.alert("GAME OVER");
 	habitOverall.classList.add("death");
+	window.reload();
       } else {
 	habitLevel.innerHTML = "GOOD";
       }
 }
     function raiseTempature() {
-      tempIncrease *= 1.2;
+      tempIncrease *= 1.1;
       if (tempIncrease > 0.75) {
       habitLevelNum -= 2;      
       }
@@ -293,7 +308,7 @@ let habitOverall = document.getElementById("habit_overall");
       } else if (tempIncrease > 0.25 && tempIncrease < 0.5) {
       habitLevelNum -= 0.5;
       } else {
-      habitLevelNum -= 1;
+      habitLevelNum -= 0.5;
       }
       checkHabit();
       document.getElementById("temp_inc").innerHTML = tempIncrease.toFixed(2);
