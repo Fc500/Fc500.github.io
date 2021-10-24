@@ -255,7 +255,7 @@ table {
           document.getElementById('hydrosOwned').innerHTML = numFormatter(hydros);
           document.getElementById("hydroCost").value = "$ " + numFormatter(hydroPrice);
         }
-        moneyText.innerHTML = "$ " + money.toFixed(2);
+        moneyText.innerHTML = "$ " + numFormatter(money);
         moneyPerYear += windmills * windmillProduction + hydros * hydroProduction;
         document.getElementById("mpy").innerHTML = numFormatter(moneyPerYear);
       }
@@ -276,11 +276,12 @@ let habitOverall = document.getElementById("habit_overall");
 	habitOverall.classList.add("severe");
       } else if (habitLevelNum < 5 && habitLevelNum > 1) {
         habitOverall.innerHTML = "UNSUSTAINABLE";
-      } else if (habitLevelNum < 0) {
-        habitLevel.innerHTML = "GAME OVER";
+      } else if (habitLevelNum < 1) {
+        window.alert("GAME OVER");
 	habitOverall.classList.add("death");
       } else {
-        habitOverall.classList.add("good");
+        habitOverall.classList.add("death");
+	habitLevel.innerHTML = "GAME OVER";
       }
 }
     function raiseTempature() {
@@ -289,7 +290,7 @@ let habitOverall = document.getElementById("habit_overall");
       habitLevelNum -= 2;      
       }
       else if (tempIncrease > 0.5 && tempIncrease < 0.75) {
-      habitLevelNum -= 1;
+      habitLevelNum -= 0.1;
       } else if (tempIncrease > 0.25 && tempIncrease < 0.5) {
       habitLevelNum -= 0.5;
       } else {
