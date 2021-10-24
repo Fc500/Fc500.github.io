@@ -98,7 +98,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.9</h5>
-	<h6>Snapshot 21M10W3zu</h6> 
+	<h6>Snapshot 21M10W3zw</h6> 
       <h5>ALPHA!</h5>
     </header>
     
@@ -301,7 +301,7 @@ let habitOverall = document.getElementById("habit_overall");
         
       }
       
-      moneyText.innerHTML = "$ " + money.toFixed(2);
+      moneyText.innerHTML = "$ " + numFormatter(money);
     }
 	    
 	    function setTimes() {
@@ -313,6 +313,20 @@ let habitOverall = document.getElementById("habit_overall");
 	addMoney();
 	    }
 	    
+	   
+// converts number to string representation with K and M.
+// toFixed(d) returns a string that has exactly 'd' digits
+// after the decimal place, rounding if necessary.
+function numFormatter(num) {
+    if(num > 999 && num < 1000000){
+        return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
+    }else if(num > 1000000){
+        return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
+    }else if(num < 900){
+        return num; // if value < 1000, nothing to do
+    }
+}
+	   
   //Credit for the numFormatter code goes to some dude on StackOverflow, thx
     
 
