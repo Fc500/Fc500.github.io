@@ -97,7 +97,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.2.0</h5>
+      <h5>v0.2.1</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -211,7 +211,7 @@ table {
       let time = 2021;
       let tempature = 57;
       let tempIncrease = 0.032;
-      let money = 48000000;
+      let money = 4800000;
       let habitability = 64;
       let news = "not new";
       let newsInBox = 0;
@@ -260,12 +260,14 @@ table {
           windmills += 1;
           money -= windmillPrice; 
           windmillPrice *= 1.1;
+	  tempIncrease -= 0.01;
           document.getElementById('windmillsOwned').innerHTML = numFormatter(windmills);     
           document.getElementById("windmillCost").value = "$ " + numFormatter(windmillPrice);     
         } else if (item == 'hydros') {
           hydros += 1;
           money -= hydroPrice;
           hydroPrice *= 1.1;
+	  tempIncrease -= 0.06;
           document.getElementById('hydrosOwned').innerHTML = numFormatter(hydros);
           document.getElementById("hydroCost").value = "$ " + numFormatter(hydroPrice);
         }
