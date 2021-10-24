@@ -98,7 +98,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.9</h5>
-	<h6>Snapshot 21M10W3zt</h6> 
+	<h6>Snapshot 21M10W3zu</h6> 
       <h5>ALPHA!</h5>
     </header>
     
@@ -246,7 +246,7 @@ table {
      document.getElementById('hydrosOwned').innerHTML = hydros;
      document.getElementById("hydroCost").value = "$ " + hydroPrice.toFixed(2);
       }
-      moneyHTML.innerHTML = "$ " + money.toFixed(2);
+      moneyText.innerHTML = "$ " + money.toFixed(2);
       moneyPerYear += windmills * windmillProduction + hydros * hydroProduction;
       document.getElementById("mpy").innerHTML = moneyPerYear;
       }
@@ -288,6 +288,7 @@ let habitOverall = document.getElementById("habit_overall");
       }
       checkHabit();
       document.getElementById("temp_inc").innerHTML = tempIncrease.toFixed(2);
+      document.getElementById("habit").innerHTML = habitLevelNum;
     }
 
     function addMoney() {
