@@ -265,7 +265,7 @@ table {
 function checkHabit() {
 let habitLevel = document.getElementById("habit_text");
 let habitOverall = document.getElementById("habit_overall");
-       if (habitLevelNum < 65 && habitLevelNum > 30) {
+       if (habitLevelNum < 60 && habitLevelNum > 30) {
         habitLevel.innerHTML = "UNCONFORTABLE";
 	habitOverall.classList.add("normal");
       } else if (habitLevelNum < 30 && habitLevelNum > 20) {
@@ -280,7 +280,7 @@ let habitOverall = document.getElementById("habit_overall");
         window.alert("GAME OVER");
 	habitOverall.classList.add("death");
       } else {
-	habitLevel.innerHTML = "???";
+	habitLevel.innerHTML = "GOOD";
       }
 }
     function raiseTempature() {
