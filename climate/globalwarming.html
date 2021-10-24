@@ -98,7 +98,7 @@ table {
     <header class="center">
       <h2>Global Warming Simulator!</h2>
       <h5>v0.1.9</h5>
-	<h6>Snapshot 21M10W3zx</h6> 
+	<h6>Snapshot 21M10W3zy</h6> 
       <h5>ALPHA!</h5>
     </header>
     
@@ -119,12 +119,12 @@ table {
         <summary>Economy</summary>
         <p>Money: <span id="money">NAN</span></p>
         <label for="windmill_buy">Buy 1 Windmill</label>
-	<input type="submit" value="$2,400,000 USD" name="windmill_buy" onclick="buyItem('windmills', 2400000);" class="abel" id="windmillCost">
+	<input type="submit" value="$2,400,000 USD" name="windmill_buy" onclick="buyItem('windmills', windmillPrice);" class="abel" id="windmillCost">
 	      <p>Windmills: <span id="windmillsOwned">0</span></p>
 	      </br>
 	    
         <label for="hydro_buy>">Buy 1 Hydroelectric Generator</label>
-	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyItem('hydros', 24000000);" class="abel" id="hydroCost">
+	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyItem('hydros', hydroPrice);" class="abel" id="hydroCost">
 	      <p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
 	    <p>Money per year: $ <span id="mpy">0</span></p>
       </details>
@@ -242,26 +242,24 @@ table {
       
       if (money > itemCost) {
 
-      if (item == 'windmills') {
-      windmills += 1;
-      money -= windmillPrice; 
-      windmillPrice *= 1.1;
-      document.getElementById('windmillsOwned').innerHTML = numFormatter(windmills);
-      
-      document.getElementById("windmillCost").value = "$ " + numFormatter(windmillPrice);
-      
-      } else if (item == 'hydros') {
-      hydros += 1;
-      money -= hydroPrice;
-      hydroPrice *= 1.1;
-     document.getElementById('hydrosOwned').innerHTML = numFormatter(hydros);
-     document.getElementById("hydroCost").value = "$ " + numFormatter(hydroPrice);
+        if (item == 'windmills') {
+          windmills += 1;
+          money -= windmillPrice; 
+          windmillPrice *= 1.1;
+          document.getElementById('windmillsOwned').innerHTML = numFormatter(windmills);     
+          document.getElementById("windmillCost").value = "$ " + numFormatter(windmillPrice);     
+        } else if (item == 'hydros') {
+          hydros += 1;
+          money -= hydroPrice;
+          hydroPrice *= 1.1;
+          document.getElementById('hydrosOwned').innerHTML = numFormatter(hydros);
+          document.getElementById("hydroCost").value = "$ " + numFormatter(hydroPrice);
+        }
+        moneyText.innerHTML = "$ " + money.toFixed(2);
+        moneyPerYear += windmills * windmillProduction + hydros * hydroProduction;
+        document.getElementById("mpy").innerHTML = numFormatter(moneyPerYear);
       }
-      moneyText.innerHTML = "$ " + money.toFixed(2);
-      moneyPerYear += windmills * windmillProduction + hydros * hydroProduction;
-      document.getElementById("mpy").innerHTML = numFormatter(moneyPerYear);
-      }
-      }
+    }
 
 	    
 function checkHabit() {
@@ -278,7 +276,7 @@ let habitOverall = document.getElementById("habit_overall");
 	habitOverall.classList.add("severe");
       } else if (habitLevelNum < 5 && habitLevelNum > 1) {
         habitOverall.innerHTML = "UNSUSTAINABLE";
-      } else if (habitLevelNum == 0) {
+      } else if (habitLevelNum < 0) {
         habitLevel.innerHTML = "GAME OVER";
 	habitOverall.classList.add("death");
       } else {
