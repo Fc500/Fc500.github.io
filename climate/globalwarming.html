@@ -87,6 +87,71 @@ table {
 	    font-weight: bold;
 	    padding: 5px;
 	    }
+	    
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.btn {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1.5px black;
+  font-size: 45px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}	      
+
+.container .btn {
+  position: absolute;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
     </style>
 	  
   </head>
@@ -97,7 +162,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.2.1</h5>
+      <h5>v0.2.2</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -202,6 +267,33 @@ table {
 		    <li>Added better money system.</li>
 	    </ul>
 	  </details>
+
+<div class="container">
+  <img src="https://media.istockphoto.com/vectors/simplified-or-stylized-world-map-vector-id1192936874?s=612x612" alt="Snow" style="width:95%;">
+  
+  <button class="btn" style="top:30%; left:7%; " onclick="openUI(0, 'NA')">North America</button>
+  
+<button class="btn" style="top:60%; left:12%; " onclick="openUI(1, 'SA')">South America</button> 
+
+<button class="btn" style="top:50%; left:45%; " onclick="openUI(2, 'A')">Africa</button>
+
+<button class="btn" style="top:25%; left: 55%; " onclick="openUI(3, 'EU')">Eurasia</button>
+</div>
+<!-- Trigger/Open The Modal -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Windmills: <span id="windmillFiller"></span></p>
+    <button onclick="showID()">Buy Windmill</button>
+  </div>
+
+</div>
+
+
    <script>
 	    
    
@@ -338,7 +430,39 @@ let habitOverall = document.getElementById("habit_overall");
 	document.getElementById("time").innerHTML = time;
 	addMoney();
 	    }
-	    
+	 
+	   
+	   var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+let windmillsArea = document.getElementById("windmillFiller");
+
+// When the user clicks the button, open the modal 
+ function openUI(button,  region) {
+  var btn = document.getElementsByClassName("btn")[button];
+  windmillsArea.id = "windmills" + region;
+  modal.style.display = "block";
+}
+
+function showID() {
+	window.alert(windmillsArea.id);
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 	   
 // converts number to string representation with K and M.
 // toFixed(d) returns a string that has exactly 'd' digits
