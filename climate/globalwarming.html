@@ -51,14 +51,12 @@ table {
 /* Colors for habitability & popularity */
 	    .good {
 	    color: blue;
-	    background-color: white;
 	    border-radius: 5px;
             font-weight: bold;
 	    padding: 5px;
 	    }
 	    .normal {
 	    color: green;
-	    background-color: white;
 	    border-radius: 5px;
             font-weight: bold;
 	    padding: 5px;
@@ -66,7 +64,6 @@ table {
 	    
 	    .mild {
 	    color: orange;
-	    background-color: white;
 	    border-radius: 5px;
 	    font-weight: bold;
 	    padding: 5px;
@@ -74,7 +71,6 @@ table {
 	    
 	    .severe {
 	    color: red;
-	    background-color: white;
 	    border-radius: 5px;
 	    font-weight: bold;
  	    padding: 5px;
@@ -82,7 +78,6 @@ table {
 	    
 	    .death {
 	    color: black;
-	    background-color: white;
 	    border-radius: 5px;
 	    font-weight: bold;
 	    padding: 5px;
@@ -163,8 +158,6 @@ table {
   right: 10px;
   background: #00178c;
   padding: 6px 8px 6px 16px;
-  border-radius: 25px;
-  outline: 5px solid white;
 }
 
 .sidenav a:hover {
@@ -190,18 +183,24 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.2.6</h5>
+      <h5>v0.2.7</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
    <div class="sidenav">
+	   <table>
+	     <tr>
+	       <td>
         <details open>
         <summary>Information</summary>
         <p>Year: <span id="time">2021</span></p>
         <p>Global Tempature: <span id="temp">57</span>ºF</p>
-	<p>Earth Habitability: <span id="habit_overall" class="good"><span id="habit">64</span>% | <span id="habit_text">NORMAL </span></span></p>
+	<p>Earth Habitability: <span id="habit_overall" class="good"><span id="habit">64</span>% <br> <span id="habit_text">NORMAL </span></span></p>
 	<p>Tempature increase (year): <span id="temp_inc">0.032</span></p>
 	<p>Money: <span id="money">NAN</span></p>
+		</td>
+		   </tr>
+	   </table>
       </details>  
 </div> 
 	  <div class="main">
