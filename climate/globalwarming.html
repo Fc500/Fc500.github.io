@@ -152,6 +152,37 @@ table {
   text-decoration: none;
   cursor: pointer;
 }
+	    
+/* SIDENAV */	    
+
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right: 10px;
+  background: #00178c;
+  padding: 8px 1px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-right: 140px; /* Same width as the sidebar + left position in px */
+  padding: 0px 10px;
+}
+	   
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
     </style>
 	  
   </head>
@@ -162,11 +193,27 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.2.3</h5>
+      <h5>v0.2.4</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
-    
+   <div class="sidenav">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+</div> 
+	  <div class="container">
+  <img src="https://media.istockphoto.com/vectors/simplified-or-stylized-world-map-vector-id1192936874?s=612x612" alt="Snow" style="width:95%;">
+  
+  <button class="btn" style="top:30%; left:7%; " onclick="openUI(0, 'NA')">North America</button>
+  
+<button class="btn" style="top:60%; left:12%; " onclick="openUI(1, 'SA')">South America</button> 
+
+<button class="btn" style="top:50%; left:45%; " onclick="openUI(2, 'A')">Africa</button>
+
+<button class="btn" style="top:25%; left: 55%; " onclick="openUI(3, 'EU')">Eurasia</button>
+</div>
     <div class="main">
 <table>
   <tr>
@@ -268,17 +315,6 @@ table {
 	    </ul>
 	  </details>
 
-<div class="container">
-  <img src="https://media.istockphoto.com/vectors/simplified-or-stylized-world-map-vector-id1192936874?s=612x612" alt="Snow" style="width:95%;">
-  
-  <button class="btn" style="top:30%; left:7%; " onclick="openUI(0, 'NA')">North America</button>
-  
-<button class="btn" style="top:60%; left:12%; " onclick="openUI(1, 'SA')">South America</button> 
-
-<button class="btn" style="top:50%; left:45%; " onclick="openUI(2, 'A')">Africa</button>
-
-<button class="btn" style="top:25%; left: 55%; " onclick="openUI(3, 'EU')">Eurasia</button>
-</div>
 <!-- Trigger/Open The Modal -->
 
 <!-- The Modal -->
