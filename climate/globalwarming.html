@@ -38,7 +38,7 @@ table {
   padding-left: 25px;
   
 }
-.main {
+.mainInfo {
   background-color: #2f069e;
   color: white;
   border-radius: 25px;
@@ -193,15 +193,19 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.2.4</h5>
+      <h5>v0.2.5</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
    <div class="sidenav">
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a>
+        <details open>
+        <summary>Information</summary>
+        <p>Year: <span id="time">2021</span></p>
+        <p>Global Tempature: <span id="temp">57</span>ºF</p>
+	<p>Earth Habitability: <span id="habit_overall" class="good"><span id="habit">64</span>% | <span id="habit_text">NORMAL </span></span></p>
+	<p>Tempature increase (year): <span id="temp_inc">0.032</span></p>
+	<p>Money: <span id="money">NAN</span></p>
+      </details>  
 </div> 
 	  <div class="container">
   <img src="https://media.istockphoto.com/vectors/simplified-or-stylized-world-map-vector-id1192936874?s=612x612" alt="Snow" style="width:95%;">
@@ -214,22 +218,13 @@ table {
 
 <button class="btn" style="top:25%; left: 55%; " onclick="openUI(3, 'EU')">Eurasia</button>
 </div>
-    <div class="main">
+	  <br>
+    <div class="mainInfo">
 <table>
-  <tr>
-    <td>
-      <details open>
-        <summary>Information</summary>
-        <p>Year: <span id="time">2021</span></p>
-        <p>Global Tempature: <span id="temp">57</span>ºF</p>
-	<p>Earth Habitability: <span id="habit_overall" class="good"><span id="habit">64</span>% | <span id="habit_text">NORMAL </span></span></p>
-	<p>Tempature increase (year): <span id="temp_inc">0.032</span></p>
-      </details>  
-    </td>       
+  <tr>  
     <td>
       <details open>
         <summary>Economy</summary>
-        <p>Money: <span id="money">NAN</span></p>
         <label for="windmill_buy">Buy 1 Windmill</label>
 	<input type="submit" value="$2,400,000 USD" name="windmill_buy" onclick="buyItem('windmills', windmillPrice);" class="abel" id="windmillCost">
 	      <p>Windmills: <span id="windmillsOwned">0</span></p>
@@ -240,10 +235,8 @@ table {
 	      <p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
 	    <p>Money per year: $ <span id="mpy">0</span></p>
       </details>
-    </td>      
-</tr>  
-<tr>
-  <td>
+    </td>  
+<td>
     <details open>
       <summary>Game Info</summary>
         <br>
@@ -252,7 +245,7 @@ table {
 	   For my Enviromental Science final project</p>    
     </details>
   </td>
-</tr>
+</tr>  
 </table>
 </div> 
 	  </br>
