@@ -91,6 +91,7 @@ table {
 .btn {
   background-color: rgba(0, 0, 0, 0);
   font-size: 35px;
+  -webkit-text-stroke: 1px black;
 }
 
 /* The Modal (background) */
@@ -179,7 +180,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.3.1</h5>
+      <h5>v0.3.2</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -218,6 +219,10 @@ table {
     <td>
       <details open>
         <summary>Economy</summary>
+	      <label for="solar_buy">Buy 1 Windmill</label>
+	<input type="submit" value="$230,000 USD" name="solar_buy" onclick="buyItem('solars', solarPrice);" class="abel" id="solarCost">
+	      <p>Solar Panels (100): <span id="solarsOwned">0</span></p>
+	      </br>
         <label for="windmill_buy">Buy 1 Windmill</label>
 	<input type="submit" value="$2,400,000 USD" name="windmill_buy" onclick="buyItem('windmills', windmillPrice);" class="abel" id="windmillCost">
 	      <p>Windmills: <span id="windmillsOwned">0</span></p>
@@ -327,23 +332,25 @@ table {
       let time = 2021;
       let tempature = 57;
       let tempIncrease = 0.032;
-      let money = 4800000;
+      let money = 480000;
       let habitability = 64;
       let news = "not new";
       let newsInBox = 0;
       let moneyPerYear = 0;
       
       // Prices
-      
+      let solarPrice = 234000;
       let windmillPrice = 2400000;
       let hydroPrice = 24000000;
+	   
       // Production Value
-      
+      let solarProduction = 21000;
       let windmillProduction = 87000;
       let hydroProduction = 870000;
+	  
       
       //Items
-      
+      let solar = 0;
       let windmills = 0;
       let hydros = 0;
 	    
@@ -376,7 +383,7 @@ table {
           windmills += 1;
           money -= windmillPrice; 
           windmillPrice *= 1.1;
-	  tempIncrease -= 0.01;
+	  tempIncrease -= 0.03;
           document.getElementById('windmillsOwned').innerHTML = numFormatter(windmills);     
           document.getElementById("windmillCost").value = "$ " + numFormatter(windmillPrice);     
         } else if (item == 'hydros') {
@@ -386,6 +393,13 @@ table {
 	  tempIncrease -= 0.06;
           document.getElementById('hydrosOwned').innerHTML = numFormatter(hydros);
           document.getElementById("hydroCost").value = "$ " + numFormatter(hydroPrice);
+        } else if (item == 'hydros') {
+          solar += 1;
+          money -= solarPrice;
+          solarPrice *= 1.1;
+	  tempIncrease -= 0.01;
+          document.getElementById('solarsOwned').innerHTML = numFormatter(solar);
+          document.getElementById("solarCost").value = "$ " + numFormatter(solarPrice);
         }
         moneyText.innerHTML = "$ " + numFormatter(money);
         moneyPerYear += windmills * windmillProduction + hydros * hydroProduction;
