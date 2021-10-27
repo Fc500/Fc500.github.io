@@ -180,7 +180,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.3.2</h5>
+      <h5>v0.3.3</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -219,7 +219,7 @@ table {
     <td>
       <details open>
         <summary>Economy</summary>
-	      <label for="solar_buy">Buy 1 Windmill</label>
+	      <label for="solar_buy">Buy 100 Solar Panels</label>
 	<input type="submit" value="$230,000 USD" name="solar_buy" onclick="buyItem('solars', solarPrice);" class="abel" id="solarCost">
 	      <p>Solar Panels (100): <span id="solarsOwned">0</span></p>
 	      </br>
@@ -393,7 +393,7 @@ table {
 	  tempIncrease -= 0.06;
           document.getElementById('hydrosOwned').innerHTML = numFormatter(hydros);
           document.getElementById("hydroCost").value = "$ " + numFormatter(hydroPrice);
-        } else if (item == 'hydros') {
+        } else if (item == 'solars') {
           solar += 1;
           money -= solarPrice;
           solarPrice *= 1.1;
