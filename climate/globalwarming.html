@@ -90,8 +90,7 @@ table {
 
 .btn {
   background-color: rgba(0, 0, 0, 0);
-  -webkit-text-stroke: 1.5px black;
-  font-size: 45px;
+  font-size: 35px;
 }
 
 /* The Modal (background) */
@@ -409,8 +408,9 @@ let habitOverall = document.getElementById("habit_overall");
 	habitOverall.classList.add("severe");
       } else if (habitLevelNum < 5 && habitLevelNum > 1) {
         habitOverall.innerHTML = "UNSUSTAINABLE";
-      } else if (habitLevelNum < 1 && habitLevelNum > -10) {
+      } else if (habitLevelNum < 1) {
         window.alert("GAME OVER");
+	habitOverall.innerHTML = "DEAD";
 	habitOverall.classList.add("death");
 	window.reload();
       }
