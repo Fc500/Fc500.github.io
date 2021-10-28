@@ -431,15 +431,15 @@ let habitOverall = document.getElementById("habit_overall");
 }
     function raiseTempature() {
       tempIncrease *= 1.1;
-      if (tempIncrease > 0.75) {
+      if (tempIncrease > 0.075) {
       habitLevelNum -= 2;      
       }
-      else if (tempIncrease > 0.5 && tempIncrease < 0.75) {
+      else if (tempIncrease > 0.05 && tempIncrease < 0.075) {
       habitLevelNum -= 0.1;
-      } else if (tempIncrease > 0.25 && tempIncrease < 0.5) {
+      } else if (tempIncrease > 0.032 && tempIncrease < 0.05) {
       habitLevelNum -= 0.5;
-      } else {
-      habitLevelNum -= 0.5;
+      } else if (tempIncrease < 0.032) {
+      habitLevelNum -= 0.25;
       }
       checkHabit();
       document.getElementById("temp_inc").innerHTML = tempIncrease.toFixed(2);
