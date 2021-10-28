@@ -180,7 +180,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.3.3</h5>
+      <h5>v0.3.4</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -402,7 +402,7 @@ table {
           document.getElementById("solarCost").value = "$ " + numFormatter(solarPrice);
         }
         moneyText.innerHTML = "$ " + numFormatter(money);
-        moneyPerYear += windmills * windmillProduction + hydros * hydroProduction;
+        moneyPerYear += windmills * windmillProduction + hydros * hydroProduction + solar * solarProduction;
         document.getElementById("mpy").innerHTML = numFormatter(moneyPerYear);
       }
     }
@@ -455,7 +455,11 @@ let habitOverall = document.getElementById("habit_overall");
         money += hydroProduction * hydros;
         
       }
-      
+	    
+      if (solar > 0) {
+        money += solarProduction * solar;
+        
+      }
       moneyText.innerHTML = "$ " + numFormatter(money);
     }
 	    
