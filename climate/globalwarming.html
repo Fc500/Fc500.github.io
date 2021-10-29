@@ -120,9 +120,6 @@ table {
   text-align: center;
 }
 
-.container .btn:hover {
-  background-color: black;
-}
 
 
 /* Modal Content */
@@ -440,6 +437,8 @@ let habitOverall = document.getElementById("habit_overall");
       habitLevelNum -= 0.5;
       } else if (tempIncrease < 0.032) {
       habitLevelNum -= 0.25;
+      } else if (tempIncrease < 0) {
+      habitLevelNum += 1;
       }
       checkHabit();
       document.getElementById("temp_inc").innerHTML = tempIncrease.toFixed(2);
