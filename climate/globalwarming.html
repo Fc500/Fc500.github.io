@@ -177,7 +177,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.3.5</h5>
+      <h5>v0.3.6</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -231,7 +231,27 @@ table {
 	    <p>Money per year: $ <span id="mpy">0</span></p>
       </details>
     </td>  
-<td>
+		  <td>
+			  <h3>Upgrades</h3>
+			  <label for="upgrade1">Better Windmills</label>
+			  <input type="submit" value="$2M" class="abel">
+		  </td>
+</tr>  
+</table>
+</div> 
+	</div>
+	  </br>
+	</br>
+<table>
+	<tr>
+		<td>
+
+    <details open>
+	    <summary>News</summary>
+	    <span id="newsArea">N/F</span>
+    </details>
+	</td>
+		<td>
     <details open>
       <summary>Game Info</summary>
         <br>
@@ -240,20 +260,9 @@ table {
 	   For my Enviromental Science final project</p>    
     </details>
   </td>
-</tr>  
-</table>
-</div> 
-	</div>
-	  </br>
-	</br>
-<details open>
-    <details open>
-	    <summary>News</summary>
-	    <span id="newsArea">N/F</span>
-    </details>
-  
+	<td>
 
-    <details open>
+    <details>
 	    <summary>Changelog</summary>
 	    <p>ALPHA 0.1.4</p>
 	    <ul>
@@ -304,7 +313,9 @@ table {
 		    <li>Added better money system.</li>
 	    </ul>
 	  </details>
-</details>
+		</td>
+	</tr>
+</table>
 <!-- Trigger/Open The Modal -->
 
 <!-- The Modal -->
@@ -380,21 +391,21 @@ table {
           windmills += 1;
           money -= windmillPrice; 
           windmillPrice *= 1.1;
-	  tempIncrease -= 0.03;
+	  tempIncrease -= 0.1;
           document.getElementById('windmillsOwned').innerHTML = numFormatter(windmills);     
           document.getElementById("windmillCost").value = "$ " + numFormatter(windmillPrice);     
         } else if (item == 'hydros') {
           hydros += 1;
           money -= hydroPrice;
           hydroPrice *= 1.1;
-	  tempIncrease -= 0.06;
+	  tempIncrease -= 0.08;
           document.getElementById('hydrosOwned').innerHTML = numFormatter(hydros);
           document.getElementById("hydroCost").value = "$ " + numFormatter(hydroPrice);
         } else if (item == 'solars') {
           solar += 1;
           money -= solarPrice;
           solarPrice *= 1.1;
-	  tempIncrease -= 0.01;
+	  tempIncrease -= 0.06;
           document.getElementById('solarsOwned').innerHTML = numFormatter(solar);
           document.getElementById("solarCost").value = "$ " + numFormatter(solarPrice);
         }
