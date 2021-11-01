@@ -91,7 +91,7 @@ table {
 .btn {
   background-color: rgba(0, 0, 0, 0);
   font-size: 35px;
-  -webkit-text-stroke: 1px black;
+  color: white;
 }
 
 /* The Modal (background) */
@@ -177,7 +177,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.3.6</h5>
+      <h5>v0.3.7</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -340,7 +340,7 @@ table {
       let time = 2021;
       let tempature = 57;
       let tempIncrease = 0.032;
-      let money = 480000;
+      let money = 48000000000;
       let habitability = 64;
       let news = "not new";
       let newsInBox = 0;
@@ -443,11 +443,11 @@ let habitOverall = document.getElementById("habit_overall");
       habitLevelNum -= 1;      
       }
       else if (tempIncrease > 0.05 && tempIncrease < 0.075) {
-      habitLevelNum -= 0.75;
+      habitLevelNum -= 1;
       } else if (tempIncrease > 0.032 && tempIncrease < 0.05) {
-      habitLevelNum -= 0.5;
+      habitLevelNum -= 0.75;
       } else if (tempIncrease < 0.032) {
-      habitLevelNum -= 0.25;
+      habitLevelNum -= 0.5;
       } else if (tempIncrease < 0) {
       habitLevelNum += 1;
       }
