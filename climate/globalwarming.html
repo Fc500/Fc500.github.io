@@ -15,7 +15,7 @@
         text-align:center;
       }
       
-input[type=button], input[type=submit], input[type=reset] {
+input[type=button], input[type=submit], input[type=reset], button {
   background-color: #2d1030;
   border: none;
   color: white;
@@ -216,10 +216,9 @@ table {
 <table>
   <tr>  
     <td>
-      <details open>
-        <summary>Economy</summary>
+	    <h3>Buildings</h3>
 	      <label for="solar_buy">Buy 100 Solar Panels</label>
-	<input type="submit" value="$230,000 USD" name="solar_buy" onclick="buyItem('solars', solarPrice);" class="abel" id="solarCost">
+	<button name="solar_buy" onclick="buyItem('solars', solarPrice);" class="abel" id="solarCost">$230,000 USD</button>
 	      <p>Solar Panels (100): <span id="solarsOwned">0</span></p>
 	      </br>
         <label for="windmill_buy">Buy 1 Windmill</label>
@@ -231,7 +230,6 @@ table {
 	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyItem('hydros', hydroPrice);" class="abel" id="hydroCost">
 	      <p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
 	    <p>Money per year: $ <span id="mpy">0</span></p>
-      </details>
     </td>  
 		  <td>
 			  <h3>Upgrades</h3>
@@ -244,7 +242,7 @@ table {
 	</div>
 	  </br>
 	</br>
-<table style="background_color: #242424">
+<table style="background-color: #242424">
 	<tr>
 		<td>
 
