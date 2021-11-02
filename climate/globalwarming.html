@@ -2,6 +2,9 @@
   <head>
     <title>Global Warming Simulator</title>
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link rel="stylesheet" href="/progress_bars.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <style>
 	    body {
 	    background-color: black;
@@ -177,7 +180,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.3.8</h5>
+      <h5>v0.3.9</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -328,6 +331,17 @@ table {
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>Windmills: <span id="windmillFiller"></span></p>
+  <div class="meter">
+    <span style="width: 25%" class="myBar"></span>
+    </div>
+   <div class="meter orange">
+    <span style="width: 50%" class="myBar"></span>
+    </div>
+
+    
+    <button onclick="move(0, 25, 100)">Click me to move section 1</button>
+    <button onclick="move(1, 50, 60)">Click me to move section 2</button>
+
     <button onclick="buyItem('windmills', windmillPrice);">Buy Windmill</button>
   </div>
 
@@ -533,5 +547,6 @@ window.onclick = function(event) {
     setInterval(raiseTempature, 4000);
     // Six Years ^^^ */
     </script>
+<script src="progress_bar.js"></script>
   </body>
 </html>
