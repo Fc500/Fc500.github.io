@@ -2,7 +2,7 @@
   box-sizing: content-box;
   height: 20px; /* Can be anything */
   position: relative;
-  margin: 60px 0 20px 0; /* Just for demo spacing */
+  margin: 40px 0 20px 0; /* Just for demo spacing */
   background: #555;
   border-radius: 25px;
   padding: 10px;
@@ -73,6 +73,10 @@
 
 .red > span {
   background-image: linear-gradient(#f0a3a3, #f42323);
+}
+
+.blue > span {
+  background-image: linear-gradient(#b6a3f0, #8388c9)
 }
 
 .nostripes > span > span,
