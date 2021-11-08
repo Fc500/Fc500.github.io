@@ -181,7 +181,7 @@ table {
   <body>
     <header class="center">
       <h2>Global Warming Simulator!</h2>
-      <h5>v0.4.7</h5>
+      <h5>v0.4.8</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -315,6 +315,12 @@ table {
 		    <li>Added back Habitaibilty after it being removed due to the faulty variable..</li>
 		    <li>Added better money system.</li>
 	    </ul>
+	    <p>BETA 0.4.8</p>
+	    <ul>
+		    <li>Finally remembered to update the changelog.</li>
+		    <li>Working on implementing the modal to display how well a certain item will work.</li>
+		    <li>Starting to implement a shop system for upgrades.</li>
+	    </ul>
 	  </details>
 		</td>
 	</tr>
@@ -330,7 +336,7 @@ table {
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-	  <h4>Effciency</h4>
+	  <h4>Effciency: <span id="regionModal"></span></h4>
 	  <p>Geothermal Power</p>
   <div class="meter red">
     <span style="width: 0%" class="myBar"></span>
@@ -455,6 +461,9 @@ let habitOverall = document.getElementById("habit_overall");
 	habitOverall.innerHTML = "DEAD";
 	habitOverall.classList.add("death");
 	window.reload();
+      } else if (habitLevelNum > 70) {
+      document.getElementById("habit_text").innerHTML = "SEVERE";
+      habitOverall.classList.add("mild");
       }
 }
     function raiseTempature() {
@@ -517,6 +526,8 @@ let windmillsArea = document.getElementById("windmillFiller");
  function openUI(button,  region) {
   var btn = document.getElementsByClassName("btn")[button]; 
   modal.style.display = "block";
+  let regionDisp = document.getElementById("regionModal");
+  regionDisp.innerHTML = region;
   if (region == 'NA') {
   move(0, 0, 17); 
   move(1, 0, 48);
