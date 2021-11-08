@@ -446,6 +446,7 @@ table {
 function checkHabit() {
 let habitLevel = document.getElementById("habit_text");
 let habitOverall = document.getElementById("habit_overall");
+if (tempIncrease > 0) {
        if (habitLevelNum < 60 && habitLevelNum > 30) {
         habitLevel.innerHTML = "UNCONFORTABLE";
 	habitOverall.classList.add("normal");
@@ -466,6 +467,10 @@ let habitOverall = document.getElementById("habit_overall");
       document.getElementById("habit_text").innerHTML = "SEVERE";
       habitOverall.classList.add("mild");
       }
+} else {
+habitLevel.innerHTML = "UNCONFORTABLE";
+habitOverall.classList.add("normal");
+}
 }
     function raiseTempature() {
       tempIncrease *= 1.1;
