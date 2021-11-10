@@ -1,8 +1,10 @@
 let elementsInNav = ['home', 'news', 'contact'];
 
-let homeNav = document.getElementById('home');
-let newsNav = document.getElementById('news');
-let contactNav = document.getElementById('contact');
+
+// FINISH UPDATING NAV VARIABLE NAMES
+let homeNav = document.getElementById('info');
+let newsNav = document.getElementById('buildings');
+let contactNav = document.getElementById('upgrades');
 let aboutNav = document.getElementById('about');
 
 
@@ -19,7 +21,6 @@ let aboutNav = document.getElementById('about');
 */
 function openElement(element) {
   var elementRaw = element;
-  window.alert(elementRaw);
     if (elementRaw == 'home') {
       if (homeNav.style.display == 'none') { 
         homeNav.style.display = 'block';
