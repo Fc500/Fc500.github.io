@@ -183,13 +183,13 @@ table {
     <header class="center">
 <img src="global_warming_main.PNG" alt="Global Warming" style="width:85%;">
 	    <img src="global_warming_subtitle.PNG" alt="Simulator" style="width:55%;">
-      <h5>v0.5.1</h5>
+      <h5>v0.5.2</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
 	  <div class="main">
 <div class="container">
-  <img src="world_map1.png" alt="World Map" style="width:95%; border-radius: 25px;">
+  <img src="world_map1.png" alt="World Map" style="width:100%;">
   
   <button class="btn abel" style="top:30%; left:7%; font-weight: bold;" onclick="openUI(0, 'North America');">North America</button>
   
@@ -202,32 +202,6 @@ table {
 <button class="btn abel" style="top:25%; left: 65%; font-weight: bold;" onclick="openUI(3, 'Asia')">Asia</button>
 </div>
 	  <br>
-    <div class="mainInfo">
-<table>
-  <tr>  
-    <td>
-	    <h3>Buildings</h3>
-	      <label for="solar_buy">Buy 100 Solar Panels</label>
-	<button name="solar_buy" onclick="buyItem('solars', solarPrice);" class="abel" id="solarCost">$230,000 USD</button>
-	      <p>Solar Panels (100): <span id="solarsOwned">0</span></p>
-	      </br>
-        <label for="windmill_buy">Buy 1 Windmill</label>
-	<input type="submit" value="$2,400,000 USD" name="windmill_buy" onclick="buyItem('windmills', windmillPrice);" class="abel" id="windmillCost">
-	      <p>Windmills: <span id="windmillsOwned">0</span></p>
-	      </br>
-        <label for="hydro_buy>">Buy 1 Hydroelectric Generator</label>
-	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyItem('hydros', hydroPrice);" class="abel" id="hydroCost">
-	<p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
-	    <p>Money per year: $ <span id="mpy">0</span></p>
-
-		  <td>
-			  <h3>Upgrades</h3>
-			  <label for="upgrade1">Better Windmills</label>
-			  <input type="submit" value="$2M" class="abel">
-		  </td>
-</tr>  
-</table>
-</div> 
 	</div>
 	  </br>
 	</br>
@@ -244,9 +218,6 @@ table {
     <details open>
       <summary>Game Info</summary>
         <br>
-        <p>A simple game about trying to stop climate change! <br>Currently, it does NOT use
-	   actual facts as it's still <br> in early beta :) |
-	   For my Enviromental Science final project</p>    
     </details>
   </td>
 	<td>
@@ -346,29 +317,45 @@ table {
 
 <!-- BOTTOM NAV -->
 <div class="navbar2" id="myNavbar" style="padding-top: 10px;">
-    <button onclick="openElement('home')">Home</button>
-  <button onclick="openElement('news')">News</button>
-  <button onclick="openElement('contact')">Contact?</button>
+    <button onclick="openElement('info')">Information</button>
+  <button onclick="openElement('buildings')">Buildings</button>
+  <button onclick="openElement('upgrades')">Upgrades</button>
   <button onclick="openElement('about')">About</button>
 	
-  <div id="home" class="nav-content" style="color: white; padding-left: 25px; display: none;">      
+  <div id="info" class="nav-content" style="color: white; padding-left: 25px; display: none;">      
         <p>Year: <span id="time">2021</span></p>
         <p>Global Tempature: <span id="temp">57</span>ºF</p>
-	<p>Earth Habitability: <span id="habit_overall" class="good"><span id="habit">64</span>% <br> <span id="habit_text">NORMAL </span></span></p>
+	<p>Earth Habitability: <span id="habit_overall" class="good"><span id="habit">64</span> | <span id="habit_text">NORMAL </span></span></p>
 	<p>Tempature increase (year): <span id="temp_inc">0.032</span></p>
 	<p>Money: <span id="money">NAN</span></p>
   </div>
   
-  <div id="news" class="nav-content" style="color: white; padding-left: 25px; display: none;">
-  <p>Filler lol</p>
+  <div id="buildings" class="nav-content" style="color: white; padding-left: 25px; display: none;">
+  <h3>Buildings</h3>
+	      <label for="solar_buy">Buy 100 Solar Panels</label>
+	<button name="solar_buy" onclick="buyItem('solars', solarPrice);" class="abel" id="solarCost">$230,000 USD</button>
+	      <p>Solar Panels (100): <span id="solarsOwned">0</span></p>
+	      </br>
+        <label for="windmill_buy">Buy 1 Windmill</label>
+	<input type="submit" value="$2,400,000 USD" name="windmill_buy" onclick="buyItem('windmills', windmillPrice);" class="abel" id="windmillCost">
+	      <p>Windmills: <span id="windmillsOwned">0</span></p>
+	      </br>
+        <label for="hydro_buy>">Buy 1 Hydroelectric Generator</label>
+	<input type="submit" value="$24,000,000 USD" name="hydro_buy" onclick="buyItem('hydros', hydroPrice);" class="abel" id="hydroCost">
+	<p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
+	    <p>Money per year: $ <span id="mpy">0</span></p>
   </div>
   
-  <div id="contact"  class="nav-content" style="color: white; padding-left: 25px; display: none;">
-  <p>major work in progress</p>
+  <div id="upgrades"  class="nav-content" style="color: white; padding-left: 25px; display: none;">
+    <h3>Upgrades</h3>
+    <label for="upgrade1">Better Windmills</label>
+    <input type="submit" value="$2M" class="abel">
   </div>
 
     <div id="about"  class="nav-content" style="color: white; padding-left: 25px; display: none;">
-  <p>lolol work in progress</p>
+          <p>A simple game about trying to stop climate change! <br>Currently, it does NOT use
+	   actual facts as it's still <br> in early beta :) |
+	   For my Enviromental Science final project</p>   
   </div>
 </div>
 
