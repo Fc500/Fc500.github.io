@@ -157,7 +157,7 @@ table {
     <header class="center">
 <img src="global_warming_main.PNG" alt="Global Warming" style="width:85%;">
 	    <img src="global_warming_subtitle.PNG" alt="Simulator" style="width:55%;">
-      <h5>v0.5.2</h5>
+      <h5>v0.5.3</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -251,6 +251,13 @@ table {
 		    <li>Finally remembered to update the changelog.</li>
 		    <li>Working on implementing the modal to display how well a certain item will work.</li>
 		    <li>Starting to implement a shop system for upgrades.</li>
+	    </ul>
+	    
+	    <p>BETA 0.5.3</p>
+	    <ul>
+		    <li>Massive CSS overhaul, the website looks sleeker now.</li>
+		    <li>Working on the final iteration of the shop system.</li>
+		    <li>Moved the "BULDINGS", "UPGRADES", "ABOUT" and "INFO" tabs into the new navbar.</li>
 	    </ul>
 	  </details>
 		</td>
@@ -396,21 +403,21 @@ table {
           windmillPrice *= 1.1;
 	  tempIncrease -= 0.1;
           document.getElementById('windmillsOwned').innerHTML = numFormatter(windmills);     
-          document.getElementById("windmillCost").value = "$ " + numFormatter(windmillPrice);     
+          document.getElementById("windmillCost").innerHTML = "$ " + numFormatter(windmillPrice);     
         } else if (item == 'hydros') {
           hydros += 1;
           money -= hydroPrice;
           hydroPrice *= 1.1;
 	  tempIncrease -= 0.08;
           document.getElementById('hydrosOwned').innerHTML = numFormatter(hydros);
-          document.getElementById("hydroCost").value = "$ " + numFormatter(hydroPrice);
+          document.getElementById("hydroCost").innerHTML = "$ " + numFormatter(hydroPrice);
         } else if (item == 'solars') {
           solar += 1;
           money -= solarPrice;
           solarPrice *= 1.1;
 	  tempIncrease -= 0.06;
           document.getElementById('solarsOwned').innerHTML = numFormatter(solar);
-          document.getElementById("solarCost").value = "$ " + numFormatter(solarPrice);
+          document.getElementById("solarCost").innerHTML = "$ " + numFormatter(solarPrice);
         }
         moneyText.innerHTML = "$ " + numFormatter(money);
         moneyPerYear += windmills * windmillProduction + hydros * hydroProduction + solar * solarProduction;
