@@ -19,7 +19,7 @@
         text-align:center;
       }
       
-input[type=button], input[type=submit], input[type=reset], button {
+input[type=button], input[type=submit], input[type=reset], button, {
   background-color: #2d1030;
   border: none;
   color: white;
@@ -30,6 +30,16 @@ input[type=button], input[type=submit], input[type=reset], button {
   background-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
 }
+
+.shop_buy {
+  background-color: #2d1030;
+  border: none;
+  color: white;
+  text-decoration: none;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+	    }
 	    
 	    input[type=text] {
   background-color: #2d1030;
@@ -157,7 +167,7 @@ table {
     <header class="center">
 <img src="global_warming_main.PNG" alt="Global Warming" style="width:85%;">
 	    <img src="global_warming_subtitle.PNG" alt="Simulator" style="width:55%;">
-      <h5>v0.5.3</h5>
+      <h5>v0.5.4</h5>
 	<!--<h6>Snapshot 21M10W3zz</h6> -->
       <h5>BETA!</h5>
     </header>
@@ -315,8 +325,10 @@ table {
   
   <div id="buildings" class="nav-content" style="color: white; padding-left: 25px; display: none; height: 300px; overflow-y: auto;">
   <h3>Buildings</h3>
-	      <label for="solar_buy">Buy 100 Solar Panels</label>
-	<button name="solar_buy" onclick="buyItem('solars', solarPrice);" class="abel" id="solarCost">$230,000 USD</button>
+	  <span onclick="buyItem('solars', solarPrice);" class="shop_buy">
+	<h4>Solar Panels</h4>
+	<h5 class="abel" id="solarCost">$230,000 USD</button>
+	  </span>
 	      <p>Solar Panels (100): <span id="solarsOwned">0</span></p>
 	      </br>
         <label for="windmill_buy">Buy 1 Windmill</label>
@@ -324,7 +336,7 @@ table {
 	      <p>Windmills: <span id="windmillsOwned">0</span></p>
 	      </br>
         <label for="hydro_buy>">Buy 1 Hydroelectric Generator</label>
-	<button name="hydro_buy" onclick="buyItem('hydros', hydroPrice);" class="abel" id="hydroCost">$24,000,000 USD</button
+	<button name="hydro_buy" onclick="buyItem('hydros', hydroPrice);" class="abel" id="hydroCost">$24,000,000 USD</button>
 	<p>Hydroelectic Generators: <span id="hydrosOwned">0</span></p>
 	    <p>Money per year: $ <span id="mpy">0</span></p>
   </div>
