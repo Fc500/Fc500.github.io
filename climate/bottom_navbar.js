@@ -6,6 +6,7 @@ let homeNav = document.getElementById('info');
 let newsNav = document.getElementById('buildings');
 let contactNav = document.getElementById('upgrades');
 let aboutNav = document.getElementById('about');
+let updateNav = document.getElementById('update');
 
 
 
@@ -27,6 +28,7 @@ function openElement(element) {
         newsNav.style.display = 'none';
         contactNav.style.display = 'none';
         aboutNav.style.display = 'none';
+        updateNav.style.display = 'none';
 
       } else {
         homeNav.style.display = 'none';
@@ -37,6 +39,7 @@ function openElement(element) {
         homeNav.style.display = 'none';
         contactNav.style.display = 'none';
         aboutNav.style.display = 'none';
+        updateNav.style.display = 'none';
 
       } else {
         newsNav.style.display = 'none';
@@ -47,6 +50,7 @@ function openElement(element) {
         newsNav.style.display = 'none';
         homeNav.style.display = 'none';
         aboutNav.style.display = 'none';
+        updateNav.style.display = 'none';
 
       } else {
         contactNav.style.display = 'none';
@@ -57,9 +61,22 @@ function openElement(element) {
         newsNav.style.display = 'none';
         homeNav.style.display = 'none';
         contactNav.style.display = 'none';
+        updateNav.style.display = 'none';
 
       } else {
         aboutNav.style.display = 'none';
+      }
+
+    } else if (elementRaw == 'update') {
+      if (updateNav.style.display == 'none') { 
+        updateNav.style.display = 'block';
+        newsNav.style.display = 'none';
+        homeNav.style.display = 'none';
+        contactNav.style.display = 'none';
+        about.style.display = 'none';
+
+      } else {
+        updateNav.style.display = 'none';
       }
 
     }
