@@ -161,6 +161,17 @@ table {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+	    
+.imgStore {	    
+  float: right; 
+  width: 100px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 60px 30px #fff,  /* inner white */
+    0 0 100px 60px #f0f, /* middle magenta */
+    0 0 140px 90px #0ff; /* outer cyan */
+}
+	    
     </style>
 	  
   </head>
@@ -245,7 +256,7 @@ table {
 	  <div onclick="buyItem('solars', solarPrice);" class="shopbuy">
 	<h4>Solar Panels</h4>
 	<h5 class="abel" id="solarCost">$230,000 USD</h5>
-	<img src="solar_panel.png" style="float: right; width: 75px;" alt="solarPanel">
+	<img src="solar_panel.png" alt="solarPanel" class="imgStore">
 	  </div>
 	      <p>Solar Panels (100): <span id="solarsOwned">0</span></p>
 	      </br>
