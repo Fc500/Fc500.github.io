@@ -169,7 +169,7 @@ table {
   position: relative;
   border-radius: 10px;
   box-shadow:
-    0 0 15px 10px rgba(255, 208, 66, 0.5);  /* gold color */
+    0 0 15px 10px rgba(255, 208, 66, 0.3);  /* gold color */
 }
 	    
     </style>
@@ -257,8 +257,9 @@ table {
 	<h4>Solar Panels</h4>
 	<h5 class="abel" id="solarCost">$230,000 USD</h5>
 	<img src="solar_panel.png" alt="solarPanel" class="imgStore" style="bottom: 100px; right: 15px;">
+	<span id="solarsOwned" class="imgStore" style="bottom: 100px; right: 15px;">0</span>
 	  </div>
-	      <p>Solar Panels (100): <span id="solarsOwned">0</span></p>
+	      <p>Solar Panels (100):</p>
 	      </br>
         <label for="windmill_buy">Buy 1 Windmill</label>
 	<button name="windmill_buy" onclick="buyItem('windmills', windmillPrice);" class="abel" id="windmillCost">$2,400,000 USD</button>
