@@ -247,6 +247,7 @@ table {
 	<p>Earth Habitability: <span id="habit_overall" class="good"><span id="habit">64</span> | <span id="habit_text">NORMAL </span></span></p>
 	<p>Tempature increase (year): <span id="temp_inc">0.032</span></p>
 	<p>Money: <span id="money">NAN</span></p>
+	  <p>Popularity: <span id="popularityText"</span>70%</p>
   </div>
   
   <div id="buildings" class="nav-content" style="color: white; padding-left: 25px; display: none; height: 300px; overflow-y: auto;">
@@ -362,6 +363,7 @@ table {
       let news = "not new";
       let newsInBox = 0;
       let moneyPerYear = 0;
+      let popularity = 70;
       
       // Prices
       let solarPrice = 234000;
@@ -462,8 +464,9 @@ habitLevel.innerHTML = "UNCONFORTABLE";
 habitOverall.classList.add("normal");
 }
 }
-    function raiseTempature() {
-      tempIncrease *= 1.1;
+	   
+function raiseTempature() {
+tempIncrease *= 1.1;
       if (tempIncrease > 0.075) {
       habitLevelNum -= 1;      
       }
@@ -479,6 +482,20 @@ habitOverall.classList.add("normal");
       checkHabit();
       document.getElementById("temp_inc").innerHTML = tempIncrease.toFixed(2);
       document.getElementById("habit").innerHTML = habitLevelNum.toFixed(2);
+	    
+}
+	   
+function managePopularity() {
+	
+popularity -= 1;
+document.getElementById("popularityText").innerHTML = popularity + "%";
+if (popularity == 0) {
+window.alert("-Game Over- \nInsurrection");
+}
+}
+    function fourYears() {
+      raiseTempature();
+      managePopularity();  
     }
 
     function addMoney() {
@@ -559,8 +576,8 @@ window.onclick = function(event) {
     setInterval(setTimes, 1000); // Time in milliseconds
     // One Year ^^^
       
-    setInterval(raiseTempature, 4000);
-    // Six Years ^^^ */
+    setInterval(fourYears, 4000);
+    // Four Years ^^^
     </script>
 <script type="text/javascript" src="progress_bars.js"></script>
 <script type="text/javascript" src="bottom_navbar.js"></script>
