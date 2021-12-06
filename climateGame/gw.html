@@ -76,10 +76,10 @@
         //let imageSelection = document.getElementById("images").value;
         let div = 0;  
         if (imageSelection == 0) {
-    	    img.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Photovoltaik_Dachanlage_Hannover_-_Schwarze_Heide_-_1_MW.jpg';        
+    	    img.src = 'WindmillSpread.png';        
           div = document.getElementById("x");
-        } else {
-          img.src = "https://www.nrel.gov/research/assets/images/re-wind-31202.jpg";
+        } else if (imageSelection == 0) {
+          img.src = "solarPanelSpread.png";
           div = document.getElementById("y");
     	  }      
           img.setAttribute("width", "50px");
