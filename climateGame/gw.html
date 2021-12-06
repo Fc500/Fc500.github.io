@@ -31,6 +31,11 @@
         align-items: center;
       }
       
+      .storeScroll {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+      
       body {
         font-family: 'Gowun Dodum';font-size: 22px;
         background-color: black;
@@ -51,11 +56,15 @@
     </div>   
     <div class="section">
       <h3>STORE</h3>
-      <div class="storeButton">
-        <p>Oil Rig</p>
-        <img src="WindmillSpread.png" width=50 alt="windmill"/>
-      </div><br>
-      <div class="storeButton gowun"><p>Coal Plant></div><br>
+      <div class="storeScroll">
+        <div class="storeButton">
+          <p>Oil Rig</p>
+          <img src="WindmillSpread.png" width=50 alt="windmill"/>
+        </div><br>
+        <div class="storeButton gowun">
+          <p>Coal Plant</p>
+        </div><br>
+      </div>     
     </div>
   </body>
 </html>
