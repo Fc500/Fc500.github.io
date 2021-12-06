@@ -86,6 +86,7 @@
     <script>
       
       let pos = 20;
+      let imgRel = "";
       function getData(imageSelection) {
         let img = document.createElement("img");
         //let imageSelection = document.getElementById("images").value;
@@ -96,10 +97,11 @@
         } else if (imageSelection == 1) {
           img.src = "solarPanelSpread.png";
           div = document.getElementById("y");
-    	  }      
+    	  }  
+          imgRel = pos + "px";
           img.setAttribute("width", "50px");
           img.setAttribute("position", "absolute");
-          img.setAttribute("left", pos + "px");
+          img.setAttribute("left", imgRel);
           pos += 20;
           div.appendChild(img);   
       } 
