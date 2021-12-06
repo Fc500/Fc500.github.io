@@ -84,6 +84,8 @@
       </div>     
     </div>
     <script>
+      
+      let pos = 20;
       function getData(imageSelection) {
         let img = document.createElement("img");
         //let imageSelection = document.getElementById("images").value;
@@ -96,7 +98,9 @@
           div = document.getElementById("y");
     	  }      
           img.setAttribute("width", "50px");
-          img.setAttribute("left", "10px");
+          img.setAttribute("position", "absolute");
+          img.setAttribute("left", pos + "px");
+          pos += 20;
           div.appendChild(img);   
       } 
 
