@@ -2,6 +2,8 @@
   <head>
     <title>Global Warming Simulator</title>
     <link href='https://fonts.googleapis.com/css?family=Gowun Dodum' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
     <style>
       .section {
         background-color: #452d04;
@@ -51,19 +53,40 @@
     </div>   
     <div class="section">
       <h3>Buildings</h3>
+        <div id="x" style="margin-top: 40px;"></div>
+ 	      <p id="num">Hi</p>   
+        <div id="y" style="margin-top: 40px;"></div>
     </div>   
     <div class="section">
       <h3>STORE</h3>
       <div class="storeScroll">
-        <div class="storeButton">
+        <div class="storeButton" onclick="getData(0)">
           <img src="WindmillSpread.png" width=40 alt="windmill"/>
           <p>Windmill</p>
         </div><br>
-        <div class="storeButton gowun">
+        <div class="storeButton gowun" onclick="getData(1")>
           <img src="solarPanelSpread.png" width=80 alt="windmill"/>
           <p>Solar Panel</p>
         </div><br>
       </div>     
     </div>
+    <script>
+      function getData(imageSelection) {
+        let img = document.createElement("img");
+        //let imageSelection = document.getElementById("images").value;
+        let div = 0;  
+        if (imageSelection == 0) {
+    	    img.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Photovoltaik_Dachanlage_Hannover_-_Schwarze_Heide_-_1_MW.jpg';        
+          div = document.getElementById("x");
+        } else {
+          img.src = "https://www.nrel.gov/research/assets/images/re-wind-31202.jpg";
+          div = document.getElementById("y");
+    	  }      
+          img.setAttribute("width", "50px");
+          div.appendChild(img);   
+      } 
+
+  
+    </script>
   </body>
 </html>
