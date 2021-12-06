@@ -36,6 +36,12 @@
         overflow-y: auto;
       }
       
+      .storeScrollHoriz {
+      overflow-x: auto;
+      overflow-y: hidden;
+      background-color: #b87906;
+      }
+      
       body {
         font-family: 'Gowun Dodum';font-size: 22px;
         background-color: black;
@@ -53,9 +59,14 @@
     </div>   
     <div class="section">
       <h3>Buildings</h3>
+      <div class="storeScrollHoriz">
+        <p>Windmills</p>
         <div id="x" style="margin-top: 40px;"></div>
- 	      <p id="num">Hi</p>   
+      </div>
+      <div class="storeScrollHoriz">
+        <p>Solar Panel</p>
         <div id="y" style="margin-top: 40px;"></div>
+      </div>
     </div>   
     <div class="section">
       <h3>STORE</h3>
@@ -64,7 +75,7 @@
           <img src="WindmillSpread.png" width=40 alt="windmill"/>
           <p>Windmill</p>
         </div><br>
-        <div class="storeButton gowun" onclick="getData(1")>
+        <div class="storeButton gowun" onclick="getData(1)">
           <img src="solarPanelSpread.png" width=80 alt="windmill"/>
           <p>Solar Panel</p>
         </div><br>
@@ -78,7 +89,7 @@
         if (imageSelection == 0) {
     	    img.src = 'WindmillSpread.png';        
           div = document.getElementById("x");
-        } else if (imageSelection == 0) {
+        } else if (imageSelection == 1) {
           img.src = "solarPanelSpread.png";
           div = document.getElementById("y");
     	  }      
