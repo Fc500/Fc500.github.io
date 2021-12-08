@@ -115,11 +115,16 @@
       let pos = 20;
       let imgRel = "";
       
+      window.onload = function loading() {
+      window.alert('hi');
+      // setInterval(updateNumbers, 1000);
+      }
+      
       // Building functions
       
       
       function updateNumbers {
-        money += 1;
+        money = money + 1;
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
@@ -148,10 +153,7 @@
 
   
       // Timers
-      window.onload = function loading() {
-      window.alert('hi');
-      setInterval(updateNumbers, 1000);
-      }
+     
     </script>
   </body>
 </html>
