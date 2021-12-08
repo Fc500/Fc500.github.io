@@ -65,7 +65,7 @@
   <body>
     <div class="section">
       <h3>Statistics</h3>
-      <p>$<span id="money">0</span></p>
+      <p>$<span id="moneyDisp">0</span></p>
       <p>Dollars</p>
     </div>   
     <div class="section">
@@ -82,7 +82,7 @@
     <div class="section">
       <h3>STORE</h3>
       <div class="storeScroll">
-        <button class="storeButton emboss-effect" onclick="getData(0) purchaseBuildings('windmill')">
+        <button class="storeButton emboss-effect" onclick="getData(0)">
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
           <h6>1.32 million</h6>
@@ -120,7 +120,7 @@
       
       function updateNumbersOneSecond {
         money += 1;
-        document.getElementById("money").innerHTML = money;
+        document.getElementById("moneyDisp").innerHTML = money;
       }
       
     
