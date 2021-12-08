@@ -65,7 +65,7 @@
   <body>
     <div class="section">
       <h3>Statistics</h3>
-      <p>$<span id="moneyDisp">0</span></p>
+      <p><span id="moneyDisp">0</span></p>
       <p>Dollars</p>
     </div>   
     <div class="section">
@@ -118,7 +118,7 @@
       // Building functions
       
       
-      function updateNumbersOneSecond {
+      function updateNumbers {
         money += 1;
         document.getElementById("moneyDisp").innerHTML = money;
       }
@@ -148,8 +148,9 @@
 
   
       // Timers
-      
-      setInterval(updateNumbersOneSecond, 1000);
+      window.onload = function loading() {
+      setInterval(updateNumbers, 1000);
+      }
     </script>
   </body>
 </html>
