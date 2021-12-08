@@ -117,26 +117,13 @@
       
       // Building functions
       
-      function updateBuildings() {
-        money += windmills * windmillProduction;
+      
+      function updateNumbersOneSecond {
+        money += 1;
         document.getElementById("money").innerHTML = money;
       }
       
-      function updateNumbersOneSecond {
-      
-        updateBuildings();
-      }
-      
-      
-      function purchaseBuildings(building) {
-      
-        if (building == 'windmill') {
-        
-          windmills += 1;
-          windmillPrice *= 1.1;
-          
-        }
-      }  
+    
         
       function getData(imageSelection) {
         let img = document.createElement("img");
