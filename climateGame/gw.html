@@ -124,10 +124,10 @@
         }
         
         return money;
+        updateNumbers();
       }
       
       function updateNumbers() {
-       calculateBuildings();
        let moneyDisplay = document.getElementById("moneyDisp");
         moneyDisplay.innerHTML = money;
       }
@@ -157,7 +157,7 @@
 
   
       // Timers
-     setInterval(updateNumbers, 1000);
+     setInterval(calculateBuildings, 1000);
     </script>
   </body>
 </html>
