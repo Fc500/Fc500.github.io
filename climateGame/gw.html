@@ -103,15 +103,13 @@
       
       // Buildings
       
-      let windmills = 0;
-      
-      // Building prices
-      
-      let windmillPrice = 1200000;
+      let windmills = {
+        windmillPrice: 120000,
+        windmillProduction: 1000000
+      };
       
       // Building production
       
-      let windmillProduction = 1000000;
       let pos = 20;
       let imgRel = "";
       
@@ -123,8 +121,8 @@
       
       
       function updateNumbers {
-        let moneyDisplay = document.getElementById("moneyDisp");
-        moneyDisplay.innerHTML = money;
+       /* let moneyDisplay = document.getElementById("moneyDisp");
+        moneyDisplay.innerHTML = money; */
       }
       
     
