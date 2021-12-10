@@ -81,7 +81,7 @@
     <div class="section">
       <h3>STORE</h3>
       <div class="storeScroll">
-        <button class="storeButton emboss-effect" onclick="getData(0)">
+        <button class="storeButton emboss-effect" onclick="getData(0) buyBuildings('windmill')">
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
           <h6>1.32 million</h6>
@@ -126,6 +126,13 @@
         return money;
         let moneyDisplay = document.getElementById("moneyDisp");
         moneyDisplay.innerHTML = money;
+      }
+      
+      function buyBuildings(purchase) {
+        if (purchase == 'windmill') {
+          windmill++;
+          money -= windmillPrice;
+        }
       }
       
     
