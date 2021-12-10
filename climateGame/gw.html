@@ -18,7 +18,7 @@
       .storeButton {
         background-color: #784e06;
         width: 300px;
-        height: 150px;
+        height: 200px;
         padding: 10px;
         color: white;
         text-align: left;
@@ -121,7 +121,7 @@
       // Building functions
       
       function calculateBuildings() {
-        if (windmills.windmillsOwned != 0) {
+        if (windmills.windmillsOwned >= 0) {
         money += windmills * windmillProduction;
         }
         
