@@ -114,17 +114,16 @@
       let imgRel = "";
       
       
-      window.alert('v0.01');
+      window.alert('v0.02');
       
       
       // Building functions
       
       function calculateBuildings() {
-        if (windmills != 0) {
+        if (windmills >= 0) {
         money += windmills * windmillProduction;
         }
         
-        return money;
         let moneyDisplay = document.getElementById("moneyDisp");
         moneyDisplay.innerHTML = money;
       }
