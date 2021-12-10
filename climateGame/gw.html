@@ -104,7 +104,8 @@
       
       let windmills = {
         windmillPrice: 120000,
-        windmillProduction: 1000000
+        windmillProduction: 1000000,
+        windmillsOwned: 0
       };
       
       // Building production
@@ -130,8 +131,8 @@
       
       function buyBuildings(purchase) {
         if (purchase == 'windmill') {
-          windmill++;
-          money -= windmillPrice;
+          windmills.windmillsOwned++;
+          money -= windmills.windmillPrice;
         }
       }
       
