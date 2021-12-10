@@ -85,6 +85,7 @@
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
           <h6>1.32 million</h6>
+          <h6 id="windmillsOwned">0</h6>
         </button><br>
         <button class="storeButton emboss-effect" onclick="getData(1)">
           <img src="solarPanelSpread.png" width=40 alt="windmill"/>
@@ -114,13 +115,13 @@
       let imgRel = "";
       
       
-      window.alert('v0.03');
+      window.alert('v0.04');
       
       
       // Building functions
       
       function calculateBuildings() {
-        if (windmills.windmillsOwned >= 0) {
+        if (windmills.windmillsOwned != 0) {
         money += windmills * windmillProduction;
         }
         
@@ -132,6 +133,7 @@
           windmills.windmillsOwned++;
           money -= windmills.windmillPrice;
           moneyDisplay.innerHTML = money;
+          document.getElementById("windmillsOwned").innerHTML = windmill.windmillsOwned;
       }
       
     
