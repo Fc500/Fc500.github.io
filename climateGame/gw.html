@@ -96,7 +96,7 @@
     <script>
       
       // Stats
-      
+      let moneyDisplay = document.getElementById("moneyDisp");
       let globalTempature = 60;
       let money = 0;
       
@@ -114,7 +114,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.02');
+      window.alert('v0.03');
       
       
       // Building functions
@@ -124,7 +124,6 @@
         money += windmills * windmillProduction;
         }
         
-        let moneyDisplay = document.getElementById("moneyDisp");
         moneyDisplay.innerHTML = money;
       }
       
@@ -132,7 +131,7 @@
         
           windmills.windmillsOwned++;
           money -= windmills.windmillPrice;
-       
+          moneyDisplay.innerHTML = money;
       }
       
     
