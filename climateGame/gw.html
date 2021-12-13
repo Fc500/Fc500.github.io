@@ -142,13 +142,14 @@
           windmills.windmillOwned++;
           money -= windmills.windmillPrice;
           document.getElementById("windmillsOwned").innerHTML = windmills.windmillOwned;
+          moneyDisplay.innerHTML = money;
         } else if (building == 'solarpanels') {
           solarpanels.solarpanelOwned++;
           money -= solarpanels.solarpanelPrice;
           document.getElementById("solarpanelsOwned").innerHTML = solarpanel.solarpanelOwned;
-          
+          moneyDisplay.innerHTML = money;
         }
-         moneyDisplay.innerHTML = money;
+         
       }
       
     
