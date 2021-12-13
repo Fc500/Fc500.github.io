@@ -81,16 +81,17 @@
     <div class="section">
       <h3>STORE</h3>
       <div class="storeScroll">
-        <button class="storeButton emboss-effect" onclick="getData(0); buyBuildings()">
+        <button class="storeButton emboss-effect" onclick="dispImage(0); buyBuildings('windmill')">
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
           <h6>1.32 million</h6>
           <h5 id="windmillsOwned">0</h5>
         </button><br>
-        <button class="storeButton emboss-effect" onclick="getData(1)">
+        <button class="storeButton emboss-effect" onclick="dispImage(1)">
           <img src="solarPanelSpread.png" width=40 alt="windmill"/>
           <p>Solar Panel</p>
           <h6>1.2 million</p>
+          <h5 id="solarpanelsOwned">0</h5>
         </button><br>
       </div>     
     </div>
@@ -106,9 +107,16 @@
       let windmills = {
         windmillPrice: 120000,
         windmillProduction: 1000000,
-        windmillsOwned: 0,
+        windmillOwned: 0,
         ownedHTML: "windmillsOwned"
       };
+      
+      let solarpanels = {
+        solarpanelPrice: 10000,
+        solarpanelProduction: 100000,
+        solarpanelOwned: 0,
+        ownedHTML: "solarpanelsOwned"
+      }
       
       // Building production
       
@@ -116,7 +124,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.04');
+      window.alert('v0.05');
       
       
       // Building functions
@@ -129,18 +137,26 @@
         moneyDisplay.innerHTML = money;
       }
       
-      function buyBuildings() {
-          windmills.windmillsOwned++;
+      function buyBuildings(building) {
+        if (building == 'windmills') {
+          windmills.windmillOwned++;
           money -= windmills.windmillPrice;
-          moneyDisplay.innerHTML = money;
-          document.GetElementById(windmills.ownedHTML).innerHTML = windmills.windmillsOwned;
+          document.getElementById(windmills.ownedHTML).innerHTML = windmills.windmillOwned;
+        } else if (building == 'solarpanel') {
+          solarpanels.solarpanelsOwned++;
+          money -= solarpanels.solarpanelPrice;
+          document.getElementById(solarpanel.ownedHTML).innerHTML = solarpanel.solarpanelOwned;
+          
+        }
+        
+        moneyDisplay.innerHTML = money;
       }
       
     
       
     
         
-      function getData(imageSelection) {
+      function dispImage(imageSelection) {
         let img = document.createElement("img");
         //let imageSelection = document.getElementById("images").value;
         let div = 0;  
