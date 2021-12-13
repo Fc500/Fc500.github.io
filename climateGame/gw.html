@@ -130,7 +130,7 @@
       // Building functions
       
       function calculateBuildings() {
-        if (windmills.windmillsOwned >= 0) {
+        if (windmills.windmillOwned >= 0) {
         money += windmills.windmillsOwned * windmills.windmillProduction;
         }
         
@@ -141,15 +141,14 @@
         if (building == 'windmills') {
           windmills.windmillOwned++;
           money -= windmills.windmillPrice;
-          document.getElementById(windmills.ownedHTML).innerHTML = windmills.windmillOwned;
+          document.getElementById("windmillsOwned").innerHTML = windmills.windmillOwned;
         } else if (building == 'solarpanels') {
           solarpanels.solarpanelOwned++;
           money -= solarpanels.solarpanelPrice;
-          document.getElementById(solarpanels.ownedHTML).innerHTML = solarpanel.solarpanelOwned;
+          document.getElementById("solarpanelsOwned").innerHTML = solarpanel.solarpanelOwned;
           
         }
-        
-        moneyDisplay.innerHTML = money;
+         moneyDisplay.innerHTML = money;
       }
       
     
