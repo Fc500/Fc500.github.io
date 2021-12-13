@@ -112,7 +112,7 @@
       };
       
       let solarpanels = {
-        solarpanelPrice: 10000,
+        solarpanelPrice: 1000000,
         solarpanelProduction: 100000,
         solarpanelOwned: 0,
         ownedHTML: "solarpanelsOwned"
@@ -147,7 +147,8 @@
         } else if (building == 'solarpanel') {
           solarpanels.solarpanelOwned++;
           money -= solarpanels.solarpanelPrice;
-          document.getElementById("solarpanelsOwned").innerHTML = solarpanel.solarpanelOwned;
+          window.alert(solarpanels.solarpanelOwned);
+          document.getElementById("solarpanelsOwned").innerHTML = solarpanels.solarpanelOwned;
           moneyDisplay.innerHTML = money;
         }
          
