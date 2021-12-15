@@ -81,7 +81,7 @@
     <div class="section">
       <h3>STORE</h3>
       <div class="storeScroll">
-        <button class="storeButton emboss-effect" onclick="dispImage(0); buyBuildings('windmill')">
+        <button class="storeButton emboss-effect" onclick="dispImage(0); buyBuildings(windmills)">
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
           <h6>1.32 million</h6>
@@ -100,7 +100,7 @@
       // Stats
       let moneyDisplay = document.getElementById("moneyDisp");
       let globalTempature = 60;
-      let money = 0;
+      let money = 100000;
       
       // Buildings
       
@@ -124,7 +124,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.07');
+      window.alert('v0.08');
       
       
       // Building functions
@@ -138,12 +138,12 @@
       }
       
       function buyBuildings(building) {
-        if (building == 'windmill') {
-          windmills.windmillOwned++;
-          money -= windmills.windmillPrice;
-          document.getElementById("windmillsOwned").innerHTML = windmills.windmillOwned;
+        if (money != 0) {
+          building.windmillOwned++;
+          money -= building.windmillPrice;
+          document.getElementById("windmillsOwned").innerHTML = building.windmillOwned;
           moneyDisplay.innerHTML = money;
-          window.alert(windmills.windmillOwned);
+          window.alert(building.windmillOwned);
         } else if (building == 'solarpanel') {
           solarpanels.solarpanelOwned++;
           money -= solarpanels.solarpanelPrice;
