@@ -81,13 +81,13 @@
     <div class="section">
       <h3>STORE</h3>
       <div class="storeScroll">
-        <button class="storeButton emboss-effect" onclick="dispImage(0); buyBuildings(windmills)">
+        <button class="storeButton emboss-effect" onclick="dispImage(0); buyBuildings(windmills, windmillOwned, windmillPrice)">
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
           <h6>1.32 million</h6>
           <h5 id="windmillsOwned">0</h5>
         </button><br>
-        <button class="storeButton emboss-effect" onclick="dispImage(1); buyBuildings('solarpanel')">
+        <button class="storeButton emboss-effect" onclick="dispImage(1); buyBuildings(solarpanel')">
           <img src="solarPanelSpread.png" width=40 alt="windmill"/>
           <p>Solar Panel</p>
           <h6>1.2 million</p>
@@ -124,7 +124,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.08');
+      window.alert('v0.09');
       
       
       // Building functions
@@ -137,20 +137,13 @@
         moneyDisplay.innerHTML = money;
       }
       
-      function buyBuildings(building) {
+      function buyBuildings(building, buildingOwned, buildingPrice) {
         if (money != 0) {
-          building.windmillOwned++;
-          money -= building.windmillPrice;
-          document.getElementById("windmillsOwned").innerHTML = building.windmillOwned;
+          building.buildingOwned++;
+          money -= building.buildingPrice;
+          document.getElementById(`${building}s`).innerHTML = building.buildingOwned;
           moneyDisplay.innerHTML = money;
-          window.alert(building.windmillOwned);
-        } else if (building == 'solarpanel') {
-          solarpanels.solarpanelOwned++;
-          money -= solarpanels.solarpanelPrice;
-          window.alert(solarpanels.solarpanelOwned);
-          document.getElementById("solarpanelsOwned").innerHTML = solarpanels.solarpanelOwned;
-          moneyDisplay.innerHTML = money;
-        }
+          window.alert(building.buildingOwned);
          
       }
       
