@@ -87,7 +87,7 @@
           <h6>1.32 million</h6>
           <h5 id="windmillsOwned">0</h5>
         </button><br>
-        <button class="storeButton emboss-effect" onclick="dispImage(1); buyBuildings(solarpanel')">
+        <button class="storeButton emboss-effect" onclick="dispImage(1); buyBuildings(solarpanels, solarpanelOwned, solarpanelPrice)">
           <img src="solarPanelSpread.png" width=40 alt="windmill"/>
           <p>Solar Panel</p>
           <h6>1.2 million</p>
@@ -134,6 +134,10 @@
         money += windmills.windmillOwned * windmills.windmillProduction;
         }
         
+        if (solarpanels.solarpanelOwned >= 0) {
+        money += solarpanels.solarpanelOwned * solarpanels.solarpanelProduction;
+        }
+        
         moneyDisplay.innerHTML = money;
       }
       
@@ -144,6 +148,7 @@
           document.getElementById(`${building}s`).innerHTML = building.buildingOwned;
           moneyDisplay.innerHTML = money;
           window.alert(building.buildingOwned);
+        }
          
       }
       
