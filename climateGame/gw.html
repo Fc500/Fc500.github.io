@@ -124,7 +124,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.09');
+      window.alert('v0.10');
       
       
       // Building functions
@@ -145,7 +145,7 @@
         if (money != 0) {
           building.buildingOwned++;
           money -= building.buildingPrice;
-          document.getElementById(`${building}s`).innerHTML = building.buildingOwned;
+          document.getElementById("windmillsOwned").innerHTML = building.buildingOwned;
           moneyDisplay.innerHTML = money;
           window.alert(building.buildingOwned);
         }
