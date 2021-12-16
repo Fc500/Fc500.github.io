@@ -208,9 +208,9 @@
           window.alert("bought");
           buySellToggle == false;
           window.alert(buySellToggle);
-        } else if (money <= building[buildingPrice] && buySellToggle == true) {
+        } else if (money < building[buildingPrice] && buySellToggle == true) {
           window.alert("Not enough money!");
-        } else if (buySellToggle = false) {
+        } else if (buySellToggle == false && building[buildingOwned] > 0) {
           money += building[buildingPrice];
           building[buildingOwned] -= 1;
         }
