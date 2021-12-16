@@ -85,7 +85,7 @@
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
           <h6>1.32 million</h6>
-          <h5 id="windmillsOwned">0</h5>
+          <h5 id="windmillOwned">0</h5>
         </button><br>
         <button class="storeButton emboss-effect" onclick="dispImage(1); buyBuildings(solarpanels, 'solarpanelOwned', 'solarpanelPrice')">
           <img src="solarPanelSpread.png" width=40 alt="windmill"/>
@@ -113,7 +113,7 @@
       
       let solarpanels = {
         solarpanelPrice: 1000000,
-        solarpanelProduction: 100000,
+        solarpanelProduction: 0,
         solarpanelOwned: 0,
         ownedHTML: "solarpanelsOwned"
       }
@@ -124,7 +124,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.104');
+      window.alert('v0.105');
       
       
       // Building functions
