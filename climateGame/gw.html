@@ -47,7 +47,7 @@
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-        background-color: #b87906;
+        background-color: #bdbdbd;
         margin: 5px;
       }
       
@@ -122,7 +122,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.107');
+      window.alert('v0.108');
       
       
       // Building functions
@@ -140,7 +140,7 @@
       }
       
       function buyBuildings(building, buildingOwned, buildingPrice, bpr) {
-        if (money >= buildingPrice) {
+        if (money >= bpr) {
           building[buildingOwned]++;
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
