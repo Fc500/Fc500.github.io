@@ -143,9 +143,9 @@
       
       function buyBuildings(building, buildingOwned, buildingPrice) {
         if (money != 0) {
-          building.windmillOwned++;
+          building[buildingOwned]++;
           money -= building[buildingPrice];
-          document.getElementById(buildingOwned).innerHTML = building.[buildingOwned];
+          document.getElementById("windmillOwned").innerHTML = building[buildingOwned];
           moneyDisplay.innerHTML = money;
           window.alert("testy testy");
         }
