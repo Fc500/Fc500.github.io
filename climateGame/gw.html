@@ -187,6 +187,7 @@
       // Building functions
       
       function calculateBuildings() {
+        
         if (windmills.windmillOwned >= 0) {
         money += windmills.windmillOwned * windmills.windmillProduction;
         }
@@ -199,7 +200,7 @@
       }
       
       function buyBuildings(building, buildingOwned, buildingPrice) {
-        if (money >= building[buildingPrice ] && buySellToggle == true) {
+        if (money >= building[buildingPrice] && buySellToggle == true) {
           building[buildingOwned]++;
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
@@ -207,6 +208,8 @@
           window.alert("bought");
           buySellToggle == false;
           window.alert(buySellToggle);
+        } else if (money <= building[buildingPrice]) {
+          window.alert("Not enough money!");
         }
          
       }
@@ -242,10 +245,10 @@
         window.alert(slider.checked);
         if (slider.checked == true) {
         buySellToggle = false;
-        document.getElementById("state").innerHTML = "SELL";
+        document.getElementById("state").innerHTML = "SELLING";
         } else if (slider.checked == false) {
         buySellToggle = true;
-        document.getElementById("state").innerHTML = "BUY";
+        document.getElementById("state").innerHTML = "BUYING";
         }
 
       }
