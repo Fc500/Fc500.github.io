@@ -59,6 +59,55 @@
       .gowun {
         font-family: 'Gowun Dodum';
       }
+      
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #2dad1f;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+      
+    input:checked + .slider {
+      background-color: #db2616;
+    }
+
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
     </style>
   </head>
   <body>
@@ -80,6 +129,12 @@
     </div>   
     <div class="section">
       <h3>STORE</h3>
+        <p id="state">BUY</p>
+        <label class="switch" onclick="checkState()">
+        <input type="checkbox" id="slider">
+        <span class="slider"></span>
+        </label>
+
       <div class="storeScroll">
         <button class="storeButton emboss-effect" onclick="dispImage(0); buyBuildings(windmills, 'windmillOwned', 'windmillPrice')">
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
@@ -124,7 +179,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.112');
+        window.alert('v0.13.0');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
@@ -180,6 +235,20 @@
         
         
       } 
+      
+      
+      function checkState() {
+        let slider = document.getElementById("slider");
+        window.alert(slider.checked);
+        if (slider.checked == true) {
+        buySellToggle = false;
+        document.getElementById("state").innerHTML = "SELL";
+        } else if (slider.checked == false) {
+        buySellToggle = true;
+        document.getElementById("state").innerHTML = "BUY";
+        }
+
+      }
 
   
       // Timers
