@@ -139,8 +139,8 @@
         moneyDisplay.innerHTML = money;
       }
       
-      function buyBuildings(building, buildingOwned, buildingPrice, bpr) {
-        if (money >= bpr) {
+      function buyBuildings(building, buildingOwned, buildingPrice, r) {
+        if (money >= 0) {
           building[buildingOwned]++;
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
