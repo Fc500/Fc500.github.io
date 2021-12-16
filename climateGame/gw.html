@@ -101,6 +101,7 @@
       let moneyDisplay = document.getElementById("moneyDisp");
       let globalTempature = 60;
       let money = 100000000;
+      let buySellToggle = true;
       
       // Buildings
       
@@ -123,7 +124,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.111');
+        window.alert('v0.112');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
@@ -143,12 +144,14 @@
       }
       
       function buyBuildings(building, buildingOwned, buildingPrice) {
-        if (money >= building[buildingPrice]) {
+        if (money >= building[buildingPrice ] && buySellToggle == true) {
           building[buildingOwned]++;
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
           moneyDisplay.innerHTML = money;
           window.alert("bought");
+          buySellToggle == false;
+          window.alert(buySellToggle);
         }
          
       }
