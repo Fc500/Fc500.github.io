@@ -179,7 +179,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.14.1');
+        window.alert('v0.14.2');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
@@ -210,10 +210,10 @@
           window.alert(buySellToggle);
         } else if (money < building[buildingPrice] && buySellToggle == true) {
           window.alert("Not enough money!");
-        } else if (buySellToggle == false && building[buildingOwned] > 0) {
+        } /* else if (buySellToggle == false && building[buildingOwned] > 0) {
           money += building[buildingPrice];
           building[buildingOwned] -= 1;
-        }
+        } */
          
       }
       
