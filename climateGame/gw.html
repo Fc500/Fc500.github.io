@@ -124,7 +124,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.103');
+      window.alert('v0.104');
       
       
       // Building functions
@@ -145,9 +145,9 @@
         if (money != 0) {
           building[buildingOwned]++;
           money -= building[buildingPrice];
-          document.getElementById("windmillOwned").innerHTML = building[buildingOwned];
+          document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
           moneyDisplay.innerHTML = money;
-          window.alert("testy testy");
+          window.alert("bought");
         }
          
       }
