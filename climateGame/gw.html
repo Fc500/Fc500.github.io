@@ -122,7 +122,7 @@
       let imgRel = "";
       
       
-      window.alert('v0.106');
+      window.alert('v0.107');
       
       
       // Building functions
@@ -139,8 +139,8 @@
         moneyDisplay.innerHTML = money;
       }
       
-      function buyBuildings(building, buildingOwned, buildingPrice) {
-        if (money != 0) {
+      function buyBuildings(building, buildingOwned, buildingPrice, bpr) {
+        if (money >= buildingPrice) {
           building[buildingOwned]++;
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
