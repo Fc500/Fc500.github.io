@@ -154,8 +154,8 @@
         <input type="checkbox" id="slider">
         <span class="slider"></span>
         </label>
-        <div style="background-color: #4a4a4a; padding: 10px; margin: 5px;"> <!-- Upgrade Store -->
-          <h3>UPGRADES</h3>
+	<h3>UPGRADES</h3>
+        <div style="background-color: #4a4a4a; padding: 10px; margin: 5px; float: left;"> <!-- Upgrade Store -->
 		
           <div class="upgrade">
             <p>Green Energy</p>
@@ -176,7 +176,7 @@
 		
         </div>
 	    
-        <div style="background-color: #4a4a4a;" class="storeScroll">
+        <div style="background-color: #4a4a4a; height: 90%;" class="storeScroll">
           <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
             <img src="WindmillSpread.png" width=20 alt="windmill"/>
             <p>Windmill</p>
@@ -220,7 +220,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.15.1');
+        window.alert('v0.15.2');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
