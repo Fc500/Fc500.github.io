@@ -129,7 +129,7 @@
     </div>   
     <div class="section">
       <h3>STORE</h3>
-        <p id="state">BUY</p>
+        <p id="state">BUYING</p>
         <label class="switch" onclick="checkState()">
         <input type="checkbox" id="slider">
         <span class="slider"></span>
@@ -179,7 +179,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.14.2');
+        window.alert('v0.14.3');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
@@ -210,10 +210,10 @@
           window.alert(buySellToggle);
         } else if (money < building[buildingPrice] && buySellToggle == true) {
           window.alert("Not enough money!");
-        } /* else if (buySellToggle == false && building[buildingOwned] > 0) {
+        } else if (buySellToggle == false && building[buildingOwned] > 0) {
           money += building[buildingPrice];
           building[buildingOwned] -= 1;
-        } */
+        }
          
       }
       
