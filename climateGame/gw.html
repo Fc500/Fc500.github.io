@@ -179,7 +179,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.14.4');
+        window.alert('v0.14.5');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
@@ -216,6 +216,8 @@
           building[buildingOwned] -= 1;
           window.alert("Building sold!");
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
+        } else if (buySellToggle == false && building[buildingOwned] = 0) {
+          window.alert("Not enough buildings to sell!"); 
         }
          
       }
