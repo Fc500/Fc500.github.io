@@ -136,13 +136,13 @@
         </label>
 
       <div class="storeScroll">
-        <button class="storeButton emboss-effect" onclick="dispImage(0); buyBuildings(windmills, 'windmillOwned', 'windmillPrice')">
+        <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
           <h6>1.32 million</h6>
           <h5 id="windmillOwned">0</h5>
         </button><br>
-        <button class="storeButton emboss-effect" onclick="dispImage(1); buyBuildings(solarpanels, 'solarpanelOwned', 'solarpanelPrice')">
+        <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarpanelOwned', 'solarpanelPrice', 1)">
           <img src="solarPanelSpread.png" width=40 alt="windmill"/>
           <p>Solar Panel</p>
           <h6>1.2 million</p>
@@ -179,7 +179,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.14.3');
+        window.alert('v0.14.4');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
@@ -199,7 +199,7 @@
         moneyDisplay.innerHTML = money;
       }
       
-      function buyBuildings(building, buildingOwned, buildingPrice) {
+      function buyBuildings(building, buildingOwned, buildingPrice, image) {
         if (money >= building[buildingPrice] && buySellToggle == true) {
           building[buildingOwned]++;
           money -= building[buildingPrice];
@@ -208,12 +208,14 @@
           window.alert("bought");
           buySellToggle == false;
           window.alert(buySellToggle);
+          dispImage(image);
         } else if (money < building[buildingPrice] && buySellToggle == true) {
           window.alert("Not enough money!");
         } else if (buySellToggle == false && building[buildingOwned] > 0) {
           money += building[buildingPrice];
           building[buildingOwned] -= 1;
           window.alert("Building sold!");
+          document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
         }
          
       }
