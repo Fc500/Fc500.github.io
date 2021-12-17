@@ -155,7 +155,7 @@
       // Stats
       let moneyDisplay = document.getElementById("moneyDisp");
       let globalTempature = 60;
-      let money = 100000000;
+      let money = 10;
       let buySellToggle = true;
       
       // Buildings
@@ -179,7 +179,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.14.5');
+        window.alert('v0.14.6');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
@@ -200,7 +200,7 @@
       }
       
       function buyBuildings(building, buildingOwned, buildingPrice, image) {
-        if (money >= building[buildingPrice] && buySellToggle == true) {
+        if (money >= building[buildingPrice] && buySellToggle == true) { // Main buying function
           building[buildingOwned]++;
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
@@ -208,15 +208,18 @@
           window.alert("bought");
           buySellToggle == false;
           window.alert(buySellToggle);
-          dispImage(image);
-        } else if (money < building[buildingPrice] && buySellToggle == true) {
+          dispImage(false, image);
+          
+        } else if (money < building[buildingPrice] && buySellToggle == true) { // Not enough money function
           window.alert("Not enough money!");
-        } else if (buySellToggle == false && building[buildingOwned] > 0) {
+          
+        } else if (buySellToggle == false && building[buildingOwned] > 0) { // Selling building function
           money += building[buildingPrice];
           building[buildingOwned] -= 1;
           window.alert("Building sold!");
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
-        } else if (buySellToggle == false && building[buildingOwned] == 0) {
+          
+        } else if (buySellToggle == false && building[buildingOwned] == 0) { // Not enough buildings to sell function
           window.alert("Not enough buildings to sell!"); 
         }
          
@@ -226,23 +229,28 @@
       
     
         
-      function dispImage(imageSelection) {
+      function dispImage(destory, imageSelection) {
+        
         let img = document.createElement("img");
         //let imageSelection = document.getElementById("images").value;
         let div = 0;  
         if (imageSelection == 0) {
-    	    img.src = 'WindmillSpread.png';        
+          img.src = 'WindmillSpread.png';        
           div = document.getElementById("x");
         } else if (imageSelection == 1) {
           img.src = "solarPanelSpread.png";
           div = document.getElementById("y");
-    	  }  
-          imgRel = pos + "px";
-          img.setAttribute("width", "50px");
-          img.setAttribute("position", "absolute");
-          img.setAttribute("left", "10px");
-          pos += 20;
-          div.appendChild(img);
+        }  
+          if (destory == false) {
+            imgRel = pos + "px";
+            img.setAttribute("width", "50px");
+            img.setAttribute("position", "absolute");
+            img.setAttribute("left", "10px");
+            pos += 20;
+            div.appendChild(img);
+          } else if (destroy == true) {
+            div.removeChild(img);
+          }
         
         
       } 
