@@ -107,6 +107,21 @@
       -ms-transform: translateX(26px);
       transform: translateX(26px);
     }
+      
+      .upgrade {
+        font-size: 15px;
+        color: white;
+        background-color: #828282;
+        box-shadow: 0px 0px 10px 5px rgba(255, 226, 99, 0.85);
+        border-size: 10px;
+        border-color: gold;
+        border-style: solid;
+        width: 75px;
+        height: 75px;
+        text-align: center;
+        padding-top: 1px;
+        margin: 5px;
+      }
 
     </style>
   </head>
@@ -136,6 +151,12 @@
         </label>
 
       <div class="storeScroll">
+        <div style="background-color: #4a4a4a padding: 10px; margin: 5px;"> <!-- Upgrade Store -->
+          <h3>UPGRADES</h3>
+          <div class="upgrade">
+            <p>Green Energy</p>
+          </div>
+        </div>
         <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
           <img src="WindmillSpread.png" width=20 alt="windmill"/>
           <p>Windmill</p>
@@ -179,12 +200,24 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.14.7');
+        window.alert('v0.15.0');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
       
       // Building functions
+      
+       function numFormatter(num) {
+         if(num > 999 && num < 1000000){
+            return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
+         } else if(num > 1000000 && num < 1000000000){
+            return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
+         } else if(num > 999999999){
+            return (num/1000000000).toFixed(1) + 'B'; // convert to M for number from > 1 million 
+         } else if(num < 900){
+            return num; // if value < 1000, nothing to do
+         }
+       }
       
       function calculateBuildings() {
         
@@ -196,7 +229,7 @@
         money += solarpanels.solarpanelOwned * solarpanels.solarpanelProduction;
         }
         
-        moneyDisplay.innerHTML = money;
+        moneyDisplay.innerHTML = numFormatter(money);
       }
       
       function buyBuildings(building, buildingOwned, buildingPrice, image) {
