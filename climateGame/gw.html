@@ -12,7 +12,7 @@
         float: left;
         text-align: center; 
         width: 32%; 
-        height: 98%;
+        height: 90%;
       }
       
       .storeButton {
@@ -41,12 +41,11 @@
       .storeScroll {
         overflow: auto;
         text-align:justify;
-	height: 100%;
       }
       
       .storeScrollHoriz {
         overflow: auto;
-				text-align:justify;
+	text-align:justify;
         white-space: nowrap;
         background-color: #bdbdbd;
         margin: 5px;
@@ -132,6 +131,8 @@
       <p><span id="moneyDisp">0</span></p>
       <p>Dollars</p>
     </div>   
+	  
+	  
     <div class="section">
       <h3>Buildings</h3>
       <div class="storeScrollHoriz">
@@ -143,6 +144,9 @@
         <div id="y" style="margin-top: 40px;"></div>
       </div>
     </div>   
+	  
+	  
+	  
     <div class="section">
       <h3>STORE</h3>
         <p id="state">BUYING</p>
@@ -150,14 +154,28 @@
         <input type="checkbox" id="slider">
         <span class="slider"></span>
         </label>
-
-      <div class="storeScroll">
         <div style="background-color: #4a4a4a; padding: 10px; margin: 5px;"> <!-- Upgrade Store -->
           <h3>UPGRADES</h3>
+		
           <div class="upgrade">
             <p>Green Energy</p>
           </div>
+		
+	  <div class="upgrade">
+            <p>Green Energy</p>
+          </div>
+		
+	  <div class="upgrade">
+	    <p>Green Energy</p>
+	  </div>
+
+	  <div class="upgrade">
+	    <p>Green Energy</p>
+	  </div>
+		
+		
         </div>
+	    
         <div style="background-color: #4a4a4a;" class="storeScroll">
           <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
             <img src="WindmillSpread.png" width=20 alt="windmill"/>
@@ -172,8 +190,7 @@
             <h5 id="solarpanelOwned">0</h5>
           </button><br>
         </div>
-      </div>     
-    </div>
+      </div>
     <script>
       
       // Stats
@@ -203,7 +220,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.15.0');
+        window.alert('v0.15.1');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
