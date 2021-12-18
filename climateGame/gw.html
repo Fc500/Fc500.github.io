@@ -41,7 +41,6 @@
       .storeScroll {
         overflow-x: hidden;
         overflow-y: auto;
-        text-align:justify;
       }
       
       .storeScrollHoriz {
@@ -151,13 +150,8 @@
 	  
     <div class="section storeScroll">
       <h3>STORE</h3>
-        <p id="state">BUYING</p>
-        <label class="switch" onclick="checkState()">
-        <input type="checkbox" id="slider">
-        <span class="slider"></span>
-        </label>
 	<h3>UPGRADES</h3>
-        <div style="background-color: #4a4a4a; padding: 5px; margin: 5px; height: 80px;" class="storeScroll"> <!-- Upgrade Store -->
+        <div style="background-color: #4a4a4a; padding: 5px; margin: 5px; height: 100px;" class="storeScroll"> <!-- Upgrade Store -->
 		
           <div class="upgrade">
             <p>Green Energy</p>
@@ -177,13 +171,20 @@
 		
 		
         </div>
-	  <br>  
-        <div style="background-color: #4a4a4a; height: 175px;">
+	  <br>
+	  <p id="state">BUYING</p>
+          <label class="switch" onclick="checkState()">
+          <input type="checkbox" id="slider">
+          <span class="slider"></span>
+        </label>
+        <div style="background-color: #4a4a4a;">
           <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
-            <img src="WindmillSpread.png" width=20 alt="windmill"/>
-            <p>Windmill</p>
-            <h6>1.32 million</h6>
-            <h5 id="windmillOwned">0</h5>
+	    <div style="padding-left: 25px;">
+              <img src="WindmillSpread.png" width=20 alt="windmill"/>
+              <p>Windmill</p>
+              <h6>1.32 million</h6>
+              <h5 id="windmillOwned">0</h5>
+	    </div>
           </button><br>
           <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarpanelOwned', 'solarpanelPrice', 1)">
             <img src="solarPanelSpread.png" width=40 alt="windmill"/>
@@ -222,7 +223,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.15.9');
+        window.alert('v0.16.0');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
