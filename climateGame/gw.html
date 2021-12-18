@@ -39,7 +39,7 @@
       }
       
       .storeScroll {
-        overflow-x: auto;
+        overflow-x: hidden;
         overflow-y: auto;
         text-align:justify;
       }
@@ -122,6 +122,7 @@
         text-align: center;
         margin: 2px;
 	float: left;
+	padding-bottom: 1px;
       }
 
     </style>
@@ -177,7 +178,7 @@
 		
         </div>
 	  <br>  
-        <div style="background-color: #4a4a4a; height: 100px;">
+        <div style="background-color: #4a4a4a; height: 100px;" class="storeScroll">
           <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
             <img src="WindmillSpread.png" width=20 alt="windmill"/>
             <p>Windmill</p>
@@ -221,7 +222,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.15.5');
+        window.alert('v0.15.6');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
