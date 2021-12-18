@@ -27,6 +27,7 @@
         margin: 5px;
         align-items: center;
         border-width: 5px;
+	line-height: 0.9;
       }
       
       .emboss-effect {
@@ -112,7 +113,7 @@
         font-size: 15px;
         color: white;
         background-color: #828282;
-        box-shadow: 0px 0px 10px 5px rgba(255, 226, 99, 0.85);
+        box-shadow: 0px 0px 10px 5px rgba(255, 226, 99, 0.5);
         border-size: 5px;
         border-color: gold;
         border-style: solid;
@@ -179,8 +180,8 @@
         </label>
         <div style="background-color: #4a4a4a;">
           <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
+          <img src="WindmillSpread.png" width=20 alt="windmill"/>
 	    <div style="padding-left: 25px;">
-              <img src="WindmillSpread.png" width=20 alt="windmill"/>
               <p>Windmill</p>
               <h6>1.32 million</h6>
               <h5 id="windmillOwned">0</h5>
@@ -223,7 +224,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.16.0');
+        window.alert('v0.16.1');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
