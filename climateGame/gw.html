@@ -64,8 +64,8 @@
       .switch {
         position: relative;
         display: inline-block;
-        width: 60px;
-        height: 34px;
+        width: 30px;
+        height: 17px;
       }
 
       .switch input { 
@@ -89,10 +89,10 @@
     .slider:before {
       position: absolute;
       content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
+      height: 13px;
+      width: 13px;
+      left: 2px;
+      bottom: 2px;
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;
@@ -104,9 +104,9 @@
 
 
     input:checked + .slider:before {
-      -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
-      transform: translateX(26px);
+      -webkit-transform: translateX(13px);
+      -ms-transform: translateX(13px);
+      transform: translateX(13px);
     }
       
       .upgrade {
@@ -149,7 +149,7 @@
 	  
 	  
 	  
-    <div class="section">
+    <div class="section storeScroll">
       <h3>STORE</h3>
         <p id="state">BUYING</p>
         <label class="switch" onclick="checkState()">
@@ -178,7 +178,7 @@
 		
         </div>
 	  <br>  
-        <div style="background-color: #4a4a4a; height: 175px;" class="storeScroll">
+        <div style="background-color: #4a4a4a; height: 175px;">
           <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
             <img src="WindmillSpread.png" width=20 alt="windmill"/>
             <p>Windmill</p>
@@ -222,7 +222,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.15.8');
+        window.alert('v0.15.9');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
