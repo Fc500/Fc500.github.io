@@ -17,17 +17,16 @@
       
       .storeButton {
         background-color: #616161;
-        width: 300px;
-        height: 200px;
-        padding: 10px;
+        width: 200px;
+        height: 100px;
         color: white;
         text-align: left;
         font-size: 15px;
         font-weight: bold;
         margin: 5px;
-        align-items: center;
         border-width: 5px;
 	line-height: 0.4;
+	text-align: right;
       }
       
       .emboss-effect {
@@ -194,7 +193,7 @@
               <h5 id="windmillOwned">0</h5>
           </button><br>
           <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarpanelOwned', 'solarpanelPrice', 1)">
-            <img src="solarPanelSpread.png" width=40 alt="windmill"/>
+            <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
             <p>Solar Panel</p>
             <h6>1.2 million</p>
             <h5 id="solarpanelOwned">0</h5>
@@ -230,7 +229,7 @@
       
       
       window.onload = function loading() { 
-        window.alert('v0.16.8');
+        window.alert('v0.16.9');
         document.getElementById("moneyDisp").innerHTML = money;
       }
       
