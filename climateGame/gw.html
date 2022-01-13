@@ -115,7 +115,7 @@ input:checked + .slider:before {
 }
 
       
-      .upgrade {
+      /*.upgrade {
         font-size: 15px;
         color: white;
         background-color: #828282;
@@ -129,7 +129,7 @@ input:checked + .slider:before {
         margin: 2px;
 	float: left;
 	padding-top: 1px;
-      }
+      }*/
 	    
       .imgButton {
         position: relative;
@@ -142,14 +142,14 @@ input:checked + .slider:before {
   </head>
   <body>
     <div class="section">
-      <h3>Statistics</h3>
+      <h3>STATISTICS</h3>
       <p><span id="moneyDisp">0</span></p>
       <p>Dollars</p>
     </div>   
 	  
 	  
     <div class="section">
-      <h3>Buildings</h3>
+      <h3>RESEARCH</h3> <!-- UNUSED CODE FOR THE BUILDINGS: KEEP FOR REFERENCE
       <div class="storeScrollHoriz">
         <p>Windmills</p>
         <div id="x" style="margin-top: 40px;"></div>
@@ -157,7 +157,11 @@ input:checked + .slider:before {
       <div class="storeScrollHoriz">
         <p>Solar Panel</p>
         <div id="y" style="margin-top: 40px;"></div>
-      </div>
+      </div> -->
+	
+	    <p><span id="greenDisp">0</span></p>
+	    <p>Green Points</p>
+
     </div>   
 	  
 	  
@@ -172,7 +176,7 @@ input:checked + .slider:before {
           <span class="slider"></span>
         </label>
         <div style="background-color: #4a4a4a;">
-          <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'windmillPrice', 0)">
+          <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'owned', 'price', 0)">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
               <p>Windmill</p>
@@ -191,16 +195,18 @@ input:checked + .slider:before {
       
       // Stats
       let moneyDisplay = document.getElementById("moneyDisp");
+      let greenDisplay = document.getElementById("greenDisp");
       let globalTempature = 60;
       let money = 10000000;
       let buySellToggle = true;
+      let greenPoints = 0;
       
       // Buildings
       
       let windmills = {
-        windmillPrice: 120000,
-        windmillProduction: 1000000,
-        windmillOwned: 0,
+        price: 120000,
+        production: 1000000,
+        owned: 0,
       };
       
       let solarpanels = {
@@ -216,8 +222,9 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.17.1');
+        window.alert('v0.17.2');
         document.getElementById("moneyDisp").innerHTML = money;
+	document.getElementById("greenDisp").innerHTML = money;
       }
       
       
