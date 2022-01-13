@@ -176,7 +176,7 @@ input:checked + .slider:before {
           <span class="slider"></span>
         </label>
         <div style="background-color: #4a4a4a;">
-          <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'owned', 'price', 0)">
+          <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windOwned', 'price', 0)">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
               <p>Windmill</p>
@@ -206,7 +206,7 @@ input:checked + .slider:before {
       let windmills = {
         price: 120000,
         production: 1000000,
-        owned: 0,
+        windOwned: 0,
       };
       
       let solarpanels = {
@@ -222,9 +222,10 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.17.2');
+        window.alert('v0.17.3');
+	window.alert(windmills.price);
         document.getElementById("moneyDisp").innerHTML = money;
-	document.getElementById("greenDisp").innerHTML = money;
+	document.getElementById("greenDisp").innerHTML = greenPoints;
       }
       
       
@@ -244,7 +245,7 @@ input:checked + .slider:before {
       
       function calculateBuildings() {
         
-        if (windmills.windmillOwned >= 0) {
+        if (windmills.owned >= 0) {
         money += windmills.windmillOwned * windmills.windmillProduction;
         }
         
