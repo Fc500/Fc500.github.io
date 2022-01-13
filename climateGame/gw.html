@@ -181,13 +181,13 @@ input:checked + .slider:before {
 	   
               <p>Windmill</p>
               <h6>1.32 million</h6>
-              <h5 id="windmillOwned">0</h5>
+              <h5 id="windOwned">0</h5>
           </button><br>
-          <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarpanelOwned', 'solarpanelPrice', 1)">
+          <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1)">
             <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
             <p>Solar Panel</p>
             <h6>1.2 million</p>
-            <h5 id="solarpanelOwned">0</h5>
+            <h5 id="solarOwned">0</h5>
           </button><br>
         </div>
       </div>
@@ -210,9 +210,9 @@ input:checked + .slider:before {
       };
       
       let solarpanels = {
-        solarpanelPrice: 1000000,
-        solarpanelProduction: 10,
-        solarpanelOwned: 0,
+        price: 1000000,
+        production: 10,
+        solarOwned: 0,
       };
       
       // Building production
@@ -222,7 +222,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.17.3');
+        window.alert('v0.17.4');
 	window.alert(windmills.price);
         document.getElementById("moneyDisp").innerHTML = money;
 	document.getElementById("greenDisp").innerHTML = greenPoints;
