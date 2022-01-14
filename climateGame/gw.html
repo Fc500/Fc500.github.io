@@ -20,13 +20,25 @@
         width: 90%;
         height: 100px;
         color: white;
-        text-align: left;
         font-size: 15px;
         font-weight: bold;
         margin: 5px;
         border-width: 5px;
 	line-height: 0.4;
 	text-align: right;
+      }
+	    
+        .upgradeButton {
+        background-color: #616161;
+        width: 100px;
+        height: 100px;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 5px;
+        border-width: 5px;
+	line-height: 0.4;
+	display: block;
       }
       
       .emboss-effect {
@@ -202,7 +214,7 @@ input:checked + .slider:before {
 		    <h6>800 Million</h6>
 		    <h5 id="stationOwned">0</h5>
 	    </button>
-	    
+	    <h4>Powerups</h4>
 	    <button class="upgrades" style="display: none;">
 	      <p>Windmills</p>
 	    </button>
@@ -440,7 +452,7 @@ input:checked + .slider:before {
 	    
      function checkUpgrades() {
        if (greenPoints >= 5) {
-         upgrades[0].style.display = "block";
+         upgrades[0].classList.add = "upgradeButton";
        }
      }
   
