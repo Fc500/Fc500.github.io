@@ -235,18 +235,21 @@ input:checked + .slider:before {
 	  </div>
         </label>
         <div style="background-color: #4a4a4a; width: 96%; margin: auto;">
+		
+		
+	  <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1)">
+            <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
+            <p>Solar Panel</p>
+            <h6>100K</p>
+            <h5 id="solarOwned">0</h5>
+          </button><br>
+		
           <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windOwned', 'price', 0)">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
               <p>Windmill</p>
               <h6>1.32 million</h6>
               <h5 id="windOwned">0</h5>
-          </button><br>
-          <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1)">
-            <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
-            <p>Solar Panel</p>
-            <h6>1.2 million</p>
-            <h5 id="solarOwned">0</h5>
           </button><br>
         </div>
       </div>
@@ -291,13 +294,13 @@ input:checked + .slider:before {
       // Buildings
       
       let windmills = {
-        price: 120000,
+        price: 1200000,
         production: 1000000,
         windOwned: 0,
       };
       
       let solarpanels = {
-        price: 1000000,
+        price: 100000,
         production: 10,
         solarOwned: 0,
       };
@@ -452,7 +455,7 @@ input:checked + .slider:before {
 	    
      function checkUpgrades() {
        if (greenPoints >= 5) {
-         upgrades[0].classList.add = "upgradeButton";
+         upgrades[0].classList.add("upgradeButton");
        }
      }
   
