@@ -162,7 +162,7 @@ input:checked + .slider:before {
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
 	    
-	    <button class="storeButton emboss-effect">
+	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price')">
 		    <p>Researcher</p>
 		    <h6>2.8 Million</h6>
 		    <h5 id="reseOwned">0</h5>
@@ -177,9 +177,9 @@ input:checked + .slider:before {
 	
 	  <br>
 	  <div style="margin: 5px; text-align: left;">
-	    <label id="state" for="buySlider">BUYING: </label>
+	    <p id="state">BUYING: </p>
             <label class="switch" onclick="checkState()">
-            <input type="checkbox" id="slider" name="buySlider">
+            <input type="checkbox" id="slider">
             <span class="slider"></span>
 	  </div>
         </label>
@@ -222,6 +222,15 @@ input:checked + .slider:before {
         production: 10,
         solarOwned: 0,
       };
+	    
+
+      // Upgrades
+	    
+      let researcher = {
+      	price: 2800000,
+	reseOwned: 0,
+	production: 0.1,
+      }
       
       // Building production
       
@@ -230,7 +239,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.17.6');
+        window.alert('v0.17.7');
 	window.alert(windmills.price);
         document.getElementById("moneyDisp").innerHTML = money;
 	document.getElementById("greenDisp").innerHTML = greenPoints;
@@ -262,7 +271,11 @@ input:checked + .slider:before {
         money += solarpanels.solarOwned * solarpanels.production;
         }
         
+	if (researcher.reseOwned >= 0) {
+	  greenPoints += researcher.reseOwned * researcher.production;
+	}
         moneyDisplay.innerHTML = numFormatter(money);
+	     
       }
       
       function buyBuildings(building, buildingOwned, buildingPrice, image) {
@@ -290,6 +303,18 @@ input:checked + .slider:before {
         }
          
       }
+	    
+	    
+	    
+	    
+	function buyUpgrades(object, owned, price) {
+	
+	  if (object[price] < money) {
+	    money -= object[price];
+	    object[owned]++;
+            document.getElementById(owned).innerHTML = object[owned];
+	  }
+	}
       
     
       
