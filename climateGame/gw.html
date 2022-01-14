@@ -177,8 +177,8 @@ input:checked + .slider:before {
 	
 	  <br>
 	  <div style="margin: 5px; text-align: left;">
-	    <p id="state">BUYING: </p>
-            <label class="switch" onclick="checkState()">
+	    <label id="state" for="buySlider">BUYING: </label>
+            <label class="switch" onclick="checkState()" name="buySlider">
             <input type="checkbox" id="slider">
             <span class="slider"></span>
 	  </div>
@@ -254,8 +254,8 @@ input:checked + .slider:before {
       
       function calculateBuildings() {
         
-        if (windmills.solarOwned >= 0) {
-        money += windmills.Owned * windmills.production;
+        if (windmills.windOwned >= 0) {
+        money += windmills.windOwned * windmills.production;
         }
         
         if (solarpanels.solarOwned >= 0) {
