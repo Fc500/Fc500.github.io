@@ -172,8 +172,10 @@ input:checked + .slider:before {
 	  <br>
 	  <p id="state">BUYING</p>
           <label class="switch" onclick="checkState()">
-          <input type="checkbox" id="slider">
-          <span class="slider"></span>
+	  <div style="margin: 5px; text-align: left;">
+            <input type="checkbox" id="slider">
+            <span class="slider"></span>
+	  </div>
         </label>
         <div style="background-color: #4a4a4a; width: 96%; margin: auto;">
           <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windOwned', 'price', 0)">
@@ -245,12 +247,12 @@ input:checked + .slider:before {
       
       function calculateBuildings() {
         
-        if (windmills.owned >= 0) {
-        money += windmills.windmillOwned * windmills.windmillProduction;
+        if (windmills.solarOwned >= 0) {
+        money += windmills.Owned * windmills.production;
         }
         
-        if (solarpanels.solarpanelOwned >= 0) {
-        money += solarpanels.solarpanelOwned * solarpanels.solarpanelProduction;
+        if (solarpanels.solarOwned >= 0) {
+        money += solarpanels.solarOwned * solarpanels.production;
         }
         
         moneyDisplay.innerHTML = numFormatter(money);
