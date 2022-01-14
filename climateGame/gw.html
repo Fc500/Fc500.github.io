@@ -191,7 +191,7 @@ input:checked + .slider:before {
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
 	    
-	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price'); onclick='flavorText(0)'">
+	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price'); flavorText(0)">
 		    <p>Researcher</p>
 		    <h6>2.8 Million</h6>
 		    <h5 id="reseOwned">0</h5>
@@ -262,15 +262,7 @@ input:checked + .slider:before {
  	}
       }
 	    
-      function flavorText(button) {
-	  let flavor = document.getElementById("flavorText");
-	  if (button == 0) {
-	    flavor.innerHTML = "Delicious";
-	  } else if (button == 1) {
-	    flavor.innerHTML = "Good for tans!";
-	  }
-	  modal.style.display = "block";
-	}
+      
       // Stats
       let moneyDisplay = document.getElementById("moneyDisp");
       let greenDisplay = document.getElementById("greenDisp");
@@ -309,7 +301,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.17.9');
+        window.alert('v0.18.0');
 	window.alert(windmills.price);
         document.getElementById("moneyDisp").innerHTML = money;
 	document.getElementById("greenDisp").innerHTML = greenPoints;
@@ -355,9 +347,7 @@ input:checked + .slider:before {
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
           moneyDisplay.innerHTML = money;
-          window.alert("bought");
           buySellToggle == false;
-          window.alert(buySellToggle);
           dispImage(false, image);
           
         } else if (money < building[buildingPrice] && buySellToggle == true) { // Not enough money function
@@ -431,6 +421,16 @@ input:checked + .slider:before {
 
       }
 
+	    // Flavor Text
+	    function flavorText(button) {
+	      let flavor = document.getElementById("flavorText");
+	      if (button == 0) {
+	        flavor.innerHTML = "Works best on Neptune";
+	      } else if (button == 1) {
+	        flavor.innerHTML = "Good for tans!";
+	      }
+	      modal.style.display = "block";
+	    }
   
       // Timers
      setInterval(calculateBuildings, 1000);
