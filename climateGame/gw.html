@@ -321,7 +321,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.18.3');
+        window.alert('v0.18.4');
 	checkState();
 	upgrades[0].style.display = "none";
       }
@@ -452,9 +452,10 @@ input:checked + .slider:before {
 	    
 	    
      function checkUpgrades() {
-       if (greenPoints >= 5) {
+       if (greenPoints > 5) {
          upgrades[0].classList.add("upgradeButton");
 	 upgradesp[0].style.display = "block";
+	 window.alert("test1");
        }
      }
   
