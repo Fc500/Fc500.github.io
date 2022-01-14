@@ -215,7 +215,7 @@ input:checked + .slider:before {
 		    <h5 id="stationOwned">0</h5>
 	    </button>
 	    <h4>Powerups</h4>
-	    <button class="upgrades" style="display: none;">
+	    <button class="upgrades">
 	      <p>Windmills</p>
 	    </button>
 
@@ -326,6 +326,7 @@ input:checked + .slider:before {
         document.getElementById("moneyDisp").innerHTML = money;
 	document.getElementById("greenDisp").innerHTML = greenPoints;
 	checkState();
+	upgrades[0].style.display = "none";
       }
       
       
@@ -456,6 +457,7 @@ input:checked + .slider:before {
      function checkUpgrades() {
        if (greenPoints >= 5) {
          upgrades[0].classList.add("upgradeButton");
+	 upgradesp[0].style.display = "block";
        }
      }
   
