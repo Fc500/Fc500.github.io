@@ -383,7 +383,14 @@ input:checked + .slider:before {
          
       }
 	    
-	    
+	function checkUpgrades() {
+	x = 5;
+	window.alert("test1");
+       if (greenPoints > x.toFixed(2)) {
+         upgrades[0].classList.add("upgradeButton");
+	 upgrades[0].style.display = "block";
+       }
+     }    
 	    
 	    
 	function buyUpgrades(object, owned, price) {
@@ -451,13 +458,6 @@ input:checked + .slider:before {
 	    }
 	    
 	    
-     function checkUpgrades() {
-	window.alert("test1");
-       if (greenPoints > 5) {
-         upgrades[0].classList.add("upgradeButton");
-	 upgradesp[0].style.display = "block";
-       }
-     }
   
       // Timers
      setInterval(calculateBuildings, 1000);
