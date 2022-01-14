@@ -176,8 +176,8 @@ input:checked + .slider:before {
       <h3>STORE</h3>
 	
 	  <br>
-	  <p id="state">BUYING</p>
 	  <div style="margin: 5px; text-align: left;">
+	    <p id="state">BUYING: </p>
             <label class="switch" onclick="checkState()">
             <input type="checkbox" id="slider">
             <span class="slider"></span>
@@ -230,10 +230,11 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.17.5');
+        window.alert('v0.17.6');
 	window.alert(windmills.price);
         document.getElementById("moneyDisp").innerHTML = money;
 	document.getElementById("greenDisp").innerHTML = greenPoints;
+	checkState();
       }
       
       
