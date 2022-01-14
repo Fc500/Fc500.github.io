@@ -203,7 +203,7 @@ input:checked + .slider:before {
 		    <h5 id="stationOwned">0</h5>
 	    </button>
 	    
-	    <button class="upgrades">
+	    <button class="upgrades" style="display: none;">
 	      <p>Windmills</p>
 	    </button>
 
@@ -270,6 +270,7 @@ input:checked + .slider:before {
       // Stats
       let moneyDisplay = document.getElementById("moneyDisp");
       let greenDisplay = document.getElementById("greenDisp");
+      let upgrades = document.getElementsByClassName("upgrades");
       let globalTempature = 60;
       let money = 10000000;
       let buySellToggle = true;
@@ -305,7 +306,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.18.0');
+        window.alert('v0.18.1');
 	window.alert(windmills.price);
         document.getElementById("moneyDisp").innerHTML = money;
 	document.getElementById("greenDisp").innerHTML = greenPoints;
@@ -438,7 +439,6 @@ input:checked + .slider:before {
 	    
 	    
      function checkUpgrades() {
-       let upgrades = documents.getElementByClassName("upgrades");
        if (greenPoints >= 5) {
          upgrades[0].style.display = "block";
        }
