@@ -140,8 +140,8 @@ input:checked + .slider:before {
 	    
 	    
 	    .blur {
-	    filter: blur(8px);
-  -webkit-filter: blur(8px);
+	    filter: blur(6px);
+  -webkit-filter: blur(6px);
 	    }
 
     </style>
@@ -168,10 +168,16 @@ input:checked + .slider:before {
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
 	    
-	    <button class="storeButton emboss-effect blur" onclick="buyUpgrades(researcher, 'reseOwned', 'price')">
+	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price')">
 		    <p>Researcher</p>
 		    <h6>2.8 Million</h6>
 		    <h5 id="reseOwned">0</h5>
+	    </button>
+	    
+	    <button class="storeButton emboss-effect blur" onclick="buyUpgrades(station, 'stationOwned', 'price')">
+		    <p>Research Station</p>
+		    <h6>800 Million</h6>
+		    <h5 id="stationOwned">0</h5>
 	    </button>
 
     </div>   
