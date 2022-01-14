@@ -113,23 +113,6 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-
-      
-      /*.upgrade {
-        font-size: 15px;
-        color: white;
-        background-color: #828282;
-        box-shadow: 0px 0px 10px 5px rgba(255, 226, 99, 0.5);
-        border-size: 5px;
-        border-color: gold;
-        border-style: solid;
-        width: 75px;
-        height: 75px;
-        text-align: center;
-        margin: 2px;
-	float: left;
-	padding-top: 1px;
-      }*/
 	    
       .imgButton {
         position: relative;
@@ -143,6 +126,46 @@ input:checked + .slider:before {
 	    filter: blur(6px);
   -webkit-filter: blur(6px);
 	    }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+	
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid #888;
+  width: 80%;
+  border-radius: 25px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
     </style>
   </head>
@@ -168,7 +191,7 @@ input:checked + .slider:before {
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
 	    
-	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price')">
+	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price'); onclick='flavorText(0)'">
 		    <p>Researcher</p>
 		    <h6>2.8 Million</h6>
 		    <h5 id="reseOwned">0</h5>
@@ -212,7 +235,30 @@ input:checked + .slider:before {
         </div>
       </div>
     <script>
-      
+	    
+      // Modal
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+	    
+      span.onclick = function() {
+  	modal.style.display = "none";
+      }
+	    
+      window.onclick = function(event) {
+  	if (event.target == modal) {
+          modal.style.display = "none";
+ 	}
+      }
+	    
+      function flavorText(button) {
+	  let flavor = document.getElementById("flavorText");
+	  if (button == 0) {
+	    flavor.innerHTML = "Delicious";
+	  } else if (button == 1) {
+	    flavor.innerHTML = "Good for tans!";
+	  }
+	  modal.style.display = "block";
+	}
       // Stats
       let moneyDisplay = document.getElementById("moneyDisp");
       let greenDisplay = document.getElementById("greenDisp");
@@ -251,7 +297,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.17.7');
+        window.alert('v0.17.8');
 	window.alert(windmills.price);
         document.getElementById("moneyDisp").innerHTML = money;
 	document.getElementById("greenDisp").innerHTML = greenPoints;
