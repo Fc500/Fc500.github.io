@@ -202,6 +202,10 @@ input:checked + .slider:before {
 		    <h6>800 Million</h6>
 		    <h5 id="stationOwned">0</h5>
 	    </button>
+	    
+	    <button class="upgrades" style="display: none;">
+	      <p>Windmills</p>
+	    </button>
 
     </div>   
 	  
@@ -337,7 +341,7 @@ input:checked + .slider:before {
 	  greenPoints += researcher.reseOwned * researcher.production;
 	}
         moneyDisplay.innerHTML = numFormatter(money);
-	greenDisplay.innerHTML = greenPoints;
+	greenDisplay.innerHTML = greenPoints.toFixed(2);
 	     
       }
       
@@ -431,9 +435,18 @@ input:checked + .slider:before {
 	      }
 	      modal.style.display = "block";
 	    }
+	    
+	    
+     function checkUpgrades() {
+       let upgrades = documents.getElementByClassName("upgrades");
+       if (greenPoints >= 5) {
+         upgrades[0].style.display = "block";
+       }
+     }
   
       // Timers
      setInterval(calculateBuildings, 1000);
+     setInterval(checkUpgrades, 1000);
     </script>
   </body>
 </html>
