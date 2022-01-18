@@ -393,15 +393,17 @@ input:checked + .slider:before {
         } else if (buySellToggle == false && building[buildingOwned] == 0) { // Not enough buildings to sell function
           window.alert("Not enough buildings to sell!"); 
         }
-        currentYear++;
-	yearDisplay.innerHTML = currentYear;
       }
 	    
 	function checkUpgrades() {
+	
+        currentYear += 1;
+	yearDisplay.innerHTML = currentYear;
        if (greenPoints > 5) {
          upgrades[0].classList.add("upgradeButton");
 	 upgrades[0].style.display = "block";
        }
+		
      }    
 	function raiseTempature() {
           globalTempature += rateOfChange;
