@@ -183,10 +183,16 @@ input:checked + .slider:before {
     </style>
   </head>
   <body>
-    <div class="section">
+    <div class="section storeScroll">
       <h3>STATISTICS</h3>
       <p><span id="moneyDisp">0</span></p>
       <p>Dollars</p>
+      <br>
+      <p><span id="tempDisp">0</span>F</p>
+      <p>Global Tempature</p>
+      <br>
+      <p><span id="yearDisp">0</span></p>
+      <p>Year</p>
     </div>   
 	  
 	  
@@ -204,7 +210,7 @@ input:checked + .slider:before {
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
 	    
-	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price'); flavorText(0)">
+	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price')">
 		    <p>Researcher</p>
 		    <h6>2.8 Million</h6>
 		    <h5 id="reseOwned">0</h5>
@@ -238,7 +244,7 @@ input:checked + .slider:before {
         <div style="background-color: #4a4a4a; width: 96%; margin: auto;">
 		
 		
-	  <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1)">
+	  <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1), flavorText(0);">
             <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
             <p>Solar Panel</p>
             <h6>100K</p>
@@ -286,11 +292,15 @@ input:checked + .slider:before {
       // Stats
       let moneyDisplay = document.getElementById("moneyDisp");
       let greenDisplay = document.getElementById("greenDisp");
+      let tempDisplay = document.getElementById("tempDisp");
+      let yearDisplay = document.getElementById("yearDisp");
       let upgrades = document.getElementsByClassName("upgrades");
-      let globalTempature = 60;
+      let globalTempature = 67.7;
       let money = 10000000;
       let buySellToggle = true;
       let greenPoints = 0;
+      let rateOfChange = 0.13;
+      let currentYear = 2021;
       
       // Buildings
       
@@ -322,9 +332,11 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.18.7');
+        window.alert('v0.18.8');
 	checkState();
 	upgrades[0].style.display = "none";
+	tempDisplay.innerHTML = globalTempature;
+	yearDisplay.innerHTML = currentYear;
       }
       
       
@@ -336,7 +348,7 @@ input:checked + .slider:before {
          } else if(num > 1000000 && num < 1000000000){
             return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
          } else if(num > 999999999){
-            return (num/1000000000).toFixed(1) + 'B'; // convert to M for number from > 1 million 
+            return (num/1000000000).toFixed(1) + 'B'; // convert to M for number from > 1 billion 
          } else if(num < 900){
             return num; // if value < 1000, nothing to do
          }
@@ -365,7 +377,7 @@ input:checked + .slider:before {
           building[buildingOwned]++;
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
-          moneyDisplay.innerHTML = money;
+          moneyDisplay.innerHTML = numFormatter(money);
           buySellToggle == false;
           dispImage(false, image);
           
@@ -381,7 +393,8 @@ input:checked + .slider:before {
         } else if (buySellToggle == false && building[buildingOwned] == 0) { // Not enough buildings to sell function
           window.alert("Not enough buildings to sell!"); 
         }
-         
+        currentYear++;
+	yearDisplay.innerHTML = currentYear;
       }
 	    
 	function checkUpgrades() {
@@ -390,7 +403,10 @@ input:checked + .slider:before {
 	 upgrades[0].style.display = "block";
        }
      }    
-	    
+	function raiseTempature() {
+          globalTempature += rateOfChange;
+	  tempDisplay.innerHTML = globalTempature;
+        }    
 	    
 	function buyUpgrades(object, owned, price) {
 	
@@ -444,6 +460,7 @@ input:checked + .slider:before {
         }
 
       }
+	    
 
 	    // Flavor Text
 	    function flavorText(button) {
@@ -461,6 +478,7 @@ input:checked + .slider:before {
       // Timers
      setInterval(calculateBuildings, 1000);
      setInterval(checkUpgrades, 1000);
+     setInterval(raiseTempature, 10000);
     </script>
   </body>
 </html>
