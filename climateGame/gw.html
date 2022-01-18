@@ -410,6 +410,10 @@ input:checked + .slider:before {
 	  tempDisplay.innerHTML = globalTempature.toFixed(2);
         }    
 	    
+	function raiseTempHigh() {
+	  rateOfChange *= 2;
+          return rateOfChange;
+	}
 	function buyUpgrades(object, owned, price) {
 	
 	  if (object[price] < money) {
@@ -481,6 +485,7 @@ input:checked + .slider:before {
      setInterval(calculateBuildings, 1000);
      setInterval(checkUpgrades, 1000);
      setInterval(raiseTempature, 1000);
+     setInterval(raiseTempHigh, 10000);
     </script>
   </body>
 </html>
