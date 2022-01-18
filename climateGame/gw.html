@@ -407,7 +407,7 @@ input:checked + .slider:before {
      }    
 	function raiseTempature() {
           globalTempature += rateOfChange;
-	  tempDisplay.innerHTML = globalTempature;
+	  tempDisplay.innerHTML = globalTempature.toFixed(2);
         }    
 	    
 	function buyUpgrades(object, owned, price) {
