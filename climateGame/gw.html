@@ -244,14 +244,14 @@ input:checked + .slider:before {
         <div style="background-color: #4a4a4a; width: 96%; margin: auto;">
 		
 		
-	  <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1), flavorText(0);">
+	  <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1), flavorText(0);" id="solarpanels">
             <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
             <p>Solar Panel</p>
             <h6>100K</p>
             <h5 id="solarOwned">0</h5>
           </button><br>
 		
-          <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windOwned', 'price', 0)">
+          <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windOwned', 'price', 0)" id="windmills">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
               <p>Windmill</p>
@@ -302,19 +302,29 @@ input:checked + .slider:before {
       let rateOfChange = 0.013;
       let currentYear = 2021;
       
+	    
+      // Boxes
+      
+      let windmillBox = document.getElementById("windmills");
+      /*e
+      e
+      e
+      e
+      e*/
       // Buildings
-      
-      let windmills = {
-        price: 1200000,
-        production: 1000000,
-        windOwned: 0,
-      };
-      
       let solarpanels = {
         price: 100000,
         production: 10,
         solarOwned: 0,
       };
+	    
+      let windmills = {
+        price: 1200000,
+        production: 1000000,
+        windOwned: 0,
+	researched: false,
+      };
+      
 	    
 
       // Upgrades
@@ -332,7 +342,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.18.9');
+        window.alert('v0.19.0');
 	checkState();
 	upgrades[0].style.display = "none";
 	tempDisplay.innerHTML = globalTempature;
@@ -414,6 +424,19 @@ input:checked + .slider:before {
 	  rateOfChange *= 2;
           return rateOfChange;
 	}
+	    
+	    
+	    
+	    
+function checkBuildings() {
+  if (windmills.price * 1.1 < money && windmills.researched == true) {
+    windmillBox.style.display = "block"; 
+  } else if (windmills.price * 1.1 < money) {
+    windmillBox.style.display = "block";
+    windmillBox.classList.add("blur");
+  }
+}    
+	    
 	function buyUpgrades(object, owned, price) {
 	
 	  if (object[price] < money) {
@@ -483,6 +506,7 @@ input:checked + .slider:before {
   
       // Timers
      setInterval(calculateBuildings, 1000);
+     setInterval(checkBuildings, 1000);
      setInterval(checkUpgrades, 1000);
      setInterval(raiseTempature, 1000);
      setInterval(raiseTempHigh, 10000);
