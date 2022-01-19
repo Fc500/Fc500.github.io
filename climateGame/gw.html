@@ -314,7 +314,7 @@ input:checked + .slider:before {
       // Buildings
       let solarpanels = {
         price: 100000,
-        production: 10,
+        production: 500000,
         solarOwned: 0,
 	researched: true,
       };
@@ -343,7 +343,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.1');
+        window.alert('v0.19.2');
 	checkState();
 	upgrades[0].style.display = "none";
 	tempDisplay.innerHTML = globalTempature;
@@ -433,11 +433,11 @@ input:checked + .slider:before {
 	    
 	    
 function checkBuildings() {
-  if (windmills.price * 1.1 < money && windmills.researched == true) {
+  if (windmills.price * 1.5 > money && windmills.researched == true) {
     windmillBox.style.display = "block"; 
-  } else if (windmills.price * 1.1 < money) {
-    windmillBox.style.display = "block";
     windmillBox.classList.add("blur");
+  } else if (windmills.price * 1.1 < money && windmills.researched == true) {
+    windmillBox.classList.remove("blur");
   }
 }    
 	    
