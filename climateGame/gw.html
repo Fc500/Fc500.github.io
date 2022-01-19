@@ -447,6 +447,7 @@ function checkBuildings() {
 	    money -= object[price];
 	    object[owned]++;
             document.getElementById(owned).innerHTML = object[owned];
+            moneyDisplay.innerHTML = numFormatter(money);
 	  }
 	}
       
