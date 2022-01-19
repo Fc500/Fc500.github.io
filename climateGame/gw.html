@@ -244,7 +244,7 @@ input:checked + .slider:before {
         <div style="background-color: #4a4a4a; width: 96%; margin: auto;">
 		
 		
-	  <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1), flavorText(0);" id="solarpanels">
+	  <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1, 'solarDisplay'), flavorText(0);" id="solarpanels">
             <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
             <p>Solar Panel</p>
             <h6 id="solarPrice">100K</h6>
@@ -317,7 +317,7 @@ input:checked + .slider:before {
         production: 500000,
         solarOwned: 0,
 	researched: true,
-	display: document.getElementById("solarPrice"),
+	solarDisplay: document.getElementById("solarPrice"),
       };
 	    
       let windmills = {
@@ -345,7 +345,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.4a');
+        window.alert('v0.19.4b');
 	checkState();
 	upgrades[0].style.display = "none";
 	tempDisplay.innerHTML = globalTempature;
@@ -395,6 +395,7 @@ input:checked + .slider:before {
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
           moneyDisplay.innerHTML = numFormatter(money);
           building[buildingPrice] *= 1.2;
+          window.alert(building[buildingPrice]);
           building[display].innerHTML = numFormatter(building[buildingPrice]);
           dispImage(false, image);
           
