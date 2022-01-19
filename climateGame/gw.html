@@ -436,8 +436,9 @@ function checkBuildings() {
   if (windmills.price * 1.5 < money) {
     windmillBox.style.display = "block"; 
     windmillBox.classList.add("blur");
-  } else if (windmills.price * 1.1 < money && windmills.researched == true) {
+  } else if (windmills.price * 1.5 < money && windmills.researched == true) {
     windmillBox.classList.remove("blur");
+    window.alert("true!");
   }
 }    
 	    
