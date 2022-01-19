@@ -222,7 +222,7 @@ input:checked + .slider:before {
 		    <h5 id="stationOwned">0</h5>
 	    </button>
 	    <h4>Powerups</h4>
-	    <button class="upgrades">
+	    <button class="upgrades" onclick="setWindmillsTrue()">
 	      <p>Windmills</p>
 	    </button>
 
@@ -316,6 +316,7 @@ input:checked + .slider:before {
         price: 100000,
         production: 10,
         solarOwned: 0,
+	researched: true,
       };
 	    
       let windmills = {
@@ -342,14 +343,17 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.0');
+        window.alert('v0.19.1');
 	checkState();
 	upgrades[0].style.display = "none";
 	tempDisplay.innerHTML = globalTempature;
 	yearDisplay.innerHTML = currentYear;
       }
       
-      
+      function setWindmillsTrue() {
+        windmills.researched = true;
+	return windmills.researched;
+      }
       // Building functions
       
        function numFormatter(num) {
@@ -383,7 +387,7 @@ input:checked + .slider:before {
       }
       
       function buyBuildings(building, buildingOwned, buildingPrice, image) {
-        if (money >= building[buildingPrice] && buySellToggle == true) { // Main buying function
+        if (money >= building[buildingPrice] && buySellToggle == true && building["researched"] == true) { // Main buying function
           building[buildingOwned]++;
           money -= building[buildingPrice];
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
