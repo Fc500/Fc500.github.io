@@ -222,8 +222,13 @@ input:checked + .slider:before {
 		    <h5 id="stationOwned">0</h5>
 	    </button>
 	    <h4>Powerups</h4>
-	    <button class="upgrades" onclick="setWindmillsTrue()">
+	    
+	    <button class="upgrades" onclick="setObjectTrue(windmills)">
 	      <p>Windmills</p>
+	    </button>
+	    
+	    <button class="upgrades" onclick="setObjectTrue(hydroplant)">
+	      <p>Hydroelectric Generators</p>
 	    </button>
 
     </div>   
@@ -251,12 +256,12 @@ input:checked + .slider:before {
             <h5 id="solarOwned">0</h5>
           </button><br>
 		
-          <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windOwned', 'price', 0)" id="windmills" style="display: none;">
+          <button class="storeButton emboss-effect" onclick="buyBuildings(hydroplant, 'hydroOwned', 'price', 0)" id="hydroplant" style="display: none;">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
-	  <p>Windmill</p>
-              <h6 id="windPrice">1.32M</h6>
-              <h5 id="windOwned">0</h5>
+	  <p>Hydroelectric Generator</p>
+              <h6 id="hydroPrice">12M</h6>
+              <h5 id="hydroOwned">0</h5>
           </button><br>
         </div>
       </div>
@@ -300,8 +305,7 @@ input:checked + .slider:before {
       let buySellToggle = true;
       let greenPoints = 0;
       let rateOfChange = 0.013;
-      let currentYear = 2021;
-      
+      let currentYear = 2021;      
 	    
       // Boxes
       
@@ -327,7 +331,18 @@ input:checked + .slider:before {
 	researched: false,
 	display: document.getElementById("windPrice"),
       };
+	    
+      let hydroplant = {
+        price: 120000000,
+	production: 20000000,
+	hydroOwned: 0,
+	researched: false,
+      };
       
+      	    
+      let gigaArray = [windmills, solarpanels, hydroplant];
+	    
+	
 	    
 
       // Upgrades
@@ -345,16 +360,16 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.4b');
+        window.alert('v0.19.5');
 	checkState();
 	upgrades[0].style.display = "none";
 	tempDisplay.innerHTML = globalTempature;
 	yearDisplay.innerHTML = currentYear;
       }
       
-      function setWindmillsTrue() {
-        windmills.researched = true;
-	window.alert(windmills.researched);
+      function setObjectTrue(building) {
+        building.researched = true;
+	window.alert(building.researched);
       }
       // Building functions
       
@@ -388,7 +403,7 @@ input:checked + .slider:before {
 	     
       }
       
-      function buyBuildings(building, buildingOwned, buildingPrice, image) {
+      function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
         if (money >= building[buildingPrice] && buySellToggle == true && building["researched"] == true) { // Main buying function
           building[buildingOwned]++;
           money -= building[buildingPrice];
@@ -402,7 +417,10 @@ input:checked + .slider:before {
         } else if (money < building[buildingPrice] && buySellToggle == true) { // Not enough money function
           window.alert("Not enough money!");
           
-        } else if (buySellToggle == false && building[buildingOwned] > 0) { // Selling building function
+        } else if (building["researched"] == false && money >= building[buildingPrice]) {
+	  window.alert("Not researched yet!");
+		
+	} else if (buySellToggle == false && building[buildingOwned] > 0) { // Selling building function
           money += building[buildingPrice];
           building[buildingOwned] -= 1;
           window.alert("Building sold!");
@@ -437,11 +455,12 @@ input:checked + .slider:before {
 	    
 	    
 function checkBuildings() {
-  if (windmills.price * 1.5 < money) {
-    windmillBox.style.display = "block"; 
-    windmillBox.classList.add("blur");
+for (let i = 0; i > gigaArray.length; i ++) { 
+  if (gigaArray[i].price * 1.5 < money) {
+    gigaArray[i].style.display = "block"; 
+    gigaArray[i].classList.add("blur");
   }
-  
+}  
   if (windmills.price * 1.5 < money && windmills.researched == true) {
     windmillBox.classList.remove("blur");
   }
