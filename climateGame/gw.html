@@ -340,11 +340,11 @@ input:checked + .slider:before {
       };
       
       	    
-      let gigaArray = [windmills, solarpanels, hydroplant];
+      let gigaArray = [];
+      let gigaArray[0] = solarpanels;
+      let gigaArray[1] = windmills;
+      let gigaArray[2] = hydroplant;
 	    
-	
-	    
-
       // Upgrades
 	    
       let researcher = {
@@ -360,7 +360,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.5');
+        window.alert('v0.19.5a');
 	checkState();
 	upgrades[0].style.display = "none";
 	tempDisplay.innerHTML = globalTempature;
