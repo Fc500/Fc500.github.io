@@ -452,7 +452,7 @@ input:checked + .slider:before {
 	    
 	    
 function checkBuildings() {
-for (let i = 0; i > gigaArray.length; i ++) { 
+for (let i = 0; i < gigaArray.length; i ++) { 
   if (gigaArray[i].price * 1.5 < money) {
     gigaArray[i].style.display = "block"; 
     gigaArray[i].classList.add("blur");
