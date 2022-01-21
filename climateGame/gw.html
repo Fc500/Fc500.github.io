@@ -257,14 +257,14 @@ input:checked + .slider:before {
         <div style="background-color: #4a4a4a; width: 96%; margin: auto;">
 		
 		<br>
-	  <button class="storeButton emboss-effect" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1, 'solarDisplay'), flavorText(0);" id="solarpanels">
+	  <button class="storeButton emboss-effect buildings" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1, 'solarDisplay'), flavorText(0);" id="solarpanels">
             <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
             <p>Solar Farm</p>
             <h6 id="solarPrice">100K</h6>
             <h5 id="solarOwned">0</h5>
           </button>
 		<br>
-	  <button class="storeButton emboss-effect" onclick="buyBuildings(windmills, 'windmillOwned', 'price', 0, 'windmillDisplay')" id="windmills" style="display: none;">
+	  <button class="storeButton emboss-effect buildings" onclick="buyBuildings(windmills, 'windmillOwned', 'price', 0, 'windmillDisplay')" id="windmills" style="display: none;">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
 	  <p>Windmill Farm</p>
@@ -272,7 +272,7 @@ input:checked + .slider:before {
               <h5 id="windmillOwned">0</h5>
           </button>
 		<br>
-          <button class="storeButton emboss-effect" onclick="buyBuildings(hydroplant, 'hydroOwned', 'price', 0, 'hydroDisplay')" id="hydroplant" style="display: none;">
+          <button class="storeButton emboss-effect buildings" onclick="buyBuildings(hydroplant, 'hydroOwned', 'price', 0, 'hydroDisplay')" id="hydroplant" style="display: none;">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
 	  <p>Hydroelectric Generator</p>
@@ -280,7 +280,7 @@ input:checked + .slider:before {
               <h5 id="hydroOwned">0</h5>
           </button>
 		<br>
-	<button class="storeButton emboss-effect" onclick="buyBuildings(geothermal, 'geoOwned', 'price', 0, 'geoDisplay')" id="geothermal" style="display: none;">
+	<button class="storeButton emboss-effect buildings" onclick="buyBuildings(geothermal, 'geoOwned', 'price', 0, 'geoDisplay')" id="geothermal" style="display: none;">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
 	  <p>Geothermal Mine</p>
@@ -324,6 +324,7 @@ input:checked + .slider:before {
       let tempDisplay = document.getElementById("tempDisp");
       let yearDisplay = document.getElementById("yearDisp");
       let upgrades = document.getElementsByClassName("upgrades");
+      let buildings = document.getElementsByClassName("buildings");
       let globalTempature = 67.7;
       let money = 10000000;
       let buySellToggle = true;
@@ -390,7 +391,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8b');
+        window.alert('v0.19.8c');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
