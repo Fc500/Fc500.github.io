@@ -31,8 +31,8 @@
         .upgradeButton {
         background-color: #616161;
 	text-align: center;
-        width: 75px;
-	height: 50px;
+        width: 125px;
+	height: 75px;
         color: white;
         font-size: 10px;
         font-weight: bold;
@@ -213,13 +213,13 @@ input:checked + .slider:before {
 	    
 	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price')">
 		    <p>Researcher</p>
-		    <h6>2.8 Million</h6>
+		    <h6>2.8M</h6>
 		    <h5 id="reseOwned">0</h5>
 	    </button>
 	    
 	    <button class="storeButton emboss-effect blur" onclick="buyUpgrades(station, 'stationOwned', 'price')">
 		    <p>Research Station</p>
-		    <h6>800 Million</h6>
+		    <h6>800M</h6>
 		    <h5 id="stationOwned">0</h5>
 	    </button>
 	    <h4>Powerups</h4>
@@ -391,7 +391,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8c');
+        window.alert('v0.19.8d');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -427,7 +427,11 @@ input:checked + .slider:before {
         if (solarpanels.solarOwned >= 0) {
         money += solarpanels.solarOwned * solarpanels.production;
         }
-        
+	      
+        if (hydroplant.hydroOwned >= 0) {
+        money += hydroplant.hydroOwned * hydroplant.production;
+        }
+	      
 	if (researcher.reseOwned >= 0) {
 	  greenPoints += researcher.reseOwned * researcher.production;
 	}
@@ -474,6 +478,10 @@ input:checked + .slider:before {
        if (greenPoints > 15) {
          upgrades[1].classList.add("upgradeButton");
 	 upgrades[1].style.display = "block";
+       } 
+       if (greenPoints > 30) {
+         upgrades[2].classList.add("upgradeButton");
+	 upgrades[2].style.display = "block";
        }
 		
      }    
@@ -491,15 +499,14 @@ input:checked + .slider:before {
 	    
 	    
 function checkBuildings() {
-for (let i = 0; i < buildings.length; i++) {
-  if (buildings[i].price * 1.5 < money) {
-    buildings[i].style.display = "block"; 
-    buildings[i].classList.add("blur");
+
+	if (windmills.price * 1.5 < money) {
+    windmillBox.style.display = "block"; 
+    windmillBox.classList.add("blur");
   }  
-  if (buildings[i].price * 1.5 < money && buildings[i].researched == true) {
-    buildings[i].classList.remove("blur");
+  if (windmills.price * 1.5 < money && windmills.researched == true) {
+    windmillBox.classList.remove("blur");
   }
-}
 	
   if (hydroplant.price * 1.5 < money) {
     hydroBox.style.display = "block"; 
@@ -507,6 +514,14 @@ for (let i = 0; i < buildings.length; i++) {
   }  
   if (hydroplant.price * 1.5 < money && hydroplant.researched == true) {
     hydroBox.classList.remove("blur");
+  }
+	
+  if (geothermal.price * 1.5 < money) {
+    geoBox.style.display = "block"; 
+    geoBox.classList.add("blur");
+  }  
+  if (geothermal.price * 1.5 < money && geothermal.researched == true) {
+    geoBox.classList.remove("blur");
   }
 }    
 	    
