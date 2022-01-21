@@ -31,10 +31,10 @@
         .upgradeButton {
         background-color: #616161;
 	text-align: center;
-        width: 200px;
+        width: 150px;
 	height: 100px;
         color: white;
-        font-size: 15px;
+        font-size: 10px;
         font-weight: bold;
         margin: 5px;
         border-width: 5px;
@@ -355,7 +355,7 @@ input:checked + .slider:before {
         production: 1000000,
         windmillOwned: 0,
 	researched: false,
-	windmillDisplay: document.getElementById("windPrice"),
+	windmillDisplay: document.getElementById("windmillPrice"),
       };
 	    
       let hydroplant = {
@@ -390,7 +390,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8a');
+        window.alert('v0.19.8b');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
