@@ -232,6 +232,11 @@ input:checked + .slider:before {
 	      <p>Hydroelectric Generators</p>
 	      <p>50M</p>
 	    </button>
+	    
+	    <button class="upgrades" onclick="setObjectTrue(geothermal)">
+	      <p>Geothermal technology</p>
+	      <p>75M</p>
+	    </button>
 
     </div>   
 	  
@@ -270,8 +275,16 @@ input:checked + .slider:before {
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
 	  <p>Hydroelectric Generator</p>
-              <h6 id="hydroPrice">12M</h6>
+              <h6 id="hydroPrice">120M</h6>
               <h5 id="hydroOwned">0</h5>
+          </button><br>
+		
+	<button class="storeButton emboss-effect" onclick="buyBuildings(geothermal, 'geoOwned', 'price', 0, 'geoDisplay')" id="geothermal" style="display: none;">
+          <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
+	   
+	  <p>Geothermal Mine</p>
+              <h6 id="geoPrice">250M</h6>
+              <h5 id="geoOwned">0</h5>
           </button><br>
         </div>
       </div>
@@ -320,7 +333,8 @@ input:checked + .slider:before {
       // Boxes
       
       let windmillBox = document.getElementById("windmills");
-      let hydroBox = document.getElementById("hydroplant");	    
+      let hydroBox = document.getElementById("hydroplant");
+      let geoBox = document.getElementById("geothermal");
       /*e
       e
       e
@@ -345,12 +359,19 @@ input:checked + .slider:before {
 	    
       let hydroplant = {
         price: 120000000,
-	production: 20000000,
+	production: 2000000,
 	hydroOwned: 0,
 	researched: false,
 	hydroDisplay: document.getElementById("hydroPrice"),
       };
       
+      let geothermal = {
+        price: 500000000,
+	production: 25000000,
+	geoOwned: 0,
+	researched: false,
+	geoDisplay: document.getElementById("geoPrice"),
+      };
       	    
 	    
       // Upgrades
@@ -368,7 +389,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.7');
+        window.alert('v0.19.8');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -447,6 +468,10 @@ input:checked + .slider:before {
        if (greenPoints > 5) {
          upgrades[0].classList.add("upgradeButton");
 	 upgrades[0].style.display = "block";
+       }
+       if (greenPoints > 15) {
+         upgrades[1].classList.add("upgradeButton");
+	 upgrades[1].style.display = "block";
        }
 		
      }    
