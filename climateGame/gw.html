@@ -420,7 +420,6 @@ input:checked + .slider:before {
           document.getElementById(buildingOwned).innerHTML = building[buildingOwned];
           moneyDisplay.innerHTML = numFormatter(money);
           building[buildingPrice] *= 1.2;
-          window.alert(building[buildingPrice]);
           building[display].innerHTML = numFormatter(building[buildingPrice]);
           dispImage(false, image);
           
@@ -487,6 +486,7 @@ function checkBuildings() {
 	  if (object[price] < money) {
 	    money -= object[price];
 	    object[owned]++;
+	    object[price] *= 1.5;
             document.getElementById(owned).innerHTML = object[owned];
             moneyDisplay.innerHTML = numFormatter(money);
 	  }
