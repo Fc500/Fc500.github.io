@@ -354,6 +354,7 @@ input:checked + .slider:before {
         solarOwned: 0,
 	researched: false,
 	solarDisplay: document.getElementById("solarPrice"),
+	name: solarpanels,
       };
 	    
       let windmills = {
@@ -388,7 +389,7 @@ input:checked + .slider:before {
 	reseOwned: 0,
 	production: 0.1,
       }
-      let myArray = new Array(solarpanels, windmills, hydroplant, geothermal);
+      let myArray = new Array(solarpanels.name, windmills, hydroplant, geothermal);
 window.alert(myArray);
       // Building production
       
