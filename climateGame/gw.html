@@ -224,6 +224,11 @@ input:checked + .slider:before {
 	    </button>
 	    <h4>Powerups</h4>
 	    
+	    <button class="upgrades" onclick="setObjectTrue(solarpanels)">
+	      <p>Solar Technology</p>
+	      <p>5M</p>
+	    </button>
+	    
 	    <button class="upgrades" onclick="setObjectTrue(windmills)">
 	      <p>Windmills</p>
 	      <p>10M</p>
@@ -347,7 +352,7 @@ input:checked + .slider:before {
         price: 100000,
         production: 500000,
         solarOwned: 0,
-	researched: true,
+	researched: false,
 	solarDisplay: document.getElementById("solarPrice"),
       };
 	    
@@ -383,7 +388,8 @@ input:checked + .slider:before {
 	reseOwned: 0,
 	production: 0.1,
       }
-      
+      let myArray = new Array(solarpanels, windmills, hydroplant, geothermal);
+window.alert(myArray);
       // Building production
       
       let pos = 20;
@@ -391,7 +397,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8d');
+        window.alert('v0.19.8e');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -471,17 +477,21 @@ input:checked + .slider:before {
 	
         currentYear += 1;
 	yearDisplay.innerHTML = currentYear;
-       if (greenPoints > 5) {
+	if (greenPoints > 2.5) {
          upgrades[0].classList.add("upgradeButton");
 	 upgrades[0].style.display = "block";
        }
-       if (greenPoints > 15) {
+       if (greenPoints > 5) {
          upgrades[1].classList.add("upgradeButton");
 	 upgrades[1].style.display = "block";
-       } 
-       if (greenPoints > 30) {
+       }
+       if (greenPoints > 15) {
          upgrades[2].classList.add("upgradeButton");
 	 upgrades[2].style.display = "block";
+       } 
+       if (greenPoints > 30) {
+         upgrades[3].classList.add("upgradeButton");
+	 upgrades[3].style.display = "block";
        }
 		
      }    
