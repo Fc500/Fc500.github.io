@@ -370,7 +370,7 @@ input:checked + .slider:before {
       window.onload = function loading() { 
         window.alert('v0.19.7');
 	checkState();
-	for (let i = 0; i < upgrades.length; i++) {
+	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
 	}
 	tempDisplay.innerHTML = globalTempature;
