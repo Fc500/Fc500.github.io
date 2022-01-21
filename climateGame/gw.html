@@ -262,7 +262,7 @@ input:checked + .slider:before {
         <div style="background-color: #4a4a4a; width: 96%; margin: auto;">
 		
 		<br>
-	  <button class="storeButton emboss-effect buildings" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1, 'solarDisplay'), flavorText(0);" id="solarpanels">
+	  <button class="storeButton emboss-effect buildings" onclick="buyBuildings(solarpanels, 'solarOwned', 'price', 1, 'solarDisplay'), flavorText(0);" id="solarpanels" style="display: none;">
             <img src="solarPanelSpread.png" width=40 alt="windmill" class="imgButton"/>
             <p>Solar Farm</p>
             <h6 id="solarPrice">100K</h6>
@@ -396,7 +396,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8f');
+        window.alert('v0.19.8g');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
