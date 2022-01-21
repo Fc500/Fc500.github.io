@@ -31,8 +31,8 @@
         .upgradeButton {
         background-color: #616161;
 	text-align: center;
-        width: 100px;
-        height: 100px;
+        width: 200px;
+	height: 100px;
         color: white;
         font-size: 15px;
         font-weight: bold;
@@ -40,6 +40,7 @@
         border-width: 5px;
 	line-height: 0.4;
 	display: block;
+	float: left;
       }
       
       .emboss-effect {
@@ -352,7 +353,7 @@ input:checked + .slider:before {
       let windmills = {
         price: 1200000,
         production: 1000000,
-        windOwned: 0,
+        windmillOwned: 0,
 	researched: false,
 	windmillDisplay: document.getElementById("windPrice"),
       };
@@ -389,7 +390,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8');
+        window.alert('v0.19.8a');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
