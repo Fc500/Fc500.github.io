@@ -490,14 +490,16 @@ input:checked + .slider:before {
 	    
 	    
 	    
-function checkBuildings() { 
-  if (windmills.price * 1.5 < money) {
-    windmillBox.style.display = "block"; 
-    windmillBox.classList.add("blur");
+function checkBuildings() {
+for (let i = 0; i < buildings.length; i++) {
+  if (buildings[i].price * 1.5 < money) {
+    buildings[i].style.display = "block"; 
+    buildings[i].classList.add("blur");
   }  
-  if (windmills.price * 1.5 < money && windmills.researched == true) {
-    windmillBox.classList.remove("blur");
+  if (buildings[i].price * 1.5 < money && buildings[i].researched == true) {
+    buildings[i].classList.remove("blur");
   }
+}
 	
   if (hydroplant.price * 1.5 < money) {
     hydroBox.style.display = "block"; 
