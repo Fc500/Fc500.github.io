@@ -256,7 +256,7 @@ input:checked + .slider:before {
             <h5 id="solarOwned">0</h5>
           </button><br>
 		
-          <button class="storeButton emboss-effect" onclick="buyBuildings(hydroplant, 'hydroOwned', 'price', 0)" id="hydroplant" style="display: none;">
+          <button class="storeButton emboss-effect" onclick="buyBuildings(hydroplant, 'hydroOwned', 'price', 0, 'hydroDisplay')" id="hydroplant" style="display: none;">
           <img src="WindmillSpread.png" width=20 alt="windmill" class="imgButton"/>
 	   
 	  <p>Hydroelectric Generator</p>
@@ -310,6 +310,7 @@ input:checked + .slider:before {
       // Boxes
       
       let windmillBox = document.getElementById("windmills");
+      let hydro = document.getElementById("hydros");	    
       /*e
       e
       e
@@ -357,7 +358,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.5c');
+        window.alert('v0.19.6');
 	checkState();
 	upgrades[0].style.display = "none";
 	tempDisplay.innerHTML = globalTempature;
@@ -451,15 +452,21 @@ input:checked + .slider:before {
 	    
 	    
 	    
-function checkBuildings() {
-for (let i = 0; i < gigaArray.length; i++) { 
-  if (gigaArray[i].price * 1.5 < money) {
-    gigaArray[i].style.display = "block"; 
-    gigaArray[i].classList.add("blur");
-  }
-}  
+function checkBuildings() { 
+  if (windmills.price * 1.5 < money) {
+    windmillBox.style.display = "block"; 
+    windmillBox.classList.add("blur");
+  }  
   if (windmills.price * 1.5 < money && windmills.researched == true) {
     windmillBox.classList.remove("blur");
+  }
+	
+  if (hydroplant.price * 1.5 < money) {
+    hydroBox.style.display = "block"; 
+    hydroBox.classList.add("blur");
+  }  
+  if (hydroplant.price * 1.5 < money && hydroplant.researched == true) {
+    hydroBox.classList.remove("blur");
   }
 }    
 	    
