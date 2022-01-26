@@ -211,9 +211,9 @@ input:checked + .slider:before {
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
 	    
-	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price')">
+	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price', 'reseDisplay')">
 		    <p>Researcher</p>
-		    <h6>2.8M</h6>
+		    <h6 id="resePrice">2.8M</h6>
 		    <h5 id="reseOwned">0</h5>
 	    </button>
 	    
@@ -387,6 +387,7 @@ input:checked + .slider:before {
       	price: 2800000,
 	reseOwned: 0,
 	production: 0.1,
+	reseDisplay: document.getElementById("resePrice"),
       }
       
       // Building production
@@ -396,7 +397,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8i');
+        window.alert('v0.19.8j');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -541,13 +542,14 @@ if (solarpanels.price * 1.5 < money) {
   }
 }    
 	    
-	function buyUpgrades(object, owned, price) {
+	function buyUpgrades(object, owned, price, display) {
 	
 	  if (object[price] < money) {
 	    money -= object[price];
 	    object[owned]++;
 	    object[price] *= 1.5;
             document.getElementById(owned).innerHTML = object[owned];
+            document.getElementById(display).innerHTML = object[price];
             moneyDisplay.innerHTML = numFormatter(money);
 	  }
 	}
