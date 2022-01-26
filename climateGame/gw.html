@@ -338,7 +338,7 @@ input:checked + .slider:before {
       let currentYear = 2021;      
 	    
       // Boxes
-      
+      let solarBox = document.getElementById("solarpanels");
       let windmillBox = document.getElementById("windmills");
       let hydroBox = document.getElementById("hydroplant");
       let geoBox = document.getElementById("geothermal");
@@ -396,7 +396,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8g');
+        window.alert('v0.19.8h');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -508,7 +508,14 @@ input:checked + .slider:before {
 	    
 	    
 function checkBuildings() {
-
+if (solarpanel.price * 1.5 < money) {
+    solarBox.style.display = "block"; 
+    solarBox.classList.add("blur");
+  }  
+  if (solarpanel.price * 1.5 < money && solarpanel.researched == true) {
+    solarBox.classList.remove("blur");
+  }
+	
 	if (windmills.price * 1.5 < money) {
     windmillBox.style.display = "block"; 
     windmillBox.classList.add("blur");
