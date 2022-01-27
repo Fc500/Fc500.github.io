@@ -215,7 +215,7 @@ input:checked + .slider:before {
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
 	    
-	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price', 'reseDisplay')">
+	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price', 'resePrice')">
 		    <p>Researcher</p>
 		    <h6 id="resePrice">2.8M</h6>
 		    <h5 id="reseOwned">0</h5>
@@ -250,12 +250,14 @@ input:checked + .slider:before {
 
     </div>   
 	  
+<!-- Basic building tab -->	  
 	  
-	  
-    <div class="section storeScroll">
+    <div class="section tabs storeScroll">
       <h3>STORE</h3>
 	
 	  <br>
+	    <button onclick="switchSections()">Try it</button>
+	    <br>
 	  <div style="margin: 5px; text-align: left;">
 	    <p id="state">BUYING: </p>
             <label class="switch" onclick="checkState()">
@@ -297,6 +299,18 @@ input:checked + .slider:before {
               <h5 id="geoOwned">0</h5>
           </button><br>
         </div>
+	    
+	
+	    <!-- Military tab -->
+	<div class="section tabs" style="display: none;">
+	  <button class="storeButton emboss-effect">
+	    <p>Unit</p>
+	    <h6>500M</h6>	 
+	  </button>
+	</div>
+	    
+	    
+	    
       </div>
 	  
 	  
@@ -392,7 +406,7 @@ input:checked + .slider:before {
 	reseOwned: 0,
 	production: 0.1,
 	reseDisplay: document.getElementById("resePrice"),
-      }
+      };
       
       // Building production
       
@@ -401,7 +415,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8l');
+        window.alert('v0.19.8m');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -613,6 +627,17 @@ if (solarpanels.price * 1.5 < money) {
 	      }
 	      modal.style.display = "block";
 	    }
+	    
+function switchSections() {
+  var x = document.getElementsByClassName("tabs");
+  if (x[0].style.display === "none") {
+    x[0].style.display = "block";
+    x[1].style.display = "none";
+  } else {
+    x[0].style.display = "none";
+    x[1].style.display = "block";
+  }
+}
 	    
 	    
   
