@@ -415,7 +415,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8n');
+        window.alert('v0.19.8o');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -567,8 +567,10 @@ if (solarpanels.price * 1.5 < money) {
 	    object[owned]++;
 	    object[price] *= 1.5;
             document.getElementById(owned).innerHTML = object[owned];
-            document.getElementById(display).innerHTML = object[price];
+            document.getElementById(display).innerHTML = numFormatter(object[price]);
             moneyDisplay.innerHTML = numFormatter(money);
+	  } else {
+	     window.alert("Not enough money!");
 	  }
 	}
       
