@@ -193,6 +193,8 @@ input:checked + .slider:before {
       <p><span id="moneyDisp">0</span></p>
       <p>Dollars</p>
       <br>
+      <h6><span id="MPS">0</span></p>
+      <h6>Money Per Second</p>
       <p><span id="tempDisp">0</span>F</p>
       <p>Global Tempature</p>
       <br>
@@ -348,10 +350,12 @@ input:checked + .slider:before {
       let greenDisplay = document.getElementById("greenDisp");
       let tempDisplay = document.getElementById("tempDisp");
       let yearDisplay = document.getElementById("yearDisp");
+      let mpsDisplay = document.getElementById("MPS");
       let upgrades = document.getElementsByClassName("upgrades");
       let buildings = document.getElementsByClassName("buildings");
       let globalTempature = 67.7;
       let money = 10000000;
+      let mps = 0;
       let buySellToggle = true;
       let greenPoints = 0;
       let rateOfChange = 0.013;
@@ -417,7 +421,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8q');
+        window.alert('v0.19.8r');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -448,21 +452,23 @@ input:checked + .slider:before {
       function calculateBuildings() {
         
         if (windmills.windOwned >= 0) {
-        money += windmills.windOwned * windmills.production;
+        mps += windmills.windOwned * windmills.production;
         }
         
         if (solarpanels.solarOwned >= 0) {
-        money += solarpanels.solarOwned * solarpanels.production;
+        mps += solarpanels.solarOwned * solarpanels.production;
         }
 	      
         if (hydroplant.hydroOwned >= 0) {
-        money += hydroplant.hydroOwned * hydroplant.production;
+        mps += hydroplant.hydroOwned * hydroplant.production;
         }
 	      
 	if (researcher.reseOwned >= 0) {
 	  greenPoints += researcher.reseOwned * researcher.production;
 	}
+	money += mps;
         moneyDisplay.innerHTML = numFormatter(money);
+	mpsDisplay.innerHTML = numFormatter(mps);
 	greenDisplay.innerHTML = greenPoints.toFixed(2);
 	     
       }
