@@ -71,50 +71,66 @@ body {
   
   
   <div class="main" style="margin-top: 2.5%;">
-    <h1 id="splashText1">Tuba Man storms in!</h1>
+    <h1 id="splashText1">Pick your team!</h1>
   </div>
   
 <div class="char charBox" style="top: 3%; left: 3%;">
-  <img src="https://art.pixilart.com/ee94742f7e9a.gif" height="150">
+  <img src="" height="150" class="player">
 </div>
 <div class="char" style="top: 28%; left: 3%; padding-left: 1%; width: 140px;">
     <p>Health: 10 <br> Energy: 10</p>
 </div>
 
 <div class="char charBox" style="top: 3%; right: 3%;">
-  <img src="https://art.pixilart.com/75cd9f156b7e.gif" height="150">
+  <img src="" height="150" class="player">
 </div>
 <div class="char" style="top: 28%; right: 3%; padding-left: 1%; width: 140px;">
     <p>Health: 10 <br> Energy: 10</p>
 </div>
 
 <div class="char charBox" style="bottom: 11%; left: 3%;">
-  <img src="https://art.pixilart.com/5a0921d15d2c.gif" height="150">
+  <img src="" height="150" class="player">
 </div>
 <div class="char" style="bottom: 3%; left: 3%; padding-left: 1%; width: 140px;">
     <p>Health: 10 <br> Energy: 10</p>
 </div>
   
 <div class="char charBox" style="bottom: 11%; right: 3%; z-index: 2;">
-  <img src="https://art.pixilart.com/5a0921d15d2c.gif" height="150">
+  <img src="" height="150" class="player">
 </div>
 <div class="char" style="bottom: 3%; right: 3%; padding-left: 1%; width: 140px;">
     <p>Health: 10 <br> Energy: 10</p>
 </div>
 
 <div class="main" style="margin-top: 42%;">
-  <button style="background-color: #e87361" class="border btnMenu">ATTACK</button>
-  <button style="background-color: #32a852" class="border btnMenu">CHARM</button><br>
-  <button style="background-color: #f5c2ff" class="border btnMenu">ITEM</button>
-  <button style="background-color: #c2d9ff" class="border btnMenu">SPARE</button>
+  <!-- Attack Buttons -->
+  <div style="display: hidden">
+    <button style="background-color: #e87361" class="border btnMenu">ATTACK</button>
+    <button style="background-color: #32a852" class="border btnMenu">CHARM</button><br>
+    <button style="background-color: #f5c2ff" class="border btnMenu">ITEM</button>
+    <button style="background-color: #c2d9ff" class="border btnMenu">SPARE</button>
+  </div>
   
+  <!-- Choose Character Buttons -->
+  <div>
+    <button style="background-color: #e87361" class="border btnMenu" onclick="selectChar('brass')">BRASS</button>
+    <button style="background-color: #32a852" class="border btnMenu" onclick="selectChar('woodwind')">WOODWIND</button><br>
+    <button style="background-color: #f5c2ff" class="border btnMenu" onclick="selectChar('percussion')">PERCUSSION</button>
+  </div>
 </div>
  
 
 <script>
-  
+  // HTML variables
   let characterBoxes = document.getElementsByClassName("charBox");
   let specialButtons = document.getElementsByClassName("btnMenu");
+  let players = document.getElementsByClassName("player");
+  let topText = document.getElementById("splashText1");
+  
+  // Variables
+  let woodwindGIF = "https://art.pixilart.com/ee94742f7e9a.gif"
+  let brassGIF = "https://art.pixilart.com/5a0921d15d2c.gif"
+  let percussionGIF = "https://art.pixilart.com/75cd9f156b7e.gif"
   
   // Players
   
@@ -132,7 +148,7 @@ body {
     turn: false,
   };
   
-  let precussion = {
+  let percussion = {
     health: 75,
     attack: 20,
     energy: 20,
@@ -142,9 +158,20 @@ body {
   
   window.onload = function loadingItem() {
     characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.0.3");
+    window.alert("v.0.0.4");
   }
   
+  let selection = 0;
+  function selectCharacter(char) {
+    if (char == "brass") {
+      players[selection].src = brassGIF;
+    } else if (char == "woodwind") {
+      players[selection].src = woodwindGIF;
+    } else if (char == "percussion") {
+      players[selection].src = percussionGIF;
+    }  
+    selection ++;
+  }
  /* 
   function selectItem() {
     for (let i = 0; i <= specialButtons.length; i++;) {
