@@ -159,26 +159,26 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.1.4");
+    window.alert("v.0.1.5");
   }
   
   let selection = 0;
   function selectCharacter(char) {
-    window.alert(selection);
-    if (selection <= 4) {
+    if (selection < 5) {
       if (char == 'brass') {
         players[selection].src = brassGIF;
         health[selection].innerHTML = brass.health;
-        selection++;
+        selection += 1;
       } else if (char == 'woodwind') {
         players[selection].src = woodwindGIF;
         health[selection].innerHTML = woodwind.health;
-        selection++;
+        selection += 1;
       } else if (char == 'percussion') {
         players[selection].src = percussionGIF;
         health[selection].innerHTML = percussion.health;
-        selection++;
+        selection += 1;
       }  
+      window.alert(selection);
     } else if (selection == 5) {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
