@@ -104,7 +104,7 @@ body {
 
 <div class="main" style="margin-top: 42%;">
   <!-- Attack Buttons -->
-  <div style="display: hidden">
+  <div hidden>
     <button style="background-color: #e87361" class="border btnMenu">ATTACK</button>
     <button style="background-color: #32a852" class="border btnMenu">CHARM</button><br>
     <button style="background-color: #f5c2ff" class="border btnMenu">ITEM</button>
@@ -158,19 +158,19 @@ body {
   
   window.onload = function loadingItem() {
     characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.0.4");
+    window.alert("v.0.0.5");
   }
   
   let selection = 0;
   function selectCharacter(char) {
-    if (char == "brass") {
-      players[selection].src = brassGIF;
-    } else if (char == "woodwind") {
-      players[selection].src = woodwindGIF;
-    } else if (char == "percussion") {
-      players[selection].src = percussionGIF;
+    if (char == 'brass') {
+      players[0].src = brassGIF;
+    } else if (char == 'woodwind') {
+      players[0].src = woodwindGIF;
+    } else if (char == 'percussion') {
+      players[0].src = percussionGIF;
     }  
-    selection ++;
+    selection++;
   }
  /* 
   function selectItem() {
