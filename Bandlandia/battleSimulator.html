@@ -35,7 +35,6 @@ body {
   border-color: black;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 51%;
   width: 50%; 
   text-align: center;
     
@@ -67,48 +66,90 @@ body {
   
   <img src="https://ih1.redbubble.net/image.1778246222.3326/raf,128x128,075,t,FFFFFF:97ab1c12de.jpg" class="img"> 
   
-<div class="char charBox" style="top: 3%; left: 3%;">
+  
+  <div class="main" style="margin-top: 51%;">
+    <h1 id="splashText1">Tuba Man storms in!</h1>
+  </div>
+  
+<div class="char charBox" style="top: 3%; left: 3%; z-index: 2;">
   <img src="https://art.pixilart.com/ee94742f7e9a.gif" height="150">
 </div>
 <div class="char" style="top: 28%; left: 3%; padding-left: 1%; width: 140px;">
     <p>Health: 10 <br> Energy: 10</p>
 </div>
 
-<div class="char charBox" style="top: 3%; right: 3%;">
+<div class="char charBox" style="top: 3%; right: 3%; z-index: 2;">
   <img src="https://art.pixilart.com/75cd9f156b7e.gif" height="150">
 </div>
 <div class="char" style="top: 28%; right: 3%; padding-left: 1%; width: 140px;">
     <p>Health: 10 <br> Energy: 10</p>
 </div>
 
-<div class="char charBox" style="bottom: 11%; left: 3%;">
+<div class="char charBox" style="bottom: 11%; left: 3%; z-index: 2;">
   <img src="https://art.pixilart.com/5a0921d15d2c.gif" height="150">
 </div>
 <div class="char" style="bottom: 3%; left: 3%; padding-left: 1%; width: 140px;">
     <p>Health: 10 <br> Energy: 10</p>
 </div>
   
-<div class="char charBox" style="bottom: 11%; right: 3%;">
+<div class="char charBox" style="bottom: 11%; right: 3%; z-index: 2;">
   <img src="https://art.pixilart.com/5a0921d15d2c.gif" height="150">
 </div>
 <div class="char" style="bottom: 3%; right: 3%; padding-left: 1%; width: 140px;">
     <p>Health: 10 <br> Energy: 10</p>
 </div>
 
-<div class="main">
+<div class="main" style="margin-top: 51%;">
   <button style="background-color: #e87361" class="border btnMenu">ATTACK</button>
   <button style="background-color: #32a852" class="border btnMenu">CHARM</button><br>
   <button style="background-color: #f5c2ff" class="border btnMenu">ITEM</button>
   <button style="background-color: #c2d9ff" class="border btnMenu">SPARE</button>
+  
 </div>
   
 </body>
 
 <script>
+  // Variables
   let characterBoxes = document.getElementsByClassName("charBox");
   let specialButtons = document.getElementsByClassName("btnMenu");
+  
+  // Players
+  
+  let woodwind = {
+    health: 100,
+    attack: 10,
+    energy: 35,
+    turn: false,
+  };
+  
+  let brass = {
+    health: 150,
+    attack: 5,
+    energy: 50,
+    turn: false,
+  };
+  
+  let precussion = {
+    health: 75,
+    attack: 20,
+    energy: 20,
+    turn: false;
+  }
+  
+  
   window.onload = function loading() {
     characterBoxes[0].style.borderColor = "red";
+  }
+  
+  function attack() {
+  
+  }
+  
+  function item() {
+    for (let i = 0; i <= characterBoxes.length; i++;) {
+      characterBoxes[i].style.display = false;
+    }
   }
   
   
