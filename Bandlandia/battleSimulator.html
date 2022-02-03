@@ -172,7 +172,8 @@ body {
         players[selection].src = percussionGIF;
       }  
       selection++;
-    } else if (selection >= 4) {
+      window.alert(selection);
+    } else if (selection == 5) {
       charButtons.style.display = "none";
       atkButtons.style.display = "block";
       topText.innerHTML = "Tuba Knight storms in!";
