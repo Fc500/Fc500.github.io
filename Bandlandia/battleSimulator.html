@@ -104,7 +104,7 @@ body {
 
 <div class="main" style="margin-top: 42%;">
   <!-- Attack Buttons -->
-  <div hidden>
+  <div hidden id="atkButtons">
     <button style="background-color: #e87361" class="border btnMenu">ATTACK</button>
     <button style="background-color: #32a852" class="border btnMenu">CHARM</button><br>
     <button style="background-color: #f5c2ff" class="border btnMenu">ITEM</button>
@@ -112,7 +112,7 @@ body {
   </div>
   
   <!-- Choose Character Buttons -->
-  <div>
+  <div id="charButtons">
     <button style="background-color: #e87361" class="border btnMenu" onclick="selectCharacter('brass')">BRASS</button>
     <button style="background-color: #32a852" class="border btnMenu" onclick="selectCharacter('woodwind')">WOODWIND</button><br>
     <button style="background-color: #f5c2ff" class="border btnMenu" onclick="selectCharacter('percussion')">PERCUSSION</button>
@@ -157,21 +157,25 @@ body {
   
   
   window.onload = function loadingItem() {
-    characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.0.8");
-    window.alert(players[1]);
+    //characterBoxes[0].style.borderColor = "red";
+    window.alert("v.0.0.9");
   }
   
   let selection = 0;
   function selectCharacter(char) {
-    if (char == 'brass') {
-      players[selection].src = brassGIF;
-    } else if (char == 'woodwind') {
-      players[selection].src = woodwindGIF;
-    } else if (char == 'percussion') {
-      players[selection].src = percussionGIF;
-    }  
-    selection++;
+    if (selection <= 4) {
+      if (char == 'brass') {
+        players[selection].src = brassGIF;
+      } else if (char == 'woodwind') {
+        players[selection].src = woodwindGIF;
+      } else if (char == 'percussion') {
+        players[selection].src = percussionGIF;
+      }  
+      selection++;
+    } else {
+      charButtons.style.display = "none";
+      atkButtons.style.display = "block";
+    }
   }
  /* 
   function selectItem() {
