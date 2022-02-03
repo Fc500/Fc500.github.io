@@ -104,7 +104,7 @@ body {
 
 <div class="main" style="margin-top: 42%;">
   <!-- Attack Buttons -->
-  <div hidden id="atkButtons">
+  <div id="atkButtons" style="display: none;">
     <button style="background-color: #e87361" class="border btnMenu">ATTACK</button>
     <button style="background-color: #32a852" class="border btnMenu">CHARM</button><br>
     <button style="background-color: #f5c2ff" class="border btnMenu">ITEM</button>
@@ -158,7 +158,7 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.0.9");
+    window.alert("v.0.1.0");
   }
   
   let selection = 0;
@@ -172,7 +172,7 @@ body {
         players[selection].src = percussionGIF;
       }  
       selection++;
-    } else {
+    } else if (selection >= 4) {
       charButtons.style.display = "none";
       atkButtons.style.display = "block";
       topText.innerHTML = "Tuba Knight storms in!";
