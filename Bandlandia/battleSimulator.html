@@ -158,18 +158,18 @@ body {
   
   window.onload = function loadingItem() {
     characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.0.6");
-    window.alert(players[0]);
+    window.alert("v.0.0.7");
+    window.alert(players[1]);
   }
   
   let selection = 0;
   function selectCharacter(char) {
     if (char == 'brass') {
-      players[0].src = brassGIF;
+      players[0].src = "https://art.pixilart.com/5a0921d15d2c.gif";
     } else if (char == 'woodwind') {
-      players[0].src = woodwindGIF;
+      players[0].src = "https://art.pixilart.com/ee94742f7e9a.gif";
     } else if (char == 'percussion') {
-      players[0].src = percussionGIF;
+      players[0].src = "https://art.pixilart.com/75cd9f156b7e.gif";
     }  
     selection++;
   }
