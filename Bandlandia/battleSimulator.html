@@ -113,9 +113,9 @@ body {
   
   <!-- Choose Character Buttons -->
   <div>
-    <button style="background-color: #e87361" class="border btnMenu" onclick="selectChar('brass')">BRASS</button>
-    <button style="background-color: #32a852" class="border btnMenu" onclick="selectChar('woodwind')">WOODWIND</button><br>
-    <button style="background-color: #f5c2ff" class="border btnMenu" onclick="selectChar('percussion')">PERCUSSION</button>
+    <button style="background-color: #e87361" class="border btnMenu" onclick="selectCharacter('brass')">BRASS</button>
+    <button style="background-color: #32a852" class="border btnMenu" onclick="selectCharacter('woodwind')">WOODWIND</button><br>
+    <button style="background-color: #f5c2ff" class="border btnMenu" onclick="selectCharacter('percussion')">PERCUSSION</button>
   </div>
 </div>
  
@@ -158,18 +158,18 @@ body {
   
   window.onload = function loadingItem() {
     characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.0.7");
+    window.alert("v.0.0.8");
     window.alert(players[1]);
   }
   
   let selection = 0;
   function selectCharacter(char) {
     if (char == 'brass') {
-      players[0].src = "https://art.pixilart.com/5a0921d15d2c.gif";
+      players[selection].src = brassGIF;
     } else if (char == 'woodwind') {
-      players[0].src = "https://art.pixilart.com/ee94742f7e9a.gif";
+      players[selection].src = woodwindGIF;
     } else if (char == 'percussion') {
-      players[0].src = "https://art.pixilart.com/75cd9f156b7e.gif";
+      players[selection].src = percussionGIF;
     }  
     selection++;
   }
