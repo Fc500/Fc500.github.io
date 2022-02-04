@@ -191,7 +191,7 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.2.3");
+    window.alert("v.0.2.4");
   }
   
 
@@ -199,6 +199,7 @@ body {
     if (s < 3) {
       window.alert(s);
       s++;
+      setPlayerValues();
       if (char == 'brass') {
         players[s].src = brassGIF;
         playerHealth[s].innerHTML = brass.health;
@@ -209,7 +210,6 @@ body {
         players[s].src = percussionGIF;
         playerHealth[s].innerHTML = percussion.health;      
       } 
-      setPlayerValues();
     }  
     
     if (s == 3) {
@@ -222,6 +222,7 @@ body {
   }
   
   function setPlayerValues() {
+    window.alert("e");
     if (s == 0 && char == 'brass') {
      player1.health = brass.health;
      player1.attack = brass.attack;
