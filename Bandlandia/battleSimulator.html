@@ -109,7 +109,7 @@ body {
 <body>
   
   <img src="" class="img">
-  <div class="tooltip" style="width: 30%; position: absolute; top: 15%; left: 50%; transform: translate(-50%, -50%);">
+  <div class="tooltip" style="width: 30%; position: absolute; top: 15%; left: 50%; transform: translate(-50%, -50%); display: none;" id="funText">TUBA KNIGHT
   <span class="tooltiptext">100 HP</span>
   </div>
   
@@ -264,6 +264,7 @@ body {
     if (s == 3) {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
+      document.getElementById("funText").style.display = "block";
       setInterval(colorChecker, 1000);
       document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
       topText.innerHTML = "The Tuba Knight storms in!";
