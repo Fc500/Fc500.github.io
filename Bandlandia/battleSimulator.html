@@ -160,12 +160,12 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.1.9");
+    window.alert("v.0.2.0");
   }
   
 
   function selectCharacter(char) {
-    if (s < 5) {
+    if (s < 3) {
       window.alert(s);
       s++;
       if (char == 'brass') {
@@ -180,7 +180,7 @@ body {
       } 
     }  
           
-    if (s == 5) {
+    if (s == 3) {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
       topText.innerHTML = "Tuba Knight storms in!";
