@@ -191,15 +191,15 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.2.4");
+    window.alert("v.0.2.5");
   }
   
 
   function selectCharacter(char) {
     if (s < 3) {
-      window.alert(s);
       s++;
-      setPlayerValues();
+      window.alert(s);
+      setPlayerValues(char);
       if (char == 'brass') {
         players[s].src = brassGIF;
         playerHealth[s].innerHTML = brass.health;
@@ -221,26 +221,20 @@ body {
     }
   }
   
-  function setPlayerValues() {
+  function setPlayerValues(char) {
     window.alert("e");
-    if (s == 0 && char == 'brass') {
-     player1.health = brass.health;
-     player1.attack = brass.attack;
-     window.alert(player1.health);
-     window.alert(player1.attack);
-   }
-   if (s == 0 && char == 'percussion') {
-     player1.health = percussion.health;
-     player1.attack = percussion.attack;
-     window.alert(player1.health);
-     window.alert(player1.attack);
-   }
-   if (s == 0 && char == 'woodwind') {
-     player1.health = woodwind.health;
-     player1.attack = woodwind.attack;
-     window.alert(player1.health);
-     window.alert(player1.attack);
-   }
+    if (s == 0) {
+      if (char == 'brass') {
+        player1.health = brass.health;
+        player1.attack = brass.attack;    
+      } else if (char == 'percussion') {
+        player1.health = percussion.health;
+        player1.attack = percussion.attack;
+      } else if (char == 'woodwind') {
+        player1.health = woodwind.health;
+        player1.attack = woodwind.attack;
+      }
+    }
     
    if (s == 1 && char == 'brass') {
      player2.health = brass.health;
