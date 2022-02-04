@@ -175,10 +175,10 @@ body {
       } else if (char == 'percussion') {
         players[s].src = percussionGIF;
         health[s].innerHTML = percussion.health;
-      }  
+        window.alert(s);
+        s++;
       
-      window.alert(s);
-      s++;
+      }  
       
       
     } else if (s == 5) {
