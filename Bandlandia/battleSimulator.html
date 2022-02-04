@@ -160,13 +160,14 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.1.8");
+    window.alert("v.0.1.9");
   }
   
 
   function selectCharacter(char) {
     if (s < 5) {
       window.alert(s);
+      s++;
       if (char == 'brass') {
         players[s].src = brassGIF;
         health[s].innerHTML = brass.health;
@@ -177,8 +178,6 @@ body {
         players[s].src = percussionGIF;
         health[s].innerHTML = percussion.health;      
       } 
-      window.alert(s);
-      s++;
     }  
           
     if (s == 5) {
