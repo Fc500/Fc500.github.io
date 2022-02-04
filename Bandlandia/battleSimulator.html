@@ -191,10 +191,12 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.2.6");
+    window.alert("v.0.2.7");
   }
   
-
+  function colorChecker() {
+    characterBoxes[turn].style.borderColor = "red";  
+  }
   function selectCharacter(char) {
     if (s < 3) {
       s++;
@@ -215,8 +217,8 @@ body {
     if (s == 3) {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
+      setInterval(colorChecker, 1000);
       document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
-      characterBoxes[turn].style.borderColor = "red";
       topText.innerHTML = "The Tuba Knight storms in!";
     }
   }
@@ -301,9 +303,12 @@ body {
     } else if (turn == 2) {
       tubaKnight.health -= player3.attack;
       topText.innerHTML = "PLAYER 3 did " + player3.attack + " to TUBA KNIGHT!";
+      turn++;
     } else if (turn == 3) {
       tubaKnight.health -= player4.attack;
       topText.innerHTML = "PLAYER 4 did " + player4.attack + " to TUBA KNIGHT!";
+      turn -=3;
+      window.alert("turn");
     }
   }
  /* 
