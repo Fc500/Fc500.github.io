@@ -133,34 +133,65 @@ body {
   let brassGIF = "https://art.pixilart.com/5a0921d15d2c.gif";
   let percussionGIF = "https://art.pixilart.com/75cd9f156b7e.gif";
   let s = -1;
+  let turn = 0;
   
-  // Players
+  // Players (Instruments)
   
   let woodwind = {
     health: 100,
     attack: 10,
     energy: 35,
-    turn: false,
   };
   
   let brass = {
     health: 150,
     attack: 5,
     energy: 50,
-    turn: false,
   };
   
   let percussion = {
     health: 75,
     attack: 20,
     energy: 20,
-    turn: false,
   }; 
   
+ // Players
+  
+ let player1 = {
+    health: 0,
+    attack: 0,
+    energy: 0,
+  };
+  
+  let player2 = {
+    health: 0,
+    attack: 0,
+    energy: 0,
+  };
+  
+  let player3 = {
+    health: 0,
+    attack: 0,
+    energy: 0,
+  };
+  
+  let player4 = {
+    health: 0,
+    attack: 0,
+    energy: 0,
+  };
+  
+  
+  // Enemies
+  
+  let tubaKnight = {
+    health: 300,
+    attack: 10,
+  };
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.2.1");
+    window.alert("v.0.2.2");
   }
   
 
@@ -170,22 +201,34 @@ body {
       s++;
       if (char == 'brass') {
         players[s].src = brassGIF;
-        health[s].innerHTML = brass.health;
+        playerHealth[s].innerHTML = brass.health;
       } else if (char == 'woodwind') {
         players[s].src = woodwindGIF;
-        health[s].innerHTML = woodwind.health;
+        playerHealth[s].innerHTML = woodwind.health;
       } else if (char == 'percussion') {
         players[s].src = percussionGIF;
-        health[s].innerHTML = percussion.health;      
+        playerHealth[s].innerHTML = percussion.health;      
       } 
     }  
-          
-    if (s == 3) {
+   if (s == 0 && char == 'brass') {
+     player1.health = brass.health;
+     player1.attack = brass.attack;
+     window.alert(player1.health);
+     window.alert(player1.attack);
+   }
+    if (s == 2) {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
       document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
+      characterBoxes[turn].style.borderColor = "red";
       topText.innerHTML = "The Tuba Knight storms in!";
     }
+  }
+  
+  
+  function attackEnemy() {
+    tubaKnight.health -= player1.attack;
+    topText.innerHTML = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
   }
  /* 
   function selectItem() {
