@@ -166,6 +166,7 @@ body {
 
   function selectCharacter(char) {
     if (s < 5) {
+      window.alert(s);
       if (char == 'brass') {
         players[s].src = brassGIF;
         health[s].innerHTML = brass.health;
@@ -174,14 +175,12 @@ body {
         health[s].innerHTML = woodwind.health;
       } else if (char == 'percussion') {
         players[s].src = percussionGIF;
-        health[s].innerHTML = percussion.health;
-      
+        health[s].innerHTML = percussion.health;      
       } 
       window.alert(s);
       s++;
     }  
-      
-      
+          
     if (s == 5) {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
