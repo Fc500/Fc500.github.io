@@ -105,7 +105,7 @@ body {
 <div class="main" style="margin-top: 42%;">
   <!-- Attack Buttons -->
   <div id="atkButtons" style="display: none;">
-    <button style="background-color: #e87361" class="border btnMenu">ATTACK</button>
+    <button style="background-color: #e87361" class="border btnMenu" onclick="attackEnemy()">ATTACK</button>
     <button style="background-color: #32a852" class="border btnMenu">CHARM</button><br>
     <button style="background-color: #f5c2ff" class="border btnMenu">ITEM</button>
     <button style="background-color: #c2d9ff" class="border btnMenu">SPARE</button>
@@ -191,7 +191,7 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.2.2");
+    window.alert("v.0.2.3");
   }
   
 
@@ -209,14 +209,10 @@ body {
         players[s].src = percussionGIF;
         playerHealth[s].innerHTML = percussion.health;      
       } 
+      setPlayerValues();
     }  
-   if (s == 0 && char == 'brass') {
-     player1.health = brass.health;
-     player1.attack = brass.attack;
-     window.alert(player1.health);
-     window.alert(player1.attack);
-   }
-    if (s == 2) {
+    
+    if (s == 3) {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
       document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
@@ -225,7 +221,46 @@ body {
     }
   }
   
-  
+  function setPlayerValues() {
+    if (s == 0 && char == 'brass') {
+     player1.health = brass.health;
+     player1.attack = brass.attack;
+     window.alert(player1.health);
+     window.alert(player1.attack);
+   }
+   if (s == 0 && char == 'percussion') {
+     player1.health = percussion.health;
+     player1.attack = percussion.attack;
+     window.alert(player1.health);
+     window.alert(player1.attack);
+   }
+   if (s == 0 && char == 'woodwind') {
+     player1.health = woodwind.health;
+     player1.attack = woodwind.attack;
+     window.alert(player1.health);
+     window.alert(player1.attack);
+   }
+    
+   if (s == 1 && char == 'brass') {
+     player2.health = brass.health;
+     player2.attack = brass.attack;
+     window.alert(player2.health);
+     window.alert(player2.attack);
+   } 
+   if (s == 1 && char == 'percussion') {
+     player2.health = percussion.health;
+     player2.attack = percussion.attack;
+     window.alert(player2.health);
+     window.alert(player2.attack);
+   }
+   if (s == 1 && char == 'woodwind') {
+     player2.health = woodwind.health;
+     player2.attack = woodwind.attack;
+     window.alert(player2.health);
+     window.alert(player2.attack);
+   } 
+    
+  }
   function attackEnemy() {
     tubaKnight.health -= player1.attack;
     topText.innerHTML = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
