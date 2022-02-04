@@ -160,7 +160,7 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.1.6");
+    window.alert("v.0.1.7");
   }
   
 
@@ -175,13 +175,14 @@ body {
       } else if (char == 'percussion') {
         players[s].src = percussionGIF;
         health[s].innerHTML = percussion.health;
-        window.alert(s);
-        s++;
       
-      }  
+      } 
+      window.alert(s);
+      s++;
+    }  
       
       
-    } else if (s == 5) {
+    if (s == 5) {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
       topText.innerHTML = "Tuba Knight storms in!";
