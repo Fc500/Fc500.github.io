@@ -107,14 +107,13 @@ body {
   </head>
   
 <body>
-  <!-- <div class="tooltip img" style="top: 45%;">TUBA KNIGHT
+  
+  <img src="" class="img">
+  <div class="tooltip" style="width: 30%; position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);">TUBA KNIGHT
   <span class="tooltiptext">100 HP</span>
   </div>
-  <img src="" class="img"> -->
-  <div class="tooltip img">TUBA KNIGHT
-  <span class="tooltiptext">100 HP</span>
-    <img src=""> 
-  </div>
+  
+  
   
   
   <div class="main" style="margin-top: 2.5%;">
@@ -238,7 +237,7 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.2.9");
+    window.alert("v.0.3.0");
   }
   
   function colorChecker() {
@@ -356,6 +355,7 @@ body {
       tubaKnight.health -= player4.attack;
       topText.innerHTML = "PLAYER 4 did " + player4.attack + " to TUBA KNIGHT!";
       turn -=3;
+      characterBoxes[3].style.borderColor = "black";  
       window.alert(turn);
     }
   }
