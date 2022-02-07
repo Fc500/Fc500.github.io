@@ -214,28 +214,28 @@ body {
     health: 0,
     attack: 0,
     energy: 0,
-    hpDisp: document.getElementsByClassName("health")[0];
+    hpDisp: document.getElementsByClassName("health")[0],
   };
   
   let player2 = {
     health: 0,
     attack: 0,
     energy: 0,
-    hpDisp: document.getElementsByClassName("health")[1];
+    hpDisp: document.getElementsByClassName("health")[1],
   };
   
   let player3 = {
     health: 0,
     attack: 0,
     energy: 0,
-    hpDisp: document.getElementsByClassName("health")[2];
+    hpDisp: document.getElementsByClassName("health")[2],
   };
   
   let player4 = {
     health: 0,
     attack: 0,
     energy: 0,
-    hpDisp: document.getElementsByClassName("health")[3];
+    hpDisp: document.getElementsByClassName("health")[3],
   };
   
   
@@ -248,7 +248,7 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.3.2");
+    window.alert("v.0.3.3");
   }
   
   function colorChecker() {
@@ -261,13 +261,13 @@ body {
       setPlayerValues(char);
       if (char == 'brass') {
         players[s].src = brassGIF;
-        playerHealth[s].innerHTML = brass.health;
+        playerHealth[s].innerHTML = "Health: " + brass.health;
       } else if (char == 'woodwind') {
         players[s].src = woodwindGIF;
-        playerHealth[s].innerHTML = woodwind.health;
+        playerHealth[s].innerHTML = "Health: " + woodwind.health;
       } else if (char == 'percussion') {
         players[s].src = percussionGIF;
-        playerHealth[s].innerHTML = percussion.health;      
+        playerHealth[s].innerHTML = "Health: " + percussion.health;      
       } 
     }  
     
@@ -284,13 +284,13 @@ body {
   function setPlayerValues(char) {
     if (s == 0) {
       if (char == 'brass') {
-        player1.health = "Health: " + brass.health;
+        player1.health = brass.health;
         player1.attack = brass.attack;    
       } else if (char == 'percussion') {
-        player1.health = "Health: " + percussion.health;
+        player1.health = percussion.health;
         player1.attack = percussion.attack;
       } else if (char == 'woodwind') {
-        player1.health = "Health: " + woodwind.health;
+        player1.health = woodwind.health;
         player1.attack = woodwind.attack;
       }
       
