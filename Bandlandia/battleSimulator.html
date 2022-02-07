@@ -110,7 +110,7 @@ body {
 <body>
   
   <img src="" class="img">
-  <div class="tooltip" style="width: 30%; position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); display: none;" id="funText">TUBA KNIGHT
+  <div class="tooltip" style="width: 30%; position: absolute; top: 75px; left: 50%; transform: translate(-50%, -50%); display: none;" id="funText">TUBA KNIGHT
   <span class="tooltiptext">100 HP</span>
   </div>
   
@@ -182,6 +182,12 @@ body {
   let s = -1;
   let turn = 0;
   
+  // Actions 
+  let action1 = "";
+  let action2 = "";
+  let action3 = "";
+  let action4 = ""
+  
   // Players (Instruments)
   
   let woodwind = {
@@ -238,7 +244,7 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.3.0");
+    window.alert("v.0.3.1");
   }
   
   function colorChecker() {
@@ -302,8 +308,6 @@ body {
         player2.attack = woodwind.attack;
       }
       
-      window.alert(player2.health);
-      window.alert(player2.attack);
     }
     
     if (s == 2) {
@@ -318,8 +322,6 @@ body {
         player3.attack = woodwind.attack;
       }
       
-      window.alert(player3.health);
-      window.alert(player3.attack);
     }
     
     if (s == 3) {
@@ -334,31 +336,30 @@ body {
         player4.attack = woodwind.attack;
       }
       
-      window.alert(player4.health);
-      window.alert(player4.attack);
     }
   }
   
   
   function attackEnemy() {
     if (turn == 0) {
-      tubaKnight.health -= player1.attack;
-      topText.innerHTML = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
+      topText.innerHTML = "What will PLAYER 1 do?";
+      action1 = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
       turn++;
     } else if (turn == 1) {
-      tubaKnight.health -= player2.attack;
-      topText.innerHTML = "PLAYER 2 did " + player2.attack + " to TUBA KNIGHT!";
+      topText.innerHTML = "What will PLAYER 2 do?";
+      action2 = "PLAYER 2 did " + player2.attack + " to TUBA KNIGHT!";
       turn++;
     } else if (turn == 2) {
-      tubaKnight.health -= player3.attack;
-      topText.innerHTML = "PLAYER 3 did " + player3.attack + " to TUBA KNIGHT!";
+      topText.innerHTML = "What will PLAYER 3 do?";
+      action3 = "PLAYER 3 did " + player3.attack + " to TUBA KNIGHT!";
       turn++;
     } else if (turn == 3) {
-      tubaKnight.health -= player4.attack;
-      topText.innerHTML = "PLAYER 4 did " + player4.attack + " to TUBA KNIGHT!";
+      topText.innerHTML = "What will PLAYER 4 do?";
+      action4 = "PLAYER 4 did " + player4.attack + " to TUBA KNIGHT!";
       turn -=3;
       characterBoxes[3].style.borderColor = "black";  
       window.alert(turn);
+      enemyAttack();
     }
   }
  /* 
@@ -367,6 +368,31 @@ body {
       specialButtons[i].style.display = "false";
     }
   } */
+  
+  function enemyAttack() {
+  let chanceOfAttacking = Math.floor(Math.random() * 6);
+  window.alert(chanceOfAttacking);
+  if (chanceOfAttacking > 2) {
+    let opponent = Math.floor(Math.random() * 4);
+    window.alert(opponent);
+    switch (opponent) {
+      case 0:
+        player1.health -= tubaKnight.attack;
+        break;
+      case 1:
+        player2.health -= tubaKnight.attack;
+        break;
+      case 2:
+       player3.health -= tubaKnight.attack;
+       break;
+      case 3:
+        player4.health -= tubaKnight.attack;
+        break;
+    }
+  }
+    
+    
+  }
   
   
 </script>  
