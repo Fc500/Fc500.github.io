@@ -255,6 +255,7 @@ body {
     characterBoxes[turn].style.borderColor = "red";  
     characterBoxes[turn - 1].style.borderColor = "black";
   }
+  
   function selectCharacter(char) {
     if (s < 3) {
       s++;
@@ -341,19 +342,19 @@ body {
   
   
   function attackEnemy() {
-    if (turn == 1) {
+    if (turn == 0) {
       topText.innerHTML = "What will PLAYER 1 do?";
       action1 = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
       turn++;
-    } else if (turn == 2) {
+    } else if (turn == 1) {
       topText.innerHTML = "What will PLAYER 2 do?";
       action2 = "PLAYER 2 did " + player2.attack + " to TUBA KNIGHT!";
       turn++;
-    } else if (turn == 3) {
+    } else if (turn == 2) {
       topText.innerHTML = "What will PLAYER 3 do?";
       action3 = "PLAYER 3 did " + player3.attack + " to TUBA KNIGHT!";
       turn++;
-    } else if (turn == 4) {
+    } else if (turn == 3) {
       topText.innerHTML = "What will PLAYER 4 do?";
       action4 = "PLAYER 4 did " + player4.attack + " to TUBA KNIGHT!";
       turn -=3;
