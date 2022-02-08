@@ -278,7 +278,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.3.9");
+    window.alert("v.0.4.0");
   }
   
   function colorChecker() {
@@ -306,27 +306,31 @@ li {
  
   
   function actOne() {
-  removeInterval(colorChecker);
-  removeInterval(changeTopText);
+  clearInterval(colorChecker);
+  clearInterval(changeTopText);
   topText.innerHTML = action1;
+  window.alert("phase1");
   enemyAttack();
   setTimeout(actTwo, 5000);
   }
   
   function actTwo() {
   topText.innerHTML = action2;
+  window.alert("phase2");
   enemyAttack();
   setTimeout(actTwo, 5000);
   }
   
   function actThree() {
   topText.innerHTML = action3;
+  window.alert("phase3");
   enemyAttack();
   setTimeout(actThree, 5000);
   }
   
-  function action4actFour() {
+  function actFour() {
   topText.innerHTML = action4;
+  window.alert("phase4");
   enemyAttack();
   setTimeout(actFour, 5000);
   }
