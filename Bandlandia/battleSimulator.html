@@ -116,8 +116,7 @@ ul {
 li {
   float: left;
   display: block;
-  padding: 8px;
-  background-color: #dddddd;
+  padding: 15px;
 }
   
 </style>
@@ -279,7 +278,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.3.7");
+    window.alert("v.0.3.8");
   }
   
   function colorChecker() {
@@ -471,6 +470,7 @@ function useItem(item) {
       break;
   }
   turn++;
+  flutesnacks.collection[0].remove();
   document.getElementById("atkButtons").style.display = "block";
   document.getElementById("itemMenu").style.display = "none";
 }
