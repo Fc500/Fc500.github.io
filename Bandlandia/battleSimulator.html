@@ -279,12 +279,29 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.3.6");
+    window.alert("v.0.3.7");
   }
   
   function colorChecker() {
     characterBoxes[turn].style.borderColor = "red";  
     characterBoxes[turn - 1].style.borderColor = "black";
+  }
+  
+  function changeTopText() {
+  switch(turn) {
+      case 0:
+        topText.innerHTML = "What will PLAYER 1 do?";
+        break;
+      case 1:
+        topText.innerHTML = "What will PLAYER 2 do?";
+        break;
+      case 2:
+        topText.innerHTML = "What will PLAYER 3 do?";
+        break;
+      case 3:
+        topText.innerHTML = "What will PLAYER 4 do?";
+        break;
+    }
   }
   
   function showItems() {
@@ -314,7 +331,8 @@ li {
       document.getElementById("funText").style.display = "block";
       setInterval(colorChecker, 1000);
       document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
-      topText.innerHTML = "The Tuba Knight storms in! What will PLAYER 1 do?";
+      topText.innerHTML = "The Tuba Knight storms in!";
+      setInterval(changeTopText, 1000);
     }
   }
   
@@ -382,15 +400,12 @@ li {
       action1 = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
       turn++;
     } else if (turn == 1) {
-      topText.innerHTML = "What will PLAYER 2 do?";
       action2 = "PLAYER 2 did " + player2.attack + " to TUBA KNIGHT!";
       turn++;
     } else if (turn == 2) {
-      topText.innerHTML = "What will PLAYER 3 do?";
       action3 = "PLAYER 3 did " + player3.attack + " to TUBA KNIGHT!";
       turn++;
     } else if (turn == 3) {
-      topText.innerHTML = "What will PLAYER 4 do?";
       action4 = "PLAYER 4 did " + player4.attack + " to TUBA KNIGHT!";
       turn -=3;
       characterBoxes[3].style.borderColor = "black";  
