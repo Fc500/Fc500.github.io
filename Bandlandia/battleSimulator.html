@@ -447,6 +447,8 @@ li {
         topText.innerHTML = "Tuba Knight did " + tubaKnight.attack + "to" + "PLAYER 4!"
         break;
     }
+    removeInterval(changeTopText);
+    setInterval(changeTopText, 1000);
   }    
 }
 
