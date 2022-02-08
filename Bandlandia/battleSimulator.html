@@ -104,6 +104,22 @@ body {
   opacity: 1;
 }
   
+  
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+li {
+  float: left;
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+  
 </style>
   </head>
   
@@ -154,8 +170,17 @@ body {
   <div id="atkButtons" style="display: none;">
     <button style="background-color: #e87361" class="border btnMenu" onclick="attackEnemy()">ATTACK</button>
     <button style="background-color: #32a852" class="border btnMenu">CHARM</button><br>
-    <button style="background-color: #f5c2ff" class="border btnMenu">ITEM</button>
+    <button style="background-color: #f5c2ff" class="border btnMenu" onclick="showItems()">ITEM</button>
     <button style="background-color: #c2d9ff" class="border btnMenu">SPARE</button>
+  </div>
+  
+  <div id="itemMenu" style="display: none;">
+    <ul>
+      <li class="fs" onclick="useItem(flutesnacks)">Flute Snacks</li>
+      <li class="fs" onclick="useItem(flutesnacks)">Flute Snacks</li>
+      <li class="fs" onclick="useItem(flutesnacks)">Flute Snacks</li>
+      <li class="fs" onclick="useItem(flutesnacks)">Flute Snacks</li>
+    </ul>
   </div>
   
   <!-- Choose Character Buttons -->
@@ -238,17 +263,23 @@ body {
     hpDisp: document.getElementsByClassName("health")[3],
   };
   
+  // Items
+  
+  let flutesnacks = {
+    healthHealed: 50,
+    collection: document.getElementsByClassName("fs");    
+  };
   
   // Enemies
   
   let tubaKnight = {
     health: 300,
-    attack: 10,
+    attack: 30,
   };
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.3.4");
+    window.alert("v.0.3.6");
   }
   
   function colorChecker() {
@@ -342,7 +373,7 @@ body {
   
   
   function attackEnemy() {
-    if (turn == 0) {
+    if (turn <= 0) {
       action1 = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
       turn++;
     } else if (turn == 1) {
@@ -378,26 +409,48 @@ body {
     switch (opponent) {
       case 0:
         player1.health -= tubaKnight.attack;
-        player1.hpDisp.innerHTML = player1.health;
+        player1.hpDisp.innerHTML = "Health: " + player1.health;
+        topText.innerHTML = "Tuba Knight did " + tubaKnight.attack + "to" + "PLAYER 1!"
         break;
       case 1:
         player2.health -= tubaKnight.attack;
-        player2.hpDisp.innerHTML = player2.health;
+        player2.hpDisp.innerHTML = "Health: " + player2.health;
+        topText.innerHTML = "Tuba Knight did " + tubaKnight.attack + "to" + "PLAYER 2!"
         break;
       case 2:
        player3.health -= tubaKnight.attack;
-       player3.hpDisp.innerHTML = player3.health;
+       player3.hpDisp.innerHTML = "Health: " + player3.health;
+       topText.innerHTML = "Tuba Knight did " + tubaKnight.attack + "to" + "PLAYER 3!"
        break;
       case 3:
         player4.health -= tubaKnight.attack;
-        player4.hpDisp.innerHTML = player4.health;
+        player4.hpDisp.innerHTML = "Health: " + player4.health;
+        topText.innerHTML = "Tuba Knight did " + tubaKnight.attack + "to" + "PLAYER 4!"
         break;
     }
+  }    
+}
+
+function useItem(item) {
+  switch(turn) {
+    case 0:
+      player1.health += item.healthHealed;
+      player1.hpDisp.innerHTML = "Health: " + player1.health;
+      break;
+    case 1:
+      player2.health += item.healthHealed;
+      player2.hpDisp.innerHTML = "Health: " + player2.health;
+      break;
+    case 2:
+      player3.health += item.healthHealed;
+      player3.hpDisp.innerHTML = "Health: " + player3.health;
+      break;
+    case 3:
+      player4.health += item.healthHealed;
+      player4.hpDisp.innerHTML = "Health: " + player4.health;
+      break;
   }
-    
-    
-  }
-  
+}
   
 </script>  
   </body>
