@@ -267,7 +267,7 @@ li {
   
   let flutesnacks = {
     healthHealed: 50,
-    collection: document.getElementsByClassName("fs");    
+    collection: document.getElementsByClassName("fs"), 
   };
   
   // Enemies
@@ -285,6 +285,11 @@ li {
   function colorChecker() {
     characterBoxes[turn].style.borderColor = "red";  
     characterBoxes[turn - 1].style.borderColor = "black";
+  }
+  
+  function showItems() {
+    document.getElementById("atkButtons").style.display = "none";
+    document.getElementById("itemMenu").style.display = "block";
   }
   
   function selectCharacter(char) {
@@ -450,6 +455,8 @@ function useItem(item) {
       player4.hpDisp.innerHTML = "Health: " + player4.health;
       break;
   }
+  document.getElementById("atkButtons").style.display = "block";
+  document.getElementById("itemMenu").style.display = "none";
 }
   
 </script>  
