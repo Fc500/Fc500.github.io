@@ -110,14 +110,14 @@ body {
 <body>
   
   <img src="" class="img">
-  <div class="tooltip" style="width: 30%; position: absolute; top: 75px; left: 50%; transform: translate(-50%, -50%); display: none;" id="funText">TUBA KNIGHT
+  <div class="tooltip" style="width: 30%; position: absolute; top: 125px; left: 50%; transform: translate(-50%, -50%); display: none;" id="funText">TUBA KNIGHT
   <span class="tooltiptext">100 HP</span>
   </div>
   
   
   
   
-  <div class="main" style="margin-top: 2.5%;">
+  <div class="main" style="margin-top: 50px;">
     <h1 id="splashText1">Pick your team!</h1>
   </div>
   
@@ -248,7 +248,7 @@ body {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.3.3");
+    window.alert("v.0.3.4");
   }
   
   function colorChecker() {
@@ -278,7 +278,7 @@ body {
       document.getElementById("funText").style.display = "block";
       setInterval(colorChecker, 1000);
       document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
-      topText.innerHTML = "The Tuba Knight storms in!";
+      topText.innerHTML = "The Tuba Knight storms in! What will PLAYER 1 do?";
     }
   }
   
@@ -343,7 +343,6 @@ body {
   
   function attackEnemy() {
     if (turn == 0) {
-      topText.innerHTML = "What will PLAYER 1 do?";
       action1 = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
       turn++;
     } else if (turn == 1) {
