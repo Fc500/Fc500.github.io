@@ -210,7 +210,12 @@ li {
   let action1 = "";
   let action2 = "";
   let action3 = "";
-  let action4 = ""
+  let action4 = "";
+  
+  // Timers
+  
+  let colorTimer;
+  let textTimer;
   
   // Players (Instruments)
   
@@ -278,7 +283,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.0");
+    window.alert("v.0.4.1");
   }
   
   function colorChecker() {
@@ -306,8 +311,8 @@ li {
  
   
   function actOne() {
-  clearInterval(colorChecker);
-  clearInterval(changeTopText);
+  clearInterval(colorTimer);
+  clearInterval(textTimer);
   topText.innerHTML = action1;
   window.alert("phase1");
   enemyAttack();
@@ -318,14 +323,14 @@ li {
   topText.innerHTML = action2;
   window.alert("phase2");
   enemyAttack();
-  setTimeout(actTwo, 5000);
+  setTimeout(actThree, 5000);
   }
   
   function actThree() {
   topText.innerHTML = action3;
   window.alert("phase3");
   enemyAttack();
-  setTimeout(actThree, 5000);
+  setTimeout(actFour, 5000);
   }
   
   function actFour() {
@@ -360,10 +365,10 @@ li {
       document.getElementById("charButtons").style.display = "none";
       document.getElementById("atkButtons").style.display = "block";
       document.getElementById("funText").style.display = "block";
-      setInterval(colorChecker, 1000);
+      colorTimer = setInterval(colorChecker, 1000);
       document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
       topText.innerHTML = "The Tuba Knight storms in!";
-      setInterval(changeTopText, 1000);
+      textTimer = setInterval(changeTopText, 1000);
     }
   }
   
