@@ -243,6 +243,7 @@ li {
     health: 0,
     attack: 0,
     energy: 0,
+    atkType: "",
     hpDisp: document.getElementsByClassName("health")[0],
   };
   
@@ -250,6 +251,7 @@ li {
     health: 0,
     attack: 0,
     energy: 0,
+    atkType: "",
     hpDisp: document.getElementsByClassName("health")[1],
   };
   
@@ -257,6 +259,7 @@ li {
     health: 0,
     attack: 0,
     energy: 0,
+    atkType: "",
     hpDisp: document.getElementsByClassName("health")[2],
   };
   
@@ -264,6 +267,7 @@ li {
     health: 0,
     attack: 0,
     energy: 0,
+    atkType: "",
     hpDisp: document.getElementsByClassName("health")[3],
   };
   
@@ -310,13 +314,16 @@ li {
  
  
   
-  function actOne() {
+  function enemyActOne() {
   clearInterval(colorTimer);
   clearInterval(textTimer);
-  topText.innerHTML = action1;
   window.alert("phase1");
   enemyAttack();
   setTimeout(actTwo, 1000);
+  }
+  
+  function playerActOne() {
+  topText.innerHTML = action1;
   }
   
   function actTwo() {
