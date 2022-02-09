@@ -287,7 +287,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2.c");
+    window.alert("v.0.4.2.d");
   }
   
   function colorChecker() {
@@ -314,11 +314,13 @@ li {
  
  
   
-  function enemyActOne() {
+  function enemyAct() {
   enemyAttack();
+  setTimeout(playerAct, 5000);
   }
   
-  function playerActOne(item) {
+  function playerAct(player, item) {
+    if (player == 1) {
     topText.innerHTML = action1;
     clearInterval(colorTimer);
     clearInterval(textTimer);
@@ -330,30 +332,25 @@ li {
         break;
       case "useItem":
         player1.health += item.healthHealed;
+        break;
     }
-    setTimeout(actOne, 5000);
+  setTimeout(enemyAct, 5000);
+      
+    } else if (player == 2) {
+    topText.innerHTML = action2;
+    window.alert("phase2");
+    switch (player2.actType) {
+      case "attackEnemy":
+        tubaKnight.health -= player2.attack;
+        window.alert("attacked");
+        break;
+      case "useItem":
+        player2.health += item.healthHealed;
+    }
+    setTimeout(enemyAct, 5000);
+    }
   }
   
-  function actTwo() {
-  topText.innerHTML = action2;
-  window.alert("phase2");
-  enemyAttack();
-  setTimeout(actThree, 1000);
-  }
-  
-  function actThree() {
-  topText.innerHTML = action3;
-  window.alert("phase3");
-  enemyAttack();
-  setTimeout(actFour, 1000);
-  }
-  
-  function actFour() {
-  topText.innerHTML = action4;
-  window.alert("phase4");
-  enemyAttack();
-  setTimeout(actFour, 1000);
-  }
   
   function showItems() {
     document.getElementById("atkButtons").style.display = "none";
@@ -448,20 +445,24 @@ li {
   
   function attackEnemy() {
     if (turn <= 0) {
-      action1 = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!"
+      action1 = "PLAYER 1 did " + player1.attack + " to TUBA KNIGHT!";
+      player1.actType = "attackEnemy";
       turn++;
     } else if (turn == 1) {
       action2 = "PLAYER 2 did " + player2.attack + " to TUBA KNIGHT!";
       turn++;
+      player2.actType = "useItem";
     } else if (turn == 2) {
       action3 = "PLAYER 3 did " + player3.attack + " to TUBA KNIGHT!";
+      player3.actType = "useItem";
       turn++;
     } else if (turn == 3) {
       action4 = "PLAYER 4 did " + player4.attack + " to TUBA KNIGHT!";
+      player4.actType = "useItem";
       turn -=3;
       characterBoxes[3].style.borderColor = "black";  
       window.alert(turn);
-      playerActOne();
+      playerAct(1);
     }
   }
  /* 
@@ -523,7 +524,7 @@ function useItem(item) {
       player4.health += item.healthHealed;
       player4.hpDisp.innerHTML = "Health: " + player4.health;
       player4.actType = "useItem";
-      playerActOne(item);
+      playerAc(1, item);
       break;
   }
   turn++;
