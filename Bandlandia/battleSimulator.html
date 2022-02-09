@@ -283,7 +283,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2");
+    window.alert("v.0.4.2.a");
   }
   
   function colorChecker() {
@@ -316,28 +316,28 @@ li {
   topText.innerHTML = action1;
   window.alert("phase1");
   enemyAttack();
-  setTimeout(actTwo, 5000);
+  setTimeout(actTwo, 1000);
   }
   
   function actTwo() {
   topText.innerHTML = action2;
   window.alert("phase2");
   enemyAttack();
-  setTimeout(actThree, 5000);
+  setTimeout(actThree, 1000);
   }
   
   function actThree() {
   topText.innerHTML = action3;
   window.alert("phase3");
   enemyAttack();
-  setTimeout(actFour, 5000);
+  setTimeout(actFour, 1000);
   }
   
   function actFour() {
   topText.innerHTML = action4;
   window.alert("phase4");
   enemyAttack();
-  setTimeout(actFour, 5000);
+  setTimeout(actFour, 1000);
   }
   
   function showItems() {
@@ -484,8 +484,6 @@ li {
         topText.innerHTML = "Tuba Knight did " + tubaKnight.attack + " to " + "PLAYER 4!"
         break;
     }
-    removeInterval(changeTopText);
-    setInterval(changeTopText, 1000);
   }    
 }
 
