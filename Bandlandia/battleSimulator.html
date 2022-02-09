@@ -243,7 +243,7 @@ li {
     health: 0,
     attack: 0,
     energy: 0,
-    atkType: "",
+    actType: "",
     hpDisp: document.getElementsByClassName("health")[0],
   };
   
@@ -251,7 +251,7 @@ li {
     health: 0,
     attack: 0,
     energy: 0,
-    atkType: "",
+    actType: "",
     hpDisp: document.getElementsByClassName("health")[1],
   };
   
@@ -259,7 +259,7 @@ li {
     health: 0,
     attack: 0,
     energy: 0,
-    atkType: "",
+    actType: "",
     hpDisp: document.getElementsByClassName("health")[2],
   };
   
@@ -267,7 +267,7 @@ li {
     health: 0,
     attack: 0,
     energy: 0,
-    atkType: "",
+    actType: "",
     hpDisp: document.getElementsByClassName("health")[3],
   };
   
@@ -287,7 +287,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2.a");
+    window.alert("v.0.4.2.b");
   }
   
   function colorChecker() {
@@ -319,11 +319,18 @@ li {
   clearInterval(textTimer);
   window.alert("phase1");
   enemyAttack();
-  setTimeout(actTwo, 1000);
   }
   
-  function playerActOne() {
-  topText.innerHTML = action1;
+  function playerActOne(item) {
+    topText.innerHTML = action1;
+    switch (player1.actType) {
+      case "attackEnemy":
+        tubaKnight.health -= player1.attack;
+        break;
+      case "useItem":
+        player1.health += item.healthHealed;
+    }
+    setTimeout(actOne, 5000);
   }
   
   function actTwo() {
@@ -453,7 +460,7 @@ li {
       turn -=3;
       characterBoxes[3].style.borderColor = "black";  
       window.alert(turn);
-      actOne();
+      playerActOne();
     }
   }
  /* 
@@ -499,18 +506,23 @@ function useItem(item) {
     case 0:
       player1.health += item.healthHealed;
       player1.hpDisp.innerHTML = "Health: " + player1.health;
+      player1.actType = "useItem";
       break;
     case 1:
       player2.health += item.healthHealed;
       player2.hpDisp.innerHTML = "Health: " + player2.health;
+      player2.actType = "useItem";
       break;
     case 2:
       player3.health += item.healthHealed;
       player3.hpDisp.innerHTML = "Health: " + player3.health;
+      player3.actType = "useItem";
       break;
     case 3:
       player4.health += item.healthHealed;
       player4.hpDisp.innerHTML = "Health: " + player4.health;
+      player4.actType = "useItem";
+      playerActOne(item);
       break;
   }
   turn++;
