@@ -287,7 +287,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2.e");
+    window.alert("v.0.4.2.f");
   }
   
   function colorChecker() {
@@ -314,9 +314,9 @@ li {
  
  
   
-  function enemyAct() {
+  function enemyAct(turn) {
   enemyAttack();
-  setTimeout(playerAct, 5000, 2);
+  setTimeout(playerAct, 5000, turn);
   }
   
   function playerAct(player, item) {
@@ -325,6 +325,7 @@ li {
       clearInterval(colorTimer);
       clearInterval(textTimer);
       window.alert("phase1");
+      setTimeout(enemyAct, 5000, 2);
       switch (player1.actType) {
         case "attackEnemy":
           tubaKnight.health -= player1.attack;
@@ -337,6 +338,7 @@ li {
     } else if (player == 2) {
       topText.innerHTML = action2;
       window.alert("phase2");
+      setTimeout(enemyAct, 5000, 3);
       switch (player2.actType) {
         case "attackEnemy":
           tubaKnight.health -= player2.attack;
@@ -345,8 +347,19 @@ li {
         case "useItem":
           player2.health += item.healthHealed;
       }
+    } else if (player == 3) {
+      topText.innerHTML = action3;
+      window.alert("phase3");
+      setTimeout(enemyAct, 5000, 4);
+      switch (player3.actType) {
+        case "attackEnemy":
+          tubaKnight.health -= player3.attack;
+          window.alert("attacked");
+          break;
+        case "useItem":
+          player3.health += item.healthHealed;
+      }
     }
-    setTimeout(enemyAct, 5000);
   }
   
   
