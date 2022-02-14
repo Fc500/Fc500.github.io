@@ -287,7 +287,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2.f");
+    window.alert("v.0.4.2.g");
   }
   
   function colorChecker() {
@@ -358,6 +358,18 @@ li {
           break;
         case "useItem":
           player3.health += item.healthHealed;
+      }
+    } else if (player == 4) {
+      topText.innerHTML = action4;
+      window.alert("phase4");
+      setTimeout(enemyAct, 5000, 4);
+      switch (player4.actType) {
+        case "attackEnemy":
+          tubaKnight.health -= player4.attack;
+          window.alert("attacked");
+          break;
+        case "useItem":
+          player4.health += item.healthHealed;
       }
     }
   }
@@ -485,10 +497,10 @@ li {
   
   function enemyAttack() {
   let chanceOfAttacking = Math.floor(Math.random() * 6);
-  window.alert(chanceOfAttacking);
+  window.alert("Chance of Attacking: " + chanceOfAttacking);
   if (chanceOfAttacking > 1) {
     let opponent = Math.floor(Math.random() * 4);
-    window.alert(opponent);
+    window.alert("Target: " + opponent);
     switch (opponent) {
       case 0:
         player1.health -= tubaKnight.attack;
