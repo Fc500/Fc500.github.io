@@ -205,6 +205,7 @@ li {
   let percussionGIF = "https://art.pixilart.com/75cd9f156b7e.gif";
   let s = -1;
   let turn = 0;
+  let enemyTurn = 1;
   
   // Actions 
   let action1 = "";
@@ -287,7 +288,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2.g");
+    window.alert("v.0.4.2.h");
   }
   
   function colorChecker() {
@@ -325,7 +326,6 @@ li {
       clearInterval(colorTimer);
       clearInterval(textTimer);
       window.alert("phase1");
-      setTimeout(enemyAct, 5000, 2);
       switch (player1.actType) {
         case "attackEnemy":
           tubaKnight.health -= player1.attack;
@@ -338,7 +338,6 @@ li {
     } else if (player == 2) {
       topText.innerHTML = action2;
       window.alert("phase2");
-      setTimeout(enemyAct, 5000, 3);
       switch (player2.actType) {
         case "attackEnemy":
           tubaKnight.health -= player2.attack;
@@ -350,7 +349,6 @@ li {
     } else if (player == 3) {
       topText.innerHTML = action3;
       window.alert("phase3");
-      setTimeout(enemyAct, 5000, 4);
       switch (player3.actType) {
         case "attackEnemy":
           tubaKnight.health -= player3.attack;
@@ -362,7 +360,6 @@ li {
     } else if (player == 4) {
       topText.innerHTML = action4;
       window.alert("phase4");
-      setTimeout(enemyAct, 5000, 4);
       switch (player4.actType) {
         case "attackEnemy":
           tubaKnight.health -= player4.attack;
@@ -371,6 +368,10 @@ li {
         case "useItem":
           player4.health += item.healthHealed;
       }
+    }
+    enemyTurn++;
+    if (enemyAct <= 4) {
+      setTimeout(enemyAct, 3000, enemyTurn);
     }
   }
   
