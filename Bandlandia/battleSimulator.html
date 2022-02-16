@@ -288,7 +288,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2.i");
+    window.alert("v.0.4.2.j");
   }
   
   function colorChecker() {
@@ -370,7 +370,9 @@ li {
       }
     }
     enemyTurn++;
+    
     if (enemyTurn <= 4) {
+      window.alert("Enemy Turn: " + enemyTurn);
       setTimeout(enemyAct, 3000, enemyTurn);
     }
   }
