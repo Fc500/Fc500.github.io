@@ -288,7 +288,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2.j");
+    window.alert("v.0.4.2.k");
   }
   
   function colorChecker() {
@@ -321,6 +321,12 @@ li {
   }
   
   function playerAct(player, item) {
+    enemyTurn++;
+    if (enemyTurn <= 4) {
+      window.alert("Enemy Turn: " + enemyTurn);
+      setTimeout(enemyAct, 3000, enemyTurn);
+    }
+    
     if (player == 1) {
       topText.innerHTML = action1;
       clearInterval(colorTimer);
@@ -369,12 +375,7 @@ li {
           player4.health += item.healthHealed;
       }
     }
-    enemyTurn++;
-    
-    if (enemyTurn <= 4) {
-      window.alert("Enemy Turn: " + enemyTurn);
-      setTimeout(enemyAct, 3000, enemyTurn);
-    }
+   
   }
   
   
