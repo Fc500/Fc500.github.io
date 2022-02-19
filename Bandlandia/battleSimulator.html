@@ -288,7 +288,7 @@ li {
   
   window.onload = function loadingItem() {
     //characterBoxes[0].style.borderColor = "red";
-    window.alert("v.0.4.2.l");
+    window.alert("v.0.4.2.m");
   }
   
   function colorChecker() {
@@ -376,9 +376,19 @@ li {
     } else if (enemyTurn == 5) {
     setInterval(colorChecker, 100);
     turn = 0;
+    enemyTurn = 1;
     } 
   }
   
+  function startOver() {
+    document.getElementById("charButtons").style.display = "none";
+    document.getElementById("atkButtons").style.display = "block";
+    document.getElementById("funText").style.display = "block";
+    colorTimer = setInterval(colorChecker, 1000);
+    document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
+    topText.innerHTML = "The Tuba Knight storms in!";
+    textTimer = setInterval(changeTopText, 1000);
+  }
   
   function showItems() {
     document.getElementById("atkButtons").style.display = "none";
@@ -402,13 +412,7 @@ li {
     }  
     
     if (s == 3) {
-      document.getElementById("charButtons").style.display = "none";
-      document.getElementById("atkButtons").style.display = "block";
-      document.getElementById("funText").style.display = "block";
-      colorTimer = setInterval(colorChecker, 1000);
-      document.getElementsByClassName("img")[0].src = "tubaKnight.gif";
-      topText.innerHTML = "The Tuba Knight storms in!";
-      textTimer = setInterval(changeTopText, 1000);
+      startOver();
     }
   }
   
