@@ -216,7 +216,7 @@ input:checked + .slider:before {
         <p>Solar Panel</p>
         <div id="y" style="margin-top: 40px;"></div>
       </div> -->
-	    <div class="ldBar" data-value="50">
+	    <div class="myBar label-center">
 	    </div>
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
@@ -375,6 +375,14 @@ input:checked + .slider:before {
       e
       e
       e*/
+// Bars
+var bar1 = new ldBar(".myBar", {
+   "stroke": '#f00',
+   "stroke-width": 10,
+   "preset": "fan",
+   "value": 65
+  });
+	    
       // Buildings
       let solarpanels = {
         price: 100000,
@@ -425,7 +433,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.9a');
+        window.alert('v0.19.9b');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -529,7 +537,11 @@ input:checked + .slider:before {
 	function raiseTempature() {
           globalTempature += rateOfChange;
 	  tempDisplay.innerHTML = globalTempature.toFixed(2);
-	  document.getElementsByClassName("ldBar")[0].value = 100;
+	  bar.set(
+  50,     /* target value. */
+  false   /* enable animation. default is true */
+);
+
         }    
 	    
 	function raiseTempHigh() {
@@ -661,7 +673,7 @@ function switchSections() {
      setInterval(calculateBuildings, 1000);
      setInterval(checkBuildings, 1000);
      setInterval(checkUpgrades, 5000);
-     setInterval(raiseTempature, 5000);
+     setInterval(raiseTempature, 2500);
      setInterval(raiseTempHigh, 10000);
     </script>
   </body>
