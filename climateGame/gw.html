@@ -425,7 +425,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.9');
+        window.alert('v0.19.9a');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -529,7 +529,7 @@ input:checked + .slider:before {
 	function raiseTempature() {
           globalTempature += rateOfChange;
 	  tempDisplay.innerHTML = globalTempature.toFixed(2);
-	  document.getElementsByClassName("ldBar")[0].dataValue = 100;
+	  document.getElementsByClassName("ldBar")[0].value = 100;
         }    
 	    
 	function raiseTempHigh() {
