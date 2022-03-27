@@ -433,7 +433,7 @@ var bar1 = new ldBar(".myBar", {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.9c');
+        window.alert('v0.19.9d');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -538,7 +538,7 @@ var bar1 = new ldBar(".myBar", {
           globalTempature += rateOfChange;
 	  tempDisplay.innerHTML = globalTempature.toFixed(2);
 	  bar1.set(
-  4,     /* target value. */
+  globalTempature,     /* target value. */
   false   /* enable animation. default is true */
 );
 
