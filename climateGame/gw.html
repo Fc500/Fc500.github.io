@@ -538,8 +538,8 @@ var bar1 = new ldBar(".myBar", {
           globalTempature += rateOfChange;
 	  tempDisplay.innerHTML = globalTempature.toFixed(2);
 	  bar1.set(
-  rateOfChange,     /* target value. */
-  false   /* enable animation. default is true */
+  globalTempature.toFixed(2),     /* target value. */
+  true   /* enable animation. default is true */
 );
 
         }    
