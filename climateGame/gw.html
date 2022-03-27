@@ -1,6 +1,8 @@
 <html>
   <head>
     <title>Global Warming Simulator</title>
+    <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+    <script type="text/javascript" src="loading-bar.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Gowun Dodum' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -188,7 +190,7 @@ input:checked + .slider:before {
     </style>
   </head>
   <body>
-    <div class="section storeScroll" style="line-height: 5px;">
+    <div class="section storeScroll">
       <h3>STATISTICS</h3>
       <p><span id="moneyDisp">0</span></p>
       <p>Dollars</p>
@@ -214,7 +216,8 @@ input:checked + .slider:before {
         <p>Solar Panel</p>
         <div id="y" style="margin-top: 40px;"></div>
       </div> -->
-	
+	    <div class="ldBar" data-value="50">
+	    </div>
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
 	    
@@ -422,7 +425,7 @@ input:checked + .slider:before {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.8s');
+        window.alert('v0.19.9');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -526,6 +529,7 @@ input:checked + .slider:before {
 	function raiseTempature() {
           globalTempature += rateOfChange;
 	  tempDisplay.innerHTML = globalTempature.toFixed(2);
+	  document.getElementsByClassName("ldBar")[0].dataValue = 100;
         }    
 	    
 	function raiseTempHigh() {
@@ -657,7 +661,7 @@ function switchSections() {
      setInterval(calculateBuildings, 1000);
      setInterval(checkBuildings, 1000);
      setInterval(checkUpgrades, 5000);
-     setInterval(raiseTempature, 1000);
+     setInterval(raiseTempature, 5000);
      setInterval(raiseTempHigh, 10000);
     </script>
   </body>
