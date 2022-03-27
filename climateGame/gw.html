@@ -433,7 +433,7 @@ var bar1 = new ldBar(".myBar", {
       
       
       window.onload = function loading() { 
-        window.alert('v0.19.9d');
+        window.alert('v0.19.9e');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	upgrades[i].style.display = "none";
@@ -538,8 +538,8 @@ var bar1 = new ldBar(".myBar", {
           globalTempature += rateOfChange;
 	  tempDisplay.innerHTML = globalTempature.toFixed(2);
 	  bar1.set(
-  globalTempature.toFixed(2),     /* target value. */
-  true   /* enable animation. default is true */
+  globalTempature.toFixed(3),     /* target value. */
+  false   /* enable animation. default is true */
 );
 
         }    
@@ -673,7 +673,7 @@ function switchSections() {
      setInterval(calculateBuildings, 1000);
      setInterval(checkBuildings, 1000);
      setInterval(checkUpgrades, 5000);
-     setInterval(raiseTempature, 2500);
+     setInterval(raiseTempature, 2000);
      setInterval(raiseTempHigh, 10000);
     </script>
   </body>
