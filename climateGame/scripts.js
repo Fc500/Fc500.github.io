@@ -41,7 +41,7 @@ var bar1 = new ldBar(".myBar", {
    "preset": "fan",
    "value": 65
 });
-
+	
 var bar2 = new ldBar(".myBar2", {
    "stroke": '#f00',
    "stroke-width": 20,
@@ -99,7 +99,7 @@ let imgRel = "";
 
 
 window.onload = function loading() { 
-  window.alert('v0.19.9h');
+  window.alert('v0.19.9i');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
