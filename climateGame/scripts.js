@@ -37,7 +37,7 @@ let geoBox = document.getElementById("geothermal");
 // Bars
 var bar1 = new ldBar(".myBar", {
    "stroke": '#f00',
-   "stroke-width": 10,
+   "stroke-width": 20,
    "preset": "fan",
    "value": 65
 });
@@ -99,7 +99,7 @@ let imgRel = "";
 
 
 window.onload = function loading() { 
-  window.alert('v0.19.9g');
+  window.alert('v0.19.9h');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
