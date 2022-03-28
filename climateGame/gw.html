@@ -220,18 +220,6 @@ input:checked + .slider:before {
       </div> -->
 	    <p><span id="greenDisp">0</span></p>
 	    <p>Green Points</p>
-	    
-	    <button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price', 'resePrice')">
-		    <p>Researcher</p>
-		    <h6 id="resePrice">2.8M</h6>
-		    <h5 id="reseOwned">0</h5>
-	    </button>
-	    
-	    <button class="storeButton emboss-effect blur" onclick="buyUpgrades(station, 'stationOwned', 'price')">
-		    <p>Research Station</p>
-		    <h6>800M</h6>
-		    <h5 id="stationOwned">0</h5>
-	    </button>
 	    <h4>Powerups</h4>
 	    
 	    <button class="upgrades" onclick="setObjectTrue(solarpanels, 2500000)">
@@ -264,7 +252,7 @@ input:checked + .slider:before {
       <h3>STORE</h3>
 	
 	  <br>
-	    <button onclick="switchSections()">Try it</button>
+	    <button onclick="switchSections()" style="width: 50px; border-color: white; border-radius: none; background-color: black; color: white;" class="gowun">Try it</button>
 	    <br>
 	  <div style="margin: 5px; text-align: left;">
 	    <p id="state">BUYING: </p>
@@ -309,17 +297,21 @@ input:checked + .slider:before {
         </div>
 	    
 	
-	    <!-- Military tab -->
-	<div class="tabs" style="background-color: #4a4a4a; width: 96%; margin: auto; display: none;">
-	  <button class="storeButton emboss-effect">
-	    <p>Unit</p>
-	    <h6>500M</h6>	 
-	  </button>
-	</div>
+	    <!-- Research tab -->
+<div class="tabs" style="background-color: #4a4a4a; width: 96%; margin: auto; display: none;">  
+	<br>
+	<button class="storeButton emboss-effect" onclick="buyUpgrades(researcher, 'reseOwned', 'price', 'resePrice')">
+		<p>Researcher</p>
+		<h6 id="resePrice">2.8M</h6>
+		<h5 id="reseOwned">0</h5>
+	</button>
 	    
-	    
-	    
-      </div>
+	<button class="storeButton emboss-effect blur" onclick="buyUpgrades(station, 'stationOwned', 'price')">
+		<p>Research Station</p>
+		<h6>800M</h6>
+		<h5 id="stationOwned">0</h5>
+	</button>
+</div>
 	  
 	  
 	  <!-- The Modal -->
