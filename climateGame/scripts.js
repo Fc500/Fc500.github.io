@@ -92,7 +92,7 @@ let imgRel = "";
 
 
 window.onload = function loading() { 
-  window.alert('v0.19.9f');
+  window.alert('v0.19.9g');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
@@ -203,10 +203,10 @@ function raiseTempature() {
   );
 }    
 	    
-	function raiseTempHigh() {
-	  rateOfChange *= 1.3;
-          return rateOfChange;
-	}
+function raiseTempHigh() {
+rateOfChange *= 1.3;
+return rateOfChange;
+}
 
 function checkBuildings() {
 if (solarpanels.price * 1.5 < money) {
