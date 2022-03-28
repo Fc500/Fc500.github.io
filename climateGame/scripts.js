@@ -15,7 +15,7 @@ window.onclick = function(event) {
 // Stats
 let moneyDisplay = document.getElementById("moneyDisp");
 let greenDisplay = document.getElementById("greenDisp");
-let tempDisplay = document.getElementById("tempDisp");
+let tempDisplay = document.getElementsById("tempDisp");
 let yearDisplay = document.getElementById("yearDisp");
 let mpsDisplay = document.getElementById("MPS");
 let upgrades = document.getElementsByClassName("upgrades");
@@ -40,6 +40,13 @@ var bar1 = new ldBar(".myBar", {
    "stroke-width": 10,
    "preset": "fan",
    "value": 65
+});
+
+var bar2 = new ldBar(".myBar2", {
+   "stroke": '#f00',
+   "stroke-width": 20,
+   "preset": "fan",
+   "value": 2022
 });
 	    
 // Buildings
@@ -197,15 +204,15 @@ function checkUpgrades() {
 function raiseTempature() {
   globalTempature += rateOfChange;
 	tempDisplay.innerHTML = globalTempature.toFixed(2);
-	bar1.set(
-    globalTempature.toFixed(3),     /* target value. */
+	bar2.set(
+    globalTempature.toFixed(2),     /* target value. */
     false   /* enable animation. default is true */
   );
 }    
 	    
 function raiseTempHigh() {
-rateOfChange *= 1.3;
-return rateOfChange;
+  rateOfChange *= 1.3;
+  return rateOfChange;
 }
 
 function checkBuildings() {
