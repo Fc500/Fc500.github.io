@@ -46,7 +46,7 @@ var bar2 = new ldBar(".myBar2", {
    "stroke": '#f00',
    "stroke-width": 20,
    "preset": "fan",
-   "value": 2022
+   "value": 20
 });
 	    
 // Buildings
@@ -99,7 +99,7 @@ let imgRel = "";
 
 
 window.onload = function loading() { 
-  window.alert('v0.19.9i');
+  window.alert('v0.19.9j');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
@@ -110,8 +110,8 @@ window.onload = function loading() {
       
 function setObjectTrue(building, price) {
   building.researched = true;
-	window.alert(building.researched);
-	money -= price;
+  window.alert(building.researched);
+  money -= price;
 }
 
 // Building functions
@@ -182,10 +182,10 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
 function checkUpgrades() {
 
   currentYear += 1;
-  bar1.set(
-    currentYear,     /* target value. */
-    false   /* enable animation. default is true */
-  );
+  /*bar1.set(
+    currentYear,     /* target value. 
+    false   /* enable animation. default is true 
+  ); */
   if (greenPoints > 2.5) {
     upgrades[0].classList.add("upgradeButton");
     upgrades[0].style.display = "block";
