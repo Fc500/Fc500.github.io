@@ -182,7 +182,10 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
 function checkUpgrades() {
 
   currentYear += 1;
-  yearDisplay.innerHTML = currentYear;
+  bar1.set(
+    currentYear,     /* target value. */
+    false   /* enable animation. default is true */
+  );
   if (greenPoints > 2.5) {
     upgrades[0].classList.add("upgradeButton");
     upgrades[0].style.display = "block";
