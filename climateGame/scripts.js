@@ -207,10 +207,10 @@ function checkUpgrades() {
 function raiseTempature() {
   globalTempature += rateOfChange;
 	tempDisplay.innerHTML = globalTempature.toFixed(2);
-	bar2.set(
-    globalTempature.toFixed(2),     /* target value. */
-    false   /* enable animation. default is true */
-  );
+/*	bar2.set(
+    globalTempature.toFixed(2),     /* target value
+    false   /* enable animation. default is true 
+  ); */
 }    
 	    
 function raiseTempHigh() {
