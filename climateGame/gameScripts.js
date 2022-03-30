@@ -1,4 +1,4 @@
-window.alert('v0.19.9k');
+window.alert("v0.19.9k");
 
 // Modal 
 /*var modal = document.getElementById("myModal");
@@ -98,17 +98,17 @@ let researcher = {
 
 let pos = 20;
 let imgRel = "";
-*/
+
 
 // window.onload = function loading() { 
-	/*checkState();
+	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
 	}
 	tempDisplay.innerHTML = globalTempature;
-	yearDisplay.innerHTML = currentYear; */
+	yearDisplay.innerHTML = currentYear; 
 
-   /*   
+     
 function setObjectTrue(building, price) {
   building.researched = true;
   window.alert(building.researched);
@@ -180,12 +180,12 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
   }
 }
 
-/* function checkUpgrades() {
+ function checkUpgrades() {
 
   currentYear += 1;
-  /*bar1.set(
-    currentYear,     /* target value. 
-    false   /* enable animation. default is true 
+  bar1.set(
+    currentYear,     //target value. 
+    false   // enable animation. default is true 
   ); 
   if (greenPoints > 2.5) {
     upgrades[0].classList.add("upgradeButton");
@@ -203,17 +203,17 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
     upgrades[3].classList.add("upgradeButton");
     upgrades[3].style.display = "block";
   }
-}    */
-/*
+}    
+
 function raiseTempature() {
   globalTempature += rateOfChange;
 	//tempDisplay.innerHTML = globalTempature.toFixed(2);
-/*	bar2.set(
-    globalTempature.toFixed(2),     /* target value
-    false   /* enable animation. default is true 
-  ); */
+	bar2.set(
+    globalTempature.toFixed(2),     // target value
+    false   // enable animation. default is true 
+  ); 
 }    
-	    /*
+	    
 function raiseTempHigh() {
   rateOfChange *= 1.3;
   return rateOfChange;
