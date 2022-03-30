@@ -179,13 +179,13 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
   }
 }
 
-function checkUpgrades() {
+/* function checkUpgrades() {
 
   currentYear += 1;
   /*bar1.set(
     currentYear,     /* target value. 
     false   /* enable animation. default is true 
-  ); */
+  ); 
   if (greenPoints > 2.5) {
     upgrades[0].classList.add("upgradeButton");
     upgrades[0].style.display = "block";
@@ -202,7 +202,7 @@ function checkUpgrades() {
     upgrades[3].classList.add("upgradeButton");
     upgrades[3].style.display = "block";
   }
-}    
+}    */
 
 function raiseTempature() {
   globalTempature += rateOfChange;
