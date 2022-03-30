@@ -100,12 +100,12 @@ let imgRel = "";
 
 window.onload = function loading() { 
   window.alert('v0.19.9k');
-	checkState();
+	/*checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
 	}
 	tempDisplay.innerHTML = globalTempature;
-	yearDisplay.innerHTML = currentYear;
+	yearDisplay.innerHTML = currentYear; */
 }
    /*   
 function setObjectTrue(building, price) {
