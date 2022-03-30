@@ -115,7 +115,7 @@ function setObjectTrue(building, price) {
 }
 
 // Building functions
-
+/*
 function numFormatter(num) {
   if(num > 999 && num < 1000000){
     return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
@@ -203,7 +203,7 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
     upgrades[3].style.display = "block";
   }
 }    */
-
+/*
 function raiseTempature() {
   globalTempature += rateOfChange;
 	//tempDisplay.innerHTML = globalTempature.toFixed(2);
@@ -212,7 +212,7 @@ function raiseTempature() {
     false   /* enable animation. default is true 
   ); */
 }    
-	    
+	    /*
 function raiseTempHigh() {
   rateOfChange *= 1.3;
   return rateOfChange;
@@ -334,4 +334,4 @@ setInterval(calculateBuildings, 1000);
 setInterval(checkBuildings, 1000);
 setInterval(checkUpgrades, 5000);
 setInterval(raiseTempature, 2000);
-setInterval(raiseTempHigh, 10000);
+setInterval(raiseTempHigh, 10000); */
