@@ -1,3 +1,5 @@
+window.alert('v0.19.9k');
+
 // Modal 
 /*var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
@@ -99,7 +101,6 @@ let imgRel = "";
 */
 
 // window.onload = function loading() { 
-  window.alert('v0.19.9k');
 	/*checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
