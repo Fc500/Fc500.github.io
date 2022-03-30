@@ -1,5 +1,5 @@
-// Modal
-var modal = document.getElementById("myModal");
+// Modal 
+/*var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
 span.onclick = function() {
@@ -96,7 +96,7 @@ let researcher = {
 
 let pos = 20;
 let imgRel = "";
-
+*/
 
 window.onload = function loading() { 
   window.alert('v0.19.9k');
@@ -107,7 +107,7 @@ window.onload = function loading() {
 	tempDisplay.innerHTML = globalTempature;
 	yearDisplay.innerHTML = currentYear;
 }
-      
+   /*   
 function setObjectTrue(building, price) {
   building.researched = true;
   window.alert(building.researched);
@@ -115,7 +115,7 @@ function setObjectTrue(building, price) {
 }
 
 // Building functions
-/*
+
 function numFormatter(num) {
   if(num > 999 && num < 1000000){
     return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
