@@ -98,7 +98,7 @@ let pos = 20;
 let imgRel = "";
 */
 
-window.onload = function loading() { 
+// window.onload = function loading() { 
   window.alert('v0.19.9k');
 	/*checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
@@ -106,7 +106,7 @@ window.onload = function loading() {
 	}
 	tempDisplay.innerHTML = globalTempature;
 	yearDisplay.innerHTML = currentYear; */
-}
+
    /*   
 function setObjectTrue(building, price) {
   building.researched = true;
