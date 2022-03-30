@@ -16,7 +16,7 @@ window.onclick = function(event) {
 let moneyDisplay = document.getElementById("moneyDisp");
 let greenDisplay = document.getElementById("greenDisp");
 let tempDisplay = document.getElementsById("tempDisp");
-let yearDisplay = document.getElementById("yearDisp");
+//let yearDisplay = document.getElementById("yearDisp");
 let mpsDisplay = document.getElementById("MPS");
 let upgrades = document.getElementsByClassName("upgrades");
 let buildings = document.getElementsByClassName("buildings");
@@ -35,16 +35,16 @@ let hydroBox = document.getElementById("hydroplant");
 let geoBox = document.getElementById("geothermal");
 
 // Bars
-var bar1 = new ldBar(".myBar", {
+var uygih = new ldBar(".myBar", {
    "stroke": '#f00',
-   "stroke-width": 20,
+   "stroke-width": 10,
    "preset": "fan",
    "value": 65
 });
 	
 var bar2 = new ldBar(".myBar2", {
    "stroke": '#f00',
-   "stroke-width": 20,
+   "stroke-width": 10,
    "preset": "fan",
    "value": 20
 });
@@ -99,7 +99,7 @@ let imgRel = "";
 
 
 window.onload = function loading() { 
-  window.alert('v0.19.9j');
+  window.alert('v0.19.9k');
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
@@ -206,7 +206,7 @@ function checkUpgrades() {
 
 function raiseTempature() {
   globalTempature += rateOfChange;
-	tempDisplay.innerHTML = globalTempature.toFixed(2);
+	//tempDisplay.innerHTML = globalTempature.toFixed(2);
 /*	bar2.set(
     globalTempature.toFixed(2),     /* target value
     false   /* enable animation. default is true 
