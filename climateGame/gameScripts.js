@@ -107,14 +107,14 @@ window.onload = function loading() {
 	}
 	tempDisplay.innerHTML = globalTempature;
 	yearDisplay.innerHTML = currentYear; 
-
-     
+}
+    
 function setObjectTrue(building, price) {
   building.researched = true;
   window.alert(building.researched);
   money -= price;
 }
-/*
+
 // Building functions
 
 function numFormatter(num) {
@@ -335,4 +335,4 @@ setInterval(calculateBuildings, 1000);
 setInterval(checkBuildings, 1000);
 setInterval(checkUpgrades, 5000);
 setInterval(raiseTempature, 2000);
-setInterval(raiseTempHigh, 10000); */
+setInterval(raiseTempHigh, 10000); 
