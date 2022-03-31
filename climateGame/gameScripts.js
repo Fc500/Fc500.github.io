@@ -102,9 +102,9 @@ let imgRel = "";
 
 window.onload = function loading() { 
 	//checkState();
-	for (let i = 0; i <= upgrades.length; i++) {
-	  upgrades[i].style.display = "none";
-	}
+	//for (let i = 0; i <= upgrades.length; i++) {
+	  //upgrades[i].style.display = "none";
+	//}
 	bar1.set(
     	  globalTempature,     // target value
     	  false);
