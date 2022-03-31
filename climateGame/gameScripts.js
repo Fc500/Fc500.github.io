@@ -108,7 +108,7 @@ window.onload = function loading() {
 	tempDisplay.innerHTML = globalTempature;
 	yearDisplay.innerHTML = currentYear; 
 }
-    
+/*    
 function setObjectTrue(building, price) {
   building.researched = true;
   window.alert(building.researched);
