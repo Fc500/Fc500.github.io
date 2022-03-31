@@ -100,19 +100,19 @@ let pos = 20;
 let imgRel = "";
 
 
-//window.onload = function loadingCode() { 
-	//checkState();
-	//for (let i = 0; i <= upgrades.length; i++) {
-	  //upgrades[i].style.display = "none";
-	//}
-	/*bar1.set(
+/* window.onload = function loadingCode() { 
+	checkState();
+	for (let i = 0; i <= upgrades.length; i++) {
+	  upgrades[i].style.display = "none";
+	}
+	bar1.set(
     	  globalTempature,     // target value
     	  false);
         bar2.set(
         currentYear,     // target value
-        false); */
-//}
-/*    
+        false); 
+}
+  
 function setObjectTrue(building, price) {
   building.researched = true;
   window.alert(building.researched);
