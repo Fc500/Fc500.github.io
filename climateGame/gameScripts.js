@@ -1,4 +1,4 @@
-window.alert("v0.19.9l");
+window.alert("v0.19.9m");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -98,9 +98,9 @@ let researcher = {
 
 let pos = 20;
 let imgRel = "";
-/*
 
-// window.onload = function loading() { 
+
+window.onload = function loading() { 
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
@@ -114,7 +114,7 @@ function setObjectTrue(building, price) {
   window.alert(building.researched);
   money -= price;
 }
-
+/*
 // Building functions
 
 function numFormatter(num) {
