@@ -105,12 +105,12 @@ window.onload = function loading() {
 	//for (let i = 0; i <= upgrades.length; i++) {
 	  //upgrades[i].style.display = "none";
 	//}
-	bar1.set(
+	/*bar1.set(
     	  globalTempature,     // target value
     	  false);
         bar2.set(
         currentYear,     // target value
-        false);
+        false); */
 }
 /*    
 function setObjectTrue(building, price) {
