@@ -340,3 +340,5 @@ setInterval(checkBuildings, 1000);
 setInterval(checkUpgrades, 5000);
 setInterval(raiseTempature, 2000);
 setInterval(raiseTempHigh, 10000); 
+*/
+window.alert("kill me");
