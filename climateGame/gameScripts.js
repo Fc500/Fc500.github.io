@@ -1,7 +1,7 @@
-window.alert("v0.19.9k");
+window.alert("v0.19.9l");
 
 // Modal 
-/*var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
 span.onclick = function() {
@@ -98,7 +98,7 @@ let researcher = {
 
 let pos = 20;
 let imgRel = "";
-
+/*
 
 // window.onload = function loading() { 
 	checkState();
