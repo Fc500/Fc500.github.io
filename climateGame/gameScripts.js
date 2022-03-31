@@ -37,7 +37,7 @@ let hydroBox = document.getElementById("hydroplant");
 let geoBox = document.getElementById("geothermal");
 
 // Bars
-var uygih = new ldBar(".myBar", {
+var bar1 = new ldBar(".myBar", {
    "stroke": '#f00',
    "stroke-width": 10,
    "preset": "fan",
@@ -101,12 +101,16 @@ let imgRel = "";
 
 
 window.onload = function loading() { 
-	checkState();
+	//checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
 	}
-	tempDisplay.innerHTML = globalTempature;
-	yearDisplay.innerHTML = currentYear; 
+	bar1.set(
+    	  globalTempature,     // target value
+    	  false);
+        bar2.set(
+        currentYear,     // target value
+        false);
 }
 /*    
 function setObjectTrue(building, price) {
