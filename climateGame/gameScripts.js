@@ -100,7 +100,7 @@ let pos = 20;
 let imgRel = "";
 
 
-window.onload = function loading() { 
+//window.onload = function loadingCode() { 
 	//checkState();
 	//for (let i = 0; i <= upgrades.length; i++) {
 	  //upgrades[i].style.display = "none";
@@ -111,7 +111,7 @@ window.onload = function loading() {
         bar2.set(
         currentYear,     // target value
         false); */
-}
+//}
 /*    
 function setObjectTrue(building, price) {
   building.researched = true;
