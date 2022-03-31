@@ -13,7 +13,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-
+/*
 // Stats
 let moneyDisplay = document.getElementById("moneyDisp");
 let greenDisplay = document.getElementById("greenDisp");
@@ -100,7 +100,7 @@ let pos = 20;
 let imgRel = "";
 
 
-/* window.onload = function loadingCode() { 
+window.onload = function loadingCode() { 
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
 	  upgrades[i].style.display = "none";
