@@ -1,4 +1,4 @@
-window.alert("v0.19.9n");
+window.alert("v0.19.9o");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -29,7 +29,7 @@ let buySellToggle = true;
 let greenPoints = 0;
 let rateOfChange = 0.013;
 let currentYear = 2021;      
-/*
+
 // Boxes
 let solarBox = document.getElementById("solarpanels");
 let windmillBox = document.getElementById("windmills");
@@ -99,7 +99,7 @@ let researcher = {
 let pos = 20;
 let imgRel = "";
 
-
+/*
 window.onload = function loadingCode() { 
 	checkState();
 	for (let i = 0; i <= upgrades.length; i++) {
