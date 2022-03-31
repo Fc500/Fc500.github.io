@@ -1,4 +1,4 @@
-window.alert("v0.19.9m");
+window.alert("v0.19.9n");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -13,7 +13,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-/*
+
 // Stats
 let moneyDisplay = document.getElementById("moneyDisp");
 let greenDisplay = document.getElementById("greenDisp");
@@ -29,7 +29,7 @@ let buySellToggle = true;
 let greenPoints = 0;
 let rateOfChange = 0.013;
 let currentYear = 2021;      
-
+/*
 // Boxes
 let solarBox = document.getElementById("solarpanels");
 let windmillBox = document.getElementById("windmills");
