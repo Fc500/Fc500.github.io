@@ -1,4 +1,4 @@
-window.alert("v0.19.9o");
+window.alert("v0.19.9p");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -112,13 +112,14 @@ window.onload = function loadingCode() {
         currentYear,     // target value
         false); 
 }
-  
+  */
+
 function setObjectTrue(building, price) {
   building.researched = true;
   window.alert(building.researched);
   money -= price;
 }
-
+/*
 // Building functions
 
 function numFormatter(num) {
