@@ -157,7 +157,7 @@ function calculateBuildings() {
   greenDisplay.innerHTML = greenPoints.toFixed(2);
 
 }
-
+/*
 function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
   if (money >= building[buildingPrice] && buySellToggle == true && building["researched"] == true) { // Main buying function
     building[buildingOwned]++;
