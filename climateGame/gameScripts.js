@@ -1,4 +1,4 @@
-window.alert("v0.19.9p");
+window.alert("v0.19.9q");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -119,7 +119,7 @@ function setObjectTrue(building, price) {
   window.alert(building.researched);
   money -= price;
 }
-/*
+
 // Building functions
 
 function numFormatter(num) {
