@@ -1,4 +1,4 @@
-window.alert("v0.19.9q");
+window.alert("v0.19.9r");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -296,7 +296,7 @@ function dispImage(destory, imageSelection) {
   }
 } 
 
-/*
+
 function checkState() {
   let slider = document.getElementById("slider");
   window.alert(slider.checked);
@@ -321,7 +321,7 @@ function flavorText(button) {
   }
   modal.style.display = "block";
 }
-
+/*
 function switchSections() {
   var x = document.getElementsByClassName("tabs");
   if (x[0].style.display === "none") {
