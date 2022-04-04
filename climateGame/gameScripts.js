@@ -209,7 +209,7 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
     upgrades[3].style.display = "block";
   }
 }    
-/*
+
 function raiseTempature() {
   globalTempature += rateOfChange;
 	//tempDisplay.innerHTML = globalTempature.toFixed(2);
@@ -223,7 +223,7 @@ function raiseTempHigh() {
   rateOfChange *= 1.3;
   return rateOfChange;
 }
-
+/*
 function checkBuildings() {
 if (solarpanels.price * 1.5 < money) {
     solarBox.style.display = "block"; 
