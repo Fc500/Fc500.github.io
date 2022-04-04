@@ -1,4 +1,4 @@
-window.alert("v0.19.9r");
+window.alert("v0.19.9s");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -184,7 +184,7 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
     window.alert("Not enough buildings to sell!"); 
   }
 }
-/*
+
  function checkUpgrades() {
 
   currentYear += 1;
@@ -209,7 +209,7 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
     upgrades[3].style.display = "block";
   }
 }    
-
+/*
 function raiseTempature() {
   globalTempature += rateOfChange;
 	//tempDisplay.innerHTML = globalTempature.toFixed(2);
