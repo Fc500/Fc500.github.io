@@ -1,4 +1,4 @@
-window.alert("v0.19.9s");
+window.alert("v0.19.9t");
 
 // Modal 
 var modal = document.getElementById("myModal");
