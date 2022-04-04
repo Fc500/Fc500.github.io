@@ -223,7 +223,7 @@ function raiseTempHigh() {
   rateOfChange *= 1.3;
   return rateOfChange;
 }
-/*
+
 function checkBuildings() {
 if (solarpanels.price * 1.5 < money) {
     solarBox.style.display = "block"; 
@@ -296,7 +296,7 @@ function dispImage(destory, imageSelection) {
   }
 } 
 
-
+/*
 function checkState() {
   let slider = document.getElementById("slider");
   window.alert(slider.checked);
