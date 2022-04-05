@@ -1,4 +1,4 @@
-window.alert("v0.19.9s");
+window.alert("v0.19.9t");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -18,7 +18,7 @@ window.onclick = function(event) {
 let moneyDisplay = document.getElementById("moneyDisp");
 let greenDisplay = document.getElementById("greenDisp");
 let tempDisplay = document.getElementsById("tempDisp");
-//let yearDisplay = document.getElementById("yearDisp");
+let yearDisplay = document.getElementById("yearDisp");
 let mpsDisplay = document.getElementById("MPS");
 let upgrades = document.getElementsByClassName("upgrades");
 let buildings = document.getElementsByClassName("buildings");
@@ -188,10 +188,7 @@ function buyBuildings(building, buildingOwned, buildingPrice, image, display) {
  function checkUpgrades() {
 
   currentYear += 1;
-  bar1.set(
-    currentYear,     //target value. 
-    false   // enable animation. default is true 
-  ); 
+  yearDisplay.innerHTML = currentYear;
   if (greenPoints > 2.5) {
     upgrades[0].classList.add("upgradeButton");
     upgrades[0].style.display = "block";
@@ -341,4 +338,3 @@ setInterval(checkBuildings, 1000);
 setInterval(checkUpgrades, 5000);
 setInterval(raiseTempature, 2000);
 setInterval(raiseTempHigh, 10000); 
-window.alert("kill me");
