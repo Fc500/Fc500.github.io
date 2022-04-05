@@ -2,11 +2,42 @@
 <html>
 
   <body>
-    <p>Researcher</p>
-    <button>Buy one</button> 
+    <div style="margin-left: 10px;">
+      <h4>Research Points</h4>
+      <p id="rpDisplay"><b>0</b></p>
+      <br>
+      <h4>Funds</h4>
+      <p id="moneyDisplay"><b>0</b></p>
+      <button>Buy one</button> 
+    </div>
     
   </body>
   <script type="text/javascript">
     window.alert("Hello!\n Welcome to Global Warming Simulator!");
+    window.alert("v3 - 0.01");
+    
+    //variables
+    let money = 10000;
+    let researchPoints = 0;
+    let mps = 1000;
+    
+    //DOM elements
+    let rpDisplay = document.getElementById("rpDisplay");
+    let moneyDisplay = document.getElementById("moneyDisplay");
+    
+    //objects
+    
+    let researcher = {
+      owned: 10,
+      cost: 10,
+      prodution: 1,
+    };
+    
+    //gain functions
+    function raiseItemsSecond() {
+      researchPoints += researcher.production * researcher.owned;
+      rpDisplay.innerHTML = researchPoints;
+      moneyDisplay.innerHTML = money;    
+    }
   </script>
 </html>
