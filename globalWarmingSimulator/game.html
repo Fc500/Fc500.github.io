@@ -14,7 +14,7 @@
   </body>
   <script type="text/javascript">
     window.alert("Hello!\n Welcome to Global Warming Simulator!");
-    window.alert("v3 - 0.01");
+    window.alert("v3 - 0.02");
     
     //variables
     let money = 10000;
@@ -39,5 +39,7 @@
       rpDisplay.innerHTML = researchPoints;
       moneyDisplay.innerHTML = money;    
     }
+    
+    let updateGameSecond = setInterval(raiseItemsSecond, 1000);
   </script>
 </html>
