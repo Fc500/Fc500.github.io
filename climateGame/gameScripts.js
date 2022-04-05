@@ -1,4 +1,4 @@
-window.alert("v0.19.9r");
+window.alert("v0.19.9s");
 
 // Modal 
 var modal = document.getElementById("myModal");
@@ -321,7 +321,7 @@ function flavorText(button) {
   }
   modal.style.display = "block";
 }
-/*
+
 function switchSections() {
   var x = document.getElementsByClassName("tabs");
   if (x[0].style.display === "none") {
@@ -341,5 +341,4 @@ setInterval(checkBuildings, 1000);
 setInterval(checkUpgrades, 5000);
 setInterval(raiseTempature, 2000);
 setInterval(raiseTempHigh, 10000); 
-*/
 window.alert("kill me");
