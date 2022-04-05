@@ -14,7 +14,7 @@
   </body>
   <script type="text/javascript">
     window.alert("Hello!\n Welcome to Global Warming Simulator!");
-    window.alert("v3 - 0.02");
+    window.alert("v3 - 0.03");
     
     //variables
     let money = 10000;
@@ -30,12 +30,12 @@
     let researcher = {
       owned: 10,
       cost: 10,
-      prodution: 1,
+      prodution: 5,
     };
     
     //gain functions
     function raiseItemsSecond() {
-      researchPoints += researcher.production * researcher.owned;
+      researchPoints = researcher.production * researcher.owned;
       rpDisplay.innerHTML = researchPoints;
       moneyDisplay.innerHTML = money;    
     }
