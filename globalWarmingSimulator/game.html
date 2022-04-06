@@ -18,7 +18,7 @@
     
     //variables
     let money = 10000;
-    let researchPoints = 1;
+    let researchPoints = 0;
     let mps = 1000;
     
     //DOM elements
@@ -35,7 +35,6 @@
     
     //gain functions
     function raiseItemsSecond() {
-      window.alert(researcher.output * researcher.owned);
       researchPoints += researcher.output * researcher.owned;
       rpDisplay.innerHTML = researchPoints;
       moneyDisplay.innerHTML = money;    
