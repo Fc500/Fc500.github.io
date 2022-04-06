@@ -93,12 +93,12 @@ body {
   border-radius: 5px; 
   background-color: #dee3e0; 
   font-weight: bold; 
-  font-size: 30px;
-  height: 45px; 
+  font-size: 25px;
+  height: 35px; 
   position: relative; 
   bottom: 5px; 
   padding-left: 3px; 
-  color: white;
+  color: black;
 }
   </style>
 </head>
@@ -125,14 +125,14 @@ body {
     </div>
     <div class="modal-body">
       <p id="modal-text">Welcome to Global Warming Simulator!</p>
-      <button id="next-button" class="smallButton">NEXT</button>
+      <button id="next-button" class="smallButton" onclick="changeText()">NEXT</button>
     </div>
   </div>
 
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.11");
+    window.alert("v3 - 0.12");
     
     
     /* MODAL */
@@ -165,6 +165,8 @@ body {
     let money = 10000;
     let researchPoints = 0;
     let mps = 1000;
+    let sectionOfText = 0;
+    let modalText = document.getElementById("modal-text");
     
     //DOM elements
     let rpDisplay = document.getElementById("rpDisplay");
@@ -184,6 +186,10 @@ body {
       rpDisplay.innerHTML = researchPoints;
       moneyDisplay.innerHTML = money;    
     }
+    
+    function changeText() {
+      modalText.innerHTML = "You have been put in charge of a new company!<br>Your goal is to help fix the environment.";
+    } 
     
     let updateGameSecond = setInterval(raiseItemsSecond, 1000);
   </script>
