@@ -154,6 +154,10 @@ body {
     span.onclick = function() {
       modal.style.display = "none";
     }
+    
+    function closeModal() {
+      modal.style.display = "none";
+    }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
@@ -201,10 +205,10 @@ body {
           break;
         case 2:
           modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
-          document.getElementById("next-button").onclick = "modal.style.display = 'none'";
+          document.getElementById("next-button").onclick = "closeModal()";
+          let updateGameSecond = setInterval(raiseItemsSecond, 1000);
       }
     } 
     
-    let updateGameSecond = setInterval(raiseItemsSecond, 1000);
   </script>
 </html>
