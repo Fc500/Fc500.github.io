@@ -35,7 +35,8 @@
     
     //gain functions
     function raiseItemsSecond() {
-      researchPoints = researcher.production * researcher.owned;
+      researchPoints += researcher.production * researcher.owned;
+      window.alert(researchPoints);
       rpDisplay.innerHTML = researchPoints;
       moneyDisplay.innerHTML = money;    
     }
