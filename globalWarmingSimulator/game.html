@@ -97,7 +97,7 @@ body {
   height: 35px; 
   position: relative; 
   bottom: 5px; 
-  padding-left: 3px; 
+  margin-left: 3px; 
   color: black;
   text-align: center;
 }
@@ -133,7 +133,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.13");
+    window.alert("v3 - 0.14");
     
     
     /* MODAL */
@@ -191,7 +191,7 @@ body {
     function changeText() {
       switch (sectionOfText) {
         case 0:
-          modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input required id='name' type='text'>";
+          modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text' required >";
           sectionOfText++;
           break;
         case 1:
