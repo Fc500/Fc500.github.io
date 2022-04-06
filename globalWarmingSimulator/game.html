@@ -133,7 +133,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.12");
+    window.alert("v3 - 0.13");
     
     
     /* MODAL */
@@ -189,7 +189,16 @@ body {
     }
     
     function changeText() {
-      modalText.innerHTML = "You have been put in charge of a new company!<br>Your goal is to help fix the environment.";
+      switch (sectionOfText) {
+        case 0:
+          modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text'>";
+          sectionOfText++;
+          break;
+        case 1:
+          let playerName = document.getElementById("name").value;
+          modalText.innerHTML = "Hello " + playerName + "! Your goal at this company is...";
+          break;
+      }
     } 
     
     let updateGameSecond = setInterval(raiseItemsSecond, 1000);
