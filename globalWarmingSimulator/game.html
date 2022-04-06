@@ -133,7 +133,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.15");
+    window.alert("v3 - 0.16");
     
     
     /* MODAL */
@@ -205,7 +205,9 @@ body {
           break;
         case 2:
           modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
-          document.getElementById("next-button").onclick = "closeModal()";
+          let nextButton = document.getElementById("next-button");
+          nextButton.innerHTML = "CLOSE";
+          nextButton.onclick = "closeModal()";
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
       }
     } 
