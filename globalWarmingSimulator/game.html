@@ -101,16 +101,30 @@ body {
   color: black;
   text-align: center;
 }
+    
+    #stats {
+      margin-left:auto;
+      margin-right:auto;
+    }
+    
+    .statBox {
+      float: left;
+    }
   </style>
 </head>
   <body>
-    <div style="margin-left: 10px;">
-      <h4>Research Points</h4>
-      <p id="rpDisplay"><b>0</b></p>
-      <br>
-      <h4>Funds</h4>
-      <p id="moneyDisplay"><b>0</b></p>
-      <button>Buy one</button> 
+    <div id="stats">
+      <div class="statBox">
+        <h4>Research Points</h4>
+        <p id="rpDisplay"><b>0</b></p>
+      </div>
+      <div class="statBox">
+        <br>
+        <h4>Funds</h4>
+        <p id="moneyDisplay"><b>0</b></p>
+      </div>
+        <button>Buy one</button> 
+      </div>
     </div>
   
     
