@@ -147,7 +147,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.16d");
+    window.alert("v3 - 0.16e");
     
     
     /* MODAL */
@@ -209,7 +209,7 @@ body {
     function changeText() {
       switch (sectionOfText) {
         case 0:
-          modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text' value='Climate INC' required >";
+          modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text' value='Climate' name='playerName'required ><b><label for='playerName'> + INC</label></b> ";
           sectionOfText++;
           break;
         case 1:
@@ -221,7 +221,7 @@ body {
           modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
           let nextButton = document.getElementById("nextButton");
           nextButton.innerHTML = "CLOSE";
-          nextButton.onclick = closeModal();
+          //nextButton.onclick = closeModal();
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
       }
     } 
