@@ -211,26 +211,18 @@ body {
         case 0:
           modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text' value='Climate' name='playerName'required ><b><label for='playerName'> + INC</label></b> ";
           sectionOfText++;
-          window.alert(sectionOfText);
           break;
         case 1:
           let playerName = document.getElementById("name").value;
           modalText.innerHTML = "Hello <b>" + playerName + " INC</b>! You have been tasked by the government to help fix the issue of climate change!";
           sectionOfText++;
-          window.alert(sectionOfText);
           break;
         case 2:
           modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
           let nextButton = document.getElementById("nextButton");
           nextButton.innerHTML = "CLOSE";
-          window.alert(sectionOfText);
-          sectionOfText++;
-          break;
-        case 4:
-          window.alert(sectionOfText);
           nextButton.onclick = closeModal();
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
-          break;
       }
     } 
     
