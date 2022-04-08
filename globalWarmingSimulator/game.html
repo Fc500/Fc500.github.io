@@ -219,12 +219,13 @@ body {
           break;
         case 2:
           modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
+          let nextButton = document.getElementById("nextButton");
+          nextButton.innerHTML = "CLOSE";
           sectionOfText++;
           break;
         case 3:
           let nextButton = document.getElementById("nextButton");
           modalText.innerHTML = "Save the world before time runs out!";
-          nextButton.innerHTML = "CLOSE";
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
           nextButton.onclick = closeModal();
           
