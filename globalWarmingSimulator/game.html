@@ -221,8 +221,12 @@ body {
           modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
           let nextButton = document.getElementById("nextButton");
           nextButton.innerHTML = "CLOSE";
-          //nextButton.onclick = closeModal();
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
+          sectionOfText++;
+          break;
+        case 3:
+          modalText.innerHTML = "Save the world before time runs out!"
+          nextButton.onclick = closeModal();
           
       }
     } 
