@@ -214,14 +214,16 @@ body {
           break;
         case 1:
           let playerName = document.getElementById("name").value;
-          modalText.innerHTML = "Hello <b>" + playerName + "</b>! You have been tasked by the government to help fix the issue of climate change!";
+          modalText.innerHTML = "Hello <b>" + playerName + " INC</b>! You have been tasked by the government to help fix the issue of climate change!";
           sectionOfText++;
           break;
         case 2:
           modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
           let nextButton = document.getElementById("nextButton");
           nextButton.innerHTML = "CLOSE";
-          //nextButton.onclick = closeModal();
+          sectionOfText++;
+        case 3:
+          nextButton.onclick = closeModal();
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
       }
     } 
