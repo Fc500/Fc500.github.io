@@ -124,7 +124,8 @@ body {
     <br>
     <div style="float: none; position: absolute; top: 30%; background-color: #dee3e0; margin: 10px; border-radius: 15px; padding: 10px;">
 <p>Researchers<br>
-  <span id="researcher">10</span>      
+  <b><span id="researcherOwned">10</span></b><br>
+  $<span id="researcherPrice">1000</span>
 </p>
         <button onclick="buyThing(researcher)">Buy one</button> 
     </div>
@@ -149,7 +150,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.16n");
+    window.alert("v3 - 0.16o");
     
     
     /* MODAL */
@@ -199,17 +200,20 @@ body {
       owned: 10,
       cost: 1000,
       output: 0.1,
-      display: document.getElementById("researcher"),
+      amount: document.getElementById("researcherOwned"),
+      figure: doucment.getElementById("researcherPrice"),
     };
     
     // buy functions
     
     function buyThing(thing) {
       if (thing.cost < money) {
+        thing.cost *= 0.;
         money -= thing.cost;
         thing.owned += 1;
         moneyDisplay.innerHTML = money;
-        thing.display.innerHTML = thing.owned;
+        thing.amount.innerHTML = thing.owned;
+        thing.figure.innerHTML = thing.cost;
       };
     } 
     //gain functions
