@@ -147,7 +147,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.16l");
+    window.alert("v3 - 0.16m");
     
     
     /* MODAL */
@@ -225,7 +225,7 @@ body {
           break;
         case 3:
           modalText.innerHTML = "Save the world before time runs out!";
-          nextButton.onclick = closeModal();   
+          nextButton.onclick = modal.style.display = 'none';   
           window.alert("Click the X to close the modal!");
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
       }
