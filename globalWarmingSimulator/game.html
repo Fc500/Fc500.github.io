@@ -147,7 +147,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.16k");
+    window.alert("v3 - 0.16l");
     
     
     /* MODAL */
@@ -207,6 +207,8 @@ body {
     }
     
     function changeText() {
+      let nextButton = document.getElementById("nextButton");
+      window.alert(sectionOfText);
       switch (sectionOfText) {
         case 0:
           modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text' value='Climate' name='playerName'required ><b><label for='playerName'> + INC</label></b> ";
@@ -219,15 +221,15 @@ body {
           break;
         case 2:
           modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
-          let nextButton = document.getElementById("nextButton");
           sectionOfText++;
           break;
         case 3:
           modalText.innerHTML = "Save the world before time runs out!";
-          let updateGameSecond = setInterval(raiseItemsSecond, 1000);
           nextButton.onclick = closeModal();   
-          window.alert("Click the X to close the modal!")
+          window.alert("Click the X to close the modal!");
+          let updateGameSecond = setInterval(raiseItemsSecond, 1000);
       }
+      window.alert(sectionOfText);
     } 
     
   </script>
