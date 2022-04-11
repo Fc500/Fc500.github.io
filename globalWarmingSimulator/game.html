@@ -199,19 +199,19 @@ body {
       owned: 10,
       cost: 10,
       output: 5,
-      display: document.getElementById("researcher");
+      display: document.getElementById("researcher"),
     };
     
     // buy functions
     
-    /*function buyThing(thing) {
+    function buyThing(thing) {
       if (thing.cost < money) {
         money -= thing.cost;
         thing.owned += 1;
         moneyDisplay.innerHTML = money;
         thing.display = thing.owned;
       };
-    } */
+    } 
     //gain functions
     function raiseItemsSecond() {
       researchPoints += researcher.output * researcher.owned;
