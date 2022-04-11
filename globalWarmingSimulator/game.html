@@ -123,8 +123,10 @@ body {
     </div>
     <br>
     <div style="float: none; position: absolute; top: 30%; background-color: #dee3e0; margin: 10px; border-radius: 15px; padding: 10px;">
-<p>Researchers: none</p>
-        <button>Buy one</button> 
+<p>Researchers<br>
+  <span id="researcher">0</span>      
+</p>
+        <button onclick="buyThing(researcher)">Buy one</button> 
     </div>
   
     
@@ -147,7 +149,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.16m");
+    window.alert("v3 - 0.16o");
     
     
     /* MODAL */
@@ -197,8 +199,19 @@ body {
       owned: 10,
       cost: 10,
       output: 5,
+      display: document.getElementById("researcher");
     };
     
+    // buy functions
+    
+    function buyThing(thing) {
+      if (thing.cost <= money) {
+        money -= thing.cost;
+        thing.owned += 1;
+        moneyDisplay.innerHTML = money;
+        thing.display = thing.owned;
+      }
+    }
     //gain functions
     function raiseItemsSecond() {
       researchPoints += researcher.output * researcher.owned;
@@ -225,8 +238,9 @@ body {
           break;
         case 3:
           modalText.innerHTML = "Save the world before time runs out!";
-          nextButton.onclick = modal.style.display = 'none';   
-          window.alert("Click the X to close the modal!");
+          nextButton.addEventListener("click", function() {
+            modal.style.display = 'none';
+          });
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
       }
       window.alert(sectionOfText);
