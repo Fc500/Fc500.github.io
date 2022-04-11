@@ -149,7 +149,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.16o");
+    window.alert("v3 - 0.16m");
     
     
     /* MODAL */
@@ -209,7 +209,7 @@ body {
         money -= thing.cost;
         thing.owned += 1;
         moneyDisplay.innerHTML = money;
-        thing.display = thing.owned;
+        thing.display.innerHTML = thing.owned;
       };
     } 
     //gain functions
@@ -221,7 +221,6 @@ body {
     
     function changeText() {
       let nextButton = document.getElementById("nextButton");
-      window.alert(sectionOfText);
       switch (sectionOfText) {
         case 0:
           modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text' value='Climate' name='playerName'required ><b><label for='playerName'> + INC</label></b> ";
@@ -243,7 +242,6 @@ body {
           });
           let updateGameSecond = setInterval(raiseItemsSecond, 1000);
       }
-      window.alert(sectionOfText);
     } 
     
   </script>
