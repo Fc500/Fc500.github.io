@@ -204,14 +204,14 @@ body {
     
     // buy functions
     
-    function buyThing(thing) {
-      if (thing.cost <= money) {
+    /*function buyThing(thing) {
+      if (thing.cost < money) {
         money -= thing.cost;
         thing.owned += 1;
         moneyDisplay.innerHTML = money;
         thing.display = thing.owned;
-      }
-    }
+      };
+    } */
     //gain functions
     function raiseItemsSecond() {
       researchPoints += researcher.output * researcher.owned;
