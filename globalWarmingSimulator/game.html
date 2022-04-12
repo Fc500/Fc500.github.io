@@ -211,16 +211,16 @@ body {
         money -= thing.cost;
         thing.owned += 1;
         moneyDisplay.innerHTML = money;
-        thing.cost *= 0.1;
-        thing.amount.innerHTML = thing.owned;
-        thing.figure.innerHTML = thing.cost;
+        thing.cost /= 0.1;
+        thing.amount.innerHTML = thing.owned.toFixed(2);
+        thing.figure.innerHTML = thing.cost.toFixed(2);
       };
     } 
     //gain functions
     function raiseItemsSecond() {
       researchPoints += researcher.output * researcher.owned;
       rpDisplay.innerHTML = researchPoints.toFixed(2);
-      moneyDisplay.innerHTML = money;    
+      moneyDisplay.innerHTML = money.toFixed(2);    
     }
     
     function changeText() {
