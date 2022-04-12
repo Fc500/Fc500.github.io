@@ -150,7 +150,7 @@ body {
 </div>
   </body>
   <script type="text/javascript">
-    window.alert("v3 - 0.16p");
+    window.alert("v3 - 0.16q");
     
     
     /* MODAL */
@@ -201,25 +201,25 @@ body {
       cost: 1000,
       output: 0.1,
       amount: document.getElementById("researcherOwned"),
-      figure: doucment.getElementById("researcherPrice"),
+      figure: document.getElementById("researcherPrice"),
     };
     
     // buy functions
     
     function buyThing(thing) {
       if (thing.cost < money) {
-        thing.cost *= 0.;
         money -= thing.cost;
         thing.owned += 1;
         moneyDisplay.innerHTML = money;
+        thing.cost *= 0.1;
         thing.amount.innerHTML = thing.owned;
         thing.figure.innerHTML = thing.cost;
       };
     } 
     //gain functions
     function raiseItemsSecond() {
-      //researchPoints += researcher.output * researcher.owned;
-      //rpDisplay.innerHTML = researchPoints.toFixed(2);
+      researchPoints += researcher.output * researcher.owned;
+      rpDisplay.innerHTML = researchPoints.toFixed(2);
       moneyDisplay.innerHTML = money;    
     }
     
