@@ -10,7 +10,7 @@
     <div style="margin: auto; text-align: center;">
       <div class="statBox">
         <h4>Research Points</h4>
-        <p id="rpDisplay"><b>0</b></p>
+        <p id="rpDisplay">0</p>
       </div>
       <div class="statBox">
         <h4>Funds</h4>
@@ -42,6 +42,8 @@
     </div>
     <br>
 
+
+
     <!-- FINDINGS -->
     <div class="section">
       <div class="buildingBox findings" id="windmillUpgrade" style="display: none;">
@@ -62,7 +64,7 @@
         <p>[RESEARCH] Hydroelectric Power<br>
           $12.5K | 50 RP
         </p>
-        <button onclick="buyDiscovery(findings.hydros)" class="findingsButton">BUY</button> 
+        <button onclick="buyDiscovery(findings.hydro)" class="findingsButton">BUY</button> 
       </div>
     </div>
 
@@ -85,9 +87,9 @@
       </div>
 
       <div class="buildingBox" id="hydros" style="display: none;">
-        <p>Solar Farms<br>
+        <p>Hydroelectric Dams<br>
           <b><span id="hydroOwned">0</span></b><br>
-            $<span id="hydroPrice">5k</span>
+            $<span id="hydroPrice">25k</span>
         </p>
         <button onclick="buyThing(hydroPlant)">BUY</button> 
       </div>

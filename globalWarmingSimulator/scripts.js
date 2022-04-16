@@ -1,4 +1,4 @@
-window.alert("v3 - 0.20");
+window.alert("v3 - 0.20a");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
     
     
@@ -37,7 +37,7 @@ let money = 100000;
 let temp = 60;
 let year = 2022;
 let researchPoints = 50;
-let mps = 1000;
+let mps = 0;
 let sectionOfText = 0;
 let modalText = document.getElementById("modal-text");
 
@@ -126,7 +126,9 @@ function buyThing(thing) {
     thing.cost *= 1.2;
     thing.amount.innerHTML = numFormatter(thing.owned);
     thing.figure.innerHTML = numFormatter(thing.cost);
-  };
+  } else if (thing.cost > money) {
+    window.alert("Not enough money!");
+  }
 } 
 
 
@@ -138,8 +140,12 @@ function buyDiscovery(thing) {
       moneyDisplay.innerHTML = money;
       thing.bought = true;
       thing.button.innerHTML = "BOUGHT";
-      thing.button.onclick = "";
-    };
+      thing.button.onclick = ""; 
+    } else if (thing.cost > money) {
+      window.alert("Not enough money!");
+    } else if (thing.research > researchPoints) {
+      window.alert("Not enough research has taken place!");
+    }
   } 
 // Checking function
 
@@ -160,10 +166,10 @@ function checkForUpgrades() {
 
   // Updating discoveries
     if (researchPoints >= 5) {
-          document.getElementById('windmillUpgrade').style.display = 'block';
+      document.getElementById('windmillUpgrade').style.display = 'block';
     }  
     if (researchPoints >= 25) {
-          document.getElementById('solarUpgrade').style.display = 'block';
+      document.getElementById('solarUpgrade').style.display = 'block';
     }
 
     if (researchPoints >= 50) {
@@ -171,17 +177,35 @@ function checkForUpgrades() {
 }
 
 }
+
 //gain functions
+
+function raiseMoney() { 
+  if (windmill.owned > 0) {
+    mps += windmill.owned * windmill.output;
+  }
+
+  if (solarFarm.owned > 0) {
+    mps += solarFarm.owned * solarFarm.output;
+  }
+
+  if (hydroPlant.owned > 0) {
+    mps += hydroPlant.owned * hydroPlant.output;
+  }
+
+  money += mps;
+
+}
 function raiseItemsSecond() {
   researchPoints += researcher.output * researcher.owned;
   year += 1;
   yearDisplay.innerHTML = year;
   temp += 0.067;
   tempDisplay.innerHTML = temp.toFixed(2);
-  money += windmill.output * windmill.owned;
+  raiseMoney();
+  checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
-  checkForUpgrades();
 }
 
 function changeText() {
