@@ -242,3 +242,11 @@
   animation: text_in_anim 1.4s, text_out_anim 0.8s;
   animation-delay: 0s, 4.4s;
 }
+
+
+.material-icons {
+  top: 5px;
+  font-size: 50px;
+  text-align: center;
+  margin: auto;
+}
