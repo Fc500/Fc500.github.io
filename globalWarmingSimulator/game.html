@@ -2,7 +2,10 @@
 <html>
 <head>
   <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="achievements.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <title>Simulator</title>
 
 </head>
@@ -46,6 +49,19 @@
 
     <!-- FINDINGS -->
     <div class="section">
+
+      <div class="ach">
+        <div class="icon"><i class="fa fa-flag" aria-hidden="true"></i></div>
+        <div class="text_wrap">
+          <p class="title">Button Clicker!</p>
+          <span class="detail">you clicked a button</span>
+        </div>
+      </div>
+  
+
+
+
+
       <div class="buildingBox findings" id="windmillUpgrade" style="display: none;">
         <p>[RESEARCH] Windmills<br>
           $100 | 5 RP
@@ -94,8 +110,11 @@
         <button onclick="buyThing(hydroPlant)">BUY</button> 
       </div>
     </div>
-  
-    
+
+
+
+
+
 
     <!-- The Modal -->
     <div id="myModal" class="modal">

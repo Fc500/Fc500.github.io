@@ -1,6 +1,20 @@
-window.alert("v3 - 0.20a");
+window.alert("v3 - 0.22");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
-    
+// import { achievementUnlocked } from "./achievements";
+  
+// CODE COURTESY OF 
+
+function achievementUnlocked(text){
+  var hasClass = $('.ach').hasClass('achieved');
+  if (hasClass) return;
+  $('.title').html("Achievement unlocked!");
+  $('.detail').html(text);
+  $('.ach').addClass("achieved");
+  setTimeout(function(){
+    $('.ach').removeClass("achieved");
+  },5000)
+}
+
     
 /* MODAL */
 
@@ -88,6 +102,7 @@ var findings = {
         research: 5,
         bought: false,
         button: document.getElementsByClassName("findingsButton"[0]),
+        ach: "Wind technology",
     },
     solar: {
       cost: 1500,
@@ -141,6 +156,7 @@ function buyDiscovery(thing) {
       thing.bought = true;
       thing.button.innerHTML = "BOUGHT";
       thing.button.onclick = ""; 
+      achievementUnlocked(thing.ach);
     } else if (thing.cost > money) {
       window.alert("Not enough money!");
     } else if (thing.research > researchPoints) {
