@@ -1,114 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat Alternates' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+  <link href="styles.css" rel="stylesheet">
   <title>Simulator</title>
-  <style>
-    /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s
-}
-/* Modal Content */
-.modal-content {
-  position: fixed;
-  transform: translate(12%, 0);
-  top: 100px;
-  background-color: #fefefe;
-  width: 80%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s
-}
 
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: black;
-  color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-    
-/* Add Animation */
-@-webkit-keyframes slideIn {
-  from {top: -20%; opacity: 0} 
-  to {top: 30%; opacity: 1}
-}
-
-@keyframes slideIn {
-  from {top: -20%; opacity: 0}
-  to {top: 30%; opacity: 1}
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-    
-body {
-    font-family: 'Montserrat Alternates';font-size: 22px;
-}
-    
-.smallButton {
-  border-radius: 5px; 
-  background-color: #dee3e0; 
-  font-weight: bold; 
-  font-size: 15px;
-  height: 35px; 
-  position: relative; 
-  bottom: 5px; 
-  margin-left: 3px; 
-  color: black;
-  text-align: center;
-}
-    
-    .statBox {
-      float: left;
-      text-align: center;
-      padding: 15px;
-      width: 40%;
-    }
-  </style>
 </head>
   <body>
     <div style="margin: auto; text-align: center;">
@@ -118,132 +14,103 @@ body {
       </div>
       <div class="statBox">
         <h4>Funds</h4>
-        <p id="moneyDisplay"><b>0</b></p>
+        <p>$<span id="moneyDisplay">0</span></p>
+      </div>
+      <div class="statBox">
+        <h4>Year</h4>
+        <p id="yearDisplay"><b>2022</b></p>
+      </div>
+      <div class="statBox">
+        <h4>Temperature</h4>
+        <p><span id="tempDisplay"><b>60</b></span>&#176;</p>
+      </div>
+    </div>
+
+
+
+    <!-- RESEARCH OBJECTS -->
+
+    <br>
+    <div class="section">
+      <div class="researchBox" style="display: none;">
+        <p>Researchers<br>
+          <b><span id="researcherOwned">2</span></b><br>
+            $<span id="researcherPrice">1k</span>
+        </p>
+        <button onclick="buyThing(researcher)">BUY</button> 
       </div>
     </div>
     <br>
-    <div style="float: none; position: absolute; top: 30%; background-color: #dee3e0; margin: 10px; border-radius: 15px; padding: 10px;">
-<p>Researchers<br>
-  <b><span id="researcherOwned">10</span></b><br>
-  $<span id="researcherPrice">1000</span>
-</p>
-        <button onclick="buyThing(researcher)">Buy one</button> 
+
+    <!-- FINDINGS -->
+    <div class="section">
+      <div class="buildingBox findings" id="windmillUpgrade" style="display: none;">
+        <p>[RESEARCH] Windmills<br>
+          $100 | 5 RP
+        </p>
+        <button onclick="buyDiscovery(findings.windmill)" class="findingsButton">BUY</button> 
+      </div>
+
+      <div class="buildingBox findings" id="solarUpgrade" style="display: none;">
+        <p>[RESEARCH] Solar Farms<br>
+          $1.5K | 25 RP
+        </p>
+        <button onclick="buyDiscovery(findings.solar)" class="findingsButton">BUY</button> 
+      </div>
+
+      <div class="buildingBox findings" id="hydroUpgrade" style="display: none;">
+        <p>[RESEARCH] Hydroelectric Power<br>
+          $12.5K | 50 RP
+        </p>
+        <button onclick="buyDiscovery(findings.hydros)" class="findingsButton">BUY</button> 
+      </div>
+    </div>
+
+    <!-- BUILDINGS -->
+    <div class="section">
+      <div class="buildingBox" id="windmills" style="display: none;">
+        <p>Windmills<br>
+          <b><span id="windmillOwned">0</span></b><br>
+            $<span id="windmillPrice">1.5k</span>
+        </p>
+        <button onclick="buyThing(windmill)">BUY</button> 
+      </div>
+
+      <div class="buildingBox" id="solars" style="display: none;">
+        <p>Solar Farms<br>
+          <b><span id="solarOwned">0</span></b><br>
+            $<span id="solarPrice">5k</span>
+        </p>
+        <button onclick="buyThing(solarFarm)">BUY</button> 
+      </div>
+
+      <div class="buildingBox" id="hydros" style="display: none;">
+        <p>Solar Farms<br>
+          <b><span id="hydroOwned">0</span></b><br>
+            $<span id="hydroPrice">5k</span>
+        </p>
+        <button onclick="buyThing(hydroPlant)">BUY</button> 
+      </div>
     </div>
   
     
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Welcome to Global Warming Simulator!</h2>
-    </div>
-    <div class="modal-body">
-      <p id="modal-text">Welcome to Global Warming Simulator!</p>
-      <button id="nextButton" class="smallButton" onclick="changeText()">NEXT</button>
-    </div>
-  </div>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Welcome to Global Warming Simulator!</h2>
+        </div>
+        <div class="modal-body">
+          <p id="modal-text">Welcome to Global Warming Simulator!</p>
+          <button id="nextButton" class="smallButton" onclick="changeText()">NEXT</button>
+        </div>
+      </div>
 
-</div>
+    </div>
   </body>
-  <script type="text/javascript">
-    window.alert("v3 - 0.16q");
-    
-    
-    /* MODAL */
-    
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal 
-    window.onload = function() {
-      modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    
-    function closeModal() {
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-    
-    //variables
-    let money = 10000;
-    let researchPoints = 0;
-    let mps = 1000;
-    let sectionOfText = 0;
-    let modalText = document.getElementById("modal-text");
-    
-    //DOM elements
-    let rpDisplay = document.getElementById("rpDisplay");
-    let moneyDisplay = document.getElementById("moneyDisplay");
-    
-    //objects
-    
-    let researcher = {
-      owned: 10,
-      cost: 1000,
-      output: 0.1,
-      amount: document.getElementById("researcherOwned"),
-      figure: document.getElementById("researcherPrice"),
-    };
-    
-    // buy functions
-    
-    function buyThing(thing) {
-      if (thing.cost < money) {
-        money -= thing.cost;
-        thing.owned += 1;
-        moneyDisplay.innerHTML = money;
-        thing.cost /= 0.1;
-        thing.amount.innerHTML = thing.owned.toFixed(2);
-        thing.figure.innerHTML = thing.cost.toFixed(2);
-      };
-    } 
-    //gain functions
-    function raiseItemsSecond() {
-      researchPoints += researcher.output * researcher.owned;
-      rpDisplay.innerHTML = researchPoints.toFixed(2);
-      moneyDisplay.innerHTML = money.toFixed(2);    
-    }
-    
-    function changeText() {
-      let nextButton = document.getElementById("nextButton");
-      switch (sectionOfText) {
-        case 0:
-          modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text' value='Climate' name='playerName'required ><b><label for='playerName'> + INC</label></b> ";
-          sectionOfText++;
-          break;
-        case 1:
-          let playerName = document.getElementById("name").value;
-          modalText.innerHTML = "Hello <b>" + playerName + " INC</b>! You have been tasked by the government to help fix the issue of climate change!";
-          sectionOfText++;
-          break;
-        case 2:
-          modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
-          nextButton.addEventListener("click", function() {
-            modal.style.display = 'none';
-          });
-          nextButton.innerHTML = "CLOSE";
-          let updateGameSecond = setInterval(raiseItemsSecond, 1000);
-      }
-    } 
-    
-  </script>
+  <script type="text/javascript" src="scripts.js"></script>
 </html>
