@@ -1,4 +1,4 @@
-window.alert("v0.39");
+window.alert("v0.40");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -45,7 +45,7 @@ function closeModal() {
 
 //variables
 let money = 100000;
-let temp = 60;
+let temp = 90;
 let tempIncrease = 0.067;
 let year = 2010;
 let researchPoints = 50;
@@ -415,6 +415,7 @@ function checkForWin() {
       achievementUnlocked(achievementsList.temp3);
     }
   } else if (temp > 95) {
+    window.alert("Test1");
     clearInterval(updateGameSecond);
     clearInterval(monthlyUpdates);
     clearInterval(pentyearlyUpdates);
