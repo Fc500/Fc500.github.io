@@ -73,9 +73,9 @@ body {
 }
 
 .achievements {
-  width: 20%;
+  width: 30%;
   height: 200px;
-  margin: 2%;
+  margin: 1%;
   padding: 2%;
   border-radius: 25px;
   background-color: var(--blue-pigment);
