@@ -1,4 +1,4 @@
-window.alert("v0.36");
+window.alert("v0.37");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -58,7 +58,8 @@ let solarps = 0;
 let hydrops = 0;
 let biomassps = 0;
 let achievementsGot = 0;
-let modalText = document.getElementById("modal-text");
+var modalHeader = document.getElementById("modal-title");
+var modalText = document.getElementById("modal-text");
 var root = document.querySelector(':root');
 
 //DOM elements
@@ -413,6 +414,9 @@ function checkForWin() {
     clearInterval(pentyearlyUpdates);
     clearInterval(checkForEndGame);
     clearInterval(updatePlayerValues);
+    modalHeader.innerHTML = "";
+    modalText.innerHTML = "Despite humanity's best efforts, " + playerName + " INC has failed. The Earth has warmed to unlivable temperatures. The few survivors know they're watching the end of the world.";
+    modal.style.display = "block";
   }
 }
 
