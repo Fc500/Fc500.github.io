@@ -1,4 +1,4 @@
-window.alert("v0.37");
+window.alert("v0.38");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -183,6 +183,12 @@ var achievementsList = {
   temp3: {
     title: "Humanity's failure",
     flavorText: "Despite our best efforts, we have failed...",
+    got: false,
+  },
+  
+  temp4: {
+    title: "The End of the World",
+    flavorText: "The final months of humanity begins in a ruined, scorching world.",
     got: false,
   },
 }
@@ -414,6 +420,9 @@ function checkForWin() {
     clearInterval(pentyearlyUpdates);
     clearInterval(checkForEndGame);
     clearInterval(updatePlayerValues);
+    if (achievementsList.temp4.got == false) {
+      achievementUnlocked(achievementsList.temp4);
+    }
     modalHeader.innerHTML = "";
     modalText.innerHTML = "Despite humanity's best efforts, " + playerName + " INC has failed. The Earth has warmed to unlivable temperatures. The few survivors know they're watching the end of the world.";
     modal.style.display = "block";
