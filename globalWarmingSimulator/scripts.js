@@ -484,11 +484,11 @@ function raiseMonth() {
 }
 
 function setGameValues() {
-  var updateGameSecond = setInterval(raiseItemsSecond, 1000);
-  var monthlyUpdates = setInterval(raiseMonth, 500);
-  var pentyearlyUpdates = setInterval(raiseTemperature, 30000);
-  var checkForEndGame = setInterval(checkForWin, 1000);
-  var updatePlayerValues = setInterval(raiseMoney, 100);
+  const updateGameSecond = setInterval(raiseItemsSecond, 1000);
+  const monthlyUpdates = setInterval(raiseMonth, 500);
+  const pentyearlyUpdates = setInterval(raiseTemperature, 30000);
+  const checkForEndGame = setInterval(checkForWin, 1000);
+  const updatePlayerValues = setInterval(raiseMoney, 100);
 }
 
 function changeText() {
