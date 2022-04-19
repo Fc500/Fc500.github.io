@@ -370,8 +370,7 @@ function raiseMoney() {
 function raiseItemsSecond() {
   rps = researcher.output * researcher.owned;
   researchPoints += rps;
-  rpsDisplay.innerHTML = rps;
-  rpDisplay.innerHTML = researchPoints;
+  rpsDisplay.innerHTML = rps.toFixed(2);
   checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
