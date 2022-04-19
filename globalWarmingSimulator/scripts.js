@@ -1,4 +1,4 @@
-window.alert("v3 - 0.33");
+window.alert("v0.34");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -49,12 +49,14 @@ let temp = 60;
 let tempIncrease = 0.067;
 let year = 2010;
 let researchPoints = 50;
+let rps = 0;
 let mps = 0;
 let sectionOfText = 0;
 let month = 0;
 let windmillps = 0;
 let solarps = 0;
 let hydrops = 0;
+let biomassps = 0;
 let achievementsGot = 0;
 let modalText = document.getElementById("modal-text");
 var root = document.querySelector(':root');
@@ -68,6 +70,7 @@ var findingsArray = document.getElementsByClassName("findings");
 var monthDisplay = document.getElementById("monthDisplay");
 var mpsDisplay = document.getElementById("mpsDisplay");
 var tpsDisplay = document.getElementById("tpsDisplay");
+var rpsDisplay = document.getElementById("rpsDisplay");
 
 var researchSection = document.getElementById("researchObj");
 var findingsSection = document.getElementById("findingsObj");
@@ -108,6 +111,14 @@ let hydroPlant = {
   figure: document.getElementById("hydroPrice"),
 }
 
+let biomassFarm = {
+  owned: 0,
+  cost: 100000,
+  output: 20000,
+  amount: document.getElementById("biomassOwned"),
+  figure: document.getElementById("biomassPrice"),
+}
+
 // UPGRADES
 
 var findings = {
@@ -139,6 +150,16 @@ var findings = {
       discovery: { 
         title: "Hydroelectric technology",
         flavorText: "The power of the seas",
+      },
+  },
+  biomass: {
+      cost: 75000,
+      research: 150,
+      bought: false,
+      button: findingsArray[3],
+      discovery: { 
+        title: "Biomass Plants",
+        flavorText: "The power of compost",
       },
   },
 }
@@ -182,8 +203,7 @@ function numFormatter(num) {
 
 
 function addAchievement(achievement) {
-  // Create element:
-  window.alert("Testing");
+  // Create element
   const achBox = document.createElement("div");
   achBox.innerHTML = "<h4>" + achievement.title + "</h4><h6><i>" + achievement.flavorText + "</i></h6>";
   achBox.classList.add("achievements");
@@ -285,6 +305,10 @@ function checkForUpgrades() {
     if (findings.hydro.bought == true) {
       document.getElementById('hydros').style.display = 'block';
   }
+  
+    if (findings.biomass.bought == true) {
+      document.getElementById('biomasses').style.display = 'block';
+  }
 
   // Updating discoveries
     if (researchPoints >= 5 && findings.windmill.bought == false) {
@@ -296,6 +320,10 @@ function checkForUpgrades() {
 
     if (researchPoints >= 50 && findings.hydro.bought == false) {
       document.getElementById('hydroUpgrade').style.display = 'block';
+  }
+  
+    if (researchPoints >= 150 && findings.biomass.bought == false) {
+      document.getElementById('biomassUpgrade').style.display = 'block';
   }
 
 }
@@ -322,14 +350,20 @@ function raiseMoney() {
   if (hydroPlant.owned > 0) {
     hydrops = hydroPlant.owned * hydroPlant.output;
   }
+  
+  if (biomassFarm.owned > 0) {
+    biomassps = biomassFarm.owned * biomassFarm.output;
+  }
 
-  mps = windmillps + solarps + hydrops;
+  mps = windmillps + solarps + hydrops + biomassps;
   money += mps;
 
 }
 
 function raiseItemsSecond() {
-  researchPoints += researcher.output * researcher.owned;
+  rps = researcher.output * researcher.owned;
+  rpDisplay.innerHTML = rps + researchPoints;
+  rpsDisplay.innerHTML = rps;
   checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
