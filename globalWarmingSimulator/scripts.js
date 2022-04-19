@@ -1,4 +1,4 @@
-window.alert("v3 - 0.30");
+window.alert("v3 - 0.31");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -10,16 +10,14 @@ document.getElementsByClassName("researchBox")[0].style.display = "block";
 function achievementUnlocked(achievement){
   var hasClass = $('.ach').hasClass('achieved');
   if (hasClass) return;
-  $('.title').html(achievement.title);
-  $('.detail').html(achievement.flavorText);
+  $('.title').html("Achievement Unlocked!");
+  $('.detail').html(achievement.title);
   $('.ach').addClass("achieved");
   setTimeout(function(){
     $('.ach').removeClass("achieved");
   },5000)
-
-
   addAchievement(achievement);
-
+  achievement.got = true;
 }
 
     
@@ -183,13 +181,13 @@ function numFormatter(num) {
 
 
 function addAchievement(achievement) {
-  achievement.got = true;
-  var tag = document.createElement("div");
-  var achTitle = achievement.title;
-  var achSub = achievement.flavorText;
-  tag.appendChild(achTitle);
-  tag.appendChild(achSub);
-  achievementsSection.appendChild(tag);
+  // Create element:
+  window.alert("Testing");
+  const achBox = document.createElement("div");
+  achBox.innerHTML = "<h3>" + achievement.title + "</h3><br><h6><i>" + achievement.flavorText + "</i></h6>";
+  achBox.classList.add("achievements");
+  // Append to another element:
+  achievementsSection.appendChild(achBox);
 }
 
 // SIDENAV FUNCTION
