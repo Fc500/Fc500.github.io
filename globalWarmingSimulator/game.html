@@ -6,114 +6,116 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="achievements.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
+  <link href="imports.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <title>Simulator</title>
 
 </head>
   <body>
-    <div style="margin: auto; text-align: center;">
-      <div class="statBox">
-        <h4>Research Points</h4>
-        <p id="rpDisplay">0</p>
-      </div>
-      <div class="statBox">
-        <h4>Funds</h4>
-        <p>$<span id="moneyDisplay">0</span></p>
-      </div>
-      <div class="statBox">
-        <h4>Year</h4>
-        <p id="yearDisplay"><b>2022</b></p>
-      </div>
-      <div class="statBox">
-        <h4>Temperature</h4>
-        <p><span id="tempDisplay"><b>60</b></span>&#176;</p>
-      </div>
-    </div>
-
-
-
-    <!-- RESEARCH OBJECTS -->
-
-    <br>
-    <div class="section">
-      <div class="researchBox" style="display: none;">
-        <p>Researchers<br>
-          <b><span id="researcherOwned">2</span></b><br>
-            $<span id="researcherPrice">1k</span>
-        </p>
-        <button onclick="buyThing(researcher)">BUY</button> 
-      </div>
-    </div>
-    <br>
-
-
-
-    <!-- FINDINGS -->
-    <div class="section">
-
-      <div class="ach">
-        <div class="icon"><i class="fa fa-flag" aria-hidden="true"><span class="material-icons">
-          flag
-          </span></i></div>
-        <div class="text_wrap">
-          <p class="title"></p>
-          <span class="detail"></span>
+    <div class="main">
+      <div style="width: 100%; text-align: center;"><b><h1 id="playerName"></h1></b></div>
+      <div style="margin: auto;"> 
+        <div class="statBox">
+          <h4>Research Points</h4>
+          <p id="rpDisplay">0</p>
+        </div>
+        <div class="statBox">
+          <h4>Funds</h4>
+          <p>$<span id="moneyDisplay">0</span></p>
+          <h5 id="mpsDisplay"></h5>
+        </div>
+        <div class="statBox">
+          <h4>Year</h4>
+          <p id="yearDisplay">2010</p>
+          <h5 id="monthDisplay"></h5>
+        </div>
+        <div class="statBox">
+          <h4>Temperature</h4>
+          <p><span id="tempDisplay"><b>60</b></span>&#176;</p>
+          <h5 id="tpsDisplay"></h5>
         </div>
       </div>
-  
 
 
 
+      <!-- RESEARCH OBJECTS -->
 
-      <div class="buildingBox findings" id="windmillUpgrade" style="display: none;">
-        <p>[RESEARCH] Windmills<br>
-          $100 | 5 RP
-        </p>
-        <button onclick="buyDiscovery(findings.windmill)" class="findingsButton">BUY</button> 
+      <br>
+      <div class="section" id="researchObj">
+        <div class="researchBox">
+          <p>Researchers<br>
+            <b><span id="researcherOwned">2</span></b><br>
+              $<span id="researcherPrice">1k</span>
+          </p>
+          <button onclick="buyThing(researcher)">BUY</button> 
+        </div>
+      </div>
+      <br>
+
+
+
+      <!-- FINDINGS -->
+      <div class="section" style="display: none;" id="findingsObj">
+        <h3 style="display: none; color: var(--phthalo-blue);" name="researchNotif">No things researched yet!</h3>
+
+
+        <div class="buildingBox findings" id="windmillUpgrade" style="display: none;">
+          <p>Windmills<br>
+            $100 | 5 RP
+          </p>
+          <button onclick="buyDiscovery(findings.windmill)" class="findingsButton">BUY</button> 
+        </div>
+
+        <div class="buildingBox findings" id="solarUpgrade" style="display: none;">
+          <p>Solar Farms<br>
+            $1.5K | 25 RP
+          </p>
+          <button onclick="buyDiscovery(findings.solar)" class="findingsButton">BUY</button> 
+        </div>
+
+        <div class="buildingBox findings" id="hydroUpgrade" style="display: none;">
+          <p>Hydroelectric Power<br>
+            $12.5K | 50 RP
+          </p>
+          <button onclick="buyDiscovery(findings.hydro)" class="findingsButton">BUY</button> 
+        </div>
       </div>
 
-      <div class="buildingBox findings" id="solarUpgrade" style="display: none;">
-        <p>[RESEARCH] Solar Farms<br>
-          $1.5K | 25 RP
-        </p>
-        <button onclick="buyDiscovery(findings.solar)" class="findingsButton">BUY</button> 
+      <!-- BUILDINGS -->
+      <div class="section" style="display: none;" id="buildingsObj">
+        <h3 style="display: none;" name="buildingsNotif">No Buildings Avaliable!</h3>
+
+        <div class="buildingBox" id="windmills" style="display: none;">
+          <p>Windmills<br>
+            <b><span id="windmillOwned">0</span></b><br>
+              $<span id="windmillPrice">1.5k</span>
+          </p>
+          <button onclick="buyThing(windmill)">BUY</button> 
+        </div>
+
+        <div class="buildingBox" id="solars" style="display: none;">
+          <p>Solar Farms<br>
+            <b><span id="solarOwned">0</span></b><br>
+              $<span id="solarPrice">5k</span>
+          </p>
+          <button onclick="buyThing(solarFarm)">BUY</button> 
+        </div>
+
+        <div class="buildingBox" id="hydros" style="display: none;">
+          <p>Hydroelectric Dams<br>
+            <b><span id="hydroOwned">0</span></b><br>
+              $<span id="hydroPrice">25k</span>
+          </p>
+          <button onclick="buyThing(hydroPlant)">BUY</button> 
+        </div>
       </div>
 
-      <div class="buildingBox findings" id="hydroUpgrade" style="display: none;">
-        <p>[RESEARCH] Hydroelectric Power<br>
-          $12.5K | 50 RP
-        </p>
-        <button onclick="buyDiscovery(findings.hydro)" class="findingsButton">BUY</button> 
+      <div class="section" style="display: none;" id="achievementsObj">
+      
       </div>
+
+
     </div>
-
-    <!-- BUILDINGS -->
-    <div class="section">
-      <div class="buildingBox" id="windmills" style="display: none;">
-        <p>Windmills<br>
-          <b><span id="windmillOwned">0</span></b><br>
-            $<span id="windmillPrice">1.5k</span>
-        </p>
-        <button onclick="buyThing(windmill)">BUY</button> 
-      </div>
-
-      <div class="buildingBox" id="solars" style="display: none;">
-        <p>Solar Farms<br>
-          <b><span id="solarOwned">0</span></b><br>
-            $<span id="solarPrice">5k</span>
-        </p>
-        <button onclick="buyThing(solarFarm)">BUY</button> 
-      </div>
-
-      <div class="buildingBox" id="hydros" style="display: none;">
-        <p>Hydroelectric Dams<br>
-          <b><span id="hydroOwned">0</span></b><br>
-            $<span id="hydroPrice">25k</span>
-        </p>
-        <button onclick="buyThing(hydroPlant)">BUY</button> 
-      </div>
-    </div>
-
 
 
 
@@ -133,8 +135,29 @@
           <button id="nextButton" class="smallButton" onclick="changeText()">NEXT</button>
         </div>
       </div>
-
     </div>
+
+
+    <!-- The Navigation Bar -->
+    
+    <div class="sidenav">
+      <h2 class="sidenavButton" onclick="sidenavSwitch(1)">Research</h2>
+      <h2 class="sidenavButton" onclick="sidenavSwitch(2)">Upgrades</h2>
+      <h2 class="sidenavButton" onclick="sidenavSwitch(3)">Buildings</h2>
+      <h2 class="sidenavButton" onclick="sidenavSwitch(4)">Achievements</h2>
+    </div>
+
+    <!-- The Achievement Modal-->
+    <div class="ach">
+      <div class="icon"><i class="fa fa-flag" aria-hidden="true"><span class="material-icons">
+        flag
+        </span></i></div>
+      <div class="text_wrap">
+        <p class="title"></p>
+        <span class="detail"></span>
+      </div>
+    </div>
+
   </body>
-  <script type="text/javascript" src="scripts.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
 </html>

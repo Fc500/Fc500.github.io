@@ -1,3 +1,12 @@
+/* CSS HEX */
+:root {
+  --snow: #fbf5f3ff;
+  --gainsboro: #e0e0e0ff;
+  --phthalo-blue: #020887ff;
+  --blue-pigment: #38369aff;
+  --charleston-green: #162327ff;
+  }
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -5,15 +14,16 @@
 }
 
 .ach {
-  background: #14b5d1;
+  background: var(--charleston-green);
   display: block;
   position: fixed;
   bottom: -5em;
   left: 50%;
+  border-radius: 25px;
   margin-left: -175px;
   width: 350px;
   height: 65px;
-  color: #fff;
+  color: var(--snow);
   font-size: 16px;
   padding: 0 1.2em 0 0;
 }
@@ -21,6 +31,7 @@
 .ach .icon {
   float: left;
   font-size: 2.2em;
+  top: 10px;
   width: 65px;
   padding: 0.1em 0 0;
   text-align: center;
@@ -103,11 +114,13 @@
     bottom: 1em;
     width: 350px;
     margin-left: -175px;
+    border-radius: 25px;
   }
   100% {
     bottom: 1em;
     width: 350px;
     margin-left: -175px;
+    border-radius: 25px;
   }
 }
 

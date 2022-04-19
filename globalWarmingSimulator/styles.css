@@ -5,101 +5,20 @@
 --phthalo-blue: #020887ff;
 --blue-pigment: #38369aff;
 --charleston-green: #162327ff;
-}
-
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s
-}
-/* Modal Content */
-.modal-content {
-  position: fixed;
-  transform: translate(12%, 0);
-  top: 100px;
-  background-color: #fefefe;
-  width: 80%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s
-}
-
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: black;
-  color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-    
-/* Add Animation */
-@-webkit-keyframes slideIn {
-  from {top: -20%; opacity: 0} 
-  to {top: 30%; opacity: 1}
-}
-
-@keyframes slideIn {
-  from {top: -20%; opacity: 0}
-  to {top: 30%; opacity: 1}
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-    
-body {
-  font-family: 'Alata';
-  font-size: 22px; 
-  color: var(--phthalo-blue);
-  background-image: linear-gradient(135deg, #fbf5f3 16%, #56569f 100%);
+--box-shadows: #02098774;
 }
 
 html {
   height: 100%;
 }
-    
+ 
+body {
+  font-family: 'Alata';
+  font-size: 22px; 
+  color: var(--phthalo-blue);
+  background-image: linear-gradient(135deg, var(--gainsboro) 16%, var(--phthalo-blue) 100%);
+}
+
 .smallButton {
   border-radius: 5px; 
   background-color: #dee3e0; 
@@ -116,56 +35,61 @@ html {
 .statBox {
     float: left;
     text-align: center;
-    /* background-color: #c4c1bc; */
-    padding: 1%;
-    width: 22%;
+    width: 25%;
 }
 
 .researchBox {
     float: none; 
-    position: absolute; 
-    background-color: var(--phthalo-blue);
-    margin: 3%; 
+    background-color: var(--blue-pigment);
+    margin: 2%; 
     border-radius: 15px; 
     padding: 1%;
-    width: 90%;
-    color: var(--snow);
-    box-shadow: rgba(2, 8, 135, 0.65) 0px 5px 15px;
+    width: 30%;
+    margin: 2%;
+    height: 200px;
+    box-shadow: var(--box-shadows) 0px 5px 15px;
 
 }
 
 .buildingBox {
-    float: auto;
+    float: left;
     font-size: smaller;
     background-color: var(--blue-pigment);
-    width: 90%;
+    width: 44%;
     margin: 2%;
+    height: 200px;
     border-radius: 15px; 
-    box-shadow: rgba(2, 8, 135, 0.65) 0px 5px 15px;
+    box-shadow: var(--box-shadows) 0px 5px 15px;
     padding: 2%;
 
 }
 
 .findings {
   width: 40%;
-  background-color: var(--phthalo-blue);
+  height: 200px;
+  margin: 2%;
+  background-color: var(--blue-pigment);
+  float: left;
+}
+
+.achievements {
+  width: 20%;
+  height: 200px;
+  margin: 2%;
+  padding: 2%;
+  border-radius: 25px;
+  background-color: var(--blue-pigment);
+  box-shadow: var(--box-shadows) 0px 7px 29px 0px;
   float: left;
 }
 
 .section {
   position: relative;
-  top: 30%;
-  background-color: var(--gainsboro);
-  border-radius: 25px;
-  box-shadow: rgba(22, 35, 39, 0.65) 0px 5px 15px;
   color: white;
-  margin: 0.65%;
-  float: left;
-  text-align: center; 
-  width: 31%; 
-  height: 400px;
+  padding-left: 1%; 
+  width: 100%;
   overflow-x: hidden;
-  overflow-y: auto
+  overflow-y: auto;
 }
 
 button {
@@ -175,5 +99,5 @@ button {
   font-size: 22px;
   color: var(--snow);
   width: 100px;
-  box-shadow: rgba(2, 8, 135, 0.35) 0px 7px 29px 0px;
+  box-shadow: var(--box-shadows) 0px 7px 29px 0px;
 }
