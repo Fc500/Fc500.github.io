@@ -1,4 +1,4 @@
-window.alert("v0.34");
+window.alert("v0.35");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
