@@ -184,7 +184,7 @@ function addAchievement(achievement) {
   // Create element:
   window.alert("Testing");
   const achBox = document.createElement("div");
-  achBox.innerHTML = "<h3>" + achievement.title + "</h3><br><h6><i>" + achievement.flavorText + "</i></h6>";
+  achBox.innerHTML = "<h4>" + achievement.title + "</h4><h6><i>" + achievement.flavorText + "</i></h6>";
   achBox.classList.add("achievements");
   // Append to another element:
   achievementsSection.appendChild(achBox);
