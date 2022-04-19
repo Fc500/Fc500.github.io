@@ -1,4 +1,4 @@
-window.alert("v3 - 0.31");
+window.alert("v3 - 0.32");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -344,7 +344,7 @@ function raiseYear() {
 }
 
 function raiseTemperature () {
-  tempIncrease *= 2;
+  tempIncrease *= 1.2;
 }
 
 function checkForWin() {
