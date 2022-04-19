@@ -392,13 +392,26 @@ function checkForWin() {
     if (achievementsList.temp1.got == false) {
       achievementUnlocked(achievementsList.temp1);
     }
-  } else if (temp > 75) {
+  } else if (temp > 75 && temp < 90) {
     root.style.setProperty('--phthalo-blue', '#BF2237');
     root.style.setProperty('--blue-pigment', '#FF1F2E');
     root.style.setProperty('--box-shadows', '#FF1F2E74');
     if (achievementsList.temp2.got == false) {
       achievementUnlocked(achievementsList.temp2);
     }
+  } else if (temp > 90) {
+    root.style.setProperty('--phthalo-blue', '#3b1100');
+    root.style.setProperty('--blue-pigment', '#e3e3e3');
+    root.style.setProperty('--box-shadows', '#3b110074');
+    if (achievementsList.temp3.got == false) {
+      achievementUnlocked(achievementsList.temp3);
+    }
+  } else if (temp > 95) {
+    clearInterval(updateGameSecond);
+    clearInterval(monthlyUpdates);
+    clearInterval(pentyearlyUpdates);
+    clearInterval(checkForEndGame);
+    clearInterval(updatePlayerValues);
   }
 }
 
@@ -460,7 +473,7 @@ function setGameValues() {
   var updateGameSecond = setInterval(raiseItemsSecond, 1000);
   var monthlyUpdates = setInterval(raiseMonth, 500);
   var pentyearlyUpdates = setInterval(raiseTemperature, 30000);
-  var endGame = setInterval(checkForWin, 1000);
+  var checkForEndGame = setInterval(checkForWin, 1000);
   var updatePlayerValues = setInterval(raiseMoney, 100);
 }
 
