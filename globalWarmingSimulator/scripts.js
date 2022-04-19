@@ -351,14 +351,14 @@ function checkForWin() {
   if (temp > 65 && temp < 75) {
     root.style.setProperty('--phthalo-blue', '#CC6300');
     root.style.setProperty('--blue-pigment', '#E36F26');
-    root.style.setProperty('--box-shadow', '#E36F2674');
+    root.style.setProperty('--box-shadows', '#E36F2674');
     if (achievementsList.temp1.got == false) {
       achievementUnlocked(achievementsList.temp1);
     }
   } else if (temp > 75) {
     root.style.setProperty('--phthalo-blue', '#BF2237');
     root.style.setProperty('--blue-pigment', '#FF1F2E');
-    root.style.setProperty('--box-shadow', '#FF1F2E74');
+    root.style.setProperty('--box-shadows', '#FF1F2E74');
     if (achievementsList.temp2.got == false) {
       achievementUnlocked(achievementsList.temp2);
     }
