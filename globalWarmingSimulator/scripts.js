@@ -1,4 +1,4 @@
-window.alert("v3 - 0.32");
+window.alert("v3 - 0.33");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -55,6 +55,7 @@ let month = 0;
 let windmillps = 0;
 let solarps = 0;
 let hydrops = 0;
+let achievementsGot = 0;
 let modalText = document.getElementById("modal-text");
 var root = document.querySelector(':root');
 
@@ -188,6 +189,8 @@ function addAchievement(achievement) {
   achBox.classList.add("achievements");
   // Append to another element:
   achievementsSection.appendChild(achBox);
+  achievementsGot++;
+  document.getElementById("achievementsDisplay").innerHTML = achievementsGot;
 }
 
 // SIDENAV FUNCTION
