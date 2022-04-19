@@ -407,9 +407,9 @@ function checkForWin() {
     if (achievementsList.temp2.got == false) {
       achievementUnlocked(achievementsList.temp2);
     }
-  } else if (temp > 90) {
+  } else if (temp > 90 && temp < 95) {
     root.style.setProperty('--phthalo-blue', '#3b1100');
-    root.style.setProperty('--blue-pigment', '#e3e3e3');
+    root.style.setProperty('--blue-pigment', '#black');
     root.style.setProperty('--box-shadows', '#3b110074');
     if (achievementsList.temp3.got == false) {
       achievementUnlocked(achievementsList.temp3);
