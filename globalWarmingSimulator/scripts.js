@@ -1,4 +1,4 @@
-window.alert("v0.40");
+window.alert("v0.44");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -44,11 +44,11 @@ function closeModal() {
 } */
 
 //variables
-let money = 100000;
-let temp = 90;
+let money = 1000000;
+let temp = 60;
 let tempIncrease = 0.067;
 let year = 2010;
-let researchPoints = 50;
+let researchPoints = 150;
 let rps = 0;
 let mps = 0;
 let sectionOfText = 0;
@@ -61,6 +61,7 @@ let achievementsGot = 0;
 var modalHeader = document.getElementById("modal-title");
 var modalText = document.getElementById("modal-text");
 var root = document.querySelector(':root');
+let gameStart = false;
 
 //DOM elements
 var rpDisplay = document.getElementById("rpDisplay");
@@ -72,13 +73,24 @@ var monthDisplay = document.getElementById("monthDisplay");
 var mpsDisplay = document.getElementById("mpsDisplay");
 var tpsDisplay = document.getElementById("tpsDisplay");
 var rpsDisplay = document.getElementById("rpsDisplay");
+let nextButton = document.getElementById("nextButton");
+let playerName = "";
 
 var researchSection = document.getElementById("researchObj");
 var findingsSection = document.getElementById("findingsObj");
 var buildingsSection = document.getElementById("buildingsObj");
 var achievementsSection = document.getElementById("achievementsObj");
 
+
+// INTERVALS 
+let updateGameSecond = 0;
+let monthlyUpdates = 0;
+let pentyearlyUpdates = 0;
+let checkForEndGame = 0;
+let updatePlayerValues = 0;
+
 // MAIN OBJECTS
+
 
 let researcher = {
   owned: 2,
@@ -368,6 +380,7 @@ function raiseMoney() {
 }
 
 function raiseItemsSecond() {
+
   rps = researcher.output * researcher.owned;
   researchPoints += rps;
   rpsDisplay.innerHTML = rps.toFixed(2);
@@ -384,48 +397,60 @@ function raiseYear() {
   temp += tempIncrease;
   tempDisplay.innerHTML = temp.toFixed(2);
   tpsDisplay.innerHTML = tempIncrease.toFixed(2) + "&#176; per year";
-
 }
 
 function raiseTemperature () {
-  tempIncrease *= 1.2;
+    tempIncrease *= 1.2;
+}
+
+function endGame() {
+  window.alert("GAME OVER");
+  clearInterval(updateGameSecond);
+  clearInterval(monthlyUpdates);
+  clearInterval(pentyearlyUpdates);
+  clearInterval(checkForEndGame);
+  clearInterval(updatePlayerValues);
+  rpsDisplay.innerHTML = "THERE";
+  mpsDisplay.innerHTML = "IS";
+  monthDisplay.innerHTML = "NOTHING";
+  tpsDisplay.innerHTML = "LEFT";
+
 }
 
 function checkForWin() {
-  if (temp > 65 && temp < 75) {
-    root.style.setProperty('--phthalo-blue', '#CC6300');
-    root.style.setProperty('--blue-pigment', '#E36F26');
-    root.style.setProperty('--box-shadows', '#E36F2674');
-    if (achievementsList.temp1.got == false) {
-      achievementUnlocked(achievementsList.temp1);
-    }
-  } else if (temp > 75 && temp < 90) {
-    root.style.setProperty('--phthalo-blue', '#BF2237');
-    root.style.setProperty('--blue-pigment', '#FF1F2E');
-    root.style.setProperty('--box-shadows', '#FF1F2E74');
-    if (achievementsList.temp2.got == false) {
-      achievementUnlocked(achievementsList.temp2);
-    }
-  } else if (temp > 90 && temp < 95) {
-    root.style.setProperty('--phthalo-blue', '#3b1100');
-    root.style.setProperty('--blue-pigment', '#black');
-    root.style.setProperty('--box-shadows', '#3b110074');
-    if (achievementsList.temp3.got == false) {
-      achievementUnlocked(achievementsList.temp3);
-    }
+  if (temp < 95) {
+    if (temp > 65 && temp < 75) {
+      root.style.setProperty('--phthalo-blue', '#CC6300');
+      root.style.setProperty('--blue-pigment', '#E36F26');
+      root.style.setProperty('--box-shadows', '#E36F2674');
+      if (achievementsList.temp1.got == false) {
+        achievementUnlocked(achievementsList.temp1);
+      }
+    } else if (temp > 75 && temp < 90) {
+      root.style.setProperty('--phthalo-blue', '#BF2237');
+      root.style.setProperty('--blue-pigment', '#FF1F2E');
+      root.style.setProperty('--box-shadows', '#FF1F2E');
+      if (achievementsList.temp2.got == false) {
+        achievementUnlocked(achievementsList.temp2);
+      }
+    } else if (temp > 90 && temp < 95) {
+      root.style.setProperty('--phthalo-blue', '#0a0100');
+      root.style.setProperty('--blue-pigment', 'black');
+      root.style.setProperty('--box-shadows', '#0a0100');
+      if (achievementsList.temp3.got == false) {
+        achievementUnlocked(achievementsList.temp3);
+      }
+    } 
+    
   } else if (temp > 95) {
-    window.alert("Test1");
-    clearInterval(updateGameSecond);
-    clearInterval(monthlyUpdates);
-    clearInterval(pentyearlyUpdates);
-    clearInterval(checkForEndGame);
-    clearInterval(updatePlayerValues);
     if (achievementsList.temp4.got == false) {
       achievementUnlocked(achievementsList.temp4);
     }
     modalHeader.innerHTML = "";
-    modalText.innerHTML = "Despite humanity's best efforts, " + playerName + " INC has failed. The Earth has warmed to unlivable temperatures. The few survivors know they're watching the end of the world.";
+    modalText.innerHTML = "Despite humanity's best efforts, <b>" + playerName + " INC </b> has failed. The Earth has warmed to unlivable temperatures. The few survivors know they're watching the end of the world.";
     modal.style.display = "block";
+    
+    endGame();
   }
 }
 
@@ -484,22 +509,21 @@ function raiseMonth() {
 }
 
 function setGameValues() {
-  const updateGameSecond = setInterval(raiseItemsSecond, 1000);
-  const monthlyUpdates = setInterval(raiseMonth, 500);
-  const pentyearlyUpdates = setInterval(raiseTemperature, 30000);
-  const checkForEndGame = setInterval(checkForWin, 1000);
-  const updatePlayerValues = setInterval(raiseMoney, 100);
+  updateGameSecond = setInterval(raiseItemsSecond, 1000);
+  monthlyUpdates = setInterval(raiseMonth, 500);
+  pentyearlyUpdates = setInterval(raiseTemperature, 30000);
+  checkForEndGame = setInterval(checkForWin, 1000);
+  updatePlayerValues = setInterval(raiseMoney, 100);
 }
 
 function changeText() {
-  let nextButton = document.getElementById("nextButton");
   switch (sectionOfText) {
     case 0:
       modalText.innerHTML = "You have been put in charge of a new company! What shall it be called?<br><input id='name' type='text' value='Climate' name='playerName'required ><b><label for='playerName'> + INC</label></b> ";
       sectionOfText++;
       break;
     case 1:
-      let playerName = document.getElementById("name").value;
+      playerName = document.getElementById("name").value;
       modalText.innerHTML = "Hello <b>" + playerName + " INC</b>! You have been tasked by the government to help fix the issue of climate change!";
       document.getElementById("playerName").innerHTML = playerName + " INC";
       sectionOfText++;
@@ -508,8 +532,12 @@ function changeText() {
       modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
       nextButton.addEventListener("click", function() {
         modal.style.display = 'none';
-        setGameValues();
+        if (gameStart == false) {
+          setGameValues();
+          gameStart = true;
+        }
       });
+      nextButton.onclick="";
       nextButton.innerHTML = "CLOSE";
   }
 } 
