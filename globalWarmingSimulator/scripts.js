@@ -1,4 +1,4 @@
-window.alert("v0.46");
+window.alert("v0.47");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -209,7 +209,7 @@ var achievementsList = {
 function numFormatter(num) {
     if(num > 999 && num < 1000000){
       return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
-    } else if(num > 1000000 && num < 1000000000){
+    } else if(num > 999999 && num < 1000000000){
       return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
     } else if(num > 999999999){
       return (num/1000000000).toFixed(1) + 'B'; // convert to B for number from > 1 billion 
@@ -364,7 +364,6 @@ function raiseMoney() {
 
   if (solarFarm.owned > 0) {
     solarps = solarFarm.owned * solarFarm.output;
-    window.alert(solarps);
   }
 
   if (hydroPlant.owned > 0) {
