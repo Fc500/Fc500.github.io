@@ -1,4 +1,4 @@
-window.alert("v0.44");
+window.alert("v0.45");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -44,9 +44,9 @@ function closeModal() {
 } */
 
 //variables
-let money = 1000000;
-let temp = 60;
-let tempIncrease = 0.067;
+let money = 1000;
+let temp = 57;
+let tempIncrease = 0.013;
 let year = 2010;
 let researchPoints = 150;
 let rps = 0;
