@@ -1,4 +1,4 @@
-window.alert("v0.45");
+window.alert("v0.46");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -364,6 +364,7 @@ function raiseMoney() {
 
   if (solarFarm.owned > 0) {
     solarps = solarFarm.owned * solarFarm.output;
+    window.alert(solarps);
   }
 
   if (hydroPlant.owned > 0) {
