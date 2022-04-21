@@ -1,4 +1,4 @@
-window.alert("v0.49");
+window.alert("v0.50");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -45,8 +45,8 @@ function closeModal() {
 
 //variables
 let money = 10000;
-let temp = 57;
-let tempIncrease = 0.013;
+let temp = 57.85;
+let tempIncrease = 0.017;
 let year = 2010;
 let researchPoints = 150;
 let rps = 0;
@@ -57,6 +57,7 @@ let windmillps = 0;
 let solarps = 0;
 let hydrops = 0;
 let biomassps = 0;
+let geothermalps = 0;
 let achievementsGot = 0;
 var modalHeader = document.getElementById("modal-title");
 var modalText = document.getElementById("modal-text");
@@ -80,6 +81,7 @@ var researchSection = document.getElementById("researchObj");
 var findingsSection = document.getElementById("findingsObj");
 var buildingsSection = document.getElementById("buildingsObj");
 var achievementsSection = document.getElementById("achievementsObj");
+var changelogSection = document.getElementById("changelogObj")
 
 
 // INTERVALS 
@@ -132,6 +134,14 @@ let biomassFarm = {
   figure: document.getElementById("biomassPrice"),
 }
 
+let geothermalPlant = {
+  owned: 0,
+  cost: 1000000,
+  output: 50000,
+  amount: document.getElementById("geothermalOwned"),
+  figure: document.getElementById("geothermalPrice"),
+}
+
 // UPGRADES
 
 var findings = {
@@ -173,6 +183,17 @@ var findings = {
       discovery: { 
         title: "Biomass Plants",
         flavorText: "The power of compost",
+      },
+  },
+  
+  geothermal: {
+      cost: 500000,
+      research: 200,
+      bought: false,
+      button: findingsArray[4],
+      discovery: { 
+        title: "Geothermal Energy",
+        flavorText: "The power of the Earth",
       },
   },
 }
@@ -241,40 +262,60 @@ function sidenavSwitch(chosenSection) {
       findingsSection.style.display = 'none';
       buildingsSection.style.display = 'none';
       achievementsSection.style.display = 'none';
+      changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "bold";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
       break;
     case 2:
       researchSection.style.display = 'none';
       findingsSection.style.display = 'block';
       buildingsSection.style.display = 'none';
       achievementsSection.style.display = 'none';
+      changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "bold";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
       break;
     case 3:
       researchSection.style.display = 'none';
       findingsSection.style.display = 'none';
       buildingsSection.style.display = 'block';
       achievementsSection.style.display = 'none';
+      changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "bold";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
       break;
     case 4:
       researchSection.style.display = 'none';
       findingsSection.style.display = 'none';
       buildingsSection.style.display = 'none';
       achievementsSection.style.display = 'block';
+      changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "bold";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      break;
+    case 5:
+      researchSection.style.display = 'none';
+      findingsSection.style.display = 'none';
+      buildingsSection.style.display = 'none';
+      achievementsSection.style.display = 'none';
+      changelogSection.style.display = 'block';
+      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "bold";
   }
 } 
 // buy functions
@@ -328,6 +369,10 @@ function checkForUpgrades() {
     if (findings.biomass.bought == true) {
       document.getElementById('biomasses').style.display = 'block';
   }
+  
+    if (findings.geothermal.bought == true) {
+      document.getElementById('geothermals').style.display = 'block';
+  }
 
   // Updating discoveries
     if (researchPoints >= 5 && findings.windmill.bought == false) {
@@ -344,11 +389,15 @@ function checkForUpgrades() {
     if (researchPoints >= 150 && findings.biomass.bought == false) {
       document.getElementById('biomassUpgrade').style.display = 'block';
   }
+  
+    if (researchPoints >= 200 && findings.geothermal.bought == false) {
+      document.getElementById('geothermalUpgrade').style.display = 'block';
+  }
 
 }
 
 function checkForEmpty() {
-  if (findings.hydro.bought && findings.solar.bought && findings.windmill.bought) {
+  if (findings.hydro.bought && findings.solar.bought && findings.windmill.bought && findings.geothermal.bought) {
     document.getElementsByName('researchNotif')[0].style.display = 'block';
   } else {
     document.getElementsByName('researchNotif')[0].style.display = 'none';
@@ -373,8 +422,12 @@ function raiseMoney() {
   if (biomassFarm.owned > 0) {
     biomassps = biomassFarm.owned * biomassFarm.output;
   }
+  
+  if (geothermalPlant.owned > 0) {
+    geothermalps = geothermalPlant.owned * geothermalPlant.output;
+  }
 
-  mps = windmillps + solarps + hydrops + biomassps;
+  mps = windmillps + solarps + hydrops + biomassps + geothermalps;
   money += mps/10;
 
 }
