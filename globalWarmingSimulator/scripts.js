@@ -1,4 +1,4 @@
-window.alert("v0.48");
+window.alert("v0.49");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -375,7 +375,7 @@ function raiseMoney() {
   }
 
   mps = windmillps + solarps + hydrops + biomassps;
-  money += mps;
+  money += mps/10;
 
 }
 
