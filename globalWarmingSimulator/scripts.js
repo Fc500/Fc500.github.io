@@ -1,4 +1,4 @@
-window.alert("v0.50");
+window.alert("v0.51");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -439,7 +439,7 @@ function raiseItemsSecond() {
   rpsDisplay.innerHTML = rps.toFixed(2);
   checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
-  moneyDisplay.innerHTML = money;
+  moneyDisplay.innerHTML = numFormatter(money);
   mpsDisplay.innerHTML = "$ " + mps + " per month";
   checkForEmpty();
 }
