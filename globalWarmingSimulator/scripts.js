@@ -436,7 +436,7 @@ function raiseItemsSecond() {
 
   rps = researcher.output * researcher.owned;
   researchPoints += rps;
-  rpsDisplay.innerHTML = rps.toFixed(2);
+  rpsDisplay.innerHTML = rps.toFixed(2) + "per month";
   checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
