@@ -57,37 +57,48 @@
 
       <!-- FINDINGS -->
       <div class="section" style="display: none;" id="findingsObj">
-        <h3 style="display: none; color: var(--phthalo-blue);" name="researchNotif">No things researched yet!</h3>
+        <div name="buildingFindings">
+          <h3>Buildings</h3>
+          <h3 style="display: none; color: var(--phthalo-blue);" name="researchNotif">No things researched yet!</h3>
 
 
-        <div class="buildingBox findings" id="windmillUpgrade" style="display: none;">
-          <p>Windmills<br>
-            $100 | 5 RP
-          </p>
-          <button onclick="buyDiscovery(findings.windmill)" class="findingsButton">BUY</button> 
-        </div>
+          <div class="buildingBox findings" id="windmillUpgrade" style="display: none;">
+            <p>Windmills<br>
+              $100 | 5 RP
+            </p>
+            <button onclick="buyDiscovery(findings.windmill)" class="findingsButton">BUY</button> 
+          </div>
 
-        <div class="buildingBox findings" id="solarUpgrade" style="display: none;">
-          <p>Solar Farms<br>
-            $1.5K | 25 RP
-          </p>
-          <button onclick="buyDiscovery(findings.solar)" class="findingsButton">BUY</button> 
-        </div>
+          <div class="buildingBox findings" id="solarUpgrade" style="display: none;">
+            <p>Solar Farms<br>
+              $1.5K | 25 RP
+            </p>
+            <button onclick="buyDiscovery(findings.solar)" class="findingsButton">BUY</button> 
+          </div>
 
-        <div class="buildingBox findings" id="hydroUpgrade" style="display: none;">
-          <p>Hydroelectric Power<br>
-            $12.5K | 50 RP
-          </p>
-          <button onclick="buyDiscovery(findings.hydro)" class="findingsButton">BUY</button> 
-        </div>
-        
-        <div class="buildingBox findings" id="biomassUpgrade" style="display: none;">
-          <p>Biomass Burning<br>
-            $75K | 150 RP
-          </p>
-          <button onclick="buyDiscovery(findings.biomass)" class="findingsButton">BUY</button> 
+          <div class="buildingBox findings" id="hydroUpgrade" style="display: none;">
+            <p>Hydroelectric Power<br>
+              $12.5K | 50 RP
+            </p>
+            <button onclick="buyDiscovery(findings.hydro)" class="findingsButton">BUY</button> 
+          </div>
+
+          <div class="buildingBox findings" id="biomassUpgrade" style="display: none;">
+            <p>Biomass Burning<br>
+              $75K | 150 RP
+            </p>
+            <button onclick="buyDiscovery(findings.biomass)" class="findingsButton">BUY</button> 
+          </div>
+          
+          <div class="buildingBox findings" id="geothermalUpgrade" style="display: none;">
+            <p>Geothermal Energy<br>
+              $500K | 200 RP
+            </p>
+            <button onclick="buyDiscovery(findings.geothermal)" class="findingsButton">BUY</button> 
+          </div>
         </div>
       </div>
+    </div>
 
       <!-- BUILDINGS -->
       <div class="section" style="display: none;" id="buildingsObj">
@@ -124,11 +135,30 @@
           </p>
           <button onclick="buyThing(biomassFarm)">BUY</button> 
         </div>
+        
+        <div class="buildingBox" id="geothermals" style="display: none;">
+          <p>Geothermal Site<br>
+            <b><span id="geothermalOwned">0</span></b><br>
+              $<span id="geothermalPrice">100k</span>
+          </p>
+          <button onclick="buyThing(geothermalPlant)">BUY</button> 
+        </div>
       </div>
 
       <div class="section" style="display: none;" id="achievementsObj">
         <p><span id="achievementsDisplay">0</span>/30</p>
       </div>
+    
+    <div class="section" style="display: none;" id="changelogObj">
+      <h3>Version 0.50</h3>
+        <ul>
+          <li>Added Geothermal Plants</li>
+          <li>Temperatures now increase at an accurate rate</li>
+          <li>Player's starting temperature is now accurate with world temperatures in 2010</li>
+          <li>Laid the groundwork for an improved buying system</li>
+          <li>Fixed a bug where the output of buildings was multiplied by 10</li>
+        </ul>
+    </div>
 
 
     </div>
@@ -161,6 +191,7 @@
       <h2 class="sidenavButton" onclick="sidenavSwitch(2)">Upgrades</h2>
       <h2 class="sidenavButton" onclick="sidenavSwitch(3)">Buildings</h2>
       <h2 class="sidenavButton" onclick="sidenavSwitch(4)">Achievements</h2>
+      <h2 class="sidenavButton" onclick="sidenavSwitch(5)">Changelog</h2>
     </div>
 
     <!-- The Achievement Modal-->
