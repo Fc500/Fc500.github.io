@@ -440,7 +440,7 @@ function raiseItemsSecond() {
   checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
-  mpsDisplay.innerHTML = "$ " + mps + " per month";
+  mpsDisplay.innerHTML = "$ " + mps.toFixed(2) + " per month";
   checkForEmpty();
 }
 
