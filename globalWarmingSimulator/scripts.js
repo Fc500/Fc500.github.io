@@ -453,7 +453,7 @@ function raiseYear() {
 }
 
 function raiseTemperature () {
-    tempIncrease *= 1.2;
+    tempIncrease *= 1.1;
 }
 
 function endGame() {
