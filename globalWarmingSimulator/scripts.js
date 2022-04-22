@@ -412,10 +412,6 @@ function checkForUpgrades() {
     if (researchPoints >= 200 && findings.geothermal.bought == false) {
       document.getElementById('geothermalUpgrade').style.display = 'block';
   }
-  
-  if (researchPoints >= 150) {
-    document.getElementsByClassName("researchBox")[1].style.display = 'block';
-  }
 
 }
 
