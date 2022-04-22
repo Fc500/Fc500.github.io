@@ -1,4 +1,4 @@
-window.alert("v0.52");
+window.alert("v0.53");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -100,6 +100,14 @@ let researcher = {
   output: 0.1,
   amount: document.getElementById("researcherOwned"),
   figure: document.getElementById("researcherPrice"),
+};
+
+let laboratory = {
+  owned: 0,
+  cost: 100000,
+  output: 2,
+  amount: document.getElementById("labOwned"),
+  figure: document.getElementById("labPrice"),
 };
 
 let windmill = {
@@ -403,6 +411,10 @@ function checkForUpgrades() {
   
     if (researchPoints >= 200 && findings.geothermal.bought == false) {
       document.getElementById('geothermalUpgrade').style.display = 'block';
+  }
+  
+  if (researchPoints >= 150) {
+    document.getElementsByClassName("researchBox")[1].style.display = 'block';
   }
 
 }
