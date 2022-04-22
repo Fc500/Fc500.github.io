@@ -1,4 +1,4 @@
-window.alert("v0.51");
+window.alert("v0.52");
 document.getElementsByClassName("researchBox")[0].style.display = "block";
 
 
@@ -339,7 +339,7 @@ function sellThing(thing) {
     thing.owned -= 1;
     moneyDisplay.innerHTML = numFormatter(money);
     thing.amount.innerHTML = numFormatter(thing.owned);
-  } else if (thing.owned < 0) {
+  } else if (thing.owned =< 0) {
     window.alert("Not enough buildings to sell!");
   }
 } 
