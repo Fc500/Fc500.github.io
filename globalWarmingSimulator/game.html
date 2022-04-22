@@ -57,8 +57,8 @@
 
       <!-- FINDINGS -->
       <div class="section" style="display: none;" id="findingsObj">
+        <h3>Buildings</h3>
         <div name="buildingFindings">
-          <h3>Buildings</h3>
           <h3 style="display: none; color: var(--phthalo-blue);" name="researchNotif">No things researched yet!</h3>
 
 
@@ -109,6 +109,7 @@
               $<span id="windmillPrice">1.5k</span>
           </p>
           <button onclick="buyThing(windmill)">BUY</button> 
+          <button onclick="sellThing(windmill)">SELL</button> 
         </div>
 
         <div class="buildingBox" id="solars" style="display: none;">
@@ -117,6 +118,7 @@
               $<span id="solarPrice">5k</span>
           </p>
           <button onclick="buyThing(solarFarm)">BUY</button> 
+          <button onclick="sellThing(solarFarm)">SELL</button> 
         </div>
 
         <div class="buildingBox" id="hydros" style="display: none;">
@@ -125,6 +127,7 @@
               $<span id="hydroPrice">25k</span>
           </p>
           <button onclick="buyThing(hydroPlant)">BUY</button> 
+          <button onclick="sellThing(hydroPlant)">SELL</button> 
         </div>
         
         <div class="buildingBox" id="biomasses" style="display: none;">
@@ -133,6 +136,7 @@
               $<span id="biomassPrice">100k</span>
           </p>
           <button onclick="buyThing(biomassFarm)">BUY</button> 
+          <button onclick="sellThing(biomassFarm)">SELL</button> 
         </div>
         
         <div class="buildingBox" id="geothermals" style="display: none;">
@@ -141,6 +145,7 @@
               $<span id="geothermalPrice">100k</span>
           </p>
           <button onclick="buyThing(geothermalPlant)">BUY</button> 
+          <button onclick="sellThing(geothermalPlant)">SELL</button> 
         </div>
       </div>
 
@@ -156,6 +161,12 @@
           <li>Player's starting temperature is now accurate with world temperatures in 2010</li>
           <li>Laid the groundwork for an improved buying system</li>
           <li>Fixed a bug where the output of buildings was multiplied by 10</li>
+        </ul>
+
+        <h3>Version 0.51</h3>
+        <ul>
+          <li>Added an ability to sell buildings</li>
+          <li>Fixed some minor spelling errors</li>
         </ul>
     </div>
 

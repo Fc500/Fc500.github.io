@@ -333,13 +333,24 @@ function buyThing(thing) {
   }
 } 
 
+function sellThing(thing) {
+  if (thing.owned > 0) {
+    money += thing.cost/2;
+    thing.owned -= 1;
+    moneyDisplay.innerHTML = numFormatter(money);
+    thing.amount.innerHTML = numFormatter(thing.owned);
+  } else if (thing.owned < 0) {
+    window.alert("Not enough buildings to sell!");
+  }
+} 
+
 
 function buyDiscovery(thing) {
     if (thing.cost < money && thing.research < researchPoints) {
       money -= thing.cost;
       researchPoints -= thing.research;
-      rpDisplay.innerHTML = researchPoints;
-      moneyDisplay.innerHTML = money;
+      rpDisplay.innerHTML = researchPoints.toFixed(2);
+      moneyDisplay.innerHTML = numFormatter(money);
       thing.bought = true;
       thing.button.style.display = "none";
       achievementUnlocked(thing.discovery);
@@ -436,7 +447,7 @@ function raiseItemsSecond() {
 
   rps = researcher.output * researcher.owned;
   researchPoints += rps;
-  rpsDisplay.innerHTML = rps.toFixed(2) + "per month";
+  rpsDisplay.innerHTML = rps.toFixed(2) + " per month";
   checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
