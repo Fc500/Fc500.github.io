@@ -50,6 +50,14 @@
           </p>
           <button onclick="buyThing(researcher)">BUY</button> 
         </div>
+
+        <div class="researchBox" style="display: none;">
+          <p>Laboratory<br>
+            <b><span id="labOwned">0</span></b><br>
+              $<span id="labPrice">50k</span>
+          </p>
+          <button onclick="buyThing(laboratory)">BUY</button> 
+        </div>
       </div>
       <br>
 
@@ -103,6 +111,43 @@
       <div class="section" style="display: none;" id="buildingsObj">
         <h3 style="display: none;" name="buildingsNotif">No Buildings Avaliable!</h3>
 
+        <div class="buildingBox" id="coal">
+          <p>Coal Plants<br>
+            <b><span id="coalOwned">75</span></b><br>
+              $<span id="coalPrice">1.5k</span>
+          </p>
+          <button onclick="sellNR(coalPlant)">SELL</button> 
+        </div>
+
+        
+        <div class="buildingBox" id="oil">
+          <p>Oil Platform<br>
+            <b><span id="oilOwned">45</span></b><br>
+              $<span id="oilPrice">1.5k</span>
+          </p>
+          <button onclick="sellNR(oilPlatform)">SELL</button> 
+        </div>
+
+        <div class="buildingBox" id="naturalGas">
+          <p>Gas Refiner<br>
+            <b><span id="gasOwned">40</span></b><br>
+              $<span id="gasPrice">1.5k</span>
+          </p>
+          <button onclick="sellNR(gasFacility)">SELL</button> 
+        </div>
+
+        <div class="buildingBox" id="nuclearPlant">
+          <p>Nuclear Power Plant<br>
+            <b><span id="nukeOwned">30</span></b><br>
+              $<span id="nukePrice">1.5k</span>
+          </p>
+          <button onclick="sellNR(nuclearPlant)">SELL</button> 
+        </div>
+
+
+
+
+
         <div class="buildingBox" id="windmills" style="display: none;">
           <p>Windmills<br>
             <b><span id="windmillOwned">0</span></b><br>
@@ -152,7 +197,20 @@
       <div class="section" style="display: none;" id="achievementsObj">
         <p><span id="achievementsDisplay">0</span>/30</p>
       </div>
+      
+      
+    <div class="section" style="display: none;" id="polObj">
     
+      <div class="statBox" style="width: 50%; text-align: center;">
+        <h4>Popularity</h4>
+        <p><span id="popDisplay">50</span></p>
+      </div>
+      <div class="statBox" style="width: 50%; text-align: center;">
+        <h4>Influence</h4>
+        <p><span id="infDisplay">0</span></p>
+      </div>
+
+    </div>
     <div class="section" style="display: none; padding-left: 3%;" id="changelogObj">
       <h3>Version 0.50</h3>
         <ul>
@@ -197,11 +255,23 @@
     <!-- The Navigation Bar -->
     
     <div class="sidenav">
+      <table style="color: white; margin: 5px;">
+        <tr style="margin: 5px;">
+          <th style="margin: 5px;"><span class="material-icons smallIcon">settings</span></th>
+          <th style="margin-left: 5px;">Settings</th>
+        </tr>
+        <tr style="margin: 5px;"">
+          <th style="margin: 5px;"><span class="material-icons smallIcon">help_outline</span></th>
+          <th style="margin-left: 5px;">Tutorial</th>
+        </tr>
+      </table>
+        <br>
       <h2 class="sidenavButton" onclick="sidenavSwitch(1)">Research</h2>
       <h2 class="sidenavButton" onclick="sidenavSwitch(2)">Upgrades</h2>
       <h2 class="sidenavButton" onclick="sidenavSwitch(3)">Buildings</h2>
       <h2 class="sidenavButton" onclick="sidenavSwitch(4)">Achievements</h2>
-      <h2 class="sidenavButton" onclick="sidenavSwitch(5)">Changelog</h2>
+      <h2 class="sidenavButton" onclick="sidenavSwitch(5)">Policies</h2>
+      <h2 class="sidenavButton" onclick="sidenavSwitch(6)">Changelog</h2>
     </div>
 
     <!-- The Achievement Modal-->

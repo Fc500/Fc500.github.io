@@ -36,10 +36,11 @@ body {
     float: left;
     text-align: center;
     width: 25%;
+    color: var(--phthalo-blue);
 }
 
 .researchBox {
-    float: none; 
+    float: left; 
     background-color: var(--blue-pigment);
     margin: 2.5%; 
     border-radius: 15px; 
@@ -56,7 +57,7 @@ body {
     font-size: smaller;
     background-color: var(--blue-pigment);
     width: 44%;
-    margin: 2%;
+    margin: 1.5%;
     height: 200px;
     border-radius: 15px; 
     box-shadow: var(--box-shadows) 0px 5px 15px;
@@ -101,4 +102,16 @@ button {
   color: var(--snow);
   width: 100px;
   box-shadow: var(--box-shadows) 0px 7px 29px 0px;
+}
+
+.smallIcon {
+  color: white;
+  float: left;
+  font-size: 40px;
+  margin: 2%;
+}
+
+td, th {
+  text-align: center;
+  vertical-align: middle;
 }

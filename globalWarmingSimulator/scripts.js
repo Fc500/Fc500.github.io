@@ -1,5 +1,4 @@
-window.alert("v0.51");
-document.getElementsByClassName("researchBox")[0].style.display = "block";
+window.alert("v0.75");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -8,6 +7,8 @@ document.getElementsByClassName("researchBox")[0].style.display = "block";
 // CODE COURTESY OF SOMEONE ON CODEPEN
 
 function achievementUnlocked(achievement){
+  addAchievement(achievement);
+  achievement.got = true;
   var hasClass = $('.ach').hasClass('achieved');
   if (hasClass) return;
   $('.title').html("Achievement Unlocked!");
@@ -16,8 +17,6 @@ function achievementUnlocked(achievement){
   setTimeout(function(){
     $('.ach').removeClass("achieved");
   },5000)
-  addAchievement(achievement);
-  achievement.got = true;
 }
 
     
@@ -44,20 +43,33 @@ function closeModal() {
 } */
 
 //variables
-let money = 10000;
+let money = 3000;
 let temp = 57.85;
 let tempIncrease = 0.017;
 let year = 2010;
 let researchPoints = 150;
+let popularity = 50;
+let influence = 100;
 let rps = 0;
 let mps = 0;
+let mpsTotal = 0;
+let mpsNR = 0;
 let sectionOfText = 0;
 let month = 0;
+
+
 let windmillps = 0;
 let solarps = 0;
 let hydrops = 0;
 let biomassps = 0;
 let geothermalps = 0;
+
+let coalps = 0;
+let oilps = 0;
+let gasps = 0;
+let nukeps = 0;
+
+
 let achievementsGot = 0;
 var modalHeader = document.getElementById("modal-title");
 var modalText = document.getElementById("modal-text");
@@ -74,14 +86,18 @@ var monthDisplay = document.getElementById("monthDisplay");
 var mpsDisplay = document.getElementById("mpsDisplay");
 var tpsDisplay = document.getElementById("tpsDisplay");
 var rpsDisplay = document.getElementById("rpsDisplay");
+var popularityDisplay = document.getElementById("popDisplay");
+var influenceDisplay = document.getElementById("infDisplay");
 let nextButton = document.getElementById("nextButton");
 let playerName = "";
+var researchItems = document.getElementsByClassName("researchBox");
 
 var researchSection = document.getElementById("researchObj");
 var findingsSection = document.getElementById("findingsObj");
 var buildingsSection = document.getElementById("buildingsObj");
 var achievementsSection = document.getElementById("achievementsObj");
-var changelogSection = document.getElementById("changelogObj")
+var policiesSection = document.getElementById("polObj");
+var changelogSection = document.getElementById("changelogObj");
 
 
 // INTERVALS 
@@ -90,6 +106,53 @@ let monthlyUpdates = 0;
 let pentyearlyUpdates = 0;
 let checkForEndGame = 0;
 let updatePlayerValues = 0;
+let updateNonRenewables = 0;
+
+
+
+
+// NONRENEWABLE BUILDINGS
+
+let coalPlant = {
+  owned: 75,
+  cost: 1500,
+  output: 10,
+  amount: document.getElementById("coalOwned"),
+  figure: document.getElementById("coalPrice"),
+  popDebuff: 15,
+  head: document.getElementById("coal"),
+}
+
+let oilPlatform = {
+  owned: 45,
+  cost: 2000,
+  output: 30,
+  amount: document.getElementById("oilOwned"),
+  figure: document.getElementById("oilPrice"),
+  popDebuff: 25,
+  head: document.getElementById("oil"),
+}
+
+
+let gasFacility = {
+  owned: 40,
+  cost: 3000,
+  output: 40,
+  amount: document.getElementById("gasOwned"),
+  figure: document.getElementById("gasPrice"),
+  popDebuff: 40,
+  head: document.getElementById("naturalGas"),
+}
+
+let nuclearPlant = {
+  owned: 30,
+  cost: 4000,
+  output: 75,
+  amount: document.getElementById("nukeOwned"),
+  figure: document.getElementById("nukePrice"),
+  popDebuff: 10,
+  head: document.getElementById("nuclearPlant"),
+}
 
 // MAIN OBJECTS
 
@@ -100,6 +163,14 @@ let researcher = {
   output: 0.1,
   amount: document.getElementById("researcherOwned"),
   figure: document.getElementById("researcherPrice"),
+};
+
+let laboratory = {
+  owned: 0,
+  cost: 50000,
+  output: 1,
+  amount: document.getElementById("labOwned"),
+  figure: document.getElementById("labPrice"),
 };
 
 let windmill = {
@@ -226,6 +297,7 @@ var achievementsList = {
   },
 }
 
+
 // Number converter function
 function numFormatter(num) {
     if(num > 999 && num < 1000000){
@@ -235,7 +307,7 @@ function numFormatter(num) {
     } else if(num > 999999999){
       return (num/1000000000).toFixed(1) + 'B'; // convert to B for number from > 1 billion 
     } else if(num < 900){
-      return num; // if value < 1000, nothing to do
+      return num.toFixed(2); // if value < 1000, nothing to do
     }
   }
 
@@ -262,60 +334,85 @@ function sidenavSwitch(chosenSection) {
       findingsSection.style.display = 'none';
       buildingsSection.style.display = 'none';
       achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'none';
       changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "bold";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[6].style.fontWeight = "normal";
       break;
     case 2:
       researchSection.style.display = 'none';
       findingsSection.style.display = 'block';
       buildingsSection.style.display = 'none';
       achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'none';
       changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "bold";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
       break;
     case 3:
       researchSection.style.display = 'none';
       findingsSection.style.display = 'none';
       buildingsSection.style.display = 'block';
       achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'none';
       changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "bold";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
       break;
     case 4:
       researchSection.style.display = 'none';
       findingsSection.style.display = 'none';
       buildingsSection.style.display = 'none';
       achievementsSection.style.display = 'block';
+      policiesSection.style.display = 'none';
       changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "bold";
       document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
       break;
     case 5:
       researchSection.style.display = 'none';
       findingsSection.style.display = 'none';
       buildingsSection.style.display = 'none';
       achievementsSection.style.display = 'none';
-      changelogSection.style.display = 'block';
+      policiesSection.style.display = 'block';
+      changelogSection.style.display = 'none';
       document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
       document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "bold";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
+      break;
+    case 6:
+      researchSection.style.display = 'none';
+      findingsSection.style.display = 'none';
+      buildingsSection.style.display = 'none';
+      achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'none';
+      changelogSection.style.display = 'block';
+      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "bold";
   }
 } 
 // buy functions
@@ -339,10 +436,22 @@ function sellThing(thing) {
     thing.owned -= 1;
     moneyDisplay.innerHTML = numFormatter(money);
     thing.amount.innerHTML = numFormatter(thing.owned);
-  } else if (thing.owned < 0) {
+  } else if (thing.owned <= 0) {
     window.alert("Not enough buildings to sell!");
   }
 } 
+
+function sellNR(thing) {
+  if (thing.owned > 0) {
+    money += thing.cost/4;
+    thing.owned -= 1;
+    moneyDisplay.innerHTML = numFormatter(money);
+    thing.amount.innerHTML = numFormatter(thing.owned);
+    popularity -= thing.popDebuff; 
+  } else if (thing.owned <= 0) {
+    thing.head.style.display = "none";
+  }
+}
 
 
 function buyDiscovery(thing) {
@@ -405,6 +514,10 @@ function checkForUpgrades() {
       document.getElementById('geothermalUpgrade').style.display = 'block';
   }
 
+  if (researchPoints >= 100) {
+    researchItems[1].style.display = 'block';
+}
+
 }
 
 function checkForEmpty() {
@@ -443,15 +556,42 @@ function raiseMoney() {
 
 }
 
-function raiseItemsSecond() {
+function raiseNR() {
+    if (coalPlant.owned > 0) {
+      coalps = coalPlant.owned * coalPlant.output;
+    }
 
+    if (oilPlatform.owned > 0) {
+      oilps = oilPlatform.owned * oilPlatform.output;
+    }
+
+    if (gasFacility.owned > 0) {
+      gasps = gasFacility.owned * gasFacility.output;
+    }
+
+    if (nuclearPlant.owned > 0) {
+      nukeps = nuclearPlant.owned * nuclearPlant.output;
+    }
+
+    mpsNR = coalps + oilps + gasps + nukeps;
+    money += mpsNR/10;
+    
+}
+
+function updateItemsSecond() {
+
+  mpsTotal = mps + mpsNR;
+
+  influence++;
+  influenceDisplay.innerHTML = influence;
   rps = researcher.output * researcher.owned;
+
   researchPoints += rps;
   rpsDisplay.innerHTML = rps.toFixed(2) + " per month";
   checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
-  mpsDisplay.innerHTML = "$ " + mps.toFixed(2) + " per month";
+  mpsDisplay.innerHTML = "$ " + mpsTotal.toFixed(2) + " per month";
   checkForEmpty();
 }
 
@@ -461,6 +601,8 @@ function raiseYear() {
   temp += tempIncrease;
   tempDisplay.innerHTML = temp.toFixed(2);
   tpsDisplay.innerHTML = tempIncrease.toFixed(2) + "&#176; per year";
+  popularity += 0.5;
+  popularityDisplay.innerHTML = popularity.toFixed(2) + "%";
 }
 
 function raiseTemperature () {
@@ -573,11 +715,13 @@ function raiseMonth() {
 }
 
 function setGameValues() {
-  updateGameSecond = setInterval(raiseItemsSecond, 1000);
+  updateGameSecond = setInterval(updateItemsSecond, 1000);
   monthlyUpdates = setInterval(raiseMonth, 500);
   pentyearlyUpdates = setInterval(raiseTemperature, 30000);
   checkForEndGame = setInterval(checkForWin, 1000);
   updatePlayerValues = setInterval(raiseMoney, 100);
+  updateNonRenewables = setInterval(raiseNR, 100);
+  
 }
 
 function changeText() {
