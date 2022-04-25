@@ -109,7 +109,7 @@ let pentyearlyUpdates = 0;
 let checkForEndGame = 0;
 let updatePlayerValues = 0;
 let updateNonRenewables = 0;
-let updatePopularity = 0;
+let updatePlayerPopularity = 0;
 
 
 
@@ -650,7 +650,7 @@ function endGame() {
 
 }
 
-function popularityCheck() {
+function popCheck() {
 
   if (popularity < 50 && popularity > 40) {
   
@@ -664,7 +664,7 @@ function popularityCheck() {
   
     achievementUnlocked(achievementsList.pop3);
     
-  } else if (popularity =< 0) {
+  } else if (popularitypopularity =< 0) {
   
     achievementUnlocked(achievementsList.pop4);
     
@@ -769,7 +769,7 @@ function setGameValues() {
   checkForEndGame = setInterval(checkForWin, 1000);
   updatePlayerValues = setInterval(raiseMoney, 100);
   updateNonRenewables = setInterval(raiseNR, 100);
-  updatePopularity = setInterval(popularityCheck, 1000);
+  updatePlayerPopularity = setInterval(popCheck, 1000);
 }
 
 function changeText() {
