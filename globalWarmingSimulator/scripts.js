@@ -664,7 +664,7 @@ function popCheck() {
   
     achievementUnlocked(achievementsList.pop3);
     
-  } else if (popularitypopularity =< 0) {
+  } else if (popularity =< 0) {
   
     achievementUnlocked(achievementsList.pop4);
     
