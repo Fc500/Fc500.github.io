@@ -1,4 +1,4 @@
-window.alert("v0.78");
+window.alert("v0.79");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -8,8 +8,9 @@ window.alert("v0.78");
 
 function achievementUnlocked(achievement){
   addAchievement(achievement);
-  if (achievement.got == false) {
+  if (achievement.got != true) {
     achievement.got = true;
+    window.alert(achievement.got);
     var hasClass = $('.ach').hasClass('achieved');
     if (hasClass) return;
     $('.title').html("Achievement Unlocked!");
