@@ -10,7 +10,6 @@ function achievementUnlocked(achievement){
   if (achievement.got != true) {
     addAchievement(achievement);
     achievement.got = true;
-    window.alert(achievement.got);
     var hasClass = $('.ach').hasClass('achieved');
     if (hasClass) return;
     $('.title').html("Achievement Unlocked!");
