@@ -1,4 +1,4 @@
-window.alert("v0.77");
+window.alert("v0.78");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -652,9 +652,12 @@ function endGame() {
 
 function popCheck() {
   
-  window.alert("test");
+  if (popularity < 40) {
+  achievementUnlocked(achievementsList.pop1);
+  }
   
 }
+
 function checkForWin() {
   if (temp < 95) {
     if (temp > 65 && temp < 75) {
