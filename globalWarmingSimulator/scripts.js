@@ -1,4 +1,4 @@
-window.alert("v0.76");
+window.alert("v0.77");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -109,6 +109,7 @@ let pentyearlyUpdates = 0;
 let checkForEndGame = 0;
 let updatePlayerValues = 0;
 let updateNonRenewables = 0;
+let updatePopularity = 0;
 
 
 
@@ -651,10 +652,22 @@ function endGame() {
 
 function popularityCheck() {
 
-  if (popularity < 40 ) {
+  if (popularity < 50 && popularity > 40) {
   
     achievementUnlocked(achievementsList.pop1);
   
+  } else if (popularity < 40 && popularity > 25) {
+  
+    achievementUnlocked(achievementsList.pop2);
+    
+  } else if (popularity < 25 && popularity > 0) {
+  
+    achievementUnlocked(achievementsList.pop3);
+    
+  } else if (popularity =< 0) {
+  
+    achievementUnlocked(achievementsList.pop4);
+    
   }
   
 }
@@ -756,7 +769,7 @@ function setGameValues() {
   checkForEndGame = setInterval(checkForWin, 1000);
   updatePlayerValues = setInterval(raiseMoney, 100);
   updateNonRenewables = setInterval(raiseNR, 100);
-  
+  updatePopularity = setInterval(popularityCheck, 1000);
 }
 
 function changeText() {
