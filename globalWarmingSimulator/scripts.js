@@ -1,4 +1,4 @@
-window.alert("v0.79");
+window.alert("v0.80");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -7,8 +7,8 @@ window.alert("v0.79");
 // CODE COURTESY OF SOMEONE ON CODEPEN
 
 function achievementUnlocked(achievement){
-  addAchievement(achievement);
   if (achievement.got != true) {
+    addAchievement(achievement);
     achievement.got = true;
     window.alert(achievement.got);
     var hasClass = $('.ach').hasClass('achieved');
@@ -629,7 +629,7 @@ function raiseYear() {
   temp += tempIncrease;
   tempDisplay.innerHTML = temp.toFixed(2);
   tpsDisplay.innerHTML = tempIncrease.toFixed(2) + "&#176; per year";
-  popularity += 0.5;
+  popularity += 0.25;
   popularityDisplay.innerHTML = popularity.toFixed(2) + "%";
 }
 
@@ -653,8 +653,14 @@ function endGame() {
 
 function popCheck() {
   
-  if (popularity < 40) {
-  achievementUnlocked(achievementsList.pop1);
+  if (popularity < 40 && popularity > 30) {
+    achievementUnlocked(achievementsList.pop1);
+  } else if (popularity < 30 && popularity > 20) {
+    achievementUnlocked(achievementsList.pop2);
+  } else if (popularity < 20 && popularity > 10) {
+    achievementUnlocked(achievementsList.pop3);
+  } else if (popularity <= 10) {
+    achievementUnlocked(achievementsList.pop4);
   }
   
 }
