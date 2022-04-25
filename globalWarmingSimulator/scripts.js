@@ -651,24 +651,8 @@ function endGame() {
 }
 
 function popCheck() {
-
-  if (popularity < 50 && popularity > 40) {
   
-    achievementUnlocked(achievementsList.pop1);
-  
-  } else if (popularity < 40 && popularity > 25) {
-  
-    achievementUnlocked(achievementsList.pop2);
-    
-  } else if (popularity < 25 && popularity > 0) {
-  
-    achievementUnlocked(achievementsList.pop3);
-    
-  } else if (popularity =< 0) {
-  
-    achievementUnlocked(achievementsList.pop4);
-    
-  }
+  window.alert("test");
   
 }
 function checkForWin() {
