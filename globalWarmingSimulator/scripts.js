@@ -1,4 +1,4 @@
-window.alert("v0.75");
+window.alert("v0.76");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -8,15 +8,17 @@ window.alert("v0.75");
 
 function achievementUnlocked(achievement){
   addAchievement(achievement);
-  achievement.got = true;
-  var hasClass = $('.ach').hasClass('achieved');
-  if (hasClass) return;
-  $('.title').html("Achievement Unlocked!");
-  $('.detail').html(achievement.title);
-  $('.ach').addClass("achieved");
-  setTimeout(function(){
-    $('.ach').removeClass("achieved");
-  },5000)
+  if (achievement.got == false) {
+    achievement.got = true;
+    var hasClass = $('.ach').hasClass('achieved');
+    if (hasClass) return;
+    $('.title').html("Achievement Unlocked!");
+    $('.detail').html(achievement.title);
+    $('.ach').addClass("achieved");
+    setTimeout(function(){
+      $('.ach').removeClass("achieved");
+    },5000)    
+  }
 }
 
     
@@ -293,6 +295,30 @@ var achievementsList = {
   temp4: {
     title: "The End of the World",
     flavorText: "The final months of humanity begins in a ruined, scorching world.",
+    got: false,
+  },
+  
+  pop1: {
+    title: "Against the Public",
+    flavorText: "The public seems to be turning against you... might want to watch out!",
+    got: false,
+  },
+  
+  pop2: {
+    title: "Personal Protection",
+    flavorText: "The public seems quite mad with you!",
+    got: false,
+  },
+  
+  pop3: {
+    title: "A Failing Company",
+    flavorText: "Stocks are falling and investors are pulling out!",
+    got: false,
+  },
+  
+  pop4: {
+    title: "The end of a Company",
+    flavorText: "Good one! " + playerName + " INC has caused the public to riot and overthrow you!",
     got: false,
   },
 }
@@ -623,6 +649,15 @@ function endGame() {
 
 }
 
+function popularityCheck() {
+
+  if (popularity < 40 ) {
+  
+    achievementUnlocked(achievementsList.pop1);
+  
+  }
+  
+}
 function checkForWin() {
   if (temp < 95) {
     if (temp > 65 && temp < 75) {
