@@ -1,4 +1,4 @@
-window.alert("v0.92");
+window.alert("v0.93");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -282,10 +282,23 @@ var upgrades = {
     bought: false,
     discovery: {
       title: "Steel Blades",
-      flavorText: "Stronger blades for more efficient energy collection! (Windmill production x1.5%)",
+      flavorText: "Stronger blades for more efficient energy collection! (Windmill production x1.1%)",
       buffType: 1,
       buffBuilding: windmill,
-      buff: 1.5,
+      buff: 1.1,
+    }
+},
+  
+windmill2: {
+    cost: 20000,
+    research: 110,
+    bought: false,
+    discovery: {
+      title: "Quick Rotators",
+      flavorText: "Faster rotators for more efficient energy collection! (Windmill production x1.2%)",
+      buffType: 1,
+      buffBuilding: windmill,
+      buff: 1.2,
     }
 },
 
@@ -509,8 +522,12 @@ function checkForUpgrades() {
     researchItems[1].style.display = 'block';
 }
 
-  if (researchPoints >= 25) {
+  if (researchPoints >= 25 && findings.windmill.bought == true) {
     addUpgrade(upgrades.windmill1);
+  }
+  
+  if (researchPoints >= 75 && findings.windmill.bought == true) {
+    addUpgrade(upgrades.windmill2);
   }
 
 }
