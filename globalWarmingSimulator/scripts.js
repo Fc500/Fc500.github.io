@@ -381,7 +381,7 @@ function addUpgrade(upgrade) {
     upgradeButton.onclick = function () {
       buyUpgrade(upgrade);
     };
-    upgradeBox.innerHTML = "<p>" + upgrade.discovery.title + "<br>" + upgrade.price + " | " + upgrade.research + "</p>;
+    upgradeBox.innerHTML = "<p>" + upgrade.discovery.title + "<br>" + upgrade.price + " | " + upgrade.research + "</p>";
     upgradeBox.appendChild(upgradeButton);
     upgradeBox.classList.add("buildingBox");
     // Append to another element:
