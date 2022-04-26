@@ -180,7 +180,7 @@ let laboratory = {
 
 let windmill = {
   owned: 0,
-  cost: 1500,
+  cost: 2000000,
   output: 50,
   amount: document.getElementById("windmillOwned"),
   figure: document.getElementById("windmillPrice"),
