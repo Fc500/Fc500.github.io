@@ -68,20 +68,19 @@
         <h3>Buildings</h3>
         <div name="buildingFindings">
           <h3 style="display: none; color: var(--phthalo-blue);" name="researchNotif">No things researched yet!</h3>
-
+          
+          <div class="buildingBox findings" id="solarUpgrade" style="display: none;">
+            <p>Solar Farms<br>
+              $1.5K | 25 RP
+            </p>
+            <button onclick="buyDiscovery(findings.solar)" class="findingsButton">BUY</button> 
+          </div>
 
           <div class="buildingBox findings" id="windmillUpgrade" style="display: none;">
             <p>Windmills<br>
               $100 | 5 RP
             </p>
             <button onclick="buyDiscovery(findings.windmill)" class="findingsButton">BUY</button> 
-          </div>
-
-          <div class="buildingBox findings" id="solarUpgrade" style="display: none;">
-            <p>Solar Farms<br>
-              $1.5K | 25 RP
-            </p>
-            <button onclick="buyDiscovery(findings.solar)" class="findingsButton">BUY</button> 
           </div>
 
           <div class="buildingBox findings" id="hydroUpgrade" style="display: none;">
@@ -149,10 +148,14 @@
           <button onclick="sellNR(nuclearPlant)">SELL</button> 
         </div>
 
-
-
-
-
+          <div class="buildingBox" id="solars" style="display: none;">
+          <p>Solar Farms<br>
+            <b><span id="solarOwned">0</span></b><br>
+              $<span id="solarPrice">800k</span>
+          </p>
+          <button onclick="buyThing(solarFarm)">BUY</button> 
+          <button onclick="sellThing(solarFarm)">SELL</button> 
+        </div>
         <div class="buildingBox" id="windmills" style="display: none;">
           <p>Windmills<br>
             <b><span id="windmillOwned">0</span></b><br>
@@ -164,14 +167,7 @@
           <button onclick="sellThing(windmill)">SELL</button> 
         </div>
 
-        <div class="buildingBox" id="solars" style="display: none;">
-          <p>Solar Farms<br>
-            <b><span id="solarOwned">0</span></b><br>
-              $<span id="solarPrice">5k</span>
-          </p>
-          <button onclick="buyThing(solarFarm)">BUY</button> 
-          <button onclick="sellThing(solarFarm)">SELL</button> 
-        </div>
+ 
 
         <div class="buildingBox" id="hydros" style="display: none;">
           <p>Hydroelectric Dams<br>
