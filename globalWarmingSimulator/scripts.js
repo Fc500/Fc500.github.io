@@ -1,4 +1,4 @@
-window.alert("v0.93");
+window.alert("v0.94");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -280,6 +280,7 @@ var upgrades = {
     cost: 10000,
     research: 100,
     bought: false,
+    index: 0,
     discovery: {
       title: "Steel Blades",
       flavorText: "Stronger blades for more efficient energy collection! (Windmill production x1.1%)",
@@ -293,6 +294,7 @@ windmill2: {
     cost: 20000,
     research: 110,
     bought: false,
+    index: 1,
     discovery: {
       title: "Quick Rotators",
       flavorText: "Faster rotators for more efficient energy collection! (Windmill production x1.2%)",
@@ -397,6 +399,7 @@ function addUpgrade(upgrade) {
     upgradeBox.innerHTML = "<p>" + upgrade.discovery.title + "<br>$ " + numFormatter(upgrade.cost) + " | " + upgrade.research + " RP</p><h6><i>" + upgrade.discovery.flavorText + "</i></h6>";
     upgradeBox.appendChild(upgradeButton);
     upgradeBox.classList.add("buildingBox");
+    upgradeBox.classList.add("improvementUpgrade");
     // Append to another element:
     upgradesSection.appendChild(upgradeBox);
   }
@@ -448,8 +451,10 @@ function buyUpgrade(upgrade) {
 
     switch (upgrade.discovery.buffType) {
       case 1:
+          let upgradeHouse = document.getElementsByClassName("improvementUpgrade");
           let buildingToBuff = upgrade.discovery.buffBuilding;
           buildingToBuff.output *= upgrade.discovery.buff;
+          upgradeHouse[upgrade.index].remove();
           window.alert("test");
           window.alert(windmill.output);
 
