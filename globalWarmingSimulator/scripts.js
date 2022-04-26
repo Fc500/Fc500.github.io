@@ -178,20 +178,20 @@ let laboratory = {
   figure: document.getElementById("labPrice"),
 };
 
-let windmill = {
-  owned: 0,
-  cost: 2000000,
-  output: 50,
-  amount: document.getElementById("windmillOwned"),
-  figure: document.getElementById("windmillPrice"),
-}
-
 let solarFarm = {
   owned: 0,
   cost: 800000,
-  output: 100,
+  output: 120000,
   amount: document.getElementById("solarOwned"),
   figure: document.getElementById("solarPrice"),
+}
+
+let windmill = {
+  owned: 0,
+  cost: 2000000,
+  output: 150000,
+  amount: document.getElementById("windmillOwned"),
+  figure: document.getElementById("windmillPrice"),
 }
 
 let hydroPlant = {
