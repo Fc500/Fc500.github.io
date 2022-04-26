@@ -1,4 +1,4 @@
-window.alert("v0.86");
+window.alert("v0.90");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -12,7 +12,8 @@ function achievementUnlocked(achievement){
     achievement.got = true;
     var hasClass = $('.ach').hasClass('achieved');
     if (hasClass) return;
-    $('.title').html("Achievement Unlocked!");
+      $('.title').html("Achievement Unlocked!");
+
     $('.detail').html(achievement.title);
     $('.ach').addClass("achieved");
     setTimeout(function(){
@@ -282,7 +283,9 @@ var upgrades = {
     discovery: {
       title: "Steel Blades",
       flavorText: "Stronger blades for more efficient energy collection! (Windmill production x1.5%)",
-      got: false,
+      buffType: 1,
+      buffBuilding: windmill,
+      buff: 1.5,
     }
 },
 
@@ -369,21 +372,23 @@ function addAchievement(achievement) {
 }
 
 function addUpgrade(upgrade) {
-  if (upgrade.discovery.got == false) {
-    upgrade.discovery.got = true;
+  if (upgrade.bought == false) {
+    upgrade.bought = true;
     // Create element
     const upgradeBox = document.createElement("div");
-    upgradeBox.innerHTML = "<h4>" + upgrade.discovery.title + `</h4><button onclick='buyUpgrade(` + upgrade + `)'>TEST</button>`;
+    const upgradeButton = document.createElement("button");
+    upgradeButton.innerHTML = "BUY";
+    upgradeButton.onclick = function () {
+      buyUpgrade(upgrade);
+    };
+    upgradeBox.innerHTML = "<h4>" + upgrade.discovery.title + "</h4>";
+    upgradeBox.appendChild(upgradeButton);
     upgradeBox.classList.add("buildingBox");
     // Append to another element:
     upgradesSection.appendChild(upgradeBox);
   }
 }
 
-
-function buyUpgrade(upgrade) {
-  window.alert(upgrade);
-}
 // buy functions
 
 function buyThing(thing) {
@@ -423,8 +428,24 @@ function sellNR(thing) {
 }
 
 
+
+function buyUpgrade(upgrade) {
+  if (upgrade.cost <= money && upgrade.research <= researchPoints) {
+    achievementUnlocked(upgrade.discovery);
+
+    switch (upgrade.discovery.buffType) {
+      case 1:
+          let buildingToBuff = upgrade.discovery.buffBuilding;
+          buildingToBuff.output *= upgrade.discovery.buff;
+          window.alert("test");
+          window.alert(windmill.output);
+
+    }
+  }
+
+}
+
 function buyDiscovery(thing) {
-  window.alert("hi");
     if (thing.cost < money && thing.research < researchPoints) {
       money -= thing.cost;
       researchPoints -= thing.research;
@@ -507,6 +528,7 @@ function checkForEmpty() {
 function raiseMoney() { 
   if (windmill.owned > 0) {
     windmillps = windmill.owned * windmill.output;
+    document.getElementById("windmillOutputPS").innerHTML = windmillps;
   }
 
   if (solarFarm.owned > 0) {

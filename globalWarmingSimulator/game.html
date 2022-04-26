@@ -105,9 +105,10 @@
             <button onclick="buyDiscovery(findings.geothermal)" class="findingsButton">BUY</button> 
           </div>
         </div>
+        <br>
         <h3>Upgrades</h3>
         <div name="buildingUpgrades">
-
+        
         </div>
     </div>
 
@@ -156,7 +157,9 @@
           <p>Windmills<br>
             <b><span id="windmillOwned">0</span></b><br>
               $<span id="windmillPrice">1.5k</span>
+              <br>
           </p>
+          <h6 id="windmillOutputPS"></h6>
           <button onclick="buyThing(windmill)">BUY</button> 
           <button onclick="sellThing(windmill)">SELL</button> 
         </div>
@@ -229,6 +232,34 @@
         <ul>
           <li>Added an ability to sell buildings</li>
           <li>Fixed some minor spelling errors</li>
+        </ul>
+
+        <h3>Version 0.75</h3>
+        <ul>
+          <li>MEGA UPDATE</li>
+          <li>Added Non-Renewable energy sources</li>
+          <li>Added popularity, policies and influence</li>
+          <li>Lack of popularity can now cause the player to lose the game</li>
+        </ul>
+
+        <h3>Version 0.86</h3>
+        <ul>
+          <li>Worked on improving how upgrades are handled</li>
+        </ul>
+
+        <h3>Version 0.87</h3>
+        <ul>
+          <li>Fixed a bug where the upgrade would automatically be bought on it being unlocked</li>
+          <li>Worked on a system for upgrades to be handled by one function</li>
+        </ul>
+
+        <h3>Version 0.90</h3>
+        <ul>
+          <li>FINISHED THE UPGRADE FUNCTION</li>
+          <li>Upgrades are now handled with one parent function which can be adapted to fit any future upgrade</li>
+          <li>Added Steel Turbines - an upgrade that improves the productivity of windmills</li>
+          <li>Added an amount per second counter for windmills</li>
+          <li>MORE UPGRADES TO COME!</li>
         </ul>
     </div>
 
