@@ -1,4 +1,4 @@
-window.alert("v0.80");
+window.alert("v0.81");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -122,7 +122,7 @@ let coalPlant = {
   output: 10,
   amount: document.getElementById("coalOwned"),
   figure: document.getElementById("coalPrice"),
-  popDebuff: 15,
+  popDebuff: 5,
   head: document.getElementById("coal"),
 }
 
@@ -132,7 +132,7 @@ let oilPlatform = {
   output: 30,
   amount: document.getElementById("oilOwned"),
   figure: document.getElementById("oilPrice"),
-  popDebuff: 25,
+  popDebuff: 7,
   head: document.getElementById("oil"),
 }
 
@@ -143,7 +143,7 @@ let gasFacility = {
   output: 40,
   amount: document.getElementById("gasOwned"),
   figure: document.getElementById("gasPrice"),
-  popDebuff: 40,
+  popDebuff: 10,
   head: document.getElementById("naturalGas"),
 }
 
@@ -153,7 +153,7 @@ let nuclearPlant = {
   output: 75,
   amount: document.getElementById("nukeOwned"),
   figure: document.getElementById("nukePrice"),
-  popDebuff: 10,
+  popDebuff: 2,
   head: document.getElementById("nuclearPlant"),
 }
 
@@ -618,7 +618,7 @@ function updateItemsSecond() {
   checkForUpgrades();
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
-  mpsDisplay.innerHTML = "$ " + mpsTotal.toFixed(2) + " per month";
+  mpsDisplay.innerHTML = "$ " + numFormatter(mpsTotal) + " per month";
   checkForEmpty();
 }
 
@@ -658,8 +658,10 @@ function popCheck() {
     achievementUnlocked(achievementsList.pop2);
   } else if (popularity < 20 && popularity > 10) {
     achievementUnlocked(achievementsList.pop3);
-  } else if (popularity <= 10) {
+  } else if (popularity <= 10 && popularity > 0) {
     achievementUnlocked(achievementsList.pop4);
+  } else if (popularity <= 0) {
+    endGame();
   }
   
 }
@@ -694,7 +696,7 @@ function checkForWin() {
       achievementUnlocked(achievementsList.temp4);
     }
     modalHeader.innerHTML = "";
-    modalText.innerHTML = "Despite humanity's best efforts, <b>" + playerName + " INC </b> has failed. The Earth has warmed to unlivable temperatures. The few survivors know they're watching the end of the world.";
+    modalText.innerHTML = "Despite humanity's best efforts, <b>" + playerName.toString() + " INC </b> has failed. The Earth has warmed to unlivable temperatures. The few survivors know they're watching the end of the world.";
     modal.style.display = "block";
     
     endGame();
