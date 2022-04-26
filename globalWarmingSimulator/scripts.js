@@ -46,7 +46,7 @@ function closeModal() {
 } */
 
 //variables
-let money = 3000;
+let money = 500000;
 let temp = 57.85;
 let tempIncrease = 0.017;
 let year = 2010;
