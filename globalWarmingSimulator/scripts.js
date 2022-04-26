@@ -1,4 +1,4 @@
-window.alert("v0.95");
+window.alert("v0.96");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -188,7 +188,7 @@ let windmill = {
 
 let solarFarm = {
   owned: 0,
-  cost: 5000,
+  cost: 800000,
   output: 100,
   amount: document.getElementById("solarOwned"),
   figure: document.getElementById("solarPrice"),
@@ -503,10 +503,10 @@ function checkForUpgrades() {
   }
 
   // Updating discoveries
-    if (researchPoints >= 5 && findings.windmill.bought == false) {
+    if (researchPoints >= 25 && findings.windmill.bought == false) {
       document.getElementById('windmillUpgrade').style.display = 'block';
     } 
-    if (researchPoints >= 25 && findings.solar.bought == false) {
+    if (researchPoints >= 5 && findings.solar.bought == false) {
       document.getElementById('solarUpgrade').style.display = 'block';
     }
 
