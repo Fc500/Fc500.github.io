@@ -1,4 +1,4 @@
-window.alert("v0.81");
+window.alert("v0.86");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -100,6 +100,7 @@ var buildingsSection = document.getElementById("buildingsObj");
 var achievementsSection = document.getElementById("achievementsObj");
 var policiesSection = document.getElementById("polObj");
 var changelogSection = document.getElementById("changelogObj");
+var upgradesSection = document.getElementsByName("buildingUpgrades")[0];
 
 
 // INTERVALS 
@@ -272,6 +273,21 @@ var findings = {
   },
 }
 
+var upgrades = {
+
+  windmill1: {
+    cost: 10000,
+    research: 100,
+    bought: false,
+    discovery: {
+      title: "Steel Blades",
+      flavorText: "Stronger blades for more efficient energy collection! (Windmill production x1.5%)",
+      got: false,
+    }
+},
+
+}
+
 // ACHIEVEMENTS 
 
 var achievementsList = {
@@ -352,96 +368,22 @@ function addAchievement(achievement) {
   document.getElementById("achievementsDisplay").innerHTML = achievementsGot;
 }
 
-// SIDENAV FUNCTION
-
-function sidenavSwitch(chosenSection) {
-  switch (chosenSection) {
-    case 1:
-      researchSection.style.display = 'block';
-      findingsSection.style.display = 'none';
-      buildingsSection.style.display = 'none';
-      achievementsSection.style.display = 'none';
-      policiesSection.style.display = 'none';
-      changelogSection.style.display = 'none';
-      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "bold";
-      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[6].style.fontWeight = "normal";
-      break;
-    case 2:
-      researchSection.style.display = 'none';
-      findingsSection.style.display = 'block';
-      buildingsSection.style.display = 'none';
-      achievementsSection.style.display = 'none';
-      policiesSection.style.display = 'none';
-      changelogSection.style.display = 'none';
-      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "bold";
-      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
-      break;
-    case 3:
-      researchSection.style.display = 'none';
-      findingsSection.style.display = 'none';
-      buildingsSection.style.display = 'block';
-      achievementsSection.style.display = 'none';
-      policiesSection.style.display = 'none';
-      changelogSection.style.display = 'none';
-      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "bold";
-      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
-      break;
-    case 4:
-      researchSection.style.display = 'none';
-      findingsSection.style.display = 'none';
-      buildingsSection.style.display = 'none';
-      achievementsSection.style.display = 'block';
-      policiesSection.style.display = 'none';
-      changelogSection.style.display = 'none';
-      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "bold";
-      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
-      break;
-    case 5:
-      researchSection.style.display = 'none';
-      findingsSection.style.display = 'none';
-      buildingsSection.style.display = 'none';
-      achievementsSection.style.display = 'none';
-      policiesSection.style.display = 'block';
-      changelogSection.style.display = 'none';
-      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "bold";
-      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
-      break;
-    case 6:
-      researchSection.style.display = 'none';
-      findingsSection.style.display = 'none';
-      buildingsSection.style.display = 'none';
-      achievementsSection.style.display = 'none';
-      policiesSection.style.display = 'none';
-      changelogSection.style.display = 'block';
-      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
-      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "bold";
+function addUpgrade(upgrade) {
+  if (upgrade.discovery.got == false) {
+    upgrade.discovery.got = true;
+    // Create element
+    const upgradeBox = document.createElement("div");
+    upgradeBox.innerHTML = "<h4>" + upgrade.discovery.title + `</h4><button onclick='buyUpgrade(` + upgrade + `)'>TEST</button>`;
+    upgradeBox.classList.add("buildingBox");
+    // Append to another element:
+    upgradesSection.appendChild(upgradeBox);
   }
-} 
+}
+
+
+function buyUpgrade(upgrade) {
+  window.alert(upgrade);
+}
 // buy functions
 
 function buyThing(thing) {
@@ -482,6 +424,7 @@ function sellNR(thing) {
 
 
 function buyDiscovery(thing) {
+  window.alert("hi");
     if (thing.cost < money && thing.research < researchPoints) {
       money -= thing.cost;
       researchPoints -= thing.research;
@@ -544,6 +487,10 @@ function checkForUpgrades() {
   if (researchPoints >= 100) {
     researchItems[1].style.display = 'block';
 }
+
+  if (researchPoints >= 25) {
+    addUpgrade(upgrades.windmill1);
+  }
 
 }
 
@@ -643,6 +590,7 @@ function endGame() {
   clearInterval(pentyearlyUpdates);
   clearInterval(checkForEndGame);
   clearInterval(updatePlayerValues);
+  clearInterval(updatePlayerPopularity);
   rpsDisplay.innerHTML = "THERE";
   mpsDisplay.innerHTML = "IS";
   monthDisplay.innerHTML = "NOTHING";
@@ -658,7 +606,7 @@ function popCheck() {
     achievementUnlocked(achievementsList.pop2);
   } else if (popularity < 20 && popularity > 10) {
     achievementUnlocked(achievementsList.pop3);
-  } else if (popularity <= 10 && popularity > 0) {
+  } else if (popularity < 10 && popularity > 0) {
     achievementUnlocked(achievementsList.pop4);
   } else if (popularity <= 0) {
     endGame();
@@ -759,8 +707,8 @@ function raiseMonth() {
 
 function setGameValues() {
   updateGameSecond = setInterval(updateItemsSecond, 1000);
-  monthlyUpdates = setInterval(raiseMonth, 500);
-  pentyearlyUpdates = setInterval(raiseTemperature, 30000);
+  monthlyUpdates = setInterval(raiseMonth, 250);
+  pentyearlyUpdates = setInterval(raiseTemperature, 15000);
   checkForEndGame = setInterval(checkForWin, 1000);
   updatePlayerValues = setInterval(raiseMoney, 100);
   updateNonRenewables = setInterval(raiseNR, 100);
@@ -792,3 +740,134 @@ function changeText() {
       nextButton.innerHTML = "CLOSE";
   }
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SIDENAV FUNCTION
+
+function sidenavSwitch(chosenSection) {
+  switch (chosenSection) {
+    case 1:
+      researchSection.style.display = 'block';
+      findingsSection.style.display = 'none';
+      buildingsSection.style.display = 'none';
+      achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'none';
+      changelogSection.style.display = 'none';
+      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "bold";
+      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[6].style.fontWeight = "normal";
+      break;
+    case 2:
+      researchSection.style.display = 'none';
+      findingsSection.style.display = 'block';
+      buildingsSection.style.display = 'none';
+      achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'none';
+      changelogSection.style.display = 'none';
+      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "bold";
+      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
+      break;
+    case 3:
+      researchSection.style.display = 'none';
+      findingsSection.style.display = 'none';
+      buildingsSection.style.display = 'block';
+      achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'none';
+      changelogSection.style.display = 'none';
+      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "bold";
+      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
+      break;
+    case 4:
+      researchSection.style.display = 'none';
+      findingsSection.style.display = 'none';
+      buildingsSection.style.display = 'none';
+      achievementsSection.style.display = 'block';
+      policiesSection.style.display = 'none';
+      changelogSection.style.display = 'none';
+      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "bold";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
+      break;
+    case 5:
+      researchSection.style.display = 'none';
+      findingsSection.style.display = 'none';
+      buildingsSection.style.display = 'none';
+      achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'block';
+      changelogSection.style.display = 'none';
+      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "bold";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "normal";
+      break;
+    case 6:
+      researchSection.style.display = 'none';
+      findingsSection.style.display = 'none';
+      buildingsSection.style.display = 'none';
+      achievementsSection.style.display = 'none';
+      policiesSection.style.display = 'none';
+      changelogSection.style.display = 'block';
+      document.getElementsByClassName("sidenavButton")[0].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[1].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[2].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[3].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[4].style.fontWeight = "normal";
+      document.getElementsByClassName("sidenavButton")[5].style.fontWeight = "bold";
+  
+} }
