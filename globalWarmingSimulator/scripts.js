@@ -1,4 +1,4 @@
-window.alert("v0.90");
+window.alert("v0.91");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -381,7 +381,7 @@ function addUpgrade(upgrade) {
     upgradeButton.onclick = function () {
       buyUpgrade(upgrade);
     };
-    upgradeBox.innerHTML = "<h4>" + upgrade.discovery.title + "</h4>";
+    upgradeBox.innerHTML = "<p>" + upgrade.discovery.title + "<br>" + upgrade.price + " | " + upgrade.research + "</p>;
     upgradeBox.appendChild(upgradeButton);
     upgradeBox.classList.add("buildingBox");
     // Append to another element:
