@@ -1,4 +1,4 @@
-window.alert("v0.96");
+window.alert("v0.97");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -221,28 +221,29 @@ let geothermalPlant = {
 // UPGRADES
 
 var findings = {
-    windmill: {
-        cost: 100,
-        research: 5,
-        bought: false,
-        button: findingsArray[0],
-        discovery: { 
-          title: "Wind technology",
-          flavorText: "The power of the air",
-        },
-    },
     solar: {
-      cost: 1500,
+      cost: 50000,
       research: 25,
       bought: false,
-      button: findingsArray[1],
+      button: findingsArray[0],
       discovery: { 
         title: "Solar technology",
         flavorText: "The power of the sun",
       },
     },
+  
+    windmill: {
+        cost: 100000,
+        research: 5,
+        bought: false,
+        button: findingsArray[1],
+        discovery: { 
+          title: "Wind technology",
+          flavorText: "The power of the air",
+        },
+    },
     hydro: {
-      cost: 12500,
+      cost: 125000,
       research: 50,
       bought: false,
       button: findingsArray[2],
@@ -252,7 +253,7 @@ var findings = {
       },
   },
   biomass: {
-      cost: 75000,
+      cost: 750000,
       research: 150,
       bought: false,
       button: findingsArray[3],
@@ -263,7 +264,7 @@ var findings = {
   },
   
   geothermal: {
-      cost: 500000,
+      cost: 1500000,
       research: 200,
       bought: false,
       button: findingsArray[4],
