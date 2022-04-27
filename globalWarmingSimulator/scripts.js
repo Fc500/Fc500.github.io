@@ -1,4 +1,4 @@
-window.alert("v0.99m");
+window.alert("v0.99r");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -598,10 +598,14 @@ function raiseNR() {
 function updateItemsSecond() {
 
   mpsTotal = mps + mpsNR;
+  researchps = 0;
+  labps = 0;
 
   influence++;
   influenceDisplay.innerHTML = influence;
-  rps = researcher.output * researcher.owned;
+  researchps = researcher.output * researcher.owned;
+  labps = laboratory.owned * laboratory.output;
+  rps = researchps + labps;
 
   researchPoints += rps;
   rpsDisplay.innerHTML = rps.toFixed(2) + " per month";
@@ -794,20 +798,20 @@ function displayTut(tutorial) {
 
   switch(tutorial) {
     case 0:
-      modalText.innerHTML = "text1";
+      modalText.innerHTML = "BUILDINGS<br>Buildings are essential for money production. Non-renewable buildings contribute to the rising temperature, and green buildings can help take that down a small margin. Your goal is to sell all of your Non-Renewable buildings and have 100% green energy buildings.";
       break;
     case 1:
-      modalText.innerHTML = "text2";
+      modalText.innerHTML = "UPGRADES<br>Upgrades help you discover new buildings or improving previous ones. <b>Researchers</b> give you research points, which allow you to buy said upgrades. These siginficantly help lower the rate of temperature, and can make you 'beat' the game faster.";
       break;
     case 2:
-      modalText.innerHTML = "text3";
+      modalText.innerHTML = "POLICIES<br>Policies are currently not 100% implemented, but are sort-of one-time upgrades that are really expensive and cost a lot of <b>Popularity</b>.<b>Popularity</b> is an essential resource for your company. Each non-renewable building you sell, your popularity goes down, but don't worry, it'll go up over time. Manage your popularity, because if it hits zero, you'll lose the game.";
   }
   
 }
 
 function tutorial() {
   modal.style.display = "block";
-  modalText.innerHTML = "<p>Welcome to the Help Section! What would you like help with?</p><br><button onclick='displayTut(0)'>BUILDINGS</button><button onclick='displayTut(1)'>POPULARITY/POLICIES</button><button onclick='displayTut(2)'>UPGRADES</button><br><button onclick='closeModal()'>CLOSE</button>";
+  modalText.innerHTML = "<p>Welcome to the Help Section! What would you like help with?</p><br><button onclick='displayTut(0)' class='smallButton'>BUILDINGS</button><button onclick='displayTut(1)' class='smallButton'>POPULARITY/POLICIES</button><button onclick='displayTut(2)' class='smallButton'>UPGRADES</button>";
 }
 
 
