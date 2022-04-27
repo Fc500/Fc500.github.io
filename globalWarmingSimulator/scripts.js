@@ -1,4 +1,4 @@
-window.alert("v0.97");
+window.alert("v0.98");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -555,18 +555,22 @@ function raiseMoney() {
 
   if (solarFarm.owned > 0) {
     solarps = solarFarm.owned * solarFarm.output;
+    document.getElementById("solarOutputPS").innerHTML = solarps;
   }
 
   if (hydroPlant.owned > 0) {
     hydrops = hydroPlant.owned * hydroPlant.output;
+    document.getElementById("hydroOutputPS").innerHTML = hydrops;
   }
   
   if (biomassFarm.owned > 0) {
     biomassps = biomassFarm.owned * biomassFarm.output;
+    document.getElementById("biomassOutputPS").innerHTML = biomassps;
   }
   
   if (geothermalPlant.owned > 0) {
     geothermalps = geothermalPlant.owned * geothermalPlant.output;
+    document.getElementById("geothermalOutputPS").innerHTML = geothermalps;
   }
 
   mps = windmillps + solarps + hydrops + biomassps + geothermalps;
@@ -577,18 +581,22 @@ function raiseMoney() {
 function raiseNR() {
     if (coalPlant.owned > 0) {
       coalps = coalPlant.owned * coalPlant.output;
+      document.getElementById("coalOutputPS").innerHTML = coalps;
     }
 
     if (oilPlatform.owned > 0) {
       oilps = oilPlatform.owned * oilPlatform.output;
+      document.getElementById("oilOutputPS").innerHTML = oilps;
     }
 
     if (gasFacility.owned > 0) {
       gasps = gasFacility.owned * gasFacility.output;
+      document.getElementById("gasOutputPS").innerHTML = gasps;
     }
 
     if (nuclearPlant.owned > 0) {
       nukeps = nuclearPlant.owned * nuclearPlant.output;
+      document.getElementById("nukeOutputPS").innerHTML = nukeps;
     }
 
     mpsNR = coalps + oilps + gasps + nukeps;
