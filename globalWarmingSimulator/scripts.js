@@ -1,4 +1,4 @@
-window.alert("v0.98");
+window.alert("v0.99");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -536,41 +536,32 @@ function checkForUpgrades() {
   }
 
 }
-
-function checkForEmpty() {
-  if (findings.hydro.bought && findings.solar.bought && findings.windmill.bought && findings.geothermal.bought) {
-    document.getElementsByName('researchNotif')[0].style.display = 'block';
-  } else {
-    document.getElementsByName('researchNotif')[0].style.display = 'none';
-  }
-}
-
 //gain functions
 
 function raiseMoney() { 
   if (windmill.owned > 0) {
     windmillps = windmill.owned * windmill.output;
-    document.getElementById("windmillOutputPS").innerHTML = windmillps;
+    document.getElementById("windmillOutputPS").innerHTML = numFormatter(windmillps);
   }
 
   if (solarFarm.owned > 0) {
     solarps = solarFarm.owned * solarFarm.output;
-    document.getElementById("solarOutputPS").innerHTML = solarps;
+    document.getElementById("solarOutputPS").innerHTML =  numFormatter(solarps);
   }
 
   if (hydroPlant.owned > 0) {
     hydrops = hydroPlant.owned * hydroPlant.output;
-    document.getElementById("hydroOutputPS").innerHTML = hydrops;
+    document.getElementById("hydroOutputPS").innerHTML = numFormatter(hydrops);
   }
   
   if (biomassFarm.owned > 0) {
     biomassps = biomassFarm.owned * biomassFarm.output;
-    document.getElementById("biomassOutputPS").innerHTML = biomassps;
+    document.getElementById("biomassOutputPS").innerHTML = numFormatter(biomassps);
   }
   
   if (geothermalPlant.owned > 0) {
     geothermalps = geothermalPlant.owned * geothermalPlant.output;
-    document.getElementById("geothermalOutputPS").innerHTML = geothermalps;
+    document.getElementById("geothermalOutputPS").innerHTML = numFormatter(geothermalps);
   }
 
   mps = windmillps + solarps + hydrops + biomassps + geothermalps;
@@ -581,22 +572,22 @@ function raiseMoney() {
 function raiseNR() {
     if (coalPlant.owned > 0) {
       coalps = coalPlant.owned * coalPlant.output;
-      document.getElementById("coalOutputPS").innerHTML = coalps;
+      document.getElementById("coalOutputPS").innerHTML = numFormatter(coalps);
     }
 
     if (oilPlatform.owned > 0) {
       oilps = oilPlatform.owned * oilPlatform.output;
-      document.getElementById("oilOutputPS").innerHTML = oilps;
+      document.getElementById("oilOutputPS").innerHTML = numFormatter(oilps);
     }
 
     if (gasFacility.owned > 0) {
       gasps = gasFacility.owned * gasFacility.output;
-      document.getElementById("gasOutputPS").innerHTML = gasps;
+      document.getElementById("gasOutputPS").innerHTML = numFormatter(gasps);
     }
 
     if (nuclearPlant.owned > 0) {
       nukeps = nuclearPlant.owned * nuclearPlant.output;
-      document.getElementById("nukeOutputPS").innerHTML = nukeps;
+      document.getElementById("nukeOutputPS").innerHTML = numFormatter(nukeps);
     }
 
     mpsNR = coalps + oilps + gasps + nukeps;
@@ -618,7 +609,6 @@ function updateItemsSecond() {
   rpDisplay.innerHTML = researchPoints.toFixed(2);
   moneyDisplay.innerHTML = numFormatter(money);
   mpsDisplay.innerHTML = "$ " + numFormatter(mpsTotal) + " per month";
-  checkForEmpty();
 }
 
 function raiseYear() {
@@ -780,6 +770,9 @@ function changeText() {
       sectionOfText++;
       break;
     case 2:
+      modalText.innerHTML = "Your goal is to sell all of your non-renewable energy sources & convert to 100% renewable energy! Be careful, if you sell too much, you'll lose popularity and be voted out of your own company!";
+      sectionOfText++;
+    case 3:
       modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
       nextButton.addEventListener("click", function() {
         modal.style.display = 'none';
