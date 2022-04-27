@@ -757,6 +757,8 @@ function setGameValues() {
   updatePlayerPopularity = setInterval(popCheck, 1000);
 }
 
+
+// MODALS & TUTORIALS
 function changeText() {
   switch (sectionOfText) {
     case 0:
@@ -772,6 +774,7 @@ function changeText() {
     case 2:
       modalText.innerHTML = "Your goal is to sell all of your non-renewable energy sources & convert to 100% renewable energy! Be careful, if you sell too much, you'll lose popularity and be voted out of your own company!";
       sectionOfText++;
+      break;
     case 3:
       modalText.innerHTML = "You have several researchers and 10,000 dollars in funds to aid you. Good Luck! <br>- The Government.";
       nextButton.addEventListener("click", function() {
@@ -786,6 +789,10 @@ function changeText() {
   }
 } 
 
+function tutorial() {
+  modal.style.display = "block";
+  modalText.innerHTML = "<p>Welcome to the Help Section! What would you like help with?</p>";
+}
 
 
 
