@@ -1,4 +1,4 @@
-window.alert("v0.99");
+window.alert("v0.99m");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -789,9 +789,25 @@ function changeText() {
   }
 } 
 
+
+function displayTut(tutorial) {
+
+  switch(tutorial) {
+    case 0:
+      modalText.innerHTML = "text1";
+      break;
+    case 1:
+      modalText.innerHTML = "text2";
+      break;
+    case 2:
+      modalText.innerHTML = "text3";
+  }
+  
+}
+
 function tutorial() {
   modal.style.display = "block";
-  modalText.innerHTML = "<p>Welcome to the Help Section! What would you like help with?</p>";
+  modalText.innerHTML = "<p>Welcome to the Help Section! What would you like help with?</p><br><button onclick='displayTut(0)'>BUILDINGS</button><button onclick='displayTut(1)'>POPULARITY/POLICIES</button><button onclick='displayTut(2)'>UPGRADES</button><br><button onclick='closeModal()'>CLOSE</button>";
 }
 
 
