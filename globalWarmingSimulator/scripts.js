@@ -1,4 +1,4 @@
-window.alert("v0.99w");
+window.alert("v0.99x");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -492,7 +492,7 @@ function buyDiscovery(thing) {
       moneyDisplay.innerHTML = numFormatter(money);
       thing.bought = true;
       thing.button.style.display = "none";
-      achievementUnlocked(thing.discovery);
+      achievementUnlocked(thing.discovery, 0);
     } else if (thing.cost > money) {
       window.alert("Not enough money!");
     } else if (thing.research > researchPoints) {
