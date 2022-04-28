@@ -1,4 +1,4 @@
-window.alert("v0.99r");
+window.alert("v0.99t");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -6,13 +6,19 @@ window.alert("v0.99r");
 
 // CODE COURTESY OF SOMEONE ON CODEPEN
 
-function achievementUnlocked(achievement){
+function achievementUnlocked(achievement, check){
   if (achievement.got != true) {
-    addAchievement(achievement);
     achievement.got = true;
     var hasClass = $('.ach').hasClass('achieved');
     if (hasClass) return;
+    
+    if (check == 1) {
+      $('.title').html("Upgrade Unlocked!");
+      addAchievement(achievement, 1)
+    } else {
       $('.title').html("Achievement Unlocked!");
+      addAchievement(achievement, 0);
+    }
 
     $('.detail').html(achievement.title);
     $('.ach').addClass("achieved");
@@ -74,6 +80,7 @@ let nukeps = 0;
 
 
 let achievementsGot = 0;
+let upgradesGot = 0;
 var modalHeader = document.getElementById("modal-title");
 var modalText = document.getElementById("modal-text");
 var root = document.querySelector(':root');
@@ -103,6 +110,9 @@ var policiesSection = document.getElementById("polObj");
 var changelogSection = document.getElementById("changelogObj");
 var upgradesSection = document.getElementsByName("buildingUpgrades")[0];
 
+var achievementContainer = document.getElementById("achievementsContainer");
+var upgradeContainer = document.getElementById("upgradesContainer");
+var upgradeCounter = document.getElementById("upgradesCounter");
 
 // INTERVALS 
 let updateGameSecond = 0;
@@ -376,15 +386,21 @@ function numFormatter(num) {
 
 
 
-function addAchievement(achievement) {
+function addAchievement(achievement, check) {
   // Create element
   const achBox = document.createElement("div");
   achBox.innerHTML = "<h4>" + achievement.title + "</h4><h6><i>" + achievement.flavorText + "</i></h6>";
   achBox.classList.add("achievements");
   // Append to another element:
-  achievementsSection.appendChild(achBox);
-  achievementsGot++;
-  document.getElementById("achievementsDisplay").innerHTML = achievementsGot;
+  if (check == 1) {
+    upgradeContainer.appendChild(achBox);
+    upgradesGot++
+    upgradeCounter = upgradesGot;
+  } else {
+    achievementsSection.appendChild(achBox);
+    achievementsGot++;
+    document.getElementById("achievementDisplay").innerHTML = achievementsGot;
+  }
 }
 
 function addUpgrade(upgrade) {
@@ -448,7 +464,7 @@ function sellNR(thing) {
 
 function buyUpgrade(upgrade) {
   if (upgrade.cost <= money && upgrade.research <= researchPoints) {
-    achievementUnlocked(upgrade.discovery);
+    achievementUnlocked(upgrade.discovery, 1);
 
     switch (upgrade.discovery.buffType) {
       case 1:
