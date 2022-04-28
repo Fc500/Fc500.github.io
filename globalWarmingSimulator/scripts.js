@@ -1,4 +1,4 @@
-window.alert("v0.99v");
+window.alert("v0.99w");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -402,7 +402,7 @@ function addAchievement(achievement, check) {
     upgradesGot++;
     window.alert(upgradesGot);
     upgradeCounter = upgradesGot;
-  } else {
+  } else if (check == 0) {
     achievementsSection.appendChild(achBox);
     achievementsGot++;
     document.getElementById("achievementDisplay").innerHTML = achievementsGot;
