@@ -1,4 +1,4 @@
-window.alert("v0.99t");
+window.alert("v0.99v");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -194,6 +194,7 @@ let solarFarm = {
   output: 120000,
   amount: document.getElementById("solarOwned"),
   figure: document.getElementById("solarPrice"),
+  tempDebuff: 0.0001,
 }
 
 let windmill = {
@@ -202,6 +203,7 @@ let windmill = {
   output: 150000,
   amount: document.getElementById("windmillOwned"),
   figure: document.getElementById("windmillPrice"),
+  tempDebuff: 0.0005,
 }
 
 let hydroPlant = {
@@ -210,6 +212,7 @@ let hydroPlant = {
   output: 1000,
   amount: document.getElementById("hydroOwned"),
   figure: document.getElementById("hydroPrice"),
+  tempDebuff: 0.001,
 }
 
 let biomassFarm = {
@@ -218,6 +221,7 @@ let biomassFarm = {
   output: 20000,
   amount: document.getElementById("biomassOwned"),
   figure: document.getElementById("biomassPrice"),
+  tempDebuff: 0.002,
 }
 
 let geothermalPlant = {
@@ -226,6 +230,7 @@ let geothermalPlant = {
   output: 50000,
   amount: document.getElementById("geothermalOwned"),
   figure: document.getElementById("geothermalPrice"),
+  tempDebuff: 0.005,
 }
 
 // UPGRADES
@@ -394,7 +399,8 @@ function addAchievement(achievement, check) {
   // Append to another element:
   if (check == 1) {
     upgradeContainer.appendChild(achBox);
-    upgradesGot++
+    upgradesGot++;
+    window.alert(upgradesGot);
     upgradeCounter = upgradesGot;
   } else {
     achievementsSection.appendChild(achBox);
@@ -427,6 +433,7 @@ function addUpgrade(upgrade) {
 function buyThing(thing) {
   if (thing.cost < money) {
     money -= thing.cost;
+    temperature -= thing.tempDebuff;
     thing.owned += 1;
     moneyDisplay.innerHTML = numFormatter(money);
     thing.cost *= 1.2;
@@ -471,8 +478,6 @@ function buyUpgrade(upgrade) {
           let buildingToBuff = upgrade.discovery.buffBuilding;
           buildingToBuff.output *= upgrade.discovery.buff;
           document.getElementById(upgrade.id).remove();
-          window.alert("test");
-          window.alert(windmill.output);
 
     }
   }
