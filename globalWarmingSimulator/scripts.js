@@ -1,4 +1,4 @@
-window.alert("v0.99 ZETA");
+window.alert("v0.99 ETA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -131,6 +131,7 @@ let checkForEndGame = 0;
 let updatePlayerValues = 0;
 let updateNonRenewables = 0;
 let updatePlayerPopularity = 0;
+let updateUpgrades = 0;
 
 
 
@@ -527,6 +528,7 @@ function sellNR(thing) {
 function buyUpgrade(upgrade) {
   if (upgrade.cost <= money && upgrade.research <= researchPoints) {
     achievementUnlocked(upgrade.discovery, 1);
+    document.getElementById(upgrade.id).remove();
     let buildingToBuff;
 
     switch (upgrade.discovery.buffType) {
@@ -540,7 +542,10 @@ function buyUpgrade(upgrade) {
         window.alert(buildingToBuff.tempDebuff);
         
     }
-    document.getElementById(upgrade.id).remove();
+  } else if (upgrade.cost > money) {
+    window.alert("Not Enough Money!");
+  } else if (upgrade.research > researchPoints) {
+    window.alert("Not enough research has taken place!");
   }
 
 }
@@ -720,6 +725,7 @@ function endGame() {
   clearInterval(checkForEndGame);
   clearInterval(updatePlayerValues);
   clearInterval(updatePlayerPopularity);
+  clearInterval(updateUpgrades);
   rpsDisplay.innerHTML = "THERE";
   mpsDisplay.innerHTML = "IS";
   monthDisplay.innerHTML = "NOTHING";
@@ -828,16 +834,6 @@ function raiseMonth() {
   }
 }
 
-function setGameValues() {
-  updateGameSecond = setInterval(updateItemsSecond, 1000);
-  monthlyUpdates = setInterval(raiseMonth, 250);
-  pentyearlyUpdates = setInterval(raiseTemperature, 15000);
-  checkForEndGame = setInterval(checkForWin, 1000);
-  updatePlayerValues = setInterval(raiseMoney, 100);
-  updateNonRenewables = setInterval(raiseNR, 100);
-  updatePlayerPopularity = setInterval(popCheck, 1000);
-}
-
 
 // MODALS & TUTORIALS
 function changeText() {
@@ -909,26 +905,33 @@ function tutorial() {
 
 
 
+function updateUpgradesSecond() {
+
+  if (researchPoints >= 25 && windmill.owned > 0) {
+    addUpgrade(upgrades.solar1);
+  }
+  
+  if (researchPoints >= 50 && windmill.owned > 20) {
+    addUpgrade(upgrades.solar2);
+  }
+  
+  if (researchPoints >= 75 && windmill.owned > 50) {
+    addUpgrade(upgrades.solar3);
+  }
+
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function setGameValues() {
+  updateGameSecond = setInterval(updateItemsSecond, 1000);
+  monthlyUpdates = setInterval(raiseMonth, 250);
+  pentyearlyUpdates = setInterval(raiseTemperature, 15000);
+  checkForEndGame = setInterval(checkForWin, 1000);
+  updatePlayerValues = setInterval(raiseMoney, 100);
+  updateNonRenewables = setInterval(raiseNR, 100);
+  updatePlayerPopularity = setInterval(popCheck, 1000);
+  updateUpgrades = setInterval(updateUpgradesSecond, 1000);
+}
 
 // SIDENAV FUNCTION
 
