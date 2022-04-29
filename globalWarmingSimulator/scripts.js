@@ -1,4 +1,4 @@
-window.alert("v0.99 BETA");
+window.alert("v0.99 GAMMA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -453,10 +453,12 @@ function addAchievement(achievement, check2) {
     window.alert(upgradesGot + "Up");
     upgradeCounter.innerHTML = upgradesGot;
   } else if (check2 == 0) {
+    window.alert(achievementsGot + "Ach");
+    /*
     achievementContainer.appendChild(achBox);
     achievementsGot+= 1;
     document.getElementById("achievementDisplay").innerHTML = achievementsGot;
-    window.alert(achievementsGot + "Ach");
+    */
   }
 }
 
