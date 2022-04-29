@@ -1,4 +1,4 @@
-window.alert("v0.99 EPSILON");
+window.alert("v0.99 ZETA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -10,12 +10,12 @@ function achievementUnlocked(achievement, check){
   if (achievement.got != true) {
     achievement.got = true;
     var hasClass = $('.ach').hasClass('achieved');
-    window.alert("Achievement Section");
+    //window.alert("Achievement Section");
     if (hasClass) return;
     window.alert(check);
     
       if (check == 0) {
-        window.alert("Check = 1");
+        //window.alert("Check = 1");
         $('.title').html("Achievement Unlocked!");
         $('.detail').html(achievement.title);
         $('.ach').addClass("achieved");
@@ -25,8 +25,8 @@ function achievementUnlocked(achievement, check){
         addAchievement(achievement, 0);
       } else if (check == 1) {
         $('.title').html("Upgrade Unlocked!");
-        $('.detail').html("E");
-        window.alert("Check = 1");
+        $('.detail').html(achievement.discovery.title);
+        //window.alert("Check = 1");
         $('.ach').addClass("achieved");
         setTimeout(function(){
           $('.ach').removeClass("achieved");
@@ -451,13 +451,13 @@ function addAchievement(achievement, check2) {
   if (check2 == 1) {
     upgradeContainer.appendChild(achBox);
     upgradesGot +=1;
-    window.alert(upgradesGot + "Up");
+    //window.alert(upgradesGot + "Up");
     upgradeCounter.innerHTML = upgradesGot;
   } else if (check2 == 0) {
     achievementContainer.appendChild(achBox);
     achievementsGot+= 1;
     achievementCounter.innerHTML = achievementsGot;
-    window.alert(achievementsGot + " Ach");
+    //window.alert(achievementsGot + " Ach");
   
   }
 }
