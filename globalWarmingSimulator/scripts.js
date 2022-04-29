@@ -450,7 +450,7 @@ function addAchievement(achievement, check2) {
   if (check2 == 1) {
     upgradeContainer.appendChild(achBox);
     upgradesGot +=1;
-    window.alert(upgradesGot);
+    window.alert(upgradesGot + "Up");
     upgradeCounter.innerHTML = upgradesGot;
   } else if (check2 == 0) {
     achievementContainer.appendChild(achBox);
