@@ -1,4 +1,4 @@
-window.alert("v0.99 THETA");
+window.alert("v0.99 IOTA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -536,10 +536,12 @@ function buyUpgrade(upgrade) {
       case 1:
         buildingToBuff = upgrade.discovery.buffBuilding;
         buildingToBuff.output *= upgrade.discovery.buff;
+        itemRemoval.remove();
         break;
       case 2:
         buildingToBuff = upgrade.discovery.buffBuilding;
         buildingToBuff.tempDebuff *= upgrade.discovery.buff;
+        itemRemoval.remove();
         window.alert(buildingToBuff.tempDebuff);
         
     }
@@ -908,15 +910,15 @@ function tutorial() {
 
 function updateUpgradesSecond() {
 
-  if (researchPoints >= 25 && solarPanel.owned > 0) {
+  if (researchPoints >= 25 && solarFarm.owned > 0) {
     addUpgrade(upgrades.solar1);
   }
   
-  if (researchPoints >= 50 && solarPanel.owned > 20) {
+  if (researchPoints >= 50 && solarFarm.owned > 20) {
     addUpgrade(upgrades.solar2);
   }
   
-  if (researchPoints >= 75 && solarPanel.owned > 50) {
+  if (researchPoints >= 75 && solarFarm.owned > 50) {
     addUpgrade(upgrades.solar3);
   }
 
