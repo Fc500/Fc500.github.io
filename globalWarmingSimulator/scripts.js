@@ -545,6 +545,8 @@ function buyUpgrade(upgrade) {
         window.alert(buildingToBuff.tempDebuff);
         
     }
+    
+    removeUpgrade(upgrade);
   } else if (upgrade.cost > money) {
     window.alert("Not Enough Money!");
   } else if (upgrade.research > researchPoints) {
