@@ -1,4 +1,4 @@
-window.alert("v0.99 IOTA");
+window.alert("v0.99 KAPPA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -523,25 +523,25 @@ function sellNR(thing) {
   }
 }
 
-
+function removeUpgrade(upgrade) {
+  let itemRemoval = document.getElementById(upgrade.id);
+  itemRemoval.remove();
+  window.alert("TestA");
+}
 
 function buyUpgrade(upgrade) {
   if (upgrade.cost <= money && upgrade.research <= researchPoints) {
-    let itemRemoval = document.getElementById(upgrade.id);
     window.alert(upgrade.id);
     achievementUnlocked(upgrade.discovery, 1);
     let buildingToBuff;
-    itemRemoval.remove();
     switch (upgrade.discovery.buffType) {
       case 1:
         buildingToBuff = upgrade.discovery.buffBuilding;
         buildingToBuff.output *= upgrade.discovery.buff;
-        itemRemoval.remove();
         break;
       case 2:
         buildingToBuff = upgrade.discovery.buffBuilding;
         buildingToBuff.tempDebuff *= upgrade.discovery.buff;
-        itemRemoval.remove();
         window.alert(buildingToBuff.tempDebuff);
         
     }
