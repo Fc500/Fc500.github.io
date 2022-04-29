@@ -1,4 +1,4 @@
-window.alert("v0.99 GAMMA");
+window.alert("v0.99 DELTA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -119,6 +119,7 @@ var changelogSection = document.getElementById("changelogObj");
 var upgradesSection = document.getElementsByName("buildingUpgrades")[0];
 
 var achievementContainer = document.getElementById("achievementsContainer");
+var achievementCounter = document.getElementById("achievementsCounter");
 var upgradeContainer = document.getElementById("upgradesContainer");
 var upgradeCounter = document.getElementById("upgradesCounter");
 
@@ -453,12 +454,11 @@ function addAchievement(achievement, check2) {
     window.alert(upgradesGot + "Up");
     upgradeCounter.innerHTML = upgradesGot;
   } else if (check2 == 0) {
-    window.alert(achievementsGot + "Ach");
-    /*
     achievementContainer.appendChild(achBox);
     achievementsGot+= 1;
-    document.getElementById("achievementDisplay").innerHTML = achievementsGot;
-    */
+    achievementCounter.innerHTML = achievementsGot;
+    window.alert(achievementsGot + " Ach");
+  
   }
 }
 
