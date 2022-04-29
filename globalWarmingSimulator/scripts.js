@@ -1,4 +1,4 @@
-window.alert("v0.99x");
+window.alert("v0.99y");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -10,21 +10,29 @@ function achievementUnlocked(achievement, check){
   if (achievement.got != true) {
     achievement.got = true;
     var hasClass = $('.ach').hasClass('achieved');
+    window.alert("Achievement Section");
     if (hasClass) return;
+    window.alert(check);
     
-    if (check == 1) {
-      $('.title').html("Upgrade Unlocked!");
-      addAchievement(achievement, 1)
-    } else {
-      $('.title').html("Achievement Unlocked!");
-      addAchievement(achievement, 0);
+      if (check == 0) {
+        window.alert("Check = 1");
+        $('.title').html("Achievement Unlocked!");
+        $('.detail').html(achievement.title);
+        $('.ach').addClass("achieved");
+        setTimeout(function(){
+          $('.ach').removeClass("achieved");
+        },5000)   
+        addAchievement(achievement, 1);
+      } else if (check == 1) {
+        $('.title').html("Upgrade Unlocked!");
+        $('.detail').html("E");
+        window.alert("Check = 1");
+        $('.ach').addClass("achieved");
+        setTimeout(function(){
+          $('.ach').removeClass("achieved");
+        },5000)   
+        addAchievement(achievement, 1);
     }
-
-    $('.detail').html(achievement.title);
-    $('.ach').addClass("achieved");
-    setTimeout(function(){
-      $('.ach').removeClass("achieved");
-    },5000)    
   }
 }
 
@@ -53,7 +61,7 @@ function closeModal() {
 
 //variables
 let money = 500000;
-let temp = 57.85;
+let temp = 67.85;
 let tempIncrease = 0.017;
 let year = 2010;
 let researchPoints = 150;
@@ -292,11 +300,53 @@ var findings = {
 
 var upgrades = {
 
-  windmill1: {
-    cost: 10000,
-    research: 100,
+  solar1: {
+    cost: 20000,
+    research: 20,
     bought: false,
     id: "up1",
+    discovery: {
+      title: "Lithium Batteries",
+      flavorText: "Better batteries for more energy storage! (Solar Farm's production x1.1%)",
+      buffType: 1,
+      buffBuilding: solarFarm,
+      buff: 1.1,
+    }
+  },
+
+  solar2: {
+    cost: 25000,
+    research: 40,
+    bought: false,
+    id: "up2",
+    discovery: {
+      title: "Tunnel Collection",
+      flavorText: "Tunnels of Solar Panels for maximum efficiency! (Solar Farm's production x1.2%)",
+      buffType: 1,
+      buffBuilding: solarFarm,
+      buff: 1.2,
+    }
+  },
+
+  solar3: {
+    cost: 20000,
+    research: 110,
+    bought: false,
+    id: "up3",
+    discovery: {
+      title: "Efficient Collection",
+      flavorText: "More efficient energy collection! (Solar Farm's decrease of temperature x1.5%)",
+      buffType: 2,
+      buffBuilding: solarFarm,
+      buff: 1.5,
+    }
+  },
+
+  windmill1: {
+    cost: 20000,
+    research: 100,
+    bought: false,
+    id: "up4",
     discovery: {
       title: "Steel Blades",
       flavorText: "Stronger blades for more efficient energy collection! (Windmill production x1.1%)",
@@ -304,13 +354,13 @@ var upgrades = {
       buffBuilding: windmill,
       buff: 1.1,
     }
-},
+  },
   
 windmill2: {
-    cost: 20000,
+    cost: 35000,
     research: 110,
     bought: false,
-    id: "up2",
+    id: "up5",
     discovery: {
       title: "Quick Rotators",
       flavorText: "Faster rotators for more efficient energy collection! (Windmill production x1.2%)",
@@ -318,7 +368,7 @@ windmill2: {
       buffBuilding: windmill,
       buff: 1.2,
     }
-},
+  },
 
 }
 
@@ -391,20 +441,21 @@ function numFormatter(num) {
 
 
 
-function addAchievement(achievement, check) {
+function addAchievement(achievement, check2) {
   // Create element
   const achBox = document.createElement("div");
   achBox.innerHTML = "<h4>" + achievement.title + "</h4><h6><i>" + achievement.flavorText + "</i></h6>";
   achBox.classList.add("achievements");
   // Append to another element:
-  if (check == 1) {
+  if (check2 == 1) {
     upgradeContainer.appendChild(achBox);
-    upgradesGot++;
+    upgradesGot +=1;
     window.alert(upgradesGot);
-    upgradeCounter = upgradesGot;
-  } else if (check == 0) {
-    achievementsSection.appendChild(achBox);
-    achievementsGot++;
+    upgradeCounter.innerHTML = upgradesGot;
+  } else if (check2 == 0) {
+    achievementContainer.appendChild(achBox);
+    window.alert(achievementsGot);
+    achievementsGot+= 1;
     document.getElementById("achievementDisplay").innerHTML = achievementsGot;
   }
 }
@@ -433,7 +484,9 @@ function addUpgrade(upgrade) {
 function buyThing(thing) {
   if (thing.cost < money) {
     money -= thing.cost;
-    temperature -= thing.tempDebuff;
+    if (thing.hasOwnProperty('tempDebuff')) {
+      temperature -= thing.tempDebuff;
+    }
     thing.owned += 1;
     moneyDisplay.innerHTML = numFormatter(money);
     thing.cost *= 1.2;
@@ -472,14 +525,20 @@ function sellNR(thing) {
 function buyUpgrade(upgrade) {
   if (upgrade.cost <= money && upgrade.research <= researchPoints) {
     achievementUnlocked(upgrade.discovery, 1);
+    let buildingToBuff;
 
     switch (upgrade.discovery.buffType) {
       case 1:
-          let buildingToBuff = upgrade.discovery.buffBuilding;
-          buildingToBuff.output *= upgrade.discovery.buff;
-          document.getElementById(upgrade.id).remove();
-
+        buildingToBuff = upgrade.discovery.buffBuilding;
+        buildingToBuff.output *= upgrade.discovery.buff;
+        break;
+      case 2:
+        buildingToBuff = upgrade.discovery.buffBuilding;
+        buildingToBuff.tempDebuff *= upgrade.discovery.buff;
+        window.alert(buildingToBuff.tempDebuff);
+        
     }
+    document.getElementById(upgrade.id).remove();
   }
 
 }
@@ -492,7 +551,8 @@ function buyDiscovery(thing) {
       moneyDisplay.innerHTML = numFormatter(money);
       thing.bought = true;
       thing.button.style.display = "none";
-      achievementUnlocked(thing.discovery, 0);
+      window.alert("Discovery Bought");
+      achievementUnlocked(thing.discovery, 1);
     } else if (thing.cost > money) {
       window.alert("Not enough money!");
     } else if (thing.research > researchPoints) {
@@ -687,28 +747,22 @@ function checkForWin() {
       root.style.setProperty('--phthalo-blue', '#CC6300');
       root.style.setProperty('--blue-pigment', '#E36F26');
       root.style.setProperty('--box-shadows', '#E36F2674');
-      if (achievementsList.temp1.got == false) {
-        achievementUnlocked(achievementsList.temp1);
-      }
+        achievementUnlocked(achievementsList.temp1, 0);
     } else if (temp > 75 && temp < 90) {
       root.style.setProperty('--phthalo-blue', '#BF2237');
       root.style.setProperty('--blue-pigment', '#FF1F2E');
       root.style.setProperty('--box-shadows', '#FF1F2E');
-      if (achievementsList.temp2.got == false) {
-        achievementUnlocked(achievementsList.temp2);
-      }
+        achievementUnlocked(achievementsList.temp2, 0);
     } else if (temp > 90 && temp < 95) {
       root.style.setProperty('--phthalo-blue', '#0a0100');
       root.style.setProperty('--blue-pigment', 'black');
       root.style.setProperty('--box-shadows', '#0a0100');
-      if (achievementsList.temp3.got == false) {
-        achievementUnlocked(achievementsList.temp3);
-      }
+        achievementUnlocked(achievementsList.temp3, 0);
     } 
     
   } else if (temp > 95) {
     if (achievementsList.temp4.got == false) {
-      achievementUnlocked(achievementsList.temp4);
+      achievementUnlocked(achievementsList.temp4, 0);
     }
     modalHeader.innerHTML = "";
     modalText.innerHTML = "Despite humanity's best efforts, <b>" + playerName.toString() + " INC </b> has failed. The Earth has warmed to unlivable temperatures. The few survivors know they're watching the end of the world.";
