@@ -1,4 +1,4 @@
-window.alert("v0.99 ETA");
+window.alert("v0.99 THETA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -527,10 +527,11 @@ function sellNR(thing) {
 
 function buyUpgrade(upgrade) {
   if (upgrade.cost <= money && upgrade.research <= researchPoints) {
+    let itemRemoval = document.getElementById(upgrade.id);
+    window.alert(upgrade.id);
     achievementUnlocked(upgrade.discovery, 1);
-    document.getElementById(upgrade.id).remove();
     let buildingToBuff;
-
+    itemRemoval.remove();
     switch (upgrade.discovery.buffType) {
       case 1:
         buildingToBuff = upgrade.discovery.buffBuilding;
@@ -907,15 +908,15 @@ function tutorial() {
 
 function updateUpgradesSecond() {
 
-  if (researchPoints >= 25 && windmill.owned > 0) {
+  if (researchPoints >= 25 && solarPanel.owned > 0) {
     addUpgrade(upgrades.solar1);
   }
   
-  if (researchPoints >= 50 && windmill.owned > 20) {
+  if (researchPoints >= 50 && solarPanel.owned > 20) {
     addUpgrade(upgrades.solar2);
   }
   
-  if (researchPoints >= 75 && windmill.owned > 50) {
+  if (researchPoints >= 75 && solarPanel.owned > 50) {
     addUpgrade(upgrades.solar3);
   }
 
