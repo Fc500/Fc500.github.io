@@ -1,4 +1,4 @@
-window.alert("v0.99alpha");
+window.alert("v0.99 BETA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -22,7 +22,7 @@ function achievementUnlocked(achievement, check){
         setTimeout(function(){
           $('.ach').removeClass("achieved");
         },5000)   
-        addAchievement(achievement, 1);
+        addAchievement(achievement, 0);
       } else if (check == 1) {
         $('.title').html("Upgrade Unlocked!");
         $('.detail').html("E");
