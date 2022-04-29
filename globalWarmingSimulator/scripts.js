@@ -1,4 +1,4 @@
-window.alert("v0.99 DELTA");
+window.alert("v0.99 EPSILON");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -486,14 +486,14 @@ function addUpgrade(upgrade) {
 function buyThing(thing) {
   if (thing.cost < money) {
     money -= thing.cost;
-    if (thing.hasOwnProperty('tempDebuff')) {
-      temperature -= thing.tempDebuff;
-    }
     thing.owned += 1;
     moneyDisplay.innerHTML = numFormatter(money);
     thing.cost *= 1.2;
     thing.amount.innerHTML = numFormatter(thing.owned);
     thing.figure.innerHTML = numFormatter(thing.cost);
+    if (thing.hasOwnProperty('tempDebuff')) {
+      temperature -= thing.tempDebuff;
+    }
   } else if (thing.cost > money) {
     window.alert("Not enough money!");
   }
