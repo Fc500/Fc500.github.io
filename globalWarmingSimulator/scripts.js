@@ -1,4 +1,4 @@
-window.alert("v0.99z");
+window.alert("v0.99alpha");
 
 
 // import { achievementUnlocked } from "./achievements";
