@@ -1,4 +1,4 @@
-window.alert("v0.99 MU");
+window.alert("v1.00");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -146,20 +146,22 @@ let updateUpgrades = 0;
 let coalPlant = {
   owned: 75,
   cost: 1500,
-  output: 10,
+  output: 100,
   amount: document.getElementById("coalOwned"),
   figure: document.getElementById("coalPrice"),
   popDebuff: 5,
+  tempDebuff: 0.005,
   head: document.getElementById("coal"),
 }
 
 let oilPlatform = {
   owned: 45,
   cost: 2000,
-  output: 30,
+  output: 300,
   amount: document.getElementById("oilOwned"),
   figure: document.getElementById("oilPrice"),
   popDebuff: 7,
+  tempDebuff: 0.007,
   head: document.getElementById("oil"),
 }
 
@@ -167,20 +169,22 @@ let oilPlatform = {
 let gasFacility = {
   owned: 40,
   cost: 3000,
-  output: 40,
+  output: 400,
   amount: document.getElementById("gasOwned"),
   figure: document.getElementById("gasPrice"),
   popDebuff: 10,
+  tempDebuff: 0.01,
   head: document.getElementById("naturalGas"),
 }
 
 let nuclearPlant = {
   owned: 30,
   cost: 4000,
-  output: 75,
+  output: 750,
   amount: document.getElementById("nukeOwned"),
   figure: document.getElementById("nukePrice"),
   popDebuff: 2,
+  tempDebuff: 0.007,
   head: document.getElementById("nuclearPlant"),
 }
 
@@ -212,7 +216,7 @@ let solarFarm = {
   output: 120000,
   amount: document.getElementById("solarOwned"),
   figure: document.getElementById("solarPrice"),
-  tempDebuff: 0.0001,
+  tempDebuff: 0.0005,
 }
 
 let windmill = {
@@ -221,7 +225,7 @@ let windmill = {
   output: 150000,
   amount: document.getElementById("windmillOwned"),
   figure: document.getElementById("windmillPrice"),
-  tempDebuff: 0.0005,
+  tempDebuff: 0.001,
 }
 
 let biomassFarm = {
@@ -230,7 +234,7 @@ let biomassFarm = {
   output: 20000,
   amount: document.getElementById("biomassOwned"),
   figure: document.getElementById("biomassPrice"),
-  tempDebuff: 0.001,
+  tempDebuff: 0.005,
 }
 
 let geothermalPlant = {
@@ -239,7 +243,7 @@ let geothermalPlant = {
   output: 50000,
   amount: document.getElementById("geothermalOwned"),
   figure: document.getElementById("geothermalPrice"),
-  tempDebuff: 0.005,
+  tempDebuff: 0.01,
 }
 
 let hydroPlant = {
@@ -248,7 +252,7 @@ let hydroPlant = {
   output: 400000,
   amount: document.getElementById("hydroOwned"),
   figure: document.getElementById("hydroPrice"),
-  tempDebuff: 0.01,
+  tempDebuff: 0.05,
 }
 
 
@@ -321,7 +325,7 @@ var upgrades = {
     id: "up1",
     discovery: {
       title: "Lithium Batteries",
-      flavorText: "Better batteries for more energy storage! (Solar Farm's production x1.1%)",
+      flavorText: "Better batteries for more energy storage! (Solar Farm's production x1.1)",
       buffType: 1,
       buffBuilding: solarFarm,
       buff: 1.1,
@@ -348,7 +352,7 @@ var upgrades = {
     bought: false,
     id: "up3",
     discovery: {
-      title: "Efficient Collection",
+      title: "Bigger Batteries",
       flavorText: "More efficient energy collection! (Solar Farm's decrease of temperature x1.5%)",
       buffType: 2,
       buffBuilding: solarFarm,
@@ -377,10 +381,24 @@ windmill2: {
     id: "up5",
     discovery: {
       title: "Quick Rotators",
-      flavorText: "Faster rotators for more efficient energy collection! (Windmill production x1.2%)",
+      flavorText: "Faster rotators for more efficient energy collection! (Windmill production x1.2)",
       buffType: 1,
       buffBuilding: windmill,
       buff: 1.2,
+    }
+  },
+  
+  windmill3: {
+    cost: 100000,
+    research: 200,
+    bought: false,
+    id: "up6",
+    discovery: {
+      title: "Bigger Generators",
+      flavorText: "Bigger generators for more efficient energy collection! (Windmill's decrease of temperature x1.5)",
+      buffType: 2,
+      buffBuilding: windmill,
+      buff: 1.5,
     }
   },
 
@@ -434,6 +452,96 @@ var achievementsList = {
   pop4: {
     title: "The end of a Company",
     flavorText: "Good one! " + playerName + " INC has caused the public to riot and overthrow you!",
+    got: false,
+  },
+  
+  solar1: {
+    title: "Tanning Beds",
+    flavorText: "Have 10 Solar Farms.",
+    got: false,
+  },
+  
+  solar2: {
+    title: "Hot as black tarp on the beach",
+    flavorText: "Have 50 Solar Farms.",
+    got: false,
+  },
+  
+  solar3: {
+    title: "A really long achievement name since I'm out of ideas",
+    flavorText: "Have 100 Solar Farms.",
+    got: false,
+  },
+  
+  wind1: {
+    title: "Pinwheel Fan",
+    flavorText: "Have 10 Windmills.",
+    got: false,
+  },
+  
+  wind2: {
+    title: "Regular Fan Fan",
+    flavorText: "Have 50 Windmills.",
+    got: false,
+  },
+  
+  wind3: {
+    title: "Windmill Fan",
+    flavorText: "Have 100 Windmills.",
+    got: false,
+  },
+  
+  bio1: {
+    title: "The power of manure",
+    flavorText: "Have 10 Biomass Plants.",
+    got: false,
+  },
+  
+  bio2: {
+    title: "Garden Power!",
+    flavorText: "Have 50 Biomass Plants.",
+    got: false,
+  },
+  
+  bio3: {
+    title: "Compost King",
+    flavorText: "Have 100 Biomass Plants.",
+    got: false,
+  },
+  
+  geo1: {
+    title: "Gon' Minin'",
+    flavorText: "Have 10 Geothermal Plants.",
+    got: false,
+  },
+  
+  geo2: {
+    title: "Better than fracking!",
+    flavorText: "Have 50 Geothermal Plants.",
+    got: false,
+  },
+  
+  geo3: {
+    title: "Mega Drill",
+    flavorText: "Have 100 Geothermal Plants.",
+    got: false,
+  },
+  
+  hydro1: {
+    title: "Rubber Ducks",
+    flavorText: "Have 10 Hydroelectric Dams.",
+    got: false,
+  },
+  
+  hydro2: {
+    title: "Kiddie Pool",
+    flavorText: "Have 50 Hydroelectric Dams.",
+    got: false,
+  },
+  
+  hydro3: {
+    title: "Niagra Falls 2",
+    flavorText: "Have 100 Hydroelectric Dams.",
     got: false,
   },
 }
@@ -525,6 +633,9 @@ function sellThing(thing) {
     thing.owned -= 1;
     moneyDisplay.innerHTML = numFormatter(money);
     thing.amount.innerHTML = numFormatter(thing.owned);
+    if (thing.hasOwnProperty('tempDebuff')) {
+      temperature += thing.tempDebuff;
+    }
   } else if (thing.owned <= 0) {
     window.alert("Not enough buildings to sell!");
   }
@@ -532,11 +643,14 @@ function sellThing(thing) {
 
 function sellNR(thing) {
   if (thing.owned > 0) {
-    money += thing.cost/4;
+    money += thing.cost/2;
     thing.owned -= 1;
     moneyDisplay.innerHTML = numFormatter(money);
     thing.amount.innerHTML = numFormatter(thing.owned);
     popularity -= thing.popDebuff; 
+    if (thing.hasOwnProperty('tempDebuff')) {
+      temperature -= thing.tempDebuff;
+    }
   } else if (thing.owned <= 0) {
     thing.head.style.display = "none";
   }
@@ -671,6 +785,9 @@ function raiseMoney() {
 }
 
 function raiseNR() {
+    if (tempIncrease <= 0) {
+      tempIncrease = 0.1;
+    }
     if (coalPlant.owned > 0) {
       coalps = coalPlant.owned * coalPlant.output;
       document.getElementById("coalOutputPS").innerHTML = numFormatter(coalps);
@@ -758,6 +875,7 @@ function popCheck() {
     achievementUnlocked(achievementsList.pop4);
   } else if (popularity <= 0) {
     endGame();
+    window.alert("GAME OVER");
   }
   
 }
@@ -785,6 +903,7 @@ function checkForWin() {
     if (achievementsList.temp4.got == false) {
       achievementUnlocked(achievementsList.temp4, 0);
     }
+    window.alert('Game Over!');
     modalHeader.innerHTML = "";
     modalText.innerHTML = "Despite humanity's best efforts, <b>" + playerName.toString() + " INC </b> has failed. The Earth has warmed to unlivable temperatures. The few survivors know they're watching the end of the world.";
     modal.style.display = "block";
@@ -906,17 +1025,69 @@ function tutorial() {
 
 
 
+function updateAchievementsSecond() {
 
-
-
-
-
-
-
-
-
-
-
+  if (solarFarm.owned > 10) {
+    achievementUnlocked(achievementsList.solar1);
+  }
+  
+  if (solarFarm.owned > 50) {
+    achievementUnlocked(achievementsList.solar2);
+  }
+  
+  if (solarFarm.owned > 100) {
+    achievementUnlocked(achievementsList.solar3);
+  }
+  
+  if (windmill.owned > 10) {
+    achievementUnlocked(achievementsList.wind1);
+  }
+  
+  if (windmill.owned > 50) {
+    achievementUnlocked(achievementsList.wind2);
+  }
+  
+  if (windmill.owned > 100) {
+    achievementUnlocked(achievementsList.wind3);
+  }
+  
+  if (biomassFarm.owned > 10) {
+    achievementUnlocked(achievementsList.bio1);
+  }
+  
+  if (biomassFarm.owned > 50) {
+    achievementUnlocked(achievementsList.bio2);
+  }
+  
+  if (biomassFarm.owned > 100) {
+    achievementUnlocked(achievementsList.bio3);
+  }
+  
+  if (geothermalPlant.owned > 10) {
+    achievementUnlocked(achievementsList.geo1);
+  }
+  
+  if (geothermalPlant.owned > 50) {
+    achievementUnlocked(achievementsList.geo2);
+  }
+  
+  if (geothermalPlant.owned > 100) {
+    achievementUnlocked(achievementsList.geo3);
+  }
+  
+  if (hydroPlant.owned > 10) {
+    achievementUnlocked(achievementsList.hydro1);
+  }
+  
+  if (hydroPlant.owned > 50) {
+    achievementUnlocked(achievementsList.hydro2);
+  }
+  
+  if (hydroPlant.owned > 100) {
+    achievementUnlocked(achievementsList.hydro3);
+  }
+  
+}
 
 function updateUpgradesSecond() {
 
