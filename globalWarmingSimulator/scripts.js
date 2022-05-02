@@ -1,4 +1,4 @@
-window.alert("v0.99 KAPPA");
+window.alert("v0.99 LAMBDA");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -8,30 +8,35 @@ window.alert("v0.99 KAPPA");
 
 function achievementUnlocked(achievement, check){
   if (achievement.got != true) {
+    let type = check;
     achievement.got = true;
     var hasClass = $('.ach').hasClass('achieved');
-    //window.alert("Achievement Section");
+   // window.alert("Achievement Section");
     if (hasClass) return;
-    window.alert(check);
+    //window.alert("Type = " + type);
     
-      if (check == 0) {
-        //window.alert("Check = 1");
-        $('.title').html("Achievement Unlocked!");
-        $('.detail').html(achievement.title);
-        $('.ach').addClass("achieved");
-        setTimeout(function(){
-          $('.ach').removeClass("achieved");
-        },5000)   
-        addAchievement(achievement, 0);
-      } else if (check == 1) {
-        $('.title').html("Upgrade Unlocked!");
-        $('.detail').html(achievement.discovery.title);
-        //window.alert("Check = 1");
-        $('.ach').addClass("achieved");
-        setTimeout(function(){
-          $('.ach').removeClass("achieved");
-        },5000)   
-        addAchievement(achievement, 1);
+      switch (type) {
+        case 0:
+          //window.alert(type + " worked");
+          $('.title').html("Achievement Unlocked!");
+          $('.detail').html(achievement.title);
+          $('.ach').addClass("achieved");
+          addAchievement(achievement, type);
+
+          setTimeout(function(){
+            $('.ach').removeClass("achieved");
+          },5000)   
+          break; 
+        case 1:
+          //window.alert(type + " worked");
+          $('.title').html("Upgrade Unlocked!");
+          $('.detail').html(achievement.title);
+          $('.ach').addClass("achieved");
+          addAchievement(achievement, type);
+          
+          setTimeout(function(){
+            $('.ach').removeClass("achieved");
+          },5000)   
     }
   }
 }
@@ -60,7 +65,7 @@ function closeModal() {
 } */
 
 //variables
-let money = 500000;
+let money = 5000000;
 let temp = 67.85;
 let tempIncrease = 0.017;
 let year = 2010;
@@ -222,7 +227,7 @@ let hydroPlant = {
   output: 1000,
   amount: document.getElementById("hydroOwned"),
   figure: document.getElementById("hydroPrice"),
-  tempDebuff: 0.001,
+  tempDebuff: 0.002,
 }
 
 let biomassFarm = {
@@ -231,7 +236,7 @@ let biomassFarm = {
   output: 20000,
   amount: document.getElementById("biomassOwned"),
   figure: document.getElementById("biomassPrice"),
-  tempDebuff: 0.002,
+  tempDebuff: 0.005,
 }
 
 let geothermalPlant = {
@@ -240,7 +245,7 @@ let geothermalPlant = {
   output: 50000,
   amount: document.getElementById("geothermalOwned"),
   figure: document.getElementById("geothermalPrice"),
-  tempDebuff: 0.005,
+  tempDebuff: 0.01,
 }
 
 // UPGRADES
@@ -445,16 +450,20 @@ function numFormatter(num) {
 
 function addAchievement(achievement, check2) {
   // Create element
+  //window.alert("In the addAchievement function");
   const achBox = document.createElement("div");
   achBox.innerHTML = "<h4>" + achievement.title + "</h4><h6><i>" + achievement.flavorText + "</i></h6>";
   achBox.classList.add("achievements");
   // Append to another element:
-  if (check2 == 1) {
-    upgradeContainer.appendChild(achBox);
-    upgradesGot +=1;
-    //window.alert(upgradesGot + "Up");
-    upgradeCounter.innerHTML = upgradesGot;
-  } else if (check2 == 0) {
+  switch (check2) {
+    case 1:
+      upgradeContainer.appendChild(achBox);
+      upgradesGot +=1;
+      //window.alert(upgradesGot + " Upgrades unlocked");
+      //window.alert(upgradesGot + "Up");
+      upgradeCounter.innerHTML = upgradesGot;
+      break;
+    case 0:
     achievementContainer.appendChild(achBox);
     achievementsGot+= 1;
     achievementCounter.innerHTML = achievementsGot;
@@ -470,9 +479,12 @@ function addUpgrade(upgrade) {
     const upgradeBox = document.createElement("div");
     const upgradeButton = document.createElement("button");
     upgradeButton.innerHTML = "BUY";
-    upgradeButton.onclick = function () {
+    /* upgradeButton.onclick = function () {
       buyUpgrade(upgrade);
-    };
+    }; */
+    upgradeButton.addEventListener("click", () => {
+      removeUpgrade(upgrade);
+  });
     upgradeBox.innerHTML = "<p>" + upgrade.discovery.title + "<br>$ " + numFormatter(upgrade.cost) + " | " + upgrade.research + " RP</p><h6><i>" + upgrade.discovery.flavorText + "</i></h6>";
     upgradeBox.appendChild(upgradeButton);
     upgradeBox.classList.add("buildingBox");
@@ -526,14 +538,14 @@ function sellNR(thing) {
 function removeUpgrade(upgrade) {
   let itemRemoval = document.getElementById(upgrade.id);
   itemRemoval.remove();
-  window.alert("TestA");
+  //window.alert("TestA");
+  buyUpgrade(upgrade);
 }
 
 function buyUpgrade(upgrade) {
   if (upgrade.cost <= money && upgrade.research <= researchPoints) {
-    window.alert(upgrade.id);
-    achievementUnlocked(upgrade.discovery, 1);
-    let buildingToBuff;
+    //window.alert(upgrade.id);
+    let buildingToBuff = 0;
     switch (upgrade.discovery.buffType) {
       case 1:
         buildingToBuff = upgrade.discovery.buffBuilding;
@@ -545,8 +557,8 @@ function buyUpgrade(upgrade) {
         window.alert(buildingToBuff.tempDebuff);
         
     }
-    
-    removeUpgrade(upgrade);
+
+    achievementUnlocked(upgrade.discovery, 1);
   } else if (upgrade.cost > money) {
     window.alert("Not Enough Money!");
   } else if (upgrade.research > researchPoints) {
@@ -563,7 +575,7 @@ function buyDiscovery(thing) {
       moneyDisplay.innerHTML = numFormatter(money);
       thing.bought = true;
       thing.button.style.display = "none";
-      window.alert("Discovery Bought");
+      //window.alert("Discovery Bought");
       achievementUnlocked(thing.discovery, 1);
     } else if (thing.cost > money) {
       window.alert("Not enough money!");
@@ -616,17 +628,6 @@ function checkForUpgrades() {
       document.getElementById('geothermalUpgrade').style.display = 'block';
   }
 
-  if (researchPoints >= 100) {
-    researchItems[1].style.display = 'block';
-}
-
-  if (researchPoints >= 25 && findings.windmill.bought == true) {
-    addUpgrade(upgrades.windmill1);
-  }
-  
-  if (researchPoints >= 75 && findings.windmill.bought == true) {
-    addUpgrade(upgrades.windmill2);
-  }
 
 }
 //gain functions
@@ -912,6 +913,11 @@ function tutorial() {
 
 function updateUpgradesSecond() {
 
+
+  if (researchPoints >= 100) {
+    researchItems[1].style.display = 'block';
+  }
+
   if (researchPoints >= 25 && solarFarm.owned > 0) {
     addUpgrade(upgrades.solar1);
   }
@@ -923,6 +929,16 @@ function updateUpgradesSecond() {
   if (researchPoints >= 75 && solarFarm.owned > 50) {
     addUpgrade(upgrades.solar3);
   }
+
+  
+  if (researchPoints >= 25 && windmill.owned > 10) {
+    addUpgrade(upgrades.windmill1);
+  }
+  
+  if (researchPoints >= 75 && windmill.owned > 50) {
+    addUpgrade(upgrades.windmill2);
+  }
+
 
 }
 

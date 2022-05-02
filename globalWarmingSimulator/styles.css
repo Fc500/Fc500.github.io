@@ -58,7 +58,7 @@ body {
     background-color: var(--blue-pigment);
     width: 44%;
     margin: 1.5%;
-    height: 200px;
+    height: 225px;
     border-radius: 15px; 
     box-shadow: var(--box-shadows) 0px 5px 15px;
     padding: 2%;
@@ -74,10 +74,10 @@ body {
 }
 
 .achievements {
-  width: 30%;
+  width: 20%;
   height: 150px;
-  margin: 3%;
-  padding: 2%;
+  margin: 2%;
+  padding: 1%;
   border-radius: 25px;
   background-color: var(--blue-pigment);
   box-shadow: var(--box-shadows) 0px 7px 29px 0px;
