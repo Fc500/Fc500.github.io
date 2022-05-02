@@ -1,4 +1,4 @@
-window.alert("v0.99 LAMBDA");
+window.alert("v0.99 LAMBDA2");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -203,6 +203,9 @@ let laboratory = {
   figure: document.getElementById("labPrice"),
 };
 
+
+// BUILDINGS
+
 let solarFarm = {
   owned: 0,
   cost: 800000,
@@ -221,32 +224,33 @@ let windmill = {
   tempDebuff: 0.0005,
 }
 
-let hydroPlant = {
-  owned: 0,
-  cost: 25000,
-  output: 1000,
-  amount: document.getElementById("hydroOwned"),
-  figure: document.getElementById("hydroPrice"),
-  tempDebuff: 0.002,
-}
-
 let biomassFarm = {
   owned: 0,
-  cost: 100000,
+  cost: 12000000,
   output: 20000,
   amount: document.getElementById("biomassOwned"),
   figure: document.getElementById("biomassPrice"),
-  tempDebuff: 0.005,
+  tempDebuff: 0.001,
 }
 
 let geothermalPlant = {
   owned: 0,
-  cost: 1000000,
+  cost: 200000000,
   output: 50000,
   amount: document.getElementById("geothermalOwned"),
   figure: document.getElementById("geothermalPrice"),
+  tempDebuff: 0.005,
+}
+
+let hydroPlant = {
+  owned: 0,
+  cost: 2500000000,
+  output: 400000,
+  amount: document.getElementById("hydroOwned"),
+  figure: document.getElementById("hydroPrice"),
   tempDebuff: 0.01,
 }
+
 
 // UPGRADES
 
@@ -264,7 +268,7 @@ var findings = {
   
     windmill: {
         cost: 100000,
-        research: 5,
+        research: 50,
         bought: false,
         button: findingsArray[1],
         discovery: { 
@@ -272,21 +276,12 @@ var findings = {
           flavorText: "The power of the air",
         },
     },
-    hydro: {
-      cost: 125000,
-      research: 50,
-      bought: false,
-      button: findingsArray[2],
-      discovery: { 
-        title: "Hydroelectric technology",
-        flavorText: "The power of the seas",
-      },
-  },
-  biomass: {
+  
+    biomass: {
       cost: 750000,
       research: 150,
       bought: false,
-      button: findingsArray[3],
+      button: findingsArray[2],
       discovery: { 
         title: "Biomass Plants",
         flavorText: "The power of compost",
@@ -297,12 +292,24 @@ var findings = {
       cost: 1500000,
       research: 200,
       bought: false,
-      button: findingsArray[4],
+      button: findingsArray[3],
       discovery: { 
         title: "Geothermal Energy",
         flavorText: "The power of the Earth",
       },
   },
+  
+    hydro: {
+      cost: 1250000,
+      research: 250,
+      bought: false,
+      button: findingsArray[4],
+      discovery: { 
+        title: "Hydroelectric technology",
+        flavorText: "The power of the seas",
+      },
+  },
+  
 }
 
 var upgrades = {
@@ -609,23 +616,23 @@ function checkForUpgrades() {
   }
 
   // Updating discoveries
-    if (researchPoints >= 25 && findings.windmill.bought == false) {
-      document.getElementById('windmillUpgrade').style.display = 'block';
-    } 
-    if (researchPoints >= 5 && findings.solar.bought == false) {
+    if (researchPoints >= 25 && findings.solar.bought == false) {
       document.getElementById('solarUpgrade').style.display = 'block';
+    } 
+    if (researchPoints >= 5 && findings.windmill.bought == false) {
+      document.getElementById('windmillUpgrade').style.display = 'block';
     }
 
-    if (researchPoints >= 50 && findings.hydro.bought == false) {
-      document.getElementById('hydroUpgrade').style.display = 'block';
-  }
-  
-    if (researchPoints >= 150 && findings.biomass.bought == false) {
+    if (researchPoints >= 50 && findings.biomass.bought == false) {
       document.getElementById('biomassUpgrade').style.display = 'block';
   }
   
-    if (researchPoints >= 200 && findings.geothermal.bought == false) {
-      document.getElementById('geothermalUpgrade').style.display = 'block';
+    if (researchPoints >= 150 && findings.geothermal.bought == false) {
+      document.getElementById('geothermal').style.display = 'block';
+  }
+  
+    if (researchPoints >= 200 && findings.hydro.bought == false) {
+      document.getElementById('hydroUpgrade').style.display = 'block';
   }
 
 
