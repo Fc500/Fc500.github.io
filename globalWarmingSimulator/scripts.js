@@ -1,4 +1,4 @@
-window.alert("v0.99 LAMBDA2");
+window.alert("v0.99 MU");
 
 
 // import { achievementUnlocked } from "./achievements";
