@@ -1,4 +1,4 @@
-window.alert("v1.01");
+window.alert("v1.02");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -66,7 +66,7 @@ function closeModal() {
 
 //variables
 let money = 5000000;
-let temp = 67.85;
+let temp = 57.85;
 let tempIncrease = 0.017;
 let year = 2010;
 let researchPoints = 150;
@@ -1028,63 +1028,63 @@ function tutorial() {
 function updateAchievementsSecond() {
 
   if (solarFarm.owned > 10) {
-    achievementUnlocked(achievementsList.solar1);
+    achievementUnlocked(achievementsList.solar1, 0);
   }
   
   if (solarFarm.owned > 50) {
-    achievementUnlocked(achievementsList.solar2);
+    achievementUnlocked(achievementsList.solar2, 0);
   }
   
   if (solarFarm.owned > 100) {
-    achievementUnlocked(achievementsList.solar3);
+    achievementUnlocked(achievementsList.solar3, 0);
   }
   
   if (windmill.owned > 10) {
-    achievementUnlocked(achievementsList.wind1);
+    achievementUnlocked(achievementsList.wind1, 0);
   }
   
   if (windmill.owned > 50) {
-    achievementUnlocked(achievementsList.wind2);
+    achievementUnlocked(achievementsList.wind2, 0);
   }
   
   if (windmill.owned > 100) {
-    achievementUnlocked(achievementsList.wind3);
+    achievementUnlocked(achievementsList.wind3, 0);
   }
   
   if (biomassFarm.owned > 10) {
-    achievementUnlocked(achievementsList.bio1);
+    achievementUnlocked(achievementsList.bio1, 0);
   }
   
   if (biomassFarm.owned > 50) {
-    achievementUnlocked(achievementsList.bio2);
+    achievementUnlocked(achievementsList.bio2, 0);
   }
   
   if (biomassFarm.owned > 100) {
-    achievementUnlocked(achievementsList.bio3);
+    achievementUnlocked(achievementsList.bio3, 0);
   }
   
   if (geothermalPlant.owned > 10) {
-    achievementUnlocked(achievementsList.geo1);
+    achievementUnlocked(achievementsList.geo1, 0);
   }
   
   if (geothermalPlant.owned > 50) {
-    achievementUnlocked(achievementsList.geo2);
+    achievementUnlocked(achievementsList.geo2, 0);
   }
   
   if (geothermalPlant.owned > 100) {
-    achievementUnlocked(achievementsList.geo3);
+    achievementUnlocked(achievementsList.geo3, 0);
   }
   
   if (hydroPlant.owned > 10) {
-    achievementUnlocked(achievementsList.hydro1);
+    achievementUnlocked(achievementsList.hydro1, 0);
   }
   
   if (hydroPlant.owned > 50) {
-    achievementUnlocked(achievementsList.hydro2);
+    achievementUnlocked(achievementsList.hydro2, 0);
   }
   
   if (hydroPlant.owned > 100) {
-    achievementUnlocked(achievementsList.hydro3);
+    achievementUnlocked(achievementsList.hydro3, 0);
   }
   
 }
