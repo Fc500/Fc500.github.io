@@ -1,4 +1,4 @@
-window.alert("v1.00");
+window.alert("v1.01");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -1090,7 +1090,7 @@ function updateAchievementsSecond() {
 }
 
 function updateUpgradesSecond() {
-
+  updateAchievementsSecond();
 
   if (researchPoints >= 100) {
     researchItems[1].style.display = 'block';
