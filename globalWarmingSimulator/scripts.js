@@ -619,16 +619,16 @@ function checkForUpgrades() {
     if (researchPoints >= 25 && findings.solar.bought == false) {
       document.getElementById('solarUpgrade').style.display = 'block';
     } 
-    if (researchPoints >= 5 && findings.windmill.bought == false) {
+    if (researchPoints >= 50 && findings.windmill.bought == false) {
       document.getElementById('windmillUpgrade').style.display = 'block';
     }
 
-    if (researchPoints >= 50 && findings.biomass.bought == false) {
+    if (researchPoints >= 100 && findings.biomass.bought == false) {
       document.getElementById('biomassUpgrade').style.display = 'block';
   }
   
     if (researchPoints >= 150 && findings.geothermal.bought == false) {
-      document.getElementById('geothermal').style.display = 'block';
+      document.getElementById('geothermalUpgrade').style.display = 'block';
   }
   
     if (researchPoints >= 200 && findings.hydro.bought == false) {
