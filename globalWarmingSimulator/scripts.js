@@ -1,4 +1,4 @@
-window.alert("v1.02");
+window.alert("v1.03");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -617,7 +617,7 @@ function buyThing(thing) {
     thing.owned += 1;
     moneyDisplay.innerHTML = numFormatter(money);
     thing.cost *= 1.2;
-    thing.amount.innerHTML = numFormatter(thing.owned);
+    thing.amount.innerHTML = thing.owned;
     thing.figure.innerHTML = numFormatter(thing.cost);
     if (thing.hasOwnProperty('tempDebuff')) {
       temperature -= thing.tempDebuff;
