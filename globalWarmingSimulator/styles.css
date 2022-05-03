@@ -80,7 +80,7 @@ body {
   padding: 1%;
   border-radius: 25px;
   background-color: var(--blue-pigment);
-  box-shadow: var(--box-shadows) 0px 7px 29px 0px;
+  box-shadow: var(--box-shadows) 0px 5px 15px;
   float: left;
 }
 
