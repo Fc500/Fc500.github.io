@@ -1,4 +1,4 @@
-window.alert("v1.03");
+window.alert("v1.04");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -1026,65 +1026,60 @@ function tutorial() {
 
 
 function updateAchievementsSecond() {
-
-  if (solarFarm.owned > 10) {
-    achievementUnlocked(achievementsList.solar1, 0);
+  
+  switch (solarFarm.owned) { 
+    case 10:
+      achievementUnlocked(achievementsList.solar1, 0);
+      break;
+    case 50:
+      achievementUnlocked(achievementsList.solar2, 0);
+      break;
+    case 100:
+      achievementUnlocked(achievementsList.solar3, 0);    
   }
   
-  if (solarFarm.owned > 50) {
-    achievementUnlocked(achievementsList.solar2, 0);
+  switch (windmill.owned) { 
+    case 10:
+      achievementUnlocked(achievementsList.wind1, 0);
+      break;
+    case 50:
+      achievementUnlocked(achievementsList.wind2, 0);
+      break;
+    case 100:
+      achievementUnlocked(achievementsList.wind3, 0);    
   }
   
-  if (solarFarm.owned > 100) {
-    achievementUnlocked(achievementsList.solar3, 0);
+  switch (biomassFarm.owned) { 
+    case 10:
+      achievementUnlocked(achievementsList.bio1, 0);
+      break;
+    case 50:
+      achievementUnlocked(achievementsList.bio2, 0);
+      break;
+    case 100:
+      achievementUnlocked(achievementsList.bio3, 0);    
   }
   
-  if (windmill.owned > 10) {
-    achievementUnlocked(achievementsList.wind1, 0);
+  switch (geothermalPlant.owned) { 
+    case 10:
+      achievementUnlocked(achievementsList.geo1, 0);
+      break;
+    case 50:
+      achievementUnlocked(achievementsList.geo2, 0);
+      break;
+    case 100:
+      achievementUnlocked(achievementsList.geo3, 0);    
   }
   
-  if (windmill.owned > 50) {
-    achievementUnlocked(achievementsList.wind2, 0);
-  }
-  
-  if (windmill.owned > 100) {
-    achievementUnlocked(achievementsList.wind3, 0);
-  }
-  
-  if (biomassFarm.owned > 10) {
-    achievementUnlocked(achievementsList.bio1, 0);
-  }
-  
-  if (biomassFarm.owned > 50) {
-    achievementUnlocked(achievementsList.bio2, 0);
-  }
-  
-  if (biomassFarm.owned > 100) {
-    achievementUnlocked(achievementsList.bio3, 0);
-  }
-  
-  if (geothermalPlant.owned > 10) {
-    achievementUnlocked(achievementsList.geo1, 0);
-  }
-  
-  if (geothermalPlant.owned > 50) {
-    achievementUnlocked(achievementsList.geo2, 0);
-  }
-  
-  if (geothermalPlant.owned > 100) {
-    achievementUnlocked(achievementsList.geo3, 0);
-  }
-  
-  if (hydroPlant.owned > 10) {
-    achievementUnlocked(achievementsList.hydro1, 0);
-  }
-  
-  if (hydroPlant.owned > 50) {
-    achievementUnlocked(achievementsList.hydro2, 0);
-  }
-  
-  if (hydroPlant.owned > 100) {
-    achievementUnlocked(achievementsList.hydro3, 0);
+  switch (hydroPlant.owned) { 
+    case 10:
+      achievementUnlocked(achievementsList.hydro1, 0);
+      break;
+    case 50:
+      achievementUnlocked(achievementsList.hydro2, 0);
+      break;
+    case 100:
+      achievementUnlocked(achievementsList.hydro3, 0);    
   }
   
 }
