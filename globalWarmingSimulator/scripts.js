@@ -1,4 +1,4 @@
-window.alert("v1.05");
+window.alert("v1.06");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -573,13 +573,13 @@ function addAchievement(achievement, check2) {
         //window.alert(upgradesGot + " Upgrades unlocked");
         //window.alert(upgradesGot + "Up");
         upgradeCounter.innerHTML = upgradesGot;
-        achievementUnlocked(achievement, check2);
+        achievementUnlocked(achievement, 1);
         break;
       case 0:
         achievementContainer.appendChild(achBox);
         achievementsGot+= 1;
         achievementCounter.innerHTML = achievementsGot;
-        achievementUnlocked(achievement, check2);
+        achievementUnlocked(achievement, 0);
       //window.alert(achievementsGot + " Ach");
 
     }
@@ -678,7 +678,7 @@ function buyUpgrade(upgrade) {
         
     }
 
-    achievementUnlocked(upgrade.discovery, 1);
+    addAchievement(upgrade.discovery, 1);
   } else if (upgrade.cost > money) {
     window.alert("Not Enough Money!");
   } else if (upgrade.research > researchPoints) {
