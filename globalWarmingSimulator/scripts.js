@@ -1,4 +1,4 @@
-window.alert("v1.09");
+window.alert("v1.10");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -908,7 +908,7 @@ function raiseYear() {
 }
 
 function raiseTemperature () {
-    tempIncrease *= 1.1;
+    tempIncrease *= 1.05;
 }
 
 function endGame() {
