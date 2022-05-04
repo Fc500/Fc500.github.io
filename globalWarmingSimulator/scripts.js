@@ -696,7 +696,7 @@ function buyDiscovery(thing) {
       thing.bought = true;
       thing.button.style.display = "none";
       //window.alert("Discovery Bought");
-      achievementUnlocked(thing.discovery, 1);
+      addAchievement(thing.discovery, 1);
     } else if (thing.cost > money) {
       window.alert("Not enough money!");
     } else if (thing.research > researchPoints) {
