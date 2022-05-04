@@ -1,4 +1,4 @@
-window.alert("v1.08");
+window.alert("v1.09");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -1200,7 +1200,7 @@ function updateUpgradesSecond() {
 function setGameValues() {
   updateGameSecond = setInterval(updateItemsSecond, 1000);
   monthlyUpdates = setInterval(raiseMonth, 250);
-  pentyearlyUpdates = setInterval(raiseTemperature, 15000);
+  pentyearlyUpdates = setInterval(raiseTemperature, 30000);
   checkForEndGame = setInterval(checkForWin, 1000);
   updatePlayerValues = setInterval(raiseMoney, 100);
   updateNonRenewables = setInterval(raiseNR, 100);
