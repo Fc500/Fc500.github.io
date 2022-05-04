@@ -1,4 +1,4 @@
-window.alert("v1.04");
+window.alert("v1.05");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -6,8 +6,7 @@ window.alert("v1.04");
 
 // CODE COURTESY OF SOMEONE ON CODEPEN
 
-function achievementUnlocked(achievement, check){
-  if (achievement.got != true) {
+function achievementUnlocked(achievement, check) {
     let type = check;
     achievement.got = true;
     var hasClass = $('.ach').hasClass('achieved');
@@ -21,8 +20,6 @@ function achievementUnlocked(achievement, check){
           $('.title').html("Achievement Unlocked!");
           $('.detail').html(achievement.title);
           $('.ach').addClass("achieved");
-          addAchievement(achievement, type);
-
           setTimeout(function(){
             $('.ach').removeClass("achieved");
           },5000)   
@@ -32,13 +29,10 @@ function achievementUnlocked(achievement, check){
           $('.title').html("Upgrade Unlocked!");
           $('.detail').html(achievement.title);
           $('.ach').addClass("achieved");
-          addAchievement(achievement, type);
-          
           setTimeout(function(){
             $('.ach').removeClass("achieved");
           },5000)   
     }
-  }
 }
 
     
@@ -564,26 +558,31 @@ function numFormatter(num) {
 
 
 function addAchievement(achievement, check2) {
-  // Create element
-  //window.alert("In the addAchievement function");
-  const achBox = document.createElement("div");
-  achBox.innerHTML = "<h4>" + achievement.title + "</h4><h6><i>" + achievement.flavorText + "</i></h6>";
-  achBox.classList.add("achievements");
-  // Append to another element:
-  switch (check2) {
-    case 1:
-      upgradeContainer.appendChild(achBox);
-      upgradesGot +=1;
-      //window.alert(upgradesGot + " Upgrades unlocked");
-      //window.alert(upgradesGot + "Up");
-      upgradeCounter.innerHTML = upgradesGot;
-      break;
-    case 0:
-    achievementContainer.appendChild(achBox);
-    achievementsGot+= 1;
-    achievementCounter.innerHTML = achievementsGot;
-    //window.alert(achievementsGot + " Ach");
-  
+  if (!achievement.got) {
+    achievement.got = true;
+    // Create element
+    //window.alert("In the addAchievement function");
+    const achBox = document.createElement("div");
+    achBox.innerHTML = "<h4>" + achievement.title + "</h4><h6><i>" + achievement.flavorText + "</i></h6>";
+    achBox.classList.add("achievements");
+    // Append to another element:
+    switch (check2) {
+      case 1:
+        upgradeContainer.appendChild(achBox);
+        upgradesGot +=1;
+        //window.alert(upgradesGot + " Upgrades unlocked");
+        //window.alert(upgradesGot + "Up");
+        upgradeCounter.innerHTML = upgradesGot;
+        achievementUnlocked(achievement, check2);
+        break;
+      case 0:
+        achievementContainer.appendChild(achBox);
+        achievementsGot+= 1;
+        achievementCounter.innerHTML = achievementsGot;
+        achievementUnlocked(achievement, check2);
+      //window.alert(achievementsGot + " Ach");
+
+    }
   }
 }
 
@@ -866,13 +865,13 @@ function endGame() {
 function popCheck() {
   
   if (popularity < 40 && popularity > 30) {
-    achievementUnlocked(achievementsList.pop1);
+    addAchievement(achievementsList.pop1);
   } else if (popularity < 30 && popularity > 20) {
-    achievementUnlocked(achievementsList.pop2);
+    addAchievement(achievementsList.pop2);
   } else if (popularity < 20 && popularity > 10) {
-    achievementUnlocked(achievementsList.pop3);
+    addAchievement(achievementsList.pop3);
   } else if (popularity < 10 && popularity > 0) {
-    achievementUnlocked(achievementsList.pop4);
+    addAchievement(achievementsList.pop4);
   } else if (popularity <= 0) {
     endGame();
     window.alert("GAME OVER");
@@ -886,22 +885,22 @@ function checkForWin() {
       root.style.setProperty('--phthalo-blue', '#CC6300');
       root.style.setProperty('--blue-pigment', '#E36F26');
       root.style.setProperty('--box-shadows', '#E36F2674');
-        achievementUnlocked(achievementsList.temp1, 0);
+        addAchievement(achievementsList.temp1, 0);
     } else if (temp > 75 && temp < 90) {
       root.style.setProperty('--phthalo-blue', '#BF2237');
       root.style.setProperty('--blue-pigment', '#FF1F2E');
       root.style.setProperty('--box-shadows', '#FF1F2E');
-        achievementUnlocked(achievementsList.temp2, 0);
+        addAchievement(achievementsList.temp2, 0);
     } else if (temp > 90 && temp < 95) {
       root.style.setProperty('--phthalo-blue', '#0a0100');
       root.style.setProperty('--blue-pigment', 'black');
       root.style.setProperty('--box-shadows', '#0a0100');
-        achievementUnlocked(achievementsList.temp3, 0);
+        addAchievement(achievementsList.temp3, 0);
     } 
     
   } else if (temp > 95) {
     if (achievementsList.temp4.got == false) {
-      achievementUnlocked(achievementsList.temp4, 0);
+      addAchievement(achievementsList.temp4, 0);
     }
     window.alert('Game Over!');
     modalHeader.innerHTML = "";
@@ -1029,57 +1028,57 @@ function updateAchievementsSecond() {
   
   switch (solarFarm.owned) { 
     case 10:
-      achievementUnlocked(achievementsList.solar1, 0);
+      addAchievement(achievementsList.solar1, 0);
       break;
     case 50:
-      achievementUnlocked(achievementsList.solar2, 0);
+      addAchievement(achievementsList.solar2, 0);
       break;
     case 100:
-      achievementUnlocked(achievementsList.solar3, 0);    
+      addAchievement(achievementsList.solar3, 0);    
   }
   
   switch (windmill.owned) { 
     case 10:
-      achievementUnlocked(achievementsList.wind1, 0);
+      addAchievement(achievementsList.wind1, 0);
       break;
     case 50:
-      achievementUnlocked(achievementsList.wind2, 0);
+      addAchievement(achievementsList.wind2, 0);
       break;
     case 100:
-      achievementUnlocked(achievementsList.wind3, 0);    
+      addAchievement(achievementsList.wind3, 0);    
   }
   
   switch (biomassFarm.owned) { 
     case 10:
-      achievementUnlocked(achievementsList.bio1, 0);
+      addAchievement(achievementsList.bio1, 0);
       break;
     case 50:
-      achievementUnlocked(achievementsList.bio2, 0);
+      addAchievement(achievementsList.bio2, 0);
       break;
     case 100:
-      achievementUnlocked(achievementsList.bio3, 0);    
+      addAchievement(achievementsList.bio3, 0);    
   }
   
   switch (geothermalPlant.owned) { 
     case 10:
-      achievementUnlocked(achievementsList.geo1, 0);
+      addAchievement(achievementsList.geo1, 0);
       break;
     case 50:
-      achievementUnlocked(achievementsList.geo2, 0);
+      addAchievement(achievementsList.geo2, 0);
       break;
     case 100:
-      achievementUnlocked(achievementsList.geo3, 0);    
+      addAchievement(achievementsList.geo3, 0);    
   }
   
   switch (hydroPlant.owned) { 
     case 10:
-      achievementUnlocked(achievementsList.hydro1, 0);
+      addAchievement(achievementsList.hydro1, 0);
       break;
     case 50:
-      achievementUnlocked(achievementsList.hydro2, 0);
+      addAchievement(achievementsList.hydro2, 0);
       break;
     case 100:
-      achievementUnlocked(achievementsList.hydro3, 0);    
+      addAchievement(achievementsList.hydro3, 0);    
   }
   
 }
