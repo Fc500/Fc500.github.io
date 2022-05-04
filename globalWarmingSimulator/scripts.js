@@ -1,4 +1,4 @@
-window.alert("v1.06");
+window.alert("v1.07");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -64,7 +64,7 @@ let temp = 57.85;
 let tempIncrease = 0.017;
 let year = 2010;
 let researchPoints = 150;
-let popularity = 50;
+let popularity = 40;
 let influence = 100;
 let rps = 0;
 let mps = 0;
@@ -72,6 +72,7 @@ let mpsTotal = 0;
 let mpsNR = 0;
 let sectionOfText = 0;
 let month = 0;
+let nrSold = 0;
 
 
 let windmillps = 0;
@@ -748,6 +749,26 @@ function checkForUpgrades() {
       document.getElementById('hydroUpgrade').style.display = 'block';
   }
 
+  if (coalPlant.owned == 0) {
+    document.getElementById("coal").style.display = 'none';
+    nrSold += 1;
+  }
+
+  if (oilPlatform.owned == 0) {
+    document.getElementById("oil").style.display = 'none';
+    nrSold += 1;
+  }
+
+  if (gasFacility.owned == 0) {
+    document.getElementById("naturalGas").style.display = 'none';
+    nrSold += 1;
+  }
+
+  if (nuclearPlant.owned == 0) {
+    document.getElementById("nuclearPlant").style.display = 'none';
+    nrSold += 1;
+  }
+
 
 }
 //gain functions
@@ -784,9 +805,7 @@ function raiseMoney() {
 }
 
 function raiseNR() {
-    if (tempIncrease <= 0) {
-      tempIncrease = 0.1;
-    }
+  if (nrSold == 4) {
     if (coalPlant.owned > 0) {
       coalps = coalPlant.owned * coalPlant.output;
       document.getElementById("coalOutputPS").innerHTML = numFormatter(coalps);
@@ -809,7 +828,7 @@ function raiseNR() {
 
     mpsNR = coalps + oilps + gasps + nukeps;
     money += mpsNR/10;
-    
+  }    
 }
 
 function updateItemsSecond() {
@@ -835,9 +854,13 @@ function updateItemsSecond() {
 function raiseYear() {
   year += 1;
   yearDisplay.innerHTML = year;
+  if (tempIncrease > 0.15) {
   temp += tempIncrease;
   tempDisplay.innerHTML = temp.toFixed(2);
   tpsDisplay.innerHTML = tempIncrease.toFixed(2) + "&#176; per year";
+  } else {
+    tempIncrease = 0.2;
+  }
   popularity += 0.25;
   popularityDisplay.innerHTML = popularity.toFixed(2) + "%";
 }
