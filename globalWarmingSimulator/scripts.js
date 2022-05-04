@@ -59,11 +59,11 @@ function closeModal() {
 } */
 
 //variables
-let money = 5000000;
+let money = 500000;
 let temp = 57.85;
 let tempIncrease = 0.017;
 let year = 2010;
-let researchPoints = 150;
+let researchPoints = 0;
 let popularity = 40;
 let influence = 100;
 let rps = 0;
