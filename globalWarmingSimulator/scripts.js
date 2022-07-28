@@ -1,4 +1,4 @@
-window.alert("v1.07");
+window.alert("v1.10");
 
 
 // import { achievementUnlocked } from "./achievements";
@@ -59,11 +59,11 @@ function closeModal() {
 } */
 
 //variables
-let money = 5000000;
+let money = 500000;
 let temp = 57.85;
 let tempIncrease = 0.017;
 let year = 2010;
-let researchPoints = 150;
+let researchPoints = 0;
 let popularity = 40;
 let influence = 100;
 let rps = 0;
@@ -393,6 +393,48 @@ windmill2: {
       flavorText: "Bigger generators for more efficient energy collection! (Windmill's decrease of temperature x1.5)",
       buffType: 2,
       buffBuilding: windmill,
+      buff: 1.5,
+    }
+  },
+  
+  bio1: {
+    cost: 250000,
+    research: 150,
+    bought: false,
+    id: "up7",
+    discovery: {
+      title: "Waste collection",
+      flavorText: "More waste for more efficient production! (Biomass Farm's production x1.1%)",
+      buffType: 1,
+      buffBuilding: biomassFarm,
+      buff: 1.1,
+    }
+  },
+  
+bio2: {
+    cost: 350000,
+    research: 190,
+    bought: false,
+    id: "up8",
+    discovery: {
+      title: "Compost bins",
+      flavorText: "Even MORE waste for even more efficient energy collection! (Biomass Farm's production x1.2)",
+      buffType: 1,
+      buffBuilding: biomassFarm,
+      buff: 1.2,
+    }
+  },
+  
+  bio3: {
+    cost: 400000,
+    research: 250,
+    bought: false,
+    id: "up9",
+    discovery: {
+      title: "Crop Dedication",
+      flavorText: "Crops are now being used for biomass! (Biomass Farm's decrease of temperature x1.5)",
+      buffType: 2,
+      buffBuilding: biomassFarm,
       buff: 1.5,
     }
   },
@@ -805,7 +847,7 @@ function raiseMoney() {
 }
 
 function raiseNR() {
-  if (nrSold == 4) {
+  if (nrSold != 4) {
     if (coalPlant.owned > 0) {
       coalps = coalPlant.owned * coalPlant.output;
       document.getElementById("coalOutputPS").innerHTML = numFormatter(coalps);
@@ -866,7 +908,7 @@ function raiseYear() {
 }
 
 function raiseTemperature () {
-    tempIncrease *= 1.1;
+    tempIncrease *= 1.05;
 }
 
 function endGame() {
@@ -1133,6 +1175,23 @@ function updateUpgradesSecond() {
   if (researchPoints >= 75 && windmill.owned > 50) {
     addUpgrade(upgrades.windmill2);
   }
+  
+  if (researchPoints >= 100 && windmill.owned > 75) {
+    addUpgrade(upgrades.windmill3);
+  }
+  
+  
+  if (researchPoints >= 75 && biomassFarm.owned > 10) {
+    addUpgrade(upgrades.bio1);
+  }
+  
+  if (researchPoints >= 100 && biomassFarm.owned > 50) {
+    addUpgrade(upgrades.bio2);
+  }
+  
+  if (researchPoints >= 150 && biomassFarm.owned > 75) {
+    addUpgrade(upgrades.bio3);
+  }
 
 
 }
@@ -1141,7 +1200,7 @@ function updateUpgradesSecond() {
 function setGameValues() {
   updateGameSecond = setInterval(updateItemsSecond, 1000);
   monthlyUpdates = setInterval(raiseMonth, 250);
-  pentyearlyUpdates = setInterval(raiseTemperature, 15000);
+  pentyearlyUpdates = setInterval(raiseTemperature, 30000);
   checkForEndGame = setInterval(checkForWin, 1000);
   updatePlayerValues = setInterval(raiseMoney, 100);
   updateNonRenewables = setInterval(raiseNR, 100);
