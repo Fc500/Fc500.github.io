@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="main.css" rel="stylesheet"></link>
+        <title>
+            Band Battle Simulator
+        </title>
+    </head>
+    <body>
+
+        <p>Useful type chart!</p>
+        <ul>
+            <li>Brass > Woodwind</li>
+            <li>Woodwind > Percussion</li>
+            <li>Percussion > Brass</li>
+        </ul>
+        <div id="typeSelection">
+            <h3>Select your type! <b><span id="playerType">TYPE</span></b></h3>
+            <button onclick="selectType('brass', 0)">Brass</button>
+            <button onclick="selectType('woodwind', 1)">Percussion</button>
+            <button onclick="selectType('percussion', 2)">Woodwind</button>
+        </div>
+
+        <button onclick="battleInfo()">FIGHT</button>
+
+    <script type="text/javascript" src="battleSystem.js"></script>
+    </body>
+</html>
