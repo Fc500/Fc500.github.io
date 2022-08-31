@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Band Game!</title>
+        <link href="game.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+    </head>
+    <body>
+        <!-- Side navigation -->
+        <div class="sidenav">
+            <p onclick="switchFunction(0)" class="switch">SETTINGS</p>
+            <br>
+            <p onclick="switchFunction(1)" class="switch">STATS</p>
+            <p onclick="switchFunction(2)" class="switch">UPGRADES</p>
+            <p onclick="switchFunction(3)" class="switch" id="showDisplay" style="display: none;">BAND</p>
+            <p onclick="switchFunction(4)" class="switch">FACILITES</p>
+        </div>
+            
+        <!-- Page content -->
+        <div class="main">
+            <div style="text-align: center">
+                <h2 id="resourceDisplay">0</h2>
+                <h4 id="resourceDisplayPerSecond">0</h4>
+            </div>
+
+            <div class="section" hidden>
+                <h1>SETTINGS</h1>
+            </div>
+            <div class="section" hidden>
+                <h1>STATS</h1>
+            </div>
+
+            <div class="section" hidden>
+                <h1>UPGRADES</h1>
+                <div id="upgradesContainer"></div>
+            </div>
+            <div class="section" hidden>
+                <h1>BAND</h1>
+                <div id="buildingsContainer"></div>
+            </div>
+
+            <div class="section" hidden><h1>FACILITES</h1></div>
+        </div>
+    <script src="game.js"></script>
+    </body>
+</html>
