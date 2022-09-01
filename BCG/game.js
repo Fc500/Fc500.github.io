@@ -1,17 +1,11 @@
 // Player
 
+window.alert("v0.01");
+
 let playersTeam = [
 
 ]
 
-class trumpet {
-    constructor(skill) {
-        this.skill = skill;
-        attack = 100;
-        defense = 100;
-    }
-
-}
 
 function navbarFunction() {
     var x = document.getElementById("myNavbar");
