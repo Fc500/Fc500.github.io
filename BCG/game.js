@@ -1,7 +1,7 @@
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.11");
+  window.alert("v0.12");
 }
 
 // Variables
@@ -9,7 +9,7 @@ window.onload = function loading() {
 let scoutResults = document.getElementById("scoutResults");
 
 let playerTitle = "";
-let playerCardInfo = "<div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><img src='img_avatar.png' alt='Avatar' style='width:300px;height:300px;'></div><div class='flip-card-back'><h1></h1> <p>Architect & Engineer</p> <p>We love that guy</p></div></div></div>";
+let playerCardInfo = "<div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:100px;height:120px;'></div><div class='flip-card-back'><h1></h1> <p>Architect & Engineer</p> <p>We love that guy</p></div></div></div>";
 
 function scoutPlayers() {
   window.alert("Starting Test");
