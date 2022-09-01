@@ -1,7 +1,7 @@
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.09");
+  window.alert("v0.10");
 }
 
 // Variables
@@ -13,10 +13,9 @@ let playerCardInfo = "<div class='flip-card'><div class='flip-card-inner'><div c
 
 function scoutPlayers() {
   window.alert("Starting Test");
-  const createPlayerCard = document.createElement("div");
-  playerTitle = "Test1";
+  const cardBox = document.createElement("div"); 
   createPlayerCard.innerHTML = playerCardInfo;
-  scoutPlayers.appendChild(createPlayerCard);
+  scoutResults.appendChild(cardBox);
   window.alert("Test Complete");
 }
 
