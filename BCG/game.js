@@ -1,7 +1,7 @@
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.08");
+  window.alert("v0.09");
 }
 
 // Variables
@@ -9,19 +9,7 @@ window.onload = function loading() {
 let scoutResults = document.getElementById("scoutResults");
 
 let playerTitle = "";
-let playerCardInfo = `
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>${playerTitle}</h1> 
-      <p>Architect & Engineer</p> 
-      <p>We love that guy</p>
-    </div>
-  </div>
-</div>`;
+let playerCardInfo = "<div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><img src='img_avatar.png' alt='Avatar' style='width:300px;height:300px;'></div><div class='flip-card-back'><h1></h1> <p>Architect & Engineer</p> <p>We love that guy</p></div></div></div>";
 
 function scoutPlayers() {
   window.alert("Starting Test");
