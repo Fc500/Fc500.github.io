@@ -1,7 +1,7 @@
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.07");
+  window.alert("v0.08");
 }
 
 // Variables
@@ -24,6 +24,7 @@ let playerCardInfo = `
 </div>`;
 
 function scoutPlayers() {
+  window.alert("Starting Test");
   const createPlayerCard = document.createElement("div");
   playerTitle = "Test1";
   createPlayerCard.innerHTML = playerCardInfo;
