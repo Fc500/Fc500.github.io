@@ -1,7 +1,7 @@
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.04");
+  window.alert("v0.05");
 }
 
 

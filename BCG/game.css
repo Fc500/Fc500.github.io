@@ -66,3 +66,11 @@ body {
       display: block;
     }
   }
+
+  .section {
+    background-color: #ddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 75%;
+    
+  }
