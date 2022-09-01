@@ -1,10 +1,8 @@
 // Player
 
-window.alert("v0.02");
-
-let playersTeam = [
-
-]
+window.onload = function loading() {
+  window.alert("v0.03");
+}
 
 
 function navbarFunction() {
@@ -21,9 +19,12 @@ function navbarFunction() {
     let sidenavSections = document.getElementsByClassName("navChild");
 
     for (let i = 0; i < sections.length; i++) {
-        //sections[i].style.display = "none";
-        sidenavSections[i].style.fontWeight = "normal";      
+        sections[i].style.display = "none";
+        sidenavSections[i].style.fontWeight = "normal";   
+        sections[i].classList.remove("active");
+   
     } 
+    sections[chosenSection].classList.add("active");
     sections[chosenSection].style.display = "block";
     sidenavSections[chosenSection].style.fontWeight = "bold";
 }
