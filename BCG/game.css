@@ -2,10 +2,12 @@
     margin: auto;
     padding: 1%;
     text-align: center;
-    border-radius: 25px;
-    width: 75%;
     background-color: lightgray;
 } 
+
+.section {
+    margin-left: 16px;
+}
 
 body {
     margin: 0;
@@ -20,7 +22,7 @@ body {
     width: 100%;
   }
   
-  .navbar a {
+  .navbar p {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -30,12 +32,12 @@ body {
     font-size: 17px;
   }
   
-  .navbar a:hover {
+  .navbar p:hover {
     background-color: #ddd;
     color: black;
   }
   
-  .navbar a.active {
+  .navbar p.active {
     background-color: #04AA6D;
     color: white;
   }
@@ -45,8 +47,8 @@ body {
   }
   
   @media screen and (max-width: 600px) {
-    .navbar a:not(:first-child) {display: none;}
-    .navbar a.icon {
+    .navbar p:not(:first-child) {display: none;}
+    .navbar p.icon {
       float: right;
       display: block;
     }
@@ -58,7 +60,7 @@ body {
       right: 0;
       bottom:0;
     }
-    .navbar.responsive a {
+    .navbar.responsive p {
       float: none;
       display: block;
     }

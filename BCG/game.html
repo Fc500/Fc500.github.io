@@ -5,28 +5,31 @@
         <link href="game.css" rel="stylesheet">
     </head>
     <body>
+
+        <div class="navbar" id="myNavbar">
+            <p class="active navChild" onclick="switchFunction(0)">Home</p>
+            <p class="navChild" onclick="switchFunction(1)">News</p>
+            <p class="navChild" onclick="switchFunction(2)">Contact</p>
+            <p class="navChild" onclick="switchFunction(3)">About</p>
+            <p href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</p>
+        </div>
+          
         <div id="main">
-            <div id="opponentsContainer">
-                a
+            <div class="section">
+                <h2>Responsive Bottom Navbar Example</h2>
+                <p>Resize the browser window to see how it works.</p>
             </div>
-            <button>DRAW</button>
-            <div id="playersContainer">
-                a
+            <div class="section" hidden>
+                <h1>Upgrades</h1>
+            </div>
+            <div class="section" hidden>
+                <h1>Recruit</h1>
+            </div>
+            <div class="section" hidden>
+                <h1>Host</h1>
             </div>
         </div>
 
-        <div class="navbar" id="myNavbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-          </div>
-          
-          <div style="padding-left:16px">
-            <h2>Responsive Bottom Navbar Example</h2>
-            <p>Resize the browser window to see how it works.</p>
-          </div>
           
     </body>
 </html>
