@@ -1,7 +1,7 @@
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.03");
+  window.alert("v0.04");
 }
 
 
@@ -21,10 +21,10 @@ function navbarFunction() {
     for (let i = 0; i < sections.length; i++) {
         sections[i].style.display = "none";
         sidenavSections[i].style.fontWeight = "normal";   
-        sections[i].classList.remove("active");
+        sidenavSections[i].classList.remove("active");
    
     } 
-    sections[chosenSection].classList.add("active");
+    sidenavSections[chosenSection].classList.add("active");
     sections[chosenSection].style.display = "block";
     sidenavSections[chosenSection].style.fontWeight = "bold";
 }
