@@ -1,6 +1,6 @@
 // Player
 
-window.alert("v0.01");
+window.alert("v0.02");
 
 let playersTeam = [
 
