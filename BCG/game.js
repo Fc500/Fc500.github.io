@@ -1,7 +1,18 @@
+// Player Variables
+
+let money = 10000;
+let influence = 100;
+
+const moneyDisp = document.getElementById("money");
+const influenceDisp = document.getElementById("influence");
+
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.16");
+  window.alert("v0.18");
+  moneyDisp = money;
+  influenceDisp = money;
+
 }
 
 // Variables
@@ -39,36 +50,42 @@ function generateRandom(min, max) {
 
 function generateCardValues(name) {
   let seed = generateRandom(100, 1000);
-  let seedPrice = 0;
   let splitSeed = String(seed).split("").map((seed)=>{
     return Number(seed);
   })
 
-  if (splitSeed[0] >= 0 && splitSeed[0] < 5) {
-    seedPrice = 100;
-  } else {
-    seedPrice = 200;
-  }
+  let seedPrice = splitSeed[0] * 250;
 
-  let seedOdds = splitSeed[1];
+  let seedOdds = splitSeed[1] * 11;
 
-  let seedSkill = splitSeed[2];
+  let seedSkill = splitSeed[2] * 11;
 
-  return [seedPrice, seedOdds, seedSkill];
+  return [seedPrice, seedOdds, seedSkill, seed];
+
 }
 
-function scoutPlayers() {
-  const cardBox = document.createElement("div"); 
-  let cardName = generateCardName();
-  let generatedValues = generateCardValues(cardName);
-  
-  let cardPrice = generatedValues[0];
-  let cardOdds = generatedValues[1];
-  let cardSkill = generatedValues[2];
+function scoutNewPlayer() {
+  window.alert("success");
+}
 
-  window.alert(cardName);
-  cardBox.innerHTML = `<div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>$ ${cardName.toString()}</h1> <p>${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}</p><p>Skill: ${cardSkill.toString()}</p></div></div></div>`;
-  scoutResults.appendChild(cardBox);
+function scoutPlayers(amount) {
+  if (100 * amount <= money) {
+    for (i = 0; i < amount; i++) {
+      const cardBox = document.createElement("div"); 
+      let cardName = generateCardName();
+      let generatedValues = generateCardValues(cardName);
+  
+      let cardPrice = generatedValues[0];
+      let cardOdds = generatedValues[1];
+      let cardSkill = generatedValues[2];
+
+      //window.alert(cardName);
+      cardBox.innerHTML = `<div class='flip-card' id='${seed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick='scoutNewPlayer()'>Scout</button></div></div></div>`;
+      scoutResults.appendChild(cardBox);
+      money -= 100 * amount;
+      moneyDisp = money;
+    }
+  }
 }
 
 

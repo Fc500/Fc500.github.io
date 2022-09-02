@@ -17,11 +17,14 @@
         </div>
           
         <div id="main">
+            <h3 style="float: left" id="money"></h3><h3 style="float: left;" id="influence"></h3>
             <div class="section">
                 <h1>RECRUIT</h1>
                 <h2>Responsive Bottom Navbar Example</h2>
                 <p>Resize the browser window to see how it works.</p>
-                <button onclick="scoutPlayers()">Scout</button>
+                
+                <button onclick="scoutPlayers(1)">Scout One ($100)</button>
+                <button onclick="scoutPlayers(5)">Scout Five ($500)</button>
                 <div id="scoutResults">
                     <p>Results:</p>
                 </div>
