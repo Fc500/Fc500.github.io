@@ -9,9 +9,9 @@ const influenceDisp = document.getElementById("influence");
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.19");
+  window.alert("v0.20");
   moneyDisp.innerHTML = money;
-  influenceDisp.innerHTML = money;
+  influenceDisp.innerHTML = influence;
 
 }
 
@@ -83,9 +83,10 @@ function scoutPlayers(amount) {
       let cardPrice = generatedValues[0];
       let cardOdds = generatedValues[1];
       let cardSkill = generatedValues[2];
+      let cardSeed = generatedValues[3];
 
-      //window.alert(cardName);
-      cardBox.innerHTML = `<div class='flip-card' id='${seed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick='scoutNewPlayer()'>Scout</button></div></div></div>`;
+      window.alert(cardName);
+      cardBox.innerHTML = `<div class='flip-card' id='${cardSeed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick='scoutNewPlayer()'>Scout</button></div></div></div>`;
       scoutResults.appendChild(cardBox);
       money -= 100 * amount;
       moneyDisp = money;
