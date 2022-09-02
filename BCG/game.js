@@ -9,7 +9,7 @@ const influenceDisp = document.getElementById("influence");
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.20");
+  window.alert("v0.21");
   moneyDisp.innerHTML = money;
   influenceDisp.innerHTML = influence;
 
@@ -75,7 +75,7 @@ function scoutPlayers(amount) {
     window.alert("Inside Function 1");
 
     for (let i = 0; i <= amount; i++) {
-      window.alert("Inside Function 2");
+      window.alert("Amount: " + amount);
       const cardBox = document.createElement("div"); 
       let cardName = generateCardName();
       let generatedValues = generateCardValues(cardName);
@@ -88,9 +88,9 @@ function scoutPlayers(amount) {
       window.alert(cardName);
       cardBox.innerHTML = `<div class='flip-card' id='${cardSeed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick='scoutNewPlayer()'>Scout</button></div></div></div>`;
       scoutResults.appendChild(cardBox);
-      money -= 100 * amount;
-      moneyDisp = money;
     }
+    money -= multiplier;
+    moneyDisp.innerHTML = money;
   }
 }
 
