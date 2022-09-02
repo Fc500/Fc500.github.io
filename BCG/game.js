@@ -9,9 +9,9 @@ const influenceDisp = document.getElementById("influence");
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.18");
-  moneyDisp = money;
-  influenceDisp = money;
+  window.alert("v0.19");
+  moneyDisp.innerHTML = money;
+  influenceDisp.innerHTML = money;
 
 }
 
@@ -69,8 +69,13 @@ function scoutNewPlayer() {
 }
 
 function scoutPlayers(amount) {
-  if (100 * amount <= money) {
-    for (i = 0; i < amount; i++) {
+  let multiplier = amount * 100;
+  window.alert(multiplier);
+  if (money >= multiplier) {
+    window.alert("Inside Function 1");
+
+    for (let i = 0; i <= amount; i++) {
+      window.alert("Inside Function 2");
       const cardBox = document.createElement("div"); 
       let cardName = generateCardName();
       let generatedValues = generateCardValues(cardName);
