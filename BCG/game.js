@@ -16,9 +16,11 @@ let playerCardInfo = `<div class='flip-card'><div class='flip-card-inner'><div c
 //functions 
 
 function generateName() {
-  var names = ["Ayush", "Sagar", "Namit", "Devish", "Sakshi", "Khushi", "Karishma"];
-  var n = Math.floor(Math.random() * names.length);
-  let chosenName = names[n];
+  var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth"];
+  var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis"];
+  let fnr = Math.floor(Math.random() * firstNames.length);
+  let lnr = Math.floor(Math.random() * lastNames.length);
+  let chosenName = firstNames[fnr] + " " + lastNames[lnr];
   return chosenName;
 
 }
