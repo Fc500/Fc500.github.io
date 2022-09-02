@@ -1,7 +1,7 @@
 // Player
 
 window.onload = function loading() {
-  window.alert("v0.14");
+  window.alert("v0.15");
 }
 
 // Variables
@@ -9,13 +9,9 @@ window.onload = function loading() {
 let scoutResults = document.getElementById("scoutResults");
 
 let playerTitle = "";
-let cardName = "";
-let playerCardInfo = `<div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:100px;height:120px;'></div><div class='flip-card-back'><h1>${cardName}</h1> <p>Architect & Engineer</p> <p>We love that guy</p></div></div></div>`;
-
-
 //functions 
 
-function generateName() {
+function generateCard() {
   var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth"];
   var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis"];
   let fnr = Math.floor(Math.random() * firstNames.length);
@@ -26,13 +22,11 @@ function generateName() {
 }
 
 function scoutPlayers() {
-  window.alert("Starting Test");
   const cardBox = document.createElement("div"); 
-  cardName = generateName();
+  let cardName = generateCard();
   window.alert(cardName);
-  cardBox.innerHTML = playerCardInfo;
+  cardBox.innerHTML = `<div class='flip-card'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>Architect & Engineer</p> <p>We love that guy</p></div></div></div>`;
   scoutResults.appendChild(cardBox);
-  window.alert("Test Complete");
 }
 
 
