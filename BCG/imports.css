@@ -5,6 +5,7 @@
     perspective: 1000px;
     float: left;
     margin: 15px;
+    line-height: 90%;
   }
   
   .flip-card-inner {

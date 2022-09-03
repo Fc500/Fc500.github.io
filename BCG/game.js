@@ -74,7 +74,7 @@ function scoutPlayers(amount) {
   if (money >= multiplier) {
     window.alert("Inside Function 1");
 
-    for (let i = 0; i <= amount; i++) {
+    for (let i = 0; i < amount; i++) {
       window.alert("Amount: " + amount);
       const cardBox = document.createElement("div"); 
       let cardName = generateCardName();
