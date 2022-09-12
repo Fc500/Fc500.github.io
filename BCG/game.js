@@ -71,10 +71,10 @@ function generateCardValues(name) {
 function scoutNewPlayer(cardArray) {
 
   //let name = cardArray[0];
-  let price = cardArray;
+  let price = cardArray[1];
   //let odds = cardArray[2];
   //let skill = cardArray[3];
-  //let seed = cardArray[4];
+  let seed = cardArray[4];
 
   if (money >= price) {
     window.alert("success");
