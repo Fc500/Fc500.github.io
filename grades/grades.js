@@ -3,7 +3,7 @@ let calculateValues = document.getElementById("gradeslabel");
 let gpaDisp = document.getElementById("gpa");
 let gpa;
 
-window.onload = function loading () {
+window.onload = function loading() {
     window.alert("0.01");
 }
 
