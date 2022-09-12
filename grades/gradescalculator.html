@@ -1,1 +1,24 @@
-
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <title>
+            GPA Calculator
+        </title>
+        <meta charset="utf-8" />
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <label for="gradeslabel">Input Grade A</label>
+        <select name="gradeslabel" id="gradeslabel">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>F</option>
+        </select>
+        <br/>
+        <button onclick="checkGrades()" id="calculateButton">Calculate!</button>
+        <h2>GPA: <span id="gpa"></span></h2>
+    </body>
+    <script src="gradess.js" type="text/javascript"></script>
+</html>
