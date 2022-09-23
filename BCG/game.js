@@ -25,15 +25,6 @@ let scoutResults = document.getElementById("scoutResults");
 
 //functions 
 
-function generateCardName() {
-  var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth"];
-  var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis"];
-  let fnr = Math.floor(Math.random() * firstNames.length);
-  let lnr = Math.floor(Math.random() * lastNames.length);
-  chosenName = firstNames[fnr] + " " + lastNames[lnr];
-  return chosenName;
-
-}
 
 function generateRandom(min, max) {
 
@@ -52,11 +43,13 @@ function generateRandom(min, max) {
   return rand;
 }
 
-function generateCardValues(name) {
+function generateCardValues() {
   let seed = generateRandom(100, 1000);
   let splitSeed = String(seed).split("").map((seed)=>{
     return Number(seed);
   })
+
+
 
   let seedPrice = splitSeed[0] * 250;
 
@@ -64,13 +57,26 @@ function generateCardValues(name) {
 
   let seedSkill = splitSeed[2] * 11;
 
-  return [seedPrice, seedOdds, seedSkill, seed];
+
+  var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth"];
+  var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis"];
+  let fnr = Math.floor(Math.random() * firstNames.length);
+  let lnr = Math.floor(Math.random() * lastNames.length);
+  let seedName = firstNames[fnr] + " " + lastNames[lnr];
+
+  return [seedName, seedPrice, seedOdds, seedSkill, seed];
 
 }
 
-function scoutNewPlayer(name, price, odds, skill, seed) {
+function scoutNewPlayer(name, price) {
   console.log("e");
   window.alert("scouting");
+
+  let name = name;
+  let price = price;
+  window.alert(price);
+
+
   if (money >= price) {
     window.alert("success");
     let cardToRemove = document.getElementById(seed);
@@ -101,21 +107,16 @@ function scoutPlayers(amount) {
     for (let i = 0; i < amount; i++) {
       window.alert("Amount: " + amount);
       const cardBox = document.createElement("div"); 
-
-      let cardName = generateCardName();
-      let generatedValues = generateCardValues(cardName);
-      
-      let cardPrice = generatedValues[0];
-      let cardOdds = generatedValues[1];
-      let cardSkill = generatedValues[2];
-      let cardSeed = generatedValues[3];
+      let generatedValues = generateCardValues();
 
 
+      let cardName = generatedValues[0]
+      let cardPrice = generatedValues[1];
+      let cardOdds = generatedValues[2];
+      let cardSkill = generatedValues[3];
+      let cardSeed = generatedValues[4];
 
-      //let cardValues = [cardName, cardPrice, cardOdds, cardSkill, cardSeed];
-
-      window.alert(cardName);
-      cardBox.innerHTML = `<div class='flip-card' id='${cardSeed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick='scoutNewPlayer(${cardNameTrueBecauseJSIsStupid})'>Scout</button></div></div></div>`;
+      cardBox.innerHTML = `<div class='flip-card' id='${cardSeed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick='scoutNewPlayer(${cardPrice})'>Scout</button></div></div></div>`;
       scoutResults.appendChild(cardBox);
     }
     influence -= multiplier;
