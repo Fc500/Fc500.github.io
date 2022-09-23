@@ -2,10 +2,26 @@
 <html>
 
 <body>
-<p>Interval: 1</p>
-<div><p>Results: </p>
-	<div id="result"></div> 
-</div>
+
+    <p>A simple calculator that calculates the distance between a point and a graph of choice. Currently only supports the function <b>Sqrt(x)</b></p>
+    
+    <p>Enter an interval to go by!</p>
+    <input type="number" id="intervalInp" value="1" required>
+
+    <p>Enter a point to find the distance!</p>
+        <p>X-Val</p>
+        <input type="number" id="xValCalc" value="6" required>
+
+        <p>Y-Val</p>
+        <input type="number" id="yValCalc" value="0" required>
+
+
+
+    <button onclick = "getValues()">Run the calculator!</button>
+
+    <div><p>Results: </p>
+        <div id="result"></div> 
+    </div>
 
 </body>
 
@@ -15,16 +31,37 @@ let resultDisp = document.getElementById("result");
 let result = 0;
 
 
-
 let pointTwoX = 6;
 let pointTwoY = 0;
 
-window.onload = function loading() {
 
-	for (let i = 0; i < 7; i += 0.1) {
+function getValues() {
+    let incrementInput = document.getElementById("intervalInp").value;
+    let xNum = document.getElementById("xValCalc").value;
+    let yNum = document.getElementById("yValCalc").value;
+
+
+    let incVal = parseFloat(incrementInput);
+    let xNumParse = parseFloat(xNum);
+    let yNumParse = parseFloat(yNum);
+
+    calculateDistance(incVal, xNum, yNum);
+}
+
+
+function calculateDistance(inc, xVal, yVal) {
+
+    window.alert(xVal);
+    window.alert(yVal);
+
+    resultDisp.innerHTML = "";
+	for (let i = 0; i <= xVal; i += inc) {
     
     let pointOneX = i.toFixed(1);
     let pointOneY = Math.sqrt(i);
+
+    let pointTwoX = xVal;
+    let pointTwoY = yVal;
     
 	let numX = pointTwoX - pointOneX;
     let numY = pointTwoY - pointOneY; 
