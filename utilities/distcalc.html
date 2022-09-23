@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<p>Interval: 1</p>
+<div><p>Results: </p>
+	<div id="result"></div> 
+</div>
+
+</body>
+
+<script>
+
+let resultDisp = document.getElementById("result");
+let result = 0;
+
+
+
+let pointTwoX = 6;
+let pointTwoY = 0;
+
+window.onload = function loading() {
+
+	for (let i = 0; i < 7; i += 0.1) {
+    
+    let pointOneX = i.toFixed(1);
+    let pointOneY = Math.sqrt(i);
+    
+	let numX = pointTwoX - pointOneX;
+    let numY = pointTwoY - pointOneY; 
+    
+	result = Math.sqrt(Math.pow(numX, 2) + Math.pow(numY, 2));
+    
+    //resultDisp.innerHTML += result + "<br><br>";
+    resultDisp.innerHTML += `Points: (${pointOneX}, ${pointOneY.toFixed(2)}), (${pointTwoX}, ${pointTwoY}) | ${result} <br><br>`;
+    
+   }
+}
+</script>
+</html>
