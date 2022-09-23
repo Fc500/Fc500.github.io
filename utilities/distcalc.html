@@ -7,39 +7,83 @@
       body {
         font-family: 'Nunito';font-size: 16px;
       }
+
+      .nunito {
+        font-family: 'Nunito';font-size: 16px;
+      }
+
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+
+      .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+    .main {
+        background-color: lightgray;
+        margin: 5px;
+        padding: 15px;
+        border-radius: 25px;
+    }
+
     </style>
   </head>
 
 <body>
+    <div class="main">
+        <p>A simple calculator that calculates the distance between a point and a graph of choice. Currently only supports the function <b>Sqrt(x)</b></p>
+        
+        <label for="intervalInp">Enter an interval to go by!</label>
+        <input type="number" id="intervalInp" value="1" required>
 
-    <p>A simple calculator that calculates the distance between a point and a graph of choice. Currently only supports the function <b>Sqrt(x)</b></p>
-    
-    <label for="intervalInp">Enter an interval to go by!</label>
-    <input type="number" id="intervalInp" value="1" required>
+        <p>Enter a point to find the distance!</p>
+            <label for="xValCalc">X-Val</label>
+            <input type="number" id="xValCalc" value="6" required>
+            <br>
+            <label for="yValCalc">Y-Val</label>
+            <input type="number" id="yValCalc" value="0" required>
+            <br>
 
-    <p>Enter a point to find the distance!</p>
-        <label for="xValCalc">X-Val</label>
-        <input type="number" id="xValCalc" value="6" required>
+
+        <label for="stopPnt">Enter a value of X-1 for the calculator to stop at!</label>
+        <input type="number" id="stopPnt" value="8" required>
         <br>
-        <label for="yValCalc">Y-Val</label>
-        <input type="number" id="yValCalc" value="0" required>
-        <br>
-
-
-    <label for="stopPnt">Enter a value of X-1 for the calculator to stop at!</label>
-    <input type="number" id="stopPnt" value="8" required>
-    <br>
-    <button onclick = "getValues()">Run the calculator!</button>
-
+        <button onclick = "getValues()" class="button button1 nunito">Run the calculator!</button>
+    </div>  
     <div><p>Results: </p>
-        <div id="result"></div> 
+        <table id="result"></table> 
     </div>
 
 </body>
 
 <script>
 
-window.alert("v0.03");
+window.alert("v0.05");
 let resultDisp = document.getElementById("result");
 let result = 0;
 
@@ -70,6 +114,8 @@ function calculateDistance(inc, xVal, yVal, endPnt) {
     window.alert(yVal);
 
     resultDisp.innerHTML = "";
+    resultDisp.innerHTML += `<tr><th>Point A</th><th>Point B</th><th>Result</th></tr>`
+
     
     for (let i = 0; i <= endPnt; i += inc) {
     
@@ -84,7 +130,8 @@ function calculateDistance(inc, xVal, yVal, endPnt) {
       result = Math.sqrt(Math.pow(numX, 2) + Math.pow(numY, 2));
     
       //resultDisp.innerHTML += result + "<br><br>";
-      resultDisp.innerHTML += `Points: (${pointOneX}, ${pointOneY.toFixed(2)}), (${pointTwoX}, ${pointTwoY}) | ${result} <br><br>`;
+      //resultDisp.innerHTML += `Points: (${pointOneX}, ${pointOneY.toFixed(2)}), (${pointTwoX}, ${pointTwoY}) | ${result} <br><br>`;
+      resultDisp.innerHTML += `<tr><td>(${pointOneX}, ${pointOneY.toFixed(2)})</td><td>(${pointTwoX}, ${pointTwoY})</td><td>${result}</td></tr>`
     
    }
 }
