@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <title>Distance Calculator</title>
+    <style>
+      body {
+        font-family: 'Nunito';font-size: 22px;
+      }
+    </style>
+  </head>
 
 <body>
 
     <p>A simple calculator that calculates the distance between a point and a graph of choice. Currently only supports the function <b>Sqrt(x)</b></p>
     
-    <p>Enter an interval to go by!</p>
+    <label for="intervalInp">Enter an interval to go by!</label>
     <input type="number" id="intervalInp" value="1" required>
 
     <p>Enter a point to find the distance!</p>
-        <p>X-Val</p>
+        <label for="xValCalc">X-Val</label>
         <input type="number" id="xValCalc" value="6" required>
 
-        <p>Y-Val</p>
+        <label for="yValCalc">Y-Val</label>
         <input type="number" id="yValCalc" value="0" required>
 
 
+    <label for="stopPnt">Enter a value of X-1 for the calculator to stop at!</label>
+    <input type="number" id="stopPnt" value="8" required>
 
     <button onclick = "getValues()">Run the calculator!</button>
 
@@ -27,6 +38,7 @@
 
 <script>
 
+window.alert("v0.03");
 let resultDisp = document.getElementById("result");
 let result = 0;
 
@@ -37,39 +49,41 @@ let pointTwoY = 0;
 
 function getValues() {
     let incrementInput = document.getElementById("intervalInp").value;
+    let stoppingPoint = document.getElementById("stopPnt").value;
     let xNum = document.getElementById("xValCalc").value;
     let yNum = document.getElementById("yValCalc").value;
 
 
     let incVal = parseFloat(incrementInput);
+    let stopPnt = parseFloat(stoppingPoint);
     let xNumParse = parseFloat(xNum);
     let yNumParse = parseFloat(yNum);
 
-    calculateDistance(incVal, xNum, yNum);
+    calculateDistance(incVal, xNum, yNum, stopPnt);
 }
 
 
-function calculateDistance(inc, xVal, yVal) {
+function calculateDistance(inc, xVal, yVal, endPnt) {
 
     window.alert(xVal);
     window.alert(yVal);
 
     resultDisp.innerHTML = "";
-	for (let i = 0; i <= xVal; i += inc) {
     
-    let pointOneX = i.toFixed(1);
-    let pointOneY = Math.sqrt(i);
+    for (let i = 0; i <= endPnt; i += inc) {
+    
+      let pointOneX = i.toFixed(1);
+      let pointOneY = Math.sqrt(i);
 
-    let pointTwoX = xVal;
-    let pointTwoY = yVal;
+      let pointTwoX = xVal;
+      let pointTwoY = yVal;
     
-	let numX = pointTwoX - pointOneX;
-    let numY = pointTwoY - pointOneY; 
+      let numX = pointTwoX - pointOneX;
+      let numY = pointTwoY - pointOneY; 
+      result = Math.sqrt(Math.pow(numX, 2) + Math.pow(numY, 2));
     
-	result = Math.sqrt(Math.pow(numX, 2) + Math.pow(numY, 2));
-    
-    //resultDisp.innerHTML += result + "<br><br>";
-    resultDisp.innerHTML += `Points: (${pointOneX}, ${pointOneY.toFixed(2)}), (${pointTwoX}, ${pointTwoY}) | ${result} <br><br>`;
+      //resultDisp.innerHTML += result + "<br><br>";
+      resultDisp.innerHTML += `Points: (${pointOneX}, ${pointOneY.toFixed(2)}), (${pointTwoX}, ${pointTwoY}) | ${result} <br><br>`;
     
    }
 }
