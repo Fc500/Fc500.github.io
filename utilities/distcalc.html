@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <title>Distance Calculator</title>
     <style>
@@ -75,65 +76,12 @@
         <br>
         <button onclick = "getValues()" class="button button1 nunito">Run the calculator!</button>
     </div>  
+    <div id="chartDIV" style="text-align: center;"></div>
     <div><p>Results: </p>
         <table id="result"></table> 
     </div>
 
 </body>
 
-<script>
-
-window.alert("v0.05");
-let resultDisp = document.getElementById("result");
-let result = 0;
-
-
-let pointTwoX = 6;
-let pointTwoY = 0;
-
-
-function getValues() {
-    let incrementInput = document.getElementById("intervalInp").value;
-    let stoppingPoint = document.getElementById("stopPnt").value;
-    let xNum = document.getElementById("xValCalc").value;
-    let yNum = document.getElementById("yValCalc").value;
-
-
-    let incVal = parseFloat(incrementInput);
-    let stopPnt = parseFloat(stoppingPoint);
-    let xNumParse = parseFloat(xNum);
-    let yNumParse = parseFloat(yNum);
-
-    calculateDistance(incVal, xNum, yNum, stopPnt);
-}
-
-
-function calculateDistance(inc, xVal, yVal, endPnt) {
-
-    window.alert(xVal);
-    window.alert(yVal);
-
-    resultDisp.innerHTML = "";
-    resultDisp.innerHTML += `<tr><th>Point A</th><th>Point B</th><th>Result</th></tr>`
-
-    
-    for (let i = 0; i <= endPnt; i += inc) {
-    
-      let pointOneX = i.toFixed(1);
-      let pointOneY = Math.sqrt(i);
-
-      let pointTwoX = xVal;
-      let pointTwoY = yVal;
-    
-      let numX = pointTwoX - pointOneX;
-      let numY = pointTwoY - pointOneY; 
-      result = Math.sqrt(Math.pow(numX, 2) + Math.pow(numY, 2));
-    
-      //resultDisp.innerHTML += result + "<br><br>";
-      //resultDisp.innerHTML += `Points: (${pointOneX}, ${pointOneY.toFixed(2)}), (${pointTwoX}, ${pointTwoY}) | ${result} <br><br>`;
-      resultDisp.innerHTML += `<tr><td>(${pointOneX}, ${pointOneY.toFixed(2)})</td><td>(${pointTwoX}, ${pointTwoY})</td><td>${result}</td></tr>`
-    
-   }
-}
-</script>
+<script src="dist.js" type="text/javascript"></script>
 </html>
