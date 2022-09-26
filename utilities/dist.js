@@ -1,5 +1,5 @@
 
-window.alert("v0.14");
+window.alert("v0.15");
 const resultDisp = document.getElementById("result");
 let result = 0;
 
@@ -33,7 +33,7 @@ function getValues() {
     let incrementInput = document.getElementById("intervalInp").value;
     let yModifier = document.getElementById("yMod").value;
     let graphYModifier = document.getElementById("graphYMod").value;
-    let graphXModifier = document.getElementById("graphXMod");
+    let graphXModifier = document.getElementById("graphXMod").value;
     let startingPoint = document.getElementById("startPnt").value;
     let stoppingPoint = document.getElementById("stopPnt").value;
     let xNum = document.getElementById("xValCalc").value;
