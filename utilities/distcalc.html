@@ -3,64 +3,24 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <link href='dist.css' rel='stylesheet'>
     <title>Distance Calculator</title>
-    <style>
-      body {
-        font-family: 'Nunito';font-size: 16px;
-      }
-
-      .nunito {
-        font-family: 'Nunito';font-size: 16px;
-      }
-
-      table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 5px;
-      }
-
-      .button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 15px;
-}
-
-.button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
-}
-
-.button1:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-
-    .main {
-        background-color: lightgray;
-        margin: 5px;
-        padding: 15px;
-        border-radius: 25px;
-    }
-
-    </style>
   </head>
 
 <body>
     <div class="main">
-        <p>A simple calculator that calculates the distance between a point and a graph of choice. Currently only supports the function <b>Sqrt(x)</b></p>
+        <p>A simple calculator that calculates the distance between a point and a graph of choice. Currently only supports the functions <b>Sqrt(x), x^2 & x^3</b></p>
         
+        <label for="graphs">Select a graph to analyze!</label>
+        <select id="graphs" name="graphs">
+          <option value="sqrt(x)">sqrt(x)</option>
+          <option value="x^2">x^2</option>
+          <option value="x^3">x^3</option>
+        </select>
+
+        <br>
         <label for="intervalInp">Enter an interval to go by!</label>
-        <input type="number" id="intervalInp" value="1" required>
+        <input type="number" id="intervalInp" value="0.5" required>
 
         <p>Enter a point to find the distance!</p>
             <label for="xValCalc">X-Val</label>
@@ -69,15 +29,24 @@
             <label for="yValCalc">Y-Val</label>
             <input type="number" id="yValCalc" value="0" required>
             <br>
+            <br>
 
-
-        <label for="stopPnt">Enter a value of X-1 for the calculator to stop at!</label>
-        <input type="number" id="stopPnt" value="8" required>
-        <br>
+            <label for="stopPnt">Enter a value of X-1 for the calculator to start at!</label>
+            <input type="number" id="startPnt" value="0" required>
+            <br>
+            <label for="stopPnt">Enter a value of X-1 for the calculator to stop at!</label>
+            <input type="number" id="stopPnt" value="8" required>
+            <br>
+          <br>
+            <label for="yMod">Enter a starting point for Y!</label>
+            <input type="number" id="yMod" value="0" required>
+            <br>
+            <br>
         <button onclick = "getValues()" class="button button1 nunito">Run the calculator!</button>
     </div>  
+    <p>Smallest distance value: <span id="smallest"></span></p>
     <div id="chartDIV" style="text-align: center;"></div>
-    <div><p>Results: </p>
+    <div><p>Direct Numeric Results: </p>
         <table id="result"></table> 
     </div>
 
