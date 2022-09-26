@@ -1,5 +1,5 @@
 
-window.alert("v0.10");
+window.alert("v0.11");
 const resultDisp = document.getElementById("result");
 let result = 0;
 
@@ -53,6 +53,52 @@ function getValues() {
     }
 
 
+}
+
+function makeGraphs(type) {
+       
+  let smallestValue = Math.min(...wholeResultsDist);
+  smallestDisplay.innerHTML = smallestValue;
+
+  
+  let chart = document.createElement("div");
+  chart.innerHTML = "<canvas id='resultsChart' width='1600' height='900'></canvas><p>Value of X</p><br><br><canvas id='graphChart' width='1600' height='900'></canvas><p>Graph of X</p>";
+
+  chartContainer.appendChild(chart);
+
+      
+  var resultsChart = document.getElementById("resultsChart");
+  var resultsGraph = new Chart(resultsChart, {
+  type: 'line',
+  data: {
+      labels: wholeResultsX,
+      datasets: [
+      { 
+          data: wholeResultsDist,
+          label: "Distance",
+          borderColor: "#3e95cd",
+          fill: false
+      }
+      ]
+  }
+  });
+
+
+  var graphChart = document.getElementById("graphChart");
+  var inputedGraph = new Chart(graphChart, {
+  type: 'line',
+  data: {
+      labels: graphValuesX,
+      datasets: [
+      { 
+          data: graphValuesY,
+          label: `Graph of ${type}`,
+          borderColor: "#3e95cd",
+          fill: false
+      }
+      ]
+  }
+  });
 }
 
 
@@ -113,50 +159,7 @@ function calculateDistance(type, inc, yMod, xVal, yVal, startPnt, endPnt) {
       resultDisp.innerHTML += `<tr><td>(${pointOneX.toFixed(2)}, ${pointOneY.toFixed(2)})</td><td>(${pointTwoX}, ${pointTwoY})</td><td>${result}</td></tr>`
 
    }
-
-
-       
-   let smallestValue = Math.min(...wholeResultsDist);
-   smallestDisplay.innerHTML = `${smallestValue}`;
-
-   
-   let chart = document.createElement("div");
-   chart.innerHTML = "<canvas id='resultsChart' width='1600' height='900'></canvas><p>Value of X</p><br><br><canvas id='graphChart' width='1600' height='900'></canvas><p>Graph of X</p>";
-
-   chartContainer.appendChild(chart);
-
-       
-   var resultsChart = document.getElementById("resultsChart");
-   var myChart = new Chart(resultsChart, {
-   type: 'line',
-   data: {
-       labels: wholeResultsX,
-       datasets: [
-       { 
-           data: wholeResultsDist,
-           label: "Distance",
-           borderColor: "#3e95cd",
-           fill: false
-       }
-       ]
-   }
-   });
-
-   var graphChart = document.getElementById("graphChart");
-   var myChart = new Chart(graphChart, {
-   type: 'line',
-   data: {
-       labels: graphValuesX,
-       datasets: [
-       { 
-           data: graphValuesY,
-           label: `Graph of ${type}`,
-           borderColor: "#3e95cd",
-           fill: false
-       }
-       ]
-   }
-   });
+   makeGraphs(type);
 }
 
 
