@@ -1,5 +1,5 @@
 
-window.alert("v0.13");
+window.alert("v0.14");
 const resultDisp = document.getElementById("result");
 let result = 0;
 
@@ -32,7 +32,8 @@ function getValues() {
 
     let incrementInput = document.getElementById("intervalInp").value;
     let yModifier = document.getElementById("yMod").value;
-    let graphModifier = document.getElementById("graphMod").value;
+    let graphYModifier = document.getElementById("graphYMod").value;
+    let graphXModifier = document.getElementById("graphXMod");
     let startingPoint = document.getElementById("startPnt").value;
     let stoppingPoint = document.getElementById("stopPnt").value;
     let xNum = document.getElementById("xValCalc").value;
@@ -41,15 +42,16 @@ function getValues() {
 
     let incVal = parseFloat(incrementInput);
     let yMod = parseFloat(yModifier);
-    let graphMod = parseFloat(graphModifier);
+    let graphYMod = parseFloat(graphYModifier);
+    let graphXMod = parseFloat(graphXModifier);
     let startPnt = parseFloat(startingPoint);
     let stopPnt = parseFloat(stoppingPoint);
     let xNumParse = parseFloat(xNum);
     let yNumParse = parseFloat(yNum);
 
 
-    if (incrementInput >= 0.01 || graphMod >= 1) {
-        calculateDistance(typeOfCalc, incVal, yMod, graphMod, xNumParse, yNumParse, startPnt, stopPnt);
+    if (incrementInput >= 0.01) {
+        calculateDistance(typeOfCalc, incVal, yMod, graphYMod, graphXMod, xNumParse, yNumParse, startPnt, stopPnt);
     } else {
         window.alert("Please enter a number GREATER or EQUAL TO 0.01!");
     }
@@ -104,7 +106,7 @@ function makeGraphs(type) {
 }
 
 
-function calculateDistance(type, inc, yMod, graphMod, xVal, yVal, startPnt, endPnt) {
+function calculateDistance(type, inc, yMod, graphYMod, graphXMod, xVal, yVal, startPnt, endPnt) {
 
     wholeResultsX = [];
     wholeResultsDist = [];
@@ -114,7 +116,7 @@ function calculateDistance(type, inc, yMod, graphMod, xVal, yVal, startPnt, endP
 
     chartContainer.innerHTML = "";
 
-    window.alert(`Graph: ${graphMod} ${type} + ${yMod}`);
+    window.alert(`Graph: ${graphYMod} (${type}+${graphXMod}) + ${yMod}`);
     window.alert(`Comparison Point: (${xVal}, ${yVal})`);
 
     resultDisp.innerHTML = "";
@@ -138,6 +140,8 @@ function calculateDistance(type, inc, yMod, graphMod, xVal, yVal, startPnt, endP
       }
 
       pointOneY += yMod;
+
+      pointOneY += graphXMod;
 
       pointOneY *= graphMod;
 
