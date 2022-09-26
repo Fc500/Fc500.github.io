@@ -32,6 +32,7 @@ function getValues() {
 
     let incrementInput = document.getElementById("intervalInp").value;
     let yModifier = document.getElementById("yMod").value;
+    let graphModifier = document.getElementById("graphMod").value;
     let startingPoint = document.getElementById("startPnt").value;
     let stoppingPoint = document.getElementById("stopPnt").value;
     let xNum = document.getElementById("xValCalc").value;
@@ -40,14 +41,15 @@ function getValues() {
 
     let incVal = parseFloat(incrementInput);
     let yMod = parseFloat(yModifier);
+    let graphMod = parseFloat(graphModifier);
     let startPnt = parseFloat(startingPoint);
     let stopPnt = parseFloat(stoppingPoint);
     let xNumParse = parseFloat(xNum);
     let yNumParse = parseFloat(yNum);
 
 
-    if (incrementInput >= 0.01) {
-        calculateDistance(typeOfCalc, incVal, yMod, xNumParse, yNumParse, startPnt, stopPnt);
+    if (incrementInput >= 0.01 || graphMod >= 1) {
+        calculateDistance(typeOfCalc, incVal, yMod, graphMod, xNumParse, yNumParse, startPnt, stopPnt);
     } else {
         window.alert("Please enter a number GREATER or EQUAL TO 0.01!");
     }
@@ -102,7 +104,7 @@ function makeGraphs(type) {
 }
 
 
-function calculateDistance(type, inc, yMod, xVal, yVal, startPnt, endPnt) {
+function calculateDistance(type, inc, yMod, graphMod, xVal, yVal, startPnt, endPnt) {
 
     wholeResultsX = [];
     wholeResultsDist = [];
@@ -112,7 +114,7 @@ function calculateDistance(type, inc, yMod, xVal, yVal, startPnt, endPnt) {
 
     chartContainer.innerHTML = "";
 
-    window.alert(`Graph: ${type} + ${yMod}`);
+    window.alert(`Graph: ${graphMod} ${type} + ${yMod}`);
     window.alert(`Comparison Point: (${xVal}, ${yVal})`);
 
     resultDisp.innerHTML = "";
@@ -136,6 +138,8 @@ function calculateDistance(type, inc, yMod, xVal, yVal, startPnt, endPnt) {
       }
 
       pointOneY += yMod;
+
+      pointOneY *= graphMod;
 
       // User-inputed points
 
