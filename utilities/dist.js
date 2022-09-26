@@ -1,5 +1,5 @@
 
-window.alert("v0.11");
+window.alert("v0.12");
 const resultDisp = document.getElementById("result");
 let result = 0;
 
@@ -46,10 +46,10 @@ function getValues() {
     let yNumParse = parseFloat(yNum);
 
 
-    if (incrementInput >= 0.05) {
+    if (incrementInput >= 0.01) {
         calculateDistance(typeOfCalc, incVal, yMod, xNumParse, yNumParse, startPnt, stopPnt);
     } else {
-        window.alert("Please enter a number GREATER or EQUAL TO 0.05!");
+        window.alert("Please enter a number GREATER or EQUAL TO 0.01!");
     }
 
 
