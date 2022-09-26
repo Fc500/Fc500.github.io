@@ -1,5 +1,5 @@
 
-window.alert("v0.16");
+window.alert("v0.17");
 const resultDisp = document.getElementById("result");
 let result = 0;
 
@@ -132,16 +132,14 @@ function calculateDistance(type, inc, yMod, graphYMod, graphXMod, xVal, yVal, st
       let pointOneY;
 
       if (type == "sqrt(x)") {
-        pointOneY = Math.sqrt(i);
+        pointOneY = Math.sqrt(i + graphXMod);
       } else if (type == "x^2") {
-        pointOneY = Math.pow(i, 2);
+        pointOneY = Math.pow(i + graphXMod, 2);
       } else {
-        pointOneY = Math.pow(i, 3);
+        pointOneY = Math.pow(i + graphXMod, 3);
       }
 
       pointOneY += yMod;
-
-      pointOneY += graphXMod;
 
       pointOneY *= graphYMod;
 
