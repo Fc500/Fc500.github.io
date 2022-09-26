@@ -1,5 +1,5 @@
 
-window.alert("v0.12");
+window.alert("v0.13");
 const resultDisp = document.getElementById("result");
 let result = 0;
 
