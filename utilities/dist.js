@@ -1,5 +1,5 @@
 
-window.alert("v0.15");
+window.alert("v0.16");
 const resultDisp = document.getElementById("result");
 let result = 0;
 
@@ -143,7 +143,7 @@ function calculateDistance(type, inc, yMod, graphYMod, graphXMod, xVal, yVal, st
 
       pointOneY += graphXMod;
 
-      pointOneY *= graphMod;
+      pointOneY *= graphYMod;
 
       // User-inputed points
 
