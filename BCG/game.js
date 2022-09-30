@@ -48,64 +48,50 @@ function generateCardValues() {
   let splitSeed = String(seed).split("").map((seed)=>{
     return Number(seed);
   })
-
+  
+  var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth", "John", "Adam"];
+  var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
+  let fnr = Math.floor(Math.random() * firstNames.length);
+  let lnr = Math.floor(Math.random() * lastNames.length);
+  let seedName = firstNames[fnr] + " " + lastNames[lnr];
 
 
   let seedPrice = splitSeed[0] * 250;
 
-  let seedOdds = splitSeed[1] * 11;
+  let seedOdds = Math.floor(splitSeed[1] * 9.25);
 
-  let seedSkill = splitSeed[2] * 11;
+  let seedSkill = Math.floor(splitSeed[2] * 9.25);
 
-
-  var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth"];
-  var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis"];
-  let fnr = Math.floor(Math.random() * firstNames.length);
-  let lnr = Math.floor(Math.random() * lastNames.length);
-  let seedName = firstNames[fnr] + " " + lastNames[lnr];
 
   return [seedName, seedPrice, seedOdds, seedSkill, seed];
 
 }
 
-function scoutNewPlayer(name, price) {
-  console.log("e");
-  window.alert("scouting");
-
-  let name = name;
-  let price = price;
-  window.alert(price);
-
+function scoutNewPlayer(name, price, seed, skill, odds) {
+  console.log(name);
 
   if (money >= price) {
     window.alert("success");
-    let cardToRemove = document.getElementById(seed);
+    var cardToRemove = document.getElementById(seed);
     cardToRemove.remove();
     money -= price;
     moneyDisp.innerHTML = money;
 
-    /* playerBand.push(seed = {
-      instName: name,
-      instPrice: price,
-      instOdds: odds,
-      instSkill: skill
-    }); */
+    bandDisp.innerHTML += `<tr><td>${name}</td><td>${skill}</td><td>${odds}</td></tr>`;
 
-    bandDisp.innerHTML += name;
+
   } else {
     window.alert("Not enough money!");
-  }
+  } 
 
 }
+
 
 function scoutPlayers(amount) {
   let multiplier = amount * 10;
   window.alert(multiplier);
   if (influence >= multiplier) {
-    window.alert("Inside Function 1");
-
     for (let i = 0; i < amount; i++) {
-      window.alert("Amount: " + amount);
       const cardBox = document.createElement("div"); 
       let generatedValues = generateCardValues();
 
@@ -116,7 +102,9 @@ function scoutPlayers(amount) {
       let cardSkill = generatedValues[3];
       let cardSeed = generatedValues[4];
 
-      cardBox.innerHTML = `<div class='flip-card' id='${cardSeed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick='scoutNewPlayer(${cardPrice})'>Scout</button></div></div></div>`;
+      console.log(typeof cardName);
+
+      cardBox.innerHTML = `<div class='flip-card' id='${cardSeed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, ${cardOdds})">Scout</button></div></div></div>`;
       scoutResults.appendChild(cardBox);
     }
     influence -= multiplier;

@@ -25,3 +25,8 @@ body {
     height: 50%;
     
   }
+
+  th, tr {
+    margin: 10px;
+    padding: 2px;
+  }
