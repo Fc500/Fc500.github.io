@@ -52,10 +52,12 @@ th, tr {
 }
 
 #scoutResults {
+  width: 80%;
   height: 250px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
   padding: 20px;
+  background-color: gainsboro;
 }
 
