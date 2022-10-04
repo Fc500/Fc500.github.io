@@ -1,5 +1,11 @@
 // Player Variables
 
+// https://codepen.io/rachsmith/embed/PWxoLN?height=316&theme-id=0&default-tab=result
+
+// https://codepen.io/CTC/embed/RObOPd?height=316&theme-id=0&default-tab=result
+
+// https://codepen.io/mburakerman/embed/roJmaZ?height=316&theme-id=0&default-tab=result
+
 let money = 10000;
 let influence = 100;
 
