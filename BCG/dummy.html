@@ -1,0 +1,82 @@
+<html>
+
+<!--
+  Please note: this code is in no way ready to be used as is in production on your website. It will need to be adapted to be cross browser compliant & accessible. I just wanted to share how one might go about this effect with CSS & JS and no other dependencies
+-->
+    <head> 
+        <link href="animations.css" rel="stylesheet">
+        <link href="game.css" rel="stylesheet">
+    </head>
+    <body>
+
+
+        <div class="container">
+            <div class="card-column column-0">
+
+
+                <div class="card card-color-0">
+                    <div class="border"></div>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-00.jpg" />
+                    <h1>Settings</h1>
+                </div>
+                <div class="card card-color-2">
+                    <div class="border"></div>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-02.jpg" />
+                    <h1>Band</h1>
+                </div>
+            </div>
+
+            <div class="card-column column-1">
+                <div class="card card-color-1">
+                    <div class="border"></div>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-01.jpg" />
+                    <h1>Upgrades</h1>
+                </div>
+                <div class="card card-color-3">
+                    <div class="border"></div>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-03.jpg" />
+                    <h1>Recruit</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cover" class="cover"></div>
+
+        
+        <div id="open-content" class="open-content">
+            <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
+            <img id="open-content-image" src="" />
+                <div class="open-content-group" hidden>
+                    <h1>Settings</h1>
+                </div>
+                <div class="open-content-group" hidden>
+                    <h1>Band</h1>
+                    <h3 id="money"></h3>
+                    <h3 id="influence"></h3>
+                    <p>Members</p>
+                    <table id="bandMembers">
+                        <th>
+                            <td>Name</td>
+                            <td>Skill</td>
+                            <td>Rarity</td>
+                        </th>
+                    </table>
+                </div>
+                <div class="open-content-group" hidden>
+                    <h1>Upgrades</h1>
+                </div>
+                <div class="open-content-group" hidden>
+                    <h1>Recruit</h1>
+                    <button onclick="scoutPlayers(1)">Scout One (10 influence)</button>
+                    <button onclick="scoutPlayers(5)">Scout Five (50 influence)</button>
+                    <div id="scoutResults">
+                        <p>Results:</p>
+                    </div>
+                </div>
+
+        </div>
+
+    </body>
+    <script src="animations.js" type="text/javascript"></script>
+    <script src="game.js" type="text/javascript"></script>    
+</html>
