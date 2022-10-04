@@ -89,7 +89,7 @@
   /* The cover (expanding background) */
   .cover {
     position: fixed;
-    height: 300px;
+    height: 200px;
     z-index: 100;
     transform-origin: 50% 50%;
   }
@@ -133,8 +133,10 @@
     margin-top: -16%;
     padding: 60% 5% 5% 5%;
     width: 80%;
-    margin-left: 5%;
+    height: 400px;
     margin-bottom: 5%;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   
   .close-content {
