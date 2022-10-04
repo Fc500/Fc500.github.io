@@ -68,20 +68,19 @@
   }
   
   .card-color-0 {
-    background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png");
-    background-color: #EB5160;
+    background-image: url("button_1.png");
   }
   
   .card-color-1 {
-    background-color: #8F3985;
+    background-image: url("button_2.png");
   }
   
   .card-color-2 {
-    background-color: #8DAA91;
+    background-image: url("button_3.png");
   }
   
   .card-color-3 {
-    background-color: #888DA7;
+    background-image: url("button_4.png");
   }
   
   /* The cover (expanding background) */
@@ -128,7 +127,7 @@
     margin-left: auto;
     margin-right: auto;
     background: #fff;
-    margin-top: -56%;
+    margin-top: 16%;
     padding: 60% 5% 5% 5%;
     width: 80%;
     margin-left: 5%;
