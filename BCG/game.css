@@ -51,3 +51,11 @@ th, tr {
   transform: rotateY(180deg);
 }
 
+#scoutResults {
+  height: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 20px;
+}
+
