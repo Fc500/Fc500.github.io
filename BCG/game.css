@@ -1,6 +1,6 @@
 body {
   overflow: hidden;
-  height: 1200px;
+  height: auto;
   background-color: mediumpurple;
 }
 
@@ -254,5 +254,5 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  width: 10%;
+  width: 50px;
 }
