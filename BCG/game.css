@@ -10,6 +10,9 @@ th, tr {
   padding: 2px;
 }
 
+img {
+  width: 50px;
+}
 
 .flip-card {
   background-color: transparent;
@@ -247,12 +250,4 @@ body {
   height: 108px;
   bottom: -108px;
   animation-delay: 63s;
-}
-
-
-.icon {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 50px;
 }
