@@ -110,14 +110,6 @@
     z-index: 5;
   }
   
-  .open-content .text {
-    background: #fff;
-    margin-top: 6%;
-    padding: 60% 5% 5% 5%;
-    width: 80%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-  }
   
  /* .open-content .text h1, .open-content .text p {
     max-width: 700px;
@@ -129,12 +121,13 @@
     margin-left: auto;
     margin-right: auto;
     background: #fff;
-    margin-top: -16%;
+    margin-top: -10%;
     padding: 60% 5% 5% 5%;
     width: 80%;
     margin-bottom: 5%;
     overflow-x: hidden;
     overflow-y: auto;
+    height: 300px;
   }
   
   .close-content {
