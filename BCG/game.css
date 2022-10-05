@@ -1,6 +1,6 @@
 body {
   overflow: hidden;
-  height: 1000px;
+  height: 1200px;
   background-color: mediumpurple;
 }
 
@@ -249,3 +249,10 @@ body {
   animation-delay: 63s;
 }
 
+
+.icon {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 20%;
+}
