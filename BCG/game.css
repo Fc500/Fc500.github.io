@@ -1,7 +1,8 @@
 body {
-  overflow: hidden;
-  height: auto;
+  /*overflow: hidden; */
   background-color: mediumpurple;
+  font-family: 'Rosario';
+  font-size: 22px;
 }
 
 
