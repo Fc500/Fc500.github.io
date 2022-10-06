@@ -30,7 +30,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -60%);
   }
   
   .column-1 {
@@ -44,7 +44,7 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    color: black;
+    color: white;
     cursor: pointer;
     margin-bottom: 60px;
     height: 200px;
