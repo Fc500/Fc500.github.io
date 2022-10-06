@@ -19,7 +19,7 @@ let playerBand = [];
 let playerBandIndex = 0;
 
 window.onload = function loading() {
-  window.alert("v0.23.7s");
+  window.alert("v0.24");
   moneyDisp.innerHTML = money;
   influenceDisp.innerHTML = influence;
 
@@ -83,7 +83,7 @@ function scoutNewPlayer(name, price, seed, skill, odds) {
     money -= price;
     moneyDisp.innerHTML = money;
 
-    bandDisp.innerHTML += `<tr><td>${name}</td><td>${skill}</td><td>${odds}</td></tr>`;
+    bandDisp.innerHTML += `<tr><td></td><td>${name}</td><td>${skill}</td><td>${odds}</td></tr>`;
 
 
   } else {
