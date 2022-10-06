@@ -30,7 +30,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-40%, -60%);
+    transform: translate(-70%, -40%);
+    background-color: darksalmon;
   }
   
   .column-1 {
