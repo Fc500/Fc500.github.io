@@ -73,7 +73,7 @@
   }
   
   .card > img {
-    width: 70%;
+    width: 20%;
     position: absolute;
     top: -6%;
     left: -6%;
@@ -116,7 +116,7 @@
   
   .open-content img {
     position: relative;
-    width: 40%;
+    width: 20%;
     margin-left: 3%;
     margin-top: 20px;
     z-index: 5;
