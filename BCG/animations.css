@@ -133,12 +133,12 @@
     margin-left: auto;
     margin-right: auto;
     background: #fff;
-    padding: 60% 5% 5% 5%;
+    padding: 20% 5% 5% 5%;
     width: 80%;
-    margin-bottom: 5%;
+    margin-top: 3%;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 300px;
+    height: 200px;
   }
   
   .close-content {

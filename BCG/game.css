@@ -105,14 +105,14 @@ body {
 
 .background {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  /*width: 100vw;
+  height: 100vh; */
+  width: 100%;
   top: 0;
   left: 0;
   margin: 0;
   padding: 0;
   background: #012f7b;
-  overflow: hidden;
 }
 .background li {
   position: absolute;
