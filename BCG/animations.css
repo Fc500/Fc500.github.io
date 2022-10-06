@@ -111,7 +111,6 @@
     pointer-events: none;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 300px;
   }
   
   .open-content img {
@@ -138,7 +137,7 @@
     margin-top: 3%;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 600px;
+    height: 400px;
   }
   
   .close-content {
