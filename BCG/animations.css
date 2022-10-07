@@ -14,7 +14,7 @@
   }
   
   .container {
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto;
   }
   
@@ -28,21 +28,16 @@
 
   .card-center {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: maroon;
-    width: 150px;
-    height: 150px;
-    border-radius: 50px;
+    width: 250px;
+    height: 300px;
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+    border: 3px solid rgba(255, 255, 255, 0.75);
   }
   
-  .centered-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
   .column-1 {
     padding-top: 100px;
   }
@@ -50,7 +45,7 @@
   .card {
     width: 92%;
     height: 500px;
-    max-width: 340px;
+    max-width: 350px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -58,18 +53,14 @@
     cursor: pointer;
     margin-bottom: 60px;
     height: 200px;
-    border-radius: 15px 50px;
   }
   
   .border {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 3px solid #fff;
-    opacity: 0.5;
     left: -2px;
     top: -2px;
-    border-radius: 15px 50px;
   }
   
   .card h1 {
@@ -88,18 +79,65 @@
   
   .card-color-0 {
     background-image: url("button_1.png");
+    border-radius: 200px 63px 63px 63px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+  }
+
+  .centered-text-0 {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    transform: translate(-50%, -50%);
   }
   
   .card-color-1 {
     background-image: url("button_2.png");
+    border-radius: 63px 200px 63px 63px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+  }
+
+  .centered-text-1 {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: -2.5%;
+    transform: translate(-50%, -50%);
   }
   
   .card-color-2 {
     background-image: url("button_3.png");
+    border-radius: 63px 63px 63px 200px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+  }
+
+  .centered-text-2 {
+    margin: 0;
+    position: absolute;
+    top: -5%;
+    left: 20%;
+    transform: translate(-50%, -50%);
   }
   
   .card-color-3 {
     background-image: url("button_4.png");
+    border-radius: 63px 63px 200px 63px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+  }
+
+  .centered-text-3 {
+    margin: 0;
+    position: absolute;
+    top: -5%;
+    left: -12.5%;
+    transform: translate(-50%, -50%);
+  }
+  .centered-text-4 {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: -12.5%;
+    transform: translate(-50%, -50%);
   }
   
   /* The cover (expanding background) */
