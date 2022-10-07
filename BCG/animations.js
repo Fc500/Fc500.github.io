@@ -159,7 +159,7 @@ function animateInCard(card, delay) {
 
 // this function searches up the DOM tree until it reaches the card element that has been clicked
 function getCardElement(el) {
-  if (el.className.indexOf('card ') > -1) return el;
+  if (el.className.indexOf('card') > -1) return el;
   else return getCardElement(el.parentElement);
 }
 

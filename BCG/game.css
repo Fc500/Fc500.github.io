@@ -2,7 +2,12 @@ body {
   /*overflow: hidden; */
   font-family: 'Rosario';
   font-size: 22px;
+  animation-name: backgroundColorPalette;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
+
 
 
 th, tr {
@@ -10,30 +15,29 @@ th, tr {
   padding: 2px;
 }
 
-.flip-card {
+.player-card {
   background-color: transparent;
   width: 200px;
   height: 240px;
   perspective: 1000px;
   float: left;
   margin: 15px;
-  line-height: 95%;
 }
 
-.flip-card-inner {
+.player-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s;
+  transition: transform 0.8s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.flip-card:hover .flip-card-inner {
+.player-card:hover .player-card-inner {
   transform: rotateY(180deg);
 }
-.flip-card-front, .flip-card-back {
+
+.player-card-front, .player-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -41,16 +45,42 @@ th, tr {
   backface-visibility: hidden;
 }
 
-.flip-card-front {
+.player-card-front {
   background-color: #bbb;
   color: black;
+  height: 240px;
 }
 
-.flip-card-back {
-  background-color: #2980b9;
-  color: white;
+.player-card-back {
+  color: black;
   transform: rotateY(180deg);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  font-size: 15px;
+  line-height: 4px;
 }
+
+
+.player-card-back button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
 
 #scoutResults {
   width: 80%;
@@ -101,6 +131,25 @@ body {
   }
 }
 
+
+@keyframes backgroundColorPalette {
+  0% {
+    background: #15154eff;
+  }
+  25% {
+    background: #3030b3ff;
+  }
+  50% {
+    background: #3667c5ff;
+  }
+  75% {
+    background: #6565edff;
+  }
+  100% {
+    background: #7f7fffff;
+  }
+}
+
 .background {
   position: fixed;
   width: 100vw;
@@ -109,7 +158,6 @@ body {
   left: 0;
   margin: 0;
   padding: 0;
-  background: #012f7b;
 }
 .background li {
   position: absolute;

@@ -110,7 +110,22 @@ function scoutPlayers(amount) {
 
       console.log(typeof cardName);
 
-      cardBox.innerHTML = `<div class='flip-card' id='${cardSeed.toString()}'><div class='flip-card-inner'><div class='flip-card-front'><img src='http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg' alt='Avatar' style='width:200px;height:240px;'></div><div class='flip-card-back'><h1>${cardName.toString()}</h1> <p>$${cardPrice.toString()}</p> <p>Rarity: ${cardOdds.toString()}%</p><p>Skill Level: ${cardSkill.toString()}/99</p><button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, ${cardOdds})">Scout</button></div></div></div>`;
+      cardBox.innerHTML = `<div class="player-card">
+      <div class="player-card-inner" id="${cardSeed.toString()}">
+        <div class="player-card-front">
+          <img src="http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg"/>
+        </div>
+        <div class="player-card-back">
+          <img src="band.PNG" alt="Baritone" height="10">
+          <h1>${cardName.toString()}</h1>
+          <p><p>$${cardPrice.toString()}</p>
+          <div style="margin: 24px 0;">
+            <p>Rarity: ${cardOdds.toString()}%</p>
+            <p>Skill Level: ${cardSkill.toString()}/99</p>
+          </div>
+          <p><button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, ${cardOdds})">Scout</button></p>
+        </div>
+      </div>`
       scoutResults.appendChild(cardBox);
     }
     influence -= multiplier;
