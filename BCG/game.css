@@ -49,10 +49,13 @@ th, tr {
   background-color: #bbb;
   color: black;
   height: 240px;
+  margin-top: -1%;
+  width: 100%;
 }
 
 .player-card-back {
   color: black;
+  background-color: #bbb;
   transform: rotateY(180deg);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 200px;
