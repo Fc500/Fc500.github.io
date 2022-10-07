@@ -110,13 +110,13 @@ function scoutPlayers(amount) {
 
       console.log(typeof cardName);
 
-      cardBox.innerHTML = `<div class="player-card">
-      <div class="player-card-inner" id="${cardSeed.toString()}">
+      cardBox.innerHTML = `<div class="player-card" id="${cardSeed.toString()}">
+      <div class="player-card-inner">
         <div class="player-card-front">
-          <img src="http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg"/>
+          <img src="http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg" width="200" height="240"/>
         </div>
         <div class="player-card-back">
-          <img src="band.PNG" alt="Baritone" height="10">
+          <img src="band.PNG" alt="band" height="20">
           <h1>${cardName.toString()}</h1>
           <p><p>$${cardPrice.toString()}</p>
           <div style="margin: 24px 0;">
