@@ -1,6 +1,6 @@
 // listing vars here so they're in the global scope
 var cards, nCards, cover, openContent, pageIsOpen = false,
-    openContentImage, closeContent, windowWidth, windowHeight, currentCard;
+    closeContent, windowWidth, windowHeight, currentCard;
 
 // initiate the process
 init();
@@ -17,7 +17,6 @@ function selectElements() {
   nCards = cards.length,
   cover = document.getElementById('cover'),
   openContent = document.getElementById('open-content'),
-  openContentImage = document.getElementById('open-content-image')
   closeContent = document.getElementById('close-content');
 }
 
@@ -72,10 +71,9 @@ function animateCoverUp(card) {
   // get the style of the clicked card
   var cardStyle = getComputedStyle(card);
   setCoverPosition(cardPosition);
-  setCoverColor(cardStyle);
+  setCoverImage(cardStyle);
   scaleCoverToFillWindow(cardPosition);
   // update the content of the opened page
-  openContentImage.src = card.children[1].src;
   setTimeout(function() {
     // update the scroll position to 0 (so it is at the top of the 'opened' page)
     window.scroll(0, 0);
@@ -93,7 +91,6 @@ function animateCoverBack(card) {
   cover.style.transform = 'scaleX('+1+') scaleY('+1+') translate3d('+(0)+'px, '+(0)+'px, 0px)';
   setTimeout(function() {
     // set content back to empty
-    openContentImage.src = '';
     // style the cover to 0x0 so it is hidden
     cover.style.width = '0px';
     cover.style.height = '0px';
@@ -111,7 +108,7 @@ function setCoverPosition(cardPosition) {
   cover.style.height = cardPosition.height + 'px';
 }
 
-function setCoverColor(cardStyle) {
+function setCoverImage(cardStyle) {
   // style the cover to be the same color as the card
   cover.style.backgroundImage = cardStyle.backgroundImage;
 }

@@ -69,9 +69,7 @@
             </div>
             <div class="card-center">
                 <div class="card">
-                    <div class="centered-text-4">
-                        <h1>Host</h1>
-                    </div>
+                    <h1>Host</h1>
                 </div>
             </div>
         </div>
@@ -81,35 +79,33 @@
         
         <div id="open-content" class="open-content">
             <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
-            <img id="open-content-image" src="" />
-                <div class="open-content-group" hidden>
-                    <h1>Settings</h1>
+            <div class="open-content-group" hidden>
+                <h1>Settings</h1>
+            </div>
+            <div class="open-content-group" hidden>
+                <h1>Band</h1>
+                <h3 id="money"></h3>
+                <h3 id="influence"></h3>
+                <p>Members</p>
+                <table id="bandMembers">
+                    <th>
+                        <td>Name</td>
+                        <td>Skill</td>
+                        <td>Rarity</td>
+                    </th>
+                </table>
+            </div>
+            <div class="open-content-group" hidden>
+                <h1>Upgrades</h1>
+            </div>
+            <div class="open-content-group" hidden>
+                <h1>Recruit</h1>
+                <button onclick="scoutPlayers(1)">Scout One (10 influence)</button>
+                <button onclick="scoutPlayers(5)">Scout Five (50 influence)</button>
+                <div id="scoutResults">
+                    <p>Results:</p>
                 </div>
-                <div class="open-content-group" hidden>
-                    <h1>Band</h1>
-                    <h3 id="money"></h3>
-                    <h3 id="influence"></h3>
-                    <p>Members</p>
-                    <table id="bandMembers">
-                        <th>
-                            <td>Name</td>
-                            <td>Skill</td>
-                            <td>Rarity</td>
-                        </th>
-                    </table>
-                </div>
-                <div class="open-content-group" hidden>
-                    <h1>Upgrades</h1>
-                </div>
-                <div class="open-content-group" hidden>
-                    <h1>Recruit</h1>
-                    <button onclick="scoutPlayers(1)">Scout One (10 influence)</button>
-                    <button onclick="scoutPlayers(5)">Scout Five (50 influence)</button>
-                    <div id="scoutResults">
-                        <p>Results:</p>
-                    </div>
-                </div>
-
+            </div>
         </div>
 
     </body>

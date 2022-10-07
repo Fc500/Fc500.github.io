@@ -36,6 +36,7 @@
     height: 300px;
     border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
     border: 3px solid rgba(255, 255, 255, 0.75);
+    text-align: center;
   }
   
   .column-1 {
@@ -132,14 +133,14 @@
     left: -12.5%;
     transform: translate(-50%, -50%);
   }
-  .centered-text-4 {
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    left: -12.5%;
-    transform: translate(-50%, -50%);
-  }
-  
+
+.card-center h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: -12.5%;
+  transform: translate(-50%, -50%);
+}
   /* The cover (expanding background) */
   .cover {
     position: fixed;
@@ -154,8 +155,6 @@
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    overflow-x: hidden;
-    overflow-y: auto;
   }
   
   .open-content img {
@@ -174,15 +173,15 @@
   } */
 
   .open-content-group {
-    margin-left: auto;
-    margin-right: auto;
     background: #fff;
-    padding: 20% 5% 5% 5%;
+    padding: 2%;
+    height: 400px;
     width: 80%;
-    margin-top: 3%;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
   }
   
   .close-content {

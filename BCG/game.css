@@ -265,3 +265,11 @@ body {
   background-color: #04AA6D;
   color: white;
 }
+
+
+.open-content-root {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
