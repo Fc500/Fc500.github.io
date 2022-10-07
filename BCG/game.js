@@ -19,7 +19,7 @@ let playerBand = [];
 let playerBandIndex = 0;
 
 window.onload = function loading() {
-  window.alert("v0.25");
+  window.alert("v0.26");
   moneyDisp.innerHTML = money;
   influenceDisp.innerHTML = influence;
 
