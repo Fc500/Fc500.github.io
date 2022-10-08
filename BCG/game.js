@@ -19,8 +19,8 @@ let playerBand = [];
 let playerBandIndex = 0;
 
 window.onload = function loading() {
-  window.alert("v0.26");
-  moneyDisp.innerHTML = money;
+  window.alert("v0.27");
+  moneyDisp.innerHTML = numFormatter(money);
   influenceDisp.innerHTML = influence;
 
 }
@@ -81,9 +81,17 @@ function scoutNewPlayer(name, price, seed, skill, odds) {
     var cardToRemove = document.getElementById(seed);
     cardToRemove.remove();
     money -= price;
-    moneyDisp.innerHTML = money;
-
+    moneyDisp.innerHTML = numFormatter(money);
     bandDisp.innerHTML += `<tr><td></td><td>${name}</td><td>${skill}</td><td>${odds}</td></tr>`;
+
+    playerBand.push({
+      "name": name,
+      "seed": seed,
+      "skill": skill,
+      "odds": odds,
+    });
+
+    console.log(playerBand);
 
 
   } else {
@@ -92,11 +100,8 @@ function scoutNewPlayer(name, price, seed, skill, odds) {
 
 }
 
-
 function scoutPlayers(amount) {
-  let multiplier = amount * 10;
-  window.alert(multiplier);
-  if (influence >= multiplier) {
+  scoutResults.innerHTML = "";
     for (let i = 0; i < amount; i++) {
       const cardBox = document.createElement("div"); 
       let generatedValues = generateCardValues();
@@ -113,23 +118,41 @@ function scoutPlayers(amount) {
       cardBox.innerHTML = `<div class="player-card" id="${cardSeed.toString()}">
       <div class="player-card-inner">
         <div class="player-card-front">
-          <img src="http://www.conn-selmer.com/application/files/3615/3307/6834/baritone-band-instruments.jpg" width="200" height="240"/>
+          <img src="band.PNG" width="200" height="240"/>
         </div>
         <div class="player-card-back">
-          <img src="band.PNG" alt="band" height="20">
           <h1>${cardName.toString()}</h1>
-          <p><p>$${cardPrice.toString()}</p>
-          <div style="margin: 24px 0;">
+          <h2>$${cardPrice.toString()}</h2>
             <p>Rarity: ${cardOdds.toString()}%</p>
             <p>Skill Level: ${cardSkill.toString()}/99</p>
-          </div>
-          <p><button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, ${cardOdds})">Scout</button></p>
+            <p>Potential: </p>
+          <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, ${cardOdds})">Scout</button>
         </div>
       </div>`
       scoutResults.appendChild(cardBox);
     }
+}
+
+function loadingResults(amount) {
+  let multiplier = amount * 10;
+  if (influence >= multiplier) {
+    scoutResults.innerHTML = "<div class='spinner'></div><br><p>Scouting...</p>";
     influence -= multiplier;
     influenceDisp.innerHTML = influence;
+    setTimeout(function() {
+      scoutPlayers(amount);
+    }, 1500);
   }
 }
 
+function numFormatter(num) {
+  if(num > 999 && num < 1000000){
+    return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
+  } else if(num > 1000000 && num < 1000000000){
+    return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
+  } else if(num > 999999999){
+    return (num/1000000000).toFixed(1) + 'B'; // convert to M for number from > 1 billion 
+  } else if(num < 900){
+    return num; // if value < 1000, nothing to do
+  }
+}

@@ -8,6 +8,7 @@
         <link href='https://fonts.googleapis.com/css?family=Rosario' rel='stylesheet'>
         <link href="animations.css" rel="stylesheet">
         <link href="game.css" rel="stylesheet">
+        <link href="background.css" rel="stylesheet">
     </head>
     <body>
 
@@ -78,14 +79,12 @@
 
         
         <div id="open-content" class="open-content">
-            <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
+            <a id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
             <div class="open-content-group" style="display: none;">
                 <h1>Settings</h1>
             </div>
             <div class="open-content-group" style="display: none;">
                 <h1>Band</h1>
-                <h3 id="money"></h3>
-                <h3 id="influence"></h3>
                 <p>Members</p>
                 <table id="bandMembers">
                     <th>
@@ -94,21 +93,27 @@
                         <td>Rarity</td>
                     </th>
                 </table>
+
+
             </div>
             <div class="open-content-group" style="display: none;">
                 <h1>Upgrades</h1>
             </div>
             <div class="open-content-group" style="display: none;">
                 <h1>Recruit</h1>
-                <button onclick="scoutPlayers(1)">Scout One (10 influence)</button>
-                <button onclick="scoutPlayers(5)">Scout Five (50 influence)</button>
+                <button class="recruit-button" onclick="loadingResults(1)">Scout One</button>
+                <button class="recruit-button" onclick="loadingResults(5)">Scout Five</button>
                 <div id="scoutResults">
-                    <p>Results:</p>
                 </div>
             </div>
             <div class="open-content-group" style="display: none;">
                 <h1>Host a show!</h1>
             </div>
+        </div>
+
+        <div class="bottom-nav">
+            <h3>Funds: $<span id="money"></span></h3>
+            <h3>Influence: <span id="influence"></span></h3>
         </div>
 
     </body>

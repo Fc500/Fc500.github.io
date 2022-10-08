@@ -1,9 +1,11 @@
 // listing vars here so they're in the global scope
 var cards, nCards, cover, openContent, pageIsOpen = false,
-    closeContent, windowWidth, windowHeight, currentCard;
+    closeContent, windowWidth, windowHeight, currentCard, scout;
 
 // initiate the process
 init();
+
+let inSection;
 
 function init() {
   resize();
@@ -17,7 +19,8 @@ function selectElements() {
   nCards = cards.length,
   cover = document.getElementById('cover'),
   openContent = document.getElementById('open-content'),
-  closeContent = document.getElementById('close-content');
+  closeContent = document.getElementById('close-content'),
+  scout = document.getElementById('scoutResults');
 }
 
 /* Attaching three event listeners here:
@@ -125,6 +128,25 @@ function scaleCoverToFillWindow(cardPosition) {
 
 /* When the close is clicked */
 function onCloseClick() {
+
+  if (inSection != 3) {
+    closeCard();
+  } else {
+    if (scoutResults.children.length > 0) {
+      let scrapResults = confirm("Do you want to scrap your scout results?");
+      if (scrapResults) {
+        closeCard();
+        scout.innerHTML = "";
+      }
+    } else {
+      closeCard();
+    }
+
+  }
+
+}
+
+function closeCard() {
   // remove the open class so the page content animates out
   openContent.className = openContent.className.replace(' open', '');
   // animate the cover back to the original position card and size
@@ -132,7 +154,6 @@ function onCloseClick() {
   // animate in other cards
   animateOtherCards(currentCard, false);
 }
-
 function animateOtherCards(card, out) {
   var delay = 100;
   for (var i = 0; i < nCards; i++) {
@@ -184,5 +205,7 @@ function switchFunction(chosenSection) {
    
     } 
     sections[chosenSection].style.display = "block";
+    inSection = chosenSection;
 }
+
 

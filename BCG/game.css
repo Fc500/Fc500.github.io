@@ -29,8 +29,9 @@ th, tr {
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .player-card:hover .player-card-inner {
@@ -49,35 +50,29 @@ th, tr {
   background-color: #bbb;
   color: black;
   height: 240px;
-  margin-top: -1%;
   width: 100%;
 }
 
 .player-card-back {
-  color: black;
-  background-color: #bbb;
+  background-color: #2980b9;
+  color: white;
   transform: rotateY(180deg);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 200px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-  font-size: 15px;
-  line-height: 4px;
+  height: 240px;
+  font-size: 12px;
+  line-height: 1;
 }
 
 
 .player-card-back button {
-  border: none;
-  outline: 0;
+  position: relative;
   display: inline-block;
-  padding: 8px;
+  padding: 6px;
   color: white;
   background-color: #000;
   text-align: center;
   cursor: pointer;
   width: 100%;
-  font-size: 18px;
+  margin-top: 30px;
 }
 
 button:hover {
@@ -86,214 +81,21 @@ button:hover {
 
 
 #scoutResults {
-  width: 80%;
+  width: 90%;
   height: 250px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
   padding: 20px;
   background-color: lightslategray;
-}
-/* BACKGROUND A
-html, body {
-  width: 100%;
-  height:100%;
-}
-
-body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-*/ 
-
-/* BACKGROUND B */
-
-@keyframes animate {
-  0%{
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-      border-radius: 0;
-  }
-  100%{
-      transform: translateY(-1000px) rotate(720deg);
-      opacity: 0;
-      border-radius: 50%;
-  }
-}
-
-
-@keyframes backgroundColorPalette {
-  0% {
-    background: #15154eff;
-  }
-  25% {
-    background: #3030b3ff;
-  }
-  50% {
-    background: #3667c5ff;
-  }
-  75% {
-    background: #6565edff;
-  }
-  100% {
-    background: #7f7fffff;
-  }
-}
-
-.background {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-}
-.background li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 20px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  animation: animate 28s linear infinite;
+  border-radius: 50px;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
 
-
-.background li:nth-child(0) {
-  left: 27%;
-  width: 137px;
-  height: 137px;
-  bottom: -137px;
-  animation-delay: 1s;
-}
-.background li:nth-child(1) {
-  left: 89%;
-  width: 146px;
-  height: 146px;
-  bottom: -146px;
-  animation-delay: 5s;
-}
-.background li:nth-child(2) {
-  left: 49%;
-  width: 122px;
-  height: 122px;
-  bottom: -122px;
-  animation-delay: 5s;
-}
-.background li:nth-child(3) {
-  left: 81%;
-  width: 148px;
-  height: 148px;
-  bottom: -148px;
-  animation-delay: 10s;
-}
-.background li:nth-child(4) {
-  left: 89%;
-  width: 124px;
-  height: 124px;
-  bottom: -124px;
-  animation-delay: 13s;
-}
-.background li:nth-child(5) {
-  left: 4%;
-  width: 157px;
-  height: 157px;
-  bottom: -157px;
-  animation-delay: 6s;
-}
-.background li:nth-child(6) {
-  left: 35%;
-  width: 171px;
-  height: 171px;
-  bottom: -171px;
-  animation-delay: 14s;
-}
-.background li:nth-child(7) {
-  left: 63%;
-  width: 162px;
-  height: 162px;
-  bottom: -162px;
-  animation-delay: 6s;
-}
-.background li:nth-child(8) {
-  left: 64%;
-  width: 126px;
-  height: 126px;
-  bottom: -126px;
-  animation-delay: 39s;
-}
-.background li:nth-child(9) {
-  left: 1%;
-  width: 176px;
-  height: 176px;
-  bottom: -176px;
-  animation-delay: 11s;
-}
-.background li:nth-child(10) {
-  left: 49%;
-  width: 140px;
-  height: 140px;
-  bottom: -140px;
-  animation-delay: 47s;
-}
-.background li:nth-child(11) {
-  left: 58%;
-  width: 161px;
-  height: 161px;
-  bottom: -161px;
-  animation-delay: 48s;
-}
-.background li:nth-child(12) {
-  left: 82%;
-  width: 187px;
-  height: 187px;
-  bottom: -187px;
-  animation-delay: 3s;
-}
-.background li:nth-child(13) {
-  left: 60%;
-  width: 108px;
-  height: 108px;
-  bottom: -108px;
-  animation-delay: 59s;
-}
-.background li:nth-child(14) {
-  left: 61%;
-  width: 141px;
-  height: 141px;
-  bottom: -141px;
-  animation-delay: 36s;
-}
-.background li:nth-child(15) {
-  left: 34%;
-  width: 110px;
-  height: 110px;
-  bottom: -110px;
-  animation-delay: 34s;
-}
-.background li:nth-child(16) {
-  left: 45%;
-  width: 108px;
-  height: 108px;
-  bottom: -108px;
-  animation-delay: 63s;
-}
 
 #bandMembers {
   border-collapse: collapse;
@@ -315,4 +117,80 @@ body {
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+
+button.recruit-button{
+  background: linear-gradient(to right,#19ca4a ,#0a8020);
+  background-color: #19ca4a;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 14px 15px;
+  border: 0px solid #000;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px 0px #2D2D2D;
+  margin: 10px;
+ }
+
+ button.recruit-button:hover{
+  background: linear-gradient(to right,#54d06b ,#519256);
+  background-color: #54d06b;
+ }
+ button.recruit-button:active{
+  transform: scale(0.95);
+ }
+
+
+
+ .spinner {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side,#8ab5ff 94%,#0000) top/9px 9px no-repeat,
+         conic-gradient(#0000 30%,#8ab5ff);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+  animation: spinner-c7wet2 1s infinite linear;
+}
+
+@keyframes spinner-c7wet2 {
+  100% {
+     transform: rotate(1turn);
+  }
+}
+
+
+
+.bottom-nav {
+  margin-left: -10px;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 101%;
+  z-index: 300;
+}
+
+.bottom-nav h3 {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 1px;
+}
+
+.bottom-nav h3:hover {
+  background: #f1f1f1;
+  color: black;
 }
