@@ -8,7 +8,10 @@ body {
   animation-direction: alternate;
 }
 
-
+.rosario {
+  font-family: 'Rosario';
+  font-size: 22px;
+}
 
 th, tr {
   margin: 10px;

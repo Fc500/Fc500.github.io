@@ -6,7 +6,7 @@
 
 // https://codepen.io/mburakerman/embed/roJmaZ?height=316&theme-id=0&default-tab=result
 
-let money = 10000;
+let money = 100000;
 let influence = 100;
 
 const moneyDisp = document.getElementById("money");
@@ -50,7 +50,8 @@ function generateRandom(min, max) {
 }
 
 function generateCardValues() {
-  let seed = generateRandom(100, 1000);
+  let seed = generateRandom(1000, 10000);
+  console.log(seed);
   let splitSeed = String(seed).split("").map((seed)=>{
     return Number(seed);
   })
@@ -62,18 +63,61 @@ function generateCardValues() {
   let seedName = firstNames[fnr] + " " + lastNames[lnr];
 
 
-  let seedPrice = splitSeed[0] * 250;
+  let seedPotential = splitSeed[0];
+  let seedPotentialDisp;
+  let seedSkill = splitSeed[1];
+  let seedOdds = splitSeed[2];
+  let seedPrice = splitSeed[3];
 
-  let seedOdds = Math.floor(splitSeed[1] * 9.25);
-
-  let seedSkill = Math.floor(splitSeed[2] * 9.25);
+  const seedTotal = seedPotential + seedSkill + seedOdds + seedPrice;
 
 
-  return [seedName, seedPrice, seedOdds, seedSkill, seed];
+  if (seedTotal >= 0 && seedTotal <= 16) {
+    seedPotential = 1;
+    seedPotentialDisp = "&#9733; &#9734; &#9734; &#9734;";
+    seedSkill *= 4;
+    seedOdds = "Common";
+    seedPrice *= 1400;
+  } else if (seedTotal >= 17 && seedTotal <= 28) {
+    seedPotential = 2;
+    seedPotentialDisp = "&#9733; &#9733; &#9734; &#9734;";
+    seedSkill *= 7;
+    seedOdds = "Uncommon";
+    seedPrice *= 2500;
+
+  }  else if (seedTotal >= 29 && seedTotal <= 34) {
+    seedPotential = 3;
+    seedPotentialDisp = "&#9733; &#9733; &#9733; &#9734;";
+    seedSkill *= 9;
+    seedOdds = "Rare";
+    seedPrice *= 3700;
+  } else if (seedTotal <= 36) {
+    seedPotential = 4;
+    seedPotentialDisp = "&#9733; &#9733; &#9733; &#9733;";
+    seedSkill *= 10;
+    seedOdds = "Legendary";
+    seedPrice *= 4200;
+  }
+
+  console.log("split Seed (0): " + splitSeed[0]);
+  console.log("split Seed (1): " + splitSeed[1]);
+  console.log("split Seed (2): " + splitSeed[2]);
+  console.log("split Seed (3): " + splitSeed[3]);
+  console.log("seed price: " + seedPrice);
+  console.log("seed skill: " + seedSkill);
+  console.log("seed potential: " + seedPotential);
+  console.log("seed Odds: " + seedOdds);
+
+
+
+  return [seedName, seedPrice, seedOdds, seedSkill, seedPotential, seedPotentialDisp, seed];
 
 }
 
-function scoutNewPlayer(name, price, seed, skill, odds) {
+
+
+
+function scoutNewPlayer(name, price, seed, skill, odds, potential, potentialDisp) {
   console.log(name);
 
   if (money >= price) {
@@ -82,13 +126,13 @@ function scoutNewPlayer(name, price, seed, skill, odds) {
     cardToRemove.remove();
     money -= price;
     moneyDisp.innerHTML = numFormatter(money);
-    bandDisp.innerHTML += `<tr><td></td><td>${name}</td><td>${skill}</td><td>${odds}</td></tr>`;
+    bandDisp.innerHTML += `<tr><td id="${seed}">${name}</td><td>${skill}</td><td>${odds}</td><td>${potentialDisp}</td></tr>`;
 
     playerBand.push({
       "name": name,
-      "seed": seed,
       "skill": skill,
       "odds": odds,
+      "potential": potential,
     });
 
     console.log(playerBand);
@@ -107,13 +151,13 @@ function scoutPlayers(amount) {
       let generatedValues = generateCardValues();
 
 
-      let cardName = generatedValues[0]
-      let cardPrice = generatedValues[1];
-      let cardOdds = generatedValues[2];
-      let cardSkill = generatedValues[3];
-      let cardSeed = generatedValues[4];
-
-      console.log(typeof cardName);
+      const cardName = generatedValues[0]
+      const cardPrice = generatedValues[1];
+      const cardOdds = generatedValues[2];
+      const cardSkill = generatedValues[3];
+      const cardPotential = generatedValues[4];
+      const cardPotentialDisp = generatedValues[5];
+      const cardSeed = generatedValues[6];
 
       cardBox.innerHTML = `<div class="player-card" id="${cardSeed.toString()}">
       <div class="player-card-inner">
@@ -122,11 +166,11 @@ function scoutPlayers(amount) {
         </div>
         <div class="player-card-back">
           <h1>${cardName.toString()}</h1>
-          <h2>$${cardPrice.toString()}</h2>
-            <p>Rarity: ${cardOdds.toString()}%</p>
-            <p>Skill Level: ${cardSkill.toString()}/99</p>
-            <p>Potential: </p>
-          <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, ${cardOdds})">Scout</button>
+          <h2>$${numFormatter(cardPrice.toString())}</h2>
+            <p>Rarity: ${cardOdds.toString()}</p>
+            <p>Level: ${cardSkill.toString()} / 99</p>
+            <p>Potential: ${cardPotentialDisp}</p>
+          <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}')">Scout</button>
         </div>
       </div>`
       scoutResults.appendChild(cardBox);

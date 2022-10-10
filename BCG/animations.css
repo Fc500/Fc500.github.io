@@ -150,10 +150,11 @@
 .card-center h1 {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: -12.5%;
   transform: translate(-50%, -50%);
 }
+
   /* The cover (expanding background) */
   .cover {
     position: fixed;
@@ -257,6 +258,7 @@
     opacity: 0;
   }
   
+
   .cover {
     transition: transform 300ms ease-in-out;
   }

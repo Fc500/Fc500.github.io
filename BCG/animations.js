@@ -129,19 +129,22 @@ function scaleCoverToFillWindow(cardPosition) {
 /* When the close is clicked */
 function onCloseClick() {
 
-  if (inSection != 3) {
-    closeCard();
-  } else {
-    if (scoutResults.children.length > 0) {
-      let scrapResults = confirm("Do you want to scrap your scout results?");
-      if (scrapResults) {
+  switch (inSection) {
+    case 3:
+      
+      if (scoutResults.children.length > 0) {
+        let scrapResults = confirm("Do you want to scrap your scout results?");
+        if (scrapResults) {
+          closeCard();
+          scout.innerHTML = "";
+        }
+      } else {
         closeCard();
-        scout.innerHTML = "";
       }
-    } else {
-      closeCard();
-    }
+    break;
 
+    default:
+      closeCard();
   }
 
 }
