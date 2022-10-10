@@ -24,7 +24,7 @@ var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Mi
 let playerBandIndex = 0;
 
 window.onload = function loading() {
-  window.alert("v0.30");
+  window.alert("v0.31");
   moneyDisp.innerHTML = numFormatter(money);
   influenceDisp.innerHTML = influence;
 
@@ -126,7 +126,7 @@ function scoutNewPlayer(name, price, seed, skill, odds, potential, potentialDisp
   console.log(name);
 
   if (money >= price) {
-    window.alert("success");
+    makeAlert('Player Scouted!','success');
     var cardToRemove = document.getElementById(seed);
     cardToRemove.remove();
     money -= price;
@@ -207,4 +207,23 @@ function numFormatter(num) {
   } else if(num < 900){
     return num; // if value < 1000, nothing to do
   }
+}
+
+var close = document.getElementsByClassName("alert_closebtn");
+
+function makeAlert(message, type) {
+	let add = document.getElementById("alerts");
+    add.innerHTML += `<div class="alert ${type}">
+  <span class="alert_closebtn">&times;</span>  
+  <strong>${message}</strong>
+</div>`;
+
+  
+for (let i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
 }
