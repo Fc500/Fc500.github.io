@@ -178,7 +178,7 @@ function scoutPlayers(amount) {
             <p>Level: ${cardSkill.toString()} / 99</p>
             <p>Potential: ${cardPotentialDisp}</p>
             <p>Instrument: ${cardInst}</p>
-          <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}', ${cardInst})">Scout</button>
+          <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}', '${cardInst}')">Scout</button>
         </div>
       </div>`
       scoutResults.appendChild(cardBox);
