@@ -16,10 +16,15 @@ const bandDisp = document.getElementById("bandMembers");
 // Player
 
 let playerBand = [];
+let instrumentsAvalible = ["recorder", "bells"];
+var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth", "John", "Adam"];
+var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
+
+
 let playerBandIndex = 0;
 
 window.onload = function loading() {
-  window.alert("v0.27");
+  window.alert("v0.28");
   moneyDisp.innerHTML = numFormatter(money);
   influenceDisp.innerHTML = influence;
 
@@ -56,8 +61,6 @@ function generateCardValues() {
     return Number(seed);
   })
   
-  var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth", "John", "Adam"];
-  var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
   let fnr = Math.floor(Math.random() * firstNames.length);
   let lnr = Math.floor(Math.random() * lastNames.length);
   let seedName = firstNames[fnr] + " " + lastNames[lnr];
@@ -68,6 +71,7 @@ function generateCardValues() {
   let seedSkill = splitSeed[1];
   let seedOdds = splitSeed[2];
   let seedPrice = splitSeed[3];
+  let seedInst = Math.floor(Math.random() * instrumentsAvalible.length);
 
   const seedTotal = seedPotential + seedSkill + seedOdds + seedPrice;
 
@@ -110,14 +114,14 @@ function generateCardValues() {
 
 
 
-  return [seedName, seedPrice, seedOdds, seedSkill, seedPotential, seedPotentialDisp, seed];
+  return [seedName, seedPrice, seedOdds, seedSkill, seedPotential, seedPotentialDisp, seedInst, seed];
 
 }
 
 
 
 
-function scoutNewPlayer(name, price, seed, skill, odds, potential, potentialDisp) {
+function scoutNewPlayer(name, price, seed, skill, odds, potential, potentialDisp, inst) {
   console.log(name);
 
   if (money >= price) {
@@ -126,13 +130,14 @@ function scoutNewPlayer(name, price, seed, skill, odds, potential, potentialDisp
     cardToRemove.remove();
     money -= price;
     moneyDisp.innerHTML = numFormatter(money);
-    bandDisp.innerHTML += `<tr><td id="${seed}">${name}</td><td>${skill}</td><td>${odds}</td><td>${potentialDisp}</td></tr>`;
+    bandDisp.innerHTML += `<tr><td id="${seed}">${name}</td><td>${skill}</td><td>${odds}</td><td>${potentialDisp}</td><td>${inst}</td></tr>`;
 
     playerBand.push({
       "name": name,
       "skill": skill,
       "odds": odds,
       "potential": potential,
+      "inst": inst,
     });
 
     console.log(playerBand);
@@ -157,7 +162,8 @@ function scoutPlayers(amount) {
       const cardSkill = generatedValues[3];
       const cardPotential = generatedValues[4];
       const cardPotentialDisp = generatedValues[5];
-      const cardSeed = generatedValues[6];
+      const cardInst = generatedValues[6];
+      const cardSeed = generatedValues[7];
 
       cardBox.innerHTML = `<div class="player-card" id="${cardSeed.toString()}">
       <div class="player-card-inner">
@@ -170,7 +176,8 @@ function scoutPlayers(amount) {
             <p>Rarity: ${cardOdds.toString()}</p>
             <p>Level: ${cardSkill.toString()} / 99</p>
             <p>Potential: ${cardPotentialDisp}</p>
-          <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}')">Scout</button>
+            <p>Instrument: ${cardInst}</p>
+          <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}', ${cardInst})">Scout</button>
         </div>
       </div>`
       scoutResults.appendChild(cardBox);
