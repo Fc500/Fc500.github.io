@@ -83,8 +83,11 @@
             </div>
             <div class="open-content-group" style="display: none;">
                 <h1>Band</h1>
-                <p>Members</p>
-                <table id="bandMembers">
+                <button onclick="switchFunction(0, 'band-group')">Members</button>
+                <button onclick="switchFunction(1, 'band-group')">Practice Rooms</button>
+                <div class="band-group"> 
+                    <p>Members</p>
+                    <table id="bandMembers">
                     <tr>
                         <th>Name</th>
                         <th>Level</th>
@@ -92,8 +95,11 @@
                         <th>Potential</th>
                         <th>Instrument</th>
                     </tr>
-
-                </table>
+                    </table>
+                </div>
+                <div class="band-group">
+                    <p>Practice Rooms</p>
+                </div>
 
 
             </div>

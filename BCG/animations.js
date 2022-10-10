@@ -21,6 +21,7 @@ function selectElements() {
   openContent = document.getElementById('open-content'),
   closeContent = document.getElementById('close-content'),
   scout = document.getElementById('scoutResults');
+  bandGroups = document.getElementById('band-group');
 }
 
 /* Attaching three event listeners here:
@@ -40,7 +41,7 @@ function attachListenerToCard(i) {
   cards[i].addEventListener('click', function(e) {
     var card = getCardElement(e.target);
     onCardClick(card, i);
-    switchFunction(i);
+    switchFunction(i, "open-content-group");
   })
 
 }
@@ -200,15 +201,18 @@ function resize() {
 }
 
 
-function switchFunction(chosenSection) {
-    let sections = document.getElementsByClassName("open-content-group");
+function switchFunction(chosenSection, sectionClass) {
+    let sections = document.getElementsByClassName(sectionClass);
 
     for (let i = 0; i < sections.length; i++) {
         sections[i].style.display = "none";
    
     } 
     sections[chosenSection].style.display = "block";
-    inSection = chosenSection;
+    if (sectionClass == "open-content-group") {
+      inSection = chosenSection;
+    }
 }
+
 
 

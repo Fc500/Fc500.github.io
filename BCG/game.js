@@ -16,7 +16,7 @@ const bandDisp = document.getElementById("bandMembers");
 // Player
 
 let playerBand = [];
-let instrumentsAvalible = ["recorder", "bells"];
+let instrumentsAvalible = ["Recorder", "Bells"];
 var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth", "John", "Adam"];
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
@@ -24,7 +24,7 @@ var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Mi
 let playerBandIndex = 0;
 
 window.onload = function loading() {
-  window.alert("v0.29");
+  window.alert("v0.30");
   moneyDisp.innerHTML = numFormatter(money);
   influenceDisp.innerHTML = influence;
 
