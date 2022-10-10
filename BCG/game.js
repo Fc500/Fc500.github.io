@@ -24,7 +24,7 @@ var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Mi
 let playerBandIndex = 0;
 
 window.onload = function loading() {
-  window.alert("v0.28");
+  window.alert("v0.29");
   moneyDisp.innerHTML = numFormatter(money);
   influenceDisp.innerHTML = influence;
 
@@ -71,7 +71,8 @@ function generateCardValues() {
   let seedSkill = splitSeed[1];
   let seedOdds = splitSeed[2];
   let seedPrice = splitSeed[3];
-  let seedInst = Math.floor(Math.random() * instrumentsAvalible.length);
+  let seedInstInt = Math.floor(Math.random() * instrumentsAvalible.length);
+  let seedInst = instrumentsAvalible[seedInstInt];
 
   const seedTotal = seedPotential + seedSkill + seedOdds + seedPrice;
 
