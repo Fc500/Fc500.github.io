@@ -57,6 +57,9 @@
     top: 125;
     left: 100px;
     width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .card > img {
@@ -67,7 +70,11 @@
   }
   
   .card-color-0 {
-    background-image: url("button_1.png");
+    background: linear-gradient(135deg, #59009780 50%, transparent 0),linear-gradient(-135deg, #59009780 50%, transparent 0);
+    background-size: 3em 3em;
+    background-color: #c327dd;
+    opacity: 1;
+    
     border-radius: 200px 63px 63px 63px;
     border: 3px solid rgba(255, 255, 255, 0.75);
     -webkit-box-shadow: -5px -5px 20px 5px #9BB9FF; 
@@ -75,13 +82,17 @@
   }
 
   .centered-text-0 {
-    position: absolute;
-    margin-left: 10%;
-    margin-top: 25%;
+    color:#fff9d6;
+    font-weight:bold;
+    text-shadow:0px 0px 0 rgb(223,223,223),-1px -1px 0 rgb(201,201,201),-2px -2px 0 rgb(178,178,178),-3px -3px 0 rgb(156,156,156),-4px -4px 0 rgb(134,134,134), -5px -5px 0 rgb(112,112,112),-6px -6px 5px rgba(0,0,0,0.6),-6px -6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
   }
   
   .card-color-1 {
-    background-image: url("button_2.png");
+    background: linear-gradient(135deg, #23009680 50%, transparent 0),linear-gradient(-135deg, #23009680 50%, transparent 0);
+    background-size: 3em 3em;
+    background-color: #28b2de;
+    opacity: 1;
+
     border-radius: 63px 200px 63px 63px;
     border: 3px solid rgba(255, 255, 255, 0.75);
     -webkit-box-shadow: 5px -5px 20px 5px #9BB9FF; 
@@ -94,7 +105,11 @@
   }
   
   .card-color-2 {
-    background-image: url("button_3.png");
+    background: linear-gradient(135deg, #064a8180 50%, transparent 0),linear-gradient(-135deg, #064a8180 50%, transparent 0);
+    background-size: 3em 3em;
+    background-color: #8fa897;
+    opacity: 1;
+
     border-radius: 63px 63px 63px 200px;
     border: 3px solid rgba(255, 255, 255, 0.75);
     -webkit-box-shadow: -5px 5px 20px 5px #9BB9FF; 
@@ -108,7 +123,11 @@
   }
   
   .card-color-3 {
-    background-image: url("button_4.png");
+    background: linear-gradient(135deg, #1e411880 50%, transparent 0),linear-gradient(-135deg, #1e411880 50%, transparent 0);
+    background-size: 3em 3em;
+    background-color: #1dad4b;
+    opacity: 1;
+    
     border-radius: 63px 63px 200px 63px;
     border: 3px solid rgba(255, 255, 255, 0.75);
     -webkit-box-shadow: 5px 5px 20px 5px #9BB9FF; 
@@ -125,11 +144,14 @@
 
   
 .card-center {
+
+  background: linear-gradient(135deg, #a90a0a 25%, transparent 25%) -35px 0/ 70px 70px, linear-gradient(225deg, rgba(169,10,10,0.5) 25%, transparent 25%) -35px 0/ 70px 70px, linear-gradient(315deg, #a90a0a 25%, transparent 25%) 0 0/ 70px 70px, linear-gradient(45deg, rgba(169,10,10,0.5) 25%, #5e1717 25%) 0 0/ 70px 70px;
+  background-color: #5e1717;
+
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: maroon;
   width: 250px;
   height: 300px;
   border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
