@@ -162,10 +162,12 @@ function animateOtherCards(card, out) {
   var delay = 100;
   for (var i = 0; i < nCards; i++) {
     // animate cards on a stagger, 1 each 100ms
-    if (cards[i] === card) continue;
-    if (out) animateOutCard(cards[i], delay);
-    else animateInCard(cards[i], delay);
-    delay += 100;
+    if (cards[i] != card) {
+      if (out) { 
+        animateOutCard(cards[i], delay); 
+      } else { animateInCard(cards[i], delay) };
+        delay += 100;
+    }
   }
 }
 

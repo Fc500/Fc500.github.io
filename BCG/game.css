@@ -292,7 +292,7 @@ button.recruit-button{
   .prev, .next,.text {font-size: 11px}
 }
 
-.locked {
+.blur {
   filter: blur(8px);
   -webkit-filter: blur(8px);
 }

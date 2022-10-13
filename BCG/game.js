@@ -16,6 +16,7 @@ const bandDisp = document.getElementById("bandMembers");
 // Player
 
 let playerBand = [];
+const lockedVenues = document.getElementsByClassName("locked-place");
 let instrumentsAvalible = ["Recorder", "Bells"];
 var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth", "John", "Adam"];
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
@@ -259,6 +260,7 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
@@ -273,4 +275,11 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+}
+
+function concertSelection() {
+  let images = document.getElementsByTagName("img");
+  if (images.classList.contains("locked-place") ) {
+    window.alert("e");
+  }
 }
