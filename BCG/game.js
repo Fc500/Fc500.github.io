@@ -18,6 +18,7 @@ const bandDisp = document.getElementById("bandMembers");
 let playerBand = [];
 const lockedVenues = document.getElementsByClassName("locked-place");
 let instrumentsAvalible = ["Recorder", "Bells"];
+let venuesAvalible = ["Field"];
 var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth", "John", "Adam"];
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
@@ -277,9 +278,19 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-function concertSelection() {
-  let images = document.getElementsByTagName("img");
-  if (images.classList.contains("locked-place") ) {
-    window.alert("e");
+function concertSelection(step) {
+
+  switch (step) {
+    case 0:
+      if (venuesAvalible[slideIndex - 1]) {
+        let chosenVenue = venuesAvalible[slideIndex - 1];
+      }
+      break;
+  
+    default:
+      break;
   }
+
+  
+    
 }
