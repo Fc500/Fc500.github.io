@@ -1,4 +1,4 @@
-window.alert('0.01');
+
 
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
