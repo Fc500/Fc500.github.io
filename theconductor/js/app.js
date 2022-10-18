@@ -16,7 +16,7 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.42");
+    window.alert("v0.43");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -170,7 +170,11 @@ function generateRandom(min, max) {
         cardBox.innerHTML = `<div class="container" id="${cardSeed.toString()}">
             <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}', '${cardInst}')" class="card-button poppins" style="width: 90px;">Scout</button>
             <p><span>${cardName.toString()}</span> ${cardInst} player</p>
-            <p>Rarity: ${cardOdds.toString()} | Level: ${cardSkill.toString()} | Potential: ${cardPotentialDisp}</p>
+            <div style="text-align: left>
+              <p class="container-item">Rarity: ${cardOdds.toString()}</p>
+              <p class="container-item">Level: ${cardSkill.toString()}</p>
+              <p class="container-item">Potential: ${cardPotentialDisp}</p>
+            </div>
           </div>`
         scoutResults.appendChild(cardBox);
       }
