@@ -4,7 +4,6 @@ const assets = [
   "/app.html",
   "/css/styles.css",
   "/js/app.js",
-  "/js/switching.js",
 ]
 
 self.addEventListener("install", installEvent => {

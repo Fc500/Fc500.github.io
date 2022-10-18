@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Dev'Coffee PWA</title>
+    <title>The Conductor</title>
     <!-- Manifest File link -->
     <link rel="manifest" href="manifest.json" />
     <!-- ios support -->
@@ -52,6 +52,9 @@
 
       <section>
         <h1>Recruit</h1>
+        <button class="recruit-button poppins" onclick="loadingResults(1)">Scout One</button>
+        <button class="recruit-button poppins" onclick="loadingResults(5)">Scout Five</button>
+        <div id="scoutResults"></div>
       </section>
 
       <section style="display: none;">
@@ -60,6 +63,18 @@
 
       <section style="display: none;">
         <h1>Band</h1>
+        <p>Money: $<span id="money"></span></p>
+        <p>Influence: <span id="influence"></span><i>i</i></p>
+        <br>
+        <table id="bandMembers">
+          <tr>
+              <th>Name</th>
+              <th>Level</th>
+              <th>Rarity</th>
+              <th>Potential</th>
+              <th>Instrument</th>
+          </tr>
+        </table>
       </section>
 
       <section style="display: none;">
@@ -67,6 +82,5 @@
       </section>
     </main>
     <script src="js/app.js"></script>
-    <script src="js/switching.js"></script>
   </body>
 </html>
