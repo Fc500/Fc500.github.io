@@ -16,7 +16,7 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.41");
+    window.alert("v0.42");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -154,7 +154,7 @@ function generateRandom(min, max) {
         const cardInst = generatedValues[6];
         const cardSeed = generatedValues[7];
   
-        cardBox.innerHTML = `<div id="${cardSeed.toString()}">
+        /* `<div id="${cardSeed.toString()}">
         <div class="card-body">
           <div>
             <h1>${cardName.toString()}</h1>
@@ -165,9 +165,13 @@ function generateRandom(min, max) {
                     <p class="card-stats">Potential: ${cardPotentialDisp}</p>
                     <p class="card-stats">Instrument: ${cardInst}</p>
                 </div>
-            <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}', '${cardInst}')" class="card-button poppins">Scout</button>
           </div>
-        </div>`
+        </div>` */
+        cardBox.innerHTML = `<div class="container" id="${cardSeed.toString()}">
+            <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}', '${cardInst}')" class="card-button poppins" style="width: 90px;">Scout</button>
+            <p><span>${cardName.toString()}</span> ${cardInst} player</p>
+            <p>Rarity: ${cardOdds.toString()} | Level: ${cardSkill.toString()} | Potential: ${cardPotentialDisp}</p>
+          </div>`
         scoutResults.appendChild(cardBox);
       }
   }

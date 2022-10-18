@@ -224,22 +224,41 @@ button.recruit-button{
   }
 }
 
-.card-body {
-  background-color: #beafc4;
-  margin: 15px;
-  padding: 15px;
-  height: 250px;
-  border-radius: 25px;
-  }
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+}
 
-.card-stats {
-  background-color: #a991b3;
-  border-radius: 15px;
-  padding: 10px;
-  margin: 5px;
-  display: block;
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container button {
   float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .container {
+      text-align: center;
   }
+  .container button {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
 
 .card-button {
     background: #D19FFF;
@@ -252,16 +271,11 @@ button.recruit-button{
     border-radius: 20px;
     color: #FFFFFF;
     padding: 20px;
-    width: 125px;
     -webkit-box-shadow: 1px 1px 20px 0 #000000;
     -moz-box-shadow: 1px 1px 20px 0 #000000;
     box-shadow: 1px 1px 20px 0 #000000;
     text-shadow: 1px 1px 20px #000000;
     border: solid #8F48E5 1px;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    float: right;
  }
  
  .card-button:hover {
