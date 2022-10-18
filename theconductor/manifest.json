@@ -3,7 +3,7 @@
   "start_url": "app.html",
   "display": "standalone",
   "background_color": "#fdfdfd",
-  "theme_color": "#3866db",
+  "theme_color": "#003DBA",
   "orientation": "portrait-primary",
   "icons": [
     {    
