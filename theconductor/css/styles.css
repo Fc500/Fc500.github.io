@@ -79,7 +79,7 @@ nav {
 /* */
 
 .nav-item.active {
-  flex-grow: 2;
+  flex-grow: 1.5;
   border-radius: 30px;
   background: #eee;
   justify-content: flex-start;
@@ -169,7 +169,7 @@ nav {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #e57723;
+  background-color: #66BB6A;
   color: white;
 }
 
