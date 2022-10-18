@@ -13,20 +13,60 @@
     <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
     <meta name="apple-mobile-web-app-status-bar" content="#3866db" />
     <meta name="theme-color" content="#3866db" />
+    <!-- Logo credit: https://www.pngegg.com/en/png-xxwvz/download -->
+
+    <!-- Navbar credit: https://codepen.io/Vijit_Ail/pen/aMwVNV -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet">
   </head>
  
   <body>
     <main>
       <nav>
-        <h1>Dev'Coffee</h1>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Blog</li>
-        </ul>
+        <div class="nav-item active" onclick="switchFunction(0)">
+            <i class="material-symbols-rounded home-icon">
+                handshake
+            </i>
+            <span class="nav-text">Recruit</span>
+        </div>
+        <div class="nav-item" onclick="switchFunction(1)">
+            <i class="material-symbols-rounded favorite-icon">
+              construction
+            </i>
+            <span class="nav-text">Upgrade</span>
+        </div>
+        <div class="nav-item" onclick="switchFunction(2)">
+            <i class="material-symbols-rounded search-icon">
+                music_note
+            </i>
+            <span class="nav-text">Band</span>
+        </div>
+        <div class="nav-item" onclick="switchFunction(3)">
+            <i class="material-symbols-rounded person-icon">
+                tune
+            </i>
+            <span class="nav-text">Settings</span>
+        </div>
       </nav>
-      <div class="container"></div>
+
+      <section>
+        <h1>Recruit</h1>
+      </section>
+
+      <section style="display: none;">
+        <h1>Upgrade</h1>
+      </section>
+
+      <section style="display: none;">
+        <h1>Band</h1>
+      </section>
+
+      <section style="display: none;">
+        <h1>Settings</h1>
+      </section>
     </main>
     <script src="js/app.js"></script>
+    <script src="js/switching.js"></script>
   </body>
 </html>
