@@ -2,7 +2,6 @@
 #regForm {
     background-color: #ffffff;
     margin: 100px auto;
-    font-family: Raleway;
     padding: 40px;
     width: 70%;
     min-width: 300px;
@@ -12,7 +11,6 @@
     padding: 10px;
     width: 100%;
     font-size: 17px;
-    font-family: Raleway;
     border: 1px solid #aaaaaa;
   }
 
@@ -27,7 +25,6 @@
     border: none;
     padding: 10px 20px;
     font-size: 17px;
-    font-family: Raleway;
     cursor: pointer;
   }
   
@@ -148,8 +145,8 @@
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
+    width: 50px; /* Set a specific slider handle width */
+    height: 50px; /* Slider handle height */
     background: #eda515; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
@@ -157,7 +154,7 @@
   .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
+    background: #eda515; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
 
