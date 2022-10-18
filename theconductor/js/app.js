@@ -16,7 +16,7 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.46");
+    window.alert("v0.47");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -250,7 +250,7 @@ function showTab(n) {
   fixStepIndicator(n)
 }
 
-let concertVenue, concertTicketPrice, concertSize, concertLength;
+let concertVenue, concertTicketPrice, concertSize, concertLength, concertAdvertising;
 
 function nextPrev(n) {
   // This function will figure out which tab to display
@@ -279,6 +279,9 @@ function nextPrev(n) {
     case 3:
       concertLength = slider[2].value;
       break;
+    case 4:
+      concertAdvertising = slider[3].value;
+      break;
   }
   if (!infoFail) {
     // Increase or decrease the current tab by 1:
@@ -294,6 +297,8 @@ function nextPrev(n) {
     document.getElementById("chairs").innerHTML = concertSize;
     
     document.getElementById("length").innerHTML = concertLength;
+
+    document.getElementById("advertising").innerHTML = concertAdvertising;
     }
     
     // Otherwise, display the correct tab:

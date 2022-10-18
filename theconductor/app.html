@@ -79,9 +79,9 @@
           <h3>Select a place to host your show</h3>
             <div class="custom-select poppins" style="width:200px;">
               <select id="venuebar">
-                <option value="0">Select venue:</option>
-                <option value="1">Field</option>
-                <option value="2">Ampitheatre</option>
+                <option value="0" class="poppins">Select venue:</option>
+                <option value="1" class="poppins">Field</option>
+                <option value="2" class="poppins">Ampitheatre</option>
               </select>
             </div>
           </div>
@@ -107,6 +107,15 @@
               <input type="range" min="1" max="5" value="2" class="slider myRange">
             </div> 
           </div>
+          <div class="tab">
+            <h3>Pick an amount of money to spend on advertising</h3>
+            <p class="demo">$75</p>
+            <div class="slidecontainer">
+              <input type="range" min="50" max="500" value="75" class="slider myRange">
+            </div>
+        
+          </div>
+
           
           <div style="overflow:auto;">
             <div style="float:right;">
@@ -120,12 +129,15 @@
             <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
+            <span class="step"></span>
           </div>
         </div>
         <p>Venue: <span id="venue"></span></p>
         <p>Price: $<span id="price"></span></p>
         <p>Seats: <span id="chairs"></span></p>
         <p>Length: <span id="length"></span> songs</p>
+        <p>Advertising: $<span id="advertising"></span></p>
+
 
       </section>
 
