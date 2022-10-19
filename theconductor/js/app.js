@@ -19,7 +19,7 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.49");
+    window.alert("v0.49a");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -279,6 +279,10 @@ function nextPrev(n) {
       concertAdvertising = slider[3].value;
       if (playerBand.length == 0) {
         switchFunction(0);
+        navItems[2].classList.remove('active');
+        navItems[0].classList.add('active');
+        infoFail = true;
+
         window.alert("You do not have enough players!");
       }
       for (let i = 0; i < playerBand.length; i++) {
