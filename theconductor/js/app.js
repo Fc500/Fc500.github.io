@@ -19,7 +19,7 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.49b");
+    window.alert("v0.49c");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -246,7 +246,7 @@ function showTab(n) {
   fixStepIndicator(n)
 }
 
-let concertVenue, concertTicketPrice, concertSize, concertLength, concertAdvertising;
+let concertVenue, concertTicketPrice, concertSize, concertLength, concertAdvertising, concertPart;
 
 function nextPrev(n) {
   // This function will figure out which tab to display
@@ -329,7 +329,9 @@ function nextPrev(n) {
 
       document.getElementById("advertising").innerHTML = concertAdvertising;
 
-      document.getElementById("regForm").style.display = "none";
+      document.getElementById("participants").innerHTML = concertParticipants.length + " people";
+
+      //document.getElementById("regForm").style.display = "none";
     
     }
     
