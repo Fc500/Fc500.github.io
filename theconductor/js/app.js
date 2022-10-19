@@ -316,23 +316,26 @@ function nextPrev(n) {
       window.alert("done!");
 
       currentTab = 0;
+      showTab(currentTab);
       hostConcert();
 
       document.getElementById("venue").innerHTML = concertVenue;
     
-    document.getElementById("price").innerHTML = concertTicketPrice;
+      document.getElementById("price").innerHTML = concertTicketPrice;
     
-    document.getElementById("chairs").innerHTML = concertSize;
+      document.getElementById("chairs").innerHTML = concertSize;
     
-    document.getElementById("length").innerHTML = concertLength;
+      document.getElementById("length").innerHTML = concertLength;
 
-    document.getElementById("advertising").innerHTML = concertAdvertising;
+      document.getElementById("advertising").innerHTML = concertAdvertising;
 
-    document.getElementById("reqForm").style.display = "none";
+      document.getElementById("regForm").style.display = "none";
+    
     }
     
     // Otherwise, display the correct tab:
     showTab(currentTab);
+
     } else {
     window.alert("Please select a venue!");
     showTab(currentTab);
