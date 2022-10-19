@@ -19,7 +19,7 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.48");
+    window.alert("v0.49");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -92,6 +92,10 @@ function generateRandom(min, max) {
       seedSkill *= 10;
       seedOdds = "Legendary";
       seedPrice *= 4200;
+    }
+
+    if (seedPrice == 0) {
+      seedPrice = 5000;
     }
   
     console.log("split Seed (0): " + splitSeed[0]);
@@ -273,6 +277,10 @@ function nextPrev(n) {
       break;
     case 4:
       concertAdvertising = slider[3].value;
+      if (playerBand.length == 0) {
+        switchFunction(0);
+        window.alert("You do not have enough players!");
+      }
       for (let i = 0; i < playerBand.length; i++) {
         const cardBox = document.createElement("div");
         cardBox.innerHTML = `<div class="container" id="${i * 489723}">
@@ -288,6 +296,9 @@ function nextPrev(n) {
       break;
 
     case 5:
+      if (concertParticipants.length == 0) {
+        infoFail = true;
+      }
       selectBandMembers.innerHTML = "";
       break;
   }
@@ -311,6 +322,8 @@ function nextPrev(n) {
     document.getElementById("length").innerHTML = concertLength;
 
     document.getElementById("advertising").innerHTML = concertAdvertising;
+
+    document.getElementById("reqForm").style.display = "none";
     }
     
     // Otherwise, display the correct tab:
