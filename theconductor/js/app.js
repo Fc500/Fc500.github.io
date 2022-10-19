@@ -19,7 +19,7 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.49c");
+    window.alert("v0.49d");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -261,6 +261,7 @@ function nextPrev(n) {
     case 0:
       let venueVal = document.getElementById("venuebar").value;
       if (venueVal == 0) {
+        window.alert("Please select a venue!");
         infoFail = true;
       } else {
         concertVenue = venuesAvalible[venueVal - 1];
@@ -276,6 +277,7 @@ function nextPrev(n) {
       concertLength = slider[2].value;
       break;
     case 4:
+      selectBandMembers.innerHTML = "";
       concertAdvertising = slider[3].value;
       if (playerBand.length == 0) {
         switchFunction(0);
@@ -331,7 +333,7 @@ function nextPrev(n) {
 
       document.getElementById("participants").innerHTML = concertParticipants.length + " people";
 
-      //document.getElementById("regForm").style.display = "none";
+      document.getElementById("regForm").style.display = "none";
     
     }
     
@@ -339,7 +341,6 @@ function nextPrev(n) {
     showTab(currentTab);
 
     } else {
-    window.alert("Please select a venue!");
     showTab(currentTab);
     }
     
