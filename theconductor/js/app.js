@@ -304,6 +304,7 @@ function nextPrev(n) {
     case 5:
       if (concertParticipants.length == 0) {
         infoFail = true;
+        window.alert("Please select some participants!");
       } else {
         selectBandMembers.innerHTML = "";
       }
