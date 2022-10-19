@@ -2,12 +2,15 @@
 
 let money = 100000;
 let influence = 100;
+let popularity = 10;
 
 const moneyDisp = document.getElementById("money");
 const influenceDisp = document.getElementById("influence");
+const popularityDisp = document.getElementById("popularity");
 const bandDisp = document.getElementById("bandMembers");
 const scoutResults = document.getElementById("scoutResults");
 const selectBandMembers = document.getElementById("selectBandMembers");
+
 
 // Player
 
@@ -19,7 +22,7 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.49d");
+    window.alert("v0.50");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -222,6 +225,51 @@ for (let i = 0; i < navItems.length; i++) {
     });
 }
 
+function hostConcert(venue, ticketPrice, size, length, advertising, participants) {
+  let venueCost, concertCost, sizeCost, concertRev;
+
+  console.log(venue);
+  if (venue == "field") {
+    venueCost = 100;
+  } else if (venue == "ampitheatre") {
+    venueCost = 500;
+  }
+
+  console.log(venueCost);
+
+  sizeCost = size * 5;
+  console.log(venueCost + " venue cost");
+  console.log(sizeCost + " size cost");
+  concertCost = venueCost + sizeCost + advertising;
+  let peopleShow = advertising * ticketPrice;
+  peopleShow /= size;
+
+  concertRev = peopleShow - concertCost;
+
+  console.log(advertising * ticketPrice + " - peopleShow phase 1");
+  console.log(size + " - peopleShow phase 2");
+  console.log(ticketPrice + " - peopleShow phase 3");
+  console.log(peopleShow + " - peopleShow final");
+  console.log(concertCost + " - concert cost");
+  console.log(concertRev + " concert revenue");
+
+  window.alert(peopleShow + " people showed up!");
+  window.alert("You made " + concertRev);
+
+  money += concertRev;
+
+  moneyDisp.innerHTML = numFormatter(money);
+
+}
+
+
+function registerForConcert(arrayNum, arrayID) {
+  concertParticipants.push(playerBand[arrayID]);
+  console.log(concertParticipants);
+  var participantToRemove = document.getElementById(arrayNum);
+  participantToRemove.remove();
+  document.getElementsByClassName("demo")[4].innerHTML = concertParticipants.length + " / " + playerBand.length;
+}
 
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
@@ -277,6 +325,7 @@ function nextPrev(n) {
       concertLength = slider[2].value;
       break;
     case 4:
+      document.getElementsByClassName("demo")[4].innerHTML = "0 / " + playerBand.length;
       selectBandMembers.innerHTML = "";
       concertAdvertising = slider[3].value;
       if (playerBand.length == 0) {
@@ -287,22 +336,23 @@ function nextPrev(n) {
 
         window.alert("You do not have enough players!");
       }
+      concertParticipants = [];
       for (let i = 0; i < playerBand.length; i++) {
-        const cardBox = document.createElement("div");
-        cardBox.innerHTML = `<div class="container" id="${i * 489723}">
-          <button onclick="registerForConcert(${i * 489723})" class="card-button poppins" style="width: 90px;">Select</button>
-          <p><span>${playerBand[i].name}</span> ${playerBand[i].inst} player</p>
-          <div style="text-align: left>
-            <p class="container-item">Level: ${playerBand[i].skill}</p>
-            <p class="container-item">Potential: ${playerBand[i].potentialDisp}</p>
-          </div>
-        </div>`;
-        selectBandMembers.appendChild(cardBox);
+          const cardBox = document.createElement("div");
+          cardBox.innerHTML = `<div class="container" id="${i * 489723}">
+            <button onclick="registerForConcert(${i * 489723}, ${i})" class="card-button poppins" style="width: 90px;">Select</button>
+            <p><span>${playerBand[i].name}</span> ${playerBand[i].inst} player</p>
+            <div style="text-align: left>
+              <p class="container-item">Level: ${playerBand[i].skill}</p>
+              <p class="container-item">Potential: ${playerBand[i].potentialDisp}</p>
+            </div>
+          </div>`;
+          selectBandMembers.appendChild(cardBox);
       }
       break;
 
     case 5:
-      if (concertParticipants.length == 0) {
+      if (concertParticipants.length == 0 && n != -1) {
         infoFail = true;
         window.alert("Please select some participants!");
       } else {
@@ -320,7 +370,7 @@ function nextPrev(n) {
 
       currentTab = 0;
       showTab(currentTab);
-      hostConcert();
+      hostConcert(concertVenue, concertTicketPrice, concertSize, concertLength, concertAdvertising, concertPart);
 
       document.getElementById("venue").innerHTML = concertVenue;
     
@@ -347,9 +397,7 @@ function nextPrev(n) {
     
   }
 
-  function hostConcert() {
-    console.log("Work in progress!");
-  }
+
   function fixStepIndicator(n) {
     // This function removes the "active" class of all steps...
     var i, x = document.getElementsByClassName("step");
@@ -361,13 +409,6 @@ function nextPrev(n) {
   }
 
 
-function registerForConcert(arrayNum) {
-  concertParticipants.push(playerBand[arrayNum]);
-  console.log(concertParticipants);
-  var participantToRemove = document.getElementById(arrayNum);
-  participantToRemove.remove();
-  document.getElementsByClassName("demo")[4].innerHTML = concertParticipants.length + " / " + playerBand.length;
-}
 
 
   var x, i, j, l, ll, selElmnt, a, b, c;
