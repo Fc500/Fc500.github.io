@@ -7,16 +7,19 @@ const moneyDisp = document.getElementById("money");
 const influenceDisp = document.getElementById("influence");
 const bandDisp = document.getElementById("bandMembers");
 const scoutResults = document.getElementById("scoutResults");
+const selectBandMembers = document.getElementById("selectBandMembers");
 
 // Player
 
 let playerBand = [];
+let concertParticipants = [];
 let instrumentsAvalible = ["Recorder", "Bells"];
+let venuesAvalible = ["Field"];
 var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "David", "Elizabeth", "John", "Adam"];
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.47");
+    window.alert("v0.48");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
 
@@ -122,11 +125,12 @@ function generateRandom(min, max) {
       bandDisp.innerHTML += `<tr><td id="${seed}">${name}</td><td>${skill}</td><td>${odds}</td><td>${potentialDisp}</td><td>${inst}</td></tr>`;
   
       playerBand.push({
-        "name": name,
-        "skill": skill,
-        "odds": odds,
-        "potential": potential,
-        "inst": inst,
+        name: name,
+        skill: skill,
+        odds: odds,
+        potential: potential,
+        potentialDisp: potentialDisp,
+        inst: inst,
       });
   
       console.log(playerBand);
@@ -145,7 +149,7 @@ function generateRandom(min, max) {
         let generatedValues = generateCardValues();
   
   
-        const cardName = generatedValues[0]
+        const cardName = generatedValues[0];
         const cardPrice = generatedValues[1];
         const cardOdds = generatedValues[2];
         const cardSkill = generatedValues[3];
@@ -153,27 +157,15 @@ function generateRandom(min, max) {
         const cardPotentialDisp = generatedValues[5];
         const cardInst = generatedValues[6];
         const cardSeed = generatedValues[7];
-  
-        /* `<div id="${cardSeed.toString()}">
-        <div class="card-body">
-          <div>
-            <h1>${cardName.toString()}</h1>
-            <h3>$${numFormatter(cardPrice.toString())}</h3>
-                <div style="width: 75%;">
-                    <p class="card-stats">Rarity: ${cardOdds.toString()}</p>
-                    <p class="card-stats">Level: ${cardSkill.toString()} / 99</p>
-                    <p class="card-stats">Potential: ${cardPotentialDisp}</p>
-                    <p class="card-stats">Instrument: ${cardInst}</p>
-                </div>
-          </div>
-        </div>` */
+
         cardBox.innerHTML = `<div class="container" id="${cardSeed.toString()}">
             <button onclick="scoutNewPlayer('${cardName}', ${cardPrice}, ${cardSeed}, ${cardSkill}, '${cardOdds}', ${cardPotential}, '${cardPotentialDisp}', '${cardInst}')" class="card-button poppins" style="width: 90px;">Scout</button>
-            <p><span>${cardName.toString()}</span> ${cardInst} player</p>
-            <div style="text-align: left>
-              <p class="container-item">Rarity: ${cardOdds.toString()}</p>
+            <p><span>${cardName.toString()}</span>- ${cardInst} player</p>
+            <h4>$${numFormatter(cardPrice)}</h4>
+            <div style="text-align: left">
               <p class="container-item">Level: ${cardSkill.toString()}</p>
               <p class="container-item">Potential: ${cardPotentialDisp}</p>
+              <p class="container-item">Rarity: ${cardOdds}</p>
             </div>
           </div>`
         scoutResults.appendChild(cardBox);
@@ -267,7 +259,7 @@ function nextPrev(n) {
       if (venueVal == 0) {
         infoFail = true;
       } else {
-        concertVenue = venueVal;
+        concertVenue = venuesAvalible[venueVal - 1];
       }
       break;
     case 1:
@@ -281,6 +273,22 @@ function nextPrev(n) {
       break;
     case 4:
       concertAdvertising = slider[3].value;
+      for (let i = 0; i < playerBand.length; i++) {
+        const cardBox = document.createElement("div");
+        cardBox.innerHTML = `<div class="container" id="${i * 489723}">
+          <button onclick="registerForConcert(${i * 489723})" class="card-button poppins" style="width: 90px;">Select</button>
+          <p><span>${playerBand[i].name}</span> ${playerBand[i].inst} player</p>
+          <div style="text-align: left>
+            <p class="container-item">Level: ${playerBand[i].skill}</p>
+            <p class="container-item">Potential: ${playerBand[i].potentialDisp}</p>
+          </div>
+        </div>`;
+        selectBandMembers.appendChild(cardBox);
+      }
+      break;
+
+    case 5:
+      selectBandMembers.innerHTML = "";
       break;
   }
   if (!infoFail) {
@@ -290,6 +298,10 @@ function nextPrev(n) {
     if (currentTab >= x.length) {
       // ... the form gets submitted:
       window.alert("done!");
+
+      currentTab = 0;
+      hostConcert();
+
       document.getElementById("venue").innerHTML = concertVenue;
     
     document.getElementById("price").innerHTML = concertTicketPrice;
@@ -310,6 +322,9 @@ function nextPrev(n) {
     
   }
 
+  function hostConcert() {
+    console.log("Work in progress!");
+  }
   function fixStepIndicator(n) {
     // This function removes the "active" class of all steps...
     var i, x = document.getElementsByClassName("step");
@@ -319,6 +334,15 @@ function nextPrev(n) {
     //... and adds the "active" class on the current step:
     x[n].className += " active";
   }
+
+
+function registerForConcert(arrayNum) {
+  concertParticipants.push(playerBand[arrayNum]);
+  console.log(concertParticipants);
+  var participantToRemove = document.getElementById(arrayNum);
+  participantToRemove.remove();
+  document.getElementsByClassName("demo")[4].innerHTML = concertParticipants.length + " / " + playerBand.length;
+}
 
 
   var x, i, j, l, ll, selElmnt, a, b, c;
@@ -420,6 +444,12 @@ slider[1].oninput = function() {
 
 slider[2].oninput = function() {
   output[2].innerHTML = this.value + " songs"; 
+}
+
+
+
+slider[3].oninput = function() {
+  output[3].innerHTML = "$ " + this.value; 
 }
 
 

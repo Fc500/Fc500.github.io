@@ -33,7 +33,7 @@ section {
 nav {
   display: flex;
   flex-direction: row;
-  width: 96%;
+  width: 97%;
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
@@ -142,7 +142,7 @@ nav {
   text-align: center;
   padding: 20px;
   background-color: lightslategray;
-  border-radius: 50px;
+  border-radius: 25px;
   margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
@@ -246,7 +246,7 @@ button.recruit-button{
 
 .container span {
   font-size: 20px;
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 .container-item {
