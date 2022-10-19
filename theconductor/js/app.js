@@ -302,8 +302,9 @@ function nextPrev(n) {
     case 5:
       if (concertParticipants.length == 0) {
         infoFail = true;
+      } else {
+        selectBandMembers.innerHTML = "";
       }
-      selectBandMembers.innerHTML = "";
       break;
   }
   if (!infoFail) {
