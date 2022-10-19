@@ -229,9 +229,9 @@ function hostConcert(venue, ticketPrice, size, length, advertising, participants
   let venueCost, concertCost, sizeCost, concertRev;
 
   console.log(venue);
-  if (venue == "field") {
+  if (venue == "Field") {
     venueCost = 100;
-  } else if (venue == "ampitheatre") {
+  } else if (venue == "Ampitheatre") {
     venueCost = 500;
   }
 
