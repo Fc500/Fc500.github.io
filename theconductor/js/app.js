@@ -2,7 +2,7 @@
 
 let money = 100000;
 let influence = 100;
-let popularity = 10;
+let popularity = 0.5;
 
 const moneyDisp = document.getElementById("money");
 const influenceDisp = document.getElementById("influence");
@@ -10,6 +10,8 @@ const popularityDisp = document.getElementById("popularity");
 const bandDisp = document.getElementById("bandMembers");
 const scoutResults = document.getElementById("scoutResults");
 const selectBandMembers = document.getElementById("selectBandMembers");
+
+
 
 
 // Player
@@ -22,9 +24,10 @@ var firstNames = ["James", "Mary", "Robert", "Patricia", "Michael", "Linda", "Da
 var lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Gardner", "Trench"];
 
 window.onload = function loading() {
-    window.alert("v0.50");
+    window.alert("v0.52");
     moneyDisp.innerHTML = numFormatter(money);
     influenceDisp.innerHTML = influence;
+    popularityDisp.innerHTML = popularity * 100;
 
 }
 
@@ -226,39 +229,55 @@ for (let i = 0; i < navItems.length; i++) {
 }
 
 function hostConcert(venue, ticketPrice, size, length, advertising, participants) {
-  let venueCost, concertCost, sizeCost, concertRev;
 
-  console.log(venue);
+  let ticketPriceDeci, seatCost;
+  
+  let cost, profit, revenue, turnout;
+
+  console.log(venue + " venue");
+  
   if (venue == "Field") {
-    venueCost = 100;
+    seatCost = 20;
   } else if (venue == "Ampitheatre") {
-    venueCost = 500;
+    seatCost = 30;
   }
 
-  console.log(venueCost);
+  console.log(seatCost + " seat cost");
+  
+  let z = participants.length;
 
-  sizeCost = size * 5;
-  console.log(venueCost + " venue cost");
-  console.log(sizeCost + " size cost");
-  concertCost = venueCost + sizeCost + advertising;
-  let peopleShow = advertising * ticketPrice;
-  peopleShow /= size;
+  let participantsDeci = z / 100;
+  
+  ticketPriceDeci = ticketPrice / 100;
+  
+  turnout = advertising * popularity / ticketPriceDeci * length * participantsDeci / 2 * ticketPriceDeci + ticketPrice / 5;
 
-  concertRev = peopleShow - concertCost;
-
-  console.log(advertising * ticketPrice + " - peopleShow phase 1");
-  console.log(size + " - peopleShow phase 2");
-  console.log(ticketPrice + " - peopleShow phase 3");
-  console.log(peopleShow + " - peopleShow final");
-  console.log(concertCost + " - concert cost");
-  console.log(concertRev + " concert revenue");
-
-  window.alert(peopleShow + " people showed up!");
-  window.alert("You made " + concertRev);
-
-  money += concertRev;
-
-  moneyDisp.innerHTML = numFormatter(money);
+  console.log(turnout + " turnout");
+  console.log(advertising);
+  console.log(popularity);
+  console.log(ticketPriceDeci);
+  console.log(length);
+  
+  let a = size / 2 * seatCost ** 1.1 + advertising / popularity;
+  
+  let b = ticketPriceDeci * 1.1;
+  
+  let c = length ** b;
+  console.log(participants.length + " participants");
+  window.alert(a);
+  window.alert(b);
+  window.alert(c);
+  
+  cost = a * c; 
+  
+  revenue = ticketPrice * turnout;
+  
+  profit = revenue - cost;
+  
+  document.getElementById("turnout").innerHTML = turnout.toFixed(0) + " people showed up";
+  document.getElementById("revenue").innerHTML = "The concert made $" + revenue.toFixed(2);
+  document.getElementById("cost").innerHTML = "The concert cost $" + cost.toFixed(2);
+  document.getElementById("profit").innerHTML = "You made $" + profit.toFixed(2) + " dollars";
 
 }
 
@@ -294,7 +313,7 @@ function showTab(n) {
   fixStepIndicator(n)
 }
 
-let concertVenue, concertTicketPrice, concertSize, concertLength, concertAdvertising, concertPart;
+let concertVenue, concertTicketPrice, concertSize, concertLength, concertAdvertising;
 
 function nextPrev(n) {
   // This function will figure out which tab to display
@@ -311,8 +330,12 @@ function nextPrev(n) {
       if (venueVal == 0) {
         window.alert("Please select a venue!");
         infoFail = true;
+      } else if (venuesAvalible[venueVal - 1] == undefined) {
+        window.alert("That venue is locked!");
+        infoFail = true;
       } else {
         concertVenue = venuesAvalible[venueVal - 1];
+        window.alert(venueVal);
       }
       break;
     case 1:
@@ -370,7 +393,7 @@ function nextPrev(n) {
 
       currentTab = 0;
       showTab(currentTab);
-      hostConcert(concertVenue, concertTicketPrice, concertSize, concertLength, concertAdvertising, concertPart);
+      hostConcert(concertVenue, concertTicketPrice, concertSize, concertLength, concertAdvertising, concertParticipants);
 
       document.getElementById("venue").innerHTML = concertVenue;
     
