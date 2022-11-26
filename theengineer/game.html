@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<style>
+        .locked {
+        	display: none;
+        }
+        
+        .item {
+        	background-color: lightgrey;
+            border-style: solid;
+            border-width: 1px;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        </style>
+    </head>
+	<body>
+    	<h4>Resources</h4>
+		<button onclick="resourceTick(1, 1)">Mine for resources</button>
+		<p>Money: $<span id="money">0</span></p>
+        <p>Coal: <span id="coal">0</span> lumps</p>
+        <p>Stone: <span id="stone">0</span> blocks</p>
+        <p>Iron: <span id="iron">0</span> lumps</p>
+		<br />
+        
+        <h4>Workers</h4>
+        <div class="item">
+		  <p>You have <span id="cursors">0</span> Miners producing <span id="cursorProduction">0</span> per second.</p>
+		  <p>Miner Cost: $<span id="cursorCost">10</span></p>
+          <button onclick="buyBuilding(miner)">Buy Miner</button>
+        </div>
+        <br />
+        <h4>Market</h4>
+        <div class="item">
+          <p>Stone is currently worth $<span id="coalWorth">0.1</span> per block</p>
+          <button onclick="sellItem(stone, 0)">Sell stone stock</button>
+        </div>
+        <div class="item">
+          <p>Coal is currently worth $<span id="coalWorth">0.5</span> per lump</p>
+          <button onclick="sellItem(coal, 1)">Sell coal stock</button>
+        </div>
+        <div class="item">
+          <p>Iron is currently worth $<span id="ironWorth">1</span> per lump</p>
+          <button onclick="sellItem(iron, 2)">Sell iron stock</button>
+        </div>
+        <br />
+        <h4>Buildings</h4>
+        <div class="locked item">
+        <p>Coal Plant</p>
+        <p>For selling coal automatically. Increases the value of coal by 1%.</p>
+       <p>You have <span id="coalPlant">0</span> coal plants.</p>
+        <p>Plant cost: $<span id="coalCost">150</span>, <span id="coalCost2">250</span> blocks of stone and <span id="coalCost3">10</span> lumps of iron.</p>
+        <button onclick="buyBuilding(coalPlant)">Buy Coal Plant</button>
+        </div>
+        
+		<script type="text/javascript">
+
+        
+let money = 0;
+
+let minerals = {
+	coal: {
+    	amount: 0,
+        worth: 0.5,
+    },
+    stone: {
+    	amount: 0,
+        worth: 0.1,
+    },
+iron: {
+    	amount: 0,
+        worth: 1,
+    },
+}
+
+
+let miner = {
+    production: 0,
+    perSecond: 0.1,
+	amount: 0,
+    id: 'cursors',
+    costDisp: 'cursorCost',
+    productionDisp: 'cursorProduction',
+    cost: 10,
+    resource: 'money',
+    multipleCosts: false,
+};
+
+let coalPlant = {
+	amount: 0,
+    resource: 'money',
+    resource2: 'stone',
+    resource3: 'iron',
+    cost: 150,
+    cost2: 250,
+    cost3: 10,
+    multipleCosts: true,
+    id: 'coalPlant’,
+    costDisp: 'coalCost',
+    costDisp2: 'coalCost2',
+    costDisp3: 'coalCost3',
+}
+
+function resourceTick(number, resourceInfluenced){
+	switch (resourceInfluenced) {
+    	case 0:
+        	money += number;
+    		document.getElementById("money").innerHTML = money.toFixed(2);
+        
+        break;
+        
+        case 1:
+        	minerals.stone.amount += number;
+    		document.getElementById("stone").innerHTML = minerals.stone.amount.toFixed(1);
+            let oreChance = Math.floor(Math.random() * 10);
+            if (oreChance > 4) {
+            	minerals.coal.amount += number;
+                document.getElementById("coal").innerHTML = minerals.coal.amount.toFixed(1);
+            }
+            
+            if (oreChance > 8) {
+            	minerals.iron.amount += number;
+                document.getElementById("iron").innerHTML = minerals.iron.amount.toFixed(1);
+            }
+
+
+break;
+    }
+};multiple
+
+function sellItem(item, resource) {
+
+	switch (resource) {
+    	case 0:
+        money += minerals.stone.worth * minerals.stone.amount;
+        minerals.stone.amount = 0;
+        document.getElementById("money").innerHTML = money.toFixed(2);
+        document.getElementById("stone").innerHTML = minerals.stone.amount.toFixed(1);
+        break;
+        
+    	case 1:
+        money += minerals.coal.worth * minerals.coal.amount;
+        minerals.coal.amount = 0;
+        document.getElementById("money").innerHTML = money.toFixed(2);
+        document.getElementById("coal").innerHTML = minerals.coal.amount.toFixed(1);
+        break;
+        
+        case 2:
+        money += minerals.iron.worth * minerals.iron.amount;
+        minerals.iron.amount = 0;
+        document.getElementById("money").innerHTML = money.toFixed(2);
+        document.getElementById("iron").innerHTML = minerals.iron.amount.toFixed(1);
+        break;
+    }
+
+}
+function buyBuilding(thing) {
+
+	if (thing.multipleCosts == false) {
+    //works out the cost of this cursor
+    if(money >= thing.cost){                                   //checks that the player can afford the cursor
+        thing.amount += 1;                                   //increases number of cursorslocked"
+            
+    	money -= thing.cost;
+        //removes the cookies spent
+        document.getElementById(thing.id).innerHTML = thing.amount;  //updates the number of cursors for the user
+        document.getElementById('money').innerHTML = money.toFixed(2);  //updates the number of cookies for the user
+        
+        thing.production = thing.perSecond * thing.amount;
+    }
+    nextCost = Math.floor(thing.cost * Math.pow(1.1, thing.amount));       //works out the cost of the next cursor
+    document.getElementById(thing.costDisp).innerHTML = nextCost;  //updates the cursor cost for the user
+    document.getElementById(thing.productionDisp).innerHTML = thing.production.toFixed(2);
+    } else {
+    if (money >= thing.cost && minerals.stone.amount >= thing.cost2 && minerals.iron.amount >= thing.cost3) {
+    		thing.amount += 1;
+    		money -= thing.cost;
+            minerals.stone.amount -= thing.cost2;
+            minerals.iron.amount -= thing.cost3;
+            
+            document.getElementById('money').innerHTML = money.toFixed(2);
+            document.getElementById('stone').innerHTML = minerals.stone.toFixed(2);
+            document.getElementById('iron').innerHTML = minerals.iron.toFixed(2);
+            
+            document.getElementById(thing.id).innerHTML = thing.amount; 
+            
+            nextCost = Math.floor(thing.cost * Math.pow(1.1, thing.amount));  
+            nextCost2 = Math.floor(thing.cost2 * Math.pow(1.1, thing.amount)); 
+            nextCost3 = Math.floor(thing.cost3 * Math.pow(1.1, thing.amount)); 
+    document.getElementById(thing.costDisp).innerHTML = nextCost;
+    document.getElementById(thing.costDisp2).innerHTML = nextCost2;
+    document.getElementById(thing.costDisp3).innerHTML = nextCost3;
+      }
+    }
+}
+
+function updateUpgrades() {
+	if (money >= 50) {
+    	document.getElementsByClassName("locked")[0].style.display = "block";
+    }
+}
+
+
+window.setInterval(function(){
+	
+	updateUpgrades();
+	
+}, 5000);
+        
+        </script>
+	</body>
+</html>
