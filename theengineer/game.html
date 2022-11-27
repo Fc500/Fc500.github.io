@@ -1,214 +1,176 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    	<style>
-        .locked {
-        	display: none;
-        }
-        
-        .item {
-        	background-color: lightgrey;
-            border-style: solid;
-            border-width: 1px;
-            padding: 5px;
-            margin-bottom: 5px;
-            margin-top: 5px;
-        }
-        </style>
+        <link href="game.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
 	<body>
-    	<h4>Resources</h4>
-		<button onclick="resourceTick(1, 1)">Mine for resources</button>
-		<p>Money: $<span id="money">0</span></p>
-        <p>Coal: <span id="coal">0</span> lumps</p>
-        <p>Stone: <span id="stone">0</span> blocks</p>
-        <p>Iron: <span id="iron">0</span> lumps</p>
-		<br />
-        
-        <h4>Workers</h4>
-        <div class="item">
-		  <p>You have <span id="cursors">0</span> Miners producing <span id="cursorProduction">0</span> per second.</p>
-		  <p>Miner Cost: $<span id="cursorCost">10</span></p>
-          <button onclick="buyBuilding(miner)">Buy Miner</button>
-        </div>
-        <br />
-        <h4>Market</h4>
-        <div class="item">
-          <p>Stone is currently worth $<span id="coalWorth">0.1</span> per block</p>
-          <button onclick="sellItem(stone, 0)">Sell stone stock</button>
-        </div>
-        <div class="item">
-          <p>Coal is currently worth $<span id="coalWorth">0.5</span> per lump</p>
-          <button onclick="sellItem(coal, 1)">Sell coal stock</button>
-        </div>
-        <div class="item">
-          <p>Iron is currently worth $<span id="ironWorth">1</span> per lump</p>
-          <button onclick="sellItem(iron, 2)">Sell iron stock</button>
-        </div>
-        <br />
-        <h4>Buildings</h4>
-        <div class="locked item">
-        <p>Coal Plant</p>
-        <p>For selling coal automatically. Increases the value of coal by 1%.</p>
-       <p>You have <span id="coalPlant">0</span> coal plants.</p>
-        <p>Plant cost: $<span id="coalCost">150</span>, <span id="coalCost2">250</span> blocks of stone and <span id="coalCost3">10</span> lumps of iron.</p>
-        <button onclick="buyBuilding(coalPlant)">Buy Coal Plant</button>
-        </div>
-        
-		<script type="text/javascript">
+        <main>
+            <section>
+            <h2>Resources</h2>
+                <button onclick="resourceTick(1, 1)">Mine for resources</button>
+                <p>Money: $<span id="money">0</span></p>
+                <p>Coal: <span id="coal">0</span> lumps</p>
+                <p>Stone: <span id="stone">0</span> blocks</p>
+                <p>Iron: <span id="iron">0</span> lumps</p>
+                <br />
+            </section>
 
-        
-let money = 0;
+            <section>
+            <h2>Workers</h2>
+                <div class="item">
+                    <p>You have <span id="miners">0</span> Miner(s) producing <span id="minerProduction">0</span> per second.</p>
+                    <p>Miner Cost: $<span id="minerCost">10</span></p>
+                    <button onclick="buyBuilding(miner)">Buy Miner</button>
+                    </div>
+                <br />
+            </section>
 
-let minerals = {
-	coal: {
-    	amount: 0,
-        worth: 0.5,
-    },
-    stone: {
-    	amount: 0,
-        worth: 0.1,
-    },
-iron: {
-    	amount: 0,
-        worth: 1,
-    },
-}
+            <section>
+            <h2>Buildings</h2>
+                <div class="locked item building" id="coalPlant">
+                    <p>Coal Plant</p>
+                    <p>For selling coal automatically. Increases the value of coal by $1. If there is enough, sells 10 coal every 10 seconds.</p>
+                    <p>You have <span id="coalPlantAmount">0</span> coal plants, selling <span id="coalPlantOutput">0</span> coal.</p>
+                    <p>Plant cost: $<span id="coalCost">150</span>, <span id="coalCost2">250</span> blocks of stone and <span id="coalCost3">10</span> lumps of iron.</p>
+                    <button onclick="buyBuilding(coalPlant)">Buy Coal Plant</button>
+                </div>
 
+                <div class="locked item building" id="naturalGasPlant">
+                    <p>Natural Gas Facility</p>
+                    <p>For selling gas automatically. Increases the value of gas by $10. If there is enough, sells 10 gas every 10 seconds.</p>
+                    <p>You have <span id="coalPlantAmount">0</span> natural gas facilities, selling <span id="coalPlantOutput">0</span> gas.</p>
+                    <p>Plant cost: $<span id="gasCost">2000</span>, <span id="gasCost2">1000</span> blocks of stone and <span id="gasCost3">500</span> lumps of iron.</p>
+                    <button onclick="buyBuilding(coalPlant)">Buy Natural Gas Facility</button>
+                </div>
+                <br />
+            </section>
 
-let miner = {
-    production: 0,
-    perSecond: 0.1,
-	amount: 0,
-    id: 'cursors',
-    costDisp: 'cursorCost',
-    productionDisp: 'cursorProduction',
-    cost: 10,
-    resource: 'money',
-    multipleCosts: false,
-};
+            </main>
 
-let coalPlant = {
-	amount: 0,
-    resource: 'money',
-    resource2: 'stone',
-    resource3: 'iron',
-    cost: 150,
-    cost2: 250,
-    cost3: 10,
-    multipleCosts: true,
-    id: 'coalPlant’,
-    costDisp: 'coalCost',
-    costDisp2: 'coalCost2',
-    costDisp3: 'coalCost3',
-}
+            <main>
 
-function resourceTick(number, resourceInfluenced){
-	switch (resourceInfluenced) {
-    	case 0:
-        	money += number;
-    		document.getElementById("money").innerHTML = money.toFixed(2);
-        
-        break;
-        
-        case 1:
-        	minerals.stone.amount += number;
-    		document.getElementById("stone").innerHTML = minerals.stone.amount.toFixed(1);
-            let oreChance = Math.floor(Math.random() * 10);
-            if (oreChance > 4) {
-            	minerals.coal.amount += number;
-                document.getElementById("coal").innerHTML = minerals.coal.amount.toFixed(1);
-            }
-            
-            if (oreChance > 8) {
-            	minerals.iron.amount += number;
-                document.getElementById("iron").innerHTML = minerals.iron.amount.toFixed(1);
-            }
+                <section>
+                <h2>Market</h2>
+                <div class="item">
+                    <p>Stone is currently worth $<span id="stoneWorth">0.1</span> per block</p>
+                    <button onclick="sellItem(stone, 0)">Sell stone supply</button>
+                </div>
+                <div class="item">
+                    <p>Coal is currently worth $<span id="coalWorth">0.5</span> per lump</p>
+                    <button onclick="sellItem(coal, 1)">Sell coal supply</button>
+                </div>
+                <div class="item">
+                    <p>Iron is currently worth $<span id="ironWorth">1</span> per lump</p>
+                    <button onclick="sellItem(iron, 2)">Sell iron supply</button>
+                </div>
+                <br />
+                </section>
 
+                            
+            <section>
+                <h2>Upgrades</h2>
+                    <div class="locked item" id="upgrade1">
+                        <p>Better pickaxes</p>
+                        <p>Stronger pickaxes for more efficient mining. Increases the output of miners by 2.</p>
+                        <p>Cost: $100</p>
+                        <button onclick="buyUpgrade(0)">Buy</button>
+                    </div>
+    
+                    <div class="locked item" id="upgrade2">
+                        <p>Ultra pickaxes</p>
+                        <p>The great new thing! Even stronger pickaxes for more quicker mining. Increases the output of miners by 2.</p>
+                        <p>Cost: $500</p>
+                        <button onclick="buyUpgrade(1)">Buy</button>
+                    </div>
+    
+                    <div class="locked item" id="upgrade3">
+                        <p>Excavators</p>
+                        <p>The technology is in! Increases the output of miners by 2.</p>
+                        <p>Cost: $1,000</p>
+                        <button onclick="buyUpgrade(2)">Buy</button>
+                    </div>
+    
+                    <div class="locked item" id="upgrade4">
+                        <p>Graders</p>
+                        <p>Big machines for a bigger output. Increases the output of miners by 2.</p>
+                        <p>Cost: $2,000</p>
+                        <button onclick="buyUpgrade(3)">Buy</button>
+                    </div>
+    
+                    <div class="locked item" id="upgrade5">
+                        <p>Blasthole Drills</p>
+                        <p>The best mining machine. Increases the output of miners by 2.</p>
+                        <p>Cost: $10,000</p>
+                        <button onclick="buyUpgrade(4)">Buy</button>
+                    </div>
+    
+                    <div class="locked item" id="upgrade6">
+                        <p>Drills</p>
+                        <p>Massive drills for better stone collection. Increases the collection of stone by 1.5.</p>
+                        <p>Cost: $250</p>
+                        <button onclick="buyUpgrade(5)">Buy</button>
+                    </div>
+    
+                    <div class="locked item" id="upgrade7">
+                        <p>Explosives</p>
+                        <p>Bombs for better stone collection. Increases the collection of stone by 2.</p>
+                        <p>Cost: $500</p>
+                        <button onclick="buyUpgrade(6)">Buy</button>
+                    </div>
+    
+                    
+                    <div class="locked item" id="upgrade8">
+                        <p>Deeper Mines</p>
+                        <p>Mines that stretch deep into the earth for better coal collection. Increases the collection of coal by 1.5.</p>
+                        <p>Cost: $750</p>
+                        <button onclick="buyUpgrade(7)">Buy</button>
+                    </div>
+    
+                    
+                    <div class="locked item" id="upgrade9">
+                        <p>Fracking</p>
+                        <p>Controversial, but effective techniques for better coal collection. Increases the collection of coal by 2.</p>
+                        <p>Cost: $1000</p>
+                        <button onclick="buyUpgrade(8)">Buy</button>
+                    </div>
+    
+                    
+                    <div class="locked item" id="upgrade10">
+                        <p>Scope Lens</p>
+                        <p>Glasses that increase one's ability to see iron. Increases the collection of iron by 2.</p>
+                        <p>Cost: $1,500</p>
+                        <button onclick="buyUpgrade(9)">Buy</button>
+                    </div>
+                
+                    
+                    <div class="locked item" id="upgrade11">
+                        <p>Metalloid Fusion</p>
+                        <p>Cleaning and fusing rocks to get the most iron. Increases the collection of iron by 2.</p>
+                        <p>Cost: $2,500</p>
+                        <button onclick="buyUpgrade(10)">Buy</button>
+                    </div>
+                </section>
 
-break;
-    }
-};multiple
+                <section>
+                <h2>Research</h2>
+                <p>Research Points: <span id="research">0</span></p>
+                <div class="locked item" id="research1">
+                    <p>Natural Gas</p>
+                    <p>Your miners started encountering some gas in the mines! Wonder if it could be useful....</p>
+                    <p>Cost: $250</p>
+                    <button onclick="researchItem(0)">Buy</button>
+                    <div class="w3-light-grey">
+                        <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
+                      </div>
+                      <br>
+                      <button class="w3-button w3-green" onclick="move()">Click Me</button> 
+                </div>
+                </section>
 
-function sellItem(item, resource) {
-
-	switch (resource) {
-    	case 0:
-        money += minerals.stone.worth * minerals.stone.amount;
-        minerals.stone.amount = 0;
-        document.getElementById("money").innerHTML = money.toFixed(2);
-        document.getElementById("stone").innerHTML = minerals.stone.amount.toFixed(1);
-        break;
-        
-    	case 1:
-        money += minerals.coal.worth * minerals.coal.amount;
-        minerals.coal.amount = 0;
-        document.getElementById("money").innerHTML = money.toFixed(2);
-        document.getElementById("coal").innerHTML = minerals.coal.amount.toFixed(1);
-        break;
-        
-        case 2:
-        money += minerals.iron.worth * minerals.iron.amount;
-        minerals.iron.amount = 0;
-        document.getElementById("money").innerHTML = money.toFixed(2);
-        document.getElementById("iron").innerHTML = minerals.iron.amount.toFixed(1);
-        break;
-    }
-
-}
-function buyBuilding(thing) {
-
-	if (thing.multipleCosts == false) {
-    //works out the cost of this cursor
-    if(money >= thing.cost){                                   //checks that the player can afford the cursor
-        thing.amount += 1;                                   //increases number of cursorslocked"
-            
-    	money -= thing.cost;
-        //removes the cookies spent
-        document.getElementById(thing.id).innerHTML = thing.amount;  //updates the number of cursors for the user
-        document.getElementById('money').innerHTML = money.toFixed(2);  //updates the number of cookies for the user
-        
-        thing.production = thing.perSecond * thing.amount;
-    }
-    nextCost = Math.floor(thing.cost * Math.pow(1.1, thing.amount));       //works out the cost of the next cursor
-    document.getElementById(thing.costDisp).innerHTML = nextCost;  //updates the cursor cost for the user
-    document.getElementById(thing.productionDisp).innerHTML = thing.production.toFixed(2);
-    } else {
-    if (money >= thing.cost && minerals.stone.amount >= thing.cost2 && minerals.iron.amount >= thing.cost3) {
-    		thing.amount += 1;
-    		money -= thing.cost;
-            minerals.stone.amount -= thing.cost2;
-            minerals.iron.amount -= thing.cost3;
-            
-            document.getElementById('money').innerHTML = money.toFixed(2);
-            document.getElementById('stone').innerHTML = minerals.stone.toFixed(2);
-            document.getElementById('iron').innerHTML = minerals.iron.toFixed(2);
-            
-            document.getElementById(thing.id).innerHTML = thing.amount; 
-            
-            nextCost = Math.floor(thing.cost * Math.pow(1.1, thing.amount));  
-            nextCost2 = Math.floor(thing.cost2 * Math.pow(1.1, thing.amount)); 
-            nextCost3 = Math.floor(thing.cost3 * Math.pow(1.1, thing.amount)); 
-    document.getElementById(thing.costDisp).innerHTML = nextCost;
-    document.getElementById(thing.costDisp2).innerHTML = nextCost2;
-    document.getElementById(thing.costDisp3).innerHTML = nextCost3;
-      }
-    }
-}
-
-function updateUpgrades() {
-	if (money >= 50) {
-    	document.getElementsByClassName("locked")[0].style.display = "block";
-    }
-}
+            </main>
 
 
-window.setInterval(function(){
-	
-	updateUpgrades();
-	
-}, 5000);
-        
-        </script>
+		<script type="text/javascript" src="game.js"></script>
 	</body>
 </html>
