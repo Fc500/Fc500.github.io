@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <link href="game.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    </head>
+        	<link href="game.css" rel="stylesheet">
+        	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    	</head>
 	<body>
         <main>
             <section>
@@ -15,42 +15,7 @@
                 <p>Iron: <span id="iron">0</span> lumps</p>
                 <br />
             </section>
-
-            <section>
-            <h2>Workers</h2>
-                <div class="item">
-                    <p>You have <span id="miners">0</span> Miner(s) producing <span id="minerProduction">0</span> per second.</p>
-                    <p>Miner Cost: $<span id="minerCost">10</span></p>
-                    <button onclick="buyBuilding(miner)">Buy Miner</button>
-                    </div>
-                <br />
-            </section>
-
-            <section>
-            <h2>Buildings</h2>
-                <div class="locked item building" id="coalPlant">
-                    <p>Coal Plant</p>
-                    <p>For selling coal automatically. Increases the value of coal by $1. If there is enough, sells 10 coal every 10 seconds.</p>
-                    <p>You have <span id="coalPlantAmount">0</span> coal plants, selling <span id="coalPlantOutput">0</span> coal.</p>
-                    <p>Plant cost: $<span id="coalCost">150</span>, <span id="coalCost2">250</span> blocks of stone and <span id="coalCost3">10</span> lumps of iron.</p>
-                    <button onclick="buyBuilding(coalPlant)">Buy Coal Plant</button>
-                </div>
-
-                <div class="locked item building" id="naturalGasPlant">
-                    <p>Natural Gas Facility</p>
-                    <p>For selling gas automatically. Increases the value of gas by $10. If there is enough, sells 10 gas every 10 seconds.</p>
-                    <p>You have <span id="coalPlantAmount">0</span> natural gas facilities, selling <span id="coalPlantOutput">0</span> gas.</p>
-                    <p>Plant cost: $<span id="gasCost">2000</span>, <span id="gasCost2">1000</span> blocks of stone and <span id="gasCost3">500</span> lumps of iron.</p>
-                    <button onclick="buyBuilding(coalPlant)">Buy Natural Gas Facility</button>
-                </div>
-                <br />
-            </section>
-
-            </main>
-
-            <main>
-
-                <section>
+	     <section>
                 <h2>Market</h2>
                 <div class="item">
                     <p>Stone is currently worth $<span id="stoneWorth">0.1</span> per block</p>
@@ -66,8 +31,37 @@
                 </div>
                 <br />
                 </section>
+            </main>
+	    <main>
+	    <section>
+	      <h2>Workers</h2>
+                <div class="item">
+                    <p>You have <span id="miners">0</span> Miner(s) producing <span id="minerProduction">0</span> per second.</p>
+                    <p>Miner Cost: $<span id="minerCost">10</span></p>
+                    <button onclick="buyBuilding(miner)">Buy Miner</button>
+                </div>
+                <br />
+            </section>
+	    
+                <section>
+                <h2>Research</h2>
+                <p>Research Points: <span id="research">0</span></p>
+                <div class="locked item" id="research1">
+                    <p>Natural Gas</p>
+                    <p>Your miners started encountering some gas in the mines! Wonder if it could be useful....</p>
+                    <p>Cost: $250</p>
+                    <button onclick="researchItem(0)">Buy</button>
+                    <div class="w3-light-grey">
+                        <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
+                      </div>
+                      <br>
+                      <button class="w3-button w3-green" onclick="move()">Click Me</button> 
+                    </div>
+                </section>
+		
+	    </main>
 
-                            
+            <main>          
             <section>
                 <h2>Upgrades</h2>
                     <div class="locked item" id="upgrade1">
@@ -152,21 +146,26 @@
                     </div>
                 </section>
 
-                <section>
-                <h2>Research</h2>
-                <p>Research Points: <span id="research">0</span></p>
-                <div class="locked item" id="research1">
-                    <p>Natural Gas</p>
-                    <p>Your miners started encountering some gas in the mines! Wonder if it could be useful....</p>
-                    <p>Cost: $250</p>
-                    <button onclick="researchItem(0)">Buy</button>
-                    <div class="w3-light-grey">
-                        <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
-                      </div>
-                      <br>
-                      <button class="w3-button w3-green" onclick="move()">Click Me</button> 
+		<section>
+            	  <h2>Buildings</h2>
+                  <div class="locked item building" id="coalPlant">
+                    <p>Coal Plant</p>
+                    <p>For selling coal automatically. Increases the value of coal by $1. If there is enough, sells 10 coal every 10 seconds.</p>
+                    <p>You have <span id="coalPlantAmount">0</span> coal plants, selling <span id="coalPlantOutput">0</span> coal.</p>
+                    <p>Plant cost: $<span id="coalCost">150</span>, <span id="coalCost2">250</span> blocks of stone and <span id="coalCost3">10</span> lumps of iron.</p>
+                    <button onclick="buyBuilding(coalPlant)">Buy Coal Plant</button>
+                  </div>
+
+                  <div class="locked item building" id="naturalGasPlant">
+                    <p>Natural Gas Facility</p>
+                    <p>For selling gas automatically. Increases the value of gas by $10. If there is enough, sells 10 gas every 10 seconds.</p>
+                    <p>You have <span id="coalPlantAmount">0</span> natural gas facilities, selling <span id="coalPlantOutput">0</span> gas.</p>
+                    <p>Plant cost: $<span id="gasCost">2000</span>, <span id="gasCost2">1000</span> blocks of stone and <span id="gasCost3">500</span> lumps of iron.</p>
+                    <button onclick="buyBuilding(coalPlant)">Buy Natural Gas Facility</button>
                 </div>
-                </section>
+                <br />
+            </section>
+
 
             </main>
 
