@@ -34,7 +34,7 @@ main {
 }
 
 section {
-    height: 350px;
+    height: 300px;
     background-color: #e1e4e8;
     border: 1px black solid;
     overflow-x: hidden;
