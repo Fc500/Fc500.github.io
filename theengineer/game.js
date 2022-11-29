@@ -1,5 +1,5 @@
 
-let money = 100010;
+let money = 1000000000001;
     let moneyps = 0;
 let rp = 0;
     let rps = 0;
@@ -338,7 +338,7 @@ let researchItems = [
 
 
 window.onload = function loading() {
-    window.alert("v0.38");
+    window.alert("v0.38a");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
@@ -679,7 +679,7 @@ function updateUpgrades() {
     }
     
     if (money >= 10) {
-        addThing(achievementsList[1], 0);
+        addThing(achievementsList[0], 0);
     }
     if (money >= 25) {
 
@@ -718,9 +718,43 @@ function updateUpgrades() {
         unlockUpgrade(10);
     }
 
-    if (money > 1000) {
+    if (money >= 1000) {
         addThing(achievementsList[2], 0);
     }
+
+    if (money >= 10000) {
+        addThing(achievementsList[3], 0);
+    }
+
+    if (money >= 100000) {
+        addThing(achievementsList[4], 0);
+    }
+
+    if (money >= 1000000) {
+        addThing(achievementsList[5], 0);
+    }
+
+    if (money >= 100000000) {
+        addThing(achievementsList[6], 0);
+    }
+
+    if (money >= 1000000000) {
+        addThing(achievementsList[7], 0);
+    }
+
+    if (money >= 10000000000) {
+        addThing(achievementsList[8], 0);
+    }
+
+    if (money >= 1000000000000) {
+        addThing(achievementsList[9], 0);
+    }
+
+
+
+
+
+
 }
 
 window.setInterval(function(){
