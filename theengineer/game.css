@@ -1,3 +1,10 @@
+body {
+  font-family: 'Alata';
+  font-size: 22px; 
+  color: var(--phthalo-blue);
+  background-image: linear-gradient(135deg, var(--gainsboro) 16%, var(--phthalo-blue) 100%);
+}
+
 .locked {
     display: none;
 }

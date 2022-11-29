@@ -283,7 +283,7 @@ var achievementsList = [
 
 
 window.onload = function loading() {
-    window.alert("v0.33");
+    window.alert("v0.34");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
@@ -523,7 +523,7 @@ function thingUnlocked(thing, check) {
     let type = check;
     thing.unlocked = true;
     var hasClass = $('.ach').hasClass('achieved');
-   // window.alert("Achievement Section");
+    window.alert("Achievement Section");
     if (hasClass) return;
     //window.alert("Type = " + type);
     
@@ -549,7 +549,7 @@ function thingUnlocked(thing, check) {
 }
 
 function addThing(thing, check2) {
-    if (!thing.unlocked) {
+    if (!thing.unlocked || check2 == 1) {
       thing.unlocked = true;
       // Create element
       //window.alert("In the addAchievement function");
