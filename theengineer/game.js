@@ -283,7 +283,7 @@ var achievementsList = [
 
 
 window.onload = function loading() {
-    window.alert("v0.34");
+    window.alert("v0.35");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
