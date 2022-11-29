@@ -272,8 +272,8 @@ function resourceTick(number, resourceInfluenced) {
         break;
 
         case 2:
+            rps = number * researcher.perSecond;
             rp += number;
-            rps = number;
             rpDisplay.innerHTML = number;
             rpsDisplay.innerHTML = number;
         break;
@@ -414,11 +414,13 @@ function buyBuilding(thing) {
         moneyDisplay.innerHTML = money.toFixed(2);  //updates the number of cookies for the user
         
         thing.production = thing.perSecond * thing.amount;
+
+        nextCost = Math.floor(thing.cost * Math.pow(1.1, thing.amount));  
+        thing.cost = nextCost;     //works out the cost of the next cursor
+        document.getElementById(thing.costDisp).innerHTML = nextCost;  //updates the cursor cost for the user
+        document.getElementById(thing.productionDisp).innerHTML = thing.production.toFixed(2);
+    
     }
-    nextCost = Math.floor(thing.cost * Math.pow(1.1, thing.amount));  
-    thing.cost = nextCost;     //works out the cost of the next cursor
-    document.getElementById(thing.costDisp).innerHTML = nextCost;  //updates the cursor cost for the user
-    document.getElementById(thing.productionDisp).innerHTML = thing.production.toFixed(2);
     } else {
     if (money >= thing.cost && minerals.stone.amount >= thing.cost2 && minerals.iron.amount >= thing.cost3) {
     		thing.amount += 1;
