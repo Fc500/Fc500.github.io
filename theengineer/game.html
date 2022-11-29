@@ -76,6 +76,12 @@
                         <li>Fixed some bugs with how upgrades worked</li>
                         <li>Added a new worker - The Researcher</li>
                     </ul>
+                    <h2>v0.31</h2>
+                    <ul>
+                        <li>Fixed some more bugs</li>
+                        <li>Made the modals actually open this time</li>
+                        <li>Made some changes to the style of the webpage</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -114,12 +120,12 @@
             </section>
         </main>
 	    <main>
-            <section style="height: 100px;">
-                <button class="floaty">Options</button>
-                <button class="floaty">Statistics</button>
-                <button class="floaty">Information</button>
+            <section style="height: 150px;">
+                <button class="floaty" onclick="document.getElementById('modal01').style.display = 'block'">Options</button>
+                <button class="floaty" onclick="document.getElementById('modal02').style.display = 'block'">Statistics</button>
+                <button class="floaty" onclick="document.getElementById('modal03').style.display = 'block'">Information</button>
             </section>
-	        <section style="height: 500px;">
+	        <section style="height: 450px;">
 	            <h2>Workers</h2>
                     <div class="item">
                         <p>You have <span id="miners">0</span> Miner(s) producing <span id="minerProduction">0</span> minerals per second.</p>
@@ -139,8 +145,8 @@
         <main>          
             <section style="height: 250px;">
                 <div class="tab">
-                    <button class="tablinks" onclick="openTab(event, 'Upgrades')" id="defaultOpen">London</button>
-                    <button class="tablinks" onclick="openTab(event, 'Research')">Paris</button>
+                    <button class="tablinks" onclick="openTab(event, 'Upgrades')" id="defaultOpen">Upgrades</button>
+                    <button class="tablinks" onclick="openTab(event, 'Research')">Research</button>
                 </div>
                   
                 <div id="Upgrades" class="tabcontent">

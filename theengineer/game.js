@@ -21,19 +21,19 @@ let minerals = {
     	amount: 1000,
         worth: 0.5,
         multiplier: 1,
-        ps: 0,
+        ps: 1,
     },
     stone: {
     	amount: 1000,
         worth: 0.1,
         multiplier: 1,
-        ps: 0,
+        ps: 1,
     },
 iron: {
     	amount: 1000,
         worth: 1,
         multiplier: 1,
-        ps: 0,
+        ps: 1,
     },
 }
 
@@ -230,7 +230,7 @@ let researchItems = [
 
 
 window.onload = function loading() {
-    window.alert("v0.30");
+    window.alert("v0.31");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
@@ -335,6 +335,24 @@ function move() {
       }
     }
   }
+
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+
 
 function researchItem(item) {
     if (money >= researchItems[item].cost) {
