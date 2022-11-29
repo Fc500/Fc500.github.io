@@ -15,6 +15,18 @@ let coalDisplay = document.getElementById("coal");
 let ironDisplay = document.getElementById("iron");
     let ironpsDisplay = document.getElementById("ironps");
 
+let upgradeMain = {
+    container: document.getElementById("upgradeContainer"),
+    got: 0,
+    counter: document.getElementById("upgradeCounter"),
+}
+
+let achievementMain = {
+    container: document.getElementById("achContainer"),
+    got: 0,
+    counter: document.getElementById("achCounter"),
+}
+
 
 let minerals = {
 	coal: {
@@ -101,6 +113,8 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 100,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
     },
 
     {
@@ -112,6 +126,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 250,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -123,6 +140,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 1000,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -134,6 +154,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 2000,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -145,6 +168,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 9000,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -156,6 +182,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 150,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -167,6 +196,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 450,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -178,6 +210,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 650,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -189,6 +224,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 650,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -200,6 +238,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 1000,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 
     {
@@ -211,6 +252,9 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 2250,
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+
     },
 ]
 
@@ -226,11 +270,20 @@ let researchItems = [
     },
 ]
 
+var achievementsList = [
+    {
+        name: 'temp1',
+        title: "A warming Earth",
+        flavorText: "It's getting quite warm out there...",
+        unlocked: false,
+    },
+]  
+
 /* FUNCTIONS */
 
 
 window.onload = function loading() {
-    window.alert("v0.32");
+    window.alert("v0.33");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
@@ -369,6 +422,7 @@ function buyUpgrade(upgrade) {
         console.log("Upgrade bought");
         money -= upgrades[upgrade].cost;
         moneyDisplay.innerHTML = money.toFixed(2);
+        addThing(upgrades[upgrade], 1);
 
         switch (upgrades[upgrade].buffType) {
             case 0:
@@ -464,6 +518,68 @@ function buyBuilding(thing) {
 }
 
 
+/* ACHIVEMENTS AND UPGRADES FUNCTIONS */
+function thingUnlocked(thing, check) {
+    let type = check;
+    thing.unlocked = true;
+    var hasClass = $('.ach').hasClass('achieved');
+   // window.alert("Achievement Section");
+    if (hasClass) return;
+    //window.alert("Type = " + type);
+    
+      switch (type) {
+        case 0:
+          //window.alert(type + " worked");
+          $('.title').html("Achievement Unlocked!");
+          $('.detail').html(thing.title);
+          $('.ach').addClass("achieved");
+          setTimeout(function(){
+            $('.ach').removeClass("achieved");
+          },5000)   
+          break; 
+        case 1:
+          //window.alert(type + " worked");
+          $('.title').html("Upgrade Unlocked!");
+          $('.detail').html(thing.title);
+          $('.ach').addClass("achieved");
+          setTimeout(function(){
+            $('.ach').removeClass("achieved");
+          },5000)   
+    }
+}
+
+function addThing(thing, check2) {
+    if (!thing.unlocked) {
+      thing.unlocked = true;
+      // Create element
+      //window.alert("In the addAchievement function");
+      const achBox = document.createElement("div");
+      achBox.innerHTML = "<h4>" + thing.title + "</h4><h6><i>" + thing.flavorText + "</i></h6>";
+      achBox.classList.add("item");
+      // Append to another element:
+      switch (check2) {
+        case 1:
+          upgradeMain.container.appendChild(achBox); 
+          upgradeMain.got +=1;
+          //window.alert(upgradesGot + " Upgrades unlocked");
+          //window.alert(upgradesGot + "Up");
+          upgradeMain.counter.innerHTML = upgradeMain.got;
+          thingUnlocked(thing, 1);
+          break;
+        case 0:
+          achievementMain.container.appendChild(achBox);
+          achievementMain.got += 1;
+          achievementMain.counter.innerHTML = achievementMain.got;
+          thingUnlocked(thing, 0);
+        //window.alert(achievementsGot + " Ach");
+  
+      }
+    }
+  }
+  
+
+    
+
 function unlockUpgrade(upgradeInQuestion) {
     if (upgrades[upgradeInQuestion].unlocked == false && upgrades[upgradeInQuestion].visible == false) {
         document.getElementById(upgrades[upgradeInQuestion].id).classList.remove("locked");
@@ -521,6 +637,7 @@ function updateUpgrades() {
     if (money >= 100) {
         unlockBuilding(coalPlant);
         unlockResearch(0);
+        addThing(achievementsList[0], 0);
     }
 
     if (money >= 250) {

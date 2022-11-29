@@ -2,11 +2,25 @@
 <html>
 	<head>
         	<link href="game.css" rel="stylesheet">
+            <link href="../globalWarmingSimulator/achievements.css"rel="stylesheet">
         	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     	</head>
 	<body>
 
         <!-- MODALS -->
+
+        <!-- Achivements Notification -->
+
+        <div class="ach">
+            <div class="icon"><i class="fa fa-flag" aria-hidden="true"><span class="material-icons">
+              flag
+              </span></i></div>
+            <div class="text_wrap">
+              <p class="title"></p>
+              <span class="detail"></span>
+            </div>
+          </div>
+      
 
         <!-- Settings Modal -->
         <div id="modal01" class="w3-modal">
@@ -28,9 +42,17 @@
                     <span onclick="document.getElementById('modal02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                     <h2 class="w3-text-white">Statistics</h2>
                 </header>
-                <div class="w3-container" style="height: 400px;">
+                <div class="w3-container scrollable" style="height: 400px;">
                     <p>You have made $<span id="totalMoney"></span> in total!</p>
                     <p>This section is mostly going to be about player achievements, upgrades and, well, statistics.</p>
+
+                    <h3>Achievements</h3>
+                    <p>You have unlocked <span id="achCounter">0</span> out of 1 achievements.</p>
+                    <div id="achContainer"></div>
+
+                    <h3>Upgrades</h3>
+                    <p>You have unlocked <span id="upgradeCounter">0</span> out of X upgrades.</p>
+                    <div id="upgradeContainer"></div>
                 </div>
             </div>
         </div>
