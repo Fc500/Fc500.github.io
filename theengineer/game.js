@@ -258,6 +258,69 @@ let upgrades = [
     },
 ]
 
+var achievementsList = [
+    {
+        title: "The start of something new",
+        flavorText: "A new beginning right? Make $10.",
+        unlocked: false,
+    },
+
+    {
+        title: "Pocket Change",
+        flavorText: "The money is rolling in! Make $100.",
+        unlocked: false,
+    },
+
+    {
+        title: "Rollin' in Dough",
+        flavorText: "Money bath! Make $1,000.",
+        unlocked: false,
+    },
+
+    {
+        title: "Scridge MacDonald",
+        flavorText: "Avoiding copyright is key! Make $10,000.",
+        unlocked: false,
+    },
+
+    {
+        title: "The Businessman",
+        flavorText: "Wow, you know your stuff! Make $100,000.",
+        unlocked: false,
+    },
+
+    {
+        title: "Adventure Capitalist",
+        flavorText: "Sounds like some video game huh? Make $1,000,000.",
+        unlocked: false,
+    },
+
+    {
+        title: "Jaff Bozos",
+        flavorText: "You are now richer than that one dude! Make $100,000,000.",
+        unlocked: false,
+    },
+
+    {
+        title: "The Wolf of Wall Street",
+        flavorText: "Not even the US Federal Reserve stands a chance! Make $1,000,000,000.",
+        unlocked: false,
+    },
+
+    {
+        title: "The end of something old",
+        flavorText: "The end of a beginning? You have so much wealth, reality itself is collapsing. Make $100,000,000,000.",
+        unlocked: false,
+    },
+
+    {
+        title: "The Engineer",
+        flavorText: "Hey, it's the name of the game! Make $1,000,000,000,000.",
+        unlocked: false,
+    },
+
+]  
+
 let researchItems = [
     {
         name: 'gas',
@@ -270,20 +333,12 @@ let researchItems = [
     },
 ]
 
-var achievementsList = [
-    {
-        name: 'temp1',
-        title: "A warming Earth",
-        flavorText: "It's getting quite warm out there...",
-        unlocked: false,
-    },
-]  
 
 /* FUNCTIONS */
 
 
 window.onload = function loading() {
-    window.alert("v0.37");
+    window.alert("v0.38");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
@@ -623,6 +678,9 @@ function updateUpgrades() {
         unlockBuilding(researcher);
     }
     
+    if (money >= 10) {
+        addThing(achievementsList[1], 0);
+    }
     if (money >= 25) {
 
         // upgrade 1
@@ -639,7 +697,7 @@ function updateUpgrades() {
     if (money >= 100) {
         unlockBuilding(coalPlant);
         unlockResearch(0);
-        addThing(achievementsList[0], 0);
+        addThing(achievementsList[1], 0);
     }
 
     if (money >= 250) {
@@ -658,6 +716,10 @@ function updateUpgrades() {
         unlockUpgrade(8);
         unlockUpgrade(9);
         unlockUpgrade(10);
+    }
+
+    if (money > 1000) {
+        addThing(achievementsList[2], 0);
     }
 }
 
