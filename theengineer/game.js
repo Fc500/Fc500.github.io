@@ -113,7 +113,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 100,
-        title: "A warming Earth",
+        title: "Better pickaxes",
         flavorText: "It's getting quite warm out there...",
     },
 
@@ -126,7 +126,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 250,
-        title: "A warming Earth",
+        title: "Ultra pickaxes",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -140,7 +140,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 1000,
-        title: "A warming Earth",
+        title: "Excavators",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -154,7 +154,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 2000,
-        title: "A warming Earth",
+        title: "Graders",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -168,7 +168,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 9000,
-        title: "A warming Earth",
+        title: "Blasthold Drills",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -182,7 +182,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 150,
-        title: "A warming Earth",
+        title: "Drills",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -196,7 +196,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 450,
-        title: "A warming Earth",
+        title: "Explosives",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -210,7 +210,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 650,
-        title: "A warming Earth",
+        title: "Deeper Mines",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -224,7 +224,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 650,
-        title: "A warming Earth",
+        title: "Fracking",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -238,7 +238,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 1000,
-        title: "A warming Earth",
+        title: "Scope Lens",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -252,7 +252,7 @@ let upgrades = [
         unlocked: false,
         visible: false,
         visibleThreshhold: 2250,
-        title: "A warming Earth",
+        title: "Metalloid Fusion",
         flavorText: "It's getting quite warm out there...",
 
     },
@@ -422,7 +422,6 @@ function buyUpgrade(upgrade) {
         console.log("Upgrade bought");
         money -= upgrades[upgrade].cost;
         moneyDisplay.innerHTML = money.toFixed(2);
-        addThing(upgrades[upgrade], 1);
 
         switch (upgrades[upgrade].buffType) {
             case 0:
@@ -451,6 +450,9 @@ function buyUpgrade(upgrade) {
 
         let removal = document.getElementById(upgrades[upgrade].id);
         removal.remove();
+
+        addThing(upgrades[upgrade], 1);
+
     }
 }
 
