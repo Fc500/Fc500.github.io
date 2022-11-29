@@ -1,5 +1,5 @@
 
-let money = 1000000000001;
+let money = 1000;
     let moneyps = 0;
 let rp = 0;
     let rps = 0;
@@ -338,7 +338,7 @@ let researchItems = [
 
 
 window.onload = function loading() {
-    window.alert("v0.38a");
+    window.alert("v0.38b");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
