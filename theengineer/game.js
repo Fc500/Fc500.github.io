@@ -1,26 +1,39 @@
 
 let money = 100010;
+    let moneyps = 0;
+let rp = 0;
+    let rps = 0;
 
 let moneyDisplay = document.getElementById("money");
+    let moneypsDisplay = document.getElementById("moneyps");
+let rpDisplay = document.getElementById("rp");
+    let rpsDisplay = document.getElementById("rps");
 let stoneDisplay = document.getElementById("stone");
+    let stonepsDisplay = document.getElementById("stoneps");
 let coalDisplay = document.getElementById("coal");
+    let coalpsDisplay = document.getElementById("coalps");
 let ironDisplay = document.getElementById("iron");
+    let ironpsDisplay = document.getElementById("ironps");
+
 
 let minerals = {
 	coal: {
     	amount: 1000,
         worth: 0.5,
         multiplier: 1,
+        ps: 0,
     },
     stone: {
     	amount: 1000,
         worth: 0.1,
         multiplier: 1,
+        ps: 0,
     },
 iron: {
     	amount: 1000,
         worth: 1,
         multiplier: 1,
+        ps: 0,
     },
 }
 
@@ -36,6 +49,20 @@ let miner = {
     resource: 'money',
     multipleCosts: false,
 };
+
+let researcher = {
+    production: 0,
+    perSecond: 0.1,
+    amount: 0,
+    id: 'researchers',
+    costDisp: 'researcherCost',
+    productionDisp: 'researcherProduction',
+    cost: 100,
+    resource: 'money',
+    multipleCosts: false,
+    unlocked: false,
+    visible: true,
+}
 
 let coalPlant = {
 	amount: 0,
@@ -203,7 +230,7 @@ let researchItems = [
 
 
 window.onload = function loading() {
-    window.alert("v0.27");
+    window.alert("v0.30");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
@@ -215,26 +242,41 @@ function resourceTick(number, resourceInfluenced) {
 	switch (resourceInfluenced) {
     	case 0:
         	money += number;
+            moneyps = number;
+            moneypsDisplay.innerHTML = moneyps.toFixed(2);
     		moneyDisplay.innerHTML = money.toFixed(2);
         
         break;
         
         case 1:
         	minerals.stone.amount += number * minerals.stone.multiplier;
+            minerals.stone.ps = number * minerals.stone.multiplier;
+            stonepsDisplay.innerHTML = minerals.stone.ps.toFixed(1);
     		stoneDisplay.innerHTML = minerals.stone.amount.toFixed(1);
             let oreChance = Math.floor(Math.random() * 10);
+
             if (oreChance > 3) {
             	minerals.coal.amount += number * minerals.coal.multiplier;
+                minerals.coal.ps = number * minerals.coal.multiplier;
+                coalpsDisplay.innerHTML = minerals.coal.ps.toFixed(1);
                 coalDisplay.innerHTML = minerals.coal.amount.toFixed(1);
             }
-            
             if (oreChance > 7) {
             	minerals.iron.amount += number * minerals.iron.multiplier;
+                minerals.iron.ps = number * minerals.iron.multiplier;
+                ironpsDisplay.innerHTML = minerals.iron.ps.toFixed(1);
                 ironDisplay.innerHTML = minerals.iron.amount.toFixed(1);
             }
 
 
-break;
+        break;
+
+        case 2:
+            rp += number;
+            rps = number;
+            rpDisplay.innerHTML = number;
+            rpsDisplay.innerHTML = number;
+        break;
     }
 };
 
@@ -436,6 +478,10 @@ function unlockBuilding(biq) {
 }
 
 function updateUpgrades() {
+    // Buildings at the start of the game
+    if (money >= 0) {
+        unlockBuilding(researcher);
+    }
     
     if (money >= 25) {
 
@@ -477,6 +523,7 @@ function updateUpgrades() {
 window.setInterval(function(){
 	
 	resourceTick(miner.production, 1);
+    resourceTick(researcher.production, 3);
 	
 }, 1000);
         

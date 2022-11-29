@@ -5,17 +5,98 @@
         	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     	</head>
 	<body>
+
+        <!-- MODALS -->
+
+        <!-- Settings Modal -->
+        <div id="modal01" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom w3-card-4">
+                <header class="w3-container w3-gray"> 
+                    <span onclick="document.getElementById('modal01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h2 class="w3-text-white">Settings</h2>
+                </header>
+                <div class="w3-container" style="height: 400px;">
+                    <p>Coming soon! This will include things about saving and loading data, and maybe even CSS preferences in the future!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Modal -->
+        <div id="modal02" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom w3-card-4">
+                <header class="w3-container w3-gray"> 
+                    <span onclick="document.getElementById('modal02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h2 class="w3-text-white">Statistics</h2>
+                </header>
+                <div class="w3-container" style="height: 400px;">
+                    <p>You have made $<span id="totalMoney"></span> in total!</p>
+                    <p>This section is mostly going to be about player achievements, upgrades and, well, statistics.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Modal -->
+        <div id="modal03" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom w3-card-4">
+                <header class="w3-container w3-gray"> 
+                    <span onclick="document.getElementById('modal03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h2 class="w3-text-white">Information</h2>
+                </header>
+                <div class="w3-container" style="height: 400px;">
+                    <p>General information about the game.</p>
+                    <h2>v0.01</h2>
+                    <ul>
+                        <li>The Engineer officially enters development!</li>
+                        <li>Added a total of three upgrades</li>
+                        <li>Added one worker</li>
+                        <li>Added the three main resources</li>
+                    </ul>
+                    <h2>v0.05</h2>
+                    <ul>
+                        <li>Stylized the page a bit</li>
+                        <li>Fixed some bugs with the miner class</li>
+                        <li>Started working on some behind-the-scenes stuff to make adding new things easier</li>
+                        <li>Added one building - Coal Plant, to sell coal automatically</li>
+                    </ul>
+                    <h2>v0.27</h2>
+                    <ul>
+                        <li>Made a method of making upgrades easily</li>
+                        <li>Added ten (I think) new upgrades</li>
+                        <li>Stylized the game even more, I think it looks better now</li>
+                        <li>Revamped the Coal Plant building - it now acts as intended</li>
+                        <li>Added the research tab!</li>
+                    </ul>
+                    <h2>v0.30</h2>
+                    <ul>
+                        <li>Complete graphical overhaul</li>
+                        <li>Added a new building - Gas Plant</li>
+                        <li>Added research points as a currency</li>
+                        <li>Added display sections for seeing how much of a thing per second you're making</li>
+                        <li>Rearranged how the sections are layed out</li>
+                        <li>Fixed some bugs with how upgrades worked</li>
+                        <li>Added a new worker - The Researcher</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
         <main>
-            <section>
+            <section style="height: 200px;">
             <h2>Resources</h2>
                 <button onclick="resourceTick(1, 1)">Mine for resources</button>
                 <p>Money: $<span id="money">0</span></p>
+                <h6>You are making $<span id="moneyps">0</span> per second</h6>
                 <p>Coal: <span id="coal">0</span> lumps</p>
+                <h6>You are finding <span id="coalps">1</span> lump(s) of coal at a time.</h6>
                 <p>Stone: <span id="stone">0</span> blocks</p>
-                <p>Iron: <span id="iron">0</span> lumps</p>
+                <h6>You are finding <span id="stoneps">1</span> block(s) of stone at a time.</h6>
+                <p>Iron: <span id="iron">0</span> ingots</p>
+                <h6>You are finding <span id="ironps">1</span> ingot(s) of iron at a time.</h6>
                 <br />
             </section>
-	     <section>
+	        <section style="height: 400px;">
                 <h2>Market</h2>
                 <div class="item">
                     <p>Stone is currently worth $<span id="stoneWorth">0.1</span> per block</p>
@@ -26,44 +107,44 @@
                     <button onclick="sellItem(coal, 1)">Sell coal supply</button>
                 </div>
                 <div class="item">
-                    <p>Iron is currently worth $<span id="ironWorth">1</span> per lump</p>
+                    <p>Iron is currently worth $<span id="ironWorth">1</span> per ingot</p>
                     <button onclick="sellItem(iron, 2)">Sell iron supply</button>
                 </div>
                 <br />
-                </section>
-            </main>
-	    <main>
-	    <section>
-	      <h2>Workers</h2>
-                <div class="item">
-                    <p>You have <span id="miners">0</span> Miner(s) producing <span id="minerProduction">0</span> per second.</p>
-                    <p>Miner Cost: $<span id="minerCost">10</span></p>
-                    <button onclick="buyBuilding(miner)">Buy Miner</button>
-                </div>
-                <br />
             </section>
-	    
-                <section>
-                <h2>Research</h2>
-                <p>Research Points: <span id="research">0</span></p>
-                <div class="locked item" id="research1">
-                    <p>Natural Gas</p>
-                    <p>Your miners started encountering some gas in the mines! Wonder if it could be useful....</p>
-                    <p>Cost: $250</p>
-                    <button onclick="researchItem(0)">Buy</button>
-                    <div class="w3-light-grey">
-                        <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
-                      </div>
-                      <br>
-                      <button class="w3-button w3-green" onclick="move()">Click Me</button> 
+        </main>
+	    <main>
+            <section style="height: 100px;">
+                <button class="floaty">Options</button>
+                <button class="floaty">Statistics</button>
+                <button class="floaty">Information</button>
+            </section>
+	        <section style="height: 500px;">
+	            <h2>Workers</h2>
+                    <div class="item">
+                        <p>You have <span id="miners">0</span> Miner(s) producing <span id="minerProduction">0</span> minerals per second.</p>
+                        <p>Miner Cost: $<span id="minerCost">10</span></p>
+                        <button onclick="buyBuilding(miner)">Buy Miner</button>
                     </div>
-                </section>
-		
+                    <div class="item">
+                        <p>You have <span id="researchers">0</span> Researcher(s) producing <span id="researcherProduction">0</span> research points per second.</p>
+                        <p>Researcher Cost: $<span id="researcherCost">200</span></p>
+                        <button onclick="buyBuilding(researcher)">Buy Researcher</button>
+                    </div>
+
+                <br />
+            </section>		
 	    </main>
 
-            <main>          
-            <section>
-                <h2>Upgrades</h2>
+        <main>          
+            <section style="height: 250px;">
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'Upgrades')" id="defaultOpen">London</button>
+                    <button class="tablinks" onclick="openTab(event, 'Research')">Paris</button>
+                </div>
+                  
+                <div id="Upgrades" class="tabcontent">
+                    <h2>Upgrades</h2>
                     <div class="locked item" id="upgrade1">
                         <p>Better pickaxes</p>
                         <p>Stronger pickaxes for more efficient mining. Increases the output of miners by 2.</p>
@@ -144,15 +225,34 @@
                         <p>Cost: $2,500</p>
                         <button onclick="buyUpgrade(10)">Buy</button>
                     </div>
-                </section>
+                </div>
+                  
+                <div id="Research" class="tabcontent">
+                    <h2>Research</h2>
+                    <p>Research Points: <span id="rp">0</span> (<span id="rps">0</span> per second)</span></p>
+                    <div class="locked item" id="research1">
+                        <p>Natural Gas</p>
+                        <p>Your miners started encountering some gas in the mines! Wonder if it could be useful....</p>
+                        <p>Cost: $250</p>
+                        <button onclick="researchItem(0)">Buy</button>
+                        <div class="w3-light-grey">
+                            <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
+                          </div>
+                          <br>
+                          <button class="w3-button w3-green" onclick="move()">Click Me</button> 
+                        </div>
+    
+                </div>
+                  
+        </section>
 
-		<section>
+		<section style="height: 350px;">
             	  <h2>Buildings</h2>
                   <div class="locked item building" id="coalPlant">
                     <p>Coal Plant</p>
                     <p>For selling coal automatically. Increases the value of coal by $1. If there is enough, sells 10 coal every 10 seconds.</p>
                     <p>You have <span id="coalPlantAmount">0</span> coal plants, selling <span id="coalPlantOutput">0</span> coal.</p>
-                    <p>Plant cost: $<span id="coalCost">150</span>, <span id="coalCost2">250</span> blocks of stone and <span id="coalCost3">10</span> lumps of iron.</p>
+                    <p>Plant cost: $<span id="coalCost">150</span>, <span id="coalCost2">250</span> blocks of stone and <span id="coalCost3">10</span> iron ingots.</p>
                     <button onclick="buyBuilding(coalPlant)">Buy Coal Plant</button>
                   </div>
 
@@ -160,7 +260,7 @@
                     <p>Natural Gas Facility</p>
                     <p>For selling gas automatically. Increases the value of gas by $10. If there is enough, sells 10 gas every 10 seconds.</p>
                     <p>You have <span id="coalPlantAmount">0</span> natural gas facilities, selling <span id="coalPlantOutput">0</span> gas.</p>
-                    <p>Plant cost: $<span id="gasCost">2000</span>, <span id="gasCost2">1000</span> blocks of stone and <span id="gasCost3">500</span> lumps of iron.</p>
+                    <p>Plant cost: $<span id="gasCost">2000</span>, <span id="gasCost2">1000</span> blocks of stone and <span id="gasCost3">500</span> iron ingots.</p>
                     <button onclick="buyBuilding(coalPlant)">Buy Natural Gas Facility</button>
                 </div>
                 <br />
