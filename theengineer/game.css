@@ -18,6 +18,18 @@ body {
     margin-top: 5px;
 }
 
+.achievements {
+  background-color: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 50%;
+  display: block;
+  float: left;
+}
+
 .blur {
     filter: blur(8px);
     -webkit-filter: blur(8px);

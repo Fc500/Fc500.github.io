@@ -283,7 +283,7 @@ var achievementsList = [
 
 
 window.onload = function loading() {
-    window.alert("v0.36");
+    window.alert("v0.37");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
@@ -556,8 +556,8 @@ function addThing(thing, check2) {
       // Create element
       //window.alert("In the addAchievement function");
       const achBox = document.createElement("div");
-      achBox.innerHTML = "<div style='width: 50%; float: left; display: block;'><h4>" + thing.title + "</h4><h6><i>" + thing.flavorText + "</i></h6></div>";
-      achBox.classList.add("item");
+      achBox.innerHTML = "<h4>" + thing.title + "</h4><h6><i>" + thing.flavorText + "</i></h6>";
+      achBox.classList.add("achievements");
       // Append to another element:
       switch (check2) {
         case 1:
