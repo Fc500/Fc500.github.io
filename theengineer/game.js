@@ -230,7 +230,7 @@ let researchItems = [
 
 
 window.onload = function loading() {
-    window.alert("v0.31");
+    window.alert("v0.32");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
@@ -277,6 +277,7 @@ function resourceTick(number, resourceInfluenced) {
             rpDisplay.innerHTML = number;
             rpsDisplay.innerHTML = number;
         break;
+
     }
 };
 
@@ -414,7 +415,8 @@ function buyBuilding(thing) {
         
         thing.production = thing.perSecond * thing.amount;
     }
-    nextCost = Math.floor(thing.cost * Math.pow(1.1, thing.amount));       //works out the cost of the next cursor
+    nextCost = Math.floor(thing.cost * Math.pow(1.1, thing.amount));  
+    thing.cost = nextCost;     //works out the cost of the next cursor
     document.getElementById(thing.costDisp).innerHTML = nextCost;  //updates the cursor cost for the user
     document.getElementById(thing.productionDisp).innerHTML = thing.production.toFixed(2);
     } else {
@@ -541,7 +543,7 @@ function updateUpgrades() {
 window.setInterval(function(){
 	
 	resourceTick(miner.production, 1);
-    resourceTick(researcher.production, 3);
+    resourceTick(researcher.production, 2);
 	
 }, 1000);
         
