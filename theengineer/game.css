@@ -125,3 +125,7 @@ section {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.color1 {
+  filter: invert(55%) sepia(58%) saturate(442%) hue-rotate(341deg) brightness(88%) contrast(86%);
+}
