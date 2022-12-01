@@ -338,7 +338,7 @@ let researchItems = [
 
 
 window.onload = function loading() {
-    window.alert("v0.38e");
+    window.alert("v0.38f");
     moneyDisplay.innerHTML = money;
     stoneDisplay.innerHTML = minerals.stone.amount;
     coalDisplay.innerHTML = minerals.coal.amount;
