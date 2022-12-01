@@ -119,7 +119,6 @@
         <main>
             <section style="height: 400px;">
             <h2>Resources</h2>
-            <img src="gold-ingots-svgrepo-com.svg" width="30" height="30" class="color1"> </img>
                 <button onclick="resourceTick(1, 1)">Mine for resources</button>
                 <p>Money: $<span id="money">0</span></p>
                 <h6>You are making $<span id="moneyps">0</span> per second</h6>
@@ -181,9 +180,12 @@
                 <div id="Upgrades" class="tabcontent">
                     <h2>Upgrades</h2>
                     <div class="locked item" id="upgrade1">
-                        <p>Better pickaxes</p>
-                        <p>Stronger pickaxes for more efficient mining. Increases the output of miners by 2.</p>
-                        <p>Cost: $100</p>
+                        <img src="gold-ingots-svgrepo-com.svg" width="60" height="60" class="color1" style="display: block; float: left;"> </img>
+                        <div class="upgradeStyle">
+                            <p>Better pickaxes</p>
+                            <p>Stronger pickaxes for more efficient mining. Increases the output of miners by 2.</p>
+                            <p>Cost: $100</p>
+                        </div>
                         <button onclick="buyUpgrade(0)">Buy</button>
                     </div>
     
