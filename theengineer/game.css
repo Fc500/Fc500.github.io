@@ -169,8 +169,10 @@ section {
 
 .color1 {
   filter: invert(55%) sepia(58%) saturate(442%) hue-rotate(341deg) brightness(88%) contrast(86%);
+  background-image: url("gold-ingots-svgrepo-com.svg");
 }
 
 .color2 {
   filter: invert(73%) sepia(39%) saturate(1249%) hue-rotate(3deg) brightness(111%) contrast(98%);
+  background-image: url("gold-ingots-svgrepo-com.svg");
 }
