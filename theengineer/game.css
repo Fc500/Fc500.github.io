@@ -130,7 +130,8 @@ section {
   display: block;
   float: left;
   font-size: 10px;
-  height: 75px;
+  height: 175px;
+  width: 75%;
 }
 .color1 {
   filter: invert(55%) sepia(58%) saturate(442%) hue-rotate(341deg) brightness(88%) contrast(86%);
