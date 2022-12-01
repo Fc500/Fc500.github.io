@@ -126,13 +126,53 @@ section {
   overflow-y: auto;
 }
 
-.upgradeStyle {
+.upgradeBox {
   display: block;
   float: left;
-  font-size: 10px;
-  height: 175px;
-  width: 75%;
+  width: 48%;
+  margin: 1%;
 }
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  right: 110%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.5);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 .color1 {
   filter: invert(55%) sepia(58%) saturate(442%) hue-rotate(341deg) brightness(88%) contrast(86%);
+}
+
+.color2 {
+  filter: invert(73%) sepia(39%) saturate(1249%) hue-rotate(3deg) brightness(111%) contrast(98%);
 }

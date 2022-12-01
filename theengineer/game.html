@@ -179,21 +179,24 @@
                   
                 <div id="Upgrades" class="tabcontent">
                     <h2>Upgrades</h2>
-                    <div class="locked item" id="upgrade1" style="width: 49%; display: block; float: left;">
-                        <img src="gold-ingots-svgrepo-com.svg" class="color1" style="display: block; float: left; width: 25%;"> </img>
-                        <div class="upgradeStyle">
+                    <div class="locked item tooltip upgradeBox" id="upgrade1">
+                        <img src="gold-ingots-svgrepo-com.svg" class="color1" style="width: 100%;"> </img>
+                        <div class="tooltiptext">
                             <p>Better pickaxes</p>
                             <p>Stronger pickaxes for more efficient mining. Increases the output of miners by 2.</p>
                             <p>Cost: $100</p>
+                            <button onclick="buyUpgrade(0)">Buy</button>
                         </div>
-                        <button onclick="buyUpgrade(0)">Buy</button>
                     </div>
     
-                    <div class="locked item" id="upgrade2">
-                        <p>Ultra pickaxes</p>
-                        <p>The great new thing! Even stronger pickaxes for more quicker mining. Increases the output of miners by 2.</p>
-                        <p>Cost: $500</p>
-                        <button onclick="buyUpgrade(1)">Buy</button>
+                    <div class="locked item tooltip upgradeBox" id="upgrade2">
+                        <img src="gold-ingots-svgrepo-com.svg" class="color2" style="width: 100%;"> </img>
+                        <div class="tooltiptext">
+                            <p>Ultra pickaxes</p>
+                            <p>The great new thing! Even stronger pickaxes for more quicker mining. Increases the output of miners by 2.</p>
+                            <p>Cost: $500</p>
+                            <button onclick="buyUpgrade(1)">Buy</button>
+                        </div>
                     </div>
     
                     <div class="locked item" id="upgrade3">
