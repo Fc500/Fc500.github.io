@@ -1,1 +1,331 @@
 <!-- On a seperate editor for a while :) -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#garden {
+  background-color: #7a5132;
+}
+
+.plot {
+	background-image: url("https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png");
+    background-size: cover;
+    text-align: center;
+    
+}
+
+section {
+	background-color: #e6e1e1;
+    float: left;
+    display: block;
+    width: 95%;
+    margin: 1%;
+  	padding: 1%;
+}
+</style>
+</head>
+<body>
+<h2>Money: <span id="moneyDisp">$500</span></h2>
+<button onclick="switchFunction(0)">Garden</button>
+<button onclick="switchFunction(1)">Stock</button>
+<button onclick="switchFunction(2)">Market</button>
+
+<section>
+<h3>Garden</h3>
+<label for="berry-selector">Choose a berry:</label>
+<select name="berry-selector" id="berry-selector">
+  <option value="bulb">Bulb</option>
+  <option value="bliss">Bliss</option>
+  <option value="crin">Crin</option>
+  <option value="rack">Rack</option>
+
+</select>
+<table id="garden"></table>
+</section>
+
+<section style="display: none">
+<h3>Stock</h3>
+<p>Bulb Berries: <b><span id="bulb-berr-disp">0</span></b></p>
+<p>Bliss Berries: <b><span id="bliss-berr-disp">0</span></b></p>
+<p>Crin Berries: <b><span id="crin-berr-disp">0</span></b></p>
+<p>Rack Berries: <b><span id="rack-berr-disp">0</span></b></p>
+</section>
+
+<section style="display: none">
+<p>Coming Soon!</p>
+</section>
+</body>
+<script>
+let money = 500;
+
+const moneyDisp = document.getElementById("moneyDisp");
+
+const berrySelector = document.getElementById("berry-selector");
+
+
+const bulbDisp = document.getElementById("bulb-berr-disp");
+const blissDisp = document.getElementById("bliss-berr-disp");
+const crinDisp = document.getElementById("crin-berr-disp");
+const rackDisp = document.getElementById("rack-berr-disp");
+
+const notifDisp = document.getElementById("notification-box");
+const notifCounter = document.getElementById("notification-counter");
+let notifsActive = 0;
+let ntf;
+
+let gardenRows;
+let gardenPlots = [];
+let gardenPlotsIndex = [];
+let garden = {
+	// Technical stuff
+    object: document.getElementById("garden"),
+    objectId: "garden",
+    
+    // Variables
+    size: 2,
+}
+
+const berries = {
+    "bulb": {
+        ageOneSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb_1.png')",
+        ageTwoSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb_2.png')",
+        ageThreeSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb_3.png')",
+        ageFourSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb_4.png')",
+        ageFiveSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb_5.png')",
+        
+        price: 10,
+        amount: 0,
+    	
+    },
+    
+    "bliss": {
+    	ageOneSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bliss_1.png')",
+        ageTwoSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bliss_2.png')",
+        ageThreeSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bliss_3.png')",
+        ageFourSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bliss_4.png')",
+        ageFiveSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bliss_5.png')",
+          price: 50,
+        amount: 0,
+    
+    },
+    
+    "crin": {
+    
+    },
+    
+    "rack": {
+    
+    },
+}
+
+// Currency formatter
+
+let moneyFormatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    notation: 'compact',
+});
+
+window.onload = function loading() {
+    makePlots(garden.size);
+    window.alert("v0.13");
+}
+
+function switchFunction(chosenSection) {
+    let sections = document.getElementsByTagName("section");
+for (let i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";     
+    } 
+    sections[chosenSection].style.display = "block";
+  } 
+
+function generateNotif(header, text) {
+
+	notifDisp.innerHTML += `<div class="notif" onclick="this.remove(); removeNotif();">
+    	<h3>${header}</h3>
+    	<p>${text}, ${notifsActive}</p>
+    	</div>`;
+    
+    notifsActive++;
+    
+    if (notifsActive < 5) {
+    
+    ntf = notifsActive * 60;
+    
+    notifDisp.style.height = `${ntf}px`;
+    
+    } else {
+    
+    notifCounter.innerHTML =  `${notifsActive} notifs`;
+    
+    }
+
+}
+
+function removeNotif() {
+	let shortHand = notifDisp.offsetHeight;
+    shortHand -= 60;
+    notifDisp.style.height = shortHand + 'px';
+    notifsActive -= 1;
+    
+    if (notifDisp.style.height == undefined) {
+    	notifDisp.style.height = "0px";
+    }
+}
+
+function setUpGarden() {
+	switch (garden.size) {
+		case 1: 
+			garden.object.style.width = "100px";
+    		garden.object.style.height = "100px";
+    		break;
+        case 2:
+        	garden.object.style.width = "250px";
+    		garden.object.style.height = "250px";
+        	break;
+        case 3:
+        	garden.object.style.width = "500px";
+    		garden.object.style.height = "500px";
+        	break;
+       case 4:
+        	garden.object.style.width = "750px";
+    		garden.object.style.height = "750px";
+        	break;
+	}
+}
+
+function makePlots(size) {
+let arrayIndex = 0;
+	for (let i = 0; i < size * 2; i++) {
+    	let gardenPlotRow = document.createElement("tr");
+gardenPlotRow.setAttribute("id", i);
+        for (let j = 0; j < size * 2; j++) {
+            
+            let gpId = Math.floor(Math.random() * 9999);
+            gardenPlotRow.innerHTML += `<td class='plot' id='${gpId}' onclick='makePlant(${arrayIndex}, this)'>`
+            //${gpId} | ${arrayIndex}</td>`;
+            gardenPlotsIndex.push(arrayIndex);
+            
+            
+            let plant = {
+    			id: gpId,
+        		arrayId: arrayIndex,
+        		age: -1,
+        		type: "none",
+                price: 0,
+    		} 
+    
+    		gardenPlots.push(plant);
+            
+            arrayIndex++;
+		}
+        garden.object.appendChild(gardenPlotRow);
+	}  
+    setUpGarden();
+
+gardenRows = document.getElementById("garden").rows;   
+}
+
+
+
+function makePlant(arrayInd, cell) {
+
+	let plot = gardenPlots[arrayInd];
+    
+    if (plot.age >= 0) {
+    	window.alert("There's a plant there!");
+        harvestPlants(plot);
+    } else {
+    let chosenBerry = berrySelector.value;
+    
+    if (money >= berries[chosenBerry].price) {
+    
+    money -= berries[chosenBerry].price;
+    moneyDisp.innerHTML = moneyFormatter.format(money);
+    
+		let text = "A " + chosenBerry + " berry was planted in plot " + arrayInd;
+    	plot.age = 0;
+    	plot.type = chosenBerry;
+        
+    	cell.style.backgroundSize = "cover";
+    //window.alert("Plant Index: " + gardenPlotsIndex);
+    //window.alert("Plant Objects: " + gardenPlots);
+window.alert(text);
+    } else {
+    	window.alert("Not enough money to plant!");
+    }  
+    }
+}
+
+function harvestPlants(selectedPlot) {
+
+	if (selectedPlot.age >= 5) {
+    	window.alert("Harvested!");
+        selectedPlot.age = -1;
+        berries[selectedPlot.type].amount++;
+        window.alert(berries[selectedPlot.type].amount);
+        document.getElementById(selectedPlot.id).style.backgroundImage = "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png')";
+        
+        document.getElementById(`${selectedPlot.type}-berr-disp`).innerHTML = berries[selectedPlot.type].amount;
+        
+    } else {
+    	window.alert("Berry is not ready to be harvested!");
+    }
+
+}
+
+function checkPlants() {
+	for (let i = 0; i < gardenPlotsIndex.length; i++) {
+    	let plot = gardenPlots[i];
+        // Plant logic  
+        if (plot.age > -1) {
+        plot.age++;
+        switch (plot.age) {
+            	case 1: 
+document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageOneSprite;
+				window.alert("Plant found in plot " + plot.arrayId);
+				break;
+                
+				case 2:        
+                	document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageTwoSprite;
+                break;
+                
+                case 3:       
+                	document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageThreeSprite;	
+		            break;
+                
+                case 4:      
+                	document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageFourSprite;	
+                  break;
+                
+                case 5:      
+                	document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageFiveSprite;
+                  break;
+				        case 6:   
+                  document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageFourSprite;	
+                  break;
+                
+                case 7:    
+                	document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageThreeSprite;
+                break;
+                
+                case 8:
+                window.alert("A plant died in plot " + plot.arrayId);
+                document.getElementById(plot.id).style.backgroundImage = "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png')";
+                plot.age = -1;
+            } 
+ 		}
+        
+    }
+}
+
+function checkMoney() {
+
+	moneyDisp.innerHTML = moneyFormatter.format(money);
+    
+}
+let checkPlantTimer = setInterval(checkPlants, 5000);
+let checkMoneyTimer = setInterval(checkMoney, 1000);
+</script>
+</html> 
