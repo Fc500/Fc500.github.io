@@ -13,17 +13,23 @@ html {
 }
 #garden {
   background-color: #7a5132;
+  border: 2px solid white;
 }
 
 .plot {
 	background-image: url("https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png");
     background-size: cover;
     text-align: center;
+    border: 2px solid #ad6403;
     
 }
 
 section {
 	background-color: #e6e1e1;
+    background-image: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_1.png');
+    background-size: cover;
+    border: 5px solid black;
+    color: white;
     float: left;
     display: block;
     width: 95%;
@@ -49,8 +55,7 @@ margin: 1%;
     width: 90%;
     margin-left: 3%;
     margin-bottom: 10px;
-    border: 10px solid transparent;
-  	border-image: url("https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/border_1.png") 20% stretch;
+    border: 5px solid gold;
     background-image: url("https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_1.png");
     background-size: cover;
 }
@@ -75,11 +80,28 @@ margin: 1%;
 }
 
 .navbar {
-	background-color: #e6e1e1;
-    margin-left: 1%;
-    width: 70%;
-    padding: 5px;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
+
+.navbar button {
+  float: left;
+  display: block;
+}
+
+.navbar button:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.navbar button.chosen {
+  background-color: #04AA6D;
+  color: white;
+}
+
 
 .accordion {
   background-color: #eee;
@@ -119,16 +141,28 @@ margin: 1%;
   transition: max-height 0.2s ease-out;
 }
 
+
 .half-section {
 	background-color: #eee;
+    color: white;
+    background-image: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_3.png');
+    background-size: cover;
+    border: 5px solid black;
     display: block;
     float: left;
-    width: 45%;
+    width: 43%;
     height: 250px;
     margin: 1%;
     padding: 1%;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.half-section h3 {
+	background-color: #7a5132;
+    padding: 3px;
+    border: 4px solid black;
+    text-align: center;
 }
 
 
@@ -185,6 +219,8 @@ font-size: 16px;
 
 .block-image {
 	background-color: #eddbbb;
+    background-image: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_2.png');
+
     width: 75%;
     border: 3px solid black;
     display: block;
@@ -192,27 +228,49 @@ font-size: 16px;
     margin-right: auto;
 }
 
+.block {
+	display: block;
+    float: left;
+}
+
+.seedTile {
+  width: 64px;
+  height: 64px;
+  display: block;
+  float: left;
+  margin: 5px;
+  }
+
 </style>
 </head>
 <body>
 <h2>Money: <span id="moneyDisp">$500</span></h2>
 <div class="navbar">
-<button onclick="switchFunction(0)" class="stylized_button">Garden</button>
-<button onclick="switchFunction(1)" class="stylized_button">Stock</button>
-<button onclick="switchFunction(2)" class="stylized_button">Market</button>
+<button onclick="switchFunction(0)" class="stylized_button chosen navChild">Garden</button>
+<button onclick="switchFunction(1)" class="stylized_button navChild">Stock</button>
+<button onclick="switchFunction(2)" class="stylized_button navChild">Market</button>
 </div>
 
 <section>
 <h3>Garden</h3>
-<label for="berry-selector">Choose a berry:</label>
-<select name="berry-selector" id="berry-selector">
-  <option value="bulb">Bulb</option>
-  <option value="bliss">Bliss</option>
-  <option value="crin">Crin</option>
-  <option value="rack">Rack</option>
-
-</select>
+<div style="width: 52%;" class="block">
 <table id="garden"></table>
+</div>
+
+<div style="width: 45%; background-image: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png'); background-size: cover; color: white;" class="block">
+
+<h3>Choose a berry: <span id="berry-selector">None</span></h3>
+
+<div>
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') 0 0; background-size: 300%;"></div>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') -64px 0; background-size: 300%;"></div>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') -128px 0; background-size: 300%;"></div>
+<img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb.png" class="block" style="width: 33%;" onclick="berrySelector.innerHTML = 'Bulb'">  
+<img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bliss.png" class="block" style="width: 33%;" onclick="berrySelector.innerHTML = 'Bliss'">  
+</div>
+</div>
 </section>
 
 <section style="display: none">
@@ -270,6 +328,7 @@ font-size: 16px;
     </div>
 
 </section>
+
 
 <div id="notification-box">
 <p id="notification-counter"></p>
@@ -368,7 +427,6 @@ let moneyFormatter = new Intl.NumberFormat('en-US', {
 
 window.onload = function loading() {
     makePlots(garden.size);
-    window.alert("v0.45");
     
     var acc = document.getElementsByClassName("accordion");
 var i;
@@ -388,10 +446,13 @@ for (i = 0; i < acc.length; i++) {
 
 function switchFunction(chosenSection) {
     let sections = document.getElementsByTagName("section");
+    let sectVis = document.getElementsByClassName("navChild");
 for (let i = 0; i < sections.length; i++) {
-        sections[i].style.display = "none";     
+        sections[i].style.display = "none";
+        sectVis[i].classList.remove("chosen");
     } 
     sections[chosenSection].style.display = "block";
+    sectVis[chosenSection].classList.add("chosen");
   } 
 
 function generateNotif(header, text) {
@@ -404,9 +465,9 @@ notifsActive++;
     
     
     
-    if (notifsActive < 4) {
+    if (notifsActive < 3) {
     
-    ntf = notifsActive * 60;
+    ntf = notifsActive * 100;
     
     notifDisp.style.height = `${ntf}px`;
     
@@ -423,7 +484,7 @@ function removeNotif() {
     notifsActive -= 1;
     
   	if (notifsActive < 3) {
-    	shortHand -= 60;
+    	shortHand -= 100;
 notifDisp.style.height = shortHand + 'px';
     }
  
@@ -492,7 +553,7 @@ function makePlant(arrayInd, cell) {
     if (plot.age >= 0) {
         harvestPlants(plot);
     } else {
-    let chosenBerry = berrySelector.value;
+    let chosenBerry = berrySelector.innerHTML.toLowerCase();
     
     if (berries[chosenBerry].seedAmount > 0) {
     
@@ -603,6 +664,6 @@ function updateNotif() {
 }
 let checkPlantTimer = setInterval(checkPlants, 5000);
 let checkMoneyTimer = setInterval(checkMoney, 1000);
-let fhwyegu = setInterval(updateNotif, 10000);
+let deleteNotifsCheck = setInterval(updateNotif, 10000);
 </script>
-</html> 
+</html>
