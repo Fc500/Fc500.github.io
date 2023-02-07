@@ -31,7 +31,7 @@ const berries = {
         ageFiveSprite: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb_5.png')",
         
         price: 10,
-        amount: 0,
+amount: 0,
         seedAmount: 0,
         saDisp: document.getElementById("bulb-berr-seed"),
         amountDisp: document.getElementById("bulb-berr-disp"),
@@ -54,7 +54,7 @@ seedAmount: 0,
     
     "crin": {
     	price: 100,
-        amount: 0,
+amount: 0,
         seedAmount: 0,
     	amountDisp: document.getElementById("crin-berr-disp"),
     
@@ -82,7 +82,6 @@ window.onload = function loading() {
     
     var acc = document.getElementsByClassName("accordion");
 var i;
-
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -109,8 +108,7 @@ for (let i = 0; i < sections.length; i++) {
 
 function generateNotif(header, text) {
 notifsActive++;
-
-	notifDisp.innerHTML += `<div class="notif" onclick="this.remove(); removeNotif();">
+notifDisp.innerHTML += `<div class="notif" onclick="this.remove(); removeNotif();">
     	<h3>${header}</h3>
     	<p>${text}</p>
     	</div>`;
@@ -131,6 +129,37 @@ notifsActive++;
 
 }
 
+function selectBerry(berry, id) {
+	berrySelector.innerHTML = berry; 
+    let berryId = document.getElementsByClassName('seedTile');
+    
+    for (let i = 0; i < berryId.length; i++) {
+    	    
+    berryId[i].style.border = 'none'; 
+    }
+    
+    
+    berryId[id].style.border = '2px solid white'; 
+}
+
+function openNav(nav, nav2) {
+
+  let navbars = document.getElementsByClassName("sidenavs");
+  
+  navbars[nav].style.width = `${nav2}%`;
+  
+  //document.html.style.backgroundColor = "rgba(0,0,0,0.4)";
+  
+}
+
+function closeNav(nav) {
+  let navbars = document.getElementsByClassName("sidenavs");
+  navbars[nav].style.width = "0";
+  
+  //document.html.style.backgroundColor = "white";
+}
+
+
 function removeNotif() {
 	let shortHand = notifDisp.offsetHeight;
     notifsActive -= 1;
@@ -148,20 +177,20 @@ notifDisp.style.height = shortHand + 'px';
 function setUpGarden() {
 	switch (garden.size) {
 		case 1: 
-			garden.object.style.width = "100px";
-    		garden.object.style.height = "100px";
+			garden.object.style.width = "250px";
+    		garden.object.style.height = "250px";
     		break;
         case 2:
-        	garden.object.style.width = "250px";
-    		garden.object.style.height = "250px";
-        	break;
-        case 3:
-        	garden.object.style.width = "500px";
+garden.object.style.width = "500px";
     		garden.object.style.height = "500px";
         	break;
-       case 4:
+        case 3:
         	garden.object.style.width = "750px";
     		garden.object.style.height = "750px";
+        	break;
+       case 4:
+        	garden.object.style.width = "1000px";
+    		garden.object.style.height = "1000px";
         	break;
 	}
 }
@@ -179,7 +208,7 @@ gardenPlotRow.setAttribute("id", i);
             
             
             let plant = {
-    			id: gpId,
+id: gpId,
         		arrayId: arrayIndex,
         		age: -1,
         		type: "none",
@@ -206,7 +235,6 @@ function makePlant(arrayInd, cell) {
         harvestPlants(plot);
     } else {
     let chosenBerry = berrySelector.innerHTML.toLowerCase();
-    
     if (berries[chosenBerry].seedAmount > 0) {
     
     berries[chosenBerry].seedAmount -= 1;
@@ -233,7 +261,7 @@ function harvestPlants(selectedPlot) {
         selectedPlot.age = -1;
         berries[selectedPlot.type].amount++;
         console.log(berries[selectedPlot.type].amount);
-        document.getElementById(selectedPlot.id).style.backgroundImage = "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png')";
+document.getElementById(selectedPlot.id).style.backgroundImage = "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png')";
         
         berries[selectedPlot.type].amountDisp.innerHTML = berries[selectedPlot.type].amount;
         
@@ -251,7 +279,7 @@ function checkPlants() {
         plot.age++;
 switch (plot.age) {
             	case 1: 
-document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageOneSprite;
+document.getElementById(plot.id).style.background += berries[plot.type].ageOneSprite;
 				generateNotif("Plant found!", `Plant found in plot ${plot.arrayId}`);
 				break;
                 
@@ -260,11 +288,11 @@ document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageO
                 break;
                 
                 case 3:       
-                	document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageThreeSprite;	
+document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageThreeSprite;	
 		break;
                 
                 case 4:      
-                	document.getElementById(plot.id).style.backgroundImage = berries[plot.type].ageFourSprite;	
+                	document.getElementById(plot.id).style.backgroundImage += berries[plot.type].ageFourSprite;	
                 break;
                 
                 case 5:      
@@ -314,6 +342,7 @@ function updateNotif() {
     
     
 }
+
 let checkPlantTimer = setInterval(checkPlants, 5000);
 let checkMoneyTimer = setInterval(checkMoney, 1000);
-let deleteNotifsCheck = setInterval(updateNotif, 10000);
+let fhwyegu = setInterval(updateNotif, 10000);

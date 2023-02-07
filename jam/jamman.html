@@ -1,38 +1,64 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
-<link href='jamman.css' rel='stylesheet'>
+<link href="jamman.css" rel="stylesheet">
 </head>
 <body>
-<h2>Money: <span id="moneyDisp">$500</span></h2>
-<div class="navbar">
-<button onclick="switchFunction(0)" class="stylized_button chosen navChild">Garden</button>
-<button onclick="switchFunction(1)" class="stylized_button navChild">Stock</button>
-<button onclick="switchFunction(2)" class="stylized_button navChild">Market</button>
+<div style="left: 0; height: 15vh;" class="mininav">
+<h3 style="cursor:pointer;" onclick="openNav(1, 75); closeNav(0)"> Menu &#9776;</h3>
 </div>
 
-<section>
-<h3>Garden</h3>
-<div style="width: 52%;" class="block">
-<table id="garden"></table>
+<div style="right: 0; height: 50vh; overflow-y: scroll; overflow-x: hidden; width: 10%;" class="mininav smallnav">
+<h4 style="cursor:pointer;" onclick="openNav(0, 50); closeNav(1)"> Berries &#9776;</h4>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') 0 0; background-size: 300%;" onclick="selectBerry('Bulb', 0)"></div>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') -64px 0; background-size: 300%;" onclick="selectBerry('Bliss', 1)"></div>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') -128px 0; background-size: 300%;" onclick="selectBerry('Crin', 2)"></div>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') 0 -64px; background-size: 300%;" onclick="selectBerry('Rack', 3)"></div>
+
+</div>
+<div class="sidenav sidenavs" style="right: 0px;">
+<a href="javascript:void(0)" class="closebtn" style="left: 5px;" onclick="closeNav(0)">&times;</a>
+
 </div>
 
-<div style="width: 45%; height: 70%; background-image: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png'); background-size: cover; color: white;" class="block">
 
-<h3>Choose a berry: <span id="berry-selector">None</span></h3>
+<div class="sidenav sidenavs" style="left: 0px;">
+  <a href="javascript:void(0)" class="closebtn" style="right: 5px;" onclick="closeNav(1)">&times;</a>
+  <h3>Menu</h3>
+<button onclick="switchFunction(0)" class="stylized_button navChild">Stock</button>
 
-<div style="height: 100%;">
-<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') 0px -6px; background-size: 300%;"></div>
+<button onclick="switchFunction(1)" class="stylized_button navChild">Market</button>
 
-<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') -64px 0; background-size: 300%;"></div>
 
-<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') -128px 0; background-size: 300%;"></div>
-<img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb.png" class="block" style="width: 33%;" onclick="berrySelector.innerHTML = 'Bulb'">  
-<img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bliss.png" class="block" style="width: 33%;" onclick="berrySelector.innerHTML = 'Bliss'">  
-</div>
-</div>
+
+<section style="display: block">
+	<h3>BUY</h3>
+	<div class="half-section">
+    <h3>Seeds</h3>
+<div style="width: 44%; display: block; float: left; margin: 2%;">
+    <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb.png" class="block-image">  
+	<button class="block-image outfit" onclick="buySeed('bulb')">Buy</button>
+	</div> 
+    <div style="width: 44%; display: block; float: left; margin: 2%; background-color: red;">
+      <img src="aah" class="block-image">  
+      <button class="block-image outfit" onclick="buySeed('bliss')">Buy</button>
+    </div>
+
+    </div>
+    <div class="half-section">
+    <h3>Sell</h3>
+    <h4>Sell Product</h4>
+    <button>Sell Bulb Berry</button>
+    </div>
+
+
 </section>
 
 <section style="display: none">
@@ -48,12 +74,11 @@
 <div class="panel">
   <p>Amount: <b><span id="bliss-berr-disp">0</span></b></p>
   <p>Seeds: <b><span id="bliss-berr-seed">0</span></b></p>
-
 </div>
 
 <button class="accordion">Crin Berry</button>
 <div class="panel">
-  <p>Amount: <b><span id="crin-berr-disp">0</span></b></p>
+<p>Amount: <b><span id="crin-berr-disp">0</span></b></p>
   <p>Seeds: <b><span id="crin-berr-seed">0</span></b></p>
 
 </div>
@@ -63,35 +88,28 @@
   <p>Amount: <b><span id="rack-berr-disp">0</span></b></p>
   <p>Seeds: <b><span id="rack-berr-seed">0</span></b></p>
 </div>
-
-
-
 </section>
 
-<section style="display: none">
-	<h3>BUY</h3>
-	<div class="half-section">
-    <h3>Seeds</h3>
-<div style="width: 44%; display: block; float: left; margin: 2%;">
-    <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb.png" class="block-image">  
-	<button class="block-image outfit" onclick="buySeed('bulb')">Purchase</button>
-	</div> 
-    <div style="width: 44%; display: block; float: left; margin: 2%;">
-    <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bliss.png" class="block-image">
-    <button class="block-image outfit" onclick="buySeed('bliss')">Purchase</button>
-    </div>
-    </div>
-   
-    
-    <div class="half-section">
-    <h3>Sell</h3>
-    <h4>Sell Product</h4>
-    <button>Sell Bulb Berry</button>
-    </div>
+</div>
 
-</section>
+<div class="navbar">
 
+<div style="float: left; color: white; display: block; margin-right: 1%;">
+</div>
 
+<div style="width: 85%; color: white; display: block; float: left; overflow-x: scroll; overflow-y: hidden;" class="block">
+<div style="display: block; float: left; margin-right: 5%; margin-left: 1%;">
+<h2>Choose a seed: <span id="berry-selector">None</span></h2>
+</div>
+<h2 style="display: block; float: left; color: white;">Money: <span id="moneyDisp">$500</span></h2>
+</div>
+
+</div>
+
+<div>
+<div style="width: 52%;" class="block">
+<table id="garden"></table>
+</div>
 <div id="notification-box">
 <p id="notification-counter"></p>
 </div>
@@ -108,4 +126,4 @@
 -->
 </body>
 <script src="jamman.js" type="text/javascript"></script>
-</html>
+
