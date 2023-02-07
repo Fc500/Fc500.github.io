@@ -42,14 +42,25 @@
 	<h3>BUY</h3>
 	<div class="half-section">
     <h3>Seeds</h3>
-<div style="width: 44%; display: block; float: left; margin: 2%;">
-    <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/bulb.png" class="block-image">  
-	<button class="block-image outfit" onclick="buySeed('bulb')">Buy</button>
-	</div> 
-    <div style="width: 44%; display: block; float: left; margin: 2%; background-color: red;">
-      <img src="aah" class="block-image">  
+    <div style="width: 44%; display: block; float: left; margin: 2%;">
+      <div style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png'), url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_2.png'); background-size: 300%, cover; background-position: 0 0;" class="block-image-sprite"></div>
       <button class="block-image outfit" onclick="buySeed('bliss')">Buy</button>
-    </div>
+    </div> 
+
+  <div style="width: 44%; display: block; float: left; margin: 2%;">
+    <div style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png'), url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_2.png'); background-size: 300%, cover; background-position: -100px 0;" class="block-image-sprite"></div>
+	  <button class="block-image outfit" onclick="buySeed('bliss')">Buy</button>
+	</div> 
+
+  <div style="width: 44%; display: block; float: left; margin: 2%;">
+    <div style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png'), url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_2.png'); background-size: 300%, cover; background-position: -200px 0;" class="block-image-sprite"></div>
+	  <button class="block-image outfit" onclick="buySeed('crin')">Buy</button>
+	</div> 
+
+  <div style="width: 44%; display: block; float: left; margin: 2%;">
+    <div style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png'), url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_2.png'); background-size: 300%, cover; background-position: 0 -96px;" class="block-image-sprite"></div>
+	  <button class="block-image outfit" onclick="buySeed('rack')">Buy</button>
+	</div> 
 
     </div>
     <div class="half-section">
@@ -106,9 +117,19 @@
 
 </div>
 
-<div>
+<div style="width: 100%;">
 <div style="width: 52%;" class="block">
 <table id="garden"></table>
+</div>
+<div style="width: 32%; margin-left: 15%; background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dirt.png'); background-size: 92px; background-repeat: repeat; display: block;" class="block berryDex">
+<p>Berries</p>
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') 0 0; background-size: 300%;" onclick="selectBerry('Bulb', 0)"></div>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') -64px 0; background-size: 300%;" onclick="selectBerry('Bliss', 1)"></div>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') -128px 0; background-size: 300%;" onclick="selectBerry('Crin', 2)"></div>
+
+<div class="seedTile" style="background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seed_spritesheet_a.png') 0 -64px; background-size: 300%;" onclick="selectBerry('Rack', 3)"></div>
 </div>
 <div id="notification-box">
 <p id="notification-counter"></p>

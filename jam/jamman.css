@@ -273,10 +273,21 @@ background-color: #6c7c7c;
 .block-image {
 background-color: #eddbbb;
   background-image: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/background_2.png');
+  background-size: cover;
 
   width: 75%;
   border: 3px solid black;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-image-sprite {
+  width: 96px;
+  height: 96px;
+  border: 3px solid black;
+  display: block;
+  margin-bottom: 1%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -314,8 +325,16 @@ background-size: 300%;
 width: 64px;
 height: 64px;
 }
-@media only screen and (min-width: 800px) {
+
+@media only screen and (min-width: 900px) {
 .smallnav {
   display: none;
+}
+
+.berryDex {
+  display: block;
+}
+#garden {
+  margin-left: 30%;
 }
 }
