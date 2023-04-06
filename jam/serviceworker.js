@@ -4,7 +4,8 @@ const assets = [
   "/jamman.html",
   "/jamman.css",
   "/jamman.js",
-  "/berries"
+  "/berries/icon-96x96.png"
+  "/berries/icon-512x512.png"
 ]
 
 self.addEventListener("install", installEvent => {
