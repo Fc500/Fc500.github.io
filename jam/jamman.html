@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
+  <link href="jamman.css" rel="stylesheet">
+
+  <link rel="manifest" href="manifest.json" />
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="/icon-192x192.png" />
+  <link rel="apple-touch-icon" href="/icon-512x512.png" />
+  <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+  <meta name="theme-color" content="#db4938" />
+  <title>The Jammaker</title>
+</head>
+<body>
+
+<div style="left: 0; border: 2px solid white; height: 90%; overflow-x: hidden; overflow-y: auto;" class="mininav">
+<!--<h3 style="cursor:pointer;" onclick="openNav(1, 75); closeNav(0)"> Menu &#9776;</h3>-->
+  <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/shop_icon.png" width="50%" onclick="openModal(1, '', '', '')">
+  <h3>Shop</h3>
+  <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/storage_icon.png" width="50%" onclick="openModal(2, '', '', '')">
+  <h4>Storage</h4>
+  <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/sell_icon_sub.png" width="50%" onclick="openModal(3, '', '', '')">
+  <h3>Market</h3>
+  <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/create_icon.png" width="50%" onclick="openModal(4, '', '', '')">
+  <h3>Create</h3>
+  <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/dex_icon.png" width="50%" onclick="openNav(0, 30)">
+  <h3>Berry Dex</h3>
+</div>
+
+
+
+
+
+
+
+<div style="width: 50%; height: 100%; display: inline-block; margin-left: auto; margin-right: auto;">
+  <table id="garden"></table>
+</div>
+
+
+<!-- Garden, Berry sidenavs, Berry Dex, Notification Box -->
+<div class="gardenPanel, worlds" style="height: 100%;">
+
+  <!-- The Garden -->
+
+  <!-- Berry selection menu for larger screens -->
+  <div class="mininav berryDex" style="right: 0; width: 30%;">
+    <h2 style="color: white; margin-left: 2%;">Berries</h2>
+    <h3 style="display: block; float: left; color: white;"><span id="berry-selector">None</span></h3>
+    <br>
+    <br>
+    <br>
+    <div class="seedTile spritesheetA" style="background-position: 0 0;" onclick="selectBerry('Bulb', 0)"></div>
+    <div class="seedTile spritesheetA" style="background-position: -64px 0;" onclick="selectBerry('Bliss', 1)"></div>
+    <div class="seedTile spritesheetA" style="background-position: -128px 0;" onclick="selectBerry('Crin', 2)"></div>
+    <div class="seedTile spritesheetA" style="background-position: -192px;" onclick="selectBerry('Rack', 3)"></div>
+    
+    <div style="width: 85%; color: white; display: block; float: left; overflow-x: scroll; overflow-y: hidden; border: 2px solid white" class="block">
+      <h2 style="display: block; float: left; color: white;">Money: <span id="moneyDisp">$500</span></h2>
+    </div>
+  </div>
+
+<!-- Berry selection menu for small screens -->
+<div style="right: 0; height: 50vh; overflow-y: scroll; overflow-x: hidden; width: 12.5%; margin-right: 0.5%;" class="mininav smallnav">
+  <div class="seedTile spritesheetA" onclick="selectBerry('Bulb', 4)"></div>
+  <div class="seedTile spritesheetA" style="background-position: -64px 0;" onclick="selectBerry('Bliss', 5)"></div>
+  <div class="seedTile spritesheetA" style="background-position: -128px 0;" onclick="selectBerry('Crin', 6)"></div>
+  <div class="seedTile spritesheetA" style="background-position: -192px;" onclick="selectBerry('Rack', 7)"></div>
+</div>
+
+
+  <!-- Berry Dex -->
+<div class="sidenav sidenavs" style="right: 0px">
+  <a href="javascript:void(0)" class="closebtn" style="left: 5px;" onclick="closeNav(0)">&times;</a>
+
+  <div>
+    <h2>Berry Dex</h2>
+    <div class="spritesheetA block" style="background-position: 0 0; border: 3px solid white; width: 64px; height: 64px;"></div>
+    <div class="block" style="margin-left: 5%">
+    <h3>Bulb Berry</h3>
+    <p>The most basic of all berries. Its fruit is very nutritious and a staple of gardens everywhere.</p>
+    </div>
+
+    </div>
+
+    <div>
+    <div class="spritesheetA block" style="background-position: -64px 0; border: 3px solid white; width: 64px; height: 64px;"></div>
+    <div class="block" style="margin-left: 5%">
+    <h3>Bliss Berry</h3>
+    <p>A more rare berry with a bittersweet taste. Commonly used in jams.</p>
+    </div>
+    </div>
+
+    <div>
+    <div class="spritesheetA block" style="background-position: -128px 0; border: 3px solid white; width: 64px; height: 64px;"></div>
+    <div class="block" style="margin-left: 5%">
+    <h3>Crin Berry</h3>
+    <p>An extremely unique berry due to its properties of growing two plants from a single seed. Its orgins are unknown.</p>
+    </div>
+    </div>
+
+    <div>
+    <div class="spritesheetA block" style="background-position: -192px 0; border: 3px solid white; width: 64px; height: 64px;"></div>
+    <div class="block" style="margin-left: 5%">
+    <h3>Rack Berry</h3>
+    <p>Despite having the appearance of a vegtable, this berry is in fact a fruit. Has a more dry, rough texture. It is an aquired taste.</p>
+    </div>
+  </div>
+
+</div>
+
+
+  <div id="notification-box">
+    <p id="notification-counter"></p>
+  </div>
+</div>
+
+
+
+<div id="modalContainer" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-close">&times;</span>
+      <h2 id="modal-header">Modal Header</h2>
+    </div>
+    <div class="modal-body">
+      <p id="modal-body">Some text in the Modal Body</p>
+    </div>
+    <div class="modal-footer">
+      <h3 id="modal-footer">Modal Footer</h3>
+    </div>
+  </div>
+
+  <!-- Shop -->
+  <div class="modal-content menu-option">
+    <span class="modal-close">&times;</span>
+    <div style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
+      <h1 style="font-size: 50px;">Shop</h1>
+      <button onclick="setBulk(1)">Buy One</button><button onclick="setBulk(10)">Buy 10</button><button onclick="setBulk(-1)">Buy Max</button>
+    </div>
+    <h1>Seeds</h1>
+    <!-- Shop DIVS -->
+    <div>
+      <div class="shop-option">
+        <h2>Bulb Seeds</h2>
+        <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seeds_icon.png" width="75%" class="align">
+        <button onclick="buySeed('bulb')">Purchase</button>
+      </div>
+
+      <div class="shop-option">
+        <h2>Bliss Seeds</h2>
+        <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seeds_icon.png" width="75%" class="align">
+        <button onclick="buySeed('bliss')">Purchase</button>
+      </div>
+
+      <div class="shop-option">
+        <h2>Crin Seeds</h2>
+        <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seeds_icon.png" width="75%" class="align">
+        <button onclick="buySeed('crin')">Purchase</button>
+      </div>
+
+      <div class="shop-option">
+        <h2>Rack Seeds</h2>
+        <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seeds_icon.png" width="75%" class="align">
+        <button onclick="buySeed('rack')">Purchase</button>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Storage -->
+  <div class="modal-content menu-option">
+    <span class="modal-close">&times;</span>
+    
+    <div style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
+      <h1 style="font-size: 50px;">Storage</h1>
+    </div>
+
+    <div style="width: 45%; display: inline-block;">
+      <button class="accordion">Bulb Berry</button>
+      <div class="panel">
+        <h3>Berries: <b><span id="bulb-berr-disp">0</span></b></h3>
+        <h3>Seeds: <b><span id="bulb-berr-seed">0</span></b></h3>
+
+      </div>
+      <button class="accordion">Bliss Berry</button>
+      <div class="panel">
+        <h3>Berries: <b><span id="bliss-berr-disp">0</span></b></h3>
+        <h3>Seeds: <b><span id="bliss-berr-seed">0</span></b></h3>
+      </div>
+    </div>
+
+    <div style="width: 45%; display: inline-block">
+      <button class="accordion">Crin Berry</button>
+      <div class="panel">
+      <h3>Berries: <b><span id="crin-berr-disp">0</span></b></h3>
+        <h3>Seeds: <b><span id="crin-berr-seed">0</span></b></h3>
+
+      </div>
+
+      <button class="accordion">Rack Berry</button>
+      <div class="panel">
+        <h3>Berries: <b><span id="rack-berr-disp">0</span></b></h3>
+        <h3>Seeds: <b><span id="rack-berr-seed">0</span></b></h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Market -->
+  <div class="modal-content menu-option">
+    <span class="modal-close">&times;</span>
+    <div style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
+      <h1 style="font-size: 50px;">Market</h1>
+      <button>Sell berries</button><button>Sell jam</button>
+    </div>
+
+  </div>
+
+  <!-- Create Jam -->
+  <div class="modal-content menu-option">
+    <span class="modal-close">&times;</span>
+    <div style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
+      <h1 style="font-size: 50px;">Create Jam</h1>
+    </div>
+    <div style="width: 100%">
+      <div style="width: 25%" class="block">
+        <p>Bulb</p>
+        <p>Bliss</p>
+        <p>Crin</p>
+        <p>Rack</p>
+      </div>
+      <div style="width: 75%" class="block">
+        <div class="create-jam-bg" onclick="selectJam(0)"></div>
+        <div class="create-jam-bg" onclick="selectJam(1)"></div>
+        <div class="create-jam-bg" onclick="selectJam(2)"></div>
+        <div class="create-jam-bg" onclick="selectJam(3)"></div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!--
+<div class="dropdown">
+
+<button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+-->
+
+<script src="jamman.js" type="text/javascript"></script>
+</body>
