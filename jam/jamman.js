@@ -1,10 +1,15 @@
 //window.alert("v0.53");
 
-let money = 1500;
+let money = 100;
 
 const moneyDisp = document.getElementById("moneyDisp");
 
 const berrySelector = document.getElementById("berry-selector");
+const berryId = document.getElementsByClassName('seedTile');
+
+const jamImg = document.getElementsByClassName("create-jam-bg");
+const makeJamButton = document.getElementById("jamMakerButton");
+
 
 const modals = document.getElementsByClassName("modal-content");
 const modalContent = document.getElementById("modal-header");
@@ -35,7 +40,7 @@ let garden = {
 }
 const berries = {
     "bulb": {
-        spritesheet: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/spritesheet_test.png')",
+        spritesheet: "url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/spritesheet_bulb.png')",
         spritesheetPos: 0,
         price: 10,
         amount: 5,
@@ -218,15 +223,21 @@ notifCounter.innerHTML =  `${notifsActive} notifs`;
 }
 
 function selectBerry(berry, id) {
-	berrySelector.innerHTML = berry; 
-    let berryId = document.getElementsByClassName('seedTile');
-    
-    for (let i = 0; i < berryId.length; i++) {
-        berryId[i].style.border = 'none'; 
+
+    if (berrySelector.innerHTML != berry) {
+        console.log("Chosen berry: " + berry + " | Berry HTML: " + berrySelector.innerHTML);
+        berrySelector.innerHTML = berry;         
+        for (let i = 0; i < berryId.length; i++) {
+            berryId[i].style.border = 'none'; 
+        }
+        
+        
+        berryId[id].style.border = '2px solid white'; 
+    } else {
+        berryId[id].style.border = "none";
+        berrySelector.innerHTML = "none";
+        console.log("Chosen berry: " + berry + " | Berry HTML: " + berrySelector.innerHTML);
     }
-    
-    
-    berryId[id].style.border = '2px solid white'; 
 }
 
 function openNav(nav, nav2) {
@@ -238,6 +249,7 @@ function openNav(nav, nav2) {
   //document.html.style.backgroundColor = "rgba(0,0,0,0.4)";
   
 }
+
 function closeNav(nav) {
   let navbars = document.getElementsByClassName("sidenavs");
   navbars[nav].style.width = "0";
@@ -288,19 +300,19 @@ function setUpGarden() {
                 garden.object.style.height = "300px";
             break;
             case 2:
-                garden.object.style.width = "500px";
-                garden.object.style.height = "500px";
+                garden.object.style.width = "400px";
+                garden.object.style.height = "400px";
             break;
         }
     } else {
         switch (garden.size) {
             case 1: 
-                garden.object.style.width = "500px";
-                garden.object.style.height = "500px";
+                garden.object.style.width = "400px";
+                garden.object.style.height = "400px";
             break;
             case 2:
-                garden.object.style.width = "750px";
-                garden.object.style.height = "750px";
+                garden.object.style.width = "600px";
+                garden.object.style.height = "600px";
             break;
         }
     }
@@ -311,15 +323,15 @@ function makePlots(size) {
 let arrayIndex = 0;
 	for (let i = 0; i < size * 2; i++) {
     	let gardenPlotRow = document.createElement("tr");
-gardenPlotRow.setAttribute("id", i);
+        gardenPlotRow.setAttribute("id", i);
         for (let j = 0; j < size * 2; j++) {
             
             let gpId = Math.floor(Math.random() * 9999);
             gardenPlotRow.innerHTML += `<td class='plot' id='${gpId}' style='color: white' onclick='makePlant(${arrayIndex}, this)'></td>`
             //${gpId} | ${arrayIndex}</td>`;
             gardenPlotsIndex.push(arrayIndex);
-let plant = {
-id: gpId,
+            let plant = {
+            id: gpId,
         		arrayId: arrayIndex,
         		age: -1,
                 stage: 0,
@@ -332,14 +344,15 @@ id: gpId,
             arrayIndex++;
 		}
         garden.object.appendChild(gardenPlotRow);
-setUpGarden();
-gardenRows = document.getElementById("garden").rows;   
-}
+        setUpGarden();
+        gardenRows = document.getElementById("garden").rows;   
+    }
 }
 
 function setBulk(factor) {
     bulkFactor = factor;
 }
+
 function buySeed(seed) {
 	let berry = berries[seed];
 
@@ -361,6 +374,25 @@ function buySeed(seed) {
     }
 }
 
+function sellItem(type, item) {
+    switch(type) {
+        case 0:
+            if (berries[item].amount > 0) {
+                console.log("Selling a " + item + " berry.");
+                money += berries[item].price * 1.2;
+                berries[item].amount -= 1;
+                berries[item].amountDisp = berries[item].amount;
+                moneyDisp.innerHTML = moneyFormatter.format(money);
+            } else {
+                console.log("Not enough berries to sell!");
+            }
+        break;
+
+        case 1:
+
+        break;
+    }
+}
 
 function selectJam(slot) {
 
@@ -369,17 +401,13 @@ function selectJam(slot) {
 	let selection = window.prompt("What berry do you want to use?", "Bulb").toLowerCase();
     
     if (berries[selection].amount > 0) {
-    let jamImg = document.getElementsByClassName("create-jam-bg");
-    let makeJamButton = document.getElementById("jamMakerButton");
-    let berryIcon = document.createElement("div");
-    berryIcon.innerHTML = selection;
-    berryIcon.style.color = "rgba(0, 0, 0, 0)";
-    berryIcon.classList.add("create-jam");
-    berryIcon.style.backgroundPosition = `${-64 * berries[selection].spritesheetPos}px 0px`;
-    jamImg[slot].appendChild(berryIcon);
-    
-    
-    
+
+        let berryIcon = document.createElement("div");
+        berryIcon.innerHTML = selection;
+        berryIcon.style.color = "rgba(0, 0, 0, 0)";
+        berryIcon.classList.add("create-jam");
+        berryIcon.style.backgroundPosition = `${16.66 * berries[selection].spritesheetPos}% 0`;
+        jamImg[slot].appendChild(berryIcon);
     
     for (let n = 0; n < jamImg.length; n++) {
     	if (jamImg[n].childNodes.length > 1) {
@@ -500,30 +528,37 @@ function makeJam() {
 
 function makePlant(arrayInd) {
 
-	let plot = gardenPlots[arrayInd];
-    
+    let plot = gardenPlots[arrayInd];
+
     if (plot.age >= 0) {
         harvestPlants(plot);
     } else {
-    let chosenBerry = berrySelector.innerHTML.toLowerCase();
-if (berries[chosenBerry].seedAmount > 0) {
-    
-    berries[chosenBerry].seedAmount -= 1;
-    berries[chosenBerry].saDisp.innerHTML = berries[chosenBerry].seedAmount;
-    
-		let text = "A " + chosenBerry + " berry was planted in plot " + arrayInd;
-    	plot.age = 0;
-    	plot.type = chosenBerry;
-        
-    //window.alert("Plant Index: " + gardenPlotsIndex);
-    //window.alert("Plant Objects: " + gardenPlots);
-    
-    generateNotif("Berry planted!", text);
-    } else {
-generateNotif("Warning!", "Not enough seeds to plant!");
-    }  
+        if (berrySelector.innerHTML.toLowerCase() != "none") {
+            let chosenBerry = berrySelector.innerHTML.toLowerCase();
+            if (berries[chosenBerry].seedAmount > 0) {
+            
+                berries[chosenBerry].seedAmount -= 1;
+                berries[chosenBerry].saDisp.innerHTML = berries[chosenBerry].seedAmount;
+            
+                let text = "A " + chosenBerry + " berry was planted in plot " + arrayInd;
+                plot.age = 0;
+                plot.type = chosenBerry;
+                
+                //window.alert("Plant Index: " + gardenPlotsIndex);
+                //window.alert("Plant Objects: " + gardenPlots);
+                
+                generateNotif("Berry planted!", text);
+            } else {
+                generateNotif("Warning!", "Not enough seeds to plant!");
+            }  
+        } else {
+            console.log("Select a berry!");
+        }
     }
-}
+
+} 
+
+
 
 function harvestPlants(selectedPlot) {
 
@@ -557,8 +592,8 @@ function checkPlantsGrowth() {
         document.getElementById(plot.id).style.backgroundImage = `${berries[plot.type].spritesheet}, ${plotHole}`;
         document.getElementById(plot.id).style.backgroundSize = "contain;";
 
-        let bgPos = plot.age * 10;
-        console.log(bgPos);
+        let bgPos = plot.age * 16.66;
+        console.log("Plot: " + i + " Plot Age: " + plot.age + " Background Position: " + bgPos + "%");
 
         document.getElementById(plot.id).style.backgroundPosition = `${bgPos}%, 0`;
 
@@ -689,9 +724,11 @@ moneyDisp.innerHTML = moneyFormatter.format(money);
 function updateNotif() {
     
     let notifsList = notifDisp.children; 
-    notifsList[1].remove();
-    removeNotif();
-    
+
+    if (notifsList > 0) {
+        notifsList[1].remove();
+        removeNotif();
+    }
     
 }
 

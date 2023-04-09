@@ -33,9 +33,9 @@
 
 
 
+<!-- The Garden -->
 
-
-<div style="width: 50%; height: 100%; display: inline-block; margin-left: auto; margin-right: auto;">
+<div style="width: 50%; height: 100%; margin: auto;">
   <table id="garden"></table>
 </div>
 
@@ -43,7 +43,6 @@
 <!-- Garden, Berry sidenavs, Berry Dex, Notification Box -->
 <div class="gardenPanel, worlds" style="height: 100%;">
 
-  <!-- The Garden -->
 
   <!-- Berry selection menu for larger screens -->
   <div class="mininav berryDex" style="right: 0; width: 30%;">
@@ -64,10 +63,10 @@
 
 <!-- Berry selection menu for small screens -->
 <div style="right: 0; height: 50vh; overflow-y: scroll; overflow-x: hidden; width: 12.5%; margin-right: 0.5%;" class="mininav smallnav">
-  <div class="seedTile spritesheetA" onclick="selectBerry('Bulb', 4)"></div>
-  <div class="seedTile spritesheetA" style="background-position: -64px 0;" onclick="selectBerry('Bliss', 5)"></div>
-  <div class="seedTile spritesheetA" style="background-position: -128px 0;" onclick="selectBerry('Crin', 6)"></div>
-  <div class="seedTile spritesheetA" style="background-position: -192px;" onclick="selectBerry('Rack', 7)"></div>
+  <div class="seedTile spritesheetA align" onclick="selectBerry('Bulb', 4)"></div>
+  <div class="seedTile spritesheetA align" style="background-position: -64px 0;" onclick="selectBerry('Bliss', 5)"></div>
+  <div class="seedTile spritesheetA align" style="background-position: -128px 0;" onclick="selectBerry('Crin', 6)"></div>
+  <div class="seedTile spritesheetA align" style="background-position: -192px;" onclick="selectBerry('Rack', 7)"></div>
 </div>
 
 
@@ -143,29 +142,29 @@
     </div>
     <h1>Seeds</h1>
     <!-- Shop DIVS -->
-    <div>
+    <div class="align" style="width: auto;">
       <div class="shop-option">
         <h2>Bulb Seeds</h2>
         <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seeds_icon.png" width="75%" class="align">
-        <button onclick="buySeed('bulb')">Purchase</button>
+        <button onclick="buySeed('bulb')">$10</button>
       </div>
 
       <div class="shop-option">
         <h2>Bliss Seeds</h2>
         <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seeds_icon.png" width="75%" class="align">
-        <button onclick="buySeed('bliss')">Purchase</button>
+        <button onclick="buySeed('bliss')">$50</button>
       </div>
 
       <div class="shop-option">
         <h2>Crin Seeds</h2>
         <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seeds_icon.png" width="75%" class="align">
-        <button onclick="buySeed('crin')">Purchase</button>
+        <button onclick="buySeed('crin')">$100</button>
       </div>
 
       <div class="shop-option">
         <h2>Rack Seeds</h2>
         <img src="https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/jam/berries/seeds_icon.png" width="75%" class="align">
-        <button onclick="buySeed('rack')">Purchase</button>
+        <button onclick="buySeed('rack')">$500</button>
       </div>
 
 
@@ -216,6 +215,20 @@
     <div style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
       <h1 style="font-size: 50px;">Market</h1>
       <button>Sell berries</button><button>Sell jam</button>
+    </div>
+
+    <div>
+      <h3>Bulb Berry</h3>
+      <button onclick="sellItem(0, 'bulb')">$12</button>
+
+      <h3>Bliss Berry</h3>
+      <button onclick="sellItem(0, 'bliss')">$55</button>
+
+      <h3>Crin Berry</h3>
+      <button onclick="sellItem(0, 'crin')">$125</button>
+
+      <h3>Rack Berry</h3>
+      <button onclick="sellItem(0, 'rack')">$550</button>
     </div>
 
   </div>

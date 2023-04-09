@@ -299,7 +299,6 @@ background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/ja
 width: 64px;
 height: 64px;
 display: block;
-float: left;
 }
 
 .mininav {
@@ -362,6 +361,14 @@ background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/ja
   display: none;
 }
 
+#garden {
+  margin-left: -20% !important;
+}
+
+.seedTile {
+  display: block !important;
+  float: left !important;
+}
 .berryDex {
   display: block;
 }
@@ -429,7 +436,7 @@ background: url('https://raw.githubusercontent.com/Fc500/Fc500.github.io/main/ja
 .modal-close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 48px;
   font-weight: bold;
 }
 
